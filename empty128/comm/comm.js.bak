@@ -1,0 +1,8 @@
+$(function(){
+    $.get("show_file.asp", {Folder: "/images"},
+	function(xml_data){
+        $("Path_file",xml_data).each(
+		alert()
+		);
+    });
+});
