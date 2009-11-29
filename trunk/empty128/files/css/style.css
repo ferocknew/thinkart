@@ -1,0 +1,571 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{
+	background-color:#332b29;
+	margin:0px;
+	background-image:url(../images/site_bg.jpg);
+	background-attachment:fixed;
+	background-repeat:no-repeat;
+	background-position:top left;
+	}
+
+
+#head{
+	margin:auto;
+	height:60px;
+	width:980px;}
+	
+#navi{
+	height:50px;
+	width:500px;
+	float:left;
+	margin-top:10px;}
+	
+#navi_prot{float:left;height:50px;width:105px;background-image:url(../images/site_navi.png);background-position:-5px 0px;cursor:pointer;}
+#navi_prod{float:left;height:50px;width:95px;background-image:url(../images/site_navi.png);background-position:-105px 0px;cursor:pointer;}
+#navi_serv{float:left;height:50px;width:80px;background-image:url(../images/site_navi.png);background-position:-200px 0px;cursor:pointer;}
+#navi_lab{float:left;height:50px;width:55px;background-image:url(../images/site_navi.png);background-position:-280px 0px;cursor:pointer;}
+#navi_about{float:left;height:50px;width:70px;background-image:url(../images/site_navi.png);background-position:-335px 0px;cursor:pointer;}
+#navi_contact{float:left;height:50px;width:95px;background-image:url(../images/site_navi.png);background-position:-400px 0px;cursor:pointer;}
+
+.navi_hover{background-color:#332b29;}
+
+#logo{
+	width:980px;
+	height:95px;
+	margin:auto;
+	cursor:pointer;}
+	
+#logo_icon{
+	width:150px;
+	height:25px;
+	float:left;
+	background-repeat:no-repeat;
+	background-image:url(../images/site_logo.png);
+	margin-top:50px;
+	margin-bottom:15px;}
+	
+#inner_frame{
+	width:980px;
+	background-color:#000000;
+	margin:auto;
+	filter:alpha(opacity=80,Style=0);
+	position:relative;}
+	
+#frame_topbar{
+	width:980px;
+	background-color:#000000;
+	margin:auto;
+	height:25px;
+	position:relative;
+	filter:alpha(opacity=40,Style=0);}
+	
+#content{
+	width:980px;
+	margin:0;
+	color:#666666;
+	position:relative;
+	font-family:PMingLiU;
+	font-size:11px;
+	line-height:20px;
+}
+
+	
+.copyRigh_red{
+	font-family:Tahoma, Geneva, sans-serif;
+	font-size:11px;
+	color:#be0010;}
+	
+.copyRigh_gray{
+	font-family:Tahoma, Geneva, sans-serif;
+	font-size:11px;
+	color:#353535;}
+	
+.grayText11{
+	color:#666;
+}
+
+.darkgrayText11{
+	color:#3d3d3d;
+}
+
+.imgBoder{
+	float:left;
+	border:#353535 3px solid;
+}
+
+.floatRight{
+	float:right;
+}
+.floatRight div{ cursor:pointer;}
+
+.dateMonth{
+	font-size:24px; 
+	font-weight:bold;
+	line-height:24px;
+	color:#be0010; 
+	font-family:Tahoma, Geneva, sans-serif;
+	width:33px;
+}
+
+.dateDay{
+	font-family:Tahoma, Geneva, sans-serif;
+	line-height:24px;
+	color:#413231;
+	width:25px;
+}
+
+#underline{
+	float:left;
+	margin:20px;
+	height:25px;
+	line-height:25px;
+	width:940px;
+	text-align:right;
+	background:url(../images/underline.gif) top no-repeat;
+}
+
+a:link {color:#839899; text-decoration:none;font-size:10px;font-weight:bold;font-family:Tahoma, Geneva, sans-serif;}
+a:visited {color:#839899;text-decoration:none;font-size:10px;font-weight:bold;font-family:Tahoma, Geneva, sans-serif;}
+a:active {color:#839899;text-decoration:none;font-size:10px;font-weight:bold;font-family:Tahoma, Geneva, sans-serif;}
+a:hover {color:#ffffff;text-decoration:underline;font-size:10px;font-weight:bold;font-family:Tahoma, Geneva, sans-serif;}
+
+hr{
+	height:1px;
+	border:none;
+	border-top:1px solid #3b2626;
+}
+
+ul,li{
+	margin:0;
+}
+
+/*----------------------------common set----------------------------------*/
+	
+.borderRight{
+	border-right:1px solid #353535;}
+.borderBottom{
+	border-bottom:1px solid #353535;}
+	
+.productTitle{
+	color:#b9aaa6;
+	font-family:"微软雅黑","黑体";
+	font-size:12px;}
+	
+.productContent{
+	font-family:PMingLiU;
+	font-size:11px;
+	color:#666666;
+	line-height:20px;}
+	
+.productIcon_01{
+	text-indent:20px;
+	line-height:20px;
+	background-image:url(../images/product_icon_01.gif);
+	background-repeat:no-repeat;}
+	
+#productIcon_02 td{
+	text-indent:20px;
+	line-height:20px;
+	background-image:url(../images/product_icon_02.gif);
+	background-repeat:no-repeat;}
+
+.productName{
+	font-family: Arial, Verdana;
+	font-size:13px;
+	color:#666666;
+	text-align:left;
+	font-weight:bold;
+	cursor:pointer;
+}
+	
+.NameHover{
+	font-family: Arial,Verdana;
+	font-size:13px;
+	color:#c42323;
+	text-align:left;
+	font-weight:bold;
+	cursor:pointer;}
+	
+/*----------------------------products page----------------------------------*/	
+
+#indexBanner{
+	width:940px;
+	height:295px;
+	margin:auto;
+	margin-top:20px;}
+	
+#indexContent{
+	width:940px;
+	height:325px;
+	margin:auto;
+	margin-top:40px;}
+
+#contentBlock{
+	width:270px;
+	height:	325px;
+	float:left;
+	margin-left:30px;}
+	
+#aboutTA{
+	width:165px;
+	height:60px;
+	float:left;
+	background-image:url(../images/index_about.png);
+	background-repeat:no-repeat;}
+	
+#indexAboutContent{
+	float:left;
+	width:270px;
+	font-family:PMingLiU;
+	font-size:11px;
+	color:#666666;
+	line-height:20px;}
+	
+.aboutTip{
+	font-family:PMingLiU;
+	font-size:11px;
+	color:#c42323;
+	line-height:20px;}
+	
+#indexTitle{
+	width:270px;
+	height:25px;
+	border-bottom:1px solid #2c2927;
+	margin-bottom:24px;}
+	
+.tableMargin10{
+	margin-bottom:10px;
+}
+/*----------------------------index page----------------------------------*/
+
+#labsContent{
+	width:940px;
+	float:left;
+	margin:auto;
+	margin-left:20px;
+	margin-right:20px;
+	margin-top:30px;}
+	
+#labItem{
+	width:260px;
+	height:290px;
+	float:left;
+	margin:0 25px 25px;
+}
+
+#labsTitle{
+	width:265px;
+	height:50px;
+	float:left;
+	margin-left:30px;
+	margin-top:30px;
+	background-image:url(../images/labs_title.png);
+	background-repeat:no-repeat;}
+	
+#labsTitleBlock{
+	width:940px;
+	height:125px;
+	margin:auto;
+	border-bottom:1px solid #2c2927;}
+	
+
+.labImage{
+	border:#353535 3px solid;
+	float:left;
+}
+
+.labTitleText{
+	font-size:13px;
+	font-weight:bold;
+	font-family:宋体;
+	width:260px;
+	float:left;
+	margin:25px 0 15px;
+}
+
+.labText{
+	float:left;
+	width:260px;
+	color:#3d3d3d;
+}
+/*----------------------------labs page----------------------------------*/
+
+#protfolioTitle{
+	width:265px;
+	height:20px;
+	float:left;
+	margin-left:20px;
+	margin-top:30px;
+}
+
+#protfolioTitleBlock{
+	width:940px;
+	height:55px;
+	margin:auto;
+	border-bottom:1px solid #2c2927;}
+	
+#protfolioItem{
+	width:900px;
+	height:220px;
+	padding:20px;
+	float:left;
+	margin:1px 1px;
+	background-color:#000;
+}
+
+.redText11{
+	font-family:Tahoma, Geneva, sans-serif;
+	font-size:11px;
+	font-weight:bold;
+	color:#be0010;}
+
+#protfolioImage{
+	margin-top:25px;
+	margin-bottom:25px;
+}
+
+#protfoliopage{
+	float:left; 
+	width:940px; 
+	margin:0 20px; 
+	padding-top:20px;
+}
+
+.protfolioBottom{
+	float:left;
+	margin:0 5px;
+}
+.protfolioInfo{
+	 background: url(../images/protfolio_icon.gif) left no-repeat;
+	 padding-left:70px;
+	 height:60px;
+}
+
+.protfolioItem{
+	font-size:11px;
+	color:#3d3d3d;
+}
+
+.protfolioItem1{
+	float:left;
+	width:410px;
+}
+
+.protfolioItem2{
+	float:right;
+	width:100px;
+}
+
+.protfolioItem3{
+	float:right;
+	width:150px;
+}
+
+.pageText1{
+	color:#FFF;
+	font-size:10px;
+	font-family:Tahoma, Geneva, sans-serif;
+	width:14px; height:14px;
+	background-color:#c42323;
+	line-height:14px;
+	text-align:center;
+	margin:1px;
+	float:left;
+}
+
+.pageText2{
+	color:#FFF;
+	font-size:10px;
+	font-family:Tahoma, Geneva, sans-serif;
+	width:14px; height:14px;;
+	line-height:14px;
+	text-align:center;
+	margin:1px;
+	float:left;
+}
+
+/*----------------------------protfolio page----------------------------------*/
+
+#serviceBanner{
+	width:940px;
+	height:250px;
+	margin:auto;
+	margin:20px 20px 40px;
+}
+
+#serviceNavi{
+	float:left;
+	background: url(../images/title_service.gif) top left no-repeat;
+	width:150px;
+	padding:50px 0 0 38px;
+	line-height:24px;
+	font-size:13px;
+	color:#666666;
+	font-weight:bold;
+	cursor:pointer;
+}
+
+#serviceContent{
+	float:right; 
+	margin-right:20px; 
+	width:760px;
+}
+
+/*------------------------------ service page ---------------------------------*/
+
+#aboutBanner{
+	width:940px;
+	height:250px;
+	margin:auto;
+	margin:20px 20px 40px;
+}
+
+#aboutNavi{
+	float:left;
+	background: url(../images/title_about.gif) top left no-repeat;
+	width:150px;
+	padding:50px 0 0 38px;
+	line-height:24px;
+	font-size:13px;
+	color:#666666;
+	font-weight:bold;
+	cursor:pointer;
+}
+
+#aboutContent{
+	float:right; 
+	margin-right:20px; 
+	width:760px;
+}
+
+#aboutText{
+	float:left;
+	width:330px;
+} 
+.aboutImage{
+	float:right;
+	margin:0 0  10px 25px;
+	border:#353535 solid 3px;
+}
+/*------------------------------ about page ---------------------------------*/
+#contactTitle{
+	width:265px;
+	height:20px;
+	float:left;
+	margin-left:20px;
+	margin-top:30px;}
+
+#contactTitleBlock{
+	width:940px;
+	height:55px;
+	margin:auto;
+	border-bottom:1px solid #2c2927;}
+	
+#contactItem{
+	width:900px;
+	height:220px;
+	padding:20px;
+	float:left;
+	margin:0 1px;
+	background-color:#000;}
+	
+#contactLeft{
+	width:490px;
+	height:760px;
+	float:left;
+	margin-top:30px;
+	margin-left:20px;
+	margin-right:20px;}
+	
+#contactRight{
+	width:390px;
+	height:760px;
+	float:right;
+	margin-top:30px;
+	margin-left:20px;
+	margin-right:20px;}
+	
+#contactBanner{
+	width:480px;
+	height:330px;
+	float:left;}
+	
+#contactMap{
+	width:275px;
+	height:275px;
+	margin-top:65px;
+	float:left;}
+	
+#contactWords{
+	width:180px;
+	height:275px;
+	float:right;
+	margin-top:65px;
+	text-align:left;
+	font-family:"微软雅黑",Tahoma, Geneva, sans-serif;
+	font-size:12px;
+	color:#3d3d3d;
+	line-height:25px;}
+	
+
+.contactItemWords{
+	color:#5f7773;
+	font-family:"微软雅黑",Tahoma, Geneva, sans-serif;
+	font-size:12px;}
+	
+.textInput{
+	border:1px solid #151a1d;
+	border-top:1px solid #4c5254;
+	width:370px;
+	height:25px;
+	line-height:25px;
+	background-color:#000000;
+	color:#999999;
+	font-family:"微软雅黑",Tahoma, Geneva, sans-serif;
+	font-size:12px;}
+	
+
+.textArea{
+	border:1px solid #151a1d;
+	border-top:1px solid #4c5254;
+	width:370px;
+	height:80px;
+	line-height:20px;
+	background-color:#000000;
+	color:#999999;
+	font-family:"微软雅黑",Tahoma, Geneva, sans-serif;
+	font-size:12px;
+	overflow:hidden;}
+	
+.optSel{
+	border:1px solid #151a1d;
+	border-top:1px solid #4c5254;
+	width:370px;
+	height:22px;
+	background-color:#000000;
+	color:#999999;
+	font-family:"微软雅黑",Tahoma, Geneva, sans-serif;
+	font-size:12px;}
+	
+.butSend{
+	border-collapse:separate;
+	border-width:thin;
+	border-style:1px dashed;
+	border-top:#5f050d;
+	border-right:#af3e43;
+	border-bottom:#af3e43;
+	border-left:#5f050d;
+	background-color:#9b0a11;
+	height:30px;
+	width:80px;
+	text-align:center;
+	color:#000000;
+	font-family:"微软雅黑",Tahoma, Geneva, sans-serif;
+	font-size:12px;}
+	
+	
+	
+		
+/*----------------------------contact page----------------------------------*/
