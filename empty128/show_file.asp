@@ -24,7 +24,7 @@ Else
 	path=GetLocationURLdriMap(0)&request("Folder")
 End If
 
-
+updir=Split(path,"/")
 Call xmlheadResponse("utf-8")
 Set xml_data=new PXML
 	Call xml_data.Create("root")
@@ -50,6 +50,7 @@ Set xml_data=new PXML
 			Call xml_data.AddAttribute("DateLastModified",fso.getFolderInfo(dir_path)(2),item_xml) '添加属性 DateLastModified
 			Call xml_data.AddAttribute("size",FormatNumber(fso.getFolderInfo(dir_path)(3)/1024,2,-1),item_xml) '添加属性 size
 			Call xml_data.AddAttribute("P_attr",fso.getFolderInfo(dir_path)(4),item_xml) '添加属性 P_attr
+			Call xml_data.AddAttribute("up_dir",updir(UBound(updir)),item_xml) '添加属性 up_dir
 		Next
 		End If
 
@@ -72,6 +73,7 @@ Set xml_data=new PXML
 			Call xml_data.AddAttribute("DateLastModified",fso.getFileInfo(file_path)(2),item_xml) '添加属性 DateLastModified
 			Call xml_data.AddAttribute("size",FormatNumber(fso.getFileInfo(file_path)(3)/1024,2,-1),item_xml) '添加属性 size
 			Call xml_data.AddAttribute("P_attr",fso.getFileInfo(file_path)(4),item_xml) '添加属性 P_attr
+			Call xml_data.AddAttribute("up_dir",updir(UBound(updir)),item_xml) '添加属性 up_dir
 		Next
 		End If
 	End If
