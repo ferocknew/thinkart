@@ -45,6 +45,12 @@ $(function($){
         return function(xmldata){
             var info_con = [];
             info_con[0] = $("info", xmldata).attr("name");
+			info_con[1] = $("info", xmldata).attr("type");
+			info_con[2] = $("info", xmldata).attr("maker");
+			info_con[3] = $("pro_con", xmldata).text();
+			info_con[4] = $("date", xmldata).text();
+			//info_con[0] = $("info", xmldata).attr("name");
+			
             show_html_code(img_div_con, n, info_con);
         }
     }
@@ -53,11 +59,10 @@ $(function($){
         var div_con = "";
         div_con = "<div id=\"protfolioItem\"><div id=\"proinfo\"><div class=\"protfolioInfo\">"
         div_con += "<div class=\"protfolioItem1\"><span class=\"redText11 pro_name\">" + info_con[0] + "</span>"
-        div_con += "<div class=\"protfolioItem\">K&amp;k是一个关于爱和勇气的品牌 , 来自台湾的审美情怀 ,飘洋过海在上海生根发芽……<br />以自身跨越十年时间, 2000公里空间的坚定.<br /></div>"
-        div_con += "</div><div class=\"protfolioItem2 redText11\">设计师<div class=\"protfolioItem\">Jack Daniels</div>"
-        div_con += "</div><div class=\"protfolioItem2 redText11\">设计师<div class=\"protfolioItem\">网站设计</div>"
-        div_con += "</div><div class=\"protfolioItem3 redText11\">日期<div class=\"protfolioItem\">"
-        div_con += "<span class=\"dateMonth\">12</span><span class=\"dateDay\">/15</span></div>"
+        div_con += "<div class=\"protfolioItem\">"+info_con[3]+"</div>"
+        div_con += "</div><div class=\"protfolioItem2 redText11\">设计师<div class=\"protfolioItem\">"+info_con[2]+"</div>"
+        div_con += "</div><div class=\"protfolioItem2 redText11\">类型<div class=\"protfolioItem\">"+info_con[1]+"</div>"
+        div_con += "</div><div class=\"protfolioItem3 redText11\">日期<div class=\"protfolioItem\">"+info_con[4] +"</div>"
         div_con += "</div></div></div>"
         div_con += "<div id=\"protfolioImage\">" + img_div_con + "</div></div>";
         html[n] = div_con;
