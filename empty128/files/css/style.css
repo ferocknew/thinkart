@@ -71,6 +71,17 @@ body{
 	line-height:20px;
 }
 
+#contentBanner{
+	width:980px;
+	padding-top:20px;
+	margin:0;
+	color:#666666;
+	position:relative;
+	font-family:PMingLiU;
+	font-size:11px;
+	line-height:20px;
+}
+
 	
 .copyRigh_red{
 	font-family:Tahoma, Geneva, sans-serif;
@@ -116,14 +127,12 @@ body{
 	width:25px;
 }
 
-#underline{
-	float:left;
-	margin:20px;
-	height:25px;
-	line-height:25px;
-	width:940px;
-	text-align:right;
-	background:url(../images/underline.gif) top no-repeat;
+.underline{
+	 height:25px; 
+	 text-align:right; 
+	 background: url(../images/underline.gif) top no-repeat;
+	 height:40px;
+	 margin:20px;
 }
 
 a:link {color:#839899; text-decoration:none;font-size:10px;font-weight:bold;font-family:Tahoma, Geneva, sans-serif;}
@@ -193,8 +202,7 @@ ul,li{
 #indexBanner{
 	width:940px;
 	height:295px;
-	margin:auto;
-	margin-top:20px;}
+	margin:0 20px;}
 	
 #indexContent{
 	width:940px;
@@ -202,7 +210,7 @@ ul,li{
 	margin:auto;
 	margin-top:40px;}
 
-#contentBlock{
+.contentBlock{
 	width:270px;
 	height:	325px;
 	float:left;
@@ -238,6 +246,18 @@ ul,li{
 .tableMargin10{
 	margin-bottom:10px;
 }
+
+#indexClient{
+	margin:20px 20px 0;
+	background-color:#23201e;
+	height:75px; 
+	text-align:center; 
+}
+
+#indexClient img{
+	margin:10px;
+}
+
 /*----------------------------index page----------------------------------*/
 
 #labsContent{
@@ -392,7 +412,7 @@ ul,li{
 	width:940px;
 	height:250px;
 	margin:auto;
-	margin:20px 20px 40px;
+	margin:0 20px 40px;
 }
 
 #serviceNavi{
@@ -409,7 +429,7 @@ ul,li{
 
 #serviceContent{
 	float:right; 
-	margin-right:20px; 
+	margin-right:20px;
 	width:760px;
 }
 
@@ -419,7 +439,7 @@ ul,li{
 	width:940px;
 	height:250px;
 	margin:auto;
-	margin:20px 20px 40px;
+	margin:0 20px 40px;
 }
 
 #aboutNavi{
