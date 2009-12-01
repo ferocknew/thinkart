@@ -33,7 +33,7 @@ $(function($){
             var img_div_con = "";
             $("Path_file", xml_data).each(function(i){
                 if ($("Path_file:eq(" + i + ")", xml_data).attr("type") == "jpg" && $("Path_file:eq(" + i + ")", xml_data).attr("file_name").indexOf("_b") == -1) {
-                    img_div_con += "<a class=\"itemPicBlock\" href=\"" + url_dir + profolio_file + "/" + $("Path_file:eq(" + i + ")", xml_data).attr("up_dir") + "/" + $("Path_file:eq(" + i + ")", xml_data).attr("file_name") + "_b." + $("Path_file:eq(" + i + ")", xml_data).attr("type") + "\"><img border=\"0\" src=\"" + $("Path_file:eq(" + i + ")", xml_data).attr("Path") + "\"/></a>";
+                    img_div_con += "<a rel=\"group"+$("Path_file:eq("+i+")", xml_data).attr("up_dir")+"\" class=\"itemPicBlock\" href=\"" + url_dir + profolio_file + "/" + $("Path_file:eq(" + i + ")", xml_data).attr("up_dir") + "/" + $("Path_file:eq(" + i + ")", xml_data).attr("file_name") + "_b." + $("Path_file:eq(" + i + ")", xml_data).attr("type") + "\"><img border=\"0\" src=\"" + $("Path_file:eq(" + i + ")", xml_data).attr("Path") + "\"/></a>";
                 };
                             });
             $.get(url_dir+profolio_file + "/"+$("Path_file", xml_data).attr("up_dir")  + "/info.xml", get_info(img_div_con, n));
