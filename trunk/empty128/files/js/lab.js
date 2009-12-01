@@ -8,7 +8,7 @@ $(function($){
         });
         $("#labsContent").html(lab_con);
 		$(".itemPicBlock img").load(function(){
-            $(".itemPicBlock img").fancybox();
+            $(".itemPicBlock").fancybox();
         });
     });
 	        
