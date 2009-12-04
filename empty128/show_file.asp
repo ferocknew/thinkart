@@ -24,7 +24,7 @@ Else
 	path=GetLocationURLdriMap(0)&request("Folder")
 End If
 
-
+updir=Split(path,"/")
 Call xmlheadResponse("utf-8")
 Set xml_data=new PXML
 	Call xml_data.Create("root")
