@@ -18,16 +18,16 @@ body{
 	
 #navi{
 	height:50px;
-	width:500px;
 	float:left;
 	margin-top:10px;}
 	
-#navi_prot{float:left;height:50px;width:70px;background-image:url(../images/site_navi.png);background-position:-5px 0px;cursor:pointer;}
-#navi_prod{float:left;height:50px;width:70px;background-image:url(../images/site_navi.png);background-position:-75px 0px;cursor:pointer;}
-#navi_serv{float:left;height:50px;width:70px;background-image:url(../images/site_navi.png);background-position:-145px 0px;cursor:pointer;}
-#navi_lab{float:left;height:50px;width:75px;background-image:url(../images/site_navi.png);background-position:-215px 0px;cursor:pointer;}
-#navi_about{float:left;height:50px;width:90px;background-image:url(../images/site_navi.png);background-position:-290px 0px;cursor:pointer;}
-#navi_contact{float:left;height:50px;width:85px;background-image:url(../images/site_navi.png);background-position:-380px 0px;cursor:pointer;}
+#navi_home{float:left;height:50px;width:70px;cursor:pointer;color:#f92f40; font-family:"微软雅黑","黑体","宋体"; font-size:12px; line-height:60px; text-align:center; font-weight:bold;}
+#navi_prot{float:left;height:50px;width:70px;cursor:pointer;color:#f92f40; font-family:"微软雅黑","黑体","宋体";font-size:12px;line-height:60px; text-align:center; font-weight:bold;}
+#navi_prod{float:left;height:50px;width:70px;cursor:pointer;color:#f92f40; font-family:"微软雅黑","黑体","宋体";font-size:12px;line-height:60px; text-align:center; font-weight:bold;}
+#navi_serv{float:left;height:50px;width:70px;cursor:pointer;color:#f92f40; font-family:"微软雅黑","黑体","宋体";font-size:12px;line-height:60px; text-align:center; font-weight:bold;}
+#navi_lab{float:left;height:50px;width:80px;cursor:pointer;color:#f92f40; font-family:"微软雅黑","黑体","宋体";font-size:12px;line-height:60px; text-align:center; font-weight:bold;}
+#navi_about{float:left;height:50px;width:85px;cursor:pointer;color:#f92f40; font-family:"微软雅黑","黑体","宋体";font-size:12px;line-height:60px; text-align:center; font-weight:bold;}
+#navi_contact{float:left;height:50px;width:90px;cursor:pointer;color:#f92f40; font-family:"微软雅黑","黑体","宋体";font-size:12px;line-height:60px; text-align:center; font-weight:bold;}
 	
 /*	英文版 navagation 菜单代码
 #navi_prot{float:left;height:50px;width:105px;background-image:url(../images/site_navi.png);background-position:-5px 0px;cursor:pointer;}
@@ -38,15 +38,15 @@ body{
 #navi_contact{float:left;height:50px;width:95px;background-image:url(../images/site_navi.png);background-position:-400px 0px;cursor:pointer;}
 */
 
-.navi_hover{background-color:#332b29;filter:alpha(opacity=100,Style=0);	position:relative;}
+.navi_hover{background-color:#332b29;}
 
 #logo{
 	width:980px;
 	height:95px;
-	margin:auto;
-	cursor:pointer;}
+	margin:auto;}
 	
 #logo_icon{
+	cursor:pointer;
 	width:150px;
 	height:25px;
 	float:left;
@@ -107,7 +107,7 @@ body{
 }
 
 .darkgrayText11{
-	color:#3d3d3d;
+	color:#444444;
 }
 
 .imgBoder{
@@ -144,10 +144,10 @@ body{
 	 margin:20px;
 }
 
-a:link {color:#839899; text-decoration:none;font-size:10px;font-weight:bold;font-family:Tahoma, Geneva, sans-serif;}
-a:visited {color:#839899;text-decoration:none;font-size:10px;font-weight:bold;font-family:Tahoma, Geneva, sans-serif;}
-a:active {color:#839899;text-decoration:none;font-size:10px;font-weight:bold;font-family:Tahoma, Geneva, sans-serif;}
-a:hover {color:#ffffff;text-decoration:underline;font-size:10px;font-weight:bold;font-family:Tahoma, Geneva, sans-serif;}
+a:link {color:#839899; text-decoration:none;font-size:11px;font-weight:bold;font-family:"微软雅黑"，"黑体","宋体",Tahoma, Geneva, sans-serif;}
+a:visited {color:#839899;text-decoration:none;font-size:11px;font-weight:bold;font-family:"微软雅黑"，"黑体","宋体",Tahoma, Geneva, sans-serif;}
+a:active {color:#839899;text-decoration:none;font-size:11px;font-weight:bold;font-family:"微软雅黑"，"黑体","宋体",Tahoma, Geneva, sans-serif;}
+a:hover {color:#ffffff;text-decoration:underline;font-size:11px;font-weight:bold;font-family:"微软雅黑"，"黑体","宋体",Tahoma, Geneva, sans-serif;}
 
 hr{
 	height:1px;
@@ -281,7 +281,7 @@ ul,li{
 	width:260px;
 	height:290px;
 	float:left;
-	margin:0 25px 25px;
+	margin:0 20px 25px;
 }
 
 #labsTitle{
@@ -317,7 +317,7 @@ ul,li{
 .labText{
 	float:left;
 	width:260px;
-	color:#3d3d3d;
+	color:#444444;
 }
 /*----------------------------labs page----------------------------------*/
 
@@ -340,7 +340,7 @@ ul,li{
 	height:220px;
 	padding:20px;
 	float:left;
-	margin:0 1px;
+	margin:1px 0;
 	background-color:#000;
 }
 
@@ -374,7 +374,7 @@ ul,li{
 
 .protfolioItem{
 	font-size:11px;
-	color:#3d3d3d;
+	color:#444444;
 }
 
 .protfolioItem1{
@@ -535,7 +535,7 @@ ul,li{
 	text-align:left;
 	font-family:"微软雅黑",Tahoma, Geneva, sans-serif;
 	font-size:12px;
-	color:#3d3d3d;
+	color:#444444;
 	line-height:25px;}
 	
 

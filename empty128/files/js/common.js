@@ -1,17 +1,18 @@
 // JavaScript Document
 $(document).ready(function() {
 	
-	$("#navi_prot,#navi_prod,#navi_serv,#navi_lab,#navi_about,#navi_contact").hover(
+	$("#navi_home,#navi_prot,#navi_prod,#navi_serv,#navi_lab,#navi_about,#navi_contact").hover(
 	  function () {
 		$(this).addClass("navi_hover");
 	  },
 	  function () {
-		$(this).removeClass("navi_hover");
+		setTimeout($(this).removeClass("navi_hover"),3000);
 	  }
 	);
 	
-	$("#navi_prot,#navi_prod,#navi_serv,#navi_lab,#navi_about,#navi_contact,#logo_icon").click(
+	$("#navi_home,#navi_prot,#navi_prod,#navi_serv,#navi_lab,#navi_about,#navi_contact,#logo_icon").click(
 	  function () {
+		if($(this).attr('id') == "navi_home"){document.location = 'index.html';}
 		if($(this).attr('id') == "navi_prot"){document.location = 'protfolio.html';}
 		if($(this).attr('id') == "navi_prod"){document.location = 'products.html';}
 		if($(this).attr('id') == "navi_serv"){document.location = 'service.html';}
