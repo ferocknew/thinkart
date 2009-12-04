@@ -6,7 +6,7 @@
 '=================================================
 ' Function For NewS by Jonah.Fu in UTF-8
 ' Ver: 0.0.2.2
-' UpdateDate: 2009-11-28 14:00
+' UpdateDate: 2009-12-04
 '=================================================
 Set fso=new FsoSystem
 fso.PathType=2
@@ -24,7 +24,7 @@ Else
 	path=GetLocationURLdriMap(0)&request("Folder")
 End If
 
-updir=Split(path,"/")
+
 Call xmlheadResponse("utf-8")
 Set xml_data=new PXML
 	Call xml_data.Create("root")
@@ -42,6 +42,7 @@ Set xml_data=new PXML
 			Set item_xml=xml_data.XMLRoot()
 			Call xml_data.AddNode("Path_dir",item_xml)
 			Set item_xml=xml_data.SelectXmlNode("Path_dir",i)
+			Call xml_data.AddAttribute("id",i+1,item_xml) '添加属性 id
 			Call xml_data.AddAttribute("name",FolderList(i),item_xml) '添加属性 name
 			Call xml_data.AddAttribute("Path_type","dir",item_xml) '添加属性 Path_type
 			Call xml_data.AddAttribute("Path",dir_path,item_xml) '添加属性 Path
@@ -50,7 +51,6 @@ Set xml_data=new PXML
 			Call xml_data.AddAttribute("DateLastModified",fso.getFolderInfo(dir_path)(2),item_xml) '添加属性 DateLastModified
 			Call xml_data.AddAttribute("size",FormatNumber(fso.getFolderInfo(dir_path)(3)/1024,2,-1),item_xml) '添加属性 size
 			Call xml_data.AddAttribute("P_attr",fso.getFolderInfo(dir_path)(4),item_xml) '添加属性 P_attr
-			Call xml_data.AddAttribute("up_dir",updir(UBound(updir)),item_xml) '添加属性 up_dir
 		Next
 		End If
 
@@ -62,7 +62,8 @@ Set xml_data=new PXML
 			Set item_xml=xml_data.XMLRoot()
 			Call xml_data.AddNode("Path_file",item_xml)
 			Set item_xml=xml_data.SelectXmlNode("Path_file",i)
-			Call xml_data.AddAttribute("name",FolderFiles(i),item_xml) '添加属性 id
+			Call xml_data.AddAttribute("id",i+1,item_xml) '添加属性 id
+			Call xml_data.AddAttribute("name",FolderFiles(i),item_xml) '添加属性 name
 			Call xml_data.AddAttribute("Path_type","file",item_xml) '添加属性 Path_type
 			file_type=Split(FolderFiles(i),".") '文件扩展名
 			Call xml_data.AddAttribute("file_name",file_type(0),item_xml) '添加属性 file_name
@@ -73,7 +74,6 @@ Set xml_data=new PXML
 			Call xml_data.AddAttribute("DateLastModified",fso.getFileInfo(file_path)(2),item_xml) '添加属性 DateLastModified
 			Call xml_data.AddAttribute("size",FormatNumber(fso.getFileInfo(file_path)(3)/1024,2,-1),item_xml) '添加属性 size
 			Call xml_data.AddAttribute("P_attr",fso.getFileInfo(file_path)(4),item_xml) '添加属性 P_attr
-			Call xml_data.AddAttribute("up_dir",updir(UBound(updir)),item_xml) '添加属性 up_dir
 		Next
 		End If
 	End If
