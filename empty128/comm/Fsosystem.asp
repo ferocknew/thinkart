@@ -1,5 +1,5 @@
 <%
-'修改版2009-09-10 by Jonah.Fu
+'修改版2009-12-04 by Jonah.Fu
 Class FsoSystem
 '类属性
 Private FsoObject '对像
@@ -13,7 +13,7 @@ Public ExtensionName '文件过滤
 Private Sub Class_Initialize()
 Path=""
 PathType=""
-ExtensionName="exe|dll|zip|bat|rar"
+ExtensionName="exe|dll|zip|bat|rar|svn"
 Set FsoObject=server.CreateObject("scripting.filesystemobject")
 On Error Resume Next
 TestError()
@@ -69,11 +69,12 @@ i=0
 'response.write(sundir.ParentFolder)
 set fc=sundir.SubFolders
 for Each f1 in fc
-
+If CheakFileExt(f1.name)=True Then
 redim Preserve FolderList(i)
 FolderList(i)=f1.name
 i=i+1
-next
+End if
+Next
 SunGetFolder=FolderList
 end function
 '-----------------------取出指定目录下的所有文件--------------------
