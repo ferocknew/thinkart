@@ -1,15 +1,15 @@
 <%
-'ĞŞ¸Ä°æ2009-12-04 by Jonah.Fu
+'ä¿®æ”¹ç‰ˆ2009-12-04 by Jonah.Fu
 Class FsoSystem
-'ÀàÊôĞÔ
-Private FsoObject '¶ÔÏñ
-'¹«¹²ÊôĞÔ
-Public Path 'Â·¾¶
+'ç±»å±æ€§
+Private FsoObject 'å¯¹åƒ
+'å…¬å…±å±æ€§
+Public Path 'è·¯å¾„
 Public Errshow
-Public PathType 'Â·¾¶·½Ê½:1¾ø¶ÔÂ·¾¶.2ĞéÄâÂ·¾¶
-Public ExtensionName 'ÎÄ¼ş¹ıÂË
-'//--------------------------³ÉÔ±º¯Êı-------------------------------
-'//--------------------------³õÊ¼º¯Êı-------------------------------
+Public PathType 'è·¯å¾„æ–¹å¼:1ç»å¯¹è·¯å¾„.2è™šæ‹Ÿè·¯å¾„
+Public ExtensionName 'æ–‡ä»¶è¿‡æ»¤
+'//--------------------------æˆå‘˜å‡½æ•°-------------------------------
+'//--------------------------åˆå§‹å‡½æ•°-------------------------------
 Private Sub Class_Initialize()
 Path=""
 PathType=""
@@ -18,13 +18,13 @@ Set FsoObject=server.CreateObject("scripting.filesystemobject")
 On Error Resume Next
 TestError()
 End Sub
-'//--------------------------Îö¹¹º¯Êı-------------------------------
+'//--------------------------ææ„å‡½æ•°-------------------------------
 Private Sub Class_Terminate()
 Path=""
 PathType=""
 Set FsoObject=Nothing
 End Sub
-'----------------------------´¦ÀíÄ¿Â¼-------------------------------
+'----------------------------å¤„ç†ç›®å½•-------------------------------
 Private function Optiondir()
 		TestNum()
 		if PathType="1" then
@@ -39,7 +39,7 @@ Private function Optiondir()
 		response.End()
 		end if
 end function
-'----------------------------ÎÄ¼ş¹ıÂË-------------------------------
+'----------------------------æ–‡ä»¶è¿‡æ»¤-------------------------------
 Private function CheakFileExt(filename)
 	dim Ext
 	extname=ExtensionName
@@ -58,7 +58,7 @@ Private function CheakFileExt(filename)
 		CheakFileExt=False
 	end if
 end function
-'------------------------È¡³öÖ¸¶¨Ä¿Â¼ÏÂµÄÎÄ¼ş¼Ğ---------------------
+'------------------------å–å‡ºæŒ‡å®šç›®å½•ä¸‹çš„æ–‡ä»¶å¤¹---------------------
 Public function SunGetFolder()
 set sundir=FsoObject.GetFolder(Optiondir())
 dim FolderList()
@@ -77,7 +77,7 @@ End if
 Next
 SunGetFolder=FolderList
 end function
-'-----------------------È¡³öÖ¸¶¨Ä¿Â¼ÏÂµÄËùÓĞÎÄ¼ş--------------------
+'-----------------------å–å‡ºæŒ‡å®šç›®å½•ä¸‹çš„æ‰€æœ‰æ–‡ä»¶--------------------
 Public Function GetFolderFiles()
 	Dim FolderFiles()
 	Dim objFolder
@@ -101,7 +101,7 @@ Public Function GetFolderFiles()
 	next
 	GetFolderFiles=FolderFiles
 end Function
-'-----------------------È¡³öÖ¸¶¨ÖÆ¶¨Â·¾¶ÏÂµÄÎÄ¼ş¼ĞĞÅÏ¢--------------------
+'-----------------------å–å‡ºæŒ‡å®šåˆ¶å®šè·¯å¾„ä¸‹çš„æ–‡ä»¶å¤¹ä¿¡æ¯--------------------
 Public Function getFolderInfo(Path)
 OptionPath=server.mappath(Path)
 		If Not FsoObject.FolderExists(OptionPath) Then
@@ -120,7 +120,7 @@ getFolderInfo=File_info
 Set file=Nothing
 End Function
 
-'-----------------------È¡³öÖ¸¶¨ÖÆ¶¨Â·¾¶ÏÂµÄÎÄ¼şĞÅÏ¢--------------------
+'-----------------------å–å‡ºæŒ‡å®šåˆ¶å®šè·¯å¾„ä¸‹çš„æ–‡ä»¶ä¿¡æ¯--------------------
 Public Function getFileInfo(Path)
 OptionPath=server.mappath(Path)
 		If Not FsoObject.FileExists(OptionPath) then
@@ -138,30 +138,30 @@ File_info(4)=file.Attributes
 getFileInfo=File_info
 Set file=Nothing
 End Function
-'-----------------------------¶ÁÈ¡ÎÄ¼ş--------------------------------------
+'-----------------------------è¯»å–æ–‡ä»¶--------------------------------------
 function readfile()
 Set txt =FsoObject.OpenTextFile(Optiondir())
-If Not txt.atEndOfStream Then 'ÏÈÈ·¶¨»¹Ã»ÓĞµ½´ï½áÎ²µÄÎ»ÖÃ
-    Content = txt.ReadAll '¶ÁÈ¡Õû¸öÎÄ¼şµÄÊı¾İ
+If Not txt.atEndOfStream Then 'å…ˆç¡®å®šè¿˜æ²¡æœ‰åˆ°è¾¾ç»“å°¾çš„ä½ç½®
+    Content = txt.ReadAll 'è¯»å–æ•´ä¸ªæ–‡ä»¶çš„æ•°æ®
 End If
 set txt=nothing
 readfile=Content
 end function
-'-----------------------------Ğ´ÈëÎÄ¼ş--------------------------------------
+'-----------------------------å†™å…¥æ–‡ä»¶--------------------------------------
 function writefile(Text)
 set f=FsoObject.createTextFile(Optiondir(),True)
 f.Write Text
 f.Close
 end function
-'-----------------------------´íÎó´¦Àí--------------------------------------
+'-----------------------------é”™è¯¯å¤„ç†--------------------------------------
 Private function TestError()
 if Err.number>0 then
-response.write("´íÎóĞÅÏ¢:<br>´íÎó´úÂë->"&err.Code&"<br>"&err.Category&"<br>"&err.Description)
+response.write("é”™è¯¯ä¿¡æ¯:<br>é”™è¯¯ä»£ç ->"&err.Code&"<br>"&err.Category&"<br>"&err.Description)
 end if
 end function
 Private function TestNum()
 if Path="" or PathType="" then
-response.write("´íÎóĞÅÏ¢:Path»òPathTypeÊôĞÔ²»ÄÜÎª¿Õ.")
+response.write("é”™è¯¯ä¿¡æ¯:Pathæˆ–PathTypeå±æ€§ä¸èƒ½ä¸ºç©º.")
 response.end
 end if
 end Function
