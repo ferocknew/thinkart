@@ -6,7 +6,7 @@ $(function($){
     var profolio_file = "/files/images/protfolio";
     var get_xml_url = "show_file.asp";
     var url_dir = get_url_show();
-    var img_html = $("<a class='itemPicBlock' href='' srel='groupnew_1'><img border='0' src=''/></a>");
+    var img_html = $("<a class='itemPicBlock' href='' rel=''><img border='0' src=''/></a>");
     
     $("#protfoliopage").paging({
         loadPages: showResult,
@@ -58,11 +58,12 @@ $(function($){
                     if ($(this).attr("type") == "jpg" && $(this).attr("file_name").indexOf("_b") == -1) {
                         var img_html_copy = img_html.clone();
                         img_html_copy.filter(".itemPicBlock").attr("href", url_dir + profolio_file + "/" + $(this).attr("up_dir") + "/" + $(this).attr("file_name") + "_b." + $(this).attr("type"));
+                        img_html_copy.filter(".itemPicBlock").attr("rel", up_dir);
                         img_html_copy.find("img").attr("src", $(this).attr("Path"));
                         img_into_html_copy.append(img_html_copy);
                     };
                                     });
-                $("#proinfo[up_dir='" + up_dir+ "']").after(img_into_html_copy);
+                $("#proinfo[up_dir='" + up_dir + "']").after(img_into_html_copy);
             });
             //获取信息
             $.get(url_dir + profolio_file + "/" + up_dir + "/info.xml", function(data_xml){
@@ -72,9 +73,13 @@ $(function($){
                 div_con_copy.find(".protfolioItem").text($("pro_con", data_xml).text());
                 div_con_copy.find("#kind").text($("info", data_xml).attr("type"));
                 div_con_copy.find("#maker").text($("info", data_xml).attr("maker"));
-				div_con_copy.find("#show_date").html($("date", data_xml).text());
-				$("#proinfo[up_dir='" + up_dir + "']").html(div_con_copy);
+                div_con_copy.find("#show_date").html($("date", data_xml).text());
+                $("#proinfo[up_dir='" + up_dir + "']").html(div_con_copy);
+                $(".itemPicBlock img").load(function(){
+                    $(".itemPicBlock").fancybox();
+                });
             });
         });
     };
+    
     });
