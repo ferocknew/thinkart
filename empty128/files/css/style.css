@@ -197,11 +197,7 @@ ul,li{
 }
 	
 .NameHover{
-	font-family: Arial,Verdana;
-	font-size:13px;
 	color:#c42323;
-	text-align:left;
-	font-weight:bold;
 	cursor:pointer;}
 	
 /*----------------------------products page----------------------------------*/	
@@ -237,7 +233,16 @@ ul,li{
 	font-size:11px;
 	color:#666666;
 	line-height:20px;}
-	
+
+
+a.aboutTip:link,a.aboutTip:visited,a.aboutTip:active {
+	font-family:PMingLiU;
+	font-size:11px;
+	color:#c42323;
+	line-height:20px;
+	font-weight:normal;
+}
+
 .aboutTip{
 	font-family:PMingLiU;
 	font-size:11px;
@@ -441,6 +446,10 @@ ul,li{
 	width:760px;
 }
 
+.serviceIcon{
+	float:left; 
+	margin:5px 10px 0 0;
+}
 /*------------------------------ service page ---------------------------------*/
 
 #aboutBanner{
