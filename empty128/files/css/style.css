@@ -2,12 +2,8 @@
 /* CSS Document */
 
 body{
-	background-color:#332b29;
 	margin:0px;
-	background-image:url(../images/site_bg.jpg);
-	background-attachment:fixed;
-	background-repeat:no-repeat;
-	background-position:top left;
+	background:#332b29 url(../images/site_bg.jpg) fixed no-repeat top left;
 	}
 
 
@@ -187,7 +183,9 @@ ul,li{
 	text-indent:20px;
 	line-height:20px;
 	background-image:url(../images/product_icon_02.gif);
-	background-repeat:no-repeat;}
+	background-repeat:no-repeat;
+	background-position:0 50%;
+}
 
 .productName{
 	font-family: Arial, Verdana;
@@ -430,8 +428,9 @@ ul,li{
 	width:150px;
 	padding:50px 0 0 38px;
 	line-height:24px;
-	font-size:13px;
+	font-size:12px;
 	color:#666666;
+	font-family:"微软雅黑";
 	font-weight:bold;
 	cursor:pointer;
 }
@@ -457,9 +456,10 @@ ul,li{
 	width:150px;
 	padding:50px 0 0 38px;
 	line-height:24px;
-	font-size:13px;
-	color:#666666;
+	font-size:12px;
+	font-family:"微软雅黑";
 	font-weight:bold;
+	color:#666666;
 	cursor:pointer;
 }
 
