@@ -6,14 +6,14 @@ $(document).ready(function() {
 		$(this).addClass("navi_hover");
 	  },
 	  function () {
-		setTimeout($(this).removeClass("navi_hover"),3000);
+		$(this).removeClass("navi_hover");
 	  }
 	);
 	
 	$("#navi_home,#navi_prot,#navi_prod,#navi_serv,#navi_lab,#navi_about,#navi_contact,#logo_icon").click(
 	  function () {
 		if($(this).attr('id') == "navi_home"){document.location = 'index.html';}
-		if($(this).attr('id') == "navi_prot"){document.location = 'protfolio.html';}
+		if($(this).attr('id') == "navi_prot"){document.location = 'portfolio.html';}
 		if($(this).attr('id') == "navi_prod"){document.location = 'products.html';}
 		if($(this).attr('id') == "navi_serv"){document.location = 'service.html';}
 		if($(this).attr('id') == "navi_lab"){document.location = 'lab.html';}
