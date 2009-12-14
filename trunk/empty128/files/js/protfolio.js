@@ -64,6 +64,9 @@ $(function($){
                     };
                                     });
                 $("#proinfo[up_dir='" + up_dir + "']").after(img_into_html_copy);
+				                $(".itemPicBlock img").load(function(){
+                    $(".itemPicBlock").fancybox();
+                });
             });
             //获取信息
             $.get(url_dir + profolio_file + "/" + up_dir + "/info.xml", function(data_xml){
@@ -75,9 +78,6 @@ $(function($){
                 div_con_copy.find("#maker").text($("info", data_xml).attr("maker"));
                 div_con_copy.find("#show_date").html($("date", data_xml).text());
                 $("#proinfo[up_dir='" + up_dir + "']").html(div_con_copy);
-                $(".itemPicBlock img").load(function(){
-                    $(".itemPicBlock").fancybox();
-                });
             });
         });
     };
