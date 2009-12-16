@@ -21,8 +21,6 @@ Call data_xml.AddNode("intro_abstract",item_xml)
 Set item_xml=data_xml.SelectXmlNode("info/intro_abstract",0)
 Call data_xml.AddText("1",intro_abstract,item_xml)
 
-
-
 data_xml.RespXml()
 Set data_xml=Nothing
 Call CloseDB()
