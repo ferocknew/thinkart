@@ -1,6 +1,5 @@
 <%
 '=================================================
-' Function For NewS by Jonah.Fu in GB2312
 ' Ver: 1.0.0.12
 ' UpdateDate: 2009-07-17 10:12
 '=================================================
@@ -1159,6 +1158,18 @@ Response.Expires=0
 Response.ExpiresAbsolute =Now()
 Response.CacheControl="no cache"
 
+End Sub
+
+'*************************************
+'生成json头
+'*************************************
+Sub jsonheadResponse()
+Response.Buffer =True
+Response.Charset = "utf-8"
+Response.ContentType="application/json"
+Response.Expires=0
+Response.ExpiresAbsolute =Now()
+Response.CacheControl="no cache"
 End Sub
 
 '*************************************
