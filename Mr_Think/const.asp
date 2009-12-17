@@ -6,7 +6,7 @@ Response.Buffer = True
 '***********************************************
 
 Server.ScriptTimeOut = 90
-Session.CodePage=936
+Session.codepage=65001
 Session.LCID=2057
 
 '定义 Cookie,Application 域，必须修改，否则可能运行不正常
