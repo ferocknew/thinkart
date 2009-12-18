@@ -1,5 +1,5 @@
 <%
-'¶ÁÈ¡ÍøÕ¾ÉèÖÃÐÅÏ¢
+'è¯»å–ç½‘ç«™è®¾ç½®ä¿¡æ¯
 getInfo(1)
 %>
 <!--#include file="function/function_jonah.asp" -->
