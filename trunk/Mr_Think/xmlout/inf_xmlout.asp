@@ -9,11 +9,11 @@ act=SafeRequest("act",0)
 Select Case act
 Case "edit" '修改 info
 Dim sitename,comnam,leader,siteicp,siteurl
-sitename=Trim(CheckStr(Request.Form("sitename")))
-comnam=Trim(CheckStr(Request.Form("comnam")))
-leader=Trim(CheckStr(Request.Form("leader")))
-siteicp=Trim(CheckStr(Request.Form("siteicp")))
-siteurl=Trim(CheckStr(Request.Form("siteurl")))
+sitename=Trim(Request.Form("sitename"))
+comnam=Trim(Request.Form("comnam"))
+leader=Trim(Request.Form("leader"))
+siteicp=Trim(Request.Form("siteicp"))
+siteurl=Trim(Request.Form("siteurl"))
 
 Set conn_info = Server.CreateObject("ADODB.RecordSet")
 DBField="site_name,com_name,leader,site_icp,site_url"
@@ -26,6 +26,7 @@ conn_info("site_icp")=siteicp
 conn_info("site_url")=siteurl
 conn_info.update
 conn_info.close:Set conn_info=Nothing
+'重置缓存
 FreeMemory
 getInfo(1)
 
