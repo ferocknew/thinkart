@@ -1,5 +1,7 @@
+var file_url="../xmlout/inf_xmlout.asp";
 $(function($){
-    $.getJSON("xmlout/inf_xmlout.asp", {
+	var file_url="../xmlout/inf_xmlout.asp";
+    $.getJSON(file_url, {
         "code": "json"
     }, show_info);
     //修改信息
@@ -12,11 +14,12 @@ $(function($){
         post_data += "siteurl=" + $("#siteurl").val();
         $.ajax({
             type: "POST",
-            url: "xmlout/inf_xmlout.asp?code=json&act=edit",
+            url: file_url+"?code=json&act=edit",
             dataType: "json",
             data: post_data,
             success: show_info
         });
+		hiOverAlert('信息已经修改');
         return false;
         e.stopPropagation();
     });
