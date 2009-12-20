@@ -25,6 +25,20 @@ function init(content,allowedLength){
 	return content;
     
 }
+//文本过长截取
+function mCutStr(text, len){
+    if (text.length < len) {
+        return text;
+    }
+    else {
+        var pos = 0;
+        for (i = 0; i < len; i++) {
+            (text.substr(i, 1).charCodeAt(0) >= 160) ? i++ : "";
+            pos++;
+        }
+        return text.substr(0, pos) + "..";
+    }
+}
 //js返回URL的host信息
 function show_FromHost(){
     var FromHost = document.referrer;
@@ -69,21 +83,6 @@ function $TagN(name){
     return document.getElementsByTagName ? document.getElementsByTagName(name) : new Array()
 }
 
-//文本过长截取
-function mCutStr(text, len){
-    if (text.length < len) {
-        return text;
-    }
-    else {
-        var pos = 0;
-        for (i = 0; i < len; i++) {
-            (text.substr(i, 1).charCodeAt(0) >= 160) ? i++ : "";
-            pos++;
-        }
-        return text.substr(0, pos) + "..";
-    }
-}
-
 //按比例调整图片大小函数
 function DrawImage(ImgD, FitWidth, FitHeight){
     var image = new Image();
@@ -124,11 +123,6 @@ function DrawImage(ImgD, FitWidth, FitHeight){
             }
         }
     }
-}
-
-//返回html标签数组
-function $TagN(name){
-    return document.getElementsByTagName ? document.getElementsByTagName(name) : new Array()
 }
 
 //文本框限制
@@ -267,10 +261,11 @@ function Reimg_alone_height(some_one, height_num){
 //made by yaosansi 2005-12-02
 //For more visit http://www.yaosansi.com
 // Trim() , Ltrim() , RTrim()
-
+/*
 String.prototype.Trim = function(){
     return this.replace(/(^s*)|(s*$)/g, "");
 }
+*/
 
 String.prototype.LTrim = function(){
     return this.replace(/(^s*)/g, "");
