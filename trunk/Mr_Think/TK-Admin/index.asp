@@ -79,8 +79,7 @@
       <table width="100%" border="0" cellspacing="0" cellpadding="0">
         <tr>
           <td width="100" height="50" class="bottomBorder1px">&nbsp;</td>
-          <td height="30" class="bottomBorder1px"><input name="button" type="submit" class="setButtom" id="change_info" value="提交" />
-          <input name="button2" type="submit" class="setButtom" id="button2" value="重置" /></td>
+          <td height="30" class="bottomBorder1px"><input name="button" type="submit" class="setButtom" id="change_info" value="提交" /></td>
         </tr>
     </table>
       <br />
@@ -100,7 +99,6 @@
           <td width="100" align="right" class="inputTable">网站开关：</td>
           <td height="30" class="inputTable"><span class="bottomBorder1px">
             <input name="button3" type="submit" class="setButtom" id="button3" value="打开" />
-            <input name="button3" type="submit" class="setButtom" id="button4" value="关闭" />
           </span></td>
         </tr>
     </table></td>

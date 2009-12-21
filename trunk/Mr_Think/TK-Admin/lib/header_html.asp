@@ -8,8 +8,8 @@
 <script type="text/javascript" src="../lib/js/jquery.min.js"></script>
 <script type="text/javascript" src="../lib/js/js_jonah.js"></script>
 <script language="javascript" src="../lib/js/jquery.hiAlerts-min.js"></script>
+<script type="text/javascript" src="../lib/js/default_lib.js"></script>
 <script type="text/javascript" src="lib/js/default_admin.js"></script>
-<script type="text/javascript" src="lib/js/control_admin_temp.js"></script>
 <link href="../lib/css/jquery.hiAlerts.css" rel="stylesheet" type="text/css" />
 <link href="files/css/style.css" rel="stylesheet" type="text/css" />
 <title>Mr.Thinker - Website Manager</title>
