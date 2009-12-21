@@ -4,4 +4,3 @@ $(function(){
 	$.getJSON(get_info_url,{"code":"json"},loaddoc);
 
 });
-function loaddoc(json){document.title=json.info.site_name;}
