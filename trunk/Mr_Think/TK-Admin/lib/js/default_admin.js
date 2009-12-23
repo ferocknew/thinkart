@@ -3,14 +3,15 @@ $(function(){
 	$.getJSON(get_info_url, {
         "code": "json"
     }, show_info);
-    //ĞŞ¸ÄĞÅÏ¢
+    //ä¿®æ”¹ä¿¡æ¯
     $("#change_info").bind("click", function(e){
         var post_data = "";
         post_data += "sitename=" + $("#sitename").val() + "&";
         post_data += "comnam=" + $("#comnam").val() + "&";
         post_data += "leader=" + $("#leader").val() + "&";
         post_data += "siteicp=" + $("#siteicp").val() + "&";
-        post_data += "siteurl=" + $("#siteurl").val();
+        post_data += "siteurl=" + $("#siteurl").val() + "&";
+		post_data += "sitelogo=" + $("#site_logo").val();
         $.ajax({
             type: "POST",
             url: get_info_url+"?code=json&act=edit",
@@ -18,11 +19,11 @@ $(function(){
             data: post_data,
             success: show_info
         });
-		hiOverAlert('ĞÅÏ¢ÒÑ¾­ĞŞ¸Ä');
+		//hiOverAlert('ä¿¡æ¯å·²ç»ä¿®æ”¹');
         return false;
         e.stopPropagation();
     });
-    //Ìí¼Ó¹ÜÀíÔ±
+    //æ·»åŠ ç®¡ç†å‘˜
     $("#add_admin").bind("click", function(e){
 		var post_data="";
 		post_data+="username"+$.trim($("#admin_username").val())+"&";
@@ -40,13 +41,18 @@ $(function(){
         e.stopPropagation();
     });
 
+/*
+è°ƒæ•´é¡µé¢ä½“éªŒ
+*/
+$(".rightBorder1px").css("cursor","pointer");
 });
-//ÏÔÊ¾ĞÅÏ¢
+//æ˜¾ç¤ºä¿¡æ¯
 function show_info(json){
 	$("#sitename").val(json.info.site_name);
 	$("#comnam").val(json.info.com_name);
 	$("#leader").val(json.info.site_leader);
 	$("#siteicp").val(json.info.site_icp);
 	$("#siteurl").val(json.info.site_url);
+	$("#site_logo").val(json.info.site_logo);
 	loaddoc(json);
 }
