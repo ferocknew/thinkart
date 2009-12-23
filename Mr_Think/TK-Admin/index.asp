@@ -61,7 +61,7 @@
         </tr>
         <tr>
           <td align="right" class="inputTable">LOGO：</td>
-          <td height="30" class="inputTable"><input name="textfield3" type="text" class="setTextInput" id="textfield3" /></td>
+          <td height="30" class="inputTable"><input name="textfield3" type="text" class="setTextInput" id="site_logo" /></td>
         </tr>
         <tr>
           <td align="right" class="inputTable">负责人：</td>

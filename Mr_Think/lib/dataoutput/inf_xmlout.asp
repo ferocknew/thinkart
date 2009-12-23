@@ -8,20 +8,22 @@ act=SafeRequest("act",0)
 
 Select Case act
 Case "edit" '修改 info
-Dim sitename,comnam,leader,siteicp,siteurl
+Dim sitename,comnam,leader,siteicp,siteurl,sitelogo
 sitename=Trim(Request.Form("sitename"))
 comnam=Trim(Request.Form("comnam"))
 leader=Trim(Request.Form("leader"))
 siteicp=Trim(Request.Form("siteicp"))
 siteurl=Trim(Request.Form("siteurl"))
+sitelogo=Trim(Request.Form("sitelogo"))
 
 Set conn_info = Server.CreateObject("ADODB.RecordSet")
-DBField="site_name,com_name,leader,site_icp,site_url"
+DBField="site_name,com_name,leader,site_icp,site_url,logo"
 SQL="SELECT "&DBField&" FROM info where (id=1)"
 conn_info.Open SQL, Conn, 1, 3
 conn_info("site_name")=sitename
 conn_info("com_name")=comnam
 conn_info("leader")=leader
+conn_info("logo")=sitelogo
 conn_info("site_icp")=siteicp
 conn_info("site_url")=siteurl
 conn_info.update
