@@ -1211,6 +1211,59 @@ temprs.close:Set temprs=Nothing
 End Function
 
 '*************************************
+'验证数组是否为空 空则为-1 非空则为0 & >
+'*************************************
+Function ArrayisEmpty(data_temp)
+	Err.clear
+	If IsEmpty(data_temp) Then
+	ArrayisEmpty=-1
+	Else
+	ArrayisEmpty=UBound(data_temp,2)
+	End If
+End Function
+
+'*************************************
+'组织表格json数据
+'*************************************
+Function show_json(show_name,show_json_data)
+Dim json_name,for_num
+json_name=Split(show_name,",")
+Set jsonTemp1=new Aien_Json
+jsonTemp1.JsonType="array"
+
+If UBound(show_json_data)>UBound(json_name) Then
+	for_num=UBound(json_name)
+Else
+	for_num=UBound(show_json_data)
+End If
+
+For j=0 To UBound(show_json_data,2)
+	Set json_temp=new Aien_Json
+	json_temp.JsonType="object"
+	For i=0 To for_num
+		json_temp.addData json_name(i),show_json_data(i,j)
+	Next
+	jsonTemp1.addData j,json_temp
+	Set json_temp=Nothing
+Next
+
+Set show_json=jsonTemp1
+Set jsonTemp1=Nothing
+End Function
+
+'*************************************
+'简单的获取记录数的方法 connname=数据库名，tablename=表名，fieldname=字段名
+'*************************************
+Function table_recordcount(connname,tablename,fieldname)
+Dim conn_temp,table_num
+Set conn_temp = Server.CreateObject("ADODB.RecordSet")
+conn_temp.open("select "&fieldname&" from "&tablename&""),connname,1,1
+table_num=conn_temp.recordcount
+conn_temp.close:Set conn_temp=Nothing
+table_recordcount=table_num
+End Function
+
+'*************************************
 '错误显示
 '*************************************
 Sub ErrCodShow()

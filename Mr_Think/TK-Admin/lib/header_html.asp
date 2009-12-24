@@ -10,6 +10,7 @@
 <script language="javascript" src="../lib/js/jquery.hiAlerts-min.js"></script>
 <script type="text/javascript" src="../lib/js/xheditor/xheditor-zh-cn.js"></script>
 <script type="text/javascript" src="../lib/js/default_lib.js"></script>
+<script type="text/javascript" src="lib/js/lib_admin.js"></script>
 <script type="text/javascript" src="lib/js/default_admin.js"></script>
 <link href="../lib/css/jquery.hiAlerts.css" rel="stylesheet" type="text/css" />
 <link href="files/css/style.css" rel="stylesheet" type="text/css" />
