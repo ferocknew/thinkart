@@ -23,6 +23,9 @@ body{
 	border-bottom:1px solid #cccccc;}
 
 	
+.rightDotted1px{
+	border-right:1px dotted #cccccc;}
+
 .bottomDotted1px{
 	border-bottom:1px dotted #cccccc;}
 	
@@ -55,9 +58,48 @@ body{
 	font-family:"微软雅黑","宋体";
 	text-align:center;}
 	
+.setShortBut{
+	height:24px;
+	width:24px;
+	border:1px solid #666666;
+	background-color:#eeeeee;
+	font-size:12px;
+	font-family:"微软雅黑","宋体";}
+	
+.setShortButRed{
+	height:24px;
+	width:24px;
+	border:1px solid #666666;
+	background-color:#a41615;
+	color:#ffffff;
+	font-size:12px;
+	font-family:"微软雅黑","宋体";}
+	
+.setTextArea{
+	height:150px;
+	width:400px;
+	text-indent:5px;
+	font-family:"微软雅黑","宋体";
+	font-size:12px;
+	border:1px solid #cccccc;
+	line-height:20px;
+	color:#0072cf;
+	background-color:#eeeeee;}	
+	
 .setTextInput{
 	height:20px;
 	width:300px;
+	text-indent:5px;
+	font-family:"微软雅黑","宋体";
+	font-size:12px;
+	border:1px solid #cccccc;
+	line-height:20px;
+	color:#0072cf;
+	background-color:#eeeeee;}
+	
+.setClassInput{
+	height:20px;
+	width:120px;
 	text-indent:5px;
 	font-family:"微软雅黑","宋体";
 	font-size:12px;
@@ -73,8 +115,16 @@ body{
 	background-color:#4b4b4b;
 	color:#ffffff;}
 	
+	
+	
 .tableHead{
 	background-color:#cccccc;
 	font-size:12px;
 	color:#000000;
 	text-align:center;}
+	
+.optList{
+	height:150px;
+	width:180px;
+	border:1px solid #cccccc;
+	color:#0072cf;}
