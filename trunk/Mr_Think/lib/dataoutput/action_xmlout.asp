@@ -1,6 +1,7 @@
 <!--#include file="../const.asp" -->
 <!--#include file="conn_xmlout.asp" -->
 <!--#include file="../header_commad.asp" -->
+<!--#include file="action_lib.asp" -->
 <%
 Dim data_xml,show_code,act,SQL,DBField,data_temp,data_err,data_temp_num
 show_code=SafeRequest("code",0)
@@ -23,44 +24,41 @@ Case "add_admin" '添加管理员
 	conn_info.update
 	conn_info.close:Set conn_info=Nothing
 
-End Select
+Case "add_class1" '添加 class1
+	Dim class_name,order_num,notes,class_title,list_num
+	class_name=CheckStr(Trim(Request.Form("classname")))
+	If class_name="" Then Response.End()
 
-Select Case show_code
-Case "json" 'json 部分
-	DBField="username,password,addtime,order"
-	data_temp=table_readdate(conn,"","admin",DBField,"","")
-
-	'验证是否为空
-	Err.clear
-	If IsEmpty(data_temp) Then
-	data_temp_num=-1
+	list_num=table_recordcount(conn,"class1","id")
+	If list_num=0 Then
+		order_num=0
 	Else
-	data_temp_num=UBound(data_temp,2)
+		order_num=conn.Execute("select max(orderid) from class1")(0)+1
 	End If
 
-	Set json_out=new Aien_Json
-	json_out.JsonType="object"
-	If data_temp_num=-1 Then
-		json_out.addData "err",data_temp 'err数据
-	Else
-		set json=new Aien_Json
-		json.JsonType="array"
-		For i=0 To data_temp_num
-			set json_temp=new Aien_Json
-			json_temp.JsonType="object"
-			json_temp.addData "username",data_temp(0,i)
-			json_temp.addData "password",data_temp(1,i)
-			json_temp.addData "addtime",data_temp(2,i)
-			json_temp.addData "order",data_temp(3,i)
-			json.addData i,json_temp
-			Set json_temp=Nothing
-		Next
-		json_out.addData "admin",json
-	End If
+	Set conn_info = Server.CreateObject("ADODB.RecordSet")
+	DBField="id,class_name,orderid,class_title"
+	SQL="SELECT "&DBField&" FROM class1"
+	conn_info.open(SQL),conn,1,3
+	conn_info.addNew
+	conn_info("class_name")=class_name
+	conn_info("orderid")=order_num
+	conn_info("class_title")=class_name
+	conn_info.update
+	conn_info.close:Set conn_info=Nothing
 
-	Response.Write(json_out.getJson(json_out))
-	Set json_out=Nothing
-	Set json=Nothing
+	Call show_list_json("class1")
+
+Case "del_class1" '删除 class1
+	Dim class_id
+	class_id=CheckStr(Trim(Request.Form("classid")))
+	If class_id="" Then Response.End()
+	conn.execute("delete * from class1 where id in ("&class_id&")")
+	Call show_list_json("class1")
+
+Case "show_class1"
+	Call show_list_json("class1")
+
 End Select
 
 Call CloseDB()
