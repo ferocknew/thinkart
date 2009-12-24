@@ -38,20 +38,28 @@ Case "json" 'json 部分
 	data_temp_num=UBound(data_temp,2)
 	End If
 
-	set json=new Aien_Json
-	json.JsonType="array"
-	For i=0 To data_temp_num
-		set json_temp=new Aien_Json
-		json_temp.JsonType="object"
-		json_temp.addData "admin",data_temp(0,i)
-		json_temp.addData "password",data_temp(1,i)
-		json_temp.addData "addtime",data_temp(2,i)
-		json_temp.addData "order",data_temp(3,i)
-		json.addData i,json_temp
-		Set json_temp=Nothing
-	Next	
-	
-	Response.Write(json.getJson(json))
+	Set json_out=new Aien_Json
+	json_out.JsonType="object"
+	If data_temp_num=-1 Then
+		json_out.addData "err",data_temp 'err数据
+	Else
+		set json=new Aien_Json
+		json.JsonType="array"
+		For i=0 To data_temp_num
+			set json_temp=new Aien_Json
+			json_temp.JsonType="object"
+			json_temp.addData "username",data_temp(0,i)
+			json_temp.addData "password",data_temp(1,i)
+			json_temp.addData "addtime",data_temp(2,i)
+			json_temp.addData "order",data_temp(3,i)
+			json.addData i,json_temp
+			Set json_temp=Nothing
+		Next
+		json_out.addData "admin",json
+	End If
+
+	Response.Write(json_out.getJson(json_out))
+	Set json_out=Nothing
 	Set json=Nothing
 End Select
 
