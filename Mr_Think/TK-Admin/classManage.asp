@@ -1,59 +1,8 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Mr.Thinker - Website Manager</title>
-<link href="files/css/style.css" rel="stylesheet" type="text/css" />
-</head>
-
-<body> 
-<table width="100%" border="0" cellspacing="0" cellpadding="0">
-  <tr>
-    <td width="200" align="center" class="rightBorder1px" id="navBar"><img src="files/images/logo.png" width="125" height="19" /></td>
-    <td height="43" id="navBar"><table width="600" border="0" cellspacing="0" cellpadding="0">
-      <tr>
-        <td width="120" height="43" align="center" class="rightBorder1px">用户管理</td>
-        <td width="120" align="center" class="rightBorder1px">内容管理</td>
-        <td width="120" align="center" class="rightBorder1px">产品管理</td>
-        <td width="120" align="center" class="rightBorder1px">系统设置</td>
-        </tr>
-    </table></td>
-  </tr>
-</table>
-<table width="100%" border="0" cellspacing="0" cellpadding="0">
-  <tr>
-    <td height="25" id="manvBar_sub">&nbsp;</td>
-  </tr>
-</table>
-<br />
-<table width="98%" border="0" align="center" cellpadding="0" cellspacing="0">
-  <tr>
-    <td width="220" valign="top" class="opArea"><table width="100%" border="0" cellspacing="0" cellpadding="0">
-      <tr>
-        <td height="50" class="helpTitle bottomDotted1px">分类管理</td>
-      </tr>
-      <tr>
-        <td class="helpContent bottomDotted1px">对网站注册用户进行统一管理，包括，增加，删除，修改和锁定用户的信息及账户</td>
-      </tr>
-      <tr>
-        <td height="30" align="center" class="bottomDotted1px">操作说明</td>
-      </tr>
-      <tr>
-        <td height="30" class=" helpContent bottomDotted1px">1.点击右侧，出现用户列表！</td>
-      </tr>
-    </table></td>
-    <td width="20" class="rightBorder1px">&nbsp;</td>
-    <td width="20">&nbsp;</td>
-    <td height="30" valign="top"><br />
-      <table width="100%" border="0" cellspacing="0" cellpadding="0">
-        <tr>
-          <td height="25" class="bottomBorder1px"><table width="120" border="0" cellspacing="0" cellpadding="0">
-            <tr>
-              <td width="120" height="35" class="tabCard">+ 分类管理</td>
-              </tr>
-          </table></td>
-        </tr>
-      </table>
+<!--#include file="../lib/const.asp" -->
+<!--#include file="conn_admin.asp" -->
+<!--#include file="../lib/header_commad.asp" -->
+<!--#include file="lib/header_html.asp" -->
+<!--#include file="lib/top_admin.asp" -->
       <br />
       <table width="100%" border="0" cellspacing="0" cellpadding="0">
         <tr>
@@ -113,4 +62,4 @@
   </tr>
 </table>
 </body>
-</html>
+<!--#include file="../lib/foot.asp" -->
