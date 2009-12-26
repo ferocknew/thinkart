@@ -290,7 +290,9 @@ String.prototype.LTrim = function(){
 String.prototype.RTrim = function(){
     return this.replace(/(s*$)/g, "");
 }
-//jquery select 操作方法
+/*
+*jquery select 操作方法
+*/
 ;(function($) {
 jQuery.fn.SelectSize = function()
 {
@@ -432,5 +434,8 @@ jQuery.fn.removeSelected = function()
 //清除select中的所有项
 jQuery.fn.clearAll = function()
 {
-    jQuery(this).get(0).options.length = 0;
+	for(var i in $(this).get())
+		{
+		$(this).get(i).options.length=0;
+		}
 }})(jQuery);

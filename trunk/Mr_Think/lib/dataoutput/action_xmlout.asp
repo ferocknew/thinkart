@@ -47,18 +47,28 @@ Case "add_class1" '添加 class1
 	conn_info.update
 	conn_info.close:Set conn_info=Nothing
 
-	Call show_list_json("class1")
+	Call show_list_json("class1",0)
 
 Case "del_class1" '删除 class1
 	Dim class_id
 	class_id=CheckStr(Trim(Request.Form("classid")))
 	If class_id="" Then Response.End()
 	conn.execute("delete * from class1 where id in ("&class_id&")")
-	Call show_list_json("class1")
+	Call show_list_json("class1",0)
 
-Case "show_class1"
-	Call show_list_json("class1")
-
+Case "show_class" '显示class
+	Dim upclassid
+	class_name=SafeRequest("classname",0)
+	upclassid=SafeRequest("upclassid",0)
+	If class_name="class1" Or Not IsNumeric(upclassid) Then upclassid=0
+	Select Case class_name
+	Case "class1"
+		Call show_list_json("class1",upclassid)
+	Case "class2"
+		Call show_list_json("class2",upclassid)
+	Case "class3"
+		Call show_list_json("class3",upclassid)
+	End Select
 End Select
 
 Call CloseDB()

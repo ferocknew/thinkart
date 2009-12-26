@@ -3,18 +3,22 @@
  */
 //显示class列表
 function show_class_list(com_words){
-	var do_words=com_words.do_words;
-	var class_type = com_words.class_type;
-	var type_=com_words.type_;
-	var get_info_url=com_words.url;
-	var get_json=com_words.json;
-
+    var do_words = com_words.cat;
+    var classname = com_words.classname;
+    var class_type = com_words.class_type;
+    var type_ = com_words.type_;
+    var get_info_url = com_words.url;
+    var get_json = com_words.json;
+	var upclassid=com_words.upclassid;
+    
     function ezshow(class_type, class_json){
         class_type.clearAll();
-        $(class_json).each(function(i){
-            class_type.addOption(class_json[i].classname, class_json[i].id)
-        })
-        class_type.setSelectedIndex(0);
+        if (class_json != null) {
+            $(class_json).each(function(i){
+                class_type.addOption(class_json[i].classname, class_json[i].id);
+            })
+			class_type.data("upclassid",upclassid);
+        }
     };
     if (type_ == 1) {
         ezshow(class_type, get_json);
@@ -22,7 +26,9 @@ function show_class_list(com_words){
     else {
         $.getJSON(get_info_url, {
             "code": "json",
-            "act": do_words
+            "act": do_words,
+            "classname": classname,
+			"upclassid":upclassid
         }, function(json){
             var class_json = json.class_list;
             ezshow(class_type, class_json);

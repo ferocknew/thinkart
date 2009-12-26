@@ -29,29 +29,45 @@ $(function(){
                 e.stopPropagation();
             });
             break;
-        //分类设置
+            
+        /*
+         * 分类设置部分
+         */
         case "classManage.asp":
             var get_info_url = "../lib/dataoutput/action_xmlout.asp";
-            $("select").clearAll();
+            $(".optList").clearAll();
             show_class_list({
                 url: get_info_url,
                 class_type: $("#class1"),
-                do_words: "show_class1",
+                cat: "show_class",
+                classname: $("#class1").attr("id"),
+                upclassid: 0,
                 type_: 2
+            });
+            $(".optList").each(function(){
+                $(this).bind("click", function(e){
+                    $("#" + $(this).attr("id") + "_name").text($(this).getSelectedText());
+                    show_class_list({
+                        url: get_info_url,
+                        class_type: $("#"+$(this).attr("next_class")+""),
+                        cat: "show_class",
+                        classname: $(this).attr("next_class"),
+                        upclassid: $(this).getSelectedValue(),
+                        type_: 2
+                    });
+                });
             });
             //绑定事件
             $("#add_class1").bind("click", function(){
-                add_class($(this).attr("id"), $("#add_class1_input"), "show_class1", $("#class1"))
-            });
-            $("#class1").bind("click", function(e){
-                $("#class1_name").text($(this).getSelectedText())
+                var classname = "class1";
+                add_class($(this).attr("id"), $("#add_" + classname + "_input"), "show_class", $("#" + classname + ""), classname)
             });
             $("#del_class1").bind("click", function(){
-                del_class("del_class1", $("#class1").getSelectedValue());
+                var classname = $("#class1");
+                del_class("del_class1", classname.getSelectedValue(), classname);
             })
-            
             //删除class
-            function del_class(class_type, class_id){
+            function del_class(class_type, class_id, classname){
                 var post_data = {
                     "classid": class_id
                 };
@@ -63,7 +79,7 @@ $(function(){
                     success: function(json){
                         show_class_list({
                             url: get_info_url,
-                            class_type: $("#class1"),
+                            class_type: classname,
                             json: json.class_list,
                             type_: 1
                         });
@@ -71,9 +87,9 @@ $(function(){
                 });
             }
             //添加class
-            function add_class(class_type, classname, success_do, show_select){
+            function add_class(class_type, input_classname, success_do, show_select, classname){
                 var post_data = {
-                    "classname": classname.val()
+                    "classname": input_classname.val()
                 };
                 $.ajax({
                     type: "POST",
@@ -83,11 +99,11 @@ $(function(){
                     success: function(json){
                         show_class_list({
                             url: get_info_url,
-                            class_type: $("#class1"),
+                            class_type: $("#" + classname + ""),
                             json: json.class_list,
                             type_: 1
                         });
-                        $("#class1").setSelectedIndex($("#class1").SelectSize() - 1);
+                        $("#" + classname + "").setSelectedIndex($("#" + classname + "").SelectSize() - 1);
                     }
                 });
             };
