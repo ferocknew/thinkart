@@ -42,7 +42,7 @@
                 <td align="center">三级：[ 当前未选择 ]</td>
               </tr>
               <tr>
-                <td align="center" cl><select name="class1" size="1" multiple="multiple" class="optList" id="class1">
+                <td align="center" cl><select name="class1" size="1" multiple="multiple" class="optList" id="class1" next_class="class2">
                     <option>1</option>
                     <option>2</option>
                     <option>3</option>
@@ -53,7 +53,7 @@
                     <option>8</option>
                     <option>9</option>
                   </select></td>
-                <td align="center"><select name="select2" size="1" multiple="multiple" class="optList" id="select2">
+                <td align="center"><select name="class2" size="1" multiple="multiple" class="optList" id="class2" next_class="class3">
                     <option>1</option>
                     <option>2</option>
                     <option>3</option>
@@ -64,7 +64,7 @@
                     <option>8</option>
                     <option>9</option>
                   </select></td>
-                <td align="center"><select name="select3" size="1" multiple="multiple" class="optList" id="select3">
+                <td align="center"><select name="class3" size="1" multiple="multiple" class="optList" id="class3" next_class="">
                     <option>1</option>
                     <option>2</option>
                     <option>3</option>
