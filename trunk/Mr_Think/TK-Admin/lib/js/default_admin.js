@@ -34,6 +34,7 @@ $(function(){
          * 分类设置部分
          */
         case "classManage.asp":
+            //当前页面体验修改
             var get_info_url = "../lib/dataoutput/action_xmlout.asp";
             $(".optList").clearAll();
             show_class_list({
@@ -47,9 +48,11 @@ $(function(){
             $(".optList").each(function(){
                 $(this).bind("click", function(e){
                     $("#" + $(this).attr("id") + "_name").text($(this).getSelectedText());
+                    $(this).data("class_id", $(this).getSelectedValue());
+					if ($(this).attr("next_class")==""){$(this).attr("next_class","class4")}
                     show_class_list({
                         url: get_info_url,
-                        class_type: $("#"+$(this).attr("next_class")+""),
+                        class_type: $("#" + $(this).attr("next_class") + ""),
                         cat: "show_class",
                         classname: $(this).attr("next_class"),
                         upclassid: $(this).getSelectedValue(),
@@ -60,16 +63,58 @@ $(function(){
             //绑定事件
             $("#add_class1").bind("click", function(){
                 var classname = "class1";
-                add_class($(this).attr("id"), $("#add_" + classname + "_input"), "show_class", $("#" + classname + ""), classname)
+                add_class({
+                    class_type: "add_class",
+                    input_classname: $("#add_" + classname + "_input"),
+                    success_do: "show_class",
+                    show_select: $("#" + classname + ""),
+                    classname: classname,
+                    upclassid: 0
+                });
+            });
+            $("#add_class2").bind("click", function(e){
+                var classname = "class2";
+                add_class({
+                    class_type: "add_class",
+                    input_classname: $("#add_" + classname + "_input"),
+                    success_do: "show_class",
+                    show_select: $("#" + classname + ""),
+                    classname: classname,
+                    upclassid: $("#class1").data("class_id")
+                });
+            });
+            $("#add_class3").bind("click", function(e){
+                var classname = "class3";
+                add_class({
+                    class_type: "add_class",
+                    input_classname: $("#add_" + classname + "_input"),
+                    success_do: "show_class",
+                    show_select: $("#" + classname + ""),
+                    classname: classname,
+                    upclassid: $("#class2").data("class_id")
+                });
             });
             $("#del_class1").bind("click", function(){
-                var classname = $("#class1");
-                del_class("del_class1", classname.getSelectedValue(), classname);
+                var classname = "class1";
+				var upclassid=0;
+                del_class("del_class", $("#" + classname + "").getSelectedValue(), $("#" + classname + ""), classname,upclassid);
+            })
+            $("#del_class2").bind("click", function(){
+                var classname = "class2";
+				var upclassid=$("#class1").data("class_id");
+                del_class("del_class", $("#" + classname + "").getSelectedValue(), $("#" + classname + ""), classname,upclassid);
+            })
+            $("#del_class3").bind("click", function(){
+                var classname = "class3";
+				var upclassid=$("#class2").data("class_id");
+                del_class("del_class", $("#" + classname + "").getSelectedValue(), $("#" + classname + ""), classname,upclassid);
             })
             //删除class
-            function del_class(class_type, class_id, classname){
+            function del_class(class_type, class_id, classname, class_tab,upclassid){
                 var post_data = {
-                    "classid": class_id
+                    "class": class_tab,
+                    "classid": class_id,
+					"upclassid":upclassid
                 };
                 $.ajax({
                     type: "POST",
@@ -83,13 +128,31 @@ $(function(){
                             json: json.class_list,
                             type_: 1
                         });
+						if(json.err!==""){alert(json.err)};
                     }
                 });
             }
             //添加class
-            function add_class(class_type, input_classname, success_do, show_select, classname){
+            function add_class(cmd_words){
+                var class_type = cmd_words.class_type;
+                var input_classname = cmd_words.input_classname;
+                var success_do = cmd_words.success_do;
+                var show_select = cmd_words.show_select;
+                var classname = cmd_words.classname;
+                var upclassid = cmd_words.upclassid;
+                
+                if (upclassid == null) {
+                    alert("请选择上层分类。");
+                    return false;
+                };
+                if (input_classname.val() == "") {
+                    alert("请填写名称。");
+                    return false;
+                };
                 var post_data = {
-                    "classname": input_classname.val()
+                    "class": classname,
+                    "classname": input_classname.val(),
+                    "upclassid": upclassid
                 };
                 $.ajax({
                     type: "POST",

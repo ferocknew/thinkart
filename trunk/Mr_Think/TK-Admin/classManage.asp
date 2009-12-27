@@ -80,12 +80,12 @@
                 <td height="50" align="center"><input name="add_class1_input" type="text" class="setClassInput" id="add_class1_input" value="" />
                   <input name="add_class1" type="submit" class="setShortBut" id="add_class1" value="添" />
                   <input name="del_class1" type="submit" class="setShortButRed" id="del_class1" value="删" /></td>
-                <td align="center"><input name="textfield2" type="text" class="setClassInput" id="textfield2" value="" />
-                  <input name="change_info3" type="submit" class="setShortBut" id="change_info4" value="添" />
-                  <input name="change_info5" type="submit" class="setShortButRed" id="change_info" value="删" /></td>
-                <td align="center"><input name="textfield3" type="text" class="setClassInput" id="textfield3" value="" />
-                  <input name="change_info4" type="submit" class="setShortBut" id="change_info6" value="添" />
-                  <input name="change_info6" type="submit" class="setShortButRed" id="change_info5" value="删" /></td>
+                <td align="center"><input name="add_class2_input" type="text" class="setClassInput" id="add_class2_input" value="" />
+                  <input name="add_class2" type="submit" class="setShortBut" id="add_class2" value="添" />
+                  <input name="del_class2" type="submit" class="setShortButRed" id="del_class2" value="删" /></td>
+                <td align="center"><input name="add_class3_input" type="text" class="setClassInput" id="add_class3_input" value="" />
+                  <input name="add_class3" type="submit" class="setShortBut" id="add_class3" value="添" />
+                  <input name="del_class3" type="submit" class="setShortButRed" id="del_class3" value="删" /></td>
               </tr>
             </table></td>
         </tr>
