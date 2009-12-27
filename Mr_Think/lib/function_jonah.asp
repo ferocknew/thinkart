@@ -1250,7 +1250,17 @@ Next
 Set show_json=jsonTemp1
 Set jsonTemp1=Nothing
 End Function
-
+'*************************************
+'组织表格json数据
+'*************************************
+Sub show_err_json(err_words)
+	Set json=new Aien_Json
+	json.JsonType="object"
+	json.addData "err",err_words 'err数据
+	Call jsonheadResponse()
+	Response.Write(json.getJson(json))
+	Set json=Nothing
+End Sub
 '*************************************
 '简单的获取记录数的方法 connname=数据库名，tablename=表名，fieldname=字段名
 '*************************************

@@ -10,29 +10,37 @@ function show_class_list(com_words){
     var get_info_url = com_words.url;
     var get_json = com_words.json;
 	var upclassid=com_words.upclassid;
-    
-    function ezshow(class_type, class_json){
+    function ezshow(class_type, class_json){		
         class_type.clearAll();
         if (class_json != null) {
             $(class_json).each(function(i){
                 class_type.addOption(class_json[i].classname, class_json[i].id);
             })
-			class_type.data("upclassid",upclassid);
+			$(class_type).data("upclassid",upclassid);
+			class_type.setSelectedIndex(class_type.SelectSize()-1);
         }
     };
     if (type_ == 1) {
         ezshow(class_type, get_json);
     }
     else {
-        $.getJSON(get_info_url, {
-            "code": "json",
-            "act": do_words,
-            "classname": classname,
-			"upclassid":upclassid
-        }, function(json){
-            var class_json = json.class_list;
-            ezshow(class_type, class_json);
-        });
+		if (classname !== "class4") {
+			$.getJSON(get_info_url, {
+				"code": "json",
+				"act": do_words,
+				"classname": classname,
+				"upclassid": upclassid
+			}, function(json){
+				if (json.err == "Empty") {
+					$("#"+classname+"").clearAll();
+					if(classname=="class2"){$("#class3").clearAll();}
+				}
+				else {
+					var class_json = json.class_list;
+					ezshow(class_type, class_json);
+				}
+			});
+		}
     }
 };
 /*
