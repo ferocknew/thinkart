@@ -6,22 +6,10 @@
 <br />
 <table width="98%" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr>
-    <td width="220" valign="top" class="opArea"><table width="100%" border="0" cellspacing="0" cellpadding="0">
-      <tr>
-        <td height="50" class="helpTitle bottomDotted1px">内容添加</td>
-      </tr>
-      <tr>
-        <td class="helpContent bottomDotted1px">对网站注册用户进行统一管理，包括，增加，删除，修改和锁定用户的信息及账户</td>
-      </tr>
-      <tr>
-        <td height="30" align="center" class="bottomDotted1px">操作说明</td>
-      </tr>
-      <tr>
-        <td height="30" class=" helpContent bottomDotted1px">1.点击右侧，出现用户列表！</td>
-      </tr>
-    </table></td>
     <td width="20" class="rightBorder1px">&nbsp;</td>
-    <td width="150" align="center" class="rightDotted1px">层级结构树</td>
+    <td width="250" align="center" class="rightDotted1px">
+    
+    </td>
     <td width="20">&nbsp;</td>
     <td height="30" valign="top"><br />
       <table width="100%" border="0" cellspacing="0" cellpadding="0">
