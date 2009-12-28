@@ -4,12 +4,29 @@
 <!--#include file="lib/header_html.asp" -->
 <!--#include file="lib/top_admin.asp" -->
 <br />
+<script language="javascript">
+$(function(){
+		   $(".rightDotted1px div").bind("click",function(){
+				$(this).css("background-color","#666666");
+				$(this).css("color","#ffffff")
+				});
+		   })
+</script>
 <table width="98%" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr>
     <td width="20" class="rightBorder1px">&nbsp;</td>
-    <td width="250" align="center" class="rightDotted1px">
-    
-    </td>
+    <td width="250" align="right" valign="top" class="rightDotted1px">
+    <div class="treeLv1">第一层菜单</div>
+    <div class="treeLv2">第二层菜单</div>
+    <div class="treeLv2">第二层菜单</div>
+    <div class="treeLv2">第二层菜单</div>
+    <div class="treeLv2">第二层菜单</div>
+    <div class="treeLv1">第一层菜单</div>
+    <div class="treeLv2">第二层菜单</div>
+    <div class="treeLv3">第三层菜单</div>
+    <div class="treeLv3">第三层菜单</div>
+    <div class="treeLv3">第三层菜单</div>
+    <div class="treeLv3">第三层菜单</div></td>
     <td width="20">&nbsp;</td>
     <td height="30" valign="top"><br />
       <table width="100%" border="0" cellspacing="0" cellpadding="0">
