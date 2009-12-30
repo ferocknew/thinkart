@@ -90,6 +90,7 @@ function show_classmenu(left_menu_div){
             var show_menu = $("<div class=\"treeLv1\" classid=\"" + json.class_list[i].id + "\" upclassid='0'>" + json.class_list[i].classname + "</div>")
             left_menu_div.append(show_menu);
         });
+		bind_menu();
         load_class2();
     });
     function load_class2(){
@@ -101,6 +102,7 @@ function show_classmenu(left_menu_div){
             for (var i = json.class_list.length - 1; i >= 0; i--) {
                 $(".treeLv1[classid='" + json.class_list[i].upclassid + "']").after("<div class=\"treeLv2\" upclassid=\"" + json.class_list[i].upclassid + "\" classid=\"" + json.class_list[i].id + "\">" + json.class_list[i].classname + "</div>");
             }
+			bind_menu();
 			load_class3();
         })
     }
