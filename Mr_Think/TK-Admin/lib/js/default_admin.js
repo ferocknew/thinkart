@@ -178,6 +178,9 @@ $(function(){
                 $(".setClassInput").val("");
             };
             break;
+        /*
+         * 新闻添加
+         */
         case "addContent.asp":
             show_classmenu($(".rightDotted1px_div"));
             show_edit($("#pj_memo2"));
@@ -214,6 +217,8 @@ $(function(){
                                 if (json.err == "") {
                                     alert(json.msg);
                                     $("input[type='text']").val("");
+                                    var now_data = new Date();
+                                    $("#pj_start").val(now_data.toLocaleString()).attr("disabled", "disabled");
                                     return false;
                                 }
                                 else {
@@ -226,9 +231,32 @@ $(function(){
                 };
                             });
             break;
+        /*
+         * 新闻呈现
+         */
+        case "news.asp":
+            var get_url = "../lib/dataoutput/show_list.asp"
+			var news_tab = $(".news_contect").clone();
+			$(".news_contect").empty();
+            $.getJSON(get_url, {
+                act: "news_list",
+                do_type: "all"
+            }, function(json){
+                var news_=json.news_list;
+				$(news_).each(function(i){
+					var news_tab_copy=news_tab.clone();
+					news_tab_copy.filter(".news_contect").removeClass();
+					news_tab_copy.find("td:eq(0)").html(this.title);
+					news_tab_copy.find("td:eq(1)").html(this.class1id);
+					news_tab_copy.find("td:eq(2)").html(this.class2id);
+					news_tab_copy.find("td:eq(3)").html(this.class3id);
+					news_tab_copy.find("td:eq(4)").html(new Date(this.edittime).format("yyyy年MM月dd日 hh:mm"));
+					$(".news_contect").after(news_tab_copy);
+				})
+            });            
+            break;
         default:
     }
-    
     /*
      *调整页面体验
      */

@@ -12,8 +12,8 @@ Sub show_list_json(list_name,upclassid,err_words) 'class显示json数据
 		Call show_class_list_insub("class3",upclassid,err_words)
 
 	End Select
-End Sub '显示json数据 【子过程】
-Sub show_class_list_insub(classTabName,upclassid,err_words)
+End Sub
+Sub show_class_list_insub(classTabName,upclassid,err_words) '显示json数据 【子过程】
 	Dim show_json_arrayName
 	DBField="id,class_name,orderid,class_title,upclassid"
 	show_json_arrayName="id,classname,orderid,classtitle,upclassid"
@@ -38,7 +38,7 @@ Sub show_class_list_insub(classTabName,upclassid,err_words)
 	Set json=Nothing
 End Sub
 
-Sub add_class(class_tab)
+Sub add_class(class_tab) '添加class的过程
 	Select Case class_tab
 	Case "class1"
 		list_num=table_recordcount(conn,"class1","id")
