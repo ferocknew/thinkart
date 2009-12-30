@@ -4,18 +4,11 @@
 <!--#include file="lib/header_html.asp" -->
 <!--#include file="lib/top_admin.asp" -->
 <br />
-<script language="javascript">
-$(function(){
-		   $(".rightDotted1px div").bind("click",function(){
-				$(this).css("background-color","#666666");
-				$(this).css("color","#ffffff")
-				});
-		   })
-</script>
 <table width="98%" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr>
-    <td width="20" class="rightBorder1px">&nbsp;</td>
+  <td width="10" align="right" valign="top" class="rightDotted1px"></td>
     <td width="250" align="right" valign="top" class="rightDotted1px">
+    <div class="rightDotted1px_div">
     <div class="treeLv1">第一层菜单</div>
     <div class="treeLv2">第二层菜单</div>
     <div class="treeLv2">第二层菜单</div>
@@ -26,7 +19,7 @@ $(function(){
     <div class="treeLv3">第三层菜单</div>
     <div class="treeLv3">第三层菜单</div>
     <div class="treeLv3">第三层菜单</div>
-    <div class="treeLv3">第三层菜单</div></td>
+    <div class="treeLv3">第三层菜单</div></div></td>
     <td width="20">&nbsp;</td>
     <td height="30" valign="top"><br />
       <table width="100%" border="0" cellspacing="0" cellpadding="0">
@@ -42,7 +35,7 @@ $(function(){
       <table width="100%" border="0" cellspacing="0" cellpadding="0">
         <tr>
           <td align="right" class="inputTable">所属分类：</td>
-          <td height="30" class="inputTable">当前未选择</td>
+          <td height="30" class="inputTable" id="from_class">当前未选择</td>
         </tr>
         <tr>
           <td align="right" class="inputTable">内容标题：</td>
@@ -58,7 +51,7 @@ $(function(){
         </tr>
         <tr>
           <td width="100" align="right" valign="top" class="inputTable">正文：</td>
-          <td height="30" class="inputTable"><input name="pj_memo2" type="text" class="setTextArea" id="pj_memo2" /></td>
+          <td height="30" class="inputTable"><textarea name="pj_memo2" id="pj_memo2" rows="15" cols="65"></textarea></td>
         </tr>
         <tr>
           <td align="right" valign="top" class="inputTable">搜索标签：</td>

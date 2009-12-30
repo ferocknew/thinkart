@@ -29,7 +29,6 @@ $(function(){
                 e.stopPropagation();
             });
             break;
-            
         /*
          * 分类设置部分
          */
@@ -49,7 +48,9 @@ $(function(){
                 $(this).bind("click", function(e){
                     $("#" + $(this).attr("id") + "_name").text($(this).getSelectedText());
                     $(this).data("class_id", $(this).getSelectedValue());
-					if ($(this).attr("next_class")==""){$(this).attr("next_class","class4")}
+                    if ($(this).attr("next_class") == "") {
+                        $(this).attr("next_class", "class4")
+                    }
                     show_class_list({
                         url: get_info_url,
                         class_type: $("#" + $(this).attr("next_class") + ""),
@@ -96,25 +97,25 @@ $(function(){
             });
             $("#del_class1").bind("click", function(){
                 var classname = "class1";
-				var upclassid=0;
-                del_class("del_class", $("#" + classname + "").getSelectedValue(), $("#" + classname + ""), classname,upclassid);
+                var upclassid = 0;
+                del_class("del_class", $("#" + classname + "").getSelectedValue(), $("#" + classname + ""), classname, upclassid);
             })
             $("#del_class2").bind("click", function(){
                 var classname = "class2";
-				var upclassid=$("#class1").data("class_id");
-                del_class("del_class", $("#" + classname + "").getSelectedValue(), $("#" + classname + ""), classname,upclassid);
+                var upclassid = $("#class1").data("class_id");
+                del_class("del_class", $("#" + classname + "").getSelectedValue(), $("#" + classname + ""), classname, upclassid);
             })
             $("#del_class3").bind("click", function(){
                 var classname = "class3";
-				var upclassid=$("#class2").data("class_id");
-                del_class("del_class", $("#" + classname + "").getSelectedValue(), $("#" + classname + ""), classname,upclassid);
+                var upclassid = $("#class2").data("class_id");
+                del_class("del_class", $("#" + classname + "").getSelectedValue(), $("#" + classname + ""), classname, upclassid);
             })
             //删除class
-            function del_class(class_type, class_id, classname, class_tab,upclassid){
+            function del_class(class_type, class_id, classname, class_tab, upclassid){
                 var post_data = {
                     "class": class_tab,
                     "classid": class_id,
-					"upclassid":upclassid
+                    "upclassid": upclassid
                 };
                 $.ajax({
                     type: "POST",
@@ -128,8 +129,13 @@ $(function(){
                             json: json.class_list,
                             type_: 1
                         });
-						if(json.err!==""){alert(json.err)};
-                    }
+                        if (json.err == -1) {
+                            return false
+                        };
+                        if (json.err !== "") {
+                            alert(json.err)
+                        };
+                                            }
                 });
             }
             //添加class
@@ -169,7 +175,56 @@ $(function(){
                         $("#" + classname + "").setSelectedIndex($("#" + classname + "").SelectSize() - 1);
                     }
                 });
+                $(".setClassInput").val("");
             };
+            break;
+        case "addContent.asp":
+            show_classmenu($(".rightDotted1px_div"));
+            show_edit($("#pj_memo2"));
+            $("#reset_pj").click(function(){
+                $("input[type='text']").val("");
+            });
+            var now_data = new Date();
+            $("#pj_start").val(now_data.toLocaleString()).attr("disabled", "disabled");
+            $("#create_pj").click(function(){
+                var class_data = $("#from_class").data("class_val");
+                if (class_data == undefined) {
+                    alert("请选择分类");
+                }
+                else {
+                    if ($("#pj_start2").val().trim() == "") {
+                        alert("请填写标题！")
+                    }
+                    else {
+                        var post_data = {
+                            title: $("#pj_start2").val(),
+                            classid: class_data.classid,
+                            classtype: class_data.class_type,
+                            upclassid: class_data.upclassid,
+                            Content: $("#pj_memo2").val(),
+                            abstract: $("#pj_end").val(),
+                            tag: $("#pj_end2").val()
+                        };
+                        $.ajax({
+                            type: "POST",
+                            url: "../lib/dataoutput/save_data.asp?act=add_news",
+                            dataType: "json",
+                            data: post_data,
+                            success: function(json){
+                                if (json.err == "") {
+                                    alert(json.msg);
+                                    $("input[type='text']").val("");
+                                    return false;
+                                }
+                                else {
+                                    alert(json.err);
+                                    return false;
+                                };
+                                                            }
+                        });
+                    }
+                };
+                            });
             break;
         default:
     }
