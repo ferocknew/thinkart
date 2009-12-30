@@ -18,6 +18,8 @@ Case "add_news"
 	Content=Request.Form("Content")
 	abstract=CheckStr(Trim(Request.Form("abstract")))
 
+	If title="" Then Response.End()
+
 	Select Case classtype
 	Case "treeLv1"
 		classtype_name="class1"
