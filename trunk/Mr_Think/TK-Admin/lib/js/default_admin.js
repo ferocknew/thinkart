@@ -195,7 +195,7 @@ $(function(){
                     alert("请选择分类");
                 }
                 else {
-                    if ($("#pj_start2").val().trim() == "") {
+                    if ($.trim($("#pj_start2").val()) == "") {
                         alert("请填写标题！")
                     }
                     else {
