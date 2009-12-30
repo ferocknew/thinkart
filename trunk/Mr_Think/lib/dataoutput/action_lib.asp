@@ -23,7 +23,7 @@ Sub show_class_list_insub(classTabName,upclassid,err_words)
 	Set json=new Aien_Json
 	json.JsonType="object"
 	If data_temp_num=-1 Then
-		json.addData "err",data_temp 'err数据
+		json.addData "err",data_temp_num 'err数据
 	Else
 		If IsEmpty(err_words) Then
 		json.addData "class_list",show_json(show_json_arrayName,data_temp)

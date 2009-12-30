@@ -60,7 +60,7 @@
         </tr>
         <tr>
           <td align="right" class="inputTable">公司简介：</td>
-          <td height="30" class="inputTable"><textarea name="com_intro" id="com_intro" rows="15" cols="85"></textarea></td>
+          <td height="30" class="inputTable"><textarea name="com_intro" id="com_intro" rows="15" cols="65"></textarea></td>
         </tr>
       </table>
       <table width="100%" border="0" cellspacing="0" cellpadding="0">

@@ -67,6 +67,38 @@ Case "show_class" '显示class
 	Case "class3"
 		Call show_list_json("class3",upclassid,"")
 	End Select
+
+Case "show_class_all" '显示所有 clas 数据
+	class_name=SafeRequest("classname",0)
+	DBField="id,class_name,orderid,class_title,upclassid"
+	show_json_arrayName="id,classname,orderid,classtitle,upclassid"
+	Select Case class_name
+	Case "class1"
+	data_temp=table_readdate(conn,"","class1",DBField,"","")
+	Case "class2"
+	data_temp=table_readdate(conn,"","class2",DBField,"","")
+	Case "class3"
+	data_temp=table_readdate(conn,"","class3",DBField,"","")
+	End Select
+	data_temp_num=ArrayisEmpty(data_temp)
+
+	Set json=new Aien_Json
+	json.JsonType="object"
+	If data_temp_num=-1 Then
+		json.addData "err",data_temp_num 'err数据
+	Else
+		If IsEmpty(err_words) Then
+		json.addData "class_list",show_json(show_json_arrayName,data_temp)
+		Else
+		json.addData "err",err_words
+		json.addData "class_list",show_json(show_json_arrayName,data_temp)
+		End If
+	End If
+
+	Call jsonheadResponse()
+	Response.Write(json.getJson(json))
+	Set json=Nothing
+
 End Select
 
 Call CloseDB()

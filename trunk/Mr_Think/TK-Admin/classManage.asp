@@ -38,8 +38,8 @@
           <td height="50" class="bottomBorder1px"><table width="95%" border="0" align="center" cellpadding="0" cellspacing="0">
               <tr>
                 <td height="30" align="center" cl>一级：[ <span id="class1_name">当前未选择</span> ]</td>
-                <td align="center">二级：[ 当前未选择 ]</td>
-                <td align="center">三级：[ 当前未选择 ]</td>
+                <td align="center">二级：[ <span id="class2_name">当前未选择</span> ]</td>
+                <td align="center">三级：[ <span id="class3_name">当前未选择</span> ]</td>
               </tr>
               <tr>
                 <td align="center" cl><select name="class1" size="1" multiple="multiple" class="optList" id="class1" next_class="class2">
