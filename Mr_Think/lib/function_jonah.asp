@@ -1264,10 +1264,14 @@ End Sub
 '*************************************
 '简单的获取记录数的方法 connname=数据库名，tablename=表名，fieldname=字段名
 '*************************************
-Function table_recordcount(connname,tablename,fieldname)
+Function table_recordcount(connname,tablename,fieldname,tiaojian)
 Dim conn_temp,table_num
 Set conn_temp = Server.CreateObject("ADODB.RecordSet")
+If tiaojian="" Then
 conn_temp.open("select "&fieldname&" from "&tablename&""),connname,1,1
+Else
+conn_temp.open("select "&fieldname&" from "&tablename&" where "&tiaojian&""),connname,1,1
+End If
 table_num=conn_temp.recordcount
 conn_temp.close:Set conn_temp=Nothing
 table_recordcount=table_num

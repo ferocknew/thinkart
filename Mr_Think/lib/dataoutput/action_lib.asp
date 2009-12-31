@@ -41,7 +41,7 @@ End Sub
 Sub add_class(class_tab) '添加class的过程
 	Select Case class_tab
 	Case "class1"
-		list_num=table_recordcount(conn,"class1","id")
+		list_num=table_recordcount(conn,"class1","id","")
 		If list_num=0 Then
 			order_num=0
 		Else
@@ -61,7 +61,7 @@ Sub add_class(class_tab) '添加class的过程
 
 		Call show_list_json("class1",0,"")
 	Case "class2"
-		list_num=table_recordcount(conn,"class2","id")
+		list_num=table_recordcount(conn,"class2","id","")
 		If list_num=0 Then
 			order_num=0
 		Else
@@ -82,7 +82,7 @@ Sub add_class(class_tab) '添加class的过程
 
 		Call show_list_json("class2",upclassid,"")
 	Case "class3"
-		list_num=table_recordcount(conn,"class3","id")
+		list_num=table_recordcount(conn,"class3","id","")
 		If list_num=0 Then
 			order_num=0
 		Else

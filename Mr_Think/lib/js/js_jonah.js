@@ -2,26 +2,44 @@
  --系统通用函数--
  Edit by 2009-11-28
  */
+//获取地址栏get变量值
+function getvalue(name){
+    var str = window.location.search;
+    if (str.indexOf(name) != -1) {
+        var pos_start = str.indexOf(name) + name.length + 1;
+        var pos_end = str.indexOf("&", pos_start);
+        if (pos_end == -1) {
+            return str.substring(pos_start);
+        }
+        else {
+            return str.substring(pos_start, pos_end)
+        }
+    }
+    else {
+        return null;
+    }
+}
 //获取URL当前目录
 function get_url_show(type){
-	var url_r = location.href;
-	url_r = url_r.toString().split("/");
-	var url_out ="";
+    var url_r = location.href;
+    url_r = url_r.toString().split("/");
+    var url_out = "";
     switch (type) {
-		case "end_file":
-			url_out=url_r[url_r.length-1];
-			url_out=url_out.toString().split("?");
-			return url_out[0];
-			break;
+        case "end_file":
+            url_out = url_r[url_r.length - 1];
+            url_out = url_out.toString().split("?");
+            return url_out[0];
+            break;
         default:
-			url_out = url_r[0];
+            url_out = url_r[0];
             for (i = 1; i < url_r.length - 1; i++) {
                 url_out += "/" + url_r[i];
-            };
+            }
+            ;            
             return url_out;
-			break;
+            break;
     }
-
+    
 }
 
 //限制文本宽度
@@ -37,7 +55,7 @@ function init(content, allowedLength){
     }
     //    document.getElementById("div1").innerHTML = content;
     return content;
-
+    
 }
 
 //文本过长截取
@@ -77,15 +95,15 @@ function SetCookie(name, value, hour){
 function GetCookie(name){
     var arr = null;
     var reg = new RegExp("(^| )" + name + "=([^;]*)(;|$)");
-    if (arr = document.cookie.match(reg))
+    if (arr = document.cookie.match(reg)) 
         return arr[2];
-    else
+    else 
         return null;
 }
 
 function DelCookie(name){
     SetCookie(name, "null", 1);
-
+    
 }
 
 //无响应显示
@@ -144,7 +162,7 @@ function DrawImage(ImgD, FitWidth, FitHeight){
 //文本框限制
 function regInput(obj, reg, inputStr){
     var docSel = document.selection.createRange()
-    if (docSel.parentElement().tagName != "INPUT")
+    if (docSel.parentElement().tagName != "INPUT") 
         return false
     oSel = docSel.duplicate()
     oSel.text = ""
@@ -293,169 +311,136 @@ String.prototype.RTrim = function(){
 
 Date.prototype.format = function(format) //author: meizz
 {
-  var o = {
-    "M+" : this.getMonth()+1, //month
-    "d+" : this.getDate(),    //day
-    "h+" : this.getHours(),   //hour
-    "m+" : this.getMinutes(), //minute
-    "s+" : this.getSeconds(), //second
-    "q+" : Math.floor((this.getMonth()+3)/3),  //quarter
-    "S" : this.getMilliseconds() //millisecond
-  }
-  if(/(y+)/.test(format)) format=format.replace(RegExp.$1,
-    (this.getFullYear()+"").substr(4 - RegExp.$1.length));
-  for(var k in o)if(new RegExp("("+ k +")").test(format))
-    format = format.replace(RegExp.$1,
-      RegExp.$1.length==1 ? o[k] :
-        ("00"+ o[k]).substr((""+ o[k]).length));
-  return format;
-} 
-/*
-*jquery select 操作方法
-*/
-;(function($) {
-jQuery.fn.SelectSize = function()
-{
-    return jQuery(this).get(0).options.length;
-}
-//获得选中项的索引
-jQuery.fn.getSelectedIndex = function()
-{
-    return jQuery(this).get(0).selectedIndex;
-}
-//获得当前选中项的文本
-jQuery.fn.getSelectedText = function()
-{
-    if(this.SelectSize() == 0)
-    {
-        return "下拉框中无选项";
+    var o = {
+        "M+": this.getMonth() + 1, //month
+        "d+": this.getDate(), //day
+        "h+": this.getHours(), //hour
+        "m+": this.getMinutes(), //minute
+        "s+": this.getSeconds(), //second
+        "q+": Math.floor((this.getMonth() + 3) / 3), //quarter
+        "S": this.getMilliseconds() //millisecond
     }
-    else
-    {
-        var index = this.getSelectedIndex();      
-        return jQuery(this).get(0).options[index].text;
+    if (/(y+)/.test(format)) 
+        format = format.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+    for (var k in o) 
+        if (new RegExp("(" + k + ")").test(format)) 
+            format = format.replace(RegExp.$1, RegExp.$1.length == 1 ? o[k] : ("00" + o[k]).substr(("" + o[k]).length));
+    return format;
+}/*
+ *jquery select 操作方法
+ */
+;
+(function($){
+    jQuery.fn.SelectSize = function(){
+        return jQuery(this).get(0).options.length;
     }
-}
-//获得当前选中项的值
-jQuery.fn.getSelectedValue = function()
-{    
-    if(this.SelectSize() == 0)
-    {
-        return "下拉框中无选中值";
+    //获得选中项的索引
+    jQuery.fn.getSelectedIndex = function(){
+        return jQuery(this).get(0).selectedIndex;
     }
-    else
-    {
-        return jQuery(this).val();
-    }
-}
-//设置select中值为value的项为选中
-jQuery.fn.setSelectedValue = function(value)
-{
-    jQuery(this).get(0).value = value;
-}
-//设置select中文本为text的第一项被选中
-jQuery.fn.setSelectedText = function(text)
-{
-    var isExist = false;
-    var count = this.SelectSize();
-    for(var i=0;i<count;i++)
-    {
-        if(jQuery(this).get(0).options[i].text == text)
-        {
-            jQuery(this).get(0).options[i].selected = true;
-            isExist = true;
-            break;
+    //获得当前选中项的文本
+    jQuery.fn.getSelectedText = function(){
+        if (this.SelectSize() == 0) {
+            return "下拉框中无选项";
+        }
+        else {
+            var index = this.getSelectedIndex();
+            return jQuery(this).get(0).options[index].text;
         }
     }
-    if(!isExist)
-    {
-        alert("下拉框中不存在该项");
-    }
-}
-//设置选中指定索引项
-jQuery.fn.setSelectedIndex = function(index)
-{
-    var count = this.SelectSize();    
-    if(index >= count || index < 0)
-    {
-        alert("选中项索引超出范围");
-    }
-    else
-    {
-        jQuery(this).get(0).selectedIndex = index;
-    }
-}
-//判断select项中是否存在值为value的项
-jQuery.fn.isExistItem = function(value)
-{
-    var isExist = false;
-    var count = this.SelectSize();
-    for(var i=0;i<count;i++)
-    {
-        if(jQuery(this).get(0).options[i].value == value)
-        {
-            isExist = true;
-            break;
+    //获得当前选中项的值
+    jQuery.fn.getSelectedValue = function(){
+        if (this.SelectSize() == 0) {
+            return "下拉框中无选中值";
+        }
+        else {
+            return jQuery(this).val();
         }
     }
-    return isExist;
-}
-//向select中添加一项，显示内容为text，值为value,如果该项值已存在，则提示
-jQuery.fn.addOption = function(text,value)
-{
-    if(this.isExistItem(value))
-    {
-        alert("待添加项的值已存在");
+    //设置select中值为value的项为选中
+    jQuery.fn.setSelectedValue = function(value){
+        jQuery(this).get(0).value = value;
     }
-    else
-    {
-        jQuery(this).get(0).options.add(new Option(text,value));
-    }
-}
-//删除select中值为value的项，如果该项不存在，则提示
-jQuery.fn.removeItem = function(value)
-{    
-    if(this.isExistItem(value))
-    {
-        var count = this.SelectSize();        
-        for(var i=0;i<count;i++)
-        {
-            if(jQuery(this).get(0).options[i].value == value)
-            {
-                jQuery(this).get(0).remove(i);
+    //设置select中文本为text的第一项被选中
+    jQuery.fn.setSelectedText = function(text){
+        var isExist = false;
+        var count = this.SelectSize();
+        for (var i = 0; i < count; i++) {
+            if (jQuery(this).get(0).options[i].text == text) {
+                jQuery(this).get(0).options[i].selected = true;
+                isExist = true;
                 break;
             }
-        }        
+        }
+        if (!isExist) {
+            alert("下拉框中不存在该项");
+        }
     }
-    else
-    {
-        alert("待删除的项不存在!");
+    //设置选中指定索引项
+    jQuery.fn.setSelectedIndex = function(index){
+        var count = this.SelectSize();
+        if (index >= count || index < 0) {
+            alert("选中项索引超出范围");
+        }
+        else {
+            jQuery(this).get(0).selectedIndex = index;
+        }
     }
-}
-//删除select中指定索引的项
-jQuery.fn.removeIndex = function(index)
-{
-    var count = this.SelectSize();
-    if(index >= count || index < 0)
-    {
-        alert("待删除项索引超出范围");
+    //判断select项中是否存在值为value的项
+    jQuery.fn.isExistItem = function(value){
+        var isExist = false;
+        var count = this.SelectSize();
+        for (var i = 0; i < count; i++) {
+            if (jQuery(this).get(0).options[i].value == value) {
+                isExist = true;
+                break;
+            }
+        }
+        return isExist;
     }
-    else
-    {
-        jQuery(this).get(0).remove(index);
+    //向select中添加一项，显示内容为text，值为value,如果该项值已存在，则提示
+    jQuery.fn.addOption = function(text, value){
+        if (this.isExistItem(value)) {
+            alert("待添加项的值已存在");
+        }
+        else {
+            jQuery(this).get(0).options.add(new Option(text, value));
+        }
     }
-}
-//删除select中选定的项
-jQuery.fn.removeSelected = function()
-{
-    var index = this.getSelectedIndex();
-    this.removeIndex(index);
-}
-//清除select中的所有项
-jQuery.fn.clearAll = function()
-{
-	for(var i in $(this).get())
-		{
-		$(this).get(i).options.length=0;
-		}
-}})(jQuery);
+    //删除select中值为value的项，如果该项不存在，则提示
+    jQuery.fn.removeItem = function(value){
+        if (this.isExistItem(value)) {
+            var count = this.SelectSize();
+            for (var i = 0; i < count; i++) {
+                if (jQuery(this).get(0).options[i].value == value) {
+                    jQuery(this).get(0).remove(i);
+                    break;
+                }
+            }
+        }
+        else {
+            alert("待删除的项不存在!");
+        }
+    }
+    //删除select中指定索引的项
+    jQuery.fn.removeIndex = function(index){
+        var count = this.SelectSize();
+        if (index >= count || index < 0) {
+            alert("待删除项索引超出范围");
+        }
+        else {
+            jQuery(this).get(0).remove(index);
+        }
+    }
+    //删除select中选定的项
+    jQuery.fn.removeSelected = function(){
+        var index = this.getSelectedIndex();
+        this.removeIndex(index);
+    }
+    //清除select中的所有项
+    jQuery.fn.clearAll = function(){
+        for (var i in $(this).get()) {
+            $(this).get(i).options.length = 0;
+        }
+    }
+})(jQuery);
