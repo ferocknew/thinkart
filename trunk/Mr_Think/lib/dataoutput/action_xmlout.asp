@@ -28,6 +28,13 @@ Case "del_class" '删除 class1
 
 	Select Case class_tab
 	Case "class1"
+	data_temp_num=table_recordcount(conn,"news","id","class1id="&class_id&"")
+	If Not data_temp_num=0 Then
+	Call show_list_json("class1",0,"此分类下还有新闻内容，请先清空！")
+	Response.End()
+	End If
+	data_temp_num=""
+
 	data_temp=table_readdate(conn,"","class2","id","(upclassid in ("&class_id&"))","")
 	data_temp_num=ArrayisEmpty(data_temp)
 
@@ -39,6 +46,13 @@ Case "del_class" '删除 class1
 	End If
 
 	Case "class2"
+	data_temp_num=table_recordcount(conn,"news","id","class2id="&class_id&"")
+	If Not data_temp_num=0 Then
+	Call show_list_json("class2",upclassid,"此分类下还有新闻内容，请先清空！")
+	Response.End()
+	End If
+	data_temp_num=""
+
 	data_temp=table_readdate(conn,"","class3","id","(upclassid in ("&class_id&"))","")
 	data_temp_num=ArrayisEmpty(data_temp)
 
@@ -50,6 +64,13 @@ Case "del_class" '删除 class1
 	End If
 
 	Case "class3"
+	data_temp_num=table_recordcount(conn,"news","id","class3id="&class_id&"")
+	If Not data_temp_num=0 Then
+	Call show_list_json("class3",upclassid,"此分类下还有新闻内容，请先清空！")
+	Response.End()
+	End If
+	data_temp_num=""
+
 	conn.execute("delete * from class3 where id in ("&class_id&")")
 	Call show_list_json("class3",upclassid,"")
 	End Select
@@ -96,6 +117,40 @@ Case "show_class_all" '显示所有 clas 数据
 	End If
 
 	Call jsonheadResponse()
+	Response.Write(json.getJson(json))
+	Set json=Nothing
+
+Case "get_news" '显示新闻内容
+	Dim news_id
+	news_id=SafeRequest("newsid",0)
+	DBField="id,title,edittime,content,abstract,class1id,class2id,class3id,tag"
+	show_json_arrayName="id,title,edittime,content,abstract,class1id,class2id,class3id,tag"
+	data_temp=table_readdate(conn,"","news",DBField,"(id="&news_id&")","")
+	data_temp_num=ArrayisEmpty(data_temp)
+
+	Set json=new Aien_Json
+	json.JsonType="object"
+	If data_temp_num=-1 Then
+		json.addData "err",data_temp_num 'err数据
+	Else
+		json.addData "news",show_json(show_json_arrayName,data_temp)
+	End If
+
+	Call jsonheadResponse()
+	Response.Write(json.getJson(json))
+	Set json=Nothing
+Case "del_news"
+	news_id=SafeRequest("newsid",0)
+	data_temp=table_recordcount(conn,"news","id","id="&news_id&"")
+	If data_temp=0 Then Response.End()
+
+	conn.execute("delete * from news where id in ("&news_id&")")
+	Set json=new Aien_Json
+	json.JsonType="object"
+	Call jsonheadResponse()
+	json.addData "err",0 'err数据
+	json.addData "msg","删除成功。" 'msg 数据
+	json.addData "del_id",news_id 'del_id 数据
 	Response.Write(json.getJson(json))
 	Set json=Nothing
 

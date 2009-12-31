@@ -90,7 +90,7 @@ function show_classmenu(left_menu_div){
             var show_menu = $("<div class=\"treeLv1\" classid=\"" + json.class_list[i].id + "\" upclassid='0'>" + json.class_list[i].classname + "</div>")
             left_menu_div.append(show_menu);
         });
-		bind_menu();
+        bind_menu();
         load_class2();
     });
     function load_class2(){
@@ -102,21 +102,23 @@ function show_classmenu(left_menu_div){
             for (var i = json.class_list.length - 1; i >= 0; i--) {
                 $(".treeLv1[classid='" + json.class_list[i].upclassid + "']").after("<div class=\"treeLv2\" upclassid=\"" + json.class_list[i].upclassid + "\" classid=\"" + json.class_list[i].id + "\">" + json.class_list[i].classname + "</div>");
             }
-			bind_menu();
-			load_class3();
+            bind_menu();
+            load_class3();
         })
     }
-function load_class3(){$.getJSON(get_info_url, {
-        code: "json",
-        act: "show_class_all",
-        classname: "class3"
-    }, function(json){
-        for (var i = json.class_list.length - 1; i >= 0; i--) {
-            $(".treeLv2[classid='" + json.class_list[i].upclassid + "']").after("<div class=\"treeLv3\" upclassid=\"" + json.class_list[i].upclassid + "\" classid=\"" + json.class_list[i].id + "\">" + json.class_list[i].classname + "</div>");
-        }
-        bind_menu();
-    })}
-    function bind_menu(left_menu){
+    function load_class3(){
+        $.getJSON(get_info_url, {
+            code: "json",
+            act: "show_class_all",
+            classname: "class3"
+        }, function(json){
+            for (var i = json.class_list.length - 1; i >= 0; i--) {
+                $(".treeLv2[classid='" + json.class_list[i].upclassid + "']").after("<div class=\"treeLv3\" upclassid=\"" + json.class_list[i].upclassid + "\" classid=\"" + json.class_list[i].id + "\">" + json.class_list[i].classname + "</div>");
+            }
+            bind_menu();
+        })
+    }
+    function bind_menu(){
         var left_menu = $("div", left_menu_div);
         left_menu.click(function(e){
             left_menu.css({
@@ -135,3 +137,51 @@ function load_class3(){$.getJSON(get_info_url, {
         });
     }
 }
+
+//显示新闻列表
+function show_news_list(con_div){
+    var get_url = "../lib/dataoutput/show_list.asp";
+    var news_tab = con_div.clone();
+    con_div.empty();
+    $.getJSON(get_url, {
+        act: "news_list",
+        do_type: "all"
+    }, function(json){
+        var news_ = json.news_list;
+        $(news_).each(function(i){
+            var news_tab_copy = news_tab.clone();
+            news_tab_copy.filter(".news_contect").removeClass().attr("news_id",this.id);
+            news_tab_copy.find("td:eq(0)").html("<span class='news_name' ness_id='" + this.id + "'>" + this.title + "</span>");
+            news_tab_copy.find("td:eq(1)").html(this.class1id);
+            news_tab_copy.find("td:eq(2)").html(this.class2id);
+            news_tab_copy.find("td:eq(3)").html(this.class3id);
+            news_tab_copy.find("td:eq(4)").html(new Date(this.edittime).format("yyyy年MM月dd日 hh:mm") + " <span class='del_news' news_id='" + this.id + "'>删</span>");
+            $(".news_contect").after(news_tab_copy);
+        });
+        $(".del_news").css("cursor", "pointer");
+        $(".news_name").hover(function(){
+            $(this).css({
+                color: "red",
+                cursor: "pointer"
+            })
+        }, function(){
+            $(this).css("color", "#000")
+        });
+        $(".news_name").click(function(){
+            location.href = "addContent.asp?id=" + $(this).attr("ness_id");
+        });
+        $(".del_news").click(function(e){
+			if (confirm("确认删除么？")) {
+				$.getJSON("../lib/dataoutput/action_xmlout.asp", {
+					act: "del_news",
+					newsid: $(this).attr("news_id")
+				}, function(json){
+					if (json.err == 0) {
+						alert(json.msg);
+						$("tr[news_id='" + json.del_id + "']").empty();
+					}
+				});
+			}
+        });
+    });
+};

@@ -182,23 +182,89 @@ $(function(){
          * 新闻添加
          */
         case "addContent.asp":
+            var news_id = getvalue("id");
             show_classmenu($(".rightDotted1px_div"));
-            show_edit($("#pj_memo2"));
-            $("#reset_pj").click(function(){
-                $("input[type='text']").val("");
-            });
-            var now_data = new Date();
-            $("#pj_start").val(now_data.toLocaleString()).attr("disabled", "disabled");
-            $("#create_pj").click(function(){
-                var class_data = $("#from_class").data("class_val");
-                if (class_data == undefined) {
-                    alert("请选择分类");
-                }
-                else {
-                    if ($.trim($("#pj_start2").val()) == "") {
-                        alert("请填写标题！")
+            if (news_id == null) {
+                show_edit($("#pj_memo2"));
+                $("#reset_pj").click(function(){
+                    $("input[type='text']").val("");
+                });
+                var now_data = new Date();
+                $("#pj_start").val(now_data.toLocaleString()).attr("disabled", "disabled");
+                $("#create_pj").click(function(){
+                    var class_data = $("#from_class").data("class_val");
+                    if (class_data == undefined) {
+                        alert("请选择分类");
                     }
                     else {
+                        if ($.trim($("#pj_start2").val()) == "") {
+                            alert("请填写标题！")
+                        }
+                        else {
+                            var post_data = {
+                                title: $("#pj_start2").val(),
+                                classid: class_data.classid,
+                                classtype: class_data.class_type,
+                                upclassid: class_data.upclassid,
+                                Content: $("#pj_memo2").val(),
+                                abstract: $("#pj_end").val(),
+                                tag: $("#pj_end2").val()
+                            };
+                            $.ajax({
+                                type: "POST",
+                                url: "../lib/dataoutput/save_data.asp?act=add_news",
+                                dataType: "json",
+                                data: post_data,
+                                success: function(json){
+                                    if (json.err == "") {
+                                        alert(json.msg);
+                                        $("input[type='text']").val("");
+                                        var now_data = new Date();
+                                        $("#pj_start").val(now_data.toLocaleString()).attr("disabled", "disabled");
+                                        return false;
+                                    }
+                                    else {
+                                        alert(json.err);
+                                        return false;
+                                    };
+                                                                    }
+                            });
+                        }
+                    };
+                                    });
+            }
+            else {
+                //新闻修改
+                $.getJSON("../lib/dataoutput/action_xmlout.asp", {
+                    act: "get_news",
+                    newsid: news_id
+                }, function(json){
+                    var news_con = json.news[0];
+                    setTimeout(function(){
+                        if (news_con.class3id != 0) {
+                            get_class_("treeLv3", news_con.class3id, news_con.class2id);
+                        }
+                        else 
+                            if (news_con.class2id != 0) {
+                                get_class_("treeLv2", news_con.class2id, news_con.class1id);
+                            }
+                            else {
+                                get_class_("treeLv1", news_con.class1id, 0);
+                            }
+                    }, 1000);
+                    $("#pj_start2").val(news_con.title);
+                    $("#pj_start").val(news_con.edittime).attr("disabled", true);
+                    $("#pj_end").val(news_con.abstract);
+                    $("#pj_memo2").val(news_con.content);
+                    $("#pj_end2").val(news_con.tag);
+                    show_edit($("#pj_memo2"));
+                    $("#create_pj").val("修改");
+                    $("#create_pj").bind("click", function(){
+                        if ($.trim($("#pj_start2").val()) == "") {
+                            alert("请填写标题！");
+                            return false;
+                        }
+                        var class_data = $("#from_class").data("class_val")
                         var post_data = {
                             title: $("#pj_start2").val(),
                             classid: class_data.classid,
@@ -210,15 +276,13 @@ $(function(){
                         };
                         $.ajax({
                             type: "POST",
-                            url: "../lib/dataoutput/save_data.asp?act=add_news",
+                            url: "../lib/dataoutput/save_data.asp?act=edit_news&newsid=" + news_id,
                             dataType: "json",
                             data: post_data,
                             success: function(json){
                                 if (json.err == "") {
                                     alert(json.msg);
-                                    $("input[type='text']").val("");
-                                    var now_data = new Date();
-                                    $("#pj_start").val(now_data.toLocaleString()).attr("disabled", "disabled");
+                                    location.href = "news.asp";
                                     return false;
                                 }
                                 else {
@@ -227,33 +291,28 @@ $(function(){
                                 };
                                                             }
                         });
-                    }
+                    });
+                });
+                function get_class_(class_type, classid, upclassid){
+                    var get_class_div = $("." + class_type + "[classid='" + classid + "']");
+                    get_class_div.css({
+                        "background-color": "#666",
+                        color: "#fff"
+                    });
+                    $("#from_class").text(get_class_div.text()).data("class_val", {
+                        classid: classid,
+                        class_type: class_type,
+                        upclassid: upclassid
+                    });
                 };
-                            });
+            }
             break;
         /*
          * 新闻呈现
          */
         case "news.asp":
-            var get_url = "../lib/dataoutput/show_list.asp"
-			var news_tab = $(".news_contect").clone();
-			$(".news_contect").empty();
-            $.getJSON(get_url, {
-                act: "news_list",
-                do_type: "all"
-            }, function(json){
-                var news_=json.news_list;
-				$(news_).each(function(i){
-					var news_tab_copy=news_tab.clone();
-					news_tab_copy.filter(".news_contect").removeClass();
-					news_tab_copy.find("td:eq(0)").html(this.title);
-					news_tab_copy.find("td:eq(1)").html(this.class1id);
-					news_tab_copy.find("td:eq(2)").html(this.class2id);
-					news_tab_copy.find("td:eq(3)").html(this.class3id);
-					news_tab_copy.find("td:eq(4)").html(new Date(this.edittime).format("yyyy年MM月dd日 hh:mm"));
-					$(".news_contect").after(news_tab_copy);
-				})
-            });            
+			show_news_list($(".news_contect"));
+			        
             break;
         default:
     }
