@@ -45,7 +45,7 @@ function submitData(){
     type: "POST",                                          
     url: "savedata.asp",                                       
     data: "userName="+$("#userName").val()+"&emailAdd="+$("#emailAdd").val()+"&telephone="+$("#telephone").val()+"&company="+$("#company").val()+"&siteAddress="+$("#siteAddress").val()+"&item1="+$("#item1").val()+"&item2="+$("#item2").val()+"&item3="+$("#item3").val()+"&item4="+$("#item4").val()+"&item5="+$("#item5").val()+"&item6="+$("#item6").val()+"&description="+$("#description").val()+"&progress="+$("#progress").val()+"&budget="+$("#budget").val(),     
-    success: function(msg){
+    success:function(msg){
       hiOverAlert('需求提交完成！我们会及时联系您！');
     }     
   });    	
