@@ -285,6 +285,7 @@ a.aboutTip:link,a.aboutTip:visited,a.aboutTip:active {
 	height:290px;
 	float:left;
 	margin:0 20px 25px;
+	overflow:hidden;
 }
 
 #labsTitle{
