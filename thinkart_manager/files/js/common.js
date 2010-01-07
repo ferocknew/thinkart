@@ -7,6 +7,16 @@ $(document).ready(function(){
       		hiOverAlert('数据不完整，请检查！');
 			}
 		  });
+	
+	$("#create_dt").click(function(){          
+			if($("#pj_name").val().length > 0 && $("#pj_desc").val().length > 0 && $("#pj_dline").val().length > 0){
+			form1.submit();	
+			}else{
+      		hiOverAlert('数据不完整，请检查！');
+			}
+		  });
+	
+	
 	showSubMenu('menu_a');
 });
 

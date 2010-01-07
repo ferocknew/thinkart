@@ -71,6 +71,17 @@ body{
 	text-align:center;
 	cursor:pointer;}
 	
+.setOptButtomLong{
+	height:20px;
+	width:100px;
+	border:1px solid #666666;
+	background-color:#999999;
+	color:#ffffff;
+	font-size:12px;
+	font-family:"微软雅黑","宋体";
+	text-align:center;
+	cursor:pointer;}	
+	
 .setTextInput{
 	height:20px;
 	width:300px;
