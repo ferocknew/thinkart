@@ -1,3 +1,4 @@
+<%@LANGUAGE="VBSCRIPT" CODEPAGE="65001"%>
 <%Session.CodePage=65001%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -16,16 +17,18 @@
 <!--#include file="inc_nav.asp"-->
 <%
 function trans_type(num)
-if num = 1 then response.write "WEB"
-if num = 2 then response.write "FLAT"
-if num = 3 then response.write "PHOTO"
-if num = 4 then response.write "PRINT"
-if num = 5 then response.write "OTHER"
+if num = 1 then response.write "网站"
+if num = 2 then response.write "平面"
+if num = 3 then response.write "摄影"
+if num = 4 then response.write "印刷制作"
+if num = 5 then response.write "其它"
 end function 
 %>
 <%
 del_id = request("del_id")
 if del_id <> "" then
+sql = "delete from tm_project_detail where dt_id = "&del_id&""
+conn.execute(sql)
 sql = "delete from tm_project where id = "&del_id&""
 conn.execute(sql)
 end if
