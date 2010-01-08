@@ -1,12 +1,8 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<title>德威装饰</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link href="images/style.css" rel="stylesheet" type="text/css" />
-</head>
-<body>
+<!--#include file="lib/const.asp" -->
+<!--#include file="conn.asp" -->
+<!--#include file="lib/header_commad.asp" -->
+<!--#include file="lib/header_html.asp" -->
+<!-- Html Body -->
 <table width="950" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr>
    <td><table align="left" border="0" cellpadding="0" cellspacing="0" width="950">
@@ -61,21 +57,39 @@
   <tr>
    <td><table align="left" border="0" cellpadding="0" cellspacing="0" width="950">
 	  <tr>
-	   <td><img name="index_r8_c1" src="images/index_r8_c1.jpg" width="236" height="34" border="0" id="index_r8_c1" alt="" /></td>
-	   <td><img name="index_r8_c4" src="images/index_r8_c4.jpg" width="240" height="34" border="0" id="index_r8_c4" alt="" /></td>
-	   <td><img name="index_r8_c7" src="images/index_r8_c7.jpg" width="250" height="34" border="0" id="index_r8_c7" alt="" /></td>
-	   <td><img name="index_r8_c10" src="images/index_r8_c10.jpg" width="224" height="34" border="0" id="index_r8_c10" alt="" /></td>
-	  </tr>
+	   <td width="236" height="34" background="images/index_r8_c1a.jpg">&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; 新闻列表</td>
+	   <td>&nbsp;</td>
+	   </tr>
 	</table></td>
   </tr>
   <tr>
    <td><table align="left" border="0" cellpadding="0" cellspacing="0" width="950">
 	  <tr>
-	   <td width="236" height="243" class="borderRight">&nbsp;</td>
-	   <td width="240" height="243" class="borderRight">&nbsp;</td>
-	   <td width="250" height="243" class="borderRight">&nbsp;</td>
-	   <td width="224" height="243">&nbsp;</td>
-	  </tr>
+	   <td width="236" height="243" valign="top" class="borderRight"><table width="90%" border="0" align="center" cellpadding="0" cellspacing="0">
+	     <tr>
+	       <td height="20">&nbsp;</td>
+	       </tr>
+	     <tr>
+	       <td height="20">&nbsp;</td>
+	       </tr>
+	     <tr>
+	       <td height="20">&nbsp;</td>
+	       </tr>
+	     <tr>
+	       <td height="20">&nbsp;</td>
+	       </tr>
+	     <tr>
+	       <td height="20">&nbsp;</td>
+	       </tr>
+	     <tr>
+	       <td height="20">&nbsp;</td>
+	       </tr>
+	     <tr>
+	       <td height="20">&nbsp;</td>
+	       </tr>
+	     </table></td>
+	   <td height="243" class="borderRight">&nbsp;</td>
+	   </tr>
 	</table></td>
   </tr>
   <tr>
@@ -88,5 +102,4 @@
 沪ICP备0810721号 Copyright（C）2008 DeWei Co., Ltd. All Rights Reserved.</td>
   </tr>
 </table>
-</body>
-</html>
+<!--#include file="lib/foot.asp" -->
