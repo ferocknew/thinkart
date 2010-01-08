@@ -1,12 +1,8 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<title>德威实业</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link href="images/style.css" rel="stylesheet" type="text/css" />
-</head>
-<body>
+<!--#include file="lib/const.asp" -->
+<!--#include file="conn.asp" -->
+<!--#include file="lib/header_commad.asp" -->
+<!--#include file="lib/header_html.asp" -->
+<!-- Html Body -->
 <table align="center" border="0" cellpadding="0" cellspacing="0" width="1000">
   <tr>
     <td><img name="index_r1_c1" src="images/index_r1_c1.jpg" width="48" height="78" border="0" id="index_r1_c1" alt="" /></td>
@@ -153,4 +149,4 @@
   <area shape="rect" coords="160,42,251,74" href="#" />
 </map>
 </body>
-</html>
+<!--#include file="lib/foot.asp" -->
