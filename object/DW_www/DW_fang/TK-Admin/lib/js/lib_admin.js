@@ -1,4 +1,32 @@
 /*
+ * index.asp
+ */
+//显示信息
+function show_info(json){
+    $("#sitename").val(json.info.site_name);
+    $("#comnam").val(json.info.com_name);
+    $("#leader").val(json.info.site_leader);
+    $("#siteicp").val(json.info.site_icp);
+    $("#siteurl").val(json.info.site_url);
+    $("#site_logo").val(json.info.site_logo);
+    $("#com_intro").val(json.info.site_com_intro);
+    show_edit($("#com_intro"));
+    loaddoc(json);
+};
+//编辑器
+function show_edit(show_item){
+    show_item.xheditor(true, {
+        tools: 'full',
+        skin: "o2007silver",
+        upLinkUrl: "lib/upload.asp",
+        upLinkExt: "zip,rar,txt,psd,jpg",
+        upImgUrl: "lib/upload.asp",
+        upImgExt: "jpg,jpeg,gif,png",
+        upFlashUrl: "lib/upload.asp",
+        upFlashExt: "swf"
+    });
+}
+/*
  * classManage.asp
  */
 //显示class列表
@@ -45,36 +73,6 @@ function show_class_list(com_words){
         }
     }
 };
-
-/*
- * index.asp
- */
-//显示信息
-function show_info(json){
-    $("#sitename").val(json.info.site_name);
-    $("#comnam").val(json.info.com_name);
-    $("#leader").val(json.info.site_leader);
-    $("#siteicp").val(json.info.site_icp);
-    $("#siteurl").val(json.info.site_url);
-    $("#site_logo").val(json.info.site_logo);
-    $("#com_intro").val(json.info.site_com_intro);
-    show_edit($("#com_intro"));
-    loaddoc(json);
-};
-//编辑器
-function show_edit(show_item){
-    show_item.xheditor(true, {
-        tools: 'full',
-        skin: "o2007silver",
-        upLinkUrl: "lib/upload.asp",
-        upLinkExt: "zip,rar,txt,psd,jpg",
-        upImgUrl: "lib/upload.asp",
-        upImgExt: "jpg,jpeg,gif,png",
-        upFlashUrl: "lib/upload.asp",
-        upFlashExt: "swf"
-    });
-}
-
 function show_classmenu(left_menu_div){
 
     //var left_menu_div = $(".rightDotted1px_div");

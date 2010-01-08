@@ -1,7 +1,12 @@
 $(function(){
-    switch (get_url_show("end_file")) {
+    var get_file_url = get_url_show("end_file");
+    if (get_file_url == "") {
+        get_file_url = "index.asp"
+    };
+    switch (get_file_url) {
         //系统设置
         case "index.asp":
+			admin_menu_click($(".rightBorder1px[get_html='system_edit']"));
             var get_info_url = "../lib/dataoutput/inf_xmlout.asp";
             $.getJSON(get_info_url, {
                 "code": "json"
@@ -33,6 +38,7 @@ $(function(){
          * 分类设置部分
          */
         case "classManage.asp":
+		admin_menu_click($(".rightBorder1px[get_html='Content_manage']"));
             //当前页面体验修改
             var get_info_url = "../lib/dataoutput/action_xmlout.asp";
             $(".optList").clearAll();
@@ -182,6 +188,7 @@ $(function(){
          * 新闻添加
          */
         case "addContent.asp":
+		admin_menu_click($(".rightBorder1px[get_html='Content_manage']"));
             var news_id = getvalue("id");
             show_classmenu($(".rightDotted1px_div"));
             if (news_id == null) {
@@ -311,8 +318,8 @@ $(function(){
          * 新闻呈现
          */
         case "news.asp":
-			show_news_list($(".news_contect"));
-			        
+			admin_menu_click($(".rightBorder1px[get_html='Content_manage']"));
+            show_news_list($(".news_contect"));            
             break;
         default:
     }
@@ -320,7 +327,18 @@ $(function(){
      *调整页面体验
      */
     $(".rightBorder1px").css("cursor", "pointer");
-    $("#top_menu td").live("click", function(e){
-        location.href = $(e.target).attr("get_url");
-    });
+    $("#top_menu td").click(function(){
+		admin_menu_click(this)
+	});
+	function admin_menu_click(click_item){
+        $("#manvBar_sub").load("lib/top_admin_menu_children.asp #" + $(click_item).attr("get_html"), function(){
+            $(".Top-menu-children span").live("click", function(e){
+                location.href = $(e.target).attr("get_url")
+            }).hover(function(e){
+                $(e.target).css("color", "#ccc")
+            }, function(e){
+                $(e.target).css("color", "#999")
+            });
+        });        
+    }
 });
