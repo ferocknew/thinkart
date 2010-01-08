@@ -29,7 +29,8 @@
             <tr>
               <td width="120" height="35" class="tabCard">+ 新闻列表</td>
               </tr>
-          </table></td>
+          </table>
+          </td>
         </tr>
       </table>
       <br />
