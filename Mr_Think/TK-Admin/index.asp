@@ -71,6 +71,7 @@
       </table>
       <br />
       <br />
+      <div style="display:none;">
       <table width="100%" border="0" cellspacing="0" cellpadding="0">
         <tr>
           <td height="25" class="bottomBorder1px"><table width="120" border="0" cellspacing="0" cellpadding="0">
@@ -88,8 +89,9 @@
             <input name="button3" type="submit" class="setButtom" id="button3" value="打开" />
             </span></td>
         </tr>
-      </table></td>
+      </table></div></td>
   </tr>
 </table>
+
 </body>
 <!--#include file="../lib/foot.asp" -->
