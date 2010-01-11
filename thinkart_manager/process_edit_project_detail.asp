@@ -19,6 +19,8 @@ rs("pj_people")= pj_people
 rs("pj_name")= pj_name
 rs("pj_desc")= pj_desc
 rs("pj_dline")= pj_dline
+rs("pj_apply")=0
+rs("pj_finish")=0
 rs.update
 rs.close
 set rs=nothing

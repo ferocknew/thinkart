@@ -36,7 +36,7 @@
 <div id="menu_d">    
     <table width="100%" border="0" cellspacing="0" cellpadding="0">
       <tr>
-        <td height="25" id="manvBar_sub">&nbsp;&nbsp;<a href="#">+用户管理</a> &nbsp;&nbsp;||&nbsp;&nbsp; <a href="#">+工作日志</a></td>
+        <td height="25" id="manvBar_sub">&nbsp;&nbsp;<a href="listuser.asp">+用户管理</a> &nbsp;&nbsp;||&nbsp;&nbsp; <a href="listcalendar.asp">+工作日志</a></td>
       </tr>
     </table>
 </div>

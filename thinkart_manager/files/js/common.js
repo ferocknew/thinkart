@@ -16,6 +16,14 @@ $(document).ready(function(){
 			}
 		  });
 	
+	$("#create_ca").click(function(){          
+			if($("#work_date").val().length > 0 && $("#work_detail").val().length > 0 && $("#work_result").val().length > 0){
+			form1.submit();	
+			}else{
+      		hiOverAlert('数据不完整，请检查！');
+			}
+		  });	
+	
 	
 	showSubMenu('menu_a');
 });

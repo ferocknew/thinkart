@@ -13,29 +13,11 @@
 <!--#include file="inc_conn.asp"-->
 <!--#include file="inc_nav.asp"-->
 <br />
-<%
-Set rs = Server.CreateObject("ADODB.Recordset")
-sql = "SELECT * FROM tm_user"
-rs.OPEN sql,Conn,1,1
-%>
-
-<%
-edit_id = request("edit_id")
-Set rsr = Server.CreateObject("ADODB.Recordset")
-sqlr = "SELECT * FROM tm_project_detail where id = "&edit_id&""
-rsr.OPEN sqlr,Conn,1,1
-pj_people = rsr("pj_people")
-pj_name = rsr("pj_name")
-pj_desc = rsr("pj_desc")
-pj_dline = rsr("pj_dline")
-rsr.close
-set rsr = nothing
-%>
 <table width="98%" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr>
     <td width="220" valign="top" class="opArea"><table width="100%" border="0" cellspacing="0" cellpadding="0">
       <tr>
-        <td height="50" class="helpTitle bottomDotted1px">编辑子任务</td>
+        <td height="50" class="helpTitle bottomDotted1px">添加用户</td>
       </tr>
       <tr>
         <td class="helpContent bottomDotted1px"><p>&nbsp;</p></td>
@@ -48,45 +30,39 @@ set rsr = nothing
         <tr>
           <td height="25" class="bottomBorder1px"><table width="120" border="0" cellspacing="0" cellpadding="0">
             <tr>
-              <td width="120" height="35" class="tabCard">+ 编辑子任务</td>
+              <td width="120" height="35" class="tabCard">+ 添加用户</td>
               </tr>
           </table></td>
         </tr>
       </table>
       <br />
-      <form action="process_edit_project_detail.asp?edit_id=<%=edit_id%>" method="post" name="form1">
+      <form action="process_add_user.asp" method="post" name="form1">
 		<table width="100%" border="0" cellspacing="0" cellpadding="0">
         <tr>
-          <td align="right" class="inputTable">责任人：</td>
-          <td height="30" class="inputTable">
-          <select name="pj_people" class="setOpt" id="pj_people">
-            <option selected="selected" value="">请选择...</option>
-            <%while not rs.eof%>
-            <option value="<%=rs("tname")%>" <%if rs("tname") = pj_people then%>selected<%end if%>><%=rs("tname")%></option>
-            <%rs.movenext
-			wend
-			rs.close
-			set rs = nothing%>
-          </select>
-            <input name="dt_id" type="hidden" class="setTextInput" id="dt_id" value="<%=request("dt_id")%>" /></td>
+          <td align="right" class="inputTable">用户名：</td>
+          <td height="30" class="inputTable"><input name="username" type="text" class="setTextInput" id="username" /></td>
         </tr>
         <tr>
-          <td align="right" class="inputTable">任务名称：</td>
-          <td height="30" class="inputTable"><input name="pj_name" type="text" class="setTextInput" id="pj_name" value="<%=pj_name%>" /></td>
+          <td align="right" class="inputTable">密码：</td>
+          <td height="30" class="inputTable"><input name="password" type="text" class="setTextInput" id="password" /></td>
         </tr>
         <tr>
-          <td align="right" valign="top" class="inputTable">任务描述：</td>
-          <td height="30" class="inputTable"><textarea name="pj_desc" class="setTextArea" id="pj_desc"><%=pj_desc%></textarea></td>
+          <td width="100" align="right" class="inputTable">姓名：</td>
+          <td height="30" class="inputTable"><input name="tname" type="text" class="setTextInput" id="tname" /></td>
         </tr>
         <tr>
-          <td width="100" align="right" class="inputTable">截止日期：</td>
-          <td height="30" class="inputTable"><input name="pj_dline" type="text" class="setTextInput" id="pj_dline" value="<%=pj_dline%>" /></td>
+          <td align="right" class="inputTable">权限：</td>
+          <td height="30" class="inputTable"><select name="power" class="setOpt" id="power">
+            <option value="1">一级权限</option>
+            <option value="2">二级权限</option>
+            <option value="3">三级权限</option>
+          </select></td>
         </tr>
         </table>      
       <table width="100%" border="0" cellspacing="0" cellpadding="0">
         <tr>
           <td width="100" height="50" class="bottomBorder1px">&nbsp;</td>
-          <td height="30" class="bottomBorder1px"><input name="create_dt" type="button" class="setButtom" id="create_dt" value="编辑" />
+          <td height="30" class="bottomBorder1px"><input name="create_user" type="button" class="setButtom" id="create_user" value="添加" />
           <input name="reset_pj" type="button" class="setButtom" id="reset_pj" value="返回" onclick="history.back(-1);" /></td>
         </tr>
     </table>
