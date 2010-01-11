@@ -52,10 +52,7 @@ rs.OPEN sql,Conn,1,1
         <td height="50" class="helpTitle bottomDotted1px">我的任务清单</td>
       </tr>
       <tr>
-        <td class="helpContent bottomDotted1px"><p>完整的项目清单。<br />
-            <br />
-            *可以查看、编辑、项目详细资料<br />
-*可以增加单个项目的历史进度节点。</p></td>
+        <td class="helpContent bottomDotted1px"><p>&nbsp;</p></td>
       </tr>
     </table></td>
     <td width="20" class="rightBorder1px">&nbsp;</td>
@@ -98,7 +95,7 @@ rs.OPEN sql,Conn,1,1
                 <td height="30" align="center" class="inputTable"><%=rs("pj_people")%></td>
                 <td align="center" class="inputTable"><%=lv1_pjname%></td>
                 <td align="center" class="inputTable"><%=rs("pj_name")%></td>
-                <td align="center" class="inputTable"><%=rs("pj_desc")%></td>
+                <td align="center" class="inputTable" title="<%=rs("pj_desc")%>"><%=left(rs("pj_desc"),10)%>...</td>
                 <td align="center" class="inputTable"><%=rs("pj_dline")%></td>
                 <td align="center" class="inputTable">
                 <%if rs("pj_apply") = 0 then%>

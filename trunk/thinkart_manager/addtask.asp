@@ -62,7 +62,7 @@ rs.OPEN sql,Conn,1,1
         </tr>
         <tr>
           <td align="right" valign="top" class="inputTable">任务描述：</td>
-          <td height="30" class="inputTable"><input name="pj_desc" type="text" class="setTextArea" id="pj_desc" /></td>
+          <td height="30" class="inputTable"><textarea name="pj_desc" class="setTextArea" id="pj_desc"></textarea></td>
         </tr>
         <tr>
           <td width="100" align="right" class="inputTable">截止日期：</td>

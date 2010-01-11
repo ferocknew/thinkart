@@ -53,10 +53,7 @@ rs.OPEN sql,Conn,1,1
         <td height="50" class="helpTitle bottomDotted1px">项目列表</td>
       </tr>
       <tr>
-        <td class="helpContent bottomDotted1px"><p>完整的项目清单。<br />
-            <br />
-            *可以查看、编辑、项目详细资料<br />
-*可以增加单个项目的历史进度节点。</p></td>
+        <td class="helpContent bottomDotted1px"><p>&nbsp;</p></td>
       </tr>
     </table></td>
     <td width="20" class="rightBorder1px">&nbsp;</td>
@@ -66,7 +63,7 @@ rs.OPEN sql,Conn,1,1
         <tr>
           <td width="50%" class="bottomBorder1px"><table width="120" border="0" cellspacing="0" cellpadding="0">
             <tr>
-              <td width="120" height="35" class="tabCard">+ 项目清单</td>
+              <td width="120" height="35" class="tabCard">+ 项目列表</td>
             </tr>
           </table></td>
           <td height="25" align="right" class="bottomBorder1px">
@@ -103,7 +100,7 @@ rs.OPEN sql,Conn,1,1
 	While Not pageObj.EndofPage(rs)
 	%>
           <tr>
-            <td align="center" class="inputTable"><%if rs("pj_isok") = 1 then%><img src="files/images/finish.png" border="0" /><%else%><img src="files/images/run.png" border="0" /><%end if%></td>
+            <td align="center" class="inputTable" title="<%=rs("pj_memo")%>"><%if rs("pj_isok") = 1 then%><img src="files/images/finish.png" border="0" /><%else%><img src="files/images/run.png" border="0" /><%end if%></td>
             <td align="center" class="inputTable"><%=trans_type(rs("pj_type"))%></td>
             <td height="30" align="center" class="inputTable"><%=rs("pj_name")%></td>
             <td align="center" class="inputTable"><%=rs("pj_price")%></td>

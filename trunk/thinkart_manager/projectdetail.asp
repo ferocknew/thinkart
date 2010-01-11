@@ -86,13 +86,10 @@ rs.OPEN sql,Conn,1,1
   <tr>
     <td width="220" valign="top" class="opArea"><table width="100%" border="0" cellspacing="0" cellpadding="0">
       <tr>
-        <td height="50" class="helpTitle bottomDotted1px">项目信息</td>
+        <td height="50" class="helpTitle bottomDotted1px">项目详细信息</td>
       </tr>
       <tr>
-        <td class="helpContent bottomDotted1px"><p>完整的项目清单。<br />
-            <br />
-            *可以查看、编辑、项目详细资料<br />
-*可以增加单个项目的历史进度节点。</p></td>
+        <td class="helpContent bottomDotted1px"><p>&nbsp;</p></td>
       </tr>
     </table></td>
     <td width="20" class="rightBorder1px">&nbsp;</td>
@@ -159,16 +156,14 @@ rs.OPEN sql,Conn,1,1
               </tr>
               <%while not rs.eof%>
               <tr>
-                <td align="center" class="inputTable"><input name="create_pj4" type="button" class="setOptButtom" id="create_pj4" value="删除" onclick="javascript:if(confirm('确认删除该项目？'))location.href='projectdetail.asp?del_id=<%=rs("id")%>&dt_id=<%=dt_id%>'" /><input name="create_pj" type="button" class="setOptButtom" id="create_pj4" value="分配" onclick="javascript:document.location='editprojectdetail.asp?edit_id=<%=rs("id")%>&dt_id=<%=dt_id%>';" /></td>
+                <td align="center" class="inputTable"><input name="create_pj4" type="button" class="setOptButtom" id="create_pj4" value="删除" onclick="javascript:if(confirm('确认删除该项目？'))location.href='projectdetail.asp?del_id=<%=rs("id")%>&dt_id=<%=dt_id%>'" /><input name="create_pj" type="button" class="setOptButtom" id="create_pj4" value="编辑" onclick="javascript:document.location='editprojectdetail.asp?edit_id=<%=rs("id")%>&dt_id=<%=dt_id%>';" /></td>
                 <td height="30" align="center" class="inputTable"><%=rs("pj_people")%></td>
                 <td align="center" class="inputTable"><%=rs("pj_name")%></td>
                 <td align="center" class="inputTable" title="<%=rs("pj_desc")%>"><%=left(rs("pj_desc"),10)%>..</td>
                 <td align="center" class="inputTable"><%=rs("pj_dline")%></td>
                 <td align="center" class="inputTable">
                 <%if rs("pj_apply") = 0 then%>
-                	<%if session("tname") = rs("pj_people") then%>
-                	<input name="set_apply" type="button" class="setOptButtomLong" id="create_pj3" value="标记为接受" onclick="javascript:if(confirm('确认接受？'))location.href='projectdetail.asp?apply_id=<%=rs("id")%>&dt_id=<%=dt_id%>'" /></td>
-                	<%end if%>
+                	<input name="set_apply" type="button" class="setOptButtomLong" id="create_pj3" value="标记为接受" <%if session("tname") <> rs("pj_people") then%>disabled<%end if%> onclick="javascript:if(confirm('确认接受？'))location.href='projectdetail.asp?apply_id=<%=rs("id")%>&dt_id=<%=dt_id%>'" /></td>
 				<%else%>
                 已接受
                 <%end if%>

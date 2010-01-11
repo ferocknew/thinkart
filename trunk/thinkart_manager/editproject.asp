@@ -40,10 +40,7 @@ set rs = nothing
         <td height="50" class="helpTitle bottomDotted1px">编辑项目</td>
       </tr>
       <tr>
-        <td class="helpContent bottomDotted1px"><p>改写信息并提交以编辑项目。<br />
-            <br />
-            *项目成本项预置为 0 ，待结项后填写<br />
-*备注项可留空</p></td>
+        <td class="helpContent bottomDotted1px"><p>&nbsp;</p></td>
       </tr>
     </table></td>
     <td width="20" class="rightBorder1px">&nbsp;</td>
@@ -53,7 +50,7 @@ set rs = nothing
         <tr>
           <td height="25" class="bottomBorder1px"><table width="100%" border="0" cellspacing="0" cellpadding="0">
             <tr>
-              <td width="120" height="35" class="tabCard">+ 编辑项目信息</td>
+              <td width="120" height="35" class="tabCard">+ 编辑项目</td>
               <td width="20">&nbsp;</td>
               <td align="left"><%if tag<>"" then%><span class="textMsg">*编辑成功，点击 [返回] 进入项目列表</span><%end if%></td>
               </tr>
@@ -100,7 +97,7 @@ set rs = nothing
         </tr>
         <tr>
           <td align="right" valign="top" class="inputTable">备注：</td>
-          <td height="30" class="inputTable"><input name="pj_memo" type="text" class="setTextArea" id="pj_memo" value="<%=pj_memo%>" /></td>
+          <td height="30" class="inputTable"><textarea name="pj_memo" class="setTextArea" id="pj_memo"><%=pj_memo%></textarea></td>
         </tr>
       </table>      
       <table width="100%" border="0" cellspacing="0" cellpadding="0">
