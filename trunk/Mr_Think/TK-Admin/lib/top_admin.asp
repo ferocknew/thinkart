@@ -8,6 +8,7 @@
         <td width="120" align="center" class="rightBorder1px" get_html="Info_manage">信息管理</td>
         <td width="120" align="center" class="rightBorder1px" get_html="user_manage">用户管理</td>
         <td width="120" align="center" class="rightBorder1px" get_html="system_edit">系统设置</td>
+		<td width="120" align="center" class="rightBorder1px" get_html="#" id="loginout_do">退出系统</td>
         </tr>
     </table></td>
   </tr>
