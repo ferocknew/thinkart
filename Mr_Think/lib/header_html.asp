@@ -9,7 +9,7 @@
 <script type="text/javascript" src="lib/js/js_jonah.js"></script>
 <script type="text/javascript" src="lib/js/default.js"></script>
 <script type="text/javascript" src="lib/js/default_lib.js"></script>
-<link href="lib/css/default.css" rel="stylesheet" type="text/css" />
+<link href="files/css/default.css" rel="stylesheet" type="text/css" />
 <title></title>
 </head>
 <body>

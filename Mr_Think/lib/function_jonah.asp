@@ -138,6 +138,18 @@ GetLocationURLdri=URLadr_new
 End Function
 
 '*************************************
+'获取地址栏访问文件
+'*************************************
+Function GetLocationURLfile()
+Dim URLadr,URLadr_new,URLadr_xml
+URLadr=GetLocationURL()
+URLadr=Split(URLadr,"/")
+URLadr_new=URLadr(UBound(URLadr))
+URLadr_file=Split(URLadr_new,"?")
+GetLocationURLfile=URLadr_file(0)
+End Function
+
+'*************************************
 '防止外部提交
 '*************************************
 function ChkPost()
