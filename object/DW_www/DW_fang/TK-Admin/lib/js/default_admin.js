@@ -152,7 +152,7 @@ $(function(){
                 var show_select = cmd_words.show_select;
                 var classname = cmd_words.classname;
                 var upclassid = cmd_words.upclassid;
-                
+
                 if (upclassid == null) {
                     alert("请选择上层分类。");
                     return false;
@@ -251,7 +251,7 @@ $(function(){
                         if (news_con.class3id != 0) {
                             get_class_("treeLv3", news_con.class3id, news_con.class2id);
                         }
-                        else 
+                        else
                             if (news_con.class2id != 0) {
                                 get_class_("treeLv2", news_con.class2id, news_con.class1id);
                             }
@@ -319,7 +319,7 @@ $(function(){
          */
         case "news.asp":
 			admin_menu_click($(".rightBorder1px[get_html='Content_manage']"));
-            show_news_list($(".news_contect"));            
+            show_news_list($(".news_contect"));
             break;
         default:
     }
@@ -330,6 +330,7 @@ $(function(){
     $("#top_menu td").click(function(){
 		admin_menu_click(this)
 	});
+	$("#loginout_do").click(function(){location.href="../lib/dataoutput/chkuser.asp?act=loginout_admin"});
 	function admin_menu_click(click_item){
         $("#manvBar_sub").load("lib/top_admin_menu_children.asp #" + $(click_item).attr("get_html"), function(){
             $(".Top-menu-children span").live("click", function(e){
@@ -339,6 +340,6 @@ $(function(){
             }, function(e){
                 $(e.target).css("color", "#999")
             });
-        });        
+        });
     }
 });
