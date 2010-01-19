@@ -1,0 +1,15 @@
+<SCRIPT LANGUAGE="VBScript" RUNAT="Server">
+Sub Application_OnStart
+'Application_OnStart 当任何客户首次访问该应用程序的首页时运行
+End Sub 
+Sub Session_OnStart 
+'Session_OnStart 当客户首次运行 ASP 应用程序中的任何一个页面时运行
+session.TimeOut=30
+End Sub 
+Sub Session_OnEnd 
+'Session_OnEnd 当一个客户的会话超时或退出应用程序时运行
+End Sub 
+Sub Application_OnEnd 
+'Application_OnEnd 当该站点的 WEB 服务器关闭时运行
+End Sub 
+</SCRIPT>

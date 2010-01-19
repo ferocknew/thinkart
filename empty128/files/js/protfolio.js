@@ -10,7 +10,7 @@ $(function($){
     
     $("#protfoliopage").paging({
         loadPages: showResult,
-        perpage: 3,
+        perpage: 6,
         autoPage: 1,
         jumpAble: 0,
     });
@@ -59,7 +59,7 @@ $(function($){
                         var img_html_copy = img_html.clone();
                         img_html_copy.filter(".itemPicBlock").attr("href", url_dir + profolio_file + "/" + $(this).attr("up_dir") + "/" + $(this).attr("file_name") + "_b." + $(this).attr("type"));
                         img_html_copy.filter(".itemPicBlock").attr("rel", up_dir);
-                        img_html_copy.find("img").attr("src", $(this).attr("Path"));
+                        img_html_copy.find("img").attr("src", $(this).attr("Path")).load(function(){$(".itemPicBlock").fancybox()});
                         img_into_html_copy.append(img_html_copy);
                     };
                                     });
@@ -75,11 +75,8 @@ $(function($){
                 div_con_copy.find("#maker").text($("info", data_xml).attr("maker"));
                 div_con_copy.find("#show_date").html($("date", data_xml).text());
                 $("#proinfo[up_dir='" + up_dir + "']").html(div_con_copy);
-                $(".itemPicBlock img").load(function(){
-                    $(".itemPicBlock").fancybox();
-                });
+
             });
         });
     };
-    
     });
