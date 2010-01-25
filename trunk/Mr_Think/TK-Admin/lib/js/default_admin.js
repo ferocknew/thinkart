@@ -331,15 +331,16 @@ $(function(){
 		admin_menu_click(this)
 	});
 	$("#loginout_do").click(function(){location.href="../lib/dataoutput/chkuser.asp?act=loginout_admin"});
-	function admin_menu_click(click_item){
-        $("#manvBar_sub").load("lib/top_admin_menu_children.asp #" + $(click_item).attr("get_html"), function(){
-            $(".Top-menu-children span").live("click", function(e){
-                location.href = $(e.target).attr("get_url")
-            }).hover(function(e){
-                $(e.target).css("color", "#ccc")
-            }, function(e){
-                $(e.target).css("color", "#999")
-            });
-        });
-    }
 });
+//通用 function
+function admin_menu_click(click_item){
+	$("#manvBar_sub").load("lib/top_admin_menu_children.asp #" + $(click_item).attr("get_html"), function(){
+		$(".Top-menu-children span").live("click", function(e){
+			location.href = $(e.target).attr("get_url")
+		}).hover(function(e){
+			$(e.target).css("color", "#ccc")
+		}, function(e){
+			$(e.target).css("color", "#999")
+		});
+	});
+}
