@@ -34,15 +34,14 @@ $(document).ready(function(){
                 $("#navi_contact").addClass("navi_hover");
                 break;
         }
-    }, 500)
+    }, 1500)
     
     
     
     $("#navi_home,#navi_prot,#navi_prod,#navi_serv,#navi_lab,#navi_about,#navi_contact").hover(function(){
-        $("#navi div").removeClass("navi_hover");
         $(this).addClass("navi_hover");
     }, function(){
-        $("#navi div").removeClass("navi_hover");
+        $(this).removeClass("navi_hover");
     });
     
     $("#navi_home,#navi_prot,#navi_prod,#navi_serv,#navi_lab,#navi_about,#navi_contact,#logo_icon").click(function(){
