@@ -1,0 +1,74 @@
+<style type="text/css">
+<!-- #container {
+    background-image: url(images/bg_mail.gif);
+    background-repeat: no-repeat;
+    margin: 0px;
+    width: 674px;
+    height: 353px;
+}
+
+#inputMail {
+    float: left;
+    margin: 200px 0 0 120px;
+    width: 240px;
+    height: 120px;
+}
+
+#approved {
+    margin: 85px 50px 0 0;
+    float: right;
+}
+
+#mailSubmit {
+    margin: 100px 40px 0 0;
+    float: right;
+    cursor: pointer;
+}
+
+.inputStyle1 {
+    line-height: 24px;
+    height: 24px;
+    width: 100%;
+    color: #CCC;
+    margin-bottom: 4px;
+    border: 0;
+    background-color: transparent;
+}
+-->
+</style>
+<div id="container">
+    <div id="inputMail">
+        <input name="name" type="text" class="inputStyle1" id="name" /><input name="company" type="text" class="inputStyle1" id="company" /><input name="tel" type="text" class="inputStyle1" id="tel" /><input name="add" type="text" class="inputStyle1" id="add" />
+    </div>
+    <div id="approved">
+        <img src="images/approved.png"/>
+    </div>
+    <div id="mailSubmit" onclick="get_mail();">
+        <img title="点击递交" src="images/bottom_mail.gif" />
+    </div>
+</div>
+<script>
+    function get_mail(){
+        if ($("#name").val() == "" || $("#company").val() == "" || $("#tel").val() == "" || $("#add").val() == "") {
+            alert("请将内容填写完整！");
+            return false;
+        }
+        else {
+            var ajax_data = {
+                "name": $("#name").val(),
+                "company": $("#company").val(),
+                "tel": $("#tel").val(),
+                "add": $("#add").val()
+            }
+            $.ajax({
+                type: "POST",
+                url: "files/asp/save_ajax.asp?act=save_mail",
+                data: ajax_data,
+                success: function(msg){
+                    alert(msg);
+					$("#mail_get").fancybox.close();
+                }
+            });
+        }
+    }
+</script>
