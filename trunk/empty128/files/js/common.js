@@ -3,6 +3,8 @@ $(document).ready(function(){
     var get_url = location.href
     get_url = get_url.toString().split("/");
     get_url = get_url[get_url.length - 1];
+    if (get_url == "") 
+        get_url = "index.html";
     setTimeout(function(){
         switch (get_url) {
             case "index.html":
