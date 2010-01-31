@@ -34,6 +34,9 @@ body {
 .bottomDotted1px {
 	border-bottom:1px dotted #cccccc;
 }
+.roundBorder{
+	border:1px solid #999999;
+	background-color:#eeeeee;}
 .opArea {
 	min-height:300px;
 }
@@ -100,7 +103,19 @@ body {
 	border:1px solid #cccccc;
 	line-height:20px;
 	color:#0072cf;
-	background-color:#eeeeee;
+	background-color:#eeeeee;}
+
+.setFileInput {
+	height:20px;
+	width:250px;
+	text-indent:5px;
+	font-family:"微软雅黑", "宋体";
+	font-size:12px;
+	border:1px solid #cccccc;
+	line-height:20px;
+	color:#0072cf;
+	background-color:#eeeeee;}
+
 }
 .setClassInput {
 	height:20px;
@@ -347,4 +362,23 @@ a:hover {
 	height:30px;
 	line-height:30px;
 }
-@import url("make_menu.css");
+
+.productBlock{
+	float:left;
+	width:130px;
+	height:150px;
+	margin:20px;
+	border:1px solid #999999;}
+	
+.productPic{
+	width:130px;
+	height:130px;}
+
+.productTitle{
+	width:130px;
+	height:20px;
+	background-color:#666666;
+	text-align:center;
+	color:#ffffff;}
+	
+	
