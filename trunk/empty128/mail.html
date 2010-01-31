@@ -1,51 +1,65 @@
-<style type="text/css">
-<!-- #container {
-    background-image: url(images/bg_mail.gif);
-    background-repeat: no-repeat;
-    margin: 0px;
-    width: 674px;
-    height: 353px;
+<style>
+.input_mail {
+	width:359px;
+	float:left;
 }
-
-#inputMail {
-    float: left;
-    margin: 200px 0 0 120px;
-    width: 240px;
-    height: 120px;
+.input_mail ul {
+	list-style:none;
+	margin:0px;
+	padding:0px;
+	margin-left:116px;
 }
-
-#approved {
-    margin: 85px 50px 0 0;
-    float: right;
+.ge_text {
+	margin-bottom:11px;
+	color: #ccc;
+	background-color: #b22020;
+	border: #2c0808;
+	border-style: dashed;
+	border-top-width: 0px;
+	border-right-width: 0px;
+	border-bottom-width: 1px;
+	border-left-width: 0px;
+	width:244px;
 }
-
-#mailSubmit {
-    margin: 100px 40px 0 0;
-    float: right;
-    cursor: pointer;
+.submit_mail {
+	float:left;
+	width:215px;
 }
-
-.inputStyle1 {
-    line-height: 24px;
-    height: 24px;
-    width: 100%;
-    color: #CCC;
-    margin-bottom: 4px;
-    border: 0;
-    background-color: transparent;
+.submit_mail img {
+	margin-top:82px;
+	margin-left:172px;
+	cursor:pointer;
 }
--->
+.Postmark{
+	width:180px;
+	height:104px;
+	position:relative;
+	left:450px;
+	top:90px;
+	display:none;
+	}
 </style>
-<div id="container">
-    <div id="inputMail">
-        <input name="name" type="text" class="inputStyle1" id="name" maxlength="200" /><input name="company" type="text" class="inputStyle1" id="company" maxlength="200" /><input name="tel" type="text" class="inputStyle1" id="tel" maxlength="200" /><input name="add" type="text" class="inputStyle1" id="add" maxlength="200" />
-    </div>
-    <div id="approved">
-        <img src="images/approved.png"/>
-    </div>
-    <div id="mailSubmit" onclick="get_mail();">
-        <img title="点击递交" src="images/bottom_mail.gif" />
-    </div>
+<div style="background-image:url(images/bg_mail.gif); height:353px; width:674px; margin:0 auto;">
+  <div style="height:207px;">
+  	<div class="Postmark"><img src="images/approved.png" /></div>
+  </div>
+  <div class="input_mail">
+    <ul>
+      <li>
+        <input type="text" class="ge_text" id="name" />
+      </li>
+      <li>
+        <input type="text" class="ge_text" id="company" />
+      </li>
+      <li>
+        <input type="text" class="ge_text" id="tel" />
+      </li>
+      <li>
+        <input type="text" class="ge_text" id="add" />
+      </li>
+    </ul>
+  </div>
+  <div class="submit_mail"> <img src="images/bottom_mail.gif" onclick="get_mail();" /> </div>
 </div>
 <script>
     function get_mail(){
@@ -54,6 +68,7 @@
             return false;
         }
         else {
+			$(".Postmark").show("fast");
             var ajax_data = {
                 "name": $("#name").val(),
                 "company": $("#company").val(),
