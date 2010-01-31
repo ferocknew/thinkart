@@ -3,9 +3,6 @@
 <!--#include file="../lib/header_commad.asp"-->
 <!--#include file="lib/header_html.asp"-->
 <!--#include file="lib/top_admin.asp" -->
-<script type="text/javascript">
-$.getScript("lib/js/top_menu.js?"+new Date().format("yyyyMMddhhmmss"));
-</script>
 <%
 Dim DBField,data_temp,data_temp_num
 DBField="id,title,orderid,img_menu,power,next_url"
@@ -31,7 +28,7 @@ data_temp_num=ArrayisEmpty(data_temp)
     </table></td>
     <td width="20" class="rightBorder1px">&nbsp;</td>
     <td width="20">&nbsp;</td>
-    <td height="30" valign="top"><br /><form name="save_menu" method="post" action="#">
+    <td height="30" valign="top"><br /><form name="save_menu" method="post" action="action_save.asp?act=save_menu">
       <table width="100%" border="0" cellspacing="0" cellpadding="0">
         <tr>
           <td height="25" class="bottomBorder1px"><table width="120" border="0" cellspacing="0" cellpadding="0">
@@ -56,10 +53,10 @@ data_temp_num=ArrayisEmpty(data_temp)
 		%>
         <tr>
           <td align="center" class="inputTable"><%=i+1%><input type="hidden" name="id" id="id" value="<%=data_temp(0,i)%>"></td>
-          <td height="30" align="center" class="inputTable"><input name="textfield" type="text" class="setSTextInput" id="textfield" value="<%=data_temp(1,i)%>" <%If data_temp(4,i)=1 Then Response.Write("disabled=""disabled""")%> disabled="disabled" /></td>
-          <td align="center" class="inputTable"><input name="textfield2" type="text" class="setSTextInput" id="textfield2" value="<%=data_temp(5,i)%>" /></td>
-          <td align="center" class="inputTable"><input name="textfield3" type="text" class="setSTextInput" id="textfield3" value="<%=data_temp(2,i)%>" /></td>
-          <td align="center" class="inputTable"><input name="textfield4" type="text" class="setSTextInput" id="textfield4" value="<%=data_temp(3,i)%>" /></td>
+          <td height="30" align="center" class="inputTable"><input name="title" type="text" class="setSTextInput" id="title" value="<%=data_temp(1,i)%>" <%If data_temp(4,i)=1 Then Response.Write("disabled=""disabled""")%>/></td>
+          <td align="center" class="inputTable"><input name="next_url" type="text" class="setSTextInput" id="next_url" value="<%=data_temp(5,i)%>" /></td>
+          <td align="center" class="inputTable"><input name="orderid" type="text" class="setSTextInput" id="orderid" value="<%=data_temp(2,i)%>" /></td>
+          <td align="center" class="inputTable"><input name="img_menu" type="text" class="setSTextInput" id="img_menu" value="<%=data_temp(3,i)%>" /></td>
           <td align="center" class="inputTable"><a href="#"><img src="files/images/link.png" width="16" height="16" border="0" /></a></td>
         </tr>
 		<%
@@ -75,8 +72,6 @@ data_temp_num=ArrayisEmpty(data_temp)
 </table>
 </body>
 <%
-DBField=Null
-data_temp=Null
-data_temp_num=Null
+DBField=Null:data_temp=Null:data_temp_num=Null
 %>
 <!--#include file="../lib/foot.asp" -->

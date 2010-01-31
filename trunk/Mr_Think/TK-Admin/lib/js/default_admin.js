@@ -322,6 +322,7 @@ $(function(){
             show_news_list($(".news_contect"));
             break;
         default:
+		$.getScript("lib/js/top_menu.js?"+new Date().format("yyyyMMddhhmmss"));
     }
     /*
      *调整页面体验
