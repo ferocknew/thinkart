@@ -2,6 +2,7 @@
 <!--#include file="comm\Fsosystem.asp"-->
 <!--#include file="comm\function_jonah(1.0.0.12).asp"-->
 <!--#include file="comm\XML(1.0.0.14).asp"-->
+<!--#include file="comm\json_jonah.asp"-->
 <%
 '=================================================
 ' Function For NewS by Jonah.Fu in UTF-8
@@ -11,7 +12,15 @@
 Set fso=new FsoSystem
 fso.PathType=2
 'Folder参数必须为utf-8，/=%2F
+act_do=SafeRequest("act",0)
 
+Select Case act_do
+Case "json"
+
+set json=new Aien_Json
+Set json=Nothing
+
+Case Else
 Dim FolderList
 file_code=SafeRequest("filecode",0) '文件类型，如果有此参数则只显示指定文件
 get_file=SafeRequest("getfile",0) '是否读取文件，只支持文本类文件
@@ -86,7 +95,7 @@ xml_data.RespXml()
 Set item_xml=nothing
 Set xml_data=Nothing
 Set fso=Nothing
-
+End Select
 
 Function GetLocationURLdriMap(dir_num) 'dir_num=0为同级目录
 If Not IsNumeric(dir_num) Then dir_num=0
