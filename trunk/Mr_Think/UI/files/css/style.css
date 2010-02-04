@@ -104,6 +104,17 @@ body {
 	line-height:20px;
 	color:#0072cf;
 	background-color:#eeeeee;}
+	
+.set170TextInput {
+	height:20px;
+	width:166px;
+	text-indent:5px;
+	font-family:"微软雅黑", "宋体";
+	font-size:12px;
+	border:1px solid #cccccc;
+	line-height:20px;
+	color:#0072cf;
+	background-color:#eeeeee;}
 
 .setFileInput {
 	height:20px;
