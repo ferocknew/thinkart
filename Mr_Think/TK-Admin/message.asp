@@ -3,6 +3,12 @@
 <!--#include file="../lib/header_commad.asp"-->
 <!--#include file="lib/header_html.asp"-->
 <!--#include file="lib/top_admin.asp" -->
+<%
+Dim DBField,data_temp,data_temp_num
+DBField="id,title,content,name,email"
+data_temp=table_readdate(conn,"","message",DBField,"","order by addtime")
+data_temp_num=ArrayisEmpty(data_temp)
+%>
 <br />
 <table width="98%" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr>
@@ -41,76 +47,19 @@
           <td align="center" class="inputTable">邮件地址</td>
           <td align="center" class="inputTable">操作</td>
         </tr>
+<%
+For i=0 To data_temp_num
+%>
         <tr>
-          <td height="30" align="center" class="inputTable">傅璎俊</td>
-          <td align="center" class="inputTable">Mr.Thiner 进度要抓紧</td>
-          <td align="center" class="inputTable">我会尽把页面设计提供给你的...</td>
-          <td align="center" class="inputTable">terry@thinkart.cn</td>
+          <td height="30" align="center" class="inputTable"><%=data_temp(3,i)%></td>
+          <td align="center" class="inputTable"><%=data_temp(1,i)%></td>
+          <td align="center" class="inputTable"><%=data_temp(2,i)%></td>
+          <td align="center" class="inputTable"><%=data_temp(4,i)%></td>
           <td align="center" class="inputTable"><input name="button2" type="submit" class="setOptButtomLong" id="button2" value="回复留言" /></td>
         </tr>
-        <tr>
-          <td height="30" align="center" class="inputTable">傅璎俊</td>
-          <td align="center" class="inputTable">Mr.Thiner 进度要抓紧</td>
-          <td align="center" class="inputTable">我会尽把页面设计提供给你的...</td>
-          <td align="center" class="inputTable">terry@thinkart.cn</td>
-          <td align="center" class="inputTable"><input name="button2" type="submit" class="setOptButtomLong" id="button2" value="回复留言" /></td>
-        </tr>
-        <tr>
-          <td height="30" align="center" class="inputTable">傅璎俊</td>
-          <td align="center" class="inputTable">Mr.Thiner 进度要抓紧</td>
-          <td align="center" class="inputTable">我会尽把页面设计提供给你的...</td>
-          <td align="center" class="inputTable">terry@thinkart.cn</td>
-          <td align="center" class="inputTable"><input name="button2" type="submit" class="setOptButtomLong" id="button2" value="回复留言" /></td>
-        </tr>
-        <tr>
-          <td height="30" align="center" class="inputTable">傅璎俊</td>
-          <td align="center" class="inputTable">Mr.Thiner 进度要抓紧</td>
-          <td align="center" class="inputTable">我会尽把页面设计提供给你的...</td>
-          <td align="center" class="inputTable">terry@thinkart.cn</td>
-          <td align="center" class="inputTable"><input name="button" type="submit" class="setOptButtomLong" id="button" value="回复留言" /></td>
-        </tr>
-        <tr>
-          <td height="30" align="center" class="inputTable">傅璎俊</td>
-          <td align="center" class="inputTable">Mr.Thiner 进度要抓紧</td>
-          <td align="center" class="inputTable">我会尽把页面设计提供给你的...</td>
-          <td align="center" class="inputTable">terry@thinkart.cn</td>
-          <td align="center" class="inputTable"><input name="button" type="submit" class="setOptButtomLong" id="button3" value="回复留言" /></td>
-        </tr>
-        <tr>
-          <td height="30" align="center" class="inputTable">傅璎俊</td>
-          <td align="center" class="inputTable">Mr.Thiner 进度要抓紧</td>
-          <td align="center" class="inputTable">我会尽把页面设计提供给你的...</td>
-          <td align="center" class="inputTable">terry@thinkart.cn</td>
-          <td align="center" class="inputTable"><input name="button" type="submit" class="setOptButtomLong" id="button4" value="回复留言" /></td>
-        </tr>
-        <tr>
-          <td height="30" align="center" class="inputTable">傅璎俊</td>
-          <td align="center" class="inputTable">Mr.Thiner 进度要抓紧</td>
-          <td align="center" class="inputTable">我会尽把页面设计提供给你的...</td>
-          <td align="center" class="inputTable">terry@thinkart.cn</td>
-          <td align="center" class="inputTable"><input name="button" type="submit" class="setOptButtomLong" id="button5" value="回复留言" /></td>
-        </tr>
-        <tr>
-          <td height="30" align="center" class="inputTable">傅璎俊</td>
-          <td align="center" class="inputTable">Mr.Thiner 进度要抓紧</td>
-          <td align="center" class="inputTable">我会尽把页面设计提供给你的...</td>
-          <td align="center" class="inputTable">terry@thinkart.cn</td>
-          <td align="center" class="inputTable"><input name="button" type="submit" class="setOptButtomLong" id="button6" value="回复留言" /></td>
-        </tr>
-        <tr>
-          <td height="30" align="center" class="inputTable">傅璎俊</td>
-          <td align="center" class="inputTable">Mr.Thiner 进度要抓紧</td>
-          <td align="center" class="inputTable">我会尽把页面设计提供给你的...</td>
-          <td align="center" class="inputTable">terry@thinkart.cn</td>
-          <td align="center" class="inputTable"><input name="button" type="submit" class="setOptButtomLong" id="button7" value="回复留言" /></td>
-        </tr>
-        <tr>
-          <td height="30" align="center" class="inputTable">傅璎俊</td>
-          <td align="center" class="inputTable">Mr.Thiner 进度要抓紧</td>
-          <td align="center" class="inputTable">我会尽把页面设计提供给你的...</td>
-          <td align="center" class="inputTable">terry@thinkart.cn</td>
-          <td align="center" class="inputTable"><input name="button2" type="submit" class="setOptButtomLong" id="button2" value="回复留言" /></td>
-        </tr>
+		<%
+		Next
+		%>
       </table>
       <table width="100%" border="0" cellspacing="0" cellpadding="0">
         <tr>
@@ -140,4 +89,7 @@
   </tr>
 </table>
 </body>
+<%
+DBField=Null:data_temp=Null:data_temp_num=Null
+%>
 <!--#include file="../lib/foot.asp" -->
