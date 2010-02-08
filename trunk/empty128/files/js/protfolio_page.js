@@ -2,7 +2,7 @@
  * thinkart_website@Jonah.Fu
  * Edited in 2009-12-04
  */
-$(function($){
+$(function(){
     var profolio_file = "/files/images/protfolio";
     var get_xml_url = "show_file.asp";
     var url_dir = get_url_show();
@@ -12,7 +12,7 @@ $(function($){
         loadPages: showResult,
         perpage: 6,
         autoPage: 1,
-        jumpAble: 0,
+        jumpAble: 0
     });
     function showResult(pageIndex){
         var self = this;
