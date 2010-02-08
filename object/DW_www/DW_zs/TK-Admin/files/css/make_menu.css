@@ -1,0 +1,18 @@
+/* make_menu.asp */
+.calendarBlock {
+	width:100px;
+	height:80px;
+	float:left;
+	border:1px solid #999999;
+}
+.actDay {
+	background-color:#cafcfa;
+	font-family:"微软雅黑", "宋体";
+	font-size:12px;
+	cursor:pointer;
+}
+.dataDay {
+	background-image:url(../images/havedata.png);
+	background-repeat:no-repeat;
+	background-position:bottom right;
+}

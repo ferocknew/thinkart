@@ -4,6 +4,20 @@
 ' UpdateDate: 2009-07-17 10:12
 '=================================================
 '*************************************
+'判断 TableName 是否存在，connobject=conn
+'*************************************
+Function chktable(TableName,connobject)
+   Dim tbs
+   Set tbs=connobject.OpenSchema(20)
+   tbs.Filter="TABLE_NAME='"&TableName&"' "
+    If Not tbs.eof Then
+    chktable=True
+    Else
+    chktable=False
+    End If
+    tbs.close:Set tbs=Nothing
+End Function
+'*************************************
 '判断XML文件需求标签是否为空 返回True 和 False  xmlurl=xml地址,getcode=xml编码,item_name=节点名称
 '*************************************
 Function xmlIsEmpty(xmlurl,getcode,item_name)
@@ -1301,6 +1315,20 @@ Response.Write("出错文件："&Err.Source&"<br/>")
 Response.End()
 End If
 End Sub
+
+'*************************************
+'getForm
+'*************************************
+Function getForm(element,ftype)
+	Select case ftype
+		case "get"
+			getForm=trim(request.QueryString(element))
+		case "post"
+			getForm=trim(request.Form(element))
+		case "both"
+			if isNul(request.QueryString(element)) then getForm=trim(request.Form(element)) else getForm=trim(request.QueryString(element))
+	End Select
+End Function
 %>
 <script Language="JScript" runat="server">
 //*************************************
