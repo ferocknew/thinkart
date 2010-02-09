@@ -10,9 +10,9 @@ Session.codepage=65001
 Session.LCID=2057
 
 '定义 Cookie,Application 域，必须修改，否则可能运行不正常
-Const CookieName="mrThink_DWfang"
-Const CookieNameSetting="mrThink_DWfang_setting"
-Const site_ver="0.0.1"
+Const CookieName="DWfang"
+Const CookieNameSetting="DWfangSetting"
+Const site_ver="0.0.2"
 Const IPViewURL="http://www.dheart.net/ip/index.php?ip=" 'IP查询网站地址
 Response.Cookies(CookieNameSetting).Expires=Date+365
 %>
