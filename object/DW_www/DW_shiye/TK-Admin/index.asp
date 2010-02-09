@@ -58,7 +58,7 @@
           <td align="right" class="inputTable">网站地址：</td>
           <td height="30" class="inputTable"><input name="siteurl" type="text" class="setTextInput" id="siteurl" /></td>
         </tr>
-        <tr>
+        <tr style=" display:none">
           <td align="right" class="inputTable">公司简介：</td>
           <td height="30" class="inputTable"><textarea name="com_intro" id="com_intro" rows="15" cols="65"></textarea></td>
         </tr>
