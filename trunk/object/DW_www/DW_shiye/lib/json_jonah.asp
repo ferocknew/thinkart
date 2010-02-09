@@ -80,7 +80,7 @@ class Aien_Json
 		if jsonObj.JsonType then mJson="{" else mJson="["
 		for each vars in col
 			if jsonObj.JsonType then
-				mJson=mJson & vars & ":" & toJson(col(vars))
+				mJson=mJson &""""& vars & """:" & toJson(col(vars))
 			else
 				mJson=mJson & toJson(col(vars))
 			end if

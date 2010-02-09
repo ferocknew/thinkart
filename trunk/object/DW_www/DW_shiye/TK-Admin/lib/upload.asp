@@ -4,7 +4,7 @@
 Set upfile_obj=new UpLoadClass
 upfile_obj.FileType=""
 upfile_obj.MaxSize=3000000
-upfile_obj.SavePath="upfile/"
+upfile_obj.SavePath="../../upfile/"
 upfile_obj.Charset="UTF-8"
 upfile_obj.AutoSave=2
 
