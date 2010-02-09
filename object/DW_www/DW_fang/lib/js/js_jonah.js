@@ -2,6 +2,16 @@
  --系统通用函数--
  Edit by 2009-11-28
  */
+ //偏函数
+  function partial(fn){
+    var args=[].slice.call(arguments,1);
+    return function (){
+        var cargs=[].slice.call(arguments)
+        for(var i=0,l=args.length;i<l;i++)
+            if(args[i]=='_')args[i]=cargs.shift();
+        return fn.apply(this,args.concat(cargs))
+    }
+};
 //获取地址栏get变量值
 function getvalue(name){
     var str = window.location.search;
@@ -35,11 +45,10 @@ function get_url_show(type){
             for (i = 1; i < url_r.length - 1; i++) {
                 url_out += "/" + url_r[i];
             }
-            ;            
+            ;
             return url_out;
             break;
     }
-    
 }
 
 //限制文本宽度
@@ -55,7 +64,7 @@ function init(content, allowedLength){
     }
     //    document.getElementById("div1").innerHTML = content;
     return content;
-    
+
 }
 
 //文本过长截取
@@ -95,15 +104,15 @@ function SetCookie(name, value, hour){
 function GetCookie(name){
     var arr = null;
     var reg = new RegExp("(^| )" + name + "=([^;]*)(;|$)");
-    if (arr = document.cookie.match(reg)) 
+    if (arr = document.cookie.match(reg))
         return arr[2];
-    else 
+    else
         return null;
 }
 
 function DelCookie(name){
     SetCookie(name, "null", 1);
-    
+
 }
 
 //无响应显示
@@ -162,7 +171,7 @@ function DrawImage(ImgD, FitWidth, FitHeight){
 //文本框限制
 function regInput(obj, reg, inputStr){
     var docSel = document.selection.createRange()
-    if (docSel.parentElement().tagName != "INPUT") 
+    if (docSel.parentElement().tagName != "INPUT")
         return false
     oSel = docSel.duplicate()
     oSel.text = ""
@@ -320,10 +329,10 @@ Date.prototype.format = function(format) //author: meizz
         "q+": Math.floor((this.getMonth() + 3) / 3), //quarter
         "S": this.getMilliseconds() //millisecond
     }
-    if (/(y+)/.test(format)) 
+    if (/(y+)/.test(format))
         format = format.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
-    for (var k in o) 
-        if (new RegExp("(" + k + ")").test(format)) 
+    for (var k in o)
+        if (new RegExp("(" + k + ")").test(format))
             format = format.replace(RegExp.$1, RegExp.$1.length == 1 ? o[k] : ("00" + o[k]).substr(("" + o[k]).length));
     return format;
 }/*
