@@ -2,6 +2,20 @@
 <!--#include file="conn.asp" -->
 <!--#include file="lib/header_commad.asp" -->
 <!--#include file="lib/header_html.asp" -->
+<%
+Dim DBField,data_con,data_con_num
+DBField="id,title"
+data_con=table_readdate(conn,"","news",DBField,"(class1id=59)","")
+data_con_num=ArrayisEmpty(data_con)
+If data_con_num>10 Then data_con_num=10
+%>
+<style>
+ a.index_menu {
+	color:#000;
+	text-decoration:none;
+	font-weight:normal;
+	}
+</style>
 <!-- Html Body -->
 <table align="center" border="0" cellpadding="0" cellspacing="0" width="790">
   <tr>
@@ -25,13 +39,7 @@
     </table></td>
   </tr>
 </table>
-<table align="center" border="0" cellpadding="0" cellspacing="0" width="790">
-  <tr>
-    <td width="17"><img name="index_r4_c1" src="images/index_r4_c1.jpg" width="17" height="44" border="0" id="index_r4_c1" alt="" /></td>
-    <td align="center" background="images/index_r4_c2.jpg" class="navFont"><a href="#">首页</a>&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<a href="#"> 德威会员</a>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; <a href="#">公司介绍</a>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#">特约代理</a>&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#"> 代理楼盘</a>&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#"> 房屋租售</a>&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;<a href="#"> 投资建议</a>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#"> 联系我们</a></td>
-    <td width="16"><img name="index_r4_c8" src="images/index_r4_c8.jpg" width="16" height="44" border="0" id="index_r4_c8" alt="" /></td>
-  </tr>
-</table>
+<!--#include file="lib/inc/top_menu.asp" -->
 <table width="790" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr>
     <td width="790"><img name="index_r5_c1" src="images/index_r5_c1.jpg" width="790" height="137" border="0" id="index_r5_c1" alt="" /></td>
@@ -50,7 +58,17 @@
 		     <br />
 		     <table width="94%" border="0" align="center" cellpadding="0" cellspacing="0">
 		       <tr>
-		       <td height="200" valign="top">&nbsp;</td>
+		       <td height="200" valign="top">
+			   <ul>
+<%
+For i=0 To data_con_num
+%>
+<li><a class="index_menu" href="inner.asp?newsid=<%=data_con(0,i)%>&upclassid=57&classtype=class1"><%=data_con(1,i)%></a></li>
+<%
+Next
+%>
+</ul>
+			   </td>
 		       </tr>
 		     </table></td>
 		  </tr>

@@ -2,6 +2,33 @@
 <!--#include file="conn.asp" -->
 <!--#include file="lib/header_commad.asp" -->
 <!--#include file="lib/header_html.asp" -->
+<%
+Dim newsid,upclassid,classtype,DBField,data_temp,data_temp_num
+classtype=Easp.R("classtype",0)
+newsid=Easp.R("newsid",1)
+upclassid=Easp.R("upclassid",1)
+
+Select Case classtype
+Case "class1"
+	DBField="id,title"
+	data_temp=table_readdate(conn,"","news",DBField,"(class1id="&upclassid&")","order by addtime desc")
+	data_temp_num=ArrayisEmpty(data_temp)
+End Select
+
+If Not newsid=0 Then
+	Dim data_news,data_news_num
+	DBField="id,title,content,edittime"
+	data_news=table_readdate(conn,"","news",DBField,"(id="&newsid&")","")
+	data_news_num=ArrayisEmpty(data_news)
+End If
+%>
+<style>
+ a.index_menu {
+	color:#000;
+	text-decoration:none;
+	font-weight:normal;
+	}
+</style>
 <!-- Html Body -->
 <table align="center" border="0" cellpadding="0" cellspacing="0" width="790">
   <tr>
@@ -25,13 +52,7 @@
     </table></td>
   </tr>
 </table>
-<table align="center" border="0" cellpadding="0" cellspacing="0" width="790">
-  <tr>
-    <td width="17"><img name="index_r4_c1" src="images/index_r4_c1.jpg" width="17" height="44" border="0" id="index_r4_c1" alt="" /></td>
-    <td align="center" background="images/index_r4_c2.jpg" class="navFont"><a href="#">首页</a>&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<a href="#"> 德威会员</a>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; <a href="#">公司介绍</a>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#">特约代理</a>&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#"> 代理楼盘</a>&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#"> 房屋租售</a>&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;<a href="#"> 投资建议</a>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#"> 联系我们</a></td>
-    <td width="16"><img name="index_r4_c8" src="images/index_r4_c8.jpg" width="16" height="44" border="0" id="index_r4_c8" alt="" /></td>
-  </tr>
-</table>
+<!--#include file="lib/inc/top_menu.asp" -->
 <table width="790" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr>
     <td width="790"><img name="index_r5_c1" src="images/index_r5_c1.jpg" width="790" height="137" border="0" id="index_r5_c1" alt="" /></td>
@@ -46,7 +67,17 @@
 	     <tr>
 	       <td height="150" valign="top" background="images/index_r7_c5.jpg"><table width="85%" border="0" align="center" cellpadding="0" cellspacing="0">
 	         <tr>
-	           <td height="100" valign="top">文字信息</td>
+	           <td height="100" valign="top">
+<ul>
+<%
+For i=0 To data_temp_num
+%>
+<li><a class="index_menu" href="?newsid=<%=data_temp(0,i)%>&upclassid=<%=upclassid%>&classtype=<%=classtype%>"><%=data_temp(1,i)%></a></li>
+<%
+Next
+%>
+</ul>
+			   </td>
 	           </tr>
 	         </table></td>
 	       </tr>
@@ -57,7 +88,17 @@
 	       <td><img name="index_r15_c5" src="images/index_r15_c5.jpg" width="215" height="155" border="0" id="index_r15_c5" alt="" /></td>
 	       </tr>
 	     </table></td>
-	   <td valign="top">&nbsp;</td>
+	   <td valign="top">
+	   					<div style="overflow:auto; width:550px;">
+<%
+If Not data_news_num=-1 And Not newsid=0 Then
+Response.Write(data_news(2,0))
+Else
+Response.Write("...")
+End If
+%>
+					</div>
+	   </td>
 	  </tr>
 	</table></td>
   </tr>
