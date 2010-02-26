@@ -2,6 +2,24 @@
 <!--#include file="conn.asp" -->
 <!--#include file="lib/header_commad.asp" -->
 <!--#include file="lib/header_html.asp" -->
+<%
+Dim DBField,data_con,data_con_num
+DBField="id,title"
+data_con=table_readdate(conn,"","news",DBField,"(class1id=57)","")
+data_con_num=ArrayisEmpty(data_con)
+
+Dim data_zp,data_zp_num
+DBField="id,title"
+data_zp=table_readdate(conn,"","news",DBField,"(class1id=60)","")
+data_zp_num=ArrayisEmpty(data_zp)
+%>
+<style>
+ a.index_menu {
+	color:#000;
+	text-decoration:none;
+	font-weight:normal;
+	}
+</style>
 <!-- Html Body -->
 <table align="center" border="0" cellpadding="0" cellspacing="0" width="1000">
 	<tr>
@@ -83,7 +101,17 @@
 														<td width="249" height="65">&nbsp;</td>
 													</tr>
 												</table></td>
-											<td width="236" height="211" valign="top">&nbsp;</td>
+											<td width="236" height="211" valign="top">
+<ul>
+<%
+For i=0 To data_con_num
+%>
+<li><a class="index_menu" href="inner.asp?newsid=<%=data_con(0,i)%>&upclassid=57&classtype=class1"><%=data_con(1,i)%></a></li>
+<%
+Next
+%>
+</ul>
+											</td>
 										</tr>
 									</table></td>
 							</tr>
@@ -114,7 +142,17 @@
 							<tr>
 								<td width="234" height="398" valign="top"><table width="90%" border="0" align="center" cellpadding="0" cellspacing="0">
 										<tr>
-											<td height="380" valign="top" bgcolor="#F1F5F8">&nbsp;</td>
+											<td height="380" valign="top" bgcolor="#F1F5F8">
+											<ul>
+<%
+For i=0 To data_zp_num
+%>
+<li><a class="index_menu" href="inner.asp?newsid=<%=data_zp(0,i)%>&upclassid=57&classtype=class1"><%=data_zp(1,i)%></a></li>
+<%
+Next
+%>
+</ul>
+											</td>
 										</tr>
 									</table></td>
 							</tr>
