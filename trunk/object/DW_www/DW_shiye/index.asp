@@ -101,17 +101,10 @@ data_zp_num=ArrayisEmpty(data_zp)
 														<td width="249" height="65">&nbsp;</td>
 													</tr>
 												</table></td>
-											<td width="236" height="211" valign="top">
-<ul>
-<%
-For i=0 To data_con_num
-%>
-<li><a class="index_menu" href="inner.asp?newsid=<%=data_con(0,i)%>&upclassid=57&classtype=class1"><%=data_con(1,i)%></a></li>
-<%
-Next
-%>
-</ul>
-											</td>
+											<td width="236" height="211" valign="top"><div class="index_show_div">
+													<p>德威企业经过十多年的发展，已经组建成为一家集投资经营、装饰工程、建材销售、房产销售租赁、信息咨询、投资咨询和销售流通为一体的综合性民营企业...</p>
+													<p><span style="color:#f57326; font-weight:bolder; cursor:pointer;" id="index_about">查看</span> <img src="images/more_sy.jpg" width="4" height="6" /></p>
+												</div></td>
 										</tr>
 									</table></td>
 							</tr>
@@ -129,7 +122,7 @@ Next
 							<tr>
 								<td><table align="left" border="0" cellpadding="0" cellspacing="0" width="485">
 										<tr>
-											<td width="249" height="188">&nbsp;</td>
+											<td width="249" height="188" valign="top"><div class="index_show_div" style="margin-top:10px; margin-left:10px;">总公司上海德威实业有限公司成立于1995年，现已投资经营为主，下属上海德威装饰工程有限公司、上海德威房地产经纪有限公司、苏州工业园区德威置业有限公司等多家子公司，分别在上海和苏州的装饰装潢、建材销售、涉外房产租赁建立起良好的商业信誉和稳定的...</div></td>
 											<td><img name="index_r14_c6" src="images/index_r14_c6.jpg" width="236" height="188" border="0" id="index_r14_c6" alt="" /></td>
 										</tr>
 									</table></td>
@@ -142,17 +135,11 @@ Next
 							<tr>
 								<td width="234" height="398" valign="top"><table width="90%" border="0" align="center" cellpadding="0" cellspacing="0">
 										<tr>
-											<td height="380" valign="top" bgcolor="#F1F5F8">
-											<ul>
-<%
-For i=0 To data_zp_num
-%>
-<li><a class="index_menu" href="inner.asp?newsid=<%=data_zp(0,i)%>&upclassid=57&classtype=class1"><%=data_zp(1,i)%></a></li>
-<%
-Next
-%>
-</ul>
-											</td>
+											<td height="380" valign="top" bgcolor="#F1F5F8" style="padding:10px;"><div class="index_show_div_right">[2009-10-16]</div>
+												<div class="index_show_div" style=" margin-top:10px; line-height:20px;">中新网10月30日电 创业板首日交易火爆，创富效应明显，仅以今天开盘价计算，已有86名亿万富豪，更有5人跻身10亿富豪。</div>
+												<div class="index_show_div_right">[2009-10-15]</div>
+												<div class="index_show_div" style=" margin-top:10px; line-height:20px;">对于优惠政策年底取消与否的问题，首先要明确一点，有时间表的政策，肯定会按时取消，明年是否延续今年的优惠。                况再制定下一步的政策安排。</div>
+												<div class="index_right_news_more" id="index_news_more">更多</div></td>
 										</tr>
 									</table></td>
 							</tr>
@@ -178,3 +165,7 @@ Next
 </map>
 </body>
 <!--#include file="lib/foot.asp" -->
+<script>
+$("#index_about").bind("click",function(){window.location="inner.asp?newsid=19&upclassid=57&classtype=class1";});
+$("#index_news_more").bind("click",function(){window.location="inner.asp?newsid=23&upclassid=58&classtype=class1";});
+</script>

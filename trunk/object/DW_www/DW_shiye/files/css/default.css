@@ -20,3 +20,6 @@ a:hover {color:##21C5F8;text-decoration:underline;font-size:12px;font-weight:bol
 	color:#ffffff;
 	font-weight:bold;}
 
+.index_show_div{color:#a4a2a3; font-size:12px; margin:20px; line-height:25px; margin-top:55px;}
+.index_show_div_right{color:#6394b3; font-size:16px; font-family:'Courier New', Courier, monospace; font-weight:bolder;}
+.index_right_news_more{background-image:url(../../images/sy_more.jpg); height:18px; width:46px; color:#FFF; cursor:pointer; text-align:center; line-height:18px; margin-left:5px;}
