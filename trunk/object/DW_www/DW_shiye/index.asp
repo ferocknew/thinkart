@@ -21,6 +21,7 @@ data_zp_num=ArrayisEmpty(data_zp)
 	}
 </style>
 <!-- Html Body -->
+<div class="html_body_div">
 <table align="center" border="0" cellpadding="0" cellspacing="0" width="1000">
 	<tr>
 		<td><img name="index_r1_c1" src="images/index_r1_c1.jpg" width="48" height="78" border="0" id="index_r1_c1" alt="" /></td>
@@ -159,10 +160,12 @@ data_zp_num=ArrayisEmpty(data_zp)
 			沪ICP备0810721号 Copyright（C）2008 DeWei Co., Ltd. All Rights Reserved.</td>
 	</tr>
 </table>
+</div>
 <map name="index_r6_c1Map" id="index_r6_c1Map">
 	<area shape="rect" coords="43,42,143,74" href="#" />
 	<area shape="rect" coords="160,42,251,74" href="#" />
 </map>
+
 </body>
 <!--#include file="lib/foot.asp" -->
 <script>
