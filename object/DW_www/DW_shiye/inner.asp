@@ -30,6 +30,7 @@ End If
 	}
 </style>
 <!-- Html Body -->
+<div class="html_body_div">
 <table align="center" border="0" cellpadding="0" cellspacing="0" width="1000">
 	<tr>
 		<td><img name="index_r1_c1" src="images/index_r1_c1.jpg" width="48" height="78" border="0" id="index_r1_c1" alt="" /></td>
@@ -49,19 +50,7 @@ End If
 <!--#include file="lib/inc/top_menu.asp" -->
 <table width="1000" border="0" align="center" cellpadding="0" cellspacing="0">
 	<tr>
-		<td><table align="left" border="0" cellpadding="0" cellspacing="0" width="1000">
-				<tr>
-					<td><img name="index_r4_c1" src="images/index_r4_c1.jpg" width="281" height="288" border="0" id="index_r4_c1" alt="" /></td>
-					<td><table align="left" border="0" cellpadding="0" cellspacing="0" width="719">
-							<tr>
-								<td><img name="index_r4_c5" src="images/index_r4_c5.jpg" width="719" height="251" border="0" id="index_r4_c5" alt="" /></td>
-							</tr>
-							<tr>
-								<td><img name="index_r5_c5" src="images/index_r5_c5.jpg" width="719" height="37" border="0" id="index_r5_c5" alt="" /></td>
-							</tr>
-						</table></td>
-				</tr>
-			</table></td>
+		<td align="center"><img src="images/shiye_inner_top.jpg" style="margin-left:12px; margin-top:10px; margin-bottom:10px;" /></td>
 	</tr>
 	<tr>
 		<td><table align="left" border="0" cellpadding="0" cellspacing="0" width="1000">
@@ -78,11 +67,12 @@ End If
 											<%
 											For i=0 To data_temp_num
 											%>
-											<li><a class="index_menu" href="?newsid=<%=data_temp(0,i)%>&upclassid=<%=upclassid%>&classtype=<%=classtype%>"><%=data_temp(1,i)%></a></li>
+											<div class="inner_menu_div"><img src="images/shiye_inner_menu.jpg"/><a style=" color:#6797b7; font-size:14px; font-weight:bolder;" href="?newsid=<%=data_temp(0,i)%>&upclassid=<%=upclassid%>&classtype=<%=classtype%>"><%=data_temp(1,i)%></a></div>
 											<%
 											Next
 											%>
 											</ul>
+											
 											</td>
 										</tr>
 									</table></td>
@@ -93,12 +83,18 @@ End If
 							<tr>
 								<td><table width="88%" border="0" align="center" cellpadding="0" cellspacing="0">
 										<tr>
-											<td height="100" valign="top" bgcolor="#F1F5F8">&nbsp;</td>
+											<td height="100" valign="top" bgcolor="#F1F5F8"><img src="images/index_r17_c1.jpg" /></td>
 										</tr>
 									</table></td>
 							</tr>
 						</table></td>
 					<td valign="top">
+					<div><img src="images/index_r5_c5.jpg"></div>
+					<div style="height:60px; line-height:60px; color:#6394b3; font-size:18px; font-weight:bolder; margin-left:20px;"><img src="images/inner_title.jpg" style=" vertical-align:middle; margin-right:20px;" /><%
+					If Not data_news_num=-1 And Not newsid=0 Then
+					Response.Write(data_news(1,0))
+					end if 
+					%></div>
 					<div style="overflow:auto; width:700px;">
 <%
 If Not data_news_num=-1 And Not newsid=0 Then
@@ -124,5 +120,6 @@ End If
 			沪ICP备0810721号 Copyright（C）2008 DeWei Co., Ltd. All Rights Reserved.</td>
 	</tr>
 </table>
+</div>
 </body>
 <!--#include file="lib/foot.asp" -->
