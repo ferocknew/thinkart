@@ -19,10 +19,11 @@ If Not newsid=0 Then
 	Dim data_news,data_news_num
 	DBField="id,title,content,edittime"
 	data_news=table_readdate(conn,"","news",DBField,"(id="&newsid&")","")
-	data_news_num=ArrayisEmpty(data_temp)
+	data_news_num=ArrayisEmpty(data_news)
 End If
 %>
 <!-- Html Body -->
+<div class="html_body_div">
 <table width="950" border="0" align="center" cellpadding="0" cellspacing="0">
 	<tr>
 		<td><table align="left" border="0" cellpadding="0" cellspacing="0" width="950">
@@ -62,31 +63,44 @@ End If
 		<td width="950" height="26">&nbsp;</td>
 	</tr>
 	<tr>
-		<td><table align="left" border="0" cellpadding="0" cellspacing="0" width="950">
-				<tr>
-					<td width="236" height="34" background="images/index_r8_c1a.jpg">&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; 新闻列表</td>
-					<td>&nbsp;</td>
-				</tr>
-			</table></td>
+		<td></td>
 	</tr>
 	<tr>
 		<td><table align="left" border="0" cellpadding="0" cellspacing="0" width="950">
 				<tr>
-					<td width="236" height="243" valign="top" class="borderRight"><table width="90%" border="0" align="center" cellpadding="0" cellspacing="0" id="show_news_list">
-							<%
+					<td width="236" height="243" align="center" valign="top" class="borderRight">
+					<table id="__01" width="200" border="0" cellpadding="0" cellspacing="0">
+	<tr>
+		<td>
+			<img id="menu_01" src="images/menu_01.png" width="200" height="51" alt="" /></td>
+	</tr>
+	<tr>
+		<td height="200" valign="top" background="images/menu_bg.jpg"><table width="180" border="0" align="center" cellpadding="0" cellspacing="0" id="inner_list">
+		<%
 For i=0 To data_temp_num
 %>
-							<tr>
-								<td height="20"><a href="?newsid=<%=data_temp(0,i)%>&upclassid=<%=upclassid%>&classtype=<%=classtype%>" style="color:#000; text-decoration:none; font-weight:normal;"><%=data_temp(1,i)%></a></td>
-							</tr>
-							<%
+		  <tr>
+		    <td height="25" class="bt_line"><a href="?newsid=<%=data_temp(0,i)%>&upclassid=<%=upclassid%>&classtype=<%=classtype%>" style="color:#fff; font-family:'宋体'; text-decoration:none; font-weight:normal;"><%=data_temp(1,i)%></a></td>
+	      </tr>
+		  <%
 Next
 %>
-						</table></td>
-					<td height="243" align="right" valign="top" class="borderRight" id="show_con"><div style="overflow:auto; width:700px">
+	    </table></td>
+	</tr>
+	<tr>
+		<td>
+			<img id="menu_03" src="images/menu_03.jpg" width="200" height="13" alt="" /></td>
+	</tr>
+</table>
+					</td>
+					<td height="243" valign="top" class="borderRight" id="show_con">
+					<div style="border-bottom:#aac0cb dashed 1px; margin-right:10px; margin-bottom:20px; font-size:12px; color:#999; height:20px; line-height:20px;"><%=data_news(1,0)%></div>
+					<div style="overflow:auto; width:700px">
 							<%
-							If Not newsid=0 Then
+							If Not data_news_num=-1 And Not newsid=0 Then
 							Response.Write(data_news(2,0))
+							Else
+							Response.Write("...")
 							End If
 							%>
 						</div></td>
@@ -104,4 +118,10 @@ Next
 			沪ICP备0810721号 Copyright（C）2008 DeWei Co., Ltd. All Rights Reserved.</td>
 	</tr>
 </table>
+</div>
 <!--#include file="lib/foot.asp" -->
+<script>
+var inner_list=$("#inner_list");
+console.info(inner_list);
+$("td",inner_list).hover(function(){$(this).removeClass().addClass("overNews");},function(){$(this).removeClass().addClass("bt_line");})
+</script>
