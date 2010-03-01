@@ -86,9 +86,9 @@ data_dt_num=ArrayisEmpty(data_dt)
 						</td>
 						<td width="240" height="243" valign="top" class="borderRight index_news_show" id="index_pro_show"><div style="padding-left:15px;">
 								<div><img src="images/ad_news1.jpg" style="margin-top:26px;" /></div>
-								<div class="index_pro_show_div">[古北国际广场] &nbsp;&nbsp;<img src="images/but_more.jpg" style="vertical-align:middle;" /></div>
+								<div class="index_pro_show_div">[古北国际广场] &nbsp;&nbsp;<img src="images/but_more.jpg" style="vertical-align:middle;" id="gubei" /></div>
 								<div><img src="images/ad_news2.jpg" /></div>
-								<div class="index_pro_show_div">[爵士酒店公寓] &nbsp;&nbsp;<img src="images/but_more.jpg" style="vertical-align:middle;" /></div>
+								<div class="index_pro_show_div">[爵士酒店公寓] &nbsp;&nbsp;<img src="images/but_more.jpg" style="vertical-align:middle;" id="jueshi" /></div>
 							</div></td>
 						<td width="250" height="243" valign="top" class="borderRight index_news_show"><div style="padding-left:15px;">
 								<div><img src="images/ad_news3.jpg" style="margin-top:24px;" /></div>
@@ -105,7 +105,7 @@ data_dt_num=ArrayisEmpty(data_dt)
 								<div class="index_news_div_con">日前，14位专家集体上书国土资源部、住房部和城乡建设部，希望进行二次房改。他们在建...</div>
 								<div class="index_news_div_title">[2009-10-16]</div>
 								<div class="index_news_div_con">日前，14位专家集体上书国土资源部、住房部和城乡建设部，希望进行二次房改。他们在建...</div>
-								<div><img src="images/but_more.jpg" /></div>
+								<div><img src="images/but_more.jpg" style="cursor:pointer;" id="news_more"/></div>
 							</div></td>
 					</tr>
 				</table></td>
@@ -125,3 +125,8 @@ data_dt_num=ArrayisEmpty(data_dt)
 <br />
 </body>
 <!--#include file="lib/foot.asp" -->
+<script>
+$("#gubei").click(function(){window.location='inner.asp?newsid=30&upclassid=59&classtype=class1';});
+$("#jueshi").click(function(){window.location='inner.asp?newsid=32&upclassid=59&classtype=class1';});
+$("#news_more").click(function(){window.location='inner.asp?newsid=19&upclassid=61&classtype=class1';});
+</script>
