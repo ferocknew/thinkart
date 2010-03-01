@@ -94,7 +94,11 @@ Next
 </table>
 					</td>
 					<td height="243" valign="top" class="borderRight" id="show_con">
-					<div style="border-bottom:#aac0cb dashed 1px; margin-right:10px; margin-bottom:20px; font-size:12px; color:#999; height:20px; line-height:20px;"><%=data_news(1,0)%></div>
+					<div style="border-bottom:#aac0cb dashed 1px; margin-right:10px; margin-bottom:20px; font-size:12px; color:#999; height:20px; line-height:20px;">
+					<%If Not data_news_num=-1 And Not newsid=0 Then
+					Response.Write(data_news(1,0))
+					end if 
+					%></div>
 					<div style="overflow:auto; width:700px">
 							<%
 							If Not data_news_num=-1 And Not newsid=0 Then
