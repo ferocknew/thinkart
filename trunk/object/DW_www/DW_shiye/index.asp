@@ -46,7 +46,7 @@ data_zp_num=ArrayisEmpty(data_zp)
 					<td><img name="index_r4_c1" src="images/index_r4_c1.jpg" width="281" height="288" border="0" id="index_r4_c1" alt="" /></td>
 					<td><table align="left" border="0" cellpadding="0" cellspacing="0" width="719">
 							<tr>
-								<td><img name="index_r4_c5" src="images/index_r4_c5.jpg" width="719" height="251" border="0" id="index_r4_c5" alt="" /></td>
+								<td><div id="index_top_img" style="height:251px; width:719px;"></div></td>
 							</tr>
 							<tr>
 								<td><img name="index_r5_c5" src="images/index_r5_c5.jpg" width="719" height="37" border="0" id="index_r5_c5" alt="" /></td>
