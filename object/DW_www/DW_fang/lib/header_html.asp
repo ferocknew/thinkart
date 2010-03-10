@@ -6,6 +6,7 @@
 <meta name="robots" content="all" />
 <meta name="generator" content="mrThink" />
 <script type="text/javascript" src="lib/js/jquery.min.js"></script>
+<script type="text/javascript" src="lib/js/jquery.transitions.js"></script>
 <script type="text/javascript" src="lib/js/js_jonah.js"></script>
 <script type="text/javascript" src="lib/js/default.js"></script>
 <script type="text/javascript" src="lib/js/default_lib.js"></script>
