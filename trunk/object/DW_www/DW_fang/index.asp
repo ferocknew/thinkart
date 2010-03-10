@@ -17,6 +17,7 @@ If data_con_num>10 Then data_con_num=10
 	}
 </style>
 <!-- Html Body -->
+<div class="html_body_div">
 <table align="center" border="0" cellpadding="0" cellspacing="0" width="937">
   <tr>
     <td><img name="index_r1_c1" src="images/index_r1_c1.jpg" width="228" height="80" border="0" id="index_r1_c1" alt="" /></td>
@@ -42,7 +43,7 @@ If data_con_num>10 Then data_con_num=10
 <!--#include file="lib/inc/top_menu.asp" -->
 <table width="937" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr>
-    <td width="937"><br /><img name="index_r5_c1" src="images/inner_bg.jpg" width="937" height="133" border="0" id="index_r5_c1" alt="" /></td>
+    <td width="937"><br /><div id="inner_bg_div" style="height:133px; width:937px;"></div></td>
   </tr>
   <tr>
    <td><table align="left" border="0" cellpadding="0" cellspacing="0" width="937">
@@ -82,7 +83,7 @@ If data_con_num>10 Then data_con_num=10
 					关于虹桥万博花园的简介...</td>
 			</tr>
 		</table>
-		<div style="color:#c77800; cursor:pointer; text-align:right; padding-right:20px; height:30px; line-height:30px; font-weight:bolder;" onclick="location.href='inner.asp?newsid=23&upclassid=59&classtype=class1';">查看更多</div></td>
+		<div style="color:#c77800; cursor:pointer; text-align:right; padding-right:20px; height:30px; line-height:30px; font-weight:bolder;" onClick="location.href='inner.asp?newsid=23&upclassid=59&classtype=class1';">查看更多</div></td>
 	</tr>
 </table>
 
@@ -96,7 +97,7 @@ If data_con_num>10 Then data_con_num=10
 		  <tr>
 		    <td height="150" valign="top" background="images/index_r7_c5.jpg"><table width="85%" border="0" align="center" cellpadding="0" cellspacing="0">
 		      <tr>
-		        <td height="100" valign="top" style="color:#888888;"><ul style="margin:0px; padding:0px; line-height:25px;"><li>· 定金的支付（购入金额的约5%）</li><li>· 购入意向书的签订</li><li>· 首付款的支付（金额的30%）</li><li>· 预售销售合同的签订</li><li>· 至公证局登记预销售合同并公证（约15~30日）</li></ul></td>
+		        <td height="100" valign="top" style="color:#888888; padding-left:10px;"><ul style="margin:0px; padding:0px; line-height:25px;"><li>定金的支付（购入金额的约5%）</li><li>购入意向书的签订</li><li>首付款的支付（金额的30%）</li><li>预售销售合同的签订</li><li>至公证局登记预销售合同并公证（约15~30日）</li></ul></td>
 		        </tr>
 		      </table></td>
 		    </tr>
@@ -130,5 +131,6 @@ If data_con_num>10 Then data_con_num=10
       沪ICP备0810721号 Copyright（C）2008 DeWei Co., Ltd. All Rights Reserved.<br /></td>
   </tr>
 </table>
+</div>
 </body>
 <!--#include file="lib/foot.asp" -->

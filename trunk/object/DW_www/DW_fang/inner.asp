@@ -67,7 +67,7 @@ End If
 <%
 For i=0 To data_temp_num
 %>
-<li><span onclick="location.href='inner.asp?newsid=<%=data_temp(0,i)%>&upclassid=<%=upclassid%>&classtype=<%=classtype%>';"><%=data_temp(1,i)%></span></li>
+<li><span onClick="location.href='inner.asp?newsid=<%=data_temp(0,i)%>&upclassid=<%=upclassid%>&classtype=<%=classtype%>';"><%=data_temp(1,i)%></span></li>
 <%
 Next
 %>
@@ -76,7 +76,7 @@ Next
 	   <td valign="top" style="padding-left:10px;">
 	   <div style="background-image:url(images/inner_con_title_bg.jpg); height:37px; line-height:37px; width:717px;"></div>
 	   <div style="background-image:url(images/inner_con_bg.jpg); width:717px;">
-	   	   					<div style="overflow:visible; width:700px; margin-left:10px; margin-top:20px;">
+	   	   					<div style=" overflow:auto;width:700px; padding-top:20px; padding-left:10px;">
 <%
 If Not data_news_num=-1 And Not newsid=0 Then
 Response.Write(data_news(2,0))
@@ -85,8 +85,7 @@ Response.Write("...")
 End If
 %>
 					</div>
-	   </div>
-	   <div style="background-image:url(images/inner_con_b_bg.jpg); height:15px; width:717px;"></div>
+	   </div><div style="background-image:url(images/inner_con_b_bg.jpg); height:15px; width:717px;"></div>
 	   </td>
 	  </tr>
 	</table></td>
