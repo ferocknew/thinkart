@@ -61,7 +61,7 @@ data_dt_num=ArrayisEmpty(data_dt)
 			<td><img name="index_r5_c1" src="images/index_r5_c1.jpg" width="950" height="20" border="0" id="index_r5_c1" alt="" /></td>
 		</tr>
 		<tr>
-			<td><img name="index_r6_c1" src="images/index_r6_c1.jpg" width="950" height="313" border="0" id="index_r6_c1" alt="" /></td>
+			<td><div id="index_top_img" style="height:313px; width:950px;"></div></td>
 		</tr>
 		<tr>
 			<td width="950" height="26">&nbsp;</td>

@@ -46,7 +46,7 @@ a:hover {
 }
 .html_body_div {
 	background-color:#FFF;
-filter:progid:DXImageTransform.Microsoft.Shadow(Color=#999999, Direction=120, strength=5);
+	filter:progid:DXImageTransform.Microsoft.Shadow(Color=#999999, Direction=120, strength=5);
 	BORDER-LEFT: #cccccc 1px solid;
 	width:950px;
 	margin-left:auto;
