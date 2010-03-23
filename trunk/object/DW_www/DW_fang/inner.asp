@@ -62,7 +62,7 @@ End If
    <td><table align="left" border="0" cellpadding="0" cellspacing="0" width="937" style="margin-top:10px;">
 	  <tr>
 	   <td width="125" valign="top"><div style=" background-image:url(images/inner_menu_con_bg.jpg); width:202px;">
-	   <div class="inner_menu_title">关于德驰</div>
+	   <div class="inner_menu_title">列表</div>
 	   <div class="inner_menu_con"><ul>
 <%
 For i=0 To data_temp_num
