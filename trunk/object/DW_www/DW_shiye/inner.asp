@@ -62,7 +62,7 @@ End If
 											<td height="43" valign="middle" bgcolor="#F1F5F8" background="images/index_r9_c1a.jpg" class="titleText">&nbsp;&nbsp; &nbsp;新闻列表</td>
 										</tr>
 										<tr>
-											<td height="100" valign="top" bgcolor="#F1F5F8" id="index_menu">
+											<td height="100" valign="top" bgcolor="#F1F5F8" id="index_menu" style="border-bottom:#d7d8da solid 1px; border-left: #d7d8da solid 1px; border-right:#d7d8da solid 1px;">
 											<ul>
 											<%
 											For i=0 To data_temp_num

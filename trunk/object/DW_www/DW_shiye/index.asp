@@ -134,7 +134,7 @@ data_zp_num=ArrayisEmpty(data_zp)
 								<td><img name="index_r6_c7" src="images/index_r6_c7.jpg" width="234" height="48" border="0" id="index_r6_c7" alt="" /></td>
 							</tr>
 							<tr>
-								<td width="234" height="398" valign="top"><table width="90%" border="0" align="center" cellpadding="0" cellspacing="0">
+								<td width="234" height="398" valign="top"><table width="90%" border="0" align="center" cellpadding="0" cellspacing="0" style="border:#d7d8da solid 1px;">
 										<tr>
 											<td height="380" valign="top" bgcolor="#F1F5F8" style="padding:10px;"><div class="index_show_div_right">[2009-10-16]</div>
 												<div class="index_show_div" style=" margin-top:10px; line-height:20px;">中新网10月30日电 创业板首日交易火爆，创富效应明显，仅以今天开盘价计算，已有86名亿万富豪，更有5人跻身10亿富豪。</div>
