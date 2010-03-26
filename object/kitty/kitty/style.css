@@ -1,0 +1,43 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+	background:#F99;
+	margin:0;
+}
+#content {
+	margin:30px auto;
+	width:1000px;
+	height:583px;
+	border:#FFF solid 3px;
+ filter:progid:DXImageTransform.Microsoft.Shadow(Color=#999999, Direction=120, strength=5);
+}
+#input1 {
+	margin-top:340px;
+	margin-left:540px;
+	width:353px;
+	height:109px;
+	background:url(images/input1.gif) no-repeat;
+	padding-top:57px;
+	color:#F39;
+}
+#input2 {
+	margin-top:120px;
+	margin-left:90px;
+	width:810px;
+	height:350px;
+}
+.informationBg {
+	background:url(images/information.jpg) no-repeat;
+}
+.storyBg {
+	background:url(images/story.jpg) no-repeat;
+}
+.mapBg div {
+	float:left;
+	position:relative;
+	height:10px;
+	width:10px;
+	line-height:10px;
+	font-size:10px;
+}

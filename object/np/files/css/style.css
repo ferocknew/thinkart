@@ -1,0 +1,379 @@
+/*纳普国际*深浅设计*/
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	line-height: 1.7em;
+	font-size: 12px;
+	color: #666666;
+	background: #FFFFFF url(../images/body-bg.jpg) repeat-x left top;
+}
+
+hr {
+	color: #DDDDDD;
+	border-bottom: 1px solid #DDDDDD;
+}
+
+h1 {
+	font-size: 24px;
+	line-height: 30px;
+}
+
+a {
+	color: #A4C0D6;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #5192CA;
+}
+
+strong {
+	font-family: "Microsoft Yahei";
+}
+
+li {
+	list-style-type: none;
+}
+
+
+#content {
+	margin: 7px auto 0;
+	width: 960px;
+	background: #FFFFFF;
+}
+
+#header {
+	height: 80px;
+}
+
+#header img {
+	float: left;
+}
+
+#header ul {
+	float: right;
+}
+
+#header ul li {
+	float: left;
+}
+
+#header ul li a {
+	margin: 15px -1px 5px 0;
+	*position: relative;/*HACKS for ie6 margin -1*/
+	display: block;
+	width: 100px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	border-left: 1px dashed #373737;
+	color: #000000;
+}
+
+#header ul li#nav-contact a {
+	border-right: 1px dashed #373737;
+}
+
+#header ul li a:hover , #header ul li.nav-now a {
+	color: #2961AB;
+	background: #FFFFFF url(../images/nav-background.jpg) no-repeat bottom center;
+}
+
+#banner {
+	margin: 0 0 20px 0;
+}
+
+#banner img {
+	width: 960px;
+}
+
+#main .sidebar {
+	float: left;
+	width: 220px;
+	height: 500px;
+}
+
+#main .about-sidebar {
+	background: #F1F1F1 url(../images/sidebar-background.jpg) no-repeat left bottom;
+}
+
+#main .sidebar h2 {
+	width: 140px;
+	margin: 20px;
+	padding: 10px 20px;
+	border-bottom: 1px solid #CCCCCC;
+	color: #373737;
+}
+
+#main .sidebar ul {
+	margin: 20px;
+	width: 180px;
+}
+
+#main .sidebar ul li {
+	margin: 1px 0;
+}
+
+#main .sidebar ul li a {
+	width: 140px;
+	line-height: 30px;
+	padding: 0 20px;
+	display: block;
+	font-size: 13px;
+	color: #999999;
+}
+
+#main .sidebar ul li a:hover, #main .sidebar ul li.sidebar-now a {
+	color: #82DCFF;
+	background: #A9A9A9;
+}
+
+#main .sidebar ul.sidebar2 {
+	margin: 10px 0;
+	padding: 0;
+}
+
+#main .sidebar ul.sidebar2 li a {
+	width: 130px;
+	line-height: 20px;
+	padding: 0 25px;
+	display: block;
+	font-size: 13px;
+	color: #999999;
+	background: #F1F1F1;
+}
+
+#main .sidebar ul.sidebar2 li a:hover, #main .sidebar ul.sidebar2 li.sidebar-now a {
+	color: #82DCFF;
+	background: #F1F1F1;
+}
+
+#main #post {
+	line-height: 24px;
+	float: right;
+	margin: 0 0 0 40px;
+	padding: 15px 0;
+	width:700px;
+}
+
+#main #post h1 {
+	width: 700px;
+	margin: 10px 0 20px 0;
+	color: #A2BCD2;
+}
+
+#main #post #post-text {
+	float: left;
+	width:450px;
+}
+
+#main #post #post-text p {
+	margin: 0 0 15px 0;
+	text-align: justify;
+}
+
+#main #post #post-text p b {
+	color: #A2BCD2;
+}
+
+#main #post #post-image img {
+	float: right;
+	width: 216px;
+	border: 2px solid #EDEDED;
+}
+
+#main #post #post-image p {
+	float: right;
+	width: 220px;
+	margin-bottom: 8px;
+}
+
+#footer-button {
+	float: left;
+	width: 940px;
+}
+
+#footer-button button {
+	float: right;
+	width: 80px;
+	height: 25px;
+	border: 0;
+	color: #FFFFFF;
+	background: #60b3c8;
+}
+
+#footer {
+	float: left;
+	margin: 20px 0 0;
+	width: 960px;
+	height: 50px;
+	line-height: 50px;
+	background: #E9E9E9;
+	text-align: center;
+	font-family: Tahoma, Arial;
+}
+
+#footer p a {
+	float: right;
+	margin: 0 20px 0 0;
+	color: #666666;
+}
+
+#footer p  a:hover {
+	color: #000000;
+}
+
+#footer p span {
+	width: 880px;
+	float: left;
+	font-size: 10px;
+	font-family: Verdana;
+}
+
+/****************************************
+ * index
+****************************************/
+#main h1 {
+	margin-bottom: 15px;
+}
+
+#main #index-left, #main #index-right {
+	float: left;
+	padding: 20px 30px;
+	width: 220px;
+	*margin-right: -3px;/*HACK for ie6*/
+}
+
+#main #index-left span {
+	font-weight: normal;
+}
+
+#main #index-center {
+	float: left;
+	margin: 20px 0;
+	padding: 0 30px;
+	width: 338px;
+	height: 200px;
+	border-left: 1px dashed #888888;
+	border-right: 1px dashed #888888;
+}
+
+#main #index-left h1 span {
+	margin: 0 0 0 20px;
+	font-size: 10px;
+	font-family: Verdana;
+}
+
+#main #index-right p {
+	background: #F2F2F2;
+	padding: 8px 15px;
+}
+
+#main #index-right img {
+	width: 220px;
+}
+/****************************************
+ * contact
+****************************************/
+
+
+
+#main #post #contact-left {
+	float: left;
+	width: 390px;
+}
+
+#main #post #contact-left table {
+	margin-top: 8px;
+}
+
+#main #post #contact-right {
+	float: left;
+	width: 286px;
+	padding: 0 0 0 20px;
+}
+
+#main #post #contact-right input, #main #post #contact-right textarea {
+	width: 286px;
+}
+
+/****************************************
+ * database
+****************************************/
+
+#main #post .database-mode {
+	float: left;
+	width: 162px;
+	padding: 0 0 20px 10px;
+	overflow: hidden;
+	*margin-left: -3px;/*-- 解决IE6重复字BUG --*/
+}
+
+#main #post .database-mode img {
+	width: 162px;
+	height: 100px;
+}
+
+#main #post .database-mode p {
+	width: 152px;
+	height: 60px;
+	padding-left: 10px;
+	background: #E9E9E9;
+}
+
+/****************************************
+ * service
+****************************************/
+
+#main #post #service-top {
+	float: left;
+}
+
+#main #post #service-top img {
+	width: 700px;
+}
+
+#main #post #service-top .text p{
+	float: left;
+	width: 385px;
+	padding: 0 15px 0 0;
+}
+
+#main #post #service-top .text img {
+	float: left;
+	width: 296px;
+	border: 2px solid #EDEDED;
+}
+
+#main #post #service-top .text .img {
+	width: 700px;
+	float: left;
+	padding: 20px 0;
+}
+
+#main #post #service-top .text .img img {
+	float: left;
+	width: 166px;
+	border: 2px solid #EDEDED;
+	margin-right: 5px;
+	*display: inline;
+}
+/****************************************
+ * table
+****************************************/
+
+table.tab {
+	font-size: 12px;
+}
+
+table.tab tr td {
+	line-height: 22px;
+	padding: 0 0 0 5px;
+	color: #888888;
+}
+
+
