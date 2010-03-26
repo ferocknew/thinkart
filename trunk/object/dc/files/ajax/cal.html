@@ -1,0 +1,163 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+</head>
+
+<body>
+<SCRIPT language=javascript>
+<!--
+//当计算每月还款额时，把贷款总额的值设为空，把每月还本付息额的值设为“计算值”。
+function qiu1(){
+ document.loan.elements[0].value="";
+ document.loan.elements[5].value="计算值";
+}
+//当计算贷款总额时，把贷款总额的值设为“计算值”，把每月还本付息额的值设为空。
+function qiu2(){
+ document.loan.elements[5].value="";
+ document.loan.elements[0].value="计算值";
+}
+//获取用户选择计算哪种值，如选“求每月还款额”，返回值为1；如选“求贷款总额”，返回值为2。
+function qiu(){
+ var ca
+ for(i=1;i<=2;i++)
+ if (document.loan.elements[i].checked){
+ ca=document.loan.elements[i].value;
+ if(i==1) document.loan.elements[0].focus()
+ else document.loan.elements[3].focus()
+ }
+ return ca;
+}
+//获取用户输入年利率，并计算r+1的n次方，返回其值为x。
+function li(){
+ var x
+ var r1
+ var r
+ r=document.loan.elements[3].value;
+ n=document.loan.elements[4].value;
+ r1=r/1200+1;
+ with(Math){
+ x=pow(r1,n);
+ }
+ return x;
+}
+//把计算结果四舍五入，保留到小数点后两位。
+function jiequ(sum){
+ var sum1
+ var c
+ var index
+ var str
+ var letter
+ sum1=sum+"0";
+ for(l=0;l<sum1.length;l++)
+ { c=sum1.charAt(l);
+ if(c==".") index=l;
+ }
+ //index=m1.indexOf(".");
+ if(index==0) str=sum
+ else{ str=sum1.substring(0,index+3);
+ letter=sum1.charAt(index+3);
+ if(letter>=5) {str1=0.01+parseFloat(str);
+ str1=str1+"0";
+ str=str1.substring(0,index+3);}
+ }
+ return str;
+}
+//计算每月还款额
+function jisuan1(p,r){
+ var x
+ var m1
+ x=li();
+ m=p*r/1200*x/(x-1);
+ m1=jiequ(m);
+ return m1;
+}
+//计算贷款总额
+function jisuan2(m,r){
+ var x
+ var p1
+ x=li();
+ p=m*(x-1)*1200/r/x;
+ p1=jiequ(p); //86
+ return p1;
+}
+//-->
+</SCRIPT>
+<style type="text/css">
+
+tr{
+	height:35px;
+	line-height:30px;}
+
+.butstyle{
+	font-family:"微软雅黑","宋体",Arial, Helvetica, sans-serif;
+	font-size:12px;
+	border:1px solid #999999;
+	height:25px;
+	width:50px;
+	background-color:#999999;
+	color:#ffffff;}
+
+</style>
+<form name="loan">
+  <TABLE width="450" border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#EEEEEE" style="font-size:12px;">
+  <tr>
+    <td height="30" colspan="3" align="center" bgcolor="#EEEEEE">贷款计算器</td>
+    </tr>
+  <tr>
+    <td align="right" bgcolor="#FFFFFF">贷款总额:</td>
+    <td bgcolor="#FFFFFF">&nbsp;<input maxlength=10 size=18 name=txtp />
+      元</td>
+    <td align="center" bgcolor="#FFFFFF">计算选项</td>
+  </tr>
+  <tr>
+    <td align="right" bgcolor="#FFFFFF">贷款利率(年利率):</td>
+    <td bgcolor="#FFFFFF" >&nbsp;<input value=5.94 maxlength=10
+                  size=18 name=txtr />
+    %</td>
+    <td bgcolor="#FFFFFF"><input onclick="qiu1()" value="1" checked="checked"
+                  type="radio" name="calculate" />
+      求每月还款额 </td>
+    </tr>
+  <tr>
+    <td align="right" bgcolor="#FFFFFF">还款期限(按月计): </td>
+    <td bgcolor="#FFFFFF">&nbsp;<input maxlength=10 size=18 name=txtn />
+      个月 </td>
+    <td bgcolor="#FFFFFF" ><input onclick="qiu2()" value="2" type="radio"
+                  name="calculate" />
+求贷款总额 </td>
+  </tr>
+  <tr>
+    <td align="right" bgcolor="#FFFFFF">每月还本付息额:</td>
+    <td bgcolor="#FFFFFF">&nbsp;<input value=计算值 maxlength=10
+                  size=18 name=txtm />
+      &nbsp;元</td>
+    <td bgcolor="#FFFFFF">&nbsp;</td>
+  </tr>
+  <tr>
+    <td bgcolor="#FFFFFF">&nbsp;</td>
+    <td bgcolor="#FFFFFF">&nbsp;<input class="butstyle" onclick='&#13;&#10;var rr=parseFloat(txtr.value)&#13;&#10;var pp=parseFloat(txtp.value)&#13;&#10;var nn=parseFloat(txtn.value)&#13;&#10;var mm=parseFloat(txtm.value)&#13;&#10;var which&#13;&#10;which=qiu();&#13;&#10;if (which==1){&#13;&#10; if( isNaN(pp) )&#13;&#10; {&#13;&#10;&#9;txtp.value = ""&#13;&#10;&#9;pp = 0;&#13;&#10; alert ("请输入您的贷款总额!");&#13;&#10; }&#13;&#10; else&#13;&#10; {&#13;&#10; txtp.value = pp;&#13;&#10; }&#13;&#10;}&#13;&#10;if (which==2){&#13;&#10; if( isNaN(mm) )&#13;&#10; {&#13;&#10;&#9;txtm.value = ""&#13;&#10;&#9;mm = 0;&#13;&#10; alert ("请输入您的每月还款额!");&#13;&#10; }&#13;&#10; else&#13;&#10; {&#13;&#10; txtm.value = mm;&#13;&#10; }&#13;&#10;}&#13;&#10;if( isNaN(rr) )&#13;&#10; {&#13;&#10;&#9;txtr.value = ""&#13;&#10;&#9;rr = 0;&#13;&#10; alert ("请输入您的贷款年利率!");&#13;&#10; }&#13;&#10;else&#13;&#10; {&#13;&#10; txtr.value = rr;&#13;&#10; }&#13;&#10;if( isNaN(nn) )&#13;&#10;{&#13;&#10;&#9;txtn.value =1;&#13;&#10;&#9;nn =1;&#13;&#10;&#9;alert ("请输入您的还款期限(应为整数)!");&#13;&#10;}&#13;&#10;else&#13;&#10;{&#13;&#10;txtn.value = nn;&#13;&#10;}&#13;&#10;&#13;&#10;if(which==1) txtm.value=jisuan1(pp,rr);&#13;&#10;if(which==2) txtp.value=jisuan2(mm,rr);&#13;&#10;' value="计 算" type=button name=B12 />
+      <input value="重 输" class="butstyle" type=reset name=B22 /></td>
+    <td bgcolor="#FFFFFF">&nbsp;</td>
+  </tr>
+  </TABLE>
+  <table width="450" border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#eeeeee" style="font-size:12px;">
+    <tr>
+      <td height="30" align="center" bgcolor="#EEEEEE" style="line-height:20px;">功能说明</td>
+    </tr>
+    <tr>
+      <td bgcolor="#FFFFFF" style="line-height:20px;"><p>        (1) 计算每期还款额<br />
+        通过输入贷款本金与贷款年限计算出每期还款额。计算每期还款额时，贷款种类、还款方式、贷款年限、贷款本金、第几期还款（贷款方式为等本还款时）为必填或必选数据。 <br />
+        (2) 倒推出最高可贷额度 <br />
+        通过每期还款额与贷款年限计算可贷额度。计算可贷额度时，贷款种类、还款方式、贷款年限、期还款额为必填或必选数据。 </p>
+        <p>正确输入数据后根据需求点击“计算期还额”或“计算可贷额度”按钮。 <br />
+          请按照实际情况输入数据，错误的数据或逻辑关系可能引起计算异常。 <br />
+          本计算器计算结果仅供参考。 <br />
+      计算“个人住房贷款”项目时请手动输入您将计算贷款年限内对应的贷款年利率。</p></td>
+    </tr>
+  </table>
+</form>
+
+</body>
+</html>

@@ -93,7 +93,7 @@ End If
 </table>
 <table width="937" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr>
-    <td height="78" align="center" background="images/index_r17_c1.jpg">德威实业&nbsp;&nbsp; |&nbsp;&nbsp; 德威装饰&nbsp; |&nbsp;&nbsp; 德威房产<br />
+    <td height="78" align="center" background="images/index_r17_c1.jpg">德威实业&nbsp;&nbsp; |&nbsp;&nbsp; 德威装饰&nbsp; |&nbsp;&nbsp; 德崴房产<br />
       沪ICP备0810721号 Copyright（C）2008 DeWei Co., Ltd. All Rights Reserved.<br /></td>
   </tr>
 </table>
