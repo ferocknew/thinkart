@@ -16,41 +16,36 @@
 <!--#include file="inc_pageClass.asp"-->
 <!--#include file="inc_nav.asp"-->
 <%
-function trans_type(num)
-if num = 1 then response.write "网站"
-if num = 2 then response.write "平面"
-if num = 3 then response.write "摄影"
-if num = 4 then response.write "印刷制作"
-if num = 5 then response.write "其它"
-end function 
-%>
-<%
 del_id = request("del_id")
 if del_id <> "" then
-sql = "delete from tm_project_detail where dt_id = "&del_id&""
-conn.execute(sql)
-sql = "delete from tm_project where id = "&del_id&""
+sql = "delete from tm_user where id = "&del_id&""
 conn.execute(sql)
 end if
 %>
+
 <%
-finish_id = request("finish_id")
-if finish_id <> "" then
-sql = "update tm_project set pj_isok = 1 where id = "&finish_id&""
+block_id = request("block_id")
+block_type = request("block_type")
+if block_type = 0 then blockopt = 1
+if block_type = 1 then blockopt = 0
+if block_id <> "" then
+sql = "update tm_user set block = "&blockopt&" where id = "&block_id&""
 conn.execute(sql)
 end if
 %>
+
 <%
 Set rs = Server.CreateObject("ADODB.Recordset")
-sql = "SELECT * FROM tm_project order by id desc"
+sql = "select * from tm_user"
 rs.OPEN sql,Conn,1,1
 %>
+
 <br />
 <table width="98%" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr>
     <td width="220" valign="top" class="opArea"><table width="100%" border="0" cellspacing="0" cellpadding="0">
       <tr>
-        <td height="50" class="helpTitle bottomDotted1px">项目列表</td>
+        <td height="50" class="helpTitle bottomDotted1px">用户管理</td>
       </tr>
       <tr>
         <td class="helpContent bottomDotted1px"><p>&nbsp;</p></td>
@@ -63,23 +58,22 @@ rs.OPEN sql,Conn,1,1
         <tr>
           <td width="50%" class="bottomBorder1px"><table width="120" border="0" cellspacing="0" cellpadding="0">
             <tr>
-              <td width="120" height="35" class="tabCard">+ 项目列表</td>
+              <td width="120" height="35" class="tabCard">+ 用户列表</td>
             </tr>
           </table></td>
           <td height="25" align="right" class="bottomBorder1px">
-          <input name="create_pj5" type="button" class="setOptButtom" id="create_pj" value="新建" onclick="javascript:document.location='addproject.asp';" /></td>
+          <input name="create_pj5" type="button" class="setOptButtom" id="create_pj" value="新建" onclick="javascript:document.location='adduser.asp';" /></td>
         </tr>
       </table>
       <br />
-      <form action="process_add_project.asp" method="post" name="form1">
+      <form action="process_add_user.asp" method="post" name="form1">
         <table width="100%" border="0" cellspacing="0" cellpadding="0">
           <tr class="tableHead">
-            <td width="50" align="center" class="inputTable">状态</td>
-            <td width="80" align="center" class="inputTable">项目类型</td>
-            <td height="30" align="center" class="inputTable">项目名称</td>
-            <td width="80" align="center" class="inputTable">合同日期</td>
-            <td width="100" align="center" class="inputTable">剩余截止(天)</td>
-            <td width="150" align="center" class="inputTable">操作</td>
+            <td width="150" align="center" class="inputTable">用户名</td>
+            <td width="150" align="center" class="inputTable">密码</td>
+            <td width="150" height="30" align="center" class="inputTable">姓名</td>
+            <td width="80" align="center" class="inputTable">权限</td>
+            <td width="100" align="center" class="inputTable">操作</td>
           </tr>
     <%
 	'******************分页********************
@@ -99,17 +93,13 @@ rs.OPEN sql,Conn,1,1
 	While Not pageObj.EndofPage(rs)
 	%>
           <tr>
-            <td align="center" class="inputTable" title="<%=rs("pj_memo")%>"><%if rs("pj_isok") = 1 then%><img src="files/images/finish.png" border="0" /><%else%><img src="files/images/run.png" border="0" /><%end if%></td>
-            <td align="center" class="inputTable"><%=trans_type(rs("pj_type"))%></td>
-            <td height="30" align="center" class="inputTable" onclick="javascript:document.location='projectdetail.asp?dt_id=<%=rs("id")%>';" style="cursor:pointer;"><%=rs("pj_name")%></td>
-            <td align="center" class="inputTable"><%=rs("pj_start")%></td>
-            <td align="center" class="inputTable"><%response.write rs("pj_end")-date()%></td>
+            <td align="center" class="inputTable<%if rs("block")=1 then%> navBarOver<%end if%>"><%=rs("username")%></td>
+            <td align="center" class="inputTable"><%=rs("password")%></td>
+            <td height="30" align="center" class="inputTable"><%=rs("tname")%></td>
+            <td align="center" class="inputTable"><%=rs("power")%></td>
             <td align="center" class="inputTable"><span class="bottomBorder1px">
-              <input name="create_pj2" type="button" class="setOptButtom" id="create_pj2" value="编辑" onclick="javascript:document.location='editproject.asp?edit_id=<%=rs("id")%>';" />
-            </span><span class="bottomBorder1px">
-            <input name="create_pj3" type="button" class="setOptButtom" id="create_pj3" value="结项" onclick="javascript:if(confirm('确认结项？'))location.href='listproject.asp?finish_id=<%=rs("id")%>'" />
-            </span><span class="bottomBorder1px">
-            <input name="create_pj4" type="button" class="setOptButtom" id="create_pj4" value="删除" onclick="javascript:if(confirm('确认删除该项目？'))location.href='listproject.asp?del_id=<%=rs("id")%>'" />
+              <input name="create_pj4" type="button" class="setOptButtom" id="create_pj4" value="删除" onclick="javascript:if(confirm('确认删除该用户？'))location.href='listuser.asp?del_id=<%=rs("id")%>'" />
+              <input name="create_pj" type="button" class="setOptButtom" id="create_pj2" value="<%if rs("block")=0 then%>锁定<%else%>解锁<%end if%>" onclick="javascript:if(confirm('确认锁定该用户？'))location.href='listuser.asp?block_id=<%=rs("id")%>&block_type=<%=rs("block")%>'" />
             </span></td>
           </tr>
 	<%
