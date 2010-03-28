@@ -1,48 +1,33 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link rel="stylesheet" href="files/css/style.css" type="text/css" media="screen" />
-<title>ANTOP安湃国际-新闻中心</title>
-</head>
-
-<body>
+﻿<!--#include file="lib/const.asp" -->
+<!--#include file="conn.asp" -->
+<!--#include file="lib/header_commad.asp" -->
+<!--#include file="lib/header_html.asp" -->
+<!-- Html Body -->
 	<div id="content">
-	
+
 		<div id="header">
-        
+
 			<div id="logo">
 			</div><!-- #logo-->
-            
+
             <div id="language">
             	English
             </div><!-- #language-->
-            
-            <ul id="nav">
-				<li id="nav-home"><a href="index.html">首页</a></li>
-				<li id="nav-about"><a href="about.html">关于安湃</a></li>
-				<li id="nav-culture"><a href="culture.html">企业文化</a></li>
-				<li id="nav-introduction"><a href="introduction.html">业务简介</a></li>
-				<li id="nav-products"><a href="products.html">产品展示</a></li>
-				<li id="nav-news">新闻中心</li>
-				<li id="nav-services"><a href="services.html">客户服务</a></li>
-				<li id="nav-contact"><a href="contact.html">联系我们</a></li>
-            </ul><!-- #nav-->
-            
+<!--#include file="files/inc/top_menu.asp" -->
 		</div><!-- #header-->
-		
+
         <div id="main">
-        
+
 			<div id="about-exhibition">
 			</div><!-- #exhibition-->
-		
+
         	<div id="about-main">
-        
+
 				<div id="left-nav">
                 	<h2>新闻中心</h2>
-                  
+
    	      </div><!-- #left-nav-->
-                
+
                 <div id="about-text">
                 	<h1>不必对通货膨胀过于恐惧<span>About Natop</span></h1>
                     <p>经济学家看虎年经济送走金牛，迎来虎年。随着2010年1月份国内经济数据相继出炉，虎年经济将如何呈现？快报记者近日专访了国内部分知名经济学专家学者，请他们预测虎年国内外经济政策、市场走势。</p>
@@ -57,13 +42,12 @@
                 <!-- #right-nav-->
 		  </div>
         	<!-- #about-main-->
-            
+
         </div><!-- #main-->
-        
+
         <div id="footer">
         	Copyright©2010 antop(Shanghai)  All RightsReserved.
         </div><!-- #footer-->
-        
+
 	</div><!-- #content-->
-</body>
-</html>
+<!--#include file="lib/foot.asp" -->
