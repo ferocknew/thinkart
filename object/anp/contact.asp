@@ -1,50 +1,37 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link rel="stylesheet" href="files/css/style.css" type="text/css" media="screen" />
-<title>ANTOP安湃国际-联系我们</title>
-</head>
-
-<body>
+﻿<!--#include file="lib/const.asp" -->
+<!--#include file="conn.asp" -->
+<!--#include file="lib/header_commad.asp" -->
+<!--#include file="lib/header_html.asp" -->
+<!-- Html Body -->
 	<div id="content">
-	
+
 		<div id="header">
-        
+
 			<div id="logo">
 			</div><!-- #logo-->
-            
+
             <div id="language">
             	English
             </div><!-- #language-->
-            
-            <ul id="nav">
-				<li id="nav-home"><a href="index.html">首页</a></li>
-				<li id="nav-about"><a href="about.html">关于安湃</a></li>
-				<li id="nav-culture"><a href="culture.html">企业文化</a></li>
-				<li id="nav-introduction"><a href="introduction.html">业务简介</a></li>
-				<li id="nav-products"><a href="products.html">产品展示</a></li>
-				<li id="nav-news"><a href="news.html">新闻中心</a></li>
-				<li id="nav-services"><a href="services.html">客户服务</a></li>
-				<li id="nav-contact">联系我们</li>
-            </ul><!-- #nav-->
-            
+
+<!--#include file="files/inc/top_menu.asp" -->
+
 		</div><!-- #header-->
-		
+
         <div id="main">
-        
+
 			<div id="about-exhibition">
 			</div><!-- #exhibition-->
-		
+
         	<div id="contact-main">
-        
+
 				<div id="contact-left-nav">
                 	<h2>联系我们</h2>
             	</div><!-- #left-nav-->
-                
+
                 <div id="contact-text">
                 	<h1>联系方式</h1>
-          
+
                     <img src="files/images/map.jpg">
                     <p>
                     上海安湃进出口有限公司<br />
@@ -54,11 +41,11 @@
 					电话： +86-21-58762069 +86-13918131183 <br />
 					传真： +86-21-58762069  <br />
 					Email：mr_tony@yahoo.cn<br />
-                    邮编： 200120 
+                    邮编： 200120
                     </p>
-                      
+
                 </div><!-- #contact-text-->
-                
+
                 <div id="contact-text2">
                 	<h1>定制产品</h1>
                     <b>姓名</b><br/>
@@ -79,15 +66,14 @@
                     <textarea class="biginputbox"></textarea>
 		<button>发送</button>
                 </div><!-- #contact-text2-->
-                
+
 			</div><!-- #about-main-->
-            
+
         </div><!-- #main-->
-        
+
         <div id="footer">
         	Copyright©2010 antop(Shanghai)  All RightsReserved.
         </div><!-- #footer-->
-        
+
 	</div><!-- #content-->
-</body>
-</html>
+<!--#include file="lib/foot.asp" -->

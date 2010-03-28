@@ -1,45 +1,31 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link rel="stylesheet" href="files/css/style.css" type="text/css" media="screen" />
-<title>ANTOP安湃国际-产品展示</title>
+﻿<!--#include file="lib/const.asp" -->
+<!--#include file="conn.asp" -->
+<!--#include file="lib/header_commad.asp" -->
+<!--#include file="lib/header_html.asp" -->
+<!-- Html Body -->
 <style type="text/css">
 <!--
 .STYLE1 {color: #6490b4}
 -->
 </style>
-</head>
-<body>
 	<div id="content">
-	
+
 		<div id="header">
-        
+
 			<div id="logo">
 			</div><!-- #logo-->
-            
+
             <div id="language">
             	English
             </div><!-- #language-->
-            
-            <ul id="nav">
-				<li id="nav-home"><a href="index.html">首页</a></li>
-				<li id="nav-about"><a href="about.html">关于安湃</a></li>
-				<li id="nav-culture"><a href="culture.html">企业文化</a></li>
-				<li id="nav-introduction"><a href="introduction.html">业务简介</a></li>
-				<li id="nav-products">产品展示</li>
-				<li id="nav-news"><a href="news.html">新闻中心</a></li>
-				<li id="nav-services"><a href="services.html">客户服务</a></li>
-				<li id="nav-contact"><a href="contact.html">联系我们</a></li>
-            </ul><!-- #nav-->
-            
+            <!--#include file="files/inc/top_menu.asp" -->
 		</div><!-- #header-->
-		
+
         <div id="main">
-        
+
 			<div id="about-exhibition">
 			</div><!-- #exhibition-->
-		
+
         	<div id="services-main">
 
 				<div id="services-left-nav">
@@ -54,10 +40,10 @@
 
 		<div class="dzcp">------- 定制产品 -------</div>
             	</div><!-- #left-nav-->
-                
+
                 <div id="services-text">
                 	<h1>产品介绍</h1>
-                	<p>&nbsp;</p> 
+                	<p>&nbsp;</p>
                 	 <table class="tab" width="677" border="0" align="right" cellpadding="0" cellspacing="2">
                       <tr>
 			      <td width="9%" bgcolor="#2f3138"><span class="STYLE1">2BCBN</span></td>
@@ -135,18 +121,16 @@
                         <td bgcolor="#2f3138"><span class="STYLE1">45 Helix End Mills</span></td>
                       </tr>
                     </table>
-                    
+
                 </div><!-- #services-text-->
-                
+
 			</div><!-- #about-main-->
-            
+
         </div><!-- #main-->
-        
+
         <div id="footer">
         	Copyright©2010 antop(Shanghai)  All RightsReserved.
         </div><!-- #footer-->
-        
-	</div><!-- #content-->
-</body>
-</html>
 
+	</div><!-- #content-->
+<!--#include file="lib/foot.asp" -->

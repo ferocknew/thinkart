@@ -1,49 +1,34 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link rel="stylesheet" href="files/css/style.css" type="text/css" media="screen" />
-<title>ANTOP安湃国际-业务简介</title>
-</head>
-
-<body>
+﻿<!--#include file="lib/const.asp" -->
+<!--#include file="conn.asp" -->
+<!--#include file="lib/header_commad.asp" -->
+<!--#include file="lib/header_html.asp" -->
+<!-- Html Body -->
 	<div id="content">
-	
+
 		<div id="header">
-        
+
 			<div id="logo">
 			</div><!-- #logo-->
-            
+
             <div id="language">
             	English
             </div><!-- #language-->
-            
-            <ul id="nav">
-				<li id="nav-home"><a href="index.html">首页</a></li>
-				<li id="nav-about"><a href="about.html">关于安湃</a></li>
-				<li id="nav-culture"><a href="culture.html">企业文化</a></li>
-				<li id="nav-introduction">业务简介</li>
-				<li id="nav-products"><a href="products.html">产品展示</a></li>
-				<li id="nav-news"><a href="news.html">新闻中心</a></li>
-				<li id="nav-services"><a href="services.html">客户服务</a></li>
-				<li id="nav-contact"><a href="contact.html">联系我们</a></li>
-            </ul><!-- #nav-->
-            
+<!--#include file="files/inc/top_menu.asp" -->
 		</div><!-- #header-->
-		
+
         <div id="main">
-        
+
 			<div id="about-exhibition">
 			</div><!-- #exhibition-->
-		
+
         	<div id="introduction-main">
-        
+
 				<div id="left-nav">
                 	<h2>业务简介</h2>
             	</div><!-- #left-nav-->
-                
+
                 <div id="right-main">
-                
+
                 <div id="introduction-text">
                 	<h1>经营品牌</h1>
                     <p>加工性能优秀的53个品种 2900个 多样化的 产品系列:</p>
@@ -54,31 +39,30 @@
 					<li>钢件,HRC45以下的硬质合金铣刀.(25<HRC<45) </li>
 					<li class="bk">不锈钢,钛合金,镍合金专用的硬质合金铣刀. </li>
 					<li>铜合金专用的硬质合金铣刀.</li>
-                    </ul> 
+                    </ul>
                     <ul id="ul-right">
-                    <li class="bk">石墨专用的硬质合金铣刀.</li> 
-					<li>铝合金专用的硬质合金铣刀.</li> 
-					<li class="bk">硬质合金球头铣刀</li> 
-					<li>硬质合金圆鼻铣刀</li> 
+                    <li class="bk">石墨专用的硬质合金铣刀.</li>
+					<li>铝合金专用的硬质合金铣刀.</li>
+					<li class="bk">硬质合金球头铣刀</li>
+					<li>硬质合金圆鼻铣刀</li>
 					<li class="bk">硬质合金深沟铣刀 </li>
 					<li>硬质合金锥度铣刀(颈锥铣刀) </li>
                     </ul>
                 </div><!-- #introduction-text-->
-                
+
                 <div id="introduction-text2">
                 	<h1>业务概览</h1>
                     <img src="files/images/introduction.jpg">
                 </div><!-- #introduction-text2-->
-                
+
                 </div><!-- #right-main-->
 			</div><!-- #introduction-main-->
-            
+
         </div><!-- #main-->
-        
+
         <div id="footer">
         	Copyright©2010 antop(Shanghai)  All RightsReserved.
         </div><!-- #footer-->
-        
+
 	</div><!-- #content-->
-</body>
-</html>
+<!--#include file="lib/foot.asp" -->
