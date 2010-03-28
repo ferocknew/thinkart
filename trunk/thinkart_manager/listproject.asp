@@ -1,18 +1,8 @@
-<%@LANGUAGE="VBSCRIPT" CODEPAGE="65001"%>
-<%Session.CodePage=65001%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<!--#include file="checklogin.asp"-->
-<link href="files/css/style.css" rel="stylesheet" type="text/css" />
-<link href="files/css/jquery.hiAlerts.css" rel="stylesheet" type="text/css" />
-<script language="javascript" src="files/js/jquery-1.3.2.min.js"></script>
-<script language="javascript" src="files/js/jquery.hiAlerts-min.js"></script>
-<script language="javascript" src="files/js/common.js"></script>
-</head>
-<body>
-<!--#include file="inc_conn.asp"-->
+<!--#include file="files/inc/const.asp" -->
+<!--#include file="inc_conn.asp" -->
+<!--#include file="files/inc/inc-code.asp" -->
+<!--#include file="files/inc/inc-html.asp" -->
+<!-- Html Body -->
 <!--#include file="inc_pageClass.asp"-->
 <!--#include file="inc_nav.asp"-->
 <%
@@ -22,7 +12,7 @@ if num = 2 then response.write "平面"
 if num = 3 then response.write "摄影"
 if num = 4 then response.write "印刷制作"
 if num = 5 then response.write "其它"
-end function 
+end function
 %>
 <%
 del_id = request("del_id")
@@ -86,12 +76,12 @@ rs.OPEN sql,Conn,1,1
 	'调用分页函数来实现分项功能
 	pagesize	= FI("PageSize",10)
 	page		= FI("Page", 1)
-	
+
 	Set pageObj = new PageClass
-	
+
 	pageObj.pagesize	= pagesize
 	pageObj.page		= page
-	
+
 	pageObj.GetPage(rs)
 	If  pageObj.EndofPage(rs) Then
 	Else
@@ -128,9 +118,8 @@ rs.OPEN sql,Conn,1,1
           <td height="50" align="center" class="bottomBorder1px"><% response.Write ""&strpagechar %></td>
         </tr>
     </table>
-      </form>    
+      </form>
     <br /></td>
   </tr>
 </table>
-</body>
-</html>
+<!--#include file="files/inc/inc-foot.asp" -->
