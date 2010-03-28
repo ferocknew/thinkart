@@ -2,6 +2,22 @@
  --系统通用函数--
  Edit by 2009-11-28
  */
+//对象合并
+function extend(des, src, override){
+    if(src instanceof Array){
+        for(var i = 0, len = src.length; i < len; i++)
+             extend(des, src[i], override);
+    }
+    for( var i in src){
+        if(override || !(i in des)){
+            des[i] = src[i];
+        }
+    } 
+    return des;
+}
+function getType(o) {
+  var _t; return ((_t = typeof(o)) == "object" ? o==null && "null" || Object.prototype.toString.call(o).slice(8,-1):_t).toLowerCase();
+}
  //偏函数
   function partial(fn){
     var args=[].slice.call(arguments,1);
@@ -49,6 +65,7 @@ function get_url_show(type){
             return url_out;
             break;
     }
+
 }
 
 //限制文本宽度
@@ -112,20 +129,7 @@ function GetCookie(name){
 
 function DelCookie(name){
     SetCookie(name, "null", 1);
-
 }
-
-//无响应显示
-function Failure_ajax(){
-    alert("远程数据出错！请咨询管理员！");
-    return false
-}
-
-//选取body里所有的name的元素
-function $TagN(name){
-    return document.getElementsByTagName ? document.getElementsByTagName(name) : new Array()
-}
-
 //按比例调整图片大小函数
 function DrawImage(ImgD, FitWidth, FitHeight){
     var image = new Image();
