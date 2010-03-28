@@ -6,7 +6,7 @@
 <link href="files/css/jquery.hiAlerts.css" rel="stylesheet" type="text/css" />
 <script language="javascript" src="files/js/jquery-1.3.2.min.js"></script>
 <script language="javascript" src="files/js/jquery.hiAlerts-min.js"></script>
-<script language="javascript" src="http://jonah-js-tools.googlecode.com/svn/trunk/js/lib/js_json/js_jonah.js"></script>
+<script language="javascript" src="files/js/js_jonah.js"></script>
 <script language="javascript" src="files/js/common.js"></script>
 <title><%=title_tml%></title>
 </head>
