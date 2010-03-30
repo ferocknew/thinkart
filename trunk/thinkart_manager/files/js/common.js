@@ -71,7 +71,15 @@ $(document).ready(function(){
 		case "listcontract.asp":
 			showSubMenu('menu_b');
 			break;
-
+        case "listbuilding.asp":
+            showSubMenu('menu_c');
+            break;
+        case "listcustomer.asp":
+            showSubMenu('menu_c');
+            break;
+        case "listcalendar.asp":
+            showSubMenu('menu_d');
+            break;
 		default:
 		break;
 	}
