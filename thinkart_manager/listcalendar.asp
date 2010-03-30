@@ -1,18 +1,8 @@
-<%@LANGUAGE="VBSCRIPT" CODEPAGE="65001"%>
-<%Session.CodePage=65001%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<!--#include file="checklogin.asp"-->
-<link href="files/css/style.css" rel="stylesheet" type="text/css" />
-<link href="files/css/jquery.hiAlerts.css" rel="stylesheet" type="text/css" />
-<script language="javascript" src="files/js/jquery-1.3.2.min.js"></script>
-<script language="javascript" src="files/js/jquery.hiAlerts-min.js"></script>
-<script language="javascript" src="files/js/common.js"></script>
-</head>
-<body>
-<!--#include file="inc_conn.asp"-->
+<!--#include file="files/inc/const.asp" -->
+<!--#include file="inc_conn.asp" -->
+<!--#include file="files/inc/inc-code.asp" -->
+<!--#include file="files/inc/inc-html.asp" -->
+<!-- Html Body -->
 <!--#include file="inc_pageClass.asp"-->
 <!--#include file="inc_nav.asp"-->
 <%
@@ -50,7 +40,7 @@ end if
                   </tr>
                 </table></td>
                 <td align="right" class="bottomBorder1px">
-  <%if session("power") = 3 then%>                
+  <%if session("power") = 3 then%>
                   <form id="form1" name="form1" method="post" action="">
                     <select name="work_month" class="setOptButtom" id="work_month">
                       <option value="1" <%if work_month = 1 or month(now())=1 then%>selected<%end if%>>01月</option>
@@ -126,5 +116,4 @@ rs.OPEN sql,Conn,1,1
     </td>
   </tr>
 </table>
-</body>
-</html>
+<!--#include file="files/inc/inc-foot.asp" -->
