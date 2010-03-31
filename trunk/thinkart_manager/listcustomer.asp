@@ -48,6 +48,32 @@ rs.OPEN sql,Conn,1,1
       <br />
       <form action="" method="post" name="form1">
         <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td width="130"><table width="120" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td width="120" height="35" class="tabCard_un">+ 未设定</td>
+              </tr>
+            </table></td>
+            <td width="130"><table width="120" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td width="120" height="35" class="tabCard_un">+ 无意向</td>
+              </tr>
+            </table></td>
+            <td width="130"><table width="120" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td width="120" height="35" class="tabCard_un">+ 一般般</td>
+              </tr>
+            </table></td>
+            <td width="130"><table width="120" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td width="120" height="35" class="tabCard">+ 有意向</td>
+              </tr>
+            </table></td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+          </tr>
+        </table>
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
           <tr class="tableHead">
             <td width="60" align="center" class="inputTable">录入人</td>
             <td width="80" align="center" class="inputTable">录入时间</td>

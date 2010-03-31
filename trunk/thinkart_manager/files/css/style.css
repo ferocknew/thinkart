@@ -135,6 +135,15 @@ body{
 	background-color:#4b4b4b;
 	color:#ffffff;}
 	
+.tabCard_un{
+	height:25px;
+	line-height:25px;
+	text-align:center;
+	background-color:#cccccc;
+	color:#000000;
+	border-bottom:1px solid #eeeeee;}
+	
+	
 .tableHead{
 	background-color:#cccccc;
 	font-size:12px;
