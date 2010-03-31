@@ -42,7 +42,7 @@ rs.OPEN sql,Conn,1,1
             </tr>
           </table></td>
           <td height="25" align="right" class="bottomBorder1px">
-          <input name="create_pj5" type="button" class="setOptButtom" id="create_pj" value="新建" onclick="javascript:document.location='addcustomer.asp';" /></td>
+          <input name="create_pj5" type="button" class="setOptButtom" id="create_pj" value="新建" onClick="javascript:document.location='addcustomer.asp';" /></td>
         </tr>
       </table>
       <br />
@@ -56,7 +56,7 @@ rs.OPEN sql,Conn,1,1
             <td align="center" class="inputTable">联系地址</td>
             <td width="80" align="center" class="inputTable">职务</td>
             <td width="100" align="center" class="inputTable">备注</td>
-            <td width="120" align="center" class="inputTable">意向设定</td>
+            <td width="120" align="center" class="inputTable">意向情况</td>
             <td width="100" align="center" class="inputTable">操作</td>
           </tr>
     <%
@@ -76,17 +76,23 @@ rs.OPEN sql,Conn,1,1
 	i = 1
 	While Not pageObj.EndofPage(rs)
 	%>
+    <%
+	if rs("cuslv") = 0 then status = "未设定"
+	if rs("cuslv") = 1 then status = "无意向"
+	if rs("cuslv") = 2 then status = "一般般"
+	if rs("cuslv") = 3 then status = "有意向"
+	%>
           <tr>
             <td align="center" class="inputTable"><%=rs("infoadder")%></td>
             <td align="center" class="inputTable"><%=rs("addtime")%></td>
             <td align="center" class="inputTable"><%=rs("builder")%></td>
-            <td height="30" align="center" class="inputTable" onclick="javascript:document.location='editcustomer.asp?edit_id=<%=rs("id")%>';" style="cursor:pointer;"><%=rs("cpyname")%></td>
+            <td height="30" align="center" class="inputTable" onClick="javascript:document.location='editcustomer.asp?edit_id=<%=rs("id")%>';" style="cursor:pointer;"><%=rs("cpyname")%></td>
             <td align="center" class="inputTable"><%=rs("address")%></td>
             <td align="center" class="inputTable"><%=rs("perlevel")%></td>
             <td align="center" class="inputTable"><a href="#" title="<%=rs("memo")%>&#13;<%=rs("contact")%>___[<%=rs("phonenum")%>]">查看详细</a></td>
-            <td align="center" class="inputTable"><a href="listcustomer.asp?setlv=3&amp;recId=<%=rs("id")%>">垃圾</a> | <a href="listcustomer.asp?setlv=2&amp;recId=<%=rs("id")%>">普通</a> | <a href="listcustomer.asp?setlv=1&amp;recId=<%=rs("id")%>">意向</a></td>
+            <td align="center" class="inputTable">&nbsp;<%=status%></td>
             <td align="center" class="inputTable"><span class="bottomBorder1px">
-              <input name="create_pj4" type="button" class="setOptButtom" id="create_pj4" value="删除" onclick="javascript:if(confirm('确认删除该记录？'))location.href='listcustomer.asp?del_id=<%=rs("id")%>'" />
+              <input name="create_pj4" type="button" class="setOptButtom" id="create_pj4" value="删除" onClick="javascript:if(confirm('确认删除该记录？'))location.href='listcustomer.asp?del_id=<%=rs("id")%>'" />
             </span></td>
           </tr>
 	<%
