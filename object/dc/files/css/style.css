@@ -27,7 +27,7 @@ a {
 
 a:hover {
 	text-decoration: none;
-	color: #333333;
+	color: #666666;
 }
 
 #content #container .about-main img.button {
@@ -312,6 +312,54 @@ a:hover {
 
 /*about*/
 
+.boder{
+	background-image: url(../images/sidebarBoder.gif);
+	background-repeat: no-repeat;
+	background-position: 40px bottom;
+}
+
+.naviLeft1{
+	padding:8px 10px 8px 60px;
+	color:#FB475B;
+	font-weight:bold;
+	background-image: url(../images/sidebarBgTop.gif);
+	background-repeat: no-repeat;
+	background-position: 20px 15px;
+}
+
+.naviLeft2{
+	padding:8px 10px 6px 60px;
+	color:#999;
+	background-image: url(../images/sidebarBg2.gif);
+	background-repeat: no-repeat;
+	background-position: 20px center;
+}
+
+.naviLeft3{
+	padding:8px 10px 6px 60px;
+	color:#FB475B;
+	font-weight:bold;
+	background-image: url(../images/sidebarBg1.gif);
+	background-repeat: no-repeat;
+	background-position: 20px center;
+}
+
+.naviLeft4{
+	padding:8px 10px 6px 60px;
+	color:#999;
+	background-image: url(../images/sidebarBgBottom.gif);
+	background-repeat: no-repeat;
+	background-position: 20px 0;
+}
+
+.naviLeft5{
+	padding:8px 10px 6px 60px;
+	color:#999;
+	background-image: url(../images/sidebarBg3.gif);
+	background-repeat: repeat-y;
+	background-position: 20px center;
+}
+
 #content #container .about-sidebar ul.about-sidebar-im {
 	background: #f5f0f6 url(../images/about-sidebar-bg.jpg) no-repeat left top;
 	
@@ -326,6 +374,7 @@ a:hover {
 	float: left;
 	width: 230px;
 	margin: 0 10px 30px;
+	background-color:#f5f0f6;
 	*display: inline;/* HACKS for ie6 */
 }
 
@@ -519,7 +568,7 @@ a:hover {
 #content .index-main-bottom {
 	float: left;
 	width: 940px;
-	margin: 20px 10px;
+	margin: 20px;
 	*display: inline;
 }
 
@@ -534,8 +583,6 @@ a:hover {
 }
 
 #content .index-main-bottom ul li img {
-	width: 108px;
-	height: 108px;
 	border: 2px solid #D1D1D1;
 }
 
@@ -549,4 +596,9 @@ a:hover {
 	width: 180px;
 }
 
-
+.listBoder{
+	border-bottom:1px solid #DEDEDE;
+	margin:0;
+	text-indent: 20px;
+	background:url(../images/sidebar-bg.jpg) left no-repeat;
+}
