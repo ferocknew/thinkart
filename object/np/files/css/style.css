@@ -70,17 +70,17 @@ li {
 	height: 30px;
 	line-height: 30px;
 	text-align: center;
-	border-left: 1px dashed #373737;
+	border-left: 1px solid #666;
 	color: #000000;
 }
 
 #header ul li#nav-contact a {
-	border-right: 1px dashed #373737;
+	border-right: 1px solid #666;
 }
 
 #header ul li a:hover , #header ul li.nav-now a {
-	color: #2961AB;
-	background: #FFFFFF url(../images/nav-background.jpg) no-repeat bottom center;
+	color: #04bbe7;
+	background: #FFFFFF url(../images/nav-background.gif) no-repeat bottom center;
 }
 
 #banner {
@@ -245,7 +245,9 @@ li {
 	float: left;
 	padding: 20px 30px;
 	width: 220px;
+
 	*margin-right: -3px;/*HACK for ie6*/
+	background: url(../images/bgLine.gif) repeat-y right;
 }
 
 #main #index-left span {
@@ -254,12 +256,10 @@ li {
 
 #main #index-center {
 	float: left;
-	margin: 20px 0;
-	padding: 0 30px;
+	padding: 20px 30px;
 	width: 338px;
 	height: 200px;
-	border-left: 1px dashed #888888;
-	border-right: 1px dashed #888888;
+	background: url(../images/bgLine.gif) repeat-y right;
 }
 
 #main #index-left h1 span {
@@ -323,6 +323,7 @@ li {
 	height: 60px;
 	padding-left: 10px;
 	background: #E9E9E9;
+	line-height: 18px;
 }
 
 /****************************************
@@ -375,5 +376,3 @@ table.tab tr td {
 	padding: 0 0 0 5px;
 	color: #888888;
 }
-
-
