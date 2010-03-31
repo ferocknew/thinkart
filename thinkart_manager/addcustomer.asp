@@ -85,6 +85,15 @@
           </select></td>
         </tr>
         <tr>
+          <td align="right" class="inputTable">意向情况：</td>
+          <td height="30" class="inputTable"><select name="cuslv" class="setOpt" id="cuslv">
+            <option value="0">未设定</option>
+            <option value="1" selected="selected">无意向</option>
+            <option value="2">一般般</option>
+            <option value="3">有意向</option>
+          </select></td>
+        </tr>
+        <tr>
           <td align="right" class="inputTable">备注：</td>
           <td height="30" class="inputTable"><textarea name="memo" class="setTextArea" id="memo"></textarea></td>
         </tr>

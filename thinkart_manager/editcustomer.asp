@@ -32,6 +32,7 @@ address = rs("address")
 contact = rs("contact")
 perlevel = rs("perlevel")
 phonenum = rs("phonenum")
+cuslv = rs("cuslv")
 securityinfo = rs("securityinfo")
 memo = rs("memo")
 rs.close
@@ -110,6 +111,15 @@ set rs = nothing
             <option value="松散" <%if securityinfo = "松散" then%>selected<%end if%>>松散</option>
             <option value="一般" <%if securityinfo = "一般" then%>selected<%end if%>>一般</option>
             <option value="很严格" <%if securityinfo = "很严格" then%>selected<%end if%>>很严格</option>
+          </select></td>
+        </tr>
+        <tr>
+          <td align="right" class="inputTable">保安情况：</td>
+          <td height="30" class="inputTable"><select name="cuslv" class="setOpt" id="cuslv">
+            <option value="0" <%if cuslv = 0 then%>selected<%end if%>>未设定</option>
+            <option value="1" <%if cuslv = 1 then%>selected<%end if%>>无意向</option>
+            <option value="2" <%if cuslv = 2 then%>selected<%end if%>>一般般</option>
+            <option value="3" <%if cuslv = 3 then%>selected<%end if%>>有意向</option>
           </select></td>
         </tr>
         <tr>
