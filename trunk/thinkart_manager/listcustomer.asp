@@ -26,7 +26,7 @@ end if
 
 <%
 Set rs = Server.CreateObject("ADODB.Recordset")
-sql = "select * from tm_customer where cuslv = 0 order by id desc"
+sql = "select * from tm_customer order by id desc"
 rs.OPEN sql,Conn,1,1
 %>
 

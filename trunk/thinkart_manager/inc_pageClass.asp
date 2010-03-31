@@ -1,4 +1,4 @@
-﻿<%
+<%
 '*********************************************
 'FILE: PageClass.asp
 'DATE: 2002-2-16
@@ -14,9 +14,9 @@ Class PageClass
 	public page, pagesize, getUrl
 
 	public color1, color2
-    
+
 	public recordcount
-    
+
 	public sub GetPage(byref rs)
 		rs.PageSize = pagesize
 		if rs.PageCount >= page then rs.AbsolutePage = page
@@ -26,7 +26,7 @@ Class PageClass
 		color1 = "#C8D8F8"
 		color2 = "#FFFFFF"
 	end sub
-    
+
 	public function EndofPage(byref rs)
 		EndofPage = rs.eof or CurRecord > pagesize
 		CurRecord = CurRecord + 1
@@ -36,16 +36,16 @@ Class PageClass
 
 		dim listFrom
 		dim tmpReturn
-         
+
 		if rs.pageCount > 1 then
-         
+
 			tmpReturn = tmpReturn & "all " & rs.recordCount & " Rec: &nbsp;"
-         
+
 			listFrom = int((page - 1)/10) * 10
 			if page > 10 then
 				tmpReturn = tmpReturn & LinkToPage(listFrom - 10 + 1, "1-" & listFrom)
 			end if
-			
+
 			Dim i
 			for i = 1 to 10
 				if (listFrom + i) <= rs.pageCount then
@@ -68,12 +68,12 @@ Class PageClass
 				tmpReturn = tmpReturn & "Prev&nbsp;"
 			end if
 
-			if not rs.EOF then 
+			if not rs.EOF then
 				tmpReturn = tmpReturn &"&nbsp;|&nbsp;&nbsp;"& LinkToPage (page + 1, "Next")
 			else
 				tmpReturn = tmpReturn & "| Next"
 			end if
-         
+
 			tmpReturn = tmpReturn
 
 		end if
@@ -84,7 +84,7 @@ Class PageClass
 
 		dim listFrom
 		dim tmpReturn
-         
+
 		if rs.pageCount > 1 then
 			if page > 1 then
 				tmpReturn = tmpReturn &"&nbsp;"& LinkToPage( page - 1, "Prev")
@@ -92,39 +92,39 @@ Class PageClass
 				tmpReturn = tmpReturn & "&nbsp;Prev"
 			end if
 
-			if not rs.EOF and page<rs.pageCount then 
+			if not rs.EOF and page<rs.pageCount then
 				tmpReturn = tmpReturn &"&nbsp;"& LinkToPage (page + 1, "Next")
 			else
 				tmpReturn = tmpReturn & "&nbsp;Next"
 			end if
-         
+
 			tmpReturn = tmpReturn
 
 		end if
 		ShowNavBar2 = tmpReturn
     end function
-    
+
 	public sub close()
 		' nothing to do
 	end sub
-    
+
 	public function bgcolor()
-    
+
 		if CurRecord mod 2 = 0 then
 			bgcolor = color1
 		else
 			bgcolor = color2
 		end if
-    
+
 	end function
-    
+
 	private CurRecord
 
     private function LinkToPage(gotopage, pagedesc)
 
 		dim thisURL
 		dim tmpReturnLTP
-         
+
 		if gotopage = page then
 			tmpReturnLTP = tmpReturnLTP & "<b>" & pagedesc & "</b>&nbsp;"
 		else
