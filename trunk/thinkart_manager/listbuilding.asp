@@ -14,6 +14,15 @@ end if
 %>
 
 <%
+ok_id = request("ok_id")
+if ok_id <> "" then
+sql = "update tm_building set processok = 1 where id = "&ok_id&""
+conn.execute(sql)
+end if
+%>
+
+
+<%
 Set rs = Server.CreateObject("ADODB.Recordset")
 sql = "select * from tm_building order by id desc"
 rs.OPEN sql,Conn,1,1
@@ -30,7 +39,7 @@ rs.OPEN sql,Conn,1,1
               <td width="120" height="35" class="tabCard">+楼宇列表</td>
             </tr>
           </table></td>
-          <td height="25" align="right" class="bottomBorder1px"><input name="create_pj5" type="button" class="setOptButtom" id="create_pj" value="新建" onclick="javascript:document.location='addbuilding.asp';" /></td>
+          <td height="25" align="right" class="bottomBorder1px"><input name="create_pj5" type="button" class="setOptButtom" id="create_pj" value="新建" onClick="javascript:document.location='addbuilding.asp';" /></td>
         </tr>
       </table>
       <br />
@@ -62,13 +71,14 @@ rs.OPEN sql,Conn,1,1
 	While Not pageObj.EndofPage(rs)
 	%>
           <tr>
-            <td height="30" align="center" class="inputTable"><%=rs("budlv")%></td>
-            <td align="center" class="inputTable"><%=rs("budarea")%></td>
-            <td align="center" class="inputTable"><%=rs("budname")%></td>
-            <td align="center" class="inputTable"><%=rs("budaddress")%></td>
-            <td align="center" class="inputTable"><%=rs("budinfo")%></td>
-            <td align="center" class="inputTable"><span class="bottomBorder1px">
-              <input name="create_pj4" type="button" class="setOptButtom" id="create_pj4" value="删除" onclick="javascript:if(confirm('确认删除该记录？'))location.href='listbuilding.asp?del_id=<%=rs("id")%>'" />
+            <td height="30" align="center" class="inputTable <%if rs("processok")=1 then%>navBarOver<%end if%>"><%=rs("budlv")%></td>
+            <td align="center" class="inputTable <%if rs("processok")=1 then%>navBarOver<%end if%>"><%=rs("budarea")%></td>
+            <td align="center" class="inputTable <%if rs("processok")=1 then%>navBarOver<%end if%>"><%=rs("budname")%></td>
+            <td align="center" class="inputTable <%if rs("processok")=1 then%>navBarOver<%end if%>"><%=rs("budaddress")%></td>
+            <td align="center" class="inputTable <%if rs("processok")=1 then%>navBarOver<%end if%>"><%=rs("budinfo")%></td>
+            <td align="center" class="inputTable <%if rs("processok")=1 then%>navBarOver<%end if%>"><span class="bottomBorder1px">
+              <input name="create_pj4" type="button" class="setOptButtom" id="create_pj4" value="删除" onClick="javascript:if(confirm('确认删除该记录？'))location.href='listbuilding.asp?del_id=<%=rs("id")%>'" />
+              <input name="make_ok" type="button" class="setOptButtom" id="create_pj2" value="搞定！" onClick="javascript:if(confirm('确认搞定该楼了？'))location.href='listbuilding.asp?ok_id=<%=rs("id")%>'" <%if rs("processok") = 1 then%>disabled<%end if%> />
             </span></td>
           </tr>
           <%
