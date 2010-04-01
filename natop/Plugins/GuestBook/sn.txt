@@ -1,0 +1,5 @@
+<div id="guestbook"></div>
+<script>
+var now_data = new Date();
+$("#guestbook").load("Plugins/GuestBook/guestbook.asp?"+now_data .getSeconds());
+</script>
