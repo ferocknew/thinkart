@@ -2,6 +2,16 @@
 <!--#include file="conn.asp" -->
 <!--#include file="lib/header_commad.asp" -->
 <!--#include file="lib/header_html.asp" -->
+<%
+Dim class_id,DBField
+class_id=61 '产品列表ID
+
+DBField="id,class_name"
+tablename="class2"
+data_temp=table_readdate(conn,"",tablename,DBField,"","order by orderid")
+data_temp_num=ArrayisEmpty(data_temp)
+
+%>
 <!-- Html Body -->
 <style type="text/css">
 <!--
@@ -39,50 +49,22 @@
 				<div class="toppic"> <a href="#"><img src="files/images/toppic_01.gif"></a> <a href="#"><img src="files/images/toppic_02.gif"></a> <a href="#"><img src="files/images/toppic_03.gif"></a> <a href="#"><img src="files/images/toppic_04.gif"></a> </div>
 				<p>&nbsp;</p>
 				<table class="tab" width="677" border="0" align="right" cellpadding="0" cellspacing="2" id="products-table">
+<%
+If Not data_temp_num=-1 Then
+For i=0 To data_temp_num
+%>
 					<tr>
-						<td width="50%" bgcolor="#2f3138"><span class="STYLE1"><a href="#">&gt; 高速加工用</a></span></td>
-						<td width="50%" bgcolor="#2f3138"><span class="STYLE1"><a href="#">&gt; Zamus Star Series</a></span></td>
+						<td width="50%" bgcolor="#2f3138"><span class="STYLE1"><a href="products-2.asp?proclassid=<%=data_temp(0,i)%>">&gt; 
+						<%
+						Response.Write(data_temp(1,i))
+						i=i+1
+						%></a></span></td>
+						<td width="50%" bgcolor="#2f3138"><%If i<=data_temp_num Then%><span class="STYLE1"><a href="products-2.asp?proclassid=<%=data_temp(0,i)%>">&gt; <%Response.Write(data_temp(1,i))%></a></span><%End If%></td>
 					</tr>
-					<tr>
-						<td width="50%"><span class="STYLE1"><a href="#">&gt; 锥形半径</a></span></td>
-						<td width="50%"><span class="STYLE1"><a href="#">&gt; Zamus Plus Series</a></span></td>
-					</tr>
-					<tr>
-						<td width="50%" bgcolor="#2f3138"><span class="STYLE1"><a href="#">&gt; SUS用 </a></span></td>
-						<td width="50%" bgcolor="#2f3138"><span class="STYLE1"><a href="#">&gt; Neo Classic X-Star Series</a></span></td>
-					</tr>
-					<tr>
-						<td width="50%"><span class="STYLE1"><a href="#">&gt; 锥度</a></span></td>
-						<td width="50%"><span class="STYLE1"><a href="#">&gt; Zamus Classic Series</a></span></td>
-					</tr>
-					<tr>
-						<td width="50%" bgcolor="#2f3138"><span class="STYLE1"><a href="#">&gt; 通用（涂层）</a></span></td>
-						<td width="50%" bgcolor="#2f3138"><span class="STYLE1"><a href="#">&gt; Zamus Thunder Series</a></span></td>
-					</tr>
-					<tr>
-						<td width="50%"><span class="STYLE1"><a href="#">&gt; 石墨加工用</a></span></td>
-						<td width="50%"><span class="STYLE1"><a href="#">&gt; Zamus Sus-Mate Series</a></span></td>
-					</tr>
-					<tr>
-						<td width="50%" bgcolor="#2f3138"><span class="STYLE1"><a href="#">&gt; 铜加工用</a></span></td>
-						<td width="50%" bgcolor="#2f3138"><span class="STYLE1"><a href="#">&gt; Zamus Copper-Mate Series</a></span></td>
-					</tr>
-					<tr>
-						<td width="50%"><span class="STYLE1"><a href="#">&gt; 铝合金加工用</a></span></td>
-						<td width="50%"><span class="STYLE1"><a href="#">&gt; Zamus Gra-Mate Series </a></span></td>
-					</tr>
-					<tr>
-						<td width="50%" bgcolor="#2f3138"><span class="STYLE1"><a href="#">&gt; 通用（形态）</a></span></td>
-						<td width="50%" bgcolor="#2f3138"><span class="STYLE1"><a href="#">&gt; Zamus Al-Mate Series</a></span></td>
-					</tr>
-					<tr>
-						<td width="50%"><span class="STYLE1"><a href="#">&gt; 通用（无涂层）</a></span></td>
-						<td width="50%"><span class="STYLE1"><a href="#">&gt; Zamus Star Series</a></span></td>
-					</tr>
-					<tr>
-						<td width="50%" bgcolor="#2f3138"><a href="#"><span class="STYLE1">&gt; ABS加工用</a></span></td>
-						<td width="50%" bgcolor="#2f3138">&nbsp;</td>
-					</tr>
+<%
+Next
+End If
+%>
 				</table>
 				<p>&nbsp;</p>
 			</div>
