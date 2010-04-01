@@ -1,5 +1,5 @@
 // JavaScript Document
-$(document).ready(function(){
+$(function(){
     $("#create_pj").click(function(){
         if ($("#pj_type").val().length > 0 && $("#pj_start").val().length > 0 && $("#pj_end").val().length > 0 && $("#pj_name").val().length > 0 && $("#pj_desc").val().length > 0 && $("#pj_price").val().length > 0 && $("#pj_pay").val().length > 0) {
             form1.submit();
