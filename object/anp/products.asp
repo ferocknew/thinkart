@@ -54,12 +54,12 @@ If Not data_temp_num=-1 Then
 For i=0 To data_temp_num
 %>
 					<tr>
-						<td width="50%" bgcolor="#2f3138"><span class="STYLE1"><a href="products-2.asp?proclassid=<%=data_temp(0,i)%>">&gt; 
+						<td width="50%" <%If i Mod 4 =0 Then%>bgcolor="#2f3138"<%End If%>><span class="STYLE1"><a href="products-2.asp?proclassid=<%=data_temp(0,i)%>">&gt; 
 						<%
 						Response.Write(data_temp(1,i))
 						i=i+1
 						%></a></span></td>
-						<td width="50%" bgcolor="#2f3138"><%If i<=data_temp_num Then%><span class="STYLE1"><a href="products-2.asp?proclassid=<%=data_temp(0,i)%>">&gt; <%Response.Write(data_temp(1,i))%></a></span><%End If%></td>
+						<td width="50%" <%If i Mod 4 =1 Then%> bgcolor="#2f3138" <%End If%>><%If i<=data_temp_num Then%><span class="STYLE1"><a href="products-2.asp?proclassid=<%=data_temp(0,i)%>">&gt; <%Response.Write(data_temp(1,i))%></a></span><%End If%></td>
 					</tr>
 <%
 Next
