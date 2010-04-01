@@ -30,7 +30,7 @@ Case "news_list"
 			for_num=UBound(data_temp)
 		End If
 
-		
+
 		Set json_temp2=new Aien_Json
 		json_temp2.JsonType="array"
 
@@ -47,7 +47,7 @@ Case "news_list"
 			Case 6
 				If data_temp(i,j)=0 Then
 				json_temp1.addData json_name(i),"-"
-				Else 
+				Else
 				class1name=conn.execute("select class_name from class2 where (id="&data_temp(i,j)&")")
 				class_name=class1name("class_name")
 				json_temp1.addData json_name(i),class_name
@@ -56,19 +56,19 @@ Case "news_list"
 			Case 7
 				If data_temp(i,j)=0 Then
 				json_temp1.addData json_name(i),"-"
-				Else 
+				Else
 				class1name=conn.execute("select class_name from class3 where (id="&data_temp(i,j)&")")
 				class_name=class1name("class_name")
 				json_temp1.addData json_name(i),class_name
 				End If
 				class_name=""
-			Case Else 
+			Case Else
 				json_temp1.addData json_name(i),data_temp(i,j)
-			End Select			
+			End Select
 		Next
 		json_temp2.addData j,json_temp1
 		Next
-		
+
 		json.addData "news_list",json_temp2
 	End If
 
@@ -77,8 +77,8 @@ Case "news_list"
 	data_temp=""
 	Set json=Nothing
 	Set json_temp2=Nothing
-	Set json_temp1=Nothing	
-	
+	Set json_temp1=Nothing
+
 	Case "class_news"
 		classname=SafeRequest("classname",0)
 		classid=SafeRequest("classid",0)
@@ -101,6 +101,31 @@ Case "news_list"
 		data_temp=""
 		Set json=Nothing
 	End Select
+
+Case "pro_list"
+	Select Case do_type
+	Case "all"
+    DBField="id,name,abstract,addtime,edittime,class1id,class2id,class3id,tag"
+    classTabName="products"
+	data_temp=table_readdate(conn,"",classTabName,DBField,"","order by edittime")
+	data_temp_num=ArrayisEmpty(data_temp)
+
+    Set json=new Aien_Json
+    json.JsonType="object"
+    If data_temp_num=-1 Then
+        json.addData "err",data_temp_num 'err数据
+    Else
+        json.addData "err",data_temp_num 'err数据
+        json.addData "pros_list",show_json(DBField,data_temp)
+    End If
+
+    Call jsonheadResponse()
+    Response.Write(json.getJson(json))
+    data_temp=""
+    Set json=Nothing
+
+
+    End Select
 
 End Select
 Call CloseDB()

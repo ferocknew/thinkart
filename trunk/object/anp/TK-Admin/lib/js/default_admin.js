@@ -6,7 +6,7 @@ $(function(){
     switch (get_file_url) {
         //系统设置
         case "index.asp":
-			admin_menu_click($(".rightBorder1px[get_html='system_edit']"));
+            admin_menu_click($(".rightBorder1px[get_html='system_edit']"));
             var get_info_url = "../lib/dataoutput/inf_xmlout.asp";
             $.getJSON(get_info_url, {
                 "code": "json"
@@ -38,7 +38,7 @@ $(function(){
          * 分类设置部分
          */
         case "classManage.asp":
-		admin_menu_click($(".rightBorder1px[get_html='Content_manage']"));
+            admin_menu_click($(".rightBorder1px[get_html='Content_manage']"));
             //当前页面体验修改
             var get_info_url = "../lib/dataoutput/action_xmlout.asp";
             $(".optList").clearAll();
@@ -152,7 +152,7 @@ $(function(){
                 var show_select = cmd_words.show_select;
                 var classname = cmd_words.classname;
                 var upclassid = cmd_words.upclassid;
-
+                
                 if (upclassid == null) {
                     alert("请选择上层分类。");
                     return false;
@@ -188,7 +188,7 @@ $(function(){
          * 新闻添加
          */
         case "addContent.asp":
-		admin_menu_click($(".rightBorder1px[get_html='Content_manage']"));
+            admin_menu_click($(".rightBorder1px[get_html='Content_manage']"));
             var news_id = getvalue("id");
             show_classmenu($(".rightDotted1px_div"));
             if (news_id == null) {
@@ -251,7 +251,7 @@ $(function(){
                         if (news_con.class3id != 0) {
                             get_class_("treeLv3", news_con.class3id, news_con.class2id);
                         }
-                        else
+                        else 
                             if (news_con.class2id != 0) {
                                 get_class_("treeLv2", news_con.class2id, news_con.class1id);
                             }
@@ -300,48 +300,168 @@ $(function(){
                         });
                     });
                 });
-                function get_class_(class_type, classid, upclassid){
-                    var get_class_div = $("." + class_type + "[classid='" + classid + "']");
-                    get_class_div.css({
-                        "background-color": "#666",
-                        color: "#fff"
-                    });
-                    $("#from_class").text(get_class_div.text()).data("class_val", {
-                        classid: classid,
-                        class_type: class_type,
-                        upclassid: upclassid
-                    });
-                };
+                
             }
             break;
         /*
          * 新闻呈现
          */
         case "news.asp":
-			admin_menu_click($(".rightBorder1px[get_html='Content_manage']"));
+            admin_menu_click($(".rightBorder1px[get_html='Content_manage']"));
             show_news_list($(".news_contect"));
             break;
+            
+        //产品列表
+        case "pro-list.asp":
+            admin_menu_click($(".rightBorder1px[get_html='Products_manage']"));
+            show_pros_list($(".news_contect"));
+            break;
+            
+        //addpro。asp
+        case "addpro.asp":
+            admin_menu_click($(".rightBorder1px[get_html='Products_manage']")); //显示menu
+            var pro_id = getvalue("id"); //产品id
+            show_classmenu($(".rightDotted1px_div")); //显示分类
+            var _date_add = 0; // 0 表示不通过，1表示通过
+            if (pro_id == null) {
+                //添加产品
+                show_edit($("#pj_memo2")); // 显示编辑器
+                $("#create_pj").click(function(e){
+                    var class_data = $("#from_class").data("class_val");
+                    if (class_data == undefined) {
+                        alert("请选择分类");
+                        return false;
+                    }
+                    else {
+                        _date_add = 1;
+                    }
+                    if ($.trim($("#pj_start2").val()) == "" || $.trim($("#pj_start").val()) == "" || $.trim($("#pj_end").val()) == "") {
+                        alert("请填写必要内容！")
+                        return false;
+                    }
+                    else {
+                        _date_add = 1;
+                    }
+                    
+                    if (_date_add = 1) {
+                        var post_data = {
+                            pro_name: $.trim($("#pj_start2").val()),
+                            pro_tag: $.trim($("#pj_start").val()),
+                            pro_name_e: $.trim($("#pj_end").val()),
+                            Content: $("#pj_memo2").val(),
+                            classid: class_data.classid,
+                            classtype: class_data.class_type,
+                            upclassid: class_data.upclassid
+                        }
+                        $.ajax({
+                            type: "POST",
+                            url: "../lib/dataoutput/save_data.asp?act=add_pro",
+                            dataType: "json",
+                            data: post_data,
+                            success: function(json){
+                                if (json.err == "") {
+                                    alert(json.msg);
+                                    $("input[type='text']").val("");
+                                    return false;
+                                }
+                                else {
+                                    alert(json.err);
+                                    return false;
+                                }
+                            }
+                        });
+                    }
+                });
+            }
+            else {
+                //编辑产品
+                $.getJSON("../lib/dataoutput/action_xmlout.asp", {
+                    act: "get_pro",
+                    proid: pro_id
+                }, function(json){
+                    var news_con = json.pro[0];
+                    setTimeout(function(){
+                        if (news_con.class3id != 0) {
+                            get_class_("treeLv3", news_con.class3id, news_con.class2id);
+                        }
+                        else 
+                            if (news_con.class2id != 0) {
+                                get_class_("treeLv2", news_con.class2id, news_con.class1id);
+                            }
+                            else {
+                                get_class_("treeLv1", news_con.class1id, 0);
+                            }
+                    }, 1000);
+                    $("#pj_start2").val(news_con.name);
+                    $("#pj_start").val(news_con.tag);
+                    $("#pj_end").val(news_con.abstract);
+                    $("#pj_memo2").val(news_con.content);
+                    $("#pj_end2").val(news_con.tag);
+                    show_edit($("#pj_memo2")); // 显示编辑器
+                    $("#create_pj").val("修改");
+                    $("#create_pj").click(function(){
+                        if ($.trim($("#pj_start2").val()) == "") {
+                            alert("请填写标题！");
+                            return false;
+                        }
+                        var class_data = $("#from_class").data("class_val")
+                        var post_data = {
+                            proname: $("#pj_start2").val(),
+                            classid: class_data.classid,
+                            classtype: class_data.class_type,
+                            upclassid: class_data.upclassid,
+                            Content: $("#pj_memo2").val(),
+                            abstract: $("#pj_end").val(),
+                            tag: $("#pj_end2").val()
+                        };
+                        $.ajax({
+                            type: "POST",
+                            url: "../lib/dataoutput/save_data.asp?act=edit_pro&proid=" + pro_id,
+                            dataType: "json",
+                            data: post_data,
+                            success: function(json){
+                                if (json.err == "") {
+                                    alert(json.msg);
+                                    location.href = "pro-list.asp";
+                                    return false;
+                                }
+                                else {
+                                    alert(json.err);
+                                    return false;
+                                };
+                                                            }
+                        });
+                    });
+                })
+            }
+            
+            
+            
+            break;
+            
         default:
-		$.getScript("lib/js/top_menu.js?"+new Date().format("yyyyMMddhhmmss"));
+            $.getScript("lib/js/top_menu.js?" + new Date().format("yyyyMMddhhmmss"));
     }
     /*
      *调整页面体验
      */
     $(".rightBorder1px").css("cursor", "pointer");
     $("#top_menu td").click(function(){
-		admin_menu_click(this)
-	});
-	$("#loginout_do").click(function(){location.href="../lib/dataoutput/chkuser.asp?act=loginout_admin"});
+        admin_menu_click(this)
+    });
+    $("#loginout_do").click(function(){
+        location.href = "../lib/dataoutput/chkuser.asp?act=loginout_admin"
+    });
 });
 //通用 function
 function admin_menu_click(click_item){
-	$("#manvBar_sub").load("lib/top_admin_menu_children.asp #" + $(click_item).attr("get_html"), function(){
-		$(".Top-menu-children span").live("click", function(e){
-			location.href = $(e.target).attr("get_url")
-		}).hover(function(e){
-			$(e.target).css("color", "#ccc")
-		}, function(e){
-			$(e.target).css("color", "#999")
-		});
-	});
+    $("#manvBar_sub").load("lib/top_admin_menu_children.asp #" + $(click_item).attr("get_html"), function(){
+        $(".Top-menu-children span").live("click", function(e){
+            location.href = $(e.target).attr("get_url")
+        }).hover(function(e){
+            $(e.target).css("color", "#ccc")
+        }, function(e){
+            $(e.target).css("color", "#999")
+        });
+    });
 }

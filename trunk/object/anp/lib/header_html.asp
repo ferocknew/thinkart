@@ -7,9 +7,12 @@
 <meta name="generator" content="mrThink" />
 <script type="text/javascript" src="lib/js/jquery.min.js"></script>
 <script type="text/javascript" src="lib/js/js_jonah.js"></script>
-<script type="text/javascript" src="lib/js/default.js"></script>
 <script type="text/javascript" src="lib/js/default_lib.js"></script>
+<script type="text/javascript" src="lib/js/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript" src="lib/js/fancybox/jquery.mousewheel.pack.js"></script>
+<script type="text/javascript" src="lib/js/default.js"></script>
 <link href="files/css/default.css" rel="stylesheet" type="text/css" />
+<link href="lib/js/fancybox/jquery.fancybox.css" rel="stylesheet" type="text/css" />
 <title></title>
 </head>
 <body>
