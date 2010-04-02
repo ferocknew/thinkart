@@ -66,9 +66,9 @@
 					<li><span>4CRE</span>-实现卓越的切削能力</li>
 					<li><span>4SUC</span>-实现卓越的切削能</li>
 				</ul>
-				<div id="input">
-					<input name="q" type="text" class="searchinput" size="25" maxlength="25" value=""   />
-					<input name="btnG" type="button" class="searchgo" id="goButton" value="Go!" />
+				<div id="input"><form method="post" action="products-2.asp?act=sch" name="Search-pro">
+					<input name="lastname" type="text" class="searchinput" size="25" maxlength="25" value=""   />
+					<input name="btnG" type="submit" class="searchgo" id="goButton" value="Go!" /></form>
 				</div>
 				<!-- #input-->
 				<div id="text"> ----------- 定制产品 ------------ </div>
