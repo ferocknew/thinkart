@@ -3,14 +3,23 @@
 <!--#include file="lib/header_commad.asp" -->
 <!--#include file="lib/header_html.asp" -->
 <%
-Dim proclassid
-proclassid=Easp.RQ("proclassid",1)
+Dim proclassid,act
+act=Easp.RQ("act",0)
 
 DBField="id,name,abstract,addtime,edittime,class1id,class2id,class3id,tag"
 TabName="products"
+Select Case act
+Case "sch" '搜索
+pro_name=Easp.RF("lastname",0)
+
+data_temp=table_readdate(conn,"",TabName,DBField,"(name like '%"&pro_name&"%')","order by edittime")
+data_temp_num=ArrayisEmpty(data_temp)
+Case Else '清单
+proclassid=Easp.RQ("proclassid",1)
+
 data_temp=table_readdate(conn,"",TabName,DBField,"","order by edittime")
 data_temp_num=ArrayisEmpty(data_temp)
-
+End Select
 %>
 <!-- Html Body -->
 <style type="text/css">
@@ -46,9 +55,9 @@ $(function(){
 					<li>钻头系列</li>
 					<li>定心工具及绞刀系列</li>
 					<li>锯系列</li>
-				</ul>
+				</ul><form method="post" action="products-2.asp?act=sch" name="Search-pro">
 				<input type="text" name="lastname" value="产品规格搜索" style="color:#CCCCCC;" onBlur="this.style.color='#CCCCCC'" onFocus="this.style.color='#000000'">
-				<button height="20">搜索</button>
+				<button height="20">搜索</button></form>
 				<div class="dzcp">------- 定制产品 -------</div>
 			</div>
 			<!-- #left-nav-->

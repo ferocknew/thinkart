@@ -38,9 +38,9 @@ data_temp_num=ArrayisEmpty(data_temp)
 					<li>钻头系列</li>
 					<li>定心工具及绞刀系列</li>
 					<li>锯系列</li>
-				</ul>
-				<input onClick="javascript:this.value = '';" type="text" name="lastname" value="产品规格搜索" style="color:#CCCCCC;" onBlur="this.style.color='#CCCCCC'" onFocus="this.style.color='#000000'">
-				<button height="20">搜索</button>
+				</ul><form method="post" action="products-2.asp?act=sch" name="Search-pro">
+				<input type="text" name="lastname" value="产品规格搜索" style="color:#CCCCCC;" onBlur="this.style.color='#CCCCCC'" onFocus="this.style.color='#000000'">
+				<button height="20">搜索</button></form>
 				<div class="dzcp">------- 定制产品 -------</div>
 			</div>
 			<!-- #left-nav-->
