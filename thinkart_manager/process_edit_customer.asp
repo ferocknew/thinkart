@@ -13,6 +13,7 @@ phonenum = trim(request("phonenum"))
 securityinfo = trim(request("securityinfo"))
 cuslv = trim(request("cuslv"))
 memo = trim(request("memo"))
+othercontact = trim(request("othercontact"))
 %>
 
 <%
@@ -30,6 +31,7 @@ rs("perlevel")= perlevel
 rs("phonenum")= phonenum
 rs("cuslv")= cuslv
 rs("securityinfo")= securityinfo
+rs("othercontact")= othercontact
 rs("memo")= memo
 rs.update
 rs.close

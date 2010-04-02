@@ -35,6 +35,7 @@ phonenum = rs("phonenum")
 cuslv = rs("cuslv")
 securityinfo = rs("securityinfo")
 memo = rs("memo")
+othercontact = rs("othercontact")
 rs.close
 set rs = nothing
 %>
@@ -106,6 +107,10 @@ set rs = nothing
           <td height="30" class="inputTable"><input name="phonenum" type="text" class="setTextInput" id="phonenum" value="<%=phonenum%>" /></td>
         </tr>
         <tr>
+          <td align="right" class="inputTable">其它联系方式：</td>
+          <td height="30" class="inputTable"><textarea name="othercontact" class="setTextArea" id="othercontact"><%=othercontact%></textarea></td>
+        </tr>
+        <tr>
           <td align="right" class="inputTable">保安情况：</td>
           <td height="30" class="inputTable"><select name="securityinfo" class="setOpt" id="securityinfo">
             <option value="松散" <%if securityinfo = "松散" then%>selected<%end if%>>松散</option>
@@ -114,7 +119,7 @@ set rs = nothing
           </select></td>
         </tr>
         <tr>
-          <td align="right" class="inputTable">保安情况：</td>
+          <td align="right" class="inputTable">意向情况：</td>
           <td height="30" class="inputTable"><select name="cuslv" class="setOpt" id="cuslv">
             <option value="0" <%if cuslv = 0 then%>selected<%end if%>>未设定</option>
             <option value="1" <%if cuslv = 1 then%>selected<%end if%>>无意向</option>
