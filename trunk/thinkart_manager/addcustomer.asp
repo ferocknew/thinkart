@@ -70,6 +70,10 @@
           <td height="30" class="inputTable"><input name="phonenum" type="text" class="setTextInput" id="phonenum" /></td>
         </tr>
         <tr>
+          <td align="right" class="inputTable">其它联系方式：</td>
+          <td height="30" class="inputTable"><textarea name="othercontact" class="setTextArea" id="othercontact"></textarea></td>
+        </tr>
+        <tr>
           <td align="right" class="inputTable">保安情况：</td>
           <td height="30" class="inputTable"><select name="securityinfo" class="setOpt" id="securityinfo">
             <option value="松散">松散</option>
@@ -95,7 +99,7 @@
         <tr>
           <td width="100" height="50" class="bottomBorder1px">&nbsp;</td>
           <td height="30" class="bottomBorder1px"><input name="create_custm" type="button" class="setButtom" id="create_custm" value="添加" />
-          <input name="reset_pj" type="button" class="setButtom" id="reset_pj" value="返回" onclick="history.back(-1);" /></td>
+          <input name="reset_pj" type="button" class="setButtom" id="reset_pj" value="返回" onClick="history.back(-1);" /></td>
         </tr>
     </table>
       </form>

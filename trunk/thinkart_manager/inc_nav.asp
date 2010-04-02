@@ -29,7 +29,7 @@
 <div id="menu_c">    
   <table width="100%" border="0" cellspacing="0" cellpadding="0">
       <tr>
-        <td height="25" id="manvBar_sub">&nbsp;&nbsp;<a href="listbuilding.asp">+目标楼宇管理</a>&nbsp;&nbsp;||&nbsp;&nbsp;<a href="listcustomer.asp">+扫楼客户</a></td>
+        <td height="25" id="manvBar_sub">&nbsp;&nbsp;<a href="listbuilding.asp">+目标楼宇管理</a>&nbsp;&nbsp;||&nbsp;&nbsp;<a href="listcustomer.asp">+扫楼客户</a>&nbsp;&nbsp;||&nbsp;&nbsp;<a href="listmycustomer.asp">+我的扫楼客户</a></td>
       </tr>
     </table>
 </div>

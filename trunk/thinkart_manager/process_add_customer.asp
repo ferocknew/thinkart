@@ -13,6 +13,7 @@ phonenum = trim(request("phonenum"))
 cuslv = trim(request("cuslv"))
 securityinfo = trim(request("securityinfo"))
 memo = trim(request("memo"))
+othercontact = trim(request("othercontact"))
 %>
 
 <%
@@ -31,6 +32,7 @@ rs("phonenum")= phonenum
 rs("securityinfo")= securityinfo
 rs("cuslv")= cuslv
 rs("memo")= memo
+rs("othercontact")= othercontact
 rs.update
 rs.close
 set rs=nothing

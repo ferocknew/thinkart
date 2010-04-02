@@ -27,7 +27,11 @@ if username <> "" and password <> "" then
 	session("username") = rs("username")
 	session("tname") = rs("tname")
 	session("power") = rs("power")
-	response.redirect "listproject.asp"
+		if rs("power") = 2 then
+		response.redirect "listmycustomer.asp"
+		else
+		response.redirect "listproject.asp"
+		end if
 	else
 	errTag = 1
 	end if
