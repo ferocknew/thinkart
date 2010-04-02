@@ -58,9 +58,6 @@
                 <tr>
                   <td>传真：+86 21 51695889</td>
                 </tr>
-                <tr>
-                  <td height="24">邮箱：info@natop.com.cn</td>
-                </tr>
               </table>
 			  <hr>
 			  <table width="280" border="0" cellpadding="0" cellspacing="2" class="tab">
@@ -76,9 +73,6 @@
                 <tr>
                   <td>传真：+86 10 51413209</td>
                 </tr>
-                <tr>
-                  <td>邮箱：info@natop.com.cn</td>
-                </tr>
               </table>
 			  <hr>
 			  <table width="280" border="0" cellpadding="0" cellspacing="2" class="tab">
@@ -86,16 +80,16 @@
                   <td width="370"><strong>中国 香港皇后大道東183號</strong></td>
                 </tr>
                 <tr>
-                  <td>合和中心27樓全層</td>
+                  <td>合和中心27樓</td>
                 </tr>
                 <tr>
                   <td>&nbsp;</td>
                 </tr>
                 <tr>
-                  <td>&nbsp;</td>
+                  <td>网址：www.natop.com.cn</td>
                 </tr>
                 <tr>
-                  <td>&nbsp;</td>
+                  <td>邮箱：info@natop.com.cn</td>
                 </tr>
               </table>
 			  <p>&nbsp;</p>
