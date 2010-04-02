@@ -1,3 +1,4 @@
+<%@codepage=65001%>
 <!--#include file="conn.asp"-->
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"　"http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -36,9 +37,13 @@ set rs = conn.execute(sql)
 			<h1><strong>新闻中心</strong></h1>
 			<ul>
             	<%while not rs.eof%>
-				<li><a href="#"><strong>+ <%=rs("title")%></strong></a></li>
+				<li><a href="newsDetail.asp?newsid=<%=rs("id")%>&sel=about"><strong>+ <%=rs("title")%></strong></a></li>
+                <%rs.movenext
+				wend
+				rs.close
+				set rs = nothing%>
                 <br>
-                <a title="更多新闻" href="#" style="float:right; font-weight:bold;">+More></a>
+                <a title="更多新闻" href="newslist.asp" style="float:right; font-weight:bold;">+More></a>
 			<br>
 <!--			<dl>
 				<dt>SENSAPHONE  <span><strong> 中国区总代理</strong></span></dt>

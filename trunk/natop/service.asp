@@ -25,7 +25,17 @@
 sql = "select * from news where class1id = 60"
 set rs = conn.execute(sql)
 %>
-<body onLoad="javascript:loadContent('27');">
+<%
+showid = request("showid")
+if showid = 1 then num = 27
+if showid = 2 then num = 28
+if showid = 3 then num = 29
+if showid = 4 then num = 30
+if showid = 5 then num = 31
+if showid = 6 then num = 32
+if showid = "" then num = 27
+%>
+<body onLoad="loadContent('<%=num%>');hideSub();showSub('service_sub');">
 	<div id="content">
 	<!--#include file="inc_header.asp"-->
     <!-- #header-->
