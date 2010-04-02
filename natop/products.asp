@@ -34,7 +34,15 @@
 sql = "select * from news where class1id = 59"
 set rs = conn.execute(sql)
 %>
-<body onLoad="javascript:loadContent('23');">
+<%
+showid = request("showid")
+if showid = 1 then num = 23
+if showid = 2 then num = 24
+if showid = 3 then num = 25
+if showid = 4 then num = 26
+if showid = "" then num = 23
+%>
+<body onLoad="loadContent('<%=num%>');hideSub();showSub('product_sub');">
 	<div id="content">
     <!--#include file="inc_header.asp"-->
 	<!-- #header-->

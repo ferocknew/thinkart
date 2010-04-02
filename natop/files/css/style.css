@@ -83,6 +83,20 @@ li {
 	background: #FFFFFF url(../images/nav-background.gif) no-repeat bottom center;
 }
 
+#header ul li ul li a {/*修改过*/
+	color: #888888;
+	height: 15px;
+	width: auto;
+	*width: 55px;/* IE Hacks */
+	line-height: 15px;
+	margin: 0 5px;
+	border-left: 0;
+}
+
+#header ul li ul li.noborder {/*修改过*/
+	border-left: 0;
+}
+
 #banner {
 	margin: 0 0 20px 0;
 }
@@ -376,3 +390,7 @@ table.tab tr td {
 	padding: 0 0 0 5px;
 	color: #888888;
 }
+
+.dottedBottom{
+	border-bottom:1px dotted #999999;
+	text-indent:5px;}

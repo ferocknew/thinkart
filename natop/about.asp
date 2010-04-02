@@ -28,7 +28,14 @@
 sql = "select * from news where class1id = 58"
 set rs = conn.execute(sql)
 %>
-<body onLoad="loadContent('12');">
+<%
+showid = request("showid")
+if showid = 1 then num = 12
+if showid = 2 then num = 13
+if showid = 3 then num = 14
+if showid = "" then num = 12
+%>
+<body onLoad="loadContent('<%=num%>');hideSub();showSub('about_sub');">
 	<div id="content">
     <!--#include file="inc_header.asp"-->
 	<!-- #header-->
@@ -46,6 +53,7 @@ set rs = conn.execute(sql)
 				wend
 				rs.close
 				set rs = nothing%>
+                <li><a title="新闻中心" href="newslist.asp"><strong>新闻中心</strong></a></li>
 			</ul>
 		</div><!-- #sidebar-->
 
