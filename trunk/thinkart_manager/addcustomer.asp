@@ -99,7 +99,7 @@
         <tr>
           <td width="100" height="50" class="bottomBorder1px">&nbsp;</td>
           <td height="30" class="bottomBorder1px"><input name="create_custm" type="button" class="setButtom" id="create_custm" value="添加" />
-          <input name="reset_pj" type="button" class="setButtom" id="reset_pj" value="返回" onClick="history.back(-1);" /></td>
+          <input name="reset_pj" type="button" class="setButtom" id="reset_pj" value="返回" onclick="history.back(-1);" /></td>
         </tr>
     </table>
       </form>
