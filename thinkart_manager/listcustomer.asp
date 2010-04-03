@@ -7,7 +7,7 @@
 <!--#include file="inc_nav.asp"-->
 <%
 Dim cuslv_rs
-cuslv_rs=Easp.RQ("cuslv,0") '0 "未设定",1 "无意向",2 "一般般",3 "有意向"
+cuslv_rs=Easp.RQ("cuslv",1) '0 "未设定",1 "无意向",2 "一般般",3 "有意向"
 
 del_id = request("del_id")
 if del_id <> "" then
@@ -22,10 +22,18 @@ sql = "update tm_customer set cuslv = "&setlv&" where id = "&recId&""
 conn.execute(sql)
 end if
 
-Set rs = Server.CreateObject("ADODB.Recordset")
+If cuslv_rs="-1" Then
 sql = "select * from tm_customer order by id desc"
+Else
+sql = "select * from tm_customer where cuslv="&cuslv_rs&" order by id desc"
+End If
+
+Set rs = Server.CreateObject("ADODB.Recordset")
 rs.OPEN sql,Conn,1,1
 %>
+<style>
+#top-tab a.show-tab{ font-size:13px; font-weight:normal; color:#666;}
+</style>
 <br />
 <table width="98%" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr>
@@ -43,29 +51,63 @@ rs.OPEN sql,Conn,1,1
       </table>
       <br />
       <form action="" method="post" name="form1">
-        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0" id="top-tab">
           <tr>
             <td width="130"><table width="120" border="0" cellspacing="0" cellpadding="0">
               <tr>
-                <td width="120" height="35" class="tabCard_un">+ 未设定</td>
+                <td width="120" height="35" class="<%
+								If cuslv_rs=0 Then
+				Easp.W ("tabCard")
+				Else
+				Easp.W ("tabCard_un")
+				End If
+				%>">+ <a href="?cuslv=0" class="show-tab">未设定</a></td>
               </tr>
             </table></td>
             <td width="130"><table width="120" border="0" cellspacing="0" cellpadding="0">
               <tr>
-                <td width="120" height="35" class="tabCard_un">+ 无意向</td>
+                <td width="120" height="35" class="<%
+								If cuslv_rs=1 Then
+				Easp.W ("tabCard")
+				Else
+				Easp.W ("tabCard_un")
+				End If
+				%>">+ <a href="?cuslv=1" class="show-tab">无意</a></td>
               </tr>
             </table></td>
             <td width="130"><table width="120" border="0" cellspacing="0" cellpadding="0">
               <tr>
-                <td width="120" height="35" class="tabCard_un">+ 一般般</td>
+                <td width="120" height="35" class="<%
+								If cuslv_rs=2 Then
+				Easp.W ("tabCard")
+				Else
+				Easp.W ("tabCard_un")
+				End If
+				%>">+ <a href="?cuslv=2" class="show-tab">一般般</a>	</td>
               </tr>
             </table></td>
             <td width="130"><table width="120" border="0" cellspacing="0" cellpadding="0">
               <tr>
-                <td width="120" height="35" class="tabCard">+ 有意向</td>
+                <td width="120" height="35" class="<%
+				If cuslv_rs=3 Then
+				Easp.W ("tabCard")
+				Else
+				Easp.W ("tabCard_un")
+				End If
+				%>">+ <a href="?cuslv=3" class="show-tab">有意向</a></td>
               </tr>
             </table></td>
-            <td>&nbsp;</td>
+            <td><table width="120" border="0" cellspacing="0" cellpadding="0">
+            	<tr>
+            		<td width="120" height="35" class="<%
+				If cuslv_rs="-1" Then
+				Easp.W ("tabCard")
+				Else
+				Easp.W ("tabCard_un")
+				End If
+				%>">+ <a href="?cuslv=-1" class="show-tab">所有</a></td>
+            		</tr>
+            	</table></td>
             <td>&nbsp;</td>
           </tr>
         </table>
