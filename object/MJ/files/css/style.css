@@ -84,6 +84,7 @@ a.naviLeft:hover,a.naviLeft:active{
 * content
 ************************/
 #content{
+	margin-top:30px;
 	width:610px;
 	padding:45px 50px 20px;
 	margin-right:16px;
@@ -108,18 +109,21 @@ a.naviLeft:hover,a.naviLeft:active{
 ************************/
 
 #header {
+	position: relative;
 	width:475px;
 	height:33px;
 	line-height:33px;
 	float:right;
 	background: #68654f url(../images/logo_menu.gif) 15px center no-repeat;
-	margin:34px 0 30px;
+	margin-top:34px;
 	padding-left:250px;
 }
 
 #header ul li{
+	display: inline;
 	list-style:none;
 	float:left;
+	_margin-bottom: -3px; /*IE6 hack*/
 }
 
 
