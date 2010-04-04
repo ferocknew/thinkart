@@ -1,0 +1,153 @@
+/*明菁服饰*深浅设计*/
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background: url(../images/bg.gif);
+	line-height: 24px;
+	font-size: 12px;
+	color: #CCCCCC;
+}
+
+h1 {
+	font-size: 14px;
+	color: #867b30;
+	font-weight:bold;
+}
+
+p{
+	margin-bottom:20px;
+}
+
+hr{
+	margin:12px 0 20px;
+	border:0;
+	height:1px;
+	background-color:#707065;
+}
+
+#logo{
+	position:absolute;
+	width:276px;
+	height:328px;
+	background: url(../images/bg_leftTop.jpg) left top no-repeat;
+}
+	
+
+#container {
+	margin:auto;
+	width: 1020px;
+}
+
+/************************
+* navigation
+************************/
+
+#navigation{
+	width:294px;
+	float:left;
+	padding-top:370px;
+}
+
+#naviLeft{
+	float:right;
+	height:260px;
+	width:145px;
+	background:url(../images/bg_navi.gif);
+}
+
+#naviLeft ul li{
+	list-style:none;
+	height:30px;
+	background: url(../images/icon_navi.gif) no-repeat 120px center;
+	border-bottom:#bcbba7 1px solid;
+	padding-left:15px;
+	line-height:30px;
+	display:block;
+}
+
+a.naviLeft:link,a.naviLeft:visited{
+	color:#fff;
+	text-decoration:none;
+	font-weight:bold;
+}
+
+a.naviLeft:hover,a.naviLeft:active{
+	color:#efde62;
+}
+
+
+/************************
+* content
+************************/
+#content{
+	width:610px;
+	padding:45px 50px 20px;
+	margin-right:16px;
+	float:right;
+	background: #3a3a34;
+
+}
+
+.imgLeft{
+	float:left;
+	margin:0 15px 15px 0;
+}
+
+.imgRight{
+	float:right;
+	margin:0 0 15px 15px;
+}
+
+
+/************************
+* header
+************************/
+
+#header {
+	width:475px;
+	height:33px;
+	line-height:33px;
+	float:right;
+	background: #68654f url(../images/logo_menu.gif) 15px center no-repeat;
+	margin:34px 0 30px;
+	padding-left:250px;
+}
+
+#header ul li{
+	list-style:none;
+	float:left;
+}
+
+
+/************************
+* footer
+************************/
+
+#footer{
+	width:1020px;
+	height:100px;
+	float:left;
+	background:url(../images/footer_hotCall.gif) 35px center no-repeat;
+}
+
+#footerRight{
+	float:right;
+	padding:30px 50px 0;
+	text-align:right;
+	color:#555342;
+}
+
+a.footer:link,a.footer:visited{
+	color:#555342;
+	font-family: "微软雅黑";
+	font-size:11px;
+	text-decoration:none;
+}
+
+a.footer:hover,a.footer:active{
+	color:#777777;
+}
