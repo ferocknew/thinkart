@@ -1,21 +1,30 @@
 /*明菁服饰*深浅设计*/
 
-* {
-	margin: 0;
-	padding: 0;
-}
-
 body {
+	margin:0;
 	background: url(../images/bg.gif);
 	line-height: 24px;
 	font-size: 12px;
 	color: #CCCCCC;
 }
 
+ul,li{
+	margin:0;
+	padding:0;
+}
+
 h1 {
 	font-size: 14px;
 	color: #867b30;
 	font-weight:bold;
+}
+
+h2{
+	font-size:18px;
+	color:#c2b554;
+	font-weight:bold;
+	margin:0;
+	font-family:Arial;
 }
 
 p{
@@ -40,6 +49,64 @@ hr{
 #container {
 	margin:auto;
 	width: 1020px;
+}
+
+/************************
+* HomePage
+************************/
+
+#banner{
+	height:530px;
+	min-width:1000px;
+	background:url(../images/bg_home.jpg) center no-repeat;
+}
+
+#bannerRight{
+	margin:auto;
+	padding-left:700px;
+	padding-top:50px;
+	width:280px;
+}
+
+#homeHot{
+	width:250px;
+	padding:15px;
+	background:#050201;
+}
+
+
+
+#homeMenu{
+	height:33px;
+	line-height:33px;
+	background: #68654f;
+	padding-right:50px;
+}
+
+#homeMenu ul{
+	float:right;
+	width:500px;
+}
+
+#homeMenu li{
+	display: inline;
+	list-style:none;
+	float:left;
+	_margin-bottom: -3px; /*IE6 hack*/
+}
+
+#footerHome{
+	height:100px;
+	background:url(../images/footer_hotCall.gif) 35px center no-repeat;
+}
+
+
+.homeRightTitle{
+	margin-bottom:15px;
+	padding-left:5px;
+	color:#78786d;
+	font-size:14px;
+	font-family:"微软雅黑";
 }
 
 /************************
@@ -103,6 +170,10 @@ a.naviLeft:hover,a.naviLeft:active{
 	margin:0 0 15px 15px;
 }
 
+.contentEnd{
+	float:right;
+	width:610px;
+}
 
 /************************
 * header
@@ -154,4 +225,56 @@ a.footer:link,a.footer:visited{
 
 a.footer:hover,a.footer:active{
 	color:#777777;
+}
+
+.brandCaufil{
+	height:30px;
+	padding-top:5px;
+	background:url(../images/list_caufil.gif) right no-repeat;
+}
+
+.brandJarfect{
+	height:30px;
+	padding-top:5px;
+	background:url(../images/list_jarfect.gif) right no-repeat;
+}
+
+.font12 {
+	color: #867b30;
+}
+
+
+/************************
+* Prducts
+************************/
+
+.prducts{
+	width:150px;
+	height:200px;
+	float:left;
+	margin:1px;
+}
+
+#naviSelect{
+	background:url(../images/bg_select.gif) no-repeat;
+	margin:15px 12px 0;
+	padding-top:20px;
+}
+
+#naviSelect select{
+	width:100%;
+	margin-bottom:10px;
+	color:#737265;
+	background:#ececea;
+	border:#737265 solid 1px;
+}
+
+.prductMouseOn{
+	line-height:20px;
+	height:40px;
+	margin-top:150px;
+	padding:5px 10px;
+	background: #000 url(../images/bg_buy.gif) no-repeat 105px 30px;
+	filter: Alpha(Opacity=80);
+	opacity:0.8; /* 在firefox上可以直接解析 */
 }
