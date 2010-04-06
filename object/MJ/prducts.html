@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script language="javascript" src="files/js/jquery-1.4.2.min.js"></script>
+<script language="javascript">
+function showPrice(status){
+	if(status == 1){
+	$("#priceBlock").fadeIn('fast');
+	}else{
+	$("#priceBlock").fadeOut('fast');
+	}
+}
+</script>
+<title>菁夫人服饰</title>
+<link href="files/css/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<div id="logo"></div>
+<div id="container">
+<div id="navigation">
+  <div id="naviLeft">
+    <ul>
+      <li><a href="#" class="naviLeft">关于菁夫人</a></li>
+      <li><a href="#" class="naviLeft">设计团队</a></li>
+      <li><a href="#" class="naviLeft">附属品牌介绍</a></li>
+    </ul>
+    <div id="naviSelect">
+          <select name="select" id="select">
+          	<option>按季节分类</option>
+            <option>春季</option>
+            <option>夏季</option>
+            <option>秋季</option>
+            <option>冬季</option>
+          </select>
+        <select name="select" id="select">
+            <option>按功能分类</option>	
+            <option>外套</option>
+            <option>上衣</option>
+            <option>连衣裙</option>
+          </select>
+        <select name="select2" id="select2">
+          <option>按年份分类</option>
+          <option>2010年</option>
+          <option>2009年</option>
+          <option>2008年</option>
+          <option>2007年</option>
+          <option>2006年</option>
+        </select>
+    </div>
+  </div>
+</div>
+<div id="header">
+    <ul>
+      <li><a href="index.html"><img src="files/images/menu_home1.gif" border="0" /></a></li>
+      <li><a href="about.html"><img src="files/images/menu_about1.gif" border="0" /></a></li>
+      <li><a href="prducts.html"><img src="files/images/menu_prducts2.gif" border="0" /></a></li>
+      <li><a href="news.html"><img src="files/images/menu_news1.gif" border="0" /></a></li>
+      <li><a href="join.html"><img src="files/images/menu_join1.gif" border="0" /></a></li>
+      <li><a href="contact.html"><img src="files/images/menu_contact1.gif" border="0" /></a></li>
+    </ul>
+  </div>
+  <div id="content">
+    <img src="files/images/title_prducts.gif" />
+   <hr />
+   <h1>时尚休闲系列</h1>
+   <div class="prducts" style="background:url(files/images/img_01.jpg);">
+     <div class="prductMouseOn" id="priceBlock">
+       高领印花外套
+       <h2>￥599</h2>
+     </div>
+   </div>
+   <div class="prducts" style="background:url(files/images/img_02.jpg);"></div>
+   <div class="prducts" style="background:url(files/images/img_03.jpg);"></div>
+   <div class="prducts" style="background:url(files/images/img_04.jpg);"></div>
+   <div class="prducts" style="background:url(files/images/img_05.jpg);"></div>
+   <div class="prducts" style="background:url(files/images/img_06.jpg);"></div>
+   <div class="prducts" style="background:url(files/images/img_08.jpg);"></div>
+   <div class="prducts" style="background:url(files/images/img_05.jpg);"></div>
+   <p>&nbsp;</p>
+   <div class="contentEnd"><a href="#"><img src="files/images/button_next.gif"  border="0" align="right" /></a><a href="#"><img src="files/images/button_last.gif" border="0" align="right" /></a></div>
+  </div>
+  <div id="footer">
+    <div id="footerRight"> <a href="#"><img src="files/images/button_taobao.gif" border="0" /></a><br />
+    <a href="#" class="footer">站内导航</a> | <a href="#" class="footer">加入收藏夹</a> | <a href="#" class="footer">网站访问量统计</a></div>
+  </div>
+</div>
+</body>
+</html>
