@@ -1,7 +1,6 @@
 <!--#include file="lib/const.asp" -->
 <!--#include file="conn.asp" -->
 <!--#include file="lib/header_commad.asp" -->
-<!--#include file="lib/header_html.asp" -->
 <%
 Dim act
 act=Easp.RQ("act",0)
@@ -22,6 +21,10 @@ End Select
 
 %>
 <!-- Html Body -->
+<style>
+*{ margin:0px; padding:0px;}
+</style>
+<body>
 <div style="background-color:#FFF;"><%=data_temp(2,0)%></div>
 <!-- #content-->
 <!--#include file="lib/foot.asp" -->
