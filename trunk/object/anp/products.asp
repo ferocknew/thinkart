@@ -4,12 +4,20 @@
 <!--#include file="lib/header_html.asp" -->
 <%
 Dim class_id,DBField
+class2id=Easp.RQ("class2id",1)
+If class2id="" Then class2id=91
 class_id=61 '产品列表ID
+
 
 DBField="id,class_name"
 tablename="class2"
-data_temp=table_readdate(conn,"",tablename,DBField,"","order by orderid")
-data_temp_num=ArrayisEmpty(data_temp)
+data_temp_class2=table_readdate(conn,"",tablename,DBField,"","order by orderid")
+data_temp_class2_num=ArrayisEmpty(data_temp_class2)
+
+DBField="id,class_name,upclassid"
+tablename="class3"
+data_temp_class3=table_readdate(conn,"",tablename,DBField,"(upclassid="&class2id&")","order by orderid")
+data_temp_class3_num=ArrayisEmpty(data_temp_class3)
 
 data_pro_upshow=table_readdate(conn,"","products","ID,name,img","","order by addtime")
 data_pro_upshow_num=ArrayisEmpty(data_pro_upshow)
@@ -37,10 +45,15 @@ data_pro_upshow_num=ArrayisEmpty(data_pro_upshow)
 			<div id="services-left-nav">
 				<h2>产品介绍</h2>
 				<ul>
-					<li id="libg">铣刀系列</li>
-					<li>钻头系列</li>
-					<li>定心工具及绞刀系列</li>
-					<li>锯系列</li>
+				<%
+				If Not data_temp_class2_num=-1 Then
+				For i=0 To data_temp_class2_num
+				%>
+				<li <%If data_temp_class2(0,i)=Cdbl(class2id) Then Response.Write("id='libg'")%>><a href="products.asp?class2id=<%=data_temp_class2(0,i)%>" style="color:#ccc; text-decoration:none;"><%=data_temp_class2(1,i)%></a></li>
+				<%
+				Next
+				End If
+				%>
 				</ul><form method="post" action="products-2.asp?act=sch" name="Search-pro">
 				<input type="text" name="lastname" value="产品规格搜索" style="color:#CCCCCC;" onBlur="this.style.color='#CCCCCC'" onFocus="this.style.color='#000000'">
 				<button height="20">搜索</button></form>
@@ -54,7 +67,7 @@ data_pro_upshow_num=ArrayisEmpty(data_pro_upshow)
 				If Not data_pro_upshow_num=-1 Then
 				For i=0 To data_pro_upshow_num
 				%>
-				<a href="#"><img src="<%=data_pro_upshow(2,i)%>" title="<%=data_pro_upshow(1,i)%>"></a><a href="#"><img src="files/images/toppic_02.gif"></a><a href="#"><img src="files/images/toppic_03.gif"></a><a href="#"><img src="files/images/toppic_04.gif"></a>
+				<a href="ajax-show.asp?act=show-pro&proid=<%=data_pro_upshow(0,i)%>" class="pro-upshow"><img src="<%=data_pro_upshow(2,i)%>" title="<%=data_pro_upshow(1,i)%>"></a>
 				<%
 				If i=3 Then Exit For
 				Next
@@ -64,16 +77,16 @@ data_pro_upshow_num=ArrayisEmpty(data_pro_upshow)
 				<p>&nbsp;</p>
 				<table class="tab" width="677" border="0" align="right" cellpadding="0" cellspacing="2" id="products-table">
 <%
-If Not data_temp_num=-1 Then
-For i=0 To data_temp_num
+If Not data_temp_class3_num=-1 Then
+For i=0 To data_temp_class3_num
 %>
 					<tr>
-						<td width="50%" <%If i Mod 4 =0 Then%>bgcolor="#2f3138"<%End If%>><span class="STYLE1"><a href="products-2.asp?proclassid=<%=data_temp(0,i)%>">&gt; 
+						<td width="50%" <%If i Mod 4 =0 Then%>bgcolor="#2f3138"<%End If%>><span class="STYLE1"><a href="products-2.asp?class2id=<%=data_temp_class3(2,i)%>&proclassid=<%=data_temp_class3(0,i)%>">&gt; 
 						<%
-						Response.Write(data_temp(1,i))
+						Response.Write(data_temp_class3(1,i))
 						i=i+1
 						%></a></span></td>
-						<td width="50%" <%If i Mod 4 =1 Then%> bgcolor="#2f3138" <%End If%>><%If i<=data_temp_num Then%><span class="STYLE1"><a href="products-2.asp?proclassid=<%=data_temp(0,i)%>">&gt; <%Response.Write(data_temp(1,i))%></a></span><%End If%></td>
+						<td width="50%" <%If i Mod 4 =1 Then%> bgcolor="#2f3138" <%End If%>><%If i<=data_temp_class3_num Then%><span class="STYLE1"><a href="products-2.asp?proclassid=<%=data_temp_class3(0,i)%>">&gt; <%Response.Write(data_temp_class3(1,i))%></a></span><%End If%></td>
 					</tr>
 <%
 Next
@@ -92,3 +105,12 @@ End If
 </div>
 <!-- #content-->
 <!--#include file="lib/foot.asp" -->
+<script>
+$(".toppic>a").fancybox({
+'autoDimensions':false,
+'autoScale':false,
+'type':'iframe',
+'width':630,
+'height':800
+})
+</script>

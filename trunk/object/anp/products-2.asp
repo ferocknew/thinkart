@@ -5,6 +5,13 @@
 <%
 Dim proclassid,act
 act=Easp.RQ("act",0)
+class2id=Easp.RQ("class2id",1)
+If class2id="" Then Response.End()
+
+DBField="id,class_name"
+tablename="class2"
+data_temp_class2=table_readdate(conn,"",tablename,DBField,"","order by orderid")
+data_temp_class2_num=ArrayisEmpty(data_temp_class2)
 
 DBField="id,name,abstract,addtime,edittime,class1id,class2id,class3id,tag"
 TabName="products"
@@ -17,7 +24,7 @@ data_temp_num=ArrayisEmpty(data_temp)
 Case Else '清单
 proclassid=Easp.RQ("proclassid",1)
 
-data_temp=table_readdate(conn,"",TabName,DBField,"","order by edittime")
+data_temp=table_readdate(conn,"",TabName,DBField,"(class3id="&proclassid&")","order by edittime")
 data_temp_num=ArrayisEmpty(data_temp)
 End Select
 %>
@@ -55,10 +62,15 @@ $(function(){
 			<div id="services-left-nav">
 				<h2>产品介绍</h2>
 				<ul>
-					<li id="libg">铣刀系列</li>
-					<li>钻头系列</li>
-					<li>定心工具及绞刀系列</li>
-					<li>锯系列</li>
+				<%
+				If Not data_temp_class2_num=-1 Then
+				For i=0 To data_temp_class2_num
+				%>
+				<li <%If data_temp_class2(0,i)=Cdbl(class2id) Then Response.Write("id='libg'")%>><a href="products.asp?class2id=<%=data_temp_class2(0,i)%>" style="color:#ccc; text-decoration:none;"><%=data_temp_class2(1,i)%></a></li>
+				<%
+				Next
+				End If
+				%>
 				</ul><form method="post" action="products-2.asp?act=sch" name="Search-pro">
 				<input type="text" name="lastname" value="产品规格搜索" style="color:#CCCCCC;" onBlur="this.style.color='#CCCCCC'" onFocus="this.style.color='#000000'">
 				<button height="20">搜索</button></form>
