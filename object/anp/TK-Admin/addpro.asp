@@ -51,7 +51,7 @@
         </tr>
 		        <tr>
           <td align="right" class="inputTable">置顶图：</td>
-          <td height="30" class="inputTable"><iframe src="lib/upfile.asp" height="30" width="280" frameborder="0"></iframe></td>
+          <td height="30" class="inputTable"><a href="upfile.asp" id="addpro-showup"><button class="setButtom">置顶</button></a><input name="img-show-top" id="img-show-top" type="text" class="setTextInput" style="margin-left:20px;" disabled="disabled"/></td>
         </tr>
         <tr>
           <td width="100" align="right" valign="top" class="inputTable">产品简介：</td>
@@ -73,3 +73,7 @@
 </table>
 </body>
 <!--#include file="../lib/foot.asp" -->
+<script>
+var imgShowTop=$("#img-show-top");
+$("#addpro-showup").fancybox({'autoDimensions':false,'autoScale':false,'type':'iframe','width':320,'height':40});
+</script>
