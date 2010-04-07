@@ -49,6 +49,10 @@
           <td align="right" class="inputTable">英文名称：</td>
           <td height="30" class="inputTable"><input name="pj_end" type="text" class="setTextInput" id="pj_end" /></td>
         </tr>
+		        <tr>
+          <td align="right" class="inputTable">置顶图：</td>
+          <td height="30" class="inputTable"><iframe src="lib/upfile.asp" height="30" width="280" frameborder="0"></iframe></td>
+        </tr>
         <tr>
           <td width="100" align="right" valign="top" class="inputTable">产品简介：</td>
           <td height="30" class="inputTable"><textarea name="pj_memo2" id="pj_memo2" rows="15" cols="65"></textarea></td>

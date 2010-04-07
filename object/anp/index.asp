@@ -13,9 +13,10 @@
 	</div>
 	<!-- #header-->
 	<div id="main">
-		<div id="exhibition"> </div>
+		<div id="exhibition" style="position:relative;"><div style="position:absolute; right:0;bottom:0; width:178px; height:98px; background-color:#999;"></div></div>
 		<!-- #exhibition-->
-		<div id="nav2"> </div>
+		<div id="nav2">			
+		</div>
 		<!-- #nav2-->
 		<div id="news">
 			<div id="news1">

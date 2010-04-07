@@ -31,8 +31,12 @@ End Select
 $(function(){
 		   var _show_pro$=$("#services-text");
 			$("a",_show_pro$).fancybox({
-			 'autoScale' : false,
-			 });
+            'autoDimensions':false,
+            'autoScale':false,
+            'type':'iframe',
+            'width':630,
+            'height':800
+            });
 		   })
 </script>
 <div id="content">

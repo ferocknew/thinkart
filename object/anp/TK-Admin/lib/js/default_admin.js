@@ -152,7 +152,7 @@ $(function(){
                 var show_select = cmd_words.show_select;
                 var classname = cmd_words.classname;
                 var upclassid = cmd_words.upclassid;
-                
+
                 if (upclassid == null) {
                     alert("请选择上层分类。");
                     return false;
@@ -251,7 +251,7 @@ $(function(){
                         if (news_con.class3id != 0) {
                             get_class_("treeLv3", news_con.class3id, news_con.class2id);
                         }
-                        else 
+                        else
                             if (news_con.class2id != 0) {
                                 get_class_("treeLv2", news_con.class2id, news_con.class1id);
                             }
@@ -300,7 +300,7 @@ $(function(){
                         });
                     });
                 });
-                
+
             }
             break;
         /*
@@ -310,15 +310,27 @@ $(function(){
             admin_menu_click($(".rightBorder1px[get_html='Content_manage']"));
             show_news_list($(".news_contect"));
             break;
-            
+
         //产品列表
         case "pro-list.asp":
             admin_menu_click($(".rightBorder1px[get_html='Products_manage']"));
             show_pros_list($(".news_contect"));
             break;
-            
+
         //addpro。asp
         case "addpro.asp":
+            $("#pro-up-img").bind("change",function(e){
+				var post_data={upload:$(this).val()};
+				$.ajax({
+					type: "POST",
+					url:"lib/upload.asp",
+					dataType: "json",
+					data: post_data,
+					success: function(json){
+						alert(json);
+					}
+				})
+			})
             admin_menu_click($(".rightBorder1px[get_html='Products_manage']")); //显示menu
             var pro_id = getvalue("id"); //产品id
             show_classmenu($(".rightDotted1px_div")); //显示分类
@@ -342,7 +354,7 @@ $(function(){
                     else {
                         _date_add = 1;
                     }
-                    
+
                     if (_date_add = 1) {
                         var post_data = {
                             pro_name: $.trim($("#pj_start2").val()),
@@ -384,7 +396,7 @@ $(function(){
                         if (news_con.class3id != 0) {
                             get_class_("treeLv3", news_con.class3id, news_con.class2id);
                         }
-                        else 
+                        else
                             if (news_con.class2id != 0) {
                                 get_class_("treeLv2", news_con.class2id, news_con.class1id);
                             }
@@ -434,11 +446,11 @@ $(function(){
                     });
                 })
             }
-            
-            
-            
+
+
+
             break;
-            
+
         default:
             $.getScript("lib/js/top_menu.js?" + new Date().format("yyyyMMddhhmmss"));
     }
