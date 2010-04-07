@@ -13,7 +13,7 @@
 	</div>
 	<!-- #header-->
 	<div id="main">
-		<div id="exhibition" style="position:relative;"><div style="position:absolute; right:0;bottom:0; width:178px; height:98px; background-color:#999;"></div></div>
+		<div id="exhibition" style="position:relative;"><div id="index-img-show" style="position:absolute; right:0;bottom:0; width:178px; height:98px; background-color:#999;"></div></div>
 		<!-- #exhibition-->
 		<div id="nav2">			
 		</div>
@@ -85,3 +85,10 @@
 </div>
 <!-- #content-->
 <!--#include file="lib/foot.asp" -->
+<script>
+    $("#index-img-show").transition({
+            duration : 3000,
+            images : ['files/images/1.jpg', 'files/images/2.jpg', 'files/images/3.jpg'],
+            type : 'fade'
+         });
+</script>

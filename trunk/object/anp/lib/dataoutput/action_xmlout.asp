@@ -143,8 +143,8 @@ Case "get_news" '显示新闻内容
 Case "get_pro" '显示产品内容
 	Dim pro_id
 	pro_id=SafeRequest("proid",0)
-	DBField="id,name,edittime,content,abstract,class1id,class2id,class3id,tag"
-	show_json_arrayName="id,name,edittime,content,abstract,class1id,class2id,class3id,tag"
+	DBField="id,name,edittime,content,abstract,class1id,class2id,class3id,tag,img,upshow"
+	show_json_arrayName="id,name,edittime,content,abstract,class1id,class2id,class3id,tag,img,upshow"
 	data_temp=table_readdate(conn,"","products",DBField,"(id="&pro_id&")","")
 	data_temp_num=ArrayisEmpty(data_temp)
 

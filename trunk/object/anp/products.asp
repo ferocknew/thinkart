@@ -11,6 +11,9 @@ tablename="class2"
 data_temp=table_readdate(conn,"",tablename,DBField,"","order by orderid")
 data_temp_num=ArrayisEmpty(data_temp)
 
+data_pro_upshow=table_readdate(conn,"","products","ID,name,img","","order by addtime")
+data_pro_upshow_num=ArrayisEmpty(data_pro_upshow)
+
 %>
 <!-- Html Body -->
 <style type="text/css">
@@ -46,7 +49,18 @@ data_temp_num=ArrayisEmpty(data_temp)
 			<!-- #left-nav-->
 			<div id="services-text">
 				<h1>产品介绍</h1>
-				<div class="toppic"> <a href="#"><img src="files/images/toppic_01.gif"></a> <a href="#"><img src="files/images/toppic_02.gif"></a> <a href="#"><img src="files/images/toppic_03.gif"></a> <a href="#"><img src="files/images/toppic_04.gif"></a> </div>
+				<div class="toppic">
+				<%
+				If Not data_pro_upshow_num=-1 Then
+				For i=0 To data_pro_upshow_num
+				%>
+				<a href="#"><img src="<%=data_pro_upshow(2,i)%>" title="<%=data_pro_upshow(1,i)%>"></a><a href="#"><img src="files/images/toppic_02.gif"></a><a href="#"><img src="files/images/toppic_03.gif"></a><a href="#"><img src="files/images/toppic_04.gif"></a>
+				<%
+				If i=3 Then Exit For
+				Next
+				End If
+				%>
+				</div>
 				<p>&nbsp;</p>
 				<table class="tab" width="677" border="0" align="right" cellpadding="0" cellspacing="2" id="products-table">
 <%

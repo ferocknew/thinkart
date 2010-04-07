@@ -9,11 +9,14 @@
 <script type="text/javascript" src="../lib/js/jquery.min.js"></script>
 <script type="text/javascript" src="../lib/js/js_jonah.js"></script>
 <script type="text/javascript" src="../lib/js/xheditor/xheditor-zh-cn.js"></script>
+<script type="text/javascript" src="../lib/js/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript" src="../lib/js/fancybox/jquery.mousewheel.pack.js"></script>
 <script type="text/javascript" src="../lib/js/default_lib.js"></script>
 <script type="text/javascript" src="lib/js/lib_admin.js"></script>
 <script type="text/javascript" src="lib/js/jq.checkinput.js"></script>
 <script type="text/javascript" src="lib/js/default_admin.js"></script>
 <link href="files/css/style.css" rel="stylesheet" type="text/css" />
+<link href="../lib/js/fancybox/jquery.fancybox.css" rel="stylesheet" type="text/css" />
 <title>Mr.Thinker - Website Manager</title>
 </head>
 <body>

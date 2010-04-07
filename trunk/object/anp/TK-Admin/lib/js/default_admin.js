@@ -363,7 +363,8 @@ $(function(){
                             Content: $("#pj_memo2").val(),
                             classid: class_data.classid,
                             classtype: class_data.class_type,
-                            upclassid: class_data.upclassid
+                            upclassid: class_data.upclassid,
+                            imgshowtop:$.trim($("#img-show-top").val())
                         }
                         $.ajax({
                             type: "POST",
@@ -409,6 +410,7 @@ $(function(){
                     $("#pj_end").val(news_con.abstract);
                     $("#pj_memo2").val(news_con.content);
                     $("#pj_end2").val(news_con.tag);
+                    $("#img-show-top").val(news_con.img);
                     show_edit($("#pj_memo2")); // 显示编辑器
                     $("#create_pj").val("修改");
                     $("#create_pj").click(function(){
@@ -424,7 +426,8 @@ $(function(){
                             upclassid: class_data.upclassid,
                             Content: $("#pj_memo2").val(),
                             abstract: $("#pj_end").val(),
-                            tag: $("#pj_end2").val()
+                            tag: $("#pj_end2").val(),
+                            imgshowtop:$.trim($("#img-show-top").val())
                         };
                         $.ajax({
                             type: "POST",
@@ -441,14 +444,11 @@ $(function(){
                                     alert(json.err);
                                     return false;
                                 };
-                                                            }
+                            }
                         });
                     });
                 })
             }
-
-
-
             break;
 
         default:
