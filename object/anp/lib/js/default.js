@@ -4,17 +4,19 @@ $(function(){
     $.getJSON(get_info_url, {
         "code": "json"
     }, loaddoc);
-    
+
     //top_menu 操作
     var _top_menu$ = $("#nav"), get_file_url = get_url_show("end_file");
-    if (get_file_url == "") 
+    if (get_file_url == "")
         get_file_url = "index.asp";
+    if(get_file_url=="products-2.asp")
+        get_file_url="products.asp";
     if (_top_menu$.length) {
         var temp_text = $("li[get_url='" + get_file_url + "']>a", _top_menu$).text();
         $("li[get_url='" + get_file_url + "']", _top_menu$).html(temp_text);
     }
-    
-    
+
+
     switch (get_file_url) {
         //news.asp
         case "news.asp":
@@ -43,7 +45,7 @@ $(function(){
                 $("ul", _news_text$).html(tmp_html);
             });
             break;
-            
+
         //products.asp
         case "products.asp":
 		/*
@@ -67,7 +69,7 @@ $(function(){
                         }
                     }
                     else {
-                        if (i % 4 == 1) {							
+                        if (i % 4 == 1) {
                             _temp_td += "<td width='50%' bgcolor='#2f3138'><span class-'style1'><a href='#'> >" + this.classname + "</a></span></td>";
                         }
                         else {
@@ -80,7 +82,7 @@ $(function(){
 				var _temp_length=json.class_list.length
 				if(_temp_length%2==1){
 					_temp_tr+="<tr><td width='50%' bgcolor='#2f3138'><span class-'style1'><a href='#'> >" + json.class_list[_temp_length-1].classname + "</a></span></td><td bgcolor='#2f3138'></td></tr>";
-				}                
+				}
                 _products_table$.append(_temp_tr);
             });
 			$("a",_products_table$).live("click",function(e){
@@ -89,7 +91,7 @@ $(function(){
 				console.info(_shwo_pro$);
 			});*/
             break;
-            
+
         default:
             break;
     }
