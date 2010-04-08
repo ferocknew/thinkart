@@ -136,7 +136,7 @@ Case "add_pro"
     classtype=Request.Form("classtype")
     upclassid=Request.Form("upclassid")
 	imgshowtop=Trim(Request.Form("imgshowtop"))
-	
+
 	If Not imgshowtop="" Then
 	upshow=1
 	Else
@@ -205,7 +205,7 @@ Case "edit_pro"
 	Content=Request.Form("Content")
 	abstract=CheckStr(Trim(Request.Form("abstract")))
 	imgshowtop=Trim(Request.Form("imgshowtop"))
-	
+
 	If Not imgshowtop="" Then
 	upshow=1
 	Else
@@ -260,6 +260,34 @@ Case "edit_pro"
 	Call jsonheadResponse()
 	Response.Write(json.getJson(json))
 	Set json=Nothing
+
+'添加留言
+Case "addmsg"
+	userName=CheckStr(Trim(Easp.RF("user-name",0))) '姓名
+	telNum=CheckStr(Trim(Easp.RF("tel-num",0))) '电话
+	eMail=CheckStr(Trim(Easp.RF("e-mail",0))) '邮箱
+	comName=CheckStr(Trim(Easp.RF("com-name",0))) '公司
+	comAdr=CheckStr(Trim(Easp.RF("com-adr",0))) '地址
+	CustomModel=CheckStr(Trim(Easp.RF("Custom-Model",0))) '定制型号
+	DeliveryCycle=CheckStr(Trim(Easp.RF("Delivery-cycle",0))) '交货周期
+	msgContent=CheckStr(Trim(Easp.RF("content",0))) '您的要求
+
+	DBField="title,name,addtime,content,upid,email,others"
+	SQL="Select "&DBField&" From message"
+	Set data_temp = Server.CreateObject("ADODB.RecordSet")
+	data_temp.Open(SQL),conn,1,3
+	data_temp.Addnew
+	data_temp("title")=comName
+	data_temp("name")=userName
+	data_temp("addtime")=Now()
+	data_temp("upid")=0
+	data_temp("content")=msgContent
+	data_temp("email")=eMail
+	data_temp("others")="tel<[&&&**&&&]>"&telNu&"<[&&&**&&&]>adress<[&&&**&&&]>"&comAdr&"<[&&&**&&&]>CustomModel<[&&&**&&&]>"&CustomModel&"<[&&&**&&&]>DeliveryCycle<[&&&**&&&]>"&DeliveryCycle
+	data_temp.Update
+	data_temp.Close:Set data_temp=Nothing
+
+    Easp.JS("alert('留言已经保存！谢谢');window.location.href='../../contact.asp'")
 
 End Select
 Call CloseDB()

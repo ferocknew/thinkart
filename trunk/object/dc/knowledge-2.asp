@@ -1,13 +1,8 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"　"http://www.w3.org/TR/html4/loose.dtd">
-<html>
-
-<head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<link rel="stylesheet" type="text/css" href="files/css/style.css">
-	<title>德驰投资-融资常识</title>
-</head>
-
-<body>
+<!--#include file="lib/const.asp" -->
+<!--#include file="conn.asp" -->
+<!--#include file="lib/header_commad.asp" -->
+<!--#include file="lib/header_html.asp" -->
+<!-- Html Body -->
 	<div id="main-container">
 	<div id="header" class="container_12">
 		<div id="topbar">
@@ -17,7 +12,7 @@
 				<li><a href="brand.html"><img src="files/images/top-1.jpg"></a></li>
 			</ul>
 		</div><!-- #topbar-->
-		
+
 		<div class="banner">
 			<div class="banner-left">
 				<img src="files/images/banner-left.gif">
@@ -26,19 +21,7 @@
 			<div class="banner-right">
 				<img src="files/images/banner-right-about.jpg">
 			</div><!-- .banner-right-->
-		</div><!-- .banner-->
-
-		<div class="header-nav">
-			<ul class="grid_12">
-				<li><a href="index.html">主页</a></li>
-				<li><a href="about.html">机构简介</a></li>
-				<li><a href="brand.html">融贷通产品</a></li>
-				<li><a href="case.html">成功案例</a></li>
-				<li><a href="industry-3.html">行业介绍</a></li>
-				<li class="nav-now"><a href="knowledge-1-1.html">融资常识</a></li>
-				<li><a href="contact.html">联系我们</a></li>
-			</ul>
-		</div><!-- .header-nav-->
+		</div><!-- .banner--><!--#include file="files/inc/index-menu.asp" --><!-- .header-nav-->
 	</div><!-- #header-->
 
 	<div id="content" class="container_12">
@@ -109,4 +92,4 @@
 	</div><!-- #footer-->
 
 	</div>
-</body>	
+<!--#include file="lib/foot.asp" -->
