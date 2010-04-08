@@ -1,0 +1,550 @@
+/* 德驰投资|深浅设计 */
+
+@charset "UTF-8";
+@import url('reset.css');
+@import url('960.css');
+
+html {
+	background: #E9E9E9 url(../images/bottom-bg.jpg) repeat-x bottom left;
+}
+
+body {
+	background: #E9E9E9 url(../images/bottom-bg.jpg) repeat-x bottom left;
+}
+
+h1 {
+	font-size: 24px;
+}
+
+p {
+	margin: 0 0 10px 0;
+	color: #999999;
+}
+
+a {
+	color: #be0116;
+}
+
+a:hover {
+	text-decoration: none;
+	color: #333333;
+}
+
+#content #container .about-main img.button {
+	width: 58px;
+	border: none;
+	margin: 0 0 10px 0;
+}
+
+#content #container .about-main a.button {
+	float: left;
+	width: 130px;
+	height: 25px;
+	background: #dddddd;
+	padding: 3px;
+	margin: 0 3px 0 0;
+	text-align: center;
+	display: block;
+}
+
+
+#main-container {
+	width: 950px;
+	margin: 0 auto;
+	background: #FFFFFF;
+	display: inline;
+}
+
+/*-- Header --*/
+
+#header #topbar {
+	float: left;
+	padding: 10px 0;
+	background: #FFFFFF;
+}
+
+#header #topbar ul {
+	float: right;
+}
+
+#header #topbar ul li {
+	float: right;
+	display: block;
+	width: 70px;
+	height: 20px;
+	text-align: center;
+	background: #BE0116;
+	margin: 0 0 10px 6px;
+}
+
+#header #topbar ul li a{
+	font-weight: bold;
+	color: #DDDDDD;
+}
+
+#header #topbar ul li a:hover {
+	color: #FFFFFF;
+	text-decoration: none;
+}
+
+#header .banner {
+	float: left;
+	width: 960px;
+	background: #FFFFFF;
+}
+
+#header .banner .banner-left img {
+	float: left;
+	width: 270px;
+	height: 200px;
+	margin: 0 10px;
+}
+
+#header .banner .banner-right img {
+	float: left;
+	width: 660px;
+	height: 200px;
+}
+
+#header .header-nav {
+	float: left;
+	background: #FFFFFF;
+}
+
+#header .header-nav ul li {
+	float: left;
+	text-align: center;
+}
+
+#header .header-nav ul li a {
+	margin: 0 2px 0 0;
+	width: 132px;
+	height: 50px;
+	display: block;
+	line-height: 50px;
+	font-weight: bold;
+	color: #A6A6A6;
+	border-bottom: 10px solid #A6A6A6;
+}
+
+#header .header-nav ul li a:hover, #header .header-nav ul li.nav-now a {
+	color: #C80B20;
+	border-bottom: 10px solid #C80B20;
+	text-decoration: none;
+}
+
+/*-- Content --*/
+
+#content #container {
+	float: left;
+	width: 960px;
+	background: #FFFFFF;
+}
+
+#content #container .sidebar {
+	float: left;
+	width: 270px;
+	margin: 30px 10px;
+	*display: inline;/* HACKS for ie6 */
+}
+
+#content #container .sidebar h2 {
+	padding: 0 0 0 20px;
+	line-height: 40px;
+	color: #FFFFFF;
+	font-size: 14px;
+	font-weight: 500;
+	background: #A6A6A6;
+}
+
+#content #container .sidebar h2.red {
+	background: #C80B20;
+}
+
+#content #container .sidebar ul {
+	padding: 10px 30px 20px;
+	width: 210px;
+	background: #F2F2F2;
+}
+
+#content #container .sidebar ul li {
+	height: 30px;
+	border-bottom: 1px solid #DEDEDE; 
+}
+
+#content #container .sidebar ul li a {
+	line-height: 30px;
+	color: #999999;
+}
+
+#content #container .sidebar ul li.pad a {
+	padding: 0 0 0 30px;
+	background: #F2F2F2 url(../images/sidebar-bg.jpg) no-repeat left center;
+}
+
+#content #container .sidebar ul li a:hover {
+	color: #333333;
+	text-decoration: none;
+}
+
+#content #container .sidebar img {
+	margin-top: 20px;
+}
+
+
+
+
+#content #container .main {
+	float: left;
+	margin: 0 10px 0 20px;
+	width: 630px;
+}
+
+#content #container .main .main-mod-s {
+	float: left;
+	width: 300px;
+	margin: 30px 0 0 0;
+}
+
+#content #container .main h2 {
+	margin: 20px 0 0 0;
+	font-size: 18px;
+}
+
+#content #container .main .main-mod-left {
+	margin: 30px 30px 0 0;
+}
+
+#content #container .main .main-mod-s img.img {
+	width: 296px;
+	border: 2px solid #DEDEDE;
+}
+
+#content #container .main .main-mod-s ul {
+	padding: 20px 0;
+}
+
+#content #container .main .main-mod-s ul li {
+	padding: 0 20px;
+	background: #FFFFFF url(../images/main-mod-li-bg.jpg) no-repeat left center;
+}
+
+#content #container .main .main-mod-s ul li a{
+	color: #888888;
+}
+
+#content #container .main .main-mod-s ul li a:hover {
+	color: #333333;
+}
+
+#content #container .main .main-mod-s a button {
+	background: #BE0116;
+	width: 80px;
+	height: 25px;
+	border: 1px solid #D86773;
+	color: #DDDDDD;
+}
+
+#content #container .main .main-mod-s a:hover button {
+	color: #FFFFFF;
+	text-decoration: none;
+}
+
+#content #container .main .main-mod-l {
+	float: left;
+	width: 630px;
+	margin: 0 0 20px 0;
+}
+
+#content #container .main .main-mod-l ul {
+	float: left;
+	width: 630px;
+	margin: 5px 0 20px;
+}
+
+#content #container .main .main-mod-l ul li {
+	float: left;
+	width: 285px;
+	margin: 0 30px 0 0;
+	border-bottom: 1px solid #DEDEDE;
+}
+
+#content #container .main .main-mod-l ul li a {
+	color: #999999;
+	width: 285px;
+	height: 25px;
+	line-height: 25px;
+}
+
+#content #container .main .main-mod-l ul li a:hover {
+	color:#333333;
+}
+
+#content #container .main .main-mod-l a button {
+	background: #BE0116;
+	width: 80px;
+	height: 25px;
+	border: 1px solid #D86773;
+	color: #DDDDDD;
+}
+
+/*-- Footer --*/
+
+#footer {
+	width: 980px;
+	margin: 0 auto;#content #container .about-sidebar ul {
+	padding: 10px 30px 20px;
+	width: 170px;
+	background: #F2F2F2;
+}
+}
+#footer .footer {
+	float: left;
+	width: 980px;
+	height: 88px;
+	background: #FFFFFF url(../images/footer-bg.jpg) no-repeat center top;
+}
+
+#footer p {
+	float: right;
+	margin: 50px 50px 0 0;
+}
+
+/*about*/
+
+#content #container .about-sidebar ul.about-sidebar-im {
+	background: #f5f0f6 url(../images/about-sidebar-bg.jpg) no-repeat left top;
+	
+}
+
+#content #container .about-sidebar ul.about-sidebar-im li {
+	height: 32px;
+	border-bottom: 1px solid #DEDEDE; 
+}
+
+#content #container .about-sidebar {
+	float: left;
+	width: 230px;
+	margin: 0 10px 30px;
+	*display: inline;/* HACKS for ie6 */
+}
+
+#content #container .about-sidebar ul li {
+	height: 30px;
+	border-bottom: 1px solid #DEDEDE; 
+}
+
+#content #container .about-sidebar h2 {
+	padding: 0 0 0 20px;
+	line-height: 40px;
+	color: #FFFFFF;
+	font-size: 14px;
+	font-weight: 500;
+	background: #A6A6A6;
+}
+
+#content #container .about-sidebar h2.red {
+	background: #C80B20;
+}
+
+#content #container .about-sidebar ul {
+	padding: 5px 30px 20px 40px;
+	width: 160px;
+	background: #f5f0f6;
+}
+
+#content #container .about-sidebar ul li {
+	height: 32px;
+	border-bottom: 1px solid #DEDEDE; 
+}
+
+#content #container .about-sidebar ul li a {
+	line-height: 32px;
+	color: #999999;
+}
+
+#content #container .about-sidebar ul li.pad a {
+	padding: 0 0 0 20px;
+}
+
+#content #container .sidebar ul li a:hover {
+	color: #333333;
+	text-decoration: none;
+}
+
+#content #container .about-main {
+	float: left;
+	margin: 0 10px 0 20px;
+	width: 670px;
+}
+
+#content #container .about-main h1 {
+	margin: 10px 0;
+	padding: 10px 0;
+	color: #777575;
+	border-bottom: 2px solid #E9E9E9;
+}
+
+#content #container .about-main .text {
+	float: left;
+	width: 420px;
+}
+
+#content #container .about-main .text p {
+	float: left;
+	width: 400px;
+	margin: 20px 20px 0 0;
+	*display: inline;
+}
+
+#content #container .about-main .text1 p strong {
+	color: #f6031e;
+	line-height: 30px;
+}
+
+#content #container .about-main .text1 button {
+	color: #DDDDDD;
+	background: #be0116;
+	height: 20px;
+	width: 60px;
+	border: 0;
+	margin: 15px 0;
+}
+
+#content #container .about-main .text1 .text1-mod {
+	border-bottom: 1px solid #E9E9E9;
+	margin: 15px 0;
+	padding: 15px 0; 
+}
+
+#content #container .about-main .text1 .page {
+	float: left;
+	width: 670px;
+}
+
+#content #container .about-main .text1 .page ul li {
+	float: left;
+	margin: 10px 3px 10px 0;
+	text-align: center;
+}
+
+#content #container .about-main .text1 .page ul li a {
+	display: block;
+	width: 25px;
+	height: 25px;
+	line-height: 25px;
+	font-weight: bold;
+	background: #DDDDDD;
+	color: #555555;
+}
+
+#content #container .about-main .text1 .page ul li a:hover {
+	color: #c80b20;
+}
+
+#content #container .about-main .text2 img.about-logo {
+	border: 0;
+	width: 390px;
+}
+
+#content #container .about-main .text2 img.map {
+	width: 656px;
+	border: 2px solid #D1D1D1;
+}
+
+#content #container .about-main .text2 p {
+	float: left;
+	width: 670px;
+	padding: 8px 0;
+	*margin: -1px;
+}
+
+#content #container .about-main .text p strong, #content #container .about-sidebar strong {
+	color: #FB475B;
+}
+
+#content #container .about-main img {
+	float: left;
+	width: 246px;
+	border: 2px solid #D1D1D1;
+}
+
+#content #container .about-main button {
+	width: 140px;
+	height: 30px;
+	line-height: 30px;
+	font-weight: bold;
+	background: #C80B20;
+	color: #FFFFFF;
+	border: 2px solid #D1D1D1;
+}
+
+#content #container .about-main table.tab1 {
+	font-size: 12px;
+	line-height: 20px;
+	color: #555555;
+}
+
+#content #container .about-main table.tab1 td {
+	padding: 3px;
+}
+
+.about-mid {
+	float: left;
+	height: 28px;
+	width: 940px;
+	margin: 0 0 0 10px;
+	background: #FFFFFF url(../images/about-mid-bg.jpg);
+	*display: inline;
+}
+
+#content #container .main-bottom {
+	float: right;
+	width: 700px;
+	margin: 20px 0;
+}
+
+#content #container .main-bottom ul li {
+	float: left;
+	margin: 0 5px 0 0;
+	*display: inline;
+}
+
+#content #container .main-bottom ul li img {
+	width: 76px;
+	height: 76px;
+	border: 2px solid #D1D1D1;
+}
+
+#content .index-main-bottom {
+	float: left;
+	width: 940px;
+	margin: 20px;
+	*display: inline;
+}
+
+#content .index-main-bottom h2 {
+	font-size: 18px;
+}
+
+#content .index-main-bottom ul li {
+	float: left;
+	margin: 0 5px 0 0;
+	*display: inline;
+}
+
+#content .index-main-bottom ul li img {
+	border: 2px solid #D1D1D1;
+}
+
+#content #container .about-sidebar ul.kuan li.pad a {
+	padding: 0;
+}
+
+#content #container .about-sidebar ul.kuan {
+	background: none repeat scroll 0 0 #F5F0F6;
+	padding: 5px 30px 20px 20px;
+	width: 180px;
+}
+
+
