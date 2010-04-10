@@ -2,6 +2,14 @@
 <!--#include file="conn.asp" -->
 <!--#include file="lib/header_commad.asp" -->
 <!--#include file="lib/header_html.asp" -->
+<%
+class1id=60
+DBField="id,title,abstract"
+TabName="news"
+data_temp=table_readdate(conn,"",TabName,DBField,"(class1id="&class1id&")","")
+data_temp_num=ArrayisEmpty(data_temp)
+
+%>
 <!-- Html Body -->
 <div id="main-container">
 	<div id="header" class="container_12">
@@ -27,7 +35,7 @@
 	<div id="content" class="container_12">
 		<div id="container">
 			<div class="about-mid"></div>
-			<div class="about-sidebar">
+			<div class="about-sidebar" id="menu-show-div">
 				<h2 class="red">融贷通产品</h2>
 				<ul class="about-sidebar-im">
 					<li class="pad"><a href="#"><strong>企业融资>></strong></a></li>
@@ -46,20 +54,18 @@
 			<div class="about-main">
 				<h1>成功案例</h1>
 				<div class="text1">
+					<%
+					If Not data_temp_num=-1 Then
+					For i=0 To data_temp_num
+					%>
 					<div class="text1-mod">
-						<p><strong>房产抵押套现，牛市赚个盆满钵满！</strong></p>
-						<p> 供职于陆家嘴软件园内某国际知名软件公司的L先生07年底在公司附近一次性付清购房用于结婚。08年下半年，L先生判断股市已下行到一个阶段性的低点，可他自己的积蓄经历了买房结婚后已所剩不多。有投资头脑的L先生想到了房产抵押贷款，这样既保住了自己的房子，又能获得一笔客观的资金用于投资。L先生咨询了多家银行皆碰壁，问题主要有以下几点：贷款用途违规，没有备用房，收入还贷比不符合央行规定，税单收入与收入证明不符……</p>
-						<a href="case-1.html"><img class="button" src="files/images/index-1.jpg"></a> </div>
-					<div class="text1-mod">
-						<p><strong>纸业世家与德驰</strong></p>
-						<p>“我不缺的是自信和干劲，最缺的是资金和帮手……”这是常挂在J先生嘴边的话。
-							J先生出生于纸业世家，家族的工厂位于南向的浏翔路，传到他肩上已是第二代了，无奈家族企业的生产经营模式使他无法施展拳脚，大干一场。单枪匹马，单打独斗的他显得格外孤寂与苍凉，但他仍坚信这是上天对于一名勇士的磨练！</p>
-						<a href="case-1.html"><img class="button" src="files/images/index-1.jpg"></a> </div>
-					<div class="text1-mod">
-						<p><strong>600万年销售额,200万授信</strong></p>
-						<p>上海**电脑科技公司主营业务是电脑产品及配件，是国内某电脑制造企业上海地区的代理商，代理其品牌服务器。
-							公司创立至今三年多了，因为大股东彭先生原来的IT行业背景，以及二股东乔先生财务管理专业出身，两人配合默契经营有方，企业销售额第一年300万，第二年550万，第三年近600万。 </p>
-						<a href="case-1.html"><img class="button" src="files/images/index-1.jpg"></a> </div>
+						<p><strong><%=data_temp(1,i)%></strong></p>
+						<p><%=data_temp(2,i)%></p>
+						<a href="case-1.asp?act=show_news&id=<%=data_temp(0,i)%>"><img class="button" src="files/images/index-1.jpg"></a> </div>
+					<%
+					Next
+					End If
+					%>
 				</div>
 			</div>
 			<!-- .main-->

@@ -2,7 +2,23 @@
 <!--#include file="conn.asp" -->
 <!--#include file="lib/header_commad.asp" -->
 <!--#include file="lib/header_html.asp" -->
-<!-- Html Body -->
+<%
+Dim act,id,news_title,news_con
+act=Easp.RQ("act",0)
+id=Easp.RQ("id",1)
+news_title=""
+news_con=""
+
+DBField="id,title,content"
+TabName="news"
+data_temp=table_readdate(conn,"",TabName,DBField,"(id="&id&")","")
+data_temp_num=ArrayisEmpty(data_temp)
+
+If Not data_temp_num=-1 Then
+	news_title=data_temp(1,0)
+	news_con=data_temp(2,0)
+End If
+%>
 <div id="main-container">
 	<div id="header" class="container_12">
 		<div id="topbar">
@@ -20,16 +36,16 @@
 			<!-- .banner-right-->
 		</div>
 		<!-- .banner-->
-		<!--#include file="files/inc/index-menu.asp" -->
+	<!--#include file="files/inc/index-menu.asp" -->
 		<!-- .header-nav-->
 	</div>
 	<!-- #header-->
 	<div id="content" class="container_12">
 		<div id="container">
 			<div class="about-mid"></div>
-			<div class="about-sidebar" id="menu-show-div">
+			<div class="about-sidebar"  id="menu-show-div">
 				<h2 class="red">融贷通产品</h2>
-				<ul class="about-sidebar-im"  id="menu-show-div">
+				<ul class="about-sidebar-im">
 					<li class="pad"><a href="#"><strong>企业融资>></strong></a></li>
 					<li class="pad"><a href="brand-1-1-1.html">抵押类</a></li>
 					<li class="pad"><a href="brand-1-2-1.html">信用类</a></li>
@@ -44,14 +60,14 @@
 			</div>
 			<!-- .sidebar-->
 			<div class="about-main">
-				<h1>关于德驰</h1>
-				<div class="text">
-					<p><strong>德驰</strong> 成立于2005年，由资深融资顾问、原银行高级管理人员、注册会计师、执业律师等组成精英管理团队。</p>
-					<p><strong>德驰</strong> 致力于为企业提供专业全面的融资服务，为企业突破资金瓶颈，开拓融资通道。经历多年的成功经营，造就了数百个成功的融资案例。</p>
-					<p><strong>德驰</strong> 已同沪上多家中资、外资银行签约，建立了长期战略合作关系；作为银行和企业之间的桥梁，不仅让企业得到满意的银行服务，同时也为银行寻找到优质的企业客户。</p>
-					<p><strong>德驰</strong> 评估、担保、审计、申贷全程服务；更凭借我们在财务方面的专长，在协助企业申请到贷款的同时，我们成为多家企业的常年融资财务顾问，使企业在财务管理方面更为规范和科学，为今后企业的扩张和长足发展打下坚实的基础。</p>
+				<h1><%=news_title%></h1>
+				<div class="text1">
+					<div class="text1-mod">
+						<%=news_con%>
+						<p><a href="case.asp"><strong>&lt;&lt; 返 回</strong></a></p>
+					</div>
 				</div>
-				<img src="files/images/about-right-img.jpg"> </div>
+			</div>
 			<!-- .main-->
 			<div class="main-bottom">
 				<ul>

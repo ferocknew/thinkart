@@ -1,4 +1,5 @@
 //产品列表  class2
+var _$menuShowDiv=$("#menu-show-div")
 $("#menu-show-div").empty();
 $.getJSON("lib/dataoutput/action_xmlout.asp", {
     code: "json",
@@ -10,7 +11,7 @@ $.getJSON("lib/dataoutput/action_xmlout.asp", {
     $(json.class_list).each(function(i){
         _html_temp += "<div class=\"naviLeft3\" classid=\"" + this.id + "\"><a href=\"#\" class=\"pad\">" + this.classname + ">></a></div>";
     });
-    $("#menu-show-div").html(_html_temp)
+    _$menuShowDiv.html(_html_temp)
     show_class_3($("#menu-show-div"));
 });
 
@@ -37,6 +38,7 @@ function show_news(_$_html_temp){
     }, function(json){
         $(json.news_list).each(function(i){
             _$_html_temp.find("div[class='naviLeft2']:contains('" + this.class3id + "')").after("<div class=\"naviLeft5\"><a href=\"?act=show_news&id="+this.id+"\">"+this.title+"</a></div>");
-        })
+        });
+		$(".naviLeft3:contains('企业融资')",_$menuShowDiv).children("a").attr("href","brand-1-1-3.asp?act=show_news&id=15");
     });
 }

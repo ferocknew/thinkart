@@ -26,7 +26,7 @@
 	<div id="content" class="container_12">
 		<div id="container">
 			<div class="about-mid"></div>
-			<div class="about-sidebar">
+			<div class="about-sidebar" id="menu-show-div">
 				<h2 class="red">融贷通产品</h2>
 				<ul class="about-sidebar-im">
 					<li class="pad"><a href="#"><strong>企业融资>></strong></a></li>
