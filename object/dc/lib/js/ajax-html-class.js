@@ -36,7 +36,7 @@ function show_news(_$_html_temp){
         do_type: "all"
     }, function(json){
         $(json.news_list).each(function(i){
-            _$_html_temp.find("div[class='naviLeft2']:contains('" + this.class3id + "')").after("<div class=\"naviLeft5\"><a href=\"#\">"+this.title+"</a></div>");
+            _$_html_temp.find("div[class='naviLeft2']:contains('" + this.class3id + "')").after("<div class=\"naviLeft5\"><a href=\"?act=show_news&id="+this.id+"\">"+this.title+"</a></div>");
         })
     });
 }
