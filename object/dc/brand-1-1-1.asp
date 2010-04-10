@@ -1,13 +1,7 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"　"http://www.w3.org/TR/html4/loose.dtd">
-<html>
-
-<head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<link rel="stylesheet" type="text/css" href="files/css/style.css">
-	<title>德驰投资-机构简介</title>
-</head>
-
-<body>
+<!--#include file="lib/const.asp" -->
+<!--#include file="conn.asp" -->
+<!--#include file="lib/header_commad.asp" -->
+<!--#include file="lib/header_html.asp" -->
 	<div id="main-container">
 	<div id="header" class="container_12">
 		<div id="topbar">
@@ -17,7 +11,7 @@
 				<li><a href="brand.html"><img src="files/images/top-1.jpg"></a></li>
 			</ul>
 		</div><!-- #topbar-->
-		
+
 		<div class="banner">
 			<div class="banner-left">
 				<img src="files/images/banner-left.gif">
@@ -68,7 +62,7 @@
 				<p><strong>一．特点、对象：</strong></p><p>1．企业以厂房作为抵押担保。<br>2．贷款金额为评估价的5-6成，期限1-5年。<br> 3．我司提供评估、担保、贷款申请全程服务——额度高、贷款期限长。</p>
 				<p><strong>二．条件：</strong></p><p>1．抵押物所在地——上海。<br>2．已取得房地产权证。<br>3．企业具有一定的经营业绩与规模。</p>
 				<p><strong>三．提供资料：</strong></p><p>
-				
+
 				1．厂房的房地产权证。<br>
 				2．企业《营业执照》、《组织机构代码证》《税务登记证》。<br>3．公司章程、验资报告（需在工商部门备案）。<br>
 				4．全体股东的身份证。<br>
@@ -105,4 +99,4 @@
 	</div><!-- #footer-->
 
 	</div>
-</body>	
+</body>
