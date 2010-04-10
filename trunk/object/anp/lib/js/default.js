@@ -11,6 +11,8 @@ $(function(){
         get_file_url = "index.asp";
     if(get_file_url=="products-2.asp")
         get_file_url="products.asp";
+    if(get_file_url=="services.asp")
+        get_file_url="culture.asp";
     if (_top_menu$.length) {
         var temp_text = $("li[get_url='" + get_file_url + "']>a", _top_menu$).text();
         $("li[get_url='" + get_file_url + "']", _top_menu$).html(temp_text);

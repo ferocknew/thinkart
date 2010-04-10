@@ -26,8 +26,8 @@
 				<div id="services-left-nav">
                 	<h2>企业文化</h2>
                     <ul>
-                    	<li>文化理念</li>
-                        <li id="libg">服务理念</li>
+                    	<li><a href="culture.asp" style="color:#FFF; text-decoration:none;">文化理念</a></li>
+                        <li id="libg"><a href="services.asp" style="color:#FFF; text-decoration:none;">服务理念</a></li>
                     </ul>
             	</div><!-- #left-nav-->
 

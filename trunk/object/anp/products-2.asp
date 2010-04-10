@@ -6,7 +6,6 @@
 Dim proclassid,act
 act=Easp.RQ("act",0)
 class2id=Easp.RQ("class2id",1)
-If class2id="" Then Response.End()
 
 DBField="id,class_name"
 tablename="class2"
