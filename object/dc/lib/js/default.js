@@ -4,19 +4,42 @@ $(function(){
     $.getJSON(get_info_url, {
         "code": "json"
     }, loaddoc);
-    
+
     //index menu css效果
     var get_url_file = get_url_show("end_file");
+    if(get_url_file=="case-1.asp")
+        get_url_file="case.asp";
     $("#index-top-menu a").each(function(i){
         if ($(this).attr("href") == get_url_file) {
             $(this).parent().addClass("nav-now");
         }
     });
-	
-	var get_url_files=get_url_show("end_file")
-	switch(get_url_file){
-		case "brand-1-1-3.asp":
-		$.getScript("lib/js/ajax-html-class.js")
-		break;
-	}
+
+    var get_url_files = get_url_show("end_file")
+    switch (get_url_file) {
+        case "brand-1-1-3.asp":
+            $.getScript("lib/js/ajax-html-class.js")
+            break;
+        case "about.asp":
+            $.getScript("lib/js/ajax-html-class.js")
+            break;
+        case "case.asp":
+            $.getScript("lib/js/ajax-html-class.js")
+            break;
+        case "industry-3.asp":
+            $.getScript("lib/js/ajax-html-class.js")
+            break;
+        case "knowledge-2.asp":
+            $.getScript("lib/js/ajax-html-class.js")
+			//$.getScript("lib/js/ajax-html-knowledge.js")
+            break;
+        case "contact.asp":
+            $.getScript("lib/js/ajax-html-class.js")
+            break;
+        case "case-1.asp":
+            $.getScript("lib/js/ajax-html-class.js")
+            break;
+        default:
+            break;
+    }
 });

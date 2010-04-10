@@ -2,6 +2,17 @@
 <!--#include file="conn.asp" -->
 <!--#include file="lib/header_commad.asp" -->
 <!--#include file="lib/header_html.asp" -->
+<script>
+$(function(){
+	$("#sum-show").fancybox({
+	'autoDimensions':false,
+	'autoScale':false,
+	'width':500,
+	'height':600,
+	'type'				: 'iframe'
+	})
+});
+</script>
 <!-- Html Body -->
 <div id="main-container">
 	<div id="header" class="container_12">
@@ -46,7 +57,7 @@
 					<li><a href="case-2.html">纸业世家与德驰</a></li>
 					<li><a href="case-3.html">600万年销售额，银行授信200万！？ </a></li>
 				</ul>
-				<a href=""><img src="files/images/jsq.gif"></a> </div>
+				<a href="files/ajax/cal.html" id="sum-show"><img src="files/images/jsq.gif"></a> </div>
 			<!-- .sidebar-->
 			<div class="main">
 				<div class="main-mod-s main-mod-left">

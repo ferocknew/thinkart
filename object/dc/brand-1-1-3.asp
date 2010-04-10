@@ -15,12 +15,26 @@ Select Case act
 	TabName="news"
 	data_temp=table_readdate(conn,"",TabName,DBField,"(id="&id&")","")
 	data_temp_num=ArrayisEmpty(data_temp)
+	
+	If Not data_temp_num=-1 Then
+		news_title=data_temp(1,0) '标题
+		news_con=data_temp(2,0) '内容
+	End If
+
+	Case Else
+	id=15
+	DBField="id,title,content"
+	TabName="news"
+	data_temp=table_readdate(conn,"",TabName,DBField,"(id="&id&")","")
+	data_temp_num=ArrayisEmpty(data_temp)
+	
+	If Not data_temp_num=-1 Then
+		news_title=data_temp(1,0) '标题
+		news_con=data_temp(2,0) '内容
+	End If
 End Select
 
-If Not data_temp_num=-1 Then
-	news_title=data_temp(1,0) '标题
-	news_con=data_temp(2,0) '内容
-End If
+
 %>
 <!-- Html Body -->
 <div id="main-container">
@@ -44,7 +58,7 @@ End If
 		<!-- .header-nav-->
 	</div>
 	<!-- #header-->
-	<div id="content" class="container_12">
+	<div id="content" class="container_12" style="overflow:hidden">
 		<div id="container">
 			<div class="about-mid"></div>
 			<div class="about-sidebar" id="menu-show-div">
@@ -68,7 +82,7 @@ End If
 			<!-- .sidebar-->
 			<div class="about-main">
 				<h1><%=news_title%></h1>
-				<div class="text"><%=news_con%></div>
+				<div><%=news_con%></div>
 			</div>
 			<!-- .main-->
 			<div class="main-bottom">
