@@ -4,13 +4,7 @@
 <!--#include file="lib/header_html.asp" -->
 <div id="main-container">
 	<div id="header" class="container_12">
-		<div id="topbar">
-			<ul class="grid_12">
-				<li><a href="brand-3-1.html"><img src="files/images/top-3.jpg"></a></li>
-				<li><a href="brand-2-1.html"><img src="files/images/top-2.jpg"></a></li>
-				<li><a href="brand.html"><img src="files/images/top-1.jpg"></a></li>
-			</ul>
-		</div>
+	<!--#include file="files/inc/index-banner.asp" -->
 		<!-- #topbar-->
 		<div class="banner">
 			<div class="banner-left"> <img src="files/images/banner-left.gif"> </div>

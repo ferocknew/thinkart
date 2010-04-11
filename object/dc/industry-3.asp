@@ -29,13 +29,7 @@ End If
     </style>
 <div id="main-container">
 	<div id="header" class="container_12">
-		<div id="topbar">
-			<ul class="grid_12">
-				<li><a href="brand-3-1.html"><img src="files/images/top-3.jpg"></a></li>
-				<li><a href="brand-2-1.html"><img src="files/images/top-2.jpg"></a></li>
-				<li><a href="brand.html"><img src="files/images/top-1.jpg"></a></li>
-			</ul>
-		</div>
+	<!--#include file="files/inc/index-banner.asp" -->
 		<!-- #topbar-->
 		<div class="banner">
 			<div class="banner-left"> <img src="files/images/banner-left.gif"> </div>
@@ -64,8 +58,7 @@ End If
 				End If
 				%>
 				</ul>
-				<h2>融贷通产品</h2>
-				<ul id="menu-show-div" style="padding:0px; width:200px;">
+				<ul id="menu-show-div" style="padding:0px; width:230px;">
 					<li class="pad"><a href="#"><strong>企业融资>></strong></a></li>
 					<li class="pad"><a href="brand-1-1-1.html">抵押类</a></li>
 					<li class="pad"><a href="brand-1-2-1.html">信用类</a></li>

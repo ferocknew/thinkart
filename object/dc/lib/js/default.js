@@ -15,7 +15,6 @@ $(function(){
         }
     });
 
-    var get_url_files = get_url_show("end_file")
     switch (get_url_file) {
         case "brand-1-1-3.asp":
             $.getScript("lib/js/ajax-html-class.js")
