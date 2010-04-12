@@ -55,5 +55,6 @@ function show_news(_$_html_temp){
 			_$_html_temp.find("div[class='naviLeft3']:contains('" + this.class2id + "')").after("<div class=\"naviLeft5\"><a href=\"brand-1-1-3.asp?act=show_news&id="+this.id+"\">"+this.title+"</a></div>");
         });
 		$(".naviLeft3:contains('企业融资')",_$menuShowDiv).children("a").attr("href","brand-1-1-3.asp?act=show_news&id=15");
+        _$menuShowDiv.children().eq(_$menuShowDiv.children().length-1).attr("class","naviLeft4");
     });
 }
