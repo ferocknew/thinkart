@@ -3,6 +3,9 @@
 <!--#include file="lib/header_commad.asp" -->
 <!--#include file="lib/header_html.asp" -->
 <!-- Html Body -->
+<style>
+.text img{ width:240px;}
+</style>
 <div id="main-container">
 	<div id="header" class="container_12">
 	<!--#include file="files/inc/index-banner.asp" -->
@@ -45,7 +48,7 @@
 					<p><strong>德驰</strong> 已同沪上多家中资、外资银行签约，建立了长期战略合作关系；作为银行和企业之间的桥梁，不仅让企业得到满意的银行服务，同时也为银行寻找到优质的企业客户。</p>
 					<p><strong>德驰</strong> 评估、担保、审计、申贷全程服务；更凭借我们在财务方面的专长，在协助企业申请到贷款的同时，我们成为多家企业的常年融资财务顾问，使企业在财务管理方面更为规范和科学，为今后企业的扩张和长足发展打下坚实的基础。</p>
 				</div>
-				<img src="files/images/about-right-img.jpg"> </div>
+				<img src="files/images/about-right-img.jpg" width="240"> </div>
 			<!-- .main-->
 			<div class="main-bottom">
 				<ul>

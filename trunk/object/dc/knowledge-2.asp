@@ -15,12 +15,12 @@ TabName="class2"
 data_temp_class1=table_readdate(conn,"",TabName,DBField,"(upclassid="&class1id&")","")
 data_temp_class1_num=ArrayisEmpty(data_temp_class1)
 
-DBField="id,title"
+DBField="id,title,class2id"
 TabName="news"
 data_temp_news=table_readdate(conn,"",TabName,DBField,"(class2id="&classid&")","order by edittime")
 data_temp_news_num=ArrayisEmpty(data_temp_news)
 
-data_temp_class1_title=table_readdate(conn,"","class2","class_name","(upclassid="&class1id&")","")
+data_temp_class1_title=table_readdate(conn,"","class2","class_name,upclassid","(id="&classid&")","")
 data_temp_class1_title_num=ArrayisEmpty(data_temp_class1_title)
 If Not data_temp_class1_title_num=-1 Then class_title=data_temp_class1_title(0,0)
 
@@ -30,7 +30,7 @@ If Not act="" Then
 	data_temp_show_news_num=ArrayisEmpty(data_temp_show_news)
 	If Not data_temp_show_news_num=-1 Then
 	news_title=data_temp_show_news(0,0)
-	news_con=data_temp_show_news(1,0)	
+	news_con=data_temp_show_news(1,0)
 	End If
 End If
 %>
@@ -55,7 +55,7 @@ End If
 		<div id="container">
 		<div class="about-mid"></div>
 		<div class="about-sidebar">
-			<h2 class="red">融资常识</h2>
+			<h2 class="red"><%=class_title%></h2>
 			<ul>
 			<%
 			If Not data_temp_class1_num=-1 Then
@@ -82,7 +82,12 @@ End If
 		</div><!-- .sidebar-->
 
 		<div class="about-main" id="about-main-id">
-			<h1><%=class_title%></h1>
+			<h1><%
+			If act="" Then			
+			Response.Write(class_title)
+			Else
+			Response.Write(news_title)
+			End If%></h1>
 			<div class="text1">
 			  <div class="text2">
 			  	<%

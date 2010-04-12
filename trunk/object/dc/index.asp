@@ -16,13 +16,7 @@ $(function(){
 <!-- Html Body -->
 <div id="main-container">
 	<div id="header" class="container_12">
-		<div id="topbar">
-			<ul class="grid_12">
-				<li><a href="brand-3-1.html"><img src="files/images/top-3.jpg"></a></li>
-				<li><a href="brand-2-1.html"><img src="files/images/top-2.jpg"></a></li>
-				<li><a href="brand.html"><img src="files/images/top-1.jpg"></a></li>
-			</ul>
-		</div>
+	<!--#include file="files/inc/index-banner.asp" -->
 		<!-- #topbar-->
 		<div class="banner">
 			<div class="banner-left"> <img src="files/images/banner-left.gif"> </div>
@@ -65,10 +59,10 @@ $(function(){
 					<br>
 					<img class="img" src="files/images/main-mod-s-1.jpg">
 					<ul>
-						<li><a href="brand.html">以团队化的操作流程,提高客户的融资效率</a></li>
-						<li><a href="brand.html">以积极健康的机构形象,提供安心的融资选择</a></li>
-						<li><a href="brand.html">以资深的行业经验,提供专业的融资服务</a></li>
-						<li><a href="brand.html">以优化的融资组合方案,提供优秀的融资性价比</a></li>
+						<li><a href="brand-1-1-3.asp?act=show_news&id=15">以团队化的操作流程,提高客户的融资效率</a></li>
+						<li><a href="brand-1-1-3.asp?act=show_news&id=15">以积极健康的机构形象,提供安心的融资选择</a></li>
+						<li><a href="brand-1-1-3.asp?act=show_news&id=15">以资深的行业经验,提供专业的融资服务</a></li>
+						<li><a href="brand-1-1-3.asp?act=show_news&id=15">以优化的融资组合方案,提供优秀的融资性价比</a></li>
 					</ul>
 					<a href="brand-1-1-3.asp?act=show_news&id=15"><img src="files/images/index-1.jpg"></a> </div>
 				<!-- .main-mod-s-->
@@ -77,10 +71,10 @@ $(function(){
 					<br>
 					<img class="img" src="files/images/main-mod-s-2.jpg">
 					<ul>
-						<li><a href="industry-4-1.html">央行松绑民间借贷：年息超21.24%将不叫非法 </a></li>
-						<li><a href="industry-4-2.html">发改委:把握信贷投放节奏 防季、月度间异常波动 </a></li>
-						<li><a href="industry-4-3.html">借道信贷资产转让 银行曲线放贷升温 </a></li>
-						<li><a href="industry-4-4.html">央行收紧流动性意图明显 松紧程度看通胀 </a></li>
+						<li><a href="industry-3.asp?news_id=27">央行松绑民间借贷：年息超21.24%将不叫非法 </a></li>
+						<li><a href="industry-3.asp?news_id=27">发改委:把握信贷投放节奏 防季、月度间异常波动 </a></li>
+						<li><a href="industry-3.asp?news_id=27">借道信贷资产转让 银行曲线放贷升温 </a></li>
+						<li><a href="industry-3.asp?news_id=27">央行收紧流动性意图明显 松紧程度看通胀 </a></li>
 					</ul>
 					<a href="industry-3.asp?news_id=27"><img src="files/images/index-1.jpg"></a> </div>
 				<!-- .main-mod-s-->

@@ -5,21 +5,30 @@
 <%
 news_id=Easp.RQ("news_id",1)
 If news_id="" Then news_id="26"
-class1id=61
-DBField="id,title"
-TabName="news"
-data_temp_list=table_readdate(conn,"",TabName,DBField,"(class1id="&class1id&")","")
-data_temp_list_num=ArrayisEmpty(data_temp_list)
 
-news_id=Cdbl(news_id)
-DBField="id,title,content"
-TabName="news"
-data_temp=table_readdate(conn,"",TabName,DBField,"(id="&news_id&")","")
-data_temp_num=ArrayisEmpty(data_temp)
+If news_id=27 Then
+	DBField="id,title"
+	TabName="news"
+	data_temp_list=table_readdate(conn,"",TabName,DBField,"(class2id=75)","")
+	data_temp_list_num=ArrayisEmpty(data_temp_list)
+Else
+	class1id=61
+	DBField="id,title"
+	TabName="news"
+	data_temp_list=table_readdate(conn,"",TabName,DBField,"(class1id="&class1id&")","")
+	data_temp_list_num=ArrayisEmpty(data_temp_list)
 
-If Not data_temp_num=-1 Then
-	news_title=data_temp(1,0)
-	news_con=data_temp(2,0)
+	news_id=Cdbl(news_id)
+	DBField="id,title,content"
+	TabName="news"
+	data_temp=table_readdate(conn,"",TabName,DBField,"(id="&news_id&")","")
+	data_temp_num=ArrayisEmpty(data_temp)
+
+	If Not data_temp_num=-1 Then
+		news_title=data_temp(1,0)
+		news_con=data_temp(2,0)
+	End If
+
 End If
 %>
 <style type="text/css">
@@ -27,6 +36,13 @@ End If
 .STYLE1 {color: #FFFFFF}
 -->
     </style>
+<script>
+$(function(){
+    if($(".text img").length){
+        $(".text img").attr("width","240").css("float","left");
+    }
+})
+</script>
 <div id="main-container">
 	<div id="header" class="container_12">
 	<!--#include file="files/inc/index-banner.asp" -->
@@ -48,15 +64,10 @@ End If
 			<div class="about-sidebar">
 				<h2 class="red">行业介绍</h2>
 				<ul>
-				<%
-				If Not data_temp_list_num=-1 Then
-				For i=0 To data_temp_list_num
-				%>
-					<li class="pad"><a href="?news_id=<%=data_temp_list(0,i)%>"><%=data_temp_list(1,i)%></a></li>
-				<%
-				Next
-				End If
-				%>
+					<li class="pad"><a href="industry-3.asp?news_id=26">选公司的区别</a></li>
+					<li class="pad"><a href="industry-3.asp?news_id=27">热点话题</a></li>
+					<li class="pad"><a href="industry-3.asp?news_id=28">FAQ</a></li>
+					<li class="pad"><a href="industry-3.asp?news_id=29">行业介绍</a></li>
 				</ul>
 				<ul id="menu-show-div" style="padding:0px; width:230px;">
 					<li class="pad"><a href="#"><strong>企业融资>></strong></a></li>
@@ -73,8 +84,23 @@ End If
 			</div>
 			<!-- .sidebar-->
 			<div class="about-main">
-				<h1><%=news_title%></h1>
-				<div class="text"><%=news_con%></div>
+				<%
+				If news_id=27 Then
+				Response.Write("<h1>热点话题</h1><div class='text2'>")
+				For i=0 To data_temp_list_num
+				%>
+				<p align="left">
+					<strong>
+						<a href="industry-3.asp?news_id=<%=data_temp_list(0,i)%>"><%=data_temp_list(1,i)%></a>
+					</strong>
+				</p>
+				<%
+				Next
+				Response.Write("</div>")
+				Else
+				Response.Write("<h1>"&news_title&"</h1>"&news_con)
+				End If
+				%>
 			</div>
 			<!-- .main-->
 			<div class="main-bottom">
