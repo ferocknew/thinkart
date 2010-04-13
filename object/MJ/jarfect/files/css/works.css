@@ -1,0 +1,220 @@
+.banner {
+	position: relative;	
+	float: left;
+	width: 940px;
+}
+
+.banner img {
+	border: 5px solid #E9E9E9;
+}
+
+.banner ul {
+	position: absolute;
+	top: 400px;
+	left: 20px;
+}
+
+.banner ul li {
+	float: left;
+}
+
+.banner ul li a {
+	float: left;
+	margin: 0 3px 0 0;
+	display: block;
+	width: 24px;
+	height: 24px;
+	line-height: 24px;
+	text-align: center;
+	font-weight: bold;
+	color: #FFFFFF;
+	background: #7F1010;
+}
+
+.banner ul li a:hover, .banner ul li a.now {
+	color: #000000;
+	background: #FFFFFF;
+}
+
+.banner .price {
+	position: absolute;
+	width: 260px;
+	height: 140px;
+	top: 240px;
+	left: 676px;
+}
+
+.banner .price .name {
+	height: 40px;
+	background: #7F1010;
+	color: #FFFFFF;
+	line-height: 40px;
+	font-size: 14px;
+	padding: 0 0 0 20px;
+	font-family: SimHei;
+}
+
+.banner .price .number {
+	height: 100px;
+	background: #CCCCCB;
+	color: #7F1010;
+	line-height: 100px;
+	font-size: 50px;
+	font-weight: bold;
+	padding: 0 0 0 80px;
+}
+
+
+
+.contant {
+	float: left;
+	width: 940px;
+	margin: 15px 0;
+}
+
+.contant .sidebar {
+	float: left;
+	width: 164px;
+	height: 401px;
+	background: url(../images/about_sidebar_bg.gif) no-repeat top center;
+	font-family: SimHei;
+}
+
+.contant .sidebar h2 {
+	font-size: 18px;
+	font-weight: normal;
+	color: #7F1010;
+	padding: 15px 20px;
+}
+
+.contant .sidebar ul {
+	font-size: 14px;
+}
+
+.contant .sidebar ul li a {
+	display: block;
+	width: 124px;
+	height: 29px;
+	line-height: 29px;
+	margin: 3px 10px 0;
+	padding: 0 10px;
+	color: #6e6e6e;
+}
+
+.contant .sidebar ul li.bg1 {
+	background: url(../images/works_sidebar_bg1.gif) no-repeat center center;
+}
+
+.contant .sidebar ul li.bg2 {
+	background: url(../images/works_sidebar_bg2.gif) no-repeat center top;
+}
+
+.contant .sidebar ul li ul {
+	padding: 5px 0 15px;
+}
+
+.contant .sidebar ul li ul li a {
+	display: block;
+	width: 124px;
+	height: 20px;
+	line-height: 20px;
+	margin: 3px 10px 0;
+	padding: 0 10px;
+	color: #6e6e6e;
+}
+
+
+.contant .main {
+	float: right;
+	width: 740px;
+	margin: 0 0 0 36px;
+}
+
+.contant .main h1 {
+	margin: 15px 0;
+	padding: 0 5px 5px;
+	color:#7F1010;
+	font-size:18px;
+	font-family: SimHei;
+	font-weight: normal;
+	border-bottom: 3px solid #3f0503;
+}
+
+.contant .main .new {
+	position: relative;
+	float: left;
+	width: 180px;
+	margin: 0 0 15px 5px;
+	#display: inline;
+	*padding: 0 0 15px 6px;
+	*margin: -1px;
+}
+
+.contant .main .new img {
+	border: 3px solid #EBEBEB;
+}
+
+.contant .main .new p {
+	position: absolute;
+	width: 174px;
+	height: 24px;
+	line-height: 24px;
+	color: #FFFFFF;
+	top: 240px;
+	left: 3px;
+	*left: 9px;
+	background: #7F1010;
+}
+
+.contant .main .new p span.left {
+	float: left;
+	margin: 0 5px;
+}
+
+.contant .main .new p span.right {
+	float: right;
+	margin: 0 5px;
+	font-weight: bold;
+	font-size: 16px;
+}
+
+
+.contant .main .old {
+	position: relative;
+	float: left;
+	width: 143px;
+	margin: 0 0 15px 5px;
+	#display: inline;
+	*padding: 0 0 15px 6px;
+	*margin: -1px;
+}
+
+.contant .main .old img {
+	width: 137px;
+	border: 3px solid #EBEBEB;
+}
+
+.contant .main .old p {
+	position: absolute;
+	width: 137px;
+	height: 24px;
+	line-height: 24px;
+	color: #FFFFFF;
+	top: 185px;
+	left: 3px;
+
+	*left: 9px;
+	background: #7F1010;
+}
+
+.contant .main .old p span.left {
+	float: left;
+	margin: 0 5px;
+}
+
+.contant .main .old p span.right {
+	float: right;
+	margin: 0 5px;
+	font-weight: bold;
+	font-size: 16px;
+}

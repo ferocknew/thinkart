@@ -1,0 +1,89 @@
+.banner {
+	position: relative;	
+	float: left;
+	width: 940px;
+}
+
+.banner img {
+	border: 5px solid #E9E9E9;
+}
+
+.banner ul {
+	position: absolute;
+	top: 200px;
+	left: 780px;
+}
+
+.banner ul li {
+	float: left;
+}
+
+.banner ul li a {
+	float: left;
+	margin: 0 3px 0 0;
+	display: block;
+	width: 24px;
+	height: 24px;
+	line-height: 24px;
+	text-align: center;
+	font-weight: bold;
+	color: #FFFFFF;
+	background: #7F1010;
+}
+
+.banner ul li a:hover, .banner ul li a.now {
+	color: #000000;
+	background: #FFFFFF;
+}
+
+.contant {
+	float: left;
+	width: 940px;
+	margin: 15px 0;
+}
+
+.contant .sidebar {
+	float: left;
+	width: 164px;
+	height: 401px;
+	background: url(../images/about_sidebar_bg.gif) no-repeat top center;
+}
+
+.contant .sidebar h2 {
+	font-size: 18px;
+	font-weight: normal;
+	color: #7F1010;
+	padding: 15px 20px;
+	font-family: SimHei;
+}
+
+.contant .main {
+	float: left;
+	width: 740px;
+	margin: 0 0 0 36px;
+}
+
+.contant .text {
+	float: left;
+	width: 505px;
+	padding: 0 0 70px 0;
+	background: url(../images/about_contant_text_bg.gif) no-repeat bottom left;
+}
+
+.contant .text h1 {
+	font-size: 24px;
+	font-family: SimHei;
+	margin: 15px 0;
+}
+
+.contant .text p {
+	margin: 20px 0;
+}
+
+.contant .main img {
+	float: left;
+	border: 3px solid #EBEBEB;
+	margin: 0 0 0 10px;
+	/*width: 219+3+3+10=235*/
+}
+
