@@ -1,0 +1,413 @@
+/*高菲丽*深浅设计*/
+
+body {
+	margin:0;
+	background: url(../images/bg.jpg) repeat-x top;
+	line-height: 22px;
+	font-size: 12px;
+	color: #999;
+}
+
+ul,li{
+	margin:0;
+	padding:0;
+}
+
+h1 {
+	font-size: 14px;
+	color: #57391f;
+	font-weight:bold;
+}
+
+
+p{
+	margin-bottom:20px;
+}
+
+hr{
+	margin:12px 0 20px;
+	border:0;
+	height:1px;
+	background-color:#707065;
+}
+	
+
+#container {
+	background: url(../images/bg_header.jpg) top center no-repeat;
+	margin:auto;
+	padding:0 30px;
+	width: 960px;
+}
+
+#banner{
+	width:960px;
+	margin:20px 0;
+}
+
+
+/************************
+* HomePage
+************************/
+
+#bannerHome{
+	height:260px;
+	width:960px;
+	background: url(../images/home_banner.gif) no-repeat;
+	margin:20px 0;
+}
+
+#menu{
+	height:36px;
+	background: #727171;
+	margin-top:70px;
+}
+
+#menu ul{
+	float:right;
+}
+
+#menu li{
+	display: inline;
+	list-style:none;
+	float:left;
+	_margin-bottom: -3px; /*IE6 hack*/
+}
+
+#homeContent{
+	width:960px;
+	float:left;
+}
+
+#homeBrand{
+	width:300px;
+	margin-right:30px;
+	float:left;
+}
+
+#homeProducts{
+	width:360px;
+	float:left;
+}
+
+#homeJoin{
+	width:235px;
+	float:right;
+}
+
+.homeContentTitle{
+	padding-bottom:10px;
+}
+
+/************************
+* navigation
+************************/
+
+#navigation{
+	width:180px;
+	float:left;
+	padding-top:65px;
+	background:url(../images/navi_brand.gif) top no-repeat #ebebeb;
+	height:357px;
+}
+
+#navigation ul li{
+	list-style:none;
+	margin:0 35px;
+	height:32px;
+	line-height:32px;
+	display:block;
+	padding-left:20px;
+	font-size:14px;
+	color:#727171;
+}
+
+.naviList{
+	background:url(../images/ico_list.gif) left center no-repeat;
+}
+
+
+a.navigation:link,a.navigation:visited{
+	color:#727171;
+	text-decoration:none;
+	font-weight:bold;
+}
+
+a.navigation:hover,a.navigation:active{
+	color:#999;
+}
+
+
+
+/************************
+* content
+************************/
+#content{
+	width:720px;
+	float:right;
+
+}
+
+.imgLeft{
+	float:left;
+	margin:0 15px 15px 0;
+}
+
+.imgRight{
+	float:right;
+	margin:0 0 15px 15px;
+}
+
+.contentEnd{
+	float:right;
+	width:610px;
+}
+
+
+/************************
+* footer
+************************/
+
+#footer{
+	width:960px;
+	height:50px;
+	margin-top:20px;
+	border-top:#CCC 1px solid;
+	float:left;
+	background:url(../images/footer_hotCall.gif) 35px center no-repeat;
+	text-align:center;
+	padding-top:15px;
+}
+
+#footerRight{
+	float:right;
+	padding:30px 50px 0;
+	text-align:right;
+	color:#555342;
+}
+
+a.footer:link,a.footer:visited{
+	color:#555342;
+	font-family: "微软雅黑";
+	font-size:11px;
+	text-decoration:none;
+}
+
+a.footer:hover,a.footer:active{
+	color:#777777;
+}
+
+.brandCaufil{
+	height:30px;
+	padding-top:5px;
+	background:url(../images/list_caufil.gif) right no-repeat;
+}
+
+.brandJarfect{
+	height:30px;
+	padding-top:5px;
+	background:url(../images/list_jarfect.gif) right no-repeat;
+}
+
+.font12 {
+	color: #867b30;
+}
+
+.fontYellow {
+	color: #e5d561;
+}
+
+/************************
+* products
+************************/
+
+.products{
+	width:150px;
+	height:200px;
+	float:left;
+	margin:1px;
+	cursor:pointer;
+}
+
+#naviSelect{
+	background:url(../images/bg_select.gif) no-repeat;
+	margin:15px 12px 0;
+	padding-top:20px;
+}
+
+#naviSelect select{
+	width:100%;
+	margin-bottom:10px;
+	color:#737265;
+	background:#ececea;
+	border:#737265 solid 1px;
+}
+
+.prductMouseOn{
+	line-height:20px;
+	height:40px;
+	margin-top:150px;
+	padding:5px 10px;
+	background: #000 url(../images/bg_buy.gif) no-repeat 105px 30px;
+	filter: Alpha(Opacity=80);
+	opacity:0.8; /* 在firefox上可以直接解析 */
+}
+
+/************************
+* products
+************************/
+
+#contentProducts{
+	width:760px;
+	float:right;
+	border:#eaeaea solid 1px;
+}
+
+.productsTitle{
+	height:30px;
+	line-height:30px;
+	color:#FFF;
+	padding:0 10px;
+	background-color:#727171;
+}
+
+.productsItem{
+	float:left;
+	height:270px;
+	width:165px;
+	border: solid 1px #eaeaea;
+	padding:10px;
+	position:relative;
+	
+}
+
+.productsInfo{
+	position:absolute;
+	height:32px;
+	line-height:32px;
+	top:247px;
+	width:140px;
+	padding:0 12px;
+	color:#FFF;
+	background-color:#000;
+	filter: Alpha(Opacity=70);
+	left: 11px;
+}
+
+.productsInfo2{
+	position:absolute;
+	height:32px;
+	line-height:32px;
+	top:247px;
+	width:140px;
+	padding:0 12px;
+	color:#FFF;
+	background-color:red;
+	filter: Alpha(Opacity=70);
+	left: 11px;
+}
+
+.productsNew{
+	position:absolute;
+	height:32px;
+	line-height:32px;
+	top:33px;
+	width:30px;
+	padding:0 12px;
+	color:#FFF;
+	background-color:#000;
+	filter: Alpha(Opacity=70);
+	left: 121px;
+	font-size:14px;
+	font-family:Verdana;
+	
+}
+
+#navigationProducts{
+	width:180px;
+	float:left;
+	padding:65px 0 20px;
+	background:url(../images/navi_products.gif) top no-repeat #ebebeb;
+	min-height:400px;
+}
+
+#navigationProducts ul li{
+	list-style:none;
+	border-bottom:#aaa dotted 1px;
+	margin:0 35px;
+	height:32px;
+	line-height:32px;
+	display:block;
+	padding-left:20px;
+	font-size:14px;
+	color:#727171;
+}
+
+.naviList2{
+	background:url(../images/ico_list2.gif) left center no-repeat;
+}
+
+
+a.navigationProducts:link,a.navigationProducts:visited{
+	color:#727171;
+	font-weight:bold;
+	text-decoration:none;
+}
+
+a.navigationProducts:active,a.navigationProducts:hover{
+	color:red;
+}
+
+
+/************************
+* Register
+************************/
+
+.regStep{
+	line-height:80px;
+	text-align:center;
+	font-size:14px;
+	font-weight:bold;
+	background-color:#3f3f35;
+}
+
+a.regStep:link,a.regStep:visited{
+	color:#ccc;
+	text-decoration:none;
+}
+
+a.regStep:active,a.regStep:hover{
+	text-decoration:underline;
+}
+
+#regMessage{
+	line-height:24px;
+	float:left;
+	margin-right:10px;
+	width:320px;
+}
+
+#regMessage input{
+	width:200px;
+	border:#5b5b5b 1px solid;
+	background:#3f3f35;
+	color:#ccc;
+	height:24px;
+	line-height:24px;
+	padding:0 5px;
+}
+
+#regMessage2{
+	line-height:24px;
+	float:left;
+	width:270px;
+}
+
+#regMessage2 input{
+	width:100%;
+	border:#5b5b5b 1px solid;
+	background:#3f3f35;
+	color:#ccc;
+	height:24px;
+	line-height:24px;
+	padding:0 5px;
+}

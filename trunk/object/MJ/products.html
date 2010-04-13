@@ -50,47 +50,36 @@
                 </div>
             </div>
             <div id="header">
-                <ul>
-                    <li>
-                        <a href="index.html"><img src="files/images/menu_home1.gif" border="0" /></a>
-                    </li>
-                    <li>
-                        <a href="about.html"><img src="files/images/menu_about1.gif" border="0" /></a>
-                    </li>
-                    <li>
-                        <a href="prducts.html"><img src="files/images/menu_prducts2.gif" border="0" /></a>
-                    </li>
-                    <li>
-                        <a href="news.html"><img src="files/images/menu_news1.gif" border="0" /></a>
-                    </li>
-                    <li>
-                        <a href="join.html"><img src="files/images/menu_join1.gif" border="0" /></a>
-                    </li>
-                    <li>
-                        <a href="contact.html"><img src="files/images/menu_contact1.gif" border="0" /></a>
-                    </li>
-                </ul>
-            </div>
+              <ul>
+                <li><a href="index.html"><img src="files/images/menu_home1.gif" border="0" /></a></li>
+                <li><a href="about.html"><img src="files/images/menu_about1.gif" border="0" /></a></li>
+                <li><a href="products.html"><img src="files/images/menu_products2.gif" border="0" /></a></li>
+                <li><a href="news.html"><img src="files/images/menu_news1.gif" border="0" /></a></li>
+                <li><a href="member.html"><img src="files/images/menu_member1.gif" border="0" /></a></li>
+                <li><a href="join.html"><img src="files/images/menu_join1.gif" border="0" /></a></li>
+                <li><a href="contact.html"><img src="files/images/menu_contact1.gif" border="0" /></a></li>
+              </ul>
+          </div>
             <div id="content">
-                <img src="files/images/title_prducts.gif" /><hr/><h1>时尚休闲系列</h1>
-                <div class="prducts" style="background:url(files/images/img_01.jpg);" get_url="http://www.online.sh.cn">
+                <img src="files/images/title_products.gif" /><hr/><h1>时尚休闲系列</h1>
+                <div class="products" style="background:url(files/images/img_01.jpg);" get_url="http://www.online.sh.cn">
                     <div class="prductMouseOn" id="priceBlock" style="display:none;">
                         高领印花外套<h2>￥599</h2>
                     </div>
                 </div>
-                <div class="prducts" style="background:url(files/images/img_02.jpg);" get_url="http://www.google.com">
+                <div class="products" style="background:url(files/images/img_02.jpg);" get_url="http://www.google.com">
                 </div>
-                <div class="prducts" style="background:url(files/images/img_03.jpg);" get_url="http://www.google.com">
+                <div class="products" style="background:url(files/images/img_03.jpg);" get_url="http://www.google.com">
                 </div>
-                <div class="prducts" style="background:url(files/images/img_04.jpg);" get_url="http://www.google.com">
+                <div class="products" style="background:url(files/images/img_04.jpg);" get_url="http://www.google.com">
                 </div>
-                <div class="prducts" style="background:url(files/images/img_05.jpg);" get_url="http://www.google.com">
+                <div class="products" style="background:url(files/images/img_05.jpg);" get_url="http://www.google.com">
                 </div>
-                <div class="prducts" style="background:url(files/images/img_06.jpg);" get_url="http://www.google.com">
+                <div class="products" style="background:url(files/images/img_06.jpg);" get_url="http://www.google.com">
                 </div>
-                <div class="prducts" style="background:url(files/images/img_08.jpg);" get_url="http://www.google.com">
+                <div class="products" style="background:url(files/images/img_08.jpg);" get_url="http://www.google.com">
                 </div>
-                <div class="prducts" style="background:url(files/images/img_05.jpg);" get_url="http://www.google.com">
+                <div class="products" style="background:url(files/images/img_05.jpg);" get_url="http://www.google.com">
                 </div>
                 <p>&nbsp;
                     
@@ -100,17 +89,15 @@
                 </div>
             </div>
             <div id="footer">
-                <div id="footerRight">
-                    <a href="#"><img src="files/images/button_taobao.gif" border="0" /></a>
-                    <br/>
-                    <a href="#" class="footer">会员登录</a> | <a href="#" class="footer">退出登录</a> | <a href="#" class="footer">网站地图</a> | <a href="#" class="footer">免责条款</a> | <a href="#" class="footer">网站访问量统计</a></div>
+              <div id="footerRight"><br />
+                <a href="#" class="footer">会员登录</a> | <a href="#" class="footer">退出登录</a> | <a href="webmap.html" class="footer">网站地图</a> | <a href="caufil/index.html" target="_blank" class="footer">高菲丽</a> | <a href="jarfect/index.html" target="_blank" class="footer">菁妃</a> | <a href="#" class="footer">网站访问量统计</a></div>
             </div>
         </div>
     </body>
 </html>
 <script>
     var _pro_list_show = "<div class=\"prductMouseOn\" id=\"priceBlock\">高领印花外套<h2>￥599</h2></div>"
-    var _pro_list = $(".prducts");
+    var _pro_list = $(".products");
     _pro_list.hover(function(e){
         $(this).html(_pro_list_show);
     }, function(e){
