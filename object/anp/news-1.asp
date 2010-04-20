@@ -7,8 +7,6 @@
 	<div id="header">
 		<div id="logo"> </div>
 		<!-- #logo-->
-		<div id="language"> English </div>
-		<!-- #language-->
 		<!--#include file="files/inc/top_menu.asp" -->
 	</div>
 	<!-- #header-->

@@ -1,3 +1,5 @@
+<div id="language"> <a href="en/index.asp" target="_self" style="color:#FFF; text-decoration:none;">English</a> | <a href="index.asp" target="_self" style="color:#FFF; text-decoration:none;">中文</a></div>
+<!-- #language-->
 <ul id="nav">
     <li id="nav-home" get_url="index.asp"><a href="index.asp">首页</a></li>
     <li id="nav-about" get_url="about.asp"><a href="about.asp">关于安湃</a></li>
