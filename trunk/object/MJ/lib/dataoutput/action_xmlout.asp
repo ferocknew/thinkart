@@ -139,7 +139,28 @@ Case "get_news" '显示新闻内容
 	Call jsonheadResponse()
 	Response.Write(json.getJson(json))
 	Set json=Nothing
-Case "del_news"
+
+Case "get_pro" '显示产品内容
+	Dim pro_id
+	pro_id=SafeRequest("proid",0)
+	DBField="id,name,edittime,content,abstract,class1id,class2id,class3id,tag,img,upshow,Price,PriceVip,Season,prostyle,proyear,proURL"
+	show_json_arrayName="id,name,edittime,content,abstract,class1id,class2id,class3id,tag,img,upshow,Price,PriceVip,Season,prostyle,proyear,proURL"
+	data_temp=table_readdate(conn,"","products",DBField,"(id="&pro_id&")","")
+	data_temp_num=ArrayisEmpty(data_temp)
+
+	Set json=new Aien_Json
+	json.JsonType="object"
+	If data_temp_num=-1 Then
+		json.addData "err",data_temp_num 'err数据
+	Else
+		json.addData "pro",show_json(show_json_arrayName,data_temp)
+	End If
+
+	Call jsonheadResponse()
+	Response.Write(json.getJson(json))
+	Set json=Nothing
+
+Case "del_news" '删除新闻
 	news_id=SafeRequest("newsid",0)
 	data_temp=table_recordcount(conn,"news","id","id="&news_id&"")
 	If data_temp=0 Then Response.End()
@@ -151,6 +172,21 @@ Case "del_news"
 	json.addData "err",0 'err数据
 	json.addData "msg","删除成功。" 'msg 数据
 	json.addData "del_id",news_id 'del_id 数据
+	Response.Write(json.getJson(json))
+	Set json=Nothing
+
+Case "del_pros" '删除产品
+	pro_id=SafeRequest("proid",0)
+	data_temp=table_recordcount(conn,"products","id","id="&pro_id&"")
+	If data_temp=0 Then Response.End()
+
+	conn.execute("delete * from products where id in ("&pro_id&")")
+	Set json=new Aien_Json
+	json.JsonType="object"
+	Call jsonheadResponse()
+	json.addData "err",0 'err数据
+	json.addData "msg","删除成功。" 'msg 数据
+	json.addData "del_id",pro_id 'del_id 数据
 	Response.Write(json.getJson(json))
 	Set json=Nothing
 

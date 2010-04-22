@@ -152,7 +152,7 @@ $(function(){
                 var show_select = cmd_words.show_select;
                 var classname = cmd_words.classname;
                 var upclassid = cmd_words.upclassid;
-
+                
                 if (upclassid == null) {
                     alert("请选择上层分类。");
                     return false;
@@ -251,7 +251,7 @@ $(function(){
                         if (news_con.class3id != 0) {
                             get_class_("treeLv3", news_con.class3id, news_con.class2id);
                         }
-                        else
+                        else 
                             if (news_con.class2id != 0) {
                                 get_class_("treeLv2", news_con.class2id, news_con.class1id);
                             }
@@ -300,7 +300,7 @@ $(function(){
                         });
                     });
                 });
-
+                
             }
             break;
         /*
@@ -310,27 +310,29 @@ $(function(){
             admin_menu_click($(".rightBorder1px[get_html='Content_manage']"));
             show_news_list($(".news_contect"));
             break;
-
+            
         //产品列表
         case "pro-list.asp":
             admin_menu_click($(".rightBorder1px[get_html='Products_manage']"));
             show_pros_list($(".news_contect"));
             break;
-
-        //addpro。asp
+            
+        //addpro。asp 添加产品
         case "addpro.asp":
-            $("#pro-up-img").bind("change",function(e){
-				var post_data={upload:$(this).val()};
-				$.ajax({
-					type: "POST",
-					url:"lib/upload.asp",
-					dataType: "json",
-					data: post_data,
-					success: function(json){
-						alert(json);
-					}
-				})
-			})
+            $("#pro-up-img").bind("change", function(e){
+                var post_data = {
+                    upload: $(this).val()
+                };
+                $.ajax({
+                    type: "POST",
+                    url: "lib/upload.asp",
+                    dataType: "json",
+                    data: post_data,
+                    success: function(json){
+                        alert(json);
+                    }
+                })
+            })
             admin_menu_click($(".rightBorder1px[get_html='Products_manage']")); //显示menu
             var pro_id = getvalue("id"); //产品id
             show_classmenu($(".rightDotted1px_div")); //显示分类
@@ -347,14 +349,10 @@ $(function(){
                     else {
                         _date_add = 1;
                     }
-                    if ($.trim($("#pj_start2").val()) == "" || $.trim($("#pj_start").val()) == "" || $.trim($("#pj_end").val()) == "") {
-                        alert("请填写必要内容！")
+                    if ($("#Season").val() == "0" || $("#prostyle").val() == "0") {
+                        alert("请选择相关属性");
                         return false;
                     }
-                    else {
-                        _date_add = 1;
-                    }
-
                     if (_date_add = 1) {
                         var post_data = {
                             pro_name: $.trim($("#pj_start2").val()),
@@ -364,7 +362,13 @@ $(function(){
                             classid: class_data.classid,
                             classtype: class_data.class_type,
                             upclassid: class_data.upclassid,
-                            imgshowtop:$.trim($("#img-show-top").val())
+                            imgshowtop: $.trim($("#img-show-top").val()),
+                            ProPrice: $.trim($("#ProPrice").val()), //价格
+                            ProvipPrice: $.trim($("#ProvipPrice").val()), //vip价格
+                            Season: $.trim($("#Season").val()), //季节
+                            prostyle: $.trim($("#prostyle").val()), //功能
+                            proyear: $.trim($("#proyear").val()), //年份
+                            proURL: $.trim($("#proURL").val()) //年份
                         }
                         $.ajax({
                             type: "POST",
@@ -397,7 +401,7 @@ $(function(){
                         if (news_con.class3id != 0) {
                             get_class_("treeLv3", news_con.class3id, news_con.class2id);
                         }
-                        else
+                        else 
                             if (news_con.class2id != 0) {
                                 get_class_("treeLv2", news_con.class2id, news_con.class1id);
                             }
@@ -411,6 +415,13 @@ $(function(){
                     $("#pj_memo2").val(news_con.content);
                     $("#pj_end2").val(news_con.tag);
                     $("#img-show-top").val(news_con.img);
+                    $("#ProPrice").val(news_con.Price);
+                    $("#ProvipPrice").val(news_con.PriceVip);
+                    $("#Season").val(news_con.Season);
+                    $("#prostyle").val(news_con.prostyle);
+                    $("#proyear").val(news_con.proyear);
+                    $("#proURL").val(news_con.proURL);
+                    
                     show_edit($("#pj_memo2")); // 显示编辑器
                     $("#create_pj").val("修改");
                     $("#create_pj").click(function(){
@@ -427,7 +438,13 @@ $(function(){
                             Content: $("#pj_memo2").val(),
                             abstract: $("#pj_end").val(),
                             tag: $("#pj_end2").val(),
-                            imgshowtop:$.trim($("#img-show-top").val())
+                            imgshowtop: $.trim($("#img-show-top").val()),
+                            ProPrice: $.trim($("#ProPrice").val()), //价格
+                            ProvipPrice: $.trim($("#ProvipPrice").val()), //vip价格
+                            Season: $.trim($("#Season").val()), //季节
+                            prostyle: $.trim($("#prostyle").val()), //功能
+                            proyear: $.trim($("#proyear").val()), //年份
+                            proURL: $.trim($("#proURL").val()) //年份
                         };
                         $.ajax({
                             type: "POST",
@@ -444,13 +461,13 @@ $(function(){
                                     alert(json.err);
                                     return false;
                                 };
-                            }
+                                                            }
                         });
                     });
                 })
             }
             break;
-
+            
         default:
             $.getScript("lib/js/top_menu.js?" + new Date().format("yyyyMMddhhmmss"));
     }

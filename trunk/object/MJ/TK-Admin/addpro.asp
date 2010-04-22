@@ -51,39 +51,43 @@
 				</tr>
 				<tr>
 					<td align="right" class="inputTable">VIP价格：</td>
-					<td height="30" class="inputTable"><input name="pj_start" type="text" class="setTextInput" id="pj_start" value="0" /></td>
+					<td height="30" class="inputTable"><input name="ProvipPrice" type="text" class="setTextInput" id="ProvipPrice" value="0" /></td>
 				</tr>
-								<tr>
+				<tr>
 					<td align="right" class="inputTable">属于季节：</td>
 					<td height="30" class="inputTable"><select name="Season" class="setTextInput" id="Season">
-					<option value="0">-- 季节分类 --</option>
-					<option value="1">春季</option>
-					<option value="2">夏季</option>
-					<option value="3">秋季</option>
-					<option value="4">冬季</option>
-					</select></td>
+							<option value="0">-- 季节分类 --</option>
+							<option value="1">春季</option>
+							<option value="2">夏季</option>
+							<option value="3">秋季</option>
+							<option value="4">冬季</option>
+						</select></td>
 				</tr>
-								<tr>
+				<tr>
 					<td align="right" class="inputTable">服装功能：</td>
 					<td height="30" class="inputTable"><select name="prostyle" class="setTextInput" id="prostyle">
-					<option value="0">-- 功能分类--</option>
-					<option value="1">外套</option>
-					<option value="2">上衣</option>
-					<option value="3">连衣裙</option>
-					<option value="4">裤子</option>
-					<option value="5">裙子</option>
-					</select></td>
+							<option value="0">-- 功能分类--</option>
+							<option value="1">外套</option>
+							<option value="2">上衣</option>
+							<option value="3">连衣裙</option>
+							<option value="4">裤子</option>
+							<option value="5">裙子</option>
+						</select></td>
 				</tr>
-								<tr>
+				<tr>
 					<td align="right" class="inputTable">年份：</td>
 					<td height="30" class="inputTable"><input name="proyear" type="text" class="setTextInput" id="proyear" /></td>
 				</tr>
 				<tr>
-					<td align="right" class="inputTable">置顶图：</td>
+					<td align="right" class="inputTable">产品图：</td>
 					<td height="30" class="inputTable"><a href="upfile.asp" id="addpro-showup">
 						<button class="setButtom">置顶</button>
 						</a>
 						<input name="img-show-top" id="img-show-top" type="text" class="setTextInput" style="margin-left:20px;" disabled="disabled"/></td>
+				</tr>
+								<tr>
+					<td align="right" class="inputTable">跳转地址：</td>
+					<td height="30" class="inputTable"><input name="proURL" type="text" class="setTextInput" id="proURL" /></td>
 				</tr>
 				<tr>
 					<td width="100" align="right" valign="top" class="inputTable">产品简介：</td>
