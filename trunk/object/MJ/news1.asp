@@ -23,11 +23,11 @@
    <p>　　CHIC是国际品牌了解中国市场信息、开拓中国市场的最佳推广平台。CHIC主要观众群来源于海内外最具实力的大型商场、品牌加盟代理商、经销零售商及时尚买手等专业人士，10余万的专业观众已经在CHIC上形成了最佳商贸氛围，达到最具实效的商贸成果。
    </p>
    <img class="imgRight"src="files/images/img_24.jpg" />
-   <div class="contentEnd"><a href="news.html"><img src="files/images/button_newsBackList.gif" border="0" align="right" /></a></div>
+   <div class="contentEnd"><a href="news.asp"><img src="files/images/button_newsBackList.gif" border="0" align="right" /></a></div>
   </div>
   <div id="footer">
     <div id="footerRight"><br />
-      <a href="#" class="footer">会员登录</a> | <a href="#" class="footer">退出登录</a> | <a href="webmap.html" class="footer">网站地图</a> | <a href="caufil/index.html" target="_blank" class="footer">高菲丽</a> | <a href="jarfect/index.html" target="_blank" class="footer">菁妃</a> | <a href="#" class="footer">网站访问量统计</a></div>
+      <a href="#" class="footer">会员登录</a> | <a href="#" class="footer">退出登录</a> | <a href="caufil/index.html" target="_blank" class="footer">高菲丽</a> | <a href="jarfect/index.html" target="_blank" class="footer">菁妃</a> | <a href="#" class="footer">网站访问量统计</a></div>
   </div>
 </div>
 <!--#include file="lib/foot.asp" -->
