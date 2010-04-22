@@ -19,7 +19,7 @@ $(function(){
       <td height="30" colspan="2" align="center" class="textMsg" id="show_alert"></td>
     </tr>
     <tr>
-      <td height="30" colspan="2" class="tableHead">THINK-ART 内部管理系统 - 登录</td>
+      <td height="30" colspan="2" class="tableHead">THINK-ART 网站管理系统 - 登录</td>
     </tr>
     <tr>
       <td width="100" height="40" align="right" class="bottomDotted1px">账户：</td>
