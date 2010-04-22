@@ -25,11 +25,11 @@ h2 {
 	font-family: 黑体;
 }
 
-ul   {   
-	list-style:none;   
-	magin:0;   
-	padding:0;   
-} 
+ul   {
+	list-style:none;
+	magin:0;
+	padding:0;
+}
 
 ul#nav li {
 	float: left;
@@ -86,9 +86,9 @@ ul#nav {
 }
 
 ul#nav li {
-	margin-right: 2px; 
-	text-indent:-9999px; 
-	white-space:nowrap; 
+	margin-right: 2px;
+	text-indent:-9999px;
+	white-space:nowrap;
 	width: 115px;
 	height: 45px;
 }
@@ -122,7 +122,7 @@ ul#nav li#nav-news {
 }
 
 ul#nav li#nav-contact {
-	margin: 0; 
+	margin: 0;
 	background: url(../images/nav-8.gif) no-repeat center top;
 }
 
@@ -427,7 +427,7 @@ ul#nav li#nav-contact  a:hover {
 
 #culture-text h1, #services-text h1, #contact-text h1, #contact-text2 h1, #news-text h1, #products-text h1 {
 	padding: 20px 10px 0 50px;
-	background: url(../images/about-h1-background.jpg) no-repeat left bottom;
+	/*background: url(../images/about-h1-background.jpg) no-repeat left bottom;*/
 }
 
 #about-text h1 {
@@ -439,7 +439,7 @@ ul#nav li#nav-contact  a:hover {
 	color: #48647C;
 }
 
-#about-text p {	
+#about-text p {
 	margin-top: 10px;
 }
 
@@ -478,7 +478,7 @@ ul#nav li#nav-contact  a:hover {
 	width: 700px;
 }
 
-#culture-text p {	
+#culture-text p {
 	margin-top: 10px;
 	text-align: justify;
 	text-justify: inter-ideograph;
@@ -538,7 +538,7 @@ ul#nav li#nav-contact  a:hover {
 	width: 702px;
 }
 
-#services-text p {	
+#services-text p {
 	float: left;
 	width: 232px;
 	padding: 20px 20px 0 50px;
@@ -577,7 +577,7 @@ ul#nav li#nav-contact  a:hover {
 	width: 402px;
 }
 
-#contact-text p {	
+#contact-text p {
 	float: left;
 	width: 232px;
 	padding: 0 20px 0 50px;
@@ -593,16 +593,16 @@ ul#nav li#nav-contact  a:hover {
 	border: 2px solid #4B4B4B;
 }
 
-#contact-text2 {	
+#contact-text2 {
 	float: left;
 	width: 300px;
 }
 
-#contact-text2 button {	
+#contact-text2 button {
 	margin: 10px 0 0 0;
 }
 
-#contact-text2 h1 {	
+#contact-text2 h1 {
 	padding: 20px 20px 30px 50px;
 	text-align: justify;
 	text-justify: inter-ideograph;
@@ -663,10 +663,10 @@ ul#nav li#nav-contact  a:hover {
 	width: 690px;
 	height: 30px;
 	padding-top: 20px;
-	border-bottom: 2px dotted #4B4B4B; 
+	border-bottom: 2px dotted #4B4B4B;
 }
 
-#introduction-text p {	
+#introduction-text p {
 	float: left;
 	width: 710px;
 	padding: 0 15px 15px 5px;
@@ -777,4 +777,4 @@ ul#ul-right {
 	width: 150px;
 	border: 2px solid #496479;
 	margin: 30px 10px 0 0;
-}	
+}
