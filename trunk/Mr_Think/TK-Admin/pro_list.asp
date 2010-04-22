@@ -8,7 +8,7 @@
   <tr>
     <td width="220" valign="top" class="opArea"><table width="100%" border="0" cellspacing="0" cellpadding="0">
       <tr>
-        <td height="50" class="helpTitle bottomDotted1px">产品列表</td>
+        <td height="50" class="helpTitle bottomDotted1px">产品管理</td>
       </tr>
     </table></td>
     <td width="10" class="rightBorder1px">&nbsp;</td>
