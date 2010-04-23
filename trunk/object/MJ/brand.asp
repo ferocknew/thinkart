@@ -8,7 +8,7 @@
   <div id="naviLeft">
     <ul>
       <li><a href="about.asp" class="naviLeft">关于菁夫人</a></li>
-      <li><a href="#" class="naviLeft">设计团队</a></li>
+      <li><a href="team.asp" class="naviLeft">设计团队</a></li>
       <li><a href="brand.asp" class="naviLeft">附属品牌介绍</a></li>
     </ul>
   </div>
