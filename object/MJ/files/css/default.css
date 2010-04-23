@@ -151,6 +151,44 @@ hr{
 	float:left;
 }
 
+.reg{
+	position:absolute;
+	width:170px;
+	left: -124px;
+	top: -4px;
+	background-image: url(../images/ico_reg.png);
+	background-repeat: no-repeat;
+	background-position: right 60px;
+}
+
+.reg input{
+	width:80px;
+	padding:0 5px;
+	color:#867b30;
+	border:solid 1px #333;
+	background-color:#000;
+}
+
+.reg a{
+	color:#867b30;
+	text-decoration:none;
+}
+
+.regIcon{
+	background-color:#000;
+	width:140px;
+	height:60px;
+	border:1px solid #3e3e3e;
+	filter: Alpha(Opacity=90);
+	font-size:12px;
+	font-family:宋体;
+	padding:10px;
+	color:#ccc;
+	float:left;
+}
+
+
+
 /************************
 * navigation
 ************************/
@@ -470,4 +508,34 @@ a.regStep:active,a.regStep:hover{
 	color:#ccc;
 	padding:5px;
 	overflow:hidden;
+}
+
+/************************
+* Team
+************************/
+
+.teamContent{
+	margin-top:20px;
+	background-color:#282824;
+	padding:6px;
+	width:595px;
+}
+
+.teamContent td{
+	font-size:12px;
+	padding:0 10px;
+	line-height:26px;
+}
+
+.teamStyle1{
+	color:#FFF;
+	font-weight:bold;
+	background-color:#6a6439;
+	line-height:26px;
+	
+}
+
+.teamStyle2{
+	color:#CCC;
+	background-color:#323127;
 }
