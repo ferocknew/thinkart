@@ -83,7 +83,7 @@ End If
 
 		<div class="about-main" id="about-main-id">
 			<h1><%
-			If act="" Then			
+			If act="" Then
 			Response.Write(class_title)
 			Else
 			Response.Write(news_title)
@@ -122,13 +122,5 @@ End If
 
 	</div>
 	</div><!-- #content-->
-
-
-	<div id="footer">
-		<div class="footer">
-			<p>版权所有 上海德驰投资管理限公司</p>
-		</div>
-	</div><!-- #footer-->
-
 	</div>
 <!--#include file="lib/foot.asp" -->

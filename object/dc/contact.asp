@@ -67,11 +67,5 @@
 		</div>
 	</div>
 	<!-- #content-->
-	<div id="footer">
-		<div class="footer">
-			<p>版权所有 上海德驰投资管理限公司</p>
-		</div>
-	</div>
-	<!-- #footer-->
 </div>
 <!--#include file="lib/foot.asp" -->

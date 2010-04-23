@@ -4,13 +4,7 @@
 <!--#include file="lib/header_html.asp" -->
 <script>
 $(function(){
-	$("#sum-show").fancybox({
-	'autoDimensions':false,
-	'autoScale':false,
-	'width':500,
-	'height':600,
-	'type': 'iframe'
-	})
+	$("#sum-show").fancybox({frameWidth:500,frameHeight:600,hideOnContentClick:false})
 });
 </script>
 <!-- Html Body -->
@@ -121,11 +115,5 @@ $(function(){
 		</div>
 	</div>
 	<!-- #content-->
-	<div id="footer">
-		<div class="footer">
-			<p>版权所有 上海德驰投资管理限公司</p>
-		</div>
-	</div>
-	<!-- #footer-->
 </div>
 <!--#include file="lib/foot.asp" -->

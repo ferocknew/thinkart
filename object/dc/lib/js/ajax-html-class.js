@@ -22,7 +22,7 @@ $.getJSON("lib/dataoutput/action_xmlout.asp", {
 	}
 
     $(json.class_list).each(function(i){
-        _html_temp += "<div class=\"naviLeft3\" classid=\"" + this.id + "\"><a href=\"#\" class=\"pad\">" + this.classname + ">></a></div>";
+        _html_temp += "<div class=\"naviLeft3\" classid=\"" + this.id + "\"><a href=\"javascript:void(0)\" class=\"pad\">" + this.classname + ">></a></div>";
     });
     _$menuShowDiv.html(_html_temp)
     show_class_3($("#menu-show-div"));
@@ -37,7 +37,7 @@ function show_class_3(_$_html_temp){
     }, function(json){
         var _html_temp = "";
         $(json.class_list).each(function(i){
-            _$_html_temp.find("div[classid='" + this.upclassid + "']").after("<div class=\"naviLeft2\" classid=\"" + this.id + "\"><a href=\"#\"><strong>" + this.classname + "</strong></a></div>");
+            _$_html_temp.find("div[classid='" + this.upclassid + "']").after("<div class=\"naviLeft2\" classid=\"" + this.id + "\"><a href=\"javascript:void(0)\"><strong>" + this.classname + "</strong></a></div>");
         });
         show_news(_$_html_temp);
     });

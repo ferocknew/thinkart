@@ -15,7 +15,7 @@ Select Case act
 	TabName="news"
 	data_temp=table_readdate(conn,"",TabName,DBField,"(id="&id&")","")
 	data_temp_num=ArrayisEmpty(data_temp)
-	
+
 	If Not data_temp_num=-1 Then
 		news_title=data_temp(1,0) '标题
 		news_con=data_temp(2,0) '内容
@@ -27,7 +27,7 @@ Select Case act
 	TabName="news"
 	data_temp=table_readdate(conn,"",TabName,DBField,"(id="&id&")","")
 	data_temp_num=ArrayisEmpty(data_temp)
-	
+
 	If Not data_temp_num=-1 Then
 		news_title=data_temp(1,0) '标题
 		news_con=data_temp(2,0) '内容
@@ -97,11 +97,5 @@ End Select
 		</div>
 	</div>
 	<!-- #content-->
-	<div id="footer">
-		<div class="footer">
-			<p>版权所有 上海德驰投资管理限公司</p>
-		</div>
-	</div>
-	<!-- #footer-->
 </div>
 <!--#include file="lib/foot.asp" -->
