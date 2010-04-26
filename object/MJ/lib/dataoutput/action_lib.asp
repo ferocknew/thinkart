@@ -104,4 +104,50 @@ Sub add_class(class_tab) '添加class的过程
 		Call show_list_json("class3",upclassid,"")
 	End Select
 End Sub
+
+Sub newslist() '新闻列表
+	DBField="id,title,abstract,addtime,edittime"
+	TabName="news"
+	DataTemp=table_readdate(conn,"",TabName,DBField,"","order by edittime")
+	DataTempNum=ArrayisEmpty(DataTemp)
+
+	JsonDBField=Split(DBField,",")
+	Call jsonheadResponse()
+	Response.Write("{err:0,datalist:")
+	Response.Write(JSON.stringify(Jexs.VBRows2Obj(DataTemp,JsonDBField,5,1)))
+	Response.Write("}")
+End Sub
+
+Sub eidtuser(userid) '用户信息修改
+	Username=Easp.GetCookie(CookieName&":index_username") '用户Cookies
+
+	If Username="" Then
+		Response.Write("{err:1,msg:""请登录！""}")
+		Response.End()
+	End If
+
+	Dim email,regcity,RegOperators,telNum,address,userArea,datatemp,DBField,SQL
+	email=Trim(Easp.RF("email",0))
+	regcity=Trim(Easp.RF("regcity",0))
+	RegOperators=Trim(Easp.RF("RegOperators",0))
+	telNum=Trim(Easp.RF("telNum",0))
+	address=Trim(Easp.RF("address",0))
+	userArea=Trim(Easp.RF("userArea",0))
+
+	Set datatemp = Server.CreateObject("ADODB.RecordSet")
+	DBField="email,regcity,RegOperators,telNum,address,userArea,edittime"
+	SQL="SELECT "&DBField&" FROM [user] where (id="&userid&")"
+	Call datatemp.Open(SQL,conn,1,3)
+	datatemp("email")=email
+	datatemp("regcity")=regcity
+	datatemp("RegOperators")=RegOperators
+	datatemp("telNum")=telNum
+	datatemp("address")=address
+	datatemp("userArea")=userArea
+	datatemp("edittime")=Now()
+	datatemp.update
+	datatemp.close:Set datatemp=Nothing
+
+	Easp.JS("alert('您的资料更新成功！');window.location.href='../../mumber_edit.asp';")
+End Sub
 %>

@@ -121,8 +121,10 @@ if (typeof JSON=="undefined") {
 // What happens next depends on the value's type.
 
         switch (typeof value) {
+		case 'date':
+			return quote(String(value));
         case 'string':
-           return quote(value);
+			return quote(value);
         case 'number':
 
 // JSON numbers must be finite. Encode non-finite numbers as null.

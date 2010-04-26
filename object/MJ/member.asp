@@ -20,7 +20,7 @@
 		<div id="memberAccounts">
 			<h3>尊敬的会员您好：</h3>
 			您的帐号为：bobolos
-			<p><a href="#"><img src="files/images/button_password.jpg" border="0" /></a> &nbsp;<a href="#"><img src="files/images/button_member.gif" border="0" /></a></p>
+			<p><a href="#"><img src="files/images/button_password.jpg" border="0" /></a> &nbsp;<a href="mumber_edit.asp"><img src="files/images/button_member.gif" border="0" /></a></p>
 		</div>
 		<div id="memberMessage">
 			<h3>我要留言：</h3>

@@ -1,0 +1,131 @@
+/** 菁菲*深浅设计 **/
+
+/** reset **/
+body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,form,fieldset,legend,button,input,textarea,th,td{margin:0;padding:0;}body,button,input,select,textarea{font:12px/1.5 tahoma,arial,\5b8b\4f53,sans-serif;}h1,h2,h3,h4,h5,h6{font-size:100%;}address,cite,dfn,em,var{font-style:normal;}code,kbd,pre,samp{font-family:courier new,courier,monospace;}small{font-size:12px;}ul,ol{list-style:none;}a{text-decoration:none;}a:hover{text-decoration:underline;}sup{vertical-align:text-top;}sub{vertical-align:text-bottom;}legend{color:#000;}fieldset,img{border:0;}button,input,select,textarea{font-size:100%;}table{border-collapse:collapse;border-spacing:0;}
+
+a:hover {
+	text-decoration: none;
+}
+
+#container {
+	margin: 0 auto;
+	width: 940px;
+}
+
+
+/********** .header **********/
+
+.header {
+	float: left;
+	width: 940px;
+	margin: 20px 0 15px;
+}
+
+.header .logo {
+ 	float: left;
+	width: 166px;
+}
+
+.header .logo h1 {
+	width: 166px;
+	height: 78px;
+	text-indent: -9999px; 
+	background: #FFFFFF url(../images/logo_h1_bg.gif) no-repeat center center;
+}
+
+.header .logo h2 {
+	width: 166px;
+	height: 33px;
+	text-indent: -9999px; 
+	background: #FFFFFF url(../images/logo_h2_bg.gif) no-repeat center center;
+}
+
+.header .nav {
+ 	float: left;
+	width: 774px;
+	height: 111px;
+	background: #FFFFFF url(../images/nav_bg.gif) no-repeat center center;   
+}
+
+.header .nav ul {
+ 	float: left;
+	margin: 9px 30px;
+	height: 60px;
+	*display: inline;
+}
+
+.header .nav ul li {
+ 	float: left;
+	margin: 0 5px 0 0;
+	position: relative;	
+}  
+
+.header .nav ul li a {
+	display: block;
+	padding: 10px 0;
+	width: 60px;
+	height: 40px;    
+	color: #666666;
+	font-weight: 500;
+	text-align: center;
+	font-family: SimHei;
+}
+
+.header .nav ul li a:hover, .header .nav ul li a.now {    
+	color: #000000;
+	background: #E9E9E9 url(../images/nav_li_bg.gif) no-repeat center center;
+}
+
+.header .nav ul li ul {
+	position: absolute;
+	top: 54px;
+	left: -30px;
+	width: 160px;
+}
+
+.header .nav ul li ul li a {
+ 	font-weight: normal;
+	display: block;
+	width: 60px;
+	height: 25px;
+	line-height: 25px;
+	background: url(../images/nav_li_ul_li_bg.gif) no-repeat center center;
+	font-family: SimHei;
+}
+
+.header .nav ul li ul li a:hover, .header .nav ul li ul li a.now {
+	color: #000000;
+	background: url(../images/nav_li_ul_li_bg.gif) no-repeat center center;
+} 
+
+.header .nav p a {
+	float: left;
+	margin: 0 0 0 604px;
+	padding: 0 0 0 30px;
+	width: 140px;
+	line-height: 33px;
+	font-weight: bold;
+	color: #B5B5B5;
+	background: url(../images/taobao_bg.gif) no-repeat left center;
+	*display: inline;
+}
+
+.header .nav p a:hover {
+	color: #DDDDDD;
+}
+
+
+/********** .footer **********/
+
+.footer {
+	float: left;
+	width: 940px;
+	height: 60px;
+	background: #D0D0D0 url(../images/footer_bg.gif) no-repeat top center;
+	*margin: -1px;
+}
+
+.footer p {
+	text-align: center;
+	padding: 20px 0;
+}
