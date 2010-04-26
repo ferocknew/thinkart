@@ -37,4 +37,4 @@ $(function(){
   </table>
 </form>
 </body>
-<!--#include file="../lib/foot.asp" -->
+<!--#include file="../lib/foot-admin.asp" -->

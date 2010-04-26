@@ -74,4 +74,4 @@ data_temp_num=ArrayisEmpty(data_temp)
 <%
 DBField=Null:data_temp=Null:data_temp_num=Null
 %>
-<!--#include file="../lib/foot.asp" -->
+<!--#include file="../lib/foot-admin.asp" -->

@@ -95,7 +95,7 @@ End If
 				If Not data_temp_news_num=-1 Then
 				For i=0 To data_temp_news_num
 				%>
-			    <p class="listBoder"><strong><a href="?act=show-news&id=<%=data_temp_news(0,i)%>" news_id="<%=data_temp_news(0,i)%>"><%=data_temp_news(1,i)%></a></strong></p>
+			    <p class="listBoder"><strong><a href="?act=show-news&id=<%=data_temp_news(0,i)%>" news_id="<%=data_temp_news(0,i)%>" target="_blank"><%=data_temp_news(1,i)%></a></strong></p>
 				<%
 				Next
 				End If

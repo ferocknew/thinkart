@@ -91,7 +91,7 @@ $(function(){
 				%>
 				<p align="left">
 					<strong>
-						<a href="industry-3.asp?news_id=<%=data_temp_list(0,i)%>"><%=data_temp_list(1,i)%></a>
+						<a href="industry-3.asp?news_id=<%=data_temp_list(0,i)%>" target="_blank"><%=data_temp_list(1,i)%></a>
 					</strong>
 				</p>
 				<%
