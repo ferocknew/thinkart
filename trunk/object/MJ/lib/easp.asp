@@ -1,6 +1,6 @@
 ﻿<%
 '#################################################################################
-'##	easp.asp
+'##	easp.asp JSEncode修改版
 '##	--------------------------------------------------------------------
 '##	Feature		:	EasyAsp Class
 '##	Version		:	v2.1
@@ -60,6 +60,7 @@ Class EasyAsp
 		IfThen = Easp_IIF(Cn,T,F)
 	End Function
 	Sub Js(ByVal Str)
+		Response.Write("<meta http-equiv=""Content-Type"" content=""text/html; charset=UTF-8"" />" & VbCrLf)
 		Response.Write("<sc" & "ript type=""text/javascript"">" & VbCrLf)
 		Response.Write(VbTab & Str & VbCrLf)
 		Response.Write("</scr" & "ipt>" & VbCrLf)

@@ -46,7 +46,7 @@ Jexs.ADO2Obj = function(SQL, ReConn, RType){
                 data[i][j] = arr[sp + j];
         }
     }
-    return this.prototype;
+    return data;
     rs = null;
 }
 //VBArray GetRows转obj,FieldsNameArray必须是数组,fieldslen为实际字段数
