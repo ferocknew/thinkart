@@ -42,3 +42,4 @@ $(function(){
             break;
     }
 });
+document.oncontextmenu=function(e){return false;}

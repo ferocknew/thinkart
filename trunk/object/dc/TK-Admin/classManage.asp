@@ -93,4 +93,4 @@
   </tr>
 </table>
 </body>
-<!--#include file="../lib/foot.asp" -->
+<!--#include file="../lib/foot-admin.asp" -->

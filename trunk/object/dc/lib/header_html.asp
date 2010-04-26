@@ -15,4 +15,7 @@
 <link href="lib/js/fancybox/jquery.fancybox.css" rel="stylesheet" type="text/css" />
 <title></title>
 </head>
-<body>
+<style>
+body{-moz-user-select:none;}
+</style>
+<body onselectstart="return false">

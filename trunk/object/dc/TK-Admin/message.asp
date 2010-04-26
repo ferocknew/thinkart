@@ -92,4 +92,4 @@ For i=0 To data_temp_num
 <%
 DBField=Null:data_temp=Null:data_temp_num=Null
 %>
-<!--#include file="../lib/foot.asp" -->
+<!--#include file="../lib/foot-admin.asp" -->
