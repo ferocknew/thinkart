@@ -2,15 +2,15 @@
  --系统通用函数--
  Edit by 2009-11-28
  */
- //偏函数
-  function partial(fn){
-    var args=[].slice.call(arguments,1);
-    return function (){
-        var cargs=[].slice.call(arguments)
-        for(var i=0,l=args.length;i<l;i++)
-            if(args[i]=='_')args[i]=cargs.shift();
-        return fn.apply(this,args.concat(cargs))
-    }
+//偏函数
+function partial(fn){
+	var args=[].slice.call(arguments,1);
+	return function (){
+		var cargs=[].slice.call(arguments)
+		for(var i=0,l=args.length;i<l;i++)
+			if(args[i]=='_')args[i]=cargs.shift();
+		return fn.apply(this,args.concat(cargs))
+	}
 };
 //获取地址栏get变量值
 function getvalue(name){

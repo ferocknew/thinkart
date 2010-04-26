@@ -42,11 +42,11 @@ Jexs.ADO2Obj = function(SQL, ReConn, RType){
             data[i] = temp_obj
         }
         else {
-            for (var j = 0; j < fieldslen; j++) 
+            for (var j = 0; j < fieldslen; j++)
                 data[i][j] = arr[sp + j];
         }
     }
-    return data;
+    return this.prototype;
     rs = null;
 }
 //VBArray GetRows转obj,FieldsNameArray必须是数组,fieldslen为实际字段数
@@ -70,7 +70,7 @@ Jexs.VBRows2Obj=function(DbGetRows,FieldsNameArray_a,fieldslen,RType) {
             data[i] = temp_obj
         }
         else {
-            for (var j = 0; j < J_temp; j++) 
+            for (var j = 0; j < J_temp; j++)
                 data[i][j] = arr[sp + j];
         }
 	}
@@ -86,10 +86,10 @@ function createConnection(IsSqlDataBase, strPath, SqlUsername, SqlPassword, SqlD
         }
         else {
             Conn.connectionString = "Provider = Sqloledb; User ID = " + SqlUsername + "; Password = " + SqlPassword + "; Initial Catalog = " + SqlDatabaseName + "; Data Source = " + SqlLocalName + ";"
-            
+
         }
         Conn.open();
-    } 
+    }
     catch (e) {
         Response.Write('<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />数据库连接出错，请检查连接字串!');
         Response.End
@@ -103,7 +103,118 @@ function CloseDB(){
     try {
         Conn.close();
         Conn = null;
-    } 
+    }
     catch (e) {
     }
+}
+/*
+Function: trim()
+Description:
+Returns:
+History:
+20050202 2215GMT    v1      Andrew Urquhart     Comment added
+*/
+function trim() {
+    var strInput = String(this);
+
+    if (typeof strInput == "undefined" || strInput == null) {
+        return this;
+    }
+
+    return strInput.replace(/^\s+|\s+$/g, "");
+}
+/*
+Function: objectEnumerate()
+Description: Overrides the default implicit cast to string function for Objects in order to enumerate their contents in CSV format
+Returns: CSV String
+History:
+20060203 1256GMT    v1      Andrew Urquhart     Created
+*/
+function objectEnumerate() {
+    var a = [];
+    for (var e in this) {
+        var strType = typeof this[e];
+        if (strType != "function") {
+            a.push(e + ":" + (strType == "string" ? "\"" : "") + ("" + this[e]).replace(/"/g,"\\\"") + (strType == "string" ? "\"" : ""))
+        }
+    }
+    return "{" + a.join(", ") + "}";
+}
+/*
+Function: isNumber()
+Description:
+Returns:
+History:
+20060608 0928BST    v1      Andrew Urquhart     Created
+*/
+function isNumber(varData) {
+    if (typeof varData !== "number" || isNaN(varData)) {
+        return false;
+    }
+    return true;
+}
+
+
+/*
+Function: isBoolean()
+Description:
+Returns:
+History:
+20060608 0928BST    v1      Andrew Urquhart     Created
+*/
+function isBoolean(varData) {
+    if (typeof varData === "boolean") {
+        return true;
+    }
+    return false;
+}
+/*
+Function: isNumber()
+Description:
+Returns:
+History:
+20060608 0928BST    v1      Andrew Urquhart     Created
+*/
+function isNumber(varData) {
+    if (typeof varData !== "number" || isNaN(varData)) {
+        return false;
+    }
+    return true;
+}
+
+
+/*
+Function: isBoolean()
+Description:
+Returns:
+History:
+20060608 0928BST    v1      Andrew Urquhart     Created
+*/
+function isBoolean(varData) {
+    if (typeof varData === "boolean") {
+        return true;
+    }
+    return false;
+}
+/*
+Function: hEnc()
+Description: Sugar wrapper for Server.HTMLEncode to cope with nulls and undefined values
+Returns: String
+History:
+20060330 1447BST    v1      Andrew Urquhart     Created
+*/
+function hEnc(strRawHTML) {
+    return (strRawHTML === null || strRawHTML === undefined ? "" : Server.HTMLEncode(strRawHTML));
+}
+
+
+/*
+Function: uEnc()
+Description: Sugar wrapper for Server.URLEncode to cope with nulls and undefined values
+Returns: String
+History:
+20060413 1053BST    v1      Andrew Urquhart     Created
+*/
+function uEnc(strData) {
+    return (strData === null || strData === undefined || (typeof strData == "number" && isNaN(strData)) ? "" : Server.URLEncode(strData));
 }

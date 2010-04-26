@@ -1,0 +1,473 @@
+/*明菁服饰*深浅设计*/
+
+body {
+	margin:0;
+	background: url(../images/bg.gif);
+	line-height: 20px;
+	font-size: 12px;
+	color: #CCCCCC;
+}
+
+ul,li{
+	margin:0;
+	padding:0;
+}
+
+h1 {
+	font-size: 14px;
+	color: #867b30;
+	font-weight:bold;
+}
+
+h3{
+	font-size: 14px;
+	color: #e5d561;
+	font-weight:bold;
+}
+
+h2{
+	font-size:18px;
+	color:#c2b554;
+	font-weight:bold;
+	margin:0;
+	font-family:Arial;
+}
+
+p{
+	margin-bottom:20px;
+}
+
+hr{
+	margin:12px 0 20px;
+	border:0;
+	height:1px;
+	background-color:#707065;
+}
+
+#logo{
+	position:absolute;
+	width:276px;
+	height:328px;
+	background: url(../images/bg_leftTop.jpg) left top no-repeat;
+}
+	
+
+#container {
+	margin:auto;
+	width: 1020px;
+}
+
+/************************
+* HomePage
+************************/
+
+#banner{
+	height:530px;
+	min-width:1000px;
+	background:url(../images/bg_home.jpg) center no-repeat;
+}
+
+#bannerRight{
+	margin:auto;
+	padding-left:700px;
+	padding-top:50px;
+	width:280px;
+}
+
+#homeHot{
+	width:250px;
+	padding:15px;
+	background:#050201;
+}
+
+
+
+#homeMenu{
+	height:33px;
+	line-height:33px;
+	background: #68654f;
+	padding-right:50px;
+}
+
+#homeMenu ul{
+	float:right;
+	width:550px;
+}
+
+#homeMenu li{
+	display: inline;
+	list-style:none;
+	float:left;
+	_margin-bottom: -3px; /*IE6 hack*/
+}
+
+#footerHome{
+	height:100px;
+	background:url(../images/footer_hotCall.gif) 35px center no-repeat;
+}
+
+
+.homeRightTitle{
+	margin-bottom:15px;
+	padding-left:5px;
+	color:#78786d;
+	font-size:14px;
+	font-family:"微软雅黑";
+}
+
+.homeReg{
+	position:absolute;
+	width:170px;
+	left: 12px;
+	top: 0px;
+	background-image: url(../images/ico_reg.png);
+	background-repeat: no-repeat;
+	background-position: right 10px;
+}
+
+.homeReg input{
+	width:80px;
+	padding:0 5px;
+	color:#867b30;
+	border:solid 1px #333;
+	background-color:#000;
+}
+
+.homeReg a{
+	color:#867b30;
+	text-decoration:none;
+}
+
+.regIcon{
+	background-color:#000;
+	width:140px;
+	height:60px;
+	border:1px solid #3e3e3e;
+	filter: Alpha(Opacity=90);
+	font-size:12px;
+	font-family:宋体;
+	padding:10px;
+	color:#ccc;
+	float:left;
+}
+
+/************************
+* navigation
+************************/
+
+#navigation{
+	width:294px;
+	float:left;
+	padding-top:370px;
+}
+
+#naviLeft{
+	float:right;
+	height:260px;
+	width:145px;
+	background:url(../images/bg_navi.gif);
+}
+
+#naviLeft ul li{
+	list-style:none;
+	height:30px;
+	background: url(../images/icon_navi.gif) no-repeat 120px center;
+	border-bottom:#bcbba7 1px solid;
+	padding-left:15px;
+	line-height:30px;
+	display:block;
+}
+
+a.naviLeft:link,a.naviLeft:visited{
+	color:#fff;
+	text-decoration:none;
+	font-weight:bold;
+}
+
+a.naviLeft:hover,a.naviLeft:active{
+	color:#efde62;
+}
+
+
+/************************
+* content
+************************/
+#content{
+	margin-top:30px;
+	width:610px;
+	padding:45px 50px 20px;
+	margin-right:16px;
+	float:right;
+	background: #3a3a34;
+	min-height:550px;
+
+}
+
+.imgLeft{
+	float:left;
+	margin:0 15px 15px 0;
+}
+
+.imgRight{
+	float:right;
+	margin:0 0 15px 15px;
+}
+
+.contentEnd{
+	float:right;
+	width:610px;
+}
+
+/************************
+* header
+************************/
+
+#header {
+	position: relative;
+	width:525px;
+	height:33px;
+	line-height:33px;
+	float:right;
+	background: #68654f url(../images/logo_menu.gif) 15px center no-repeat;
+	margin-top:34px;
+	padding-left:200px;
+}
+
+#header ul li{
+	display: inline;
+	list-style:none;
+	float:left;
+	_margin-bottom: -3px; /*IE6 hack*/
+}
+
+
+/************************
+* footer
+************************/
+
+#footer{
+	width:1020px;
+	height:100px;
+	float:left;
+	background:url(../images/footer_hotCall.gif) 35px center no-repeat;
+}
+
+#footerRight{
+	float:right;
+	padding:30px 50px 0;
+	text-align:right;
+	color:#555342;
+}
+
+a.footer:link,a.footer:visited{
+	color:#555342;
+	font-family: "微软雅黑";
+	font-size:11px;
+	text-decoration:none;
+}
+
+a.footer:hover,a.footer:active{
+	color:#777777;
+}
+
+.brandCaufil{
+	height:30px;
+	padding-top:5px;
+	background:url(../images/list_caufil.gif) right no-repeat;
+}
+
+.brandJarfect{
+	height:30px;
+	padding-top:5px;
+	background:url(../images/list_jarfect.gif) right no-repeat;
+}
+
+.font12 {
+	color: #867b30;
+}
+
+.fontYellow {
+	color: #e5d561;
+}
+
+/************************
+* products
+************************/
+
+.products{
+	width:150px;
+	height:200px;
+	float:left;
+	margin:1px;
+	cursor:pointer;
+}
+
+#naviSelect{
+	background:url(../images/bg_select.gif) no-repeat;
+	margin:15px 12px 0;
+	padding-top:20px;
+}
+
+#naviSelect select{
+	width:100%;
+	margin-bottom:10px;
+	color:#737265;
+	background:#ececea;
+	border:#737265 solid 1px;
+}
+
+.prductMouseOn{
+	line-height:20px;
+	height:40px;
+	margin-top:150px;
+	padding:5px 10px;
+	background: #000 url(../images/bg_buy.gif) no-repeat 105px 30px;
+	filter: Alpha(Opacity=80);
+	opacity:0.8; /* 在firefox上可以直接解析 */
+}
+
+/************************
+* products
+************************/
+
+#contactMessage{
+	float:left;
+	width:280px;
+}
+
+#contactMessage input{
+	width:100%;
+	border:#5b5b5b 1px solid;
+	background:#3f3f35;
+	color:#ccc;
+	height:24px;
+	line-height:24px;
+	padding:0 5px;
+}
+
+#contactMessage textarea{
+	width:100%;
+	border:#5b5b5b 1px solid;
+	background:#3f3f35;
+	color:#ccc;
+	padding:0 5px;
+	overflow:hidden;
+}
+
+#contactMessage p{
+	line-height:35px;
+	color:#999;
+
+}
+
+#contactADD{
+	float:right;
+	width:300px;
+	line-height:20px;
+}
+
+.newsList{
+	margin:10px 0;
+}
+
+.newsName{
+	background:#434236;
+	color:#867b30;
+	font-weight:bold;
+	padding:0 10px;
+	margin-bottom:15px;
+}
+
+.newsDate{
+	float:right;
+	color:#999;
+}
+
+a.listMore:link,a.listMore:visited{
+	color:#efde62;
+	text-decoration:none;
+}
+
+a.listMore:active,a.listMore:hover{
+	text-decoration:underline;
+}
+
+
+/************************
+* Register
+************************/
+
+.regStep{
+	line-height:80px;
+	text-align:center;
+	font-size:14px;
+	font-weight:bold;
+	background-color:#3f3f35;
+}
+
+a.regStep:link,a.regStep:visited{
+	color:#ccc;
+	text-decoration:none;
+}
+
+a.regStep:active,a.regStep:hover{
+	text-decoration:underline;
+}
+
+#regMessage{
+	line-height:24px;
+	float:left;
+	margin-right:10px;
+	width:320px;
+}
+
+#regMessage input{
+	width:200px;
+	border:#5b5b5b 1px solid;
+	background:#3f3f35;
+	color:#ccc;
+	height:24px;
+	line-height:24px;
+	padding:0 5px;
+}
+
+#regMessage2{
+	line-height:24px;
+	float:left;
+	width:270px;
+}
+
+#regMessage2 input{
+	width:100%;
+	border:#5b5b5b 1px solid;
+	background:#3f3f35;
+	color:#ccc;
+	height:24px;
+	line-height:24px;
+	padding:0 5px;
+}
+
+/************************
+* Member
+************************/
+
+#memberAccounts{
+	float:left;
+	width:280px;
+}
+
+
+#memberMessage{
+	float:right;
+	width:300px;
+	line-height:20px;
+}
+
+#memberMessage textarea{
+	width:100%;
+	border:#5b5b5b 1px solid;
+	background:#3f3f35;
+	color:#ccc;
+	padding:5px;
+	overflow:hidden;
+}
