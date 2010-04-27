@@ -17,115 +17,112 @@
 	</div>
 	<!--#include file="files/inc/inner-menu.asp" -->
 	<div id="content"> <img src="files/images/title_client.gif" />
-    <hr />
-    <div class="clientContent">
-      <table width="100%" border="0" align="right" cellpadding="0" cellspacing="0">
-        <tr>
-          <td width="230" rowspan="4"><img src="files/images/img_client01.jpg"></td>
-          <td class="clientStyle1">上海长寿路店</td>
-        </tr>
-        <tr>
-          <td class="clientStyle3">营业面积：60平米</td>
-        </tr>
-        <tr>
-          <td class="clientStyle2">开业时间：2009年</td>
-        </tr>
-        <tr>
-          <td>&nbsp;</td>
-        </tr>
-      </table>
-    </div>
-    <div class="clientContent">
-      <table width="100%" border="0" align="right" cellpadding="0" cellspacing="0">
-        <tr>
-          <td width="230" rowspan="4"><img src="files/images/img_client02.jpg"></td>
-          <td class="clientStyle1">上海新世界店</td>
-        </tr>
-        <tr>
-          <td class="clientStyle3">营业面积：60平米</td>
-        </tr>
-        <tr>
-          <td class="clientStyle2">开业时间：2004年</td>
-        </tr>
-        <tr>
-          <td>&nbsp;</td>
-        </tr>
-      </table>
-    </div>
-    <div class="clientContent">
-      <table width="100%" border="0" align="right" cellpadding="0" cellspacing="0">
-        <tr>
-          <td width="230" rowspan="4"><img src="files/images/img_client03.jpg"></td>
-          <td class="clientStyle1">上海控江路店</td>
-        </tr>
-        <tr>
-          <td class="clientStyle3">营业面积：75平米</td>
-        </tr>
-        <tr>
-          <td class="clientStyle2">开业时间：2004年</td>
-        </tr>
-        <tr>
-          <td>&nbsp;</td>
-        </tr>
-      </table>
-    </div>
-    <div class="clientContent">
-      <table width="100%" border="0" align="right" cellpadding="0" cellspacing="0">
-        <tr>
-          <td width="230" rowspan="4"><img src="files/images/img_client04.jpg"></td>
-          <td class="clientStyle1">常熟菁夫人</td>
-        </tr>
-        <tr>
-          <td class="clientStyle3">营业面积：32平面</td>
-        </tr>
-        <tr>
-          <td class="clientStyle2">开业时间：1997年</td>
-        </tr>
-        <tr>
-          <td>&nbsp;</td>
-        </tr>
-      </table>
-    </div>
-    <div class="clientContent">
-      <table width="100%" border="0" align="right" cellpadding="0" cellspacing="0">
-        <tr>
-          <td width="230" rowspan="4"><img src="files/images/img_client05.jpg"></td>
-          <td class="clientStyle1">无锡菁夫人</td>
-        </tr>
-        <tr>
-          <td class="clientStyle3">营业面积：85平</td>
-        </tr>
-        <tr>
-          <td class="clientStyle2">开业时间：1985年</td>
-        </tr>
-        <tr>
-          <td>&nbsp;</td>
-        </tr>
-      </table>
-    </div>
-    <div class="clientContent">
-      <table width="100%" border="0" align="right" cellpadding="0" cellspacing="0">
-        <tr>
-          <td width="230" rowspan="4"><img src="files/images/img_client06.jpg"></td>
-          <td class="clientStyle1">郑州菁夫人</td>
-        </tr>
-        <tr>
-          <td class="clientStyle3">营业面积：53平</td>
-        </tr>
-        <tr>
-          <td class="clientStyle2">开业时间：2005年</td>
-        </tr>
-        <tr>
-          <td>&nbsp;</td>
-        </tr>
-      </table>
-    </div>
-    <br />
-  </div>
-	<div id="footer">
-		<div id="footerRight"><br />
-			<a href="#" class="footer">会员登录</a> | <a href="#" class="footer">退出登录</a> | <a href="caufil/index.html" target="_blank" class="footer">高菲丽</a> | <a href="jarfect/index.html" target="_blank" class="footer">菁妃</a> | <a href="#" class="footer">网站访问量统计</a></div>
+		<hr />
+		<div class="clientContent">
+			<table width="100%" border="0" align="right" cellpadding="0" cellspacing="0">
+				<tr>
+					<td width="230" rowspan="4"><img src="files/images/img_client01.jpg"></td>
+					<td class="clientStyle1">上海长寿路店</td>
+				</tr>
+				<tr>
+					<td class="clientStyle3">营业面积：60平米</td>
+				</tr>
+				<tr>
+					<td class="clientStyle2">开业时间：2009年</td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+				</tr>
+			</table>
+		</div>
+		<div class="clientContent">
+			<table width="100%" border="0" align="right" cellpadding="0" cellspacing="0">
+				<tr>
+					<td width="230" rowspan="4"><img src="files/images/img_client02.jpg"></td>
+					<td class="clientStyle1">上海新世界店</td>
+				</tr>
+				<tr>
+					<td class="clientStyle3">营业面积：60平米</td>
+				</tr>
+				<tr>
+					<td class="clientStyle2">开业时间：2004年</td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+				</tr>
+			</table>
+		</div>
+		<div class="clientContent">
+			<table width="100%" border="0" align="right" cellpadding="0" cellspacing="0">
+				<tr>
+					<td width="230" rowspan="4"><img src="files/images/img_client03.jpg"></td>
+					<td class="clientStyle1">上海控江路店</td>
+				</tr>
+				<tr>
+					<td class="clientStyle3">营业面积：75平米</td>
+				</tr>
+				<tr>
+					<td class="clientStyle2">开业时间：2004年</td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+				</tr>
+			</table>
+		</div>
+		<div class="clientContent">
+			<table width="100%" border="0" align="right" cellpadding="0" cellspacing="0">
+				<tr>
+					<td width="230" rowspan="4"><img src="files/images/img_client04.jpg"></td>
+					<td class="clientStyle1">常熟菁夫人</td>
+				</tr>
+				<tr>
+					<td class="clientStyle3">营业面积：32平面</td>
+				</tr>
+				<tr>
+					<td class="clientStyle2">开业时间：1997年</td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+				</tr>
+			</table>
+		</div>
+		<div class="clientContent">
+			<table width="100%" border="0" align="right" cellpadding="0" cellspacing="0">
+				<tr>
+					<td width="230" rowspan="4"><img src="files/images/img_client05.jpg"></td>
+					<td class="clientStyle1">无锡菁夫人</td>
+				</tr>
+				<tr>
+					<td class="clientStyle3">营业面积：85平</td>
+				</tr>
+				<tr>
+					<td class="clientStyle2">开业时间：1985年</td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+				</tr>
+			</table>
+		</div>
+		<div class="clientContent">
+			<table width="100%" border="0" align="right" cellpadding="0" cellspacing="0">
+				<tr>
+					<td width="230" rowspan="4"><img src="files/images/img_client06.jpg"></td>
+					<td class="clientStyle1">郑州菁夫人</td>
+				</tr>
+				<tr>
+					<td class="clientStyle3">营业面积：53平</td>
+				</tr>
+				<tr>
+					<td class="clientStyle2">开业时间：2005年</td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+				</tr>
+			</table>
+		</div>
+		<br />
 	</div>
+	<!--#include file="files/inc/inner-foot-a.asp" -->
 </div>
 </body>
 </html>

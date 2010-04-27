@@ -51,6 +51,12 @@ Select Case act
 	Case "newslist" '新闻列表
 	Call newslist()
 
+	Case "prolist" '产品列表
+	Call prolist()
+
+	Case "savemsg" '保存留言
+	Call savemsg()
+
 	Case Else
 
 End Select

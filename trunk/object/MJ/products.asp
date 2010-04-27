@@ -2,6 +2,17 @@
 <!--#include file="conn.asp" -->
 <!--#include file="lib/header_commad.asp" -->
 <!--#include file="lib/header_html.asp" -->
+<%
+Dim userCookies
+userCookies=Easp.GetCookie(CookieName&":index_username")
+Response.Write(userCookies)
+
+If userCookies="" Then
+Easp.JS("var userCookie=0")
+Else
+Easp.JS("var userCookie=1")
+End If
+%>
 <!-- Html Body -->
 <div id="logo"> </div>
 <div id="container">
@@ -41,36 +52,20 @@
 	<div id="content"> <img src="files/images/title_products.gif" />
 		<hr/>
 		<h1>时尚休闲系列</h1>
-		<div class="products" style="background:url(files/images/img_01.jpg);" get_url="http://www.online.sh.cn">
-			<div class="prductMouseOn" id="priceBlock" style="display:none;"> 高领印花外套
-				<h2>￥599</h2>
-			</div>
+		<div id="products_fancybox">
+			<!--
+		<a href="fancybox.asp"><div class="products" style="background:url(files/images/img_01.jpg);"> </div></a>
+		<a href="fancybox.asp"><div class="products" style="background:url(files/images/img_02.jpg);"> </div></a>
+		<div class="products" style="background:url(files/images/img_03.jpg);" href="fancybox.asp"> </div>
+		<div class="products" style="background:url(files/images/img_04.jpg);" href="fancybox.asp"> </div>
+		<div class="products" style="background:url(files/images/img_05.jpg);" href="fancybox.asp"> </div>
+		<div class="products" style="background:url(files/images/img_06.jpg);" href="fancybox.asp"> </div>
+		<div class="products" style="background:url(files/images/img_08.jpg);" href="fancybox.asp"> </div>
+		<div class="products" style="background:url(files/images/img_05.jpg);" href="fancybox.asp"> </div>-->
 		</div>
-		<div class="products" style="background:url(files/images/img_02.jpg);" get_url="http://www.google.com"> </div>
-		<div class="products" style="background:url(files/images/img_03.jpg);" get_url="http://www.google.com"> </div>
-		<div class="products" style="background:url(files/images/img_04.jpg);" get_url="http://www.google.com"> </div>
-		<div class="products" style="background:url(files/images/img_05.jpg);" get_url="http://www.google.com"> </div>
-		<div class="products" style="background:url(files/images/img_06.jpg);" get_url="http://www.google.com"> </div>
-		<div class="products" style="background:url(files/images/img_08.jpg);" get_url="http://www.google.com"> </div>
-		<div class="products" style="background:url(files/images/img_05.jpg);" get_url="http://www.google.com"> </div>
 		<p>&nbsp; </p>
 		<div class="contentEnd"> <a href="#"><img src="files/images/button_next.gif" border="0" align="right" /></a><a href="#"><img src="files/images/button_last.gif" border="0" align="right" /></a> </div>
 	</div>
-	<div id="footer">
-		<div id="footerRight"><br />
-			<a href="#" class="footer">会员登录</a> | <a href="#" class="footer">退出登录</a> | <a href="caufil/index.html" target="_blank" class="footer">高菲丽</a> | <a href="jarfect/index.html" target="_blank" class="footer">菁妃</a> | <a href="#" class="footer">网站访问量统计</a></div>
-	</div>
+	<!--#include file="files/inc/inner-foot-a.asp" -->
 </div>
 <!--#include file="lib/foot.asp" -->
-<script>
-    var _pro_list_show = "<div class=\"prductMouseOn\" id=\"priceBlock\">高领印花外套<h2>￥599</h2></div>"
-    var _pro_list = $(".products");
-    _pro_list.hover(function(e){
-        $(this).html(_pro_list_show);
-    }, function(e){
-        $(this).html("");
-    });
-    _pro_list.click(function(e){
-		 window.open($(this).attr("get_url"));
-    });
-</script>
