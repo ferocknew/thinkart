@@ -118,11 +118,49 @@ Sub newslist() '新闻列表
 	Response.Write("}")
 End Sub
 
+Sub prolist() '产品列表
+	PageNum=Easp.RQ("page",1) '当前页码
+	If PageNum="" Then PageNum=1
+	class3id=Easp.RQ("class3id",0)
+	DBField="id,name,img,Price,PriceVip"
+	TabName="products"
+	pageSize=8
+
+	'DataTemp=table_readdate(conn,"",TabName,DBField,"class3id="&class3id&"","order by edittime")
+	'DataTempNum=ArrayisEmpty(DataTemp)
+
+	Dim ors
+	Set ors=new Cls_ShowoPage '创建对象
+	With ors
+		.PageNum=PageNum	'页码
+		.Conn=conn			'得到数据库连接对象
+		.DbType="AC"		'数据库类型,AC为access,MSSQL为sqlserver2000,MSSQL_SP为存储过程版,MYSQL为mysql,PGSQL为PostGreSql
+		.RecType=0			'取记录总数方法(0执行count,1自写sql语句取,2固定值)
+		.RecSql=0			'如果RecType＝1则=取记录sql语句，如果是2=数值，等于0=""
+		.RecTerm=0			'取从记录条件是否有变化(0无变化,1有变化,2不设置cookies也就是及时统计，适用于搜索时候)
+		.CookieName="recac"	'如果RecTerm＝2,cookiesname="",否则写cookiesname
+		.Order=0			'排序(0顺序1降序),注意要和下面sql里面主键ID的排序对应
+		.PageSize=pageSize	'每页记录条数
+		.JsUrl=""			'showo_page.js的路径
+		.Sql=DBField&"$><$"&TabName&"$><$(class3id="&class3id&")$><$edittime$><$id"
+		'字段,表,条件(不需要where),排序(不需要需要ORDER BY),主键ID
+	End With
+
+	DataTempNum=ors.RecCount()		'记录总数
+	DataTemp=ors.ResultSet()		'返回ResultSet
+
+	JsonDBField=Split(DBField,",")
+	Call jsonheadResponse()
+	Response.Write("{err:0,pageMAX:"&Int(DataTempNum/pageSize+1)&",datalist:")
+	Response.Write(JSON.stringify(Jexs.VBRows2Obj(DataTemp,JsonDBField,5,1)))
+	Response.Write("}")
+End Sub
+
 Sub eidtuser(userid) '用户信息修改
 	Username=Easp.GetCookie(CookieName&":index_username") '用户Cookies
 
 	If Username="" Then
-		Response.Write("{err:1,msg:""请登录！""}")
+		Easp.JS("alert('请先登录！');window.location.href='../../index.asp';")
 		Response.End()
 	End If
 
@@ -149,5 +187,29 @@ Sub eidtuser(userid) '用户信息修改
 	datatemp.close:Set datatemp=Nothing
 
 	Easp.JS("alert('您的资料更新成功！');window.location.href='../../mumber_edit.asp';")
+End Sub
+
+Sub savemsg() '保存留言
+	inputname=Trim(Easp.RF("inputname",0))
+	telnum=Trim(Easp.RF("telnum",0))
+	email=Trim(Easp.RF("email",0))
+	company=Trim(Easp.RF("company",0))
+	If company="" Then company="未知公司"
+	message=Easp.RF("message",0)
+
+	SQL="select title,name,addtime,content,email,telnum from [message]"
+	Set datatemp = Server.CreateObject("ADODB.RecordSet")
+	Call datatemp.Open(SQL,conn,1,3)
+	datatemp.addnew
+	datatemp("title")=company
+	datatemp("name")=inputname
+	datatemp("telnum")=telnum
+	datatemp("email")=email
+	datatemp("content")=message
+	datatemp("addtime")=Now()
+	datatemp.update
+	datatemp.close:Set datatemp=Nothing
+
+	Easp.JS("alert('您的留言已经成功提交！');window.location.href='../../contact.asp';")
 End Sub
 %>

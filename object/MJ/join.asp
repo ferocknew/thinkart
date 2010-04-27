@@ -24,10 +24,7 @@
 		<p>公司以打造精品时装为责任，以引领时尚潮流为目标，以产品国际化为路线，通过雄厚的经济、技术与人才实力以及品种丰富、特色鲜明的时装，强势扶持代理商、加盟商，共享丰富的资源、广阔的市场和丰厚的利润。<br />
 		</p>
 	</div>
-	<div id="footer">
-		<div id="footerRight"><br />
-			<a href="#" class="footer">会员登录</a> | <a href="#" class="footer">退出登录</a> | <a href="caufil/index.html" target="_blank" class="footer">高菲丽</a> | <a href="jarfect/index.html" target="_blank" class="footer">菁妃</a> | <a href="#" class="footer">网站访问量统计</a></div>
-	</div>
+	<!--#include file="files/inc/inner-foot-a.asp" -->
 </div>
 </body>
 </html>

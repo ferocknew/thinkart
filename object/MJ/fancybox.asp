@@ -1,3 +1,12 @@
+<!--#include file="lib/const.asp" -->
+<!--#include file="conn.asp" -->
+<!--#include file="lib/header_commad.asp" -->
+<%
+Dim proId,ProCon
+proId=Easp.RQ("id",1)
+SQL="Select content From [products] where (id="&proId&")"
+Set ProCon=Jexs.ADO2Obj(SQL,Conn,1)  '新闻数据库操作
+%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -20,21 +29,4 @@ body {
 }
 -->
 </style>
-<img src="files/images/product_01.jpg">
-<table style="position:absolute; top:359px; left:370px;" width="175" border="0" cellspacing="0" cellpadding="0">
-  <tr>
-    <td bgcolor="#645E33" style="color:#FFF; font-weight:bold;">新款豹纹丝织印花上衣</td>
-  </tr>
-  <tr>
-    <td>面料：70%涤纶 30棉%</td>
-  </tr>
-  <tr>
-    <td bgcolor="#29271e">产地：韩国</td>
-  </tr>
-  <tr>
-    <td>货号：F028022</td>
-  </tr>
-  <tr>
-    <td bgcolor="#29271e">数量：21</td>
-  </tr>
-</table>
+<%=ProCon.[0].content%>

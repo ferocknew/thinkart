@@ -13,7 +13,7 @@
 						密&nbsp; 码
 						<input type="password" name="password" id="password" />
 						<br />
-						<a href="register.asp">注册</a> | <a href="#">忘记密码</a> | <a href="#" id="userloging-a">登录</a> </div>
+						<a href="register.asp">注册</a> | <a href="password_edit.asp">忘记密码</a> | <a href="#" id="userloging-a">登录</a> </div>
 				</div>
 				<a href="#" id="indexLoginClickA"><img src="files/images/button_login.gif" border="0" align="right" /></a></div>
 			<a href="products.asp"><img src="files/images/img_07.jpg" border="0" /></a> </div>
