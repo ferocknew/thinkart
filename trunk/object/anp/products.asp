@@ -19,7 +19,7 @@ tablename="class3"
 data_temp_class3=table_readdate(conn,"",tablename,DBField,"(upclassid="&class2id&")","order by orderid")
 data_temp_class3_num=ArrayisEmpty(data_temp_class3)
 
-data_pro_upshow=table_readdate(conn,"","products","ID,name,img","","order by addtime")
+data_pro_upshow=table_readdate(conn,"","products","ID,name,img","(upshow=1)","order by addtime")
 data_pro_upshow_num=ArrayisEmpty(data_pro_upshow)
 
 %>
