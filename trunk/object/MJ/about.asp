@@ -15,7 +15,7 @@
 		</div>
 	</div>
 	<!--#include file="files/inc/inner-menu.asp" -->
-	<div id="content"> <img src="files/images/title_about.gif" />
+	<div id="content"> <img alt="" src="files/images/title_about.gif" />
 		<hr />
 		<p>《菁夫人》品牌是对欧美顶尖时尚流行趋势进行了借鉴；从中吸取流行精髓元素。并由韩国资深设计团队凭借多年来在韩国服装界的设计经验积累，把韩国文化理念融入菁夫人服饰。让更多的中国人了解韩国文化。其次我们也不停的吸收中国本土文化，可谓是融入了欧美、韩国、中国三大元素贯穿始末、遥相呼应。</p>
 		<h1> 一、色系</h1>
