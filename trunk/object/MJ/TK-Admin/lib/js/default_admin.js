@@ -152,7 +152,7 @@ $(function(){
                 var show_select = cmd_words.show_select;
                 var classname = cmd_words.classname;
                 var upclassid = cmd_words.upclassid;
-                
+
                 if (upclassid == null) {
                     alert("请选择上层分类。");
                     return false;
@@ -251,7 +251,7 @@ $(function(){
                         if (news_con.class3id != 0) {
                             get_class_("treeLv3", news_con.class3id, news_con.class2id);
                         }
-                        else 
+                        else
                             if (news_con.class2id != 0) {
                                 get_class_("treeLv2", news_con.class2id, news_con.class1id);
                             }
@@ -300,7 +300,7 @@ $(function(){
                         });
                     });
                 });
-                
+
             }
             break;
         /*
@@ -310,13 +310,13 @@ $(function(){
             admin_menu_click($(".rightBorder1px[get_html='Content_manage']"));
             show_news_list($(".news_contect"));
             break;
-            
+
         //产品列表
         case "pro-list.asp":
             admin_menu_click($(".rightBorder1px[get_html='Products_manage']"));
             show_pros_list($(".news_contect"));
             break;
-            
+
         //addpro。asp 添加产品
         case "addpro.asp":
             $("#pro-up-img").bind("change", function(e){
@@ -401,7 +401,7 @@ $(function(){
                         if (news_con.class3id != 0) {
                             get_class_("treeLv3", news_con.class3id, news_con.class2id);
                         }
-                        else 
+                        else
                             if (news_con.class2id != 0) {
                                 get_class_("treeLv2", news_con.class2id, news_con.class1id);
                             }
@@ -421,7 +421,7 @@ $(function(){
                     $("#prostyle").val(news_con.prostyle);
                     $("#proyear").val(news_con.proyear);
                     $("#proURL").val(news_con.proURL);
-                    
+
                     show_edit($("#pj_memo2")); // 显示编辑器
                     $("#create_pj").val("修改");
                     $("#create_pj").click(function(){
@@ -432,6 +432,7 @@ $(function(){
                         var class_data = $("#from_class").data("class_val")
                         var post_data = {
                             proname: $("#pj_start2").val(),
+							pro_tag: $.trim($("#pj_start").val()),
                             classid: class_data.classid,
                             classtype: class_data.class_type,
                             upclassid: class_data.upclassid,
@@ -467,7 +468,7 @@ $(function(){
                 })
             }
             break;
-            
+
         default:
             $.getScript("lib/js/top_menu.js?" + new Date().format("yyyyMMddhhmmss"));
     }
