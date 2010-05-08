@@ -167,7 +167,12 @@ Class Cls_ShowoPage
 			Select Case Showo_DbType
 				Case "AC" 'ac数据库
 					Set Showo_Rs=Server.CreateObject ("adodb.RecordSet")
-					ResultSet_Sql="SELECT "&Showo_Field&" FROM "&Showo_Table&" "&Showo_Where&" "&Showo_OrderBy
+					ResultSet_Sql="SELECT "&Showo_Field&" FROM ["&Showo_Table&"] "&Showo_Where&" "&Showo_OrderBy
+					connNum=Showo_Conn.execute("Select count("&Showo_Id&") From ["&Showo_Table&"] "&Showo_Where&"")(0)
+					If connNum=0 Then
+						ResultSet=Empty
+						Exit Property
+					End If
 					Showo_Rs.Open ResultSet_Sql,Showo_Conn,1,1,&H0001
 					Showo_Rs.AbsolutePosition=(Showo_CurrPage-1)*Showo_PageSize+1
 				Case "MSSQL" 'sqlserver2000数据库
