@@ -24,21 +24,21 @@ End If
 				<li> <a href="#" class="naviLeft">时尚职业</a> </li>
 			</ul>
 			<div id="naviSelect">
-				<select name="select" id="select">
-					<option>按季节分类</option>
-					<option>春季</option>
-					<option>夏季</option>
-					<option>秋季</option>
-					<option>冬季</option>
+				<select name="select" id="select" onchange="window.location.href='?profilte=Season&profilteid='+this.value">
+					<option value="0">按季节分类</option>
+					<option value="1">春季</option>
+					<option value="2">夏季</option>
+					<option value="3">秋季</option>
+					<option value="4">冬季</option>
 				</select>
 				<select name="select" id="select">
-					<option>按功能分类</option>
-					<option>外套</option>
-					<option>上衣</option>
-					<option>连衣裙</option>
+					<option value="0">按功能分类</option>
+					<option value="1">外套</option>
+					<option value="2">上衣</option>
+					<option value="3">连衣裙</option>
 				</select>
 				<select name="select2" id="select2">
-					<option>按年份分类</option>
+					<option value="0">按年份分类</option>
 					<option>2010年</option>
 					<option>2009年</option>
 					<option>2008年</option>

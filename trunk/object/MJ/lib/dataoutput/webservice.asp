@@ -7,6 +7,7 @@ Dim act,VBjson,DBField,DataTemp,SQL,DataTempNum,TabName,JsonDBField
 act=Easp.RQ("act",0) ' 操作选择
 
 Select Case act
+	'------------------- 用户操作 -------------------
 	Case "userlogin" '前台用户登录
 		Dim username,password,UserCon
 		username=Easp.RF("username",0) '用户名
@@ -51,12 +52,21 @@ Select Case act
 	Dim userid
 	userid=Easp.RQ("userid",0) '用户ID
 	Call eidtuser(userid)
+	'------------------- End -------------------
 
 	Case "newslist" '新闻列表
 	Call newslist()
 
 	Case "prolist" '产品列表
-	Call prolist()
+	proFilter=Easp.RQ("profilter",0)
+	proFilterid=Easp.RQ("profilterid",0)
+
+	If proFilter="" Then
+		Call prolist("")
+	Else
+		Call prolist(proFilter,proFilterid)
+	End If
+
 
 	Case "savemsg" '保存留言
 	Call savemsg()
