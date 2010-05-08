@@ -13,7 +13,7 @@
 						密&nbsp; 码
 						<input type="password" name="password" id="password" />
 						<br />
-						<a href="register.asp">注册</a> | <a href="password_edit.asp">忘记密码</a> | <a href="#" id="userloging-a">登录</a> </div>
+						<a href="register.asp">注册</a> | <a href="#" id="userloging-a">登录</a> </div>
 				</div>
 				<a href="#" id="indexLoginClickA"><img src="files/images/button_login.gif" border="0" align="right" /></a></div>
 			<a href="products.asp"><img src="files/images/img_07.jpg" border="0" /></a> </div>
@@ -31,14 +31,14 @@
 		<li><a href="about.asp"><img src="files/images/menu_about1.gif" border="0" /></a></li>
 		<li><a href="products.asp"><img src="files/images/menu_products1.gif" border="0" /></a></li>
 		<li><a href="news.asp"><img src="files/images/menu_news1.gif" border="0" /></a></li>
-		<li><a href="member.asp"><img src="files/images/menu_member1.gif" border="0" /></a></li>
+		<%If Not Easp.GetCookie(CookieName&":index_userid")="" Then%><li><a href="member.asp"><img src="files/images/menu_member1.gif" border="0" /></a></li><%End If%>
 		<li><a href="join.asp"><img src="files/images/menu_join1.gif" border="0" /></a></li>
 		<li><a href="contact.asp"><img src="files/images/menu_contact1.gif" border="0" /></a></li>
 	</ul>
 </div>
 <div id="footerHome">
 	<div id="footerRight"><br />
-		<a href="#" class="footer">会员登录</a> | <a href="#" class="footer">退出登录</a> | <a href="caufil/index.html" target="_blank" class="footer">高菲丽</a> | <a href="jarfect/index.html" target="_blank" class="footer">菁妃</a> | <a href="http://www.google.com/intl/zh-CN/analytics/" target="_blank" class="footer">网站访问量统计</a></div>
+		<a href="#" class="footer">会员登录</a> | <a href="<%=userloginout%>" class="footer">退出登录</a> | <a href="caufil/index.html" target="_blank" class="footer">高菲丽</a> | <a href="jarfect/index.html" target="_blank" class="footer">菁妃</a> | <a href="http://www.google.com/intl/zh-CN/analytics/" target="_blank" class="footer">网站访问量统计</a></div>
 </div>
 <!--#include file="lib/foot.asp" -->
 <script>

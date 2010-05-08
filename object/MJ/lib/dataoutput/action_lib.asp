@@ -212,4 +212,14 @@ Sub savemsg() '保存留言
 
 	Easp.JS("alert('您的留言已经成功提交！');window.location.href='../../contact.asp';")
 End Sub
+
+Sub userloginout_ws(userid) '用户退出
+	If conn.execute("select count(id) From [user] where (id="&userid&")")(0)=1 Then
+		Response.Cookies(CookieName)("index_username") = "Guest"
+		Response.Cookies(CookieName)("index_userid") = ""
+		Response.Cookies(CookieName)("index_usernameHashKey") = "-1"
+		Response.Cookies(CookieName).expires=(now()+1)
+		Easp.JS("alert('您已经退出登录');window.location.href='../../index.asp';")
+	End If
+End Sub
 %>
