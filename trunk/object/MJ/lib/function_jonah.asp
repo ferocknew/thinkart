@@ -124,18 +124,33 @@ End Function
 '获取本页地址栏
 '*************************************
 Function GetLocationURL()
-Dim Url
-Dim ServerPort,ServerName,ScriptName,QueryString
-ServerName=Request.ServerVariables("SERVER_NAME")
-ServerPort=Request.ServerVariables("SERVER_PORT")
-ScriptName=Request.ServerVariables("SCRIPT_NAME")
-QueryString=Request.ServerVariables("QUERY_STRING")
-Url="http://"&ServerName
-If ServerPort <> "80" Then Url = Url & ":" & ServerPort
-Url=Url&ScriptName
-If QueryString <>"" Then Url=Url&"?"& QueryString
-GetLocationURL=Url
+	Dim Url
+	Dim ServerPort,ServerName,ScriptName,QueryString
+	ServerName=Request.ServerVariables("SERVER_NAME")
+	ServerPort=Request.ServerVariables("SERVER_PORT")
+	ScriptName=Request.ServerVariables("SCRIPT_NAME")
+	QueryString=Request.ServerVariables("QUERY_STRING")
+	Url="http://"&ServerName
+	If ServerPort <> "80" Then Url = Url & ":" & ServerPort
+	Url=Url&ScriptName
+	If QueryString <>"" Then
+			Url=Url&"?"& QueryString
+	End If
+	GetLocationURL=Url
 End Function
+
+Sub PrintArray(arr())
+	Dim t:For t=LBound(arr) To UBound(arr)
+	Response.Write arr(t) & ","
+	Next
+End Sub
+
+Sub DeleteItem(ByRef   arr(),i)
+	Dim   t   :   For   t=i   To   UBound(arr)-1
+	arr(t)=arr(t+1)
+	Next
+	ReDim   Preserve   arr(t-1)
+End Sub
 
 '*************************************
 '获取本页地址栏目录 GetLocationURLdri(dir_num) dir_num=0为同级目录，dir_num=1为上级目录，此函数可能使For循环失效
@@ -1373,4 +1388,11 @@ End Function
 		return false
 	}
 
+//删除页面请求参数
+function delQUERY(itemid) {
+	var httpRequest=String(Request.ServerVariables("QUERY_STRING")).split("&");
+	httpRequest.splice(itemid,1);
+	return httpRequest.join("&")
+
+}
 </script>
