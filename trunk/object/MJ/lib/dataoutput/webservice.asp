@@ -43,6 +43,10 @@ Select Case act
 		Call jsonheadResponse()
 		Response.Write(VBjson.getJson(VBjson))
 
+	Case "userloginout" '用户退出
+		userid=Easp.RQ("userid",1)
+		Call userloginout_ws(userid)
+
 	Case "eidtuser" '用户信息修改
 	Dim userid
 	userid=Easp.RQ("userid",0) '用户ID

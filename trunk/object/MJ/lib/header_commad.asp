@@ -13,3 +13,13 @@ getInfo(1)
 <!--#include file="Template.asp" -->
 <!--#include file="lib-ShowoPage.asp" -->
 <!--#include file="cache_mrThink.asp" -->
+
+<%
+Dim userloginout '用户退出
+userloginout=""
+If Easp.GetCookie(CookieName&":index_userid")="" Then
+	userloginout="#"
+Else
+	userloginout="lib/dataoutput/webservice.asp?act=userloginout&userid="&Easp.GetCookie(CookieName&":index_userid")
+End If
+%>

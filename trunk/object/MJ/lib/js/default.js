@@ -5,7 +5,7 @@ $(function(){
     $.getJSON(get_info_url, {
         "code": "json"
     }, loaddoc);
-    
+
     var url_fileName = get_url_show("end_file"); //当前访问文件
     //menu设置
     switch (url_fileName) {
@@ -35,15 +35,37 @@ $(function(){
             $("#header").find("a[href='contact.asp']").children("img").attr("src", "files/images/menu_contact2.gif");
             break;
     }
-    
+
     //锚点设置
     $("a[href='#']").attr("href", "javascript:void(0);");
+	if (url_fileName=="")
+		url_fileName="index.asp";
     switch (url_fileName) {
         case "index.asp": //userlogin
             var userlogin_a = $("#userloging-a");
             if (userlogin_a.length) {
-                userlogin_a.attr("href", "javascript:void(0);");
-                userlogin_a[0].onclick = userlogin;
+                userlogin_a.click(function(){
+					if ($.trim($("#username").val()) == "" || $.trim($("#password").val()) == "") {
+						alert("请输入对应的内容");
+						return false;
+					}
+					var ajaxdata = {
+						username: $.trim($("#username").val()),
+						password: $.trim($("#password").val())
+					};
+					$.ajax({
+						type: "POST",
+						url: "lib/dataoutput/webservice.asp?act=userlogin",
+						data: ajaxdata,
+						dataType: "json",
+						success: function(json){
+							alert(json.msg);
+							if (json.err == 0)
+							$("#indexLoginDiv").hide();
+							window.location.href="member.asp";
+						}
+					});
+				});
             }
             break;
         case "news.asp": //新闻列表
@@ -92,7 +114,7 @@ $(function(){
                     if (pageNum > parseInt(json.pageMAX)-1) {
 						pageNum = parseInt(json.pageMAX);
 					}
-                    if (pageNum < 2) 
+                    if (pageNum < 2)
                         pageNum = 1;
                 });
             }
@@ -109,27 +131,9 @@ $(function(){
             })
             break;
     }
-    
+
     //userlogin
     function userlogin(){
-        if ($.trim($("#username").val()) == "" || $.trim($("#password").val()) == "") {
-            alert("请输入对应的内容");
-            return false;
-        }
-        var ajaxdata = {
-            username: $.trim($("#username").val()),
-            password: $.trim($("#password").val())
-        };
-        $.ajax({
-            type: "POST",
-            url: "lib/dataoutput/webservice.asp?act=userlogin",
-            data: ajaxdata,
-            dataType: "json",
-            success: function(json){
-                alert(json.msg);
-                if (json.err == 0) 
-                    $("#indexLoginDiv").hide();
-            }
-        });
+
     }
 });
