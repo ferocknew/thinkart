@@ -118,7 +118,7 @@ Sub newslist() '新闻列表
 	Response.Write("}")
 End Sub
 
-Sub prolist() '产品列表
+Sub prolist(proFilter) '产品列表
 	PageNum=Easp.RQ("page",1) '当前页码
 	If PageNum="" Then PageNum=1
 	class3id=Easp.RQ("class3id",0)
@@ -156,6 +156,7 @@ Sub prolist() '产品列表
 	Response.Write("}")
 End Sub
 
+'------------------- 用户操作 ----------------
 Sub eidtuser(userid) '用户信息修改
 	Username=Easp.GetCookie(CookieName&":index_username") '用户Cookies
 
@@ -189,6 +190,17 @@ Sub eidtuser(userid) '用户信息修改
 	Easp.JS("alert('您的资料更新成功！');window.location.href='../../mumber_edit.asp';")
 End Sub
 
+Sub userloginout_ws(userid) '用户退出
+	If conn.execute("select count(id) From [user] where (id="&userid&")")(0)=1 Then
+		Response.Cookies(CookieName)("index_username") = "Guest"
+		Response.Cookies(CookieName)("index_userid") = ""
+		Response.Cookies(CookieName)("index_usernameHashKey") = "-1"
+		Response.Cookies(CookieName).expires=(now()+1)
+		Easp.JS("alert('您已经退出登录');window.location.href='../../index.asp';")
+	End If
+End Sub
+'------------------- End -------------------
+
 Sub savemsg() '保存留言
 	inputname=Trim(Easp.RF("inputname",0))
 	telnum=Trim(Easp.RF("telnum",0))
@@ -211,15 +223,5 @@ Sub savemsg() '保存留言
 	datatemp.close:Set datatemp=Nothing
 
 	Easp.JS("alert('您的留言已经成功提交！');window.location.href='../../contact.asp';")
-End Sub
-
-Sub userloginout_ws(userid) '用户退出
-	If conn.execute("select count(id) From [user] where (id="&userid&")")(0)=1 Then
-		Response.Cookies(CookieName)("index_username") = "Guest"
-		Response.Cookies(CookieName)("index_userid") = ""
-		Response.Cookies(CookieName)("index_usernameHashKey") = "-1"
-		Response.Cookies(CookieName).expires=(now()+1)
-		Easp.JS("alert('您已经退出登录');window.location.href='../../index.asp';")
-	End If
 End Sub
 %>
