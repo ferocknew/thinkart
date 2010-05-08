@@ -209,9 +209,8 @@ Case "edit_pro"
 	Dim pro_id
 	pro_id=SafeRequest("proid",0)
 
-	pro_name=CheckStr(Trim(Request.Form("pro_name")))
-    pro_tag=CheckStr(Trim(Request.Form("pro_tag")))
-    pro_name_e=CheckStr(Trim(Request.Form("pro_name_e")))
+	pro_name=CheckStr(Trim(Request.Form("proname")))
+	tag=CheckStr(Trim(Request.Form("pro_tag")))
 	classid=Request.Form("classid")
 	classtype=Request.Form("classtype")
 	upclassid=Request.Form("upclassid")
