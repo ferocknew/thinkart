@@ -209,7 +209,7 @@ function show_pros_list(con_div){
         $(pros_).each(function(i){
             var news_tab_copy = news_tab.clone();
             news_tab_copy.filter(".news_contect").removeClass().attr("news_id", this.id);
-            news_tab_copy.find("td:eq(0)").html("<span class='news_name' ness_id='" + this.id + "'>" + this.name + "</span>");
+            news_tab_copy.find("td:eq(0)").html(i+"&nbsp;&nbsp;&nbsp;<span class='news_name' ness_id='" + this.id + "'>" + this.name +"["+this.tag+"]" +"</span>");
             news_tab_copy.find("td:eq(1)").html(this.class1id);
             news_tab_copy.find("td:eq(2)").html(this.class2id);
             news_tab_copy.find("td:eq(3)").html(this.class3id);

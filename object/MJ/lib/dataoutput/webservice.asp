@@ -61,11 +61,7 @@ Select Case act
 	proFilter=Easp.RQ("profilter",0)
 	proFilterid=Easp.RQ("profilterid",0)
 
-	If proFilter="" Then
-		Call prolist("")
-	Else
-		Call prolist(proFilter,proFilterid)
-	End If
+	Call prolist()
 
 
 	Case "savemsg" '保存留言

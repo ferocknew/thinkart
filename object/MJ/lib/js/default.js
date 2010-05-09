@@ -80,13 +80,30 @@ $(function(){
             });
             break;
         case "products.asp": //产品列表
+			var _$products_fancybox = $("#products_fancybox");
+			$("a", _$products_fancybox).fancybox({
+			'padding': 0,
+			'autoDimensions': true,
+			'autoScale': true,
+			'type': 'iframe',
+			});
+			var _pro_list = $(".products");
+			_pro_list.hover(function(e){
+				$(this).children().show();
+			}, function(e){
+				$(this).children().hide();
+			});
+			break;
             var pageNum = 1;
-            var _$products_fancybox = $("#products_fancybox");
-            function showProlist(pageNum_in){
+
+            function showProlist(pageNum_in,classid,profilter,profilterid){
                 $.getJSON(webserviceurl, {
                     act: "prolist",
-                    class3id: 17,
-                    page: pageNum_in
+                    class3id: classid,
+					page: pageNum_in,
+					profilter:"",
+					profilterid:""
+
                 }, function(json){
                     var _temp_html = "";
                     $(json.datalist).each(function(i){
@@ -103,14 +120,6 @@ $(function(){
                     }, function(e){
                         $(this).children().hide();
                     });
-                    $("a", _$products_fancybox).fancybox({
-                        'padding': 0,
-                        'autoDimensions': false,
-                        'autoScale': false,
-                        'type': 'iframe',
-                        'width': 550,
-                        'height': 500
-                    });
                     if (pageNum > parseInt(json.pageMAX)-1) {
 						pageNum = parseInt(json.pageMAX);
 					}
@@ -118,16 +127,16 @@ $(function(){
                         pageNum = 1;
                 });
             }
-            showProlist(pageNum); //显示列表
+            showProlist(pageNum,17); //显示列表
             $(".contentEnd").children("a").eq(0).click(function(){
                 //下一页
 				pageNum+=1
-                showProlist(pageNum);
+                showProlist(pageNum,17);
             })
             $(".contentEnd").children("a").eq(1).click(function(){
                 //上一页
 				pageNum-=1
-                showProlist(pageNum);
+                showProlist(pageNum,17);
             })
             break;
     }
