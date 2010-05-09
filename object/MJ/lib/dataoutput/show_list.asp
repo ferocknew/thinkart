@@ -107,7 +107,7 @@ Case "pro_list"
 	Case "all"
     DBField="id,name,abstract,addtime,edittime,class1id,class2id,class3id,tag"
     classTabName="products"
-	data_temp=table_readdate(conn,"",classTabName,DBField,"","order by addtime desc")
+	data_temp=table_readdate(conn,"",classTabName,DBField,"","order by id")
 	data_temp_num=ArrayisEmpty(data_temp)
 
     Set json=new Aien_Json
