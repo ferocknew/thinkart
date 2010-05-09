@@ -6,7 +6,7 @@
 
 Class Cls_ShowoPage
 	Private Showo_PageSize,Showo_CurrPage
-	Private Showo_Conn,Showo_DbType,Showo_RecType,Showo_RecSql,Showo_RecTerm,Showo_CookieName
+	Private Showo_Conn,Showo_DbType,Showo_RecType,Showo_RecSql,Showo_RecTerm,Showo_CookieName,Showo_exeuSql
 	Private S_Order,Showo_JsUrl
 	Private Showo_Sql,Showo_Field,Showo_Table,Showo_Where,Showo_OrderBy,Showo_Id
 	Private Showo_RecCount,Showo_PageCount,ResultSet_Sql
@@ -20,6 +20,8 @@ Class Cls_ShowoPage
 		Showo_Order=">" '默认排序
 		Showo_Size="MAX" '默认排序
 		Showo_WhereOther="" '默认条件
+		Showo_RecType=1 '默认统计方式
+		Showo_CookieName="getpagenum_cookie"
 	End Sub
 
 	'================================================================
@@ -56,6 +58,14 @@ Class Cls_ShowoPage
 	Public Property Let RecSql(ByVal strRecSql)
 		Showo_RecSql=strRecSql
 	End Property
+
+	'================================================================
+	' exeuSql '如果RecType＝1则=取记录sql语句，如果是2=数值，等于0=""
+	'================================================================
+	Public Property Let exeuSql(ByVal strexeuSql)
+		Showo_exeuSql=strexeuSql
+	End Property
+
 
 	'================================================================
 	' RecTerm 搜索条件是否变化(0无变化,1有变化)
@@ -123,7 +133,7 @@ Class Cls_ShowoPage
 			Case 2
 				GetRecCount=CheckNum(Showo_RecSql,0,-1)
 			Case Else
-				GetRecCount=Showo_Conn.execute("SELECT Count("&Showo_Id&") FROM "&Showo_Table&" "&Showo_Where,0,1)(0)
+				GetRecCount=Showo_Conn.execute("SELECT	("&Showo_Id&") FROM "&Showo_Table&" "&Showo_Where,0,1)(0)
 		End Select
 	End Function
 
@@ -167,8 +177,10 @@ Class Cls_ShowoPage
 			Select Case Showo_DbType
 				Case "AC" 'ac数据库
 					Set Showo_Rs=Server.CreateObject ("adodb.RecordSet")
-					ResultSet_Sql="SELECT "&Showo_Field&" FROM ["&Showo_Table&"] "&Showo_Where&" "&Showo_OrderBy
-					connNum=Showo_Conn.execute("Select count("&Showo_Id&") From ["&Showo_Table&"] "&Showo_Where&"")(0)
+						ResultSet_Sql=Showo_exeuSql
+						connNum=GetRecCount
+						'ResultSet_Sql="SELECT "&Showo_Field&" FROM ["&Showo_Table&"] "&Showo_Where&" "&Showo_OrderBy
+						'connNum=Showo_Conn.execute("Select count("&Showo_Id&") From ["&Showo_Table&"] "&Showo_Where&"")(0)
 					If connNum=0 Then
 						ResultSet=Empty
 						Exit Property
@@ -205,8 +217,14 @@ Class Cls_ShowoPage
 					Showo_Rs.Open Showo_Cm
 				Case Else '其他情况按最原始的方法处理
 					Set Showo_Rs = Server.CreateObject ("adodb.RecordSet")
-					ResultSet_Sql="SELECT "&Showo_Field&" FROM "&Showo_Table&" "&Showo_Where&" "&Showo_OrderBy
-					Showo_Rs.Open ResultSet_Sql,Showo_Conn,1,1,&H0001
+					ResultSet_Sql=Showo_exeuSql
+					connNum=GetRecCount
+					If connNum=0 Then
+						ResultSet=Empty
+						Exit Property
+					End If
+					'ResultSet_Sql="SELECT "&Showo_Field&" FROM "&Showo_Table&" "&Showo_Where&" "&Showo_OrderBy
+					Call Showo_Rs.Open(ResultSet_Sql,Showo_Conn,1,1,&H0001)
 					Showo_Rs.AbsolutePosition=(Showo_CurrPage-1)*Showo_PageSize+1
 			End Select
 			ResultSet=Showo_Rs.GetRows(Showo_PageSize)
