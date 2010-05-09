@@ -86,6 +86,8 @@ $(function(){
 			'autoDimensions': true,
 			'autoScale': true,
 			'type': 'iframe',
+			'width':600,
+			'height':550
 			});
 			var _pro_list = $(".products");
 			_pro_list.hover(function(e){

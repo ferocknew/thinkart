@@ -207,7 +207,13 @@ Sub savemsg() '保存留言
 	email=Trim(Easp.RF("email",0))
 	company=Trim(Easp.RF("company",0))
 	If company="" Then company="未知公司"
-	message=Easp.RF("message",0)
+	message=Trim(Easp.RF("message",0))
+	messagetype=Trim(Easp.RF("messagetype",1))
+
+	If message="" Then
+		Easp.JS("alert('"&message&"');history.go(-1);")
+		Response.End()
+	End If
 
 	SQL="select title,name,addtime,content,email,telnum from [message]"
 	Set datatemp = Server.CreateObject("ADODB.RecordSet")
@@ -222,6 +228,10 @@ Sub savemsg() '保存留言
 	datatemp.update
 	datatemp.close:Set datatemp=Nothing
 
+	If messagetype<>1 Then
 	Easp.JS("alert('您的留言已经成功提交！');window.location.href='../../contact.asp';")
+	Else
+	Easp.JS("alert('您的留言已经成功提交！');window.location.href='../../member.asp';")
+	End If
 End Sub
 %>

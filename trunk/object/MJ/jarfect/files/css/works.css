@@ -151,16 +151,17 @@
 }
 
 .contant .main .new img {
-	border: 3px solid #EBEBEB;
+	border: 3px solid #EBEBEB;;
+	margin-bottom:10px;
 }
 
 .contant .main .new p {
 	position: absolute;
-	width: 174px;
+	width: 150px;
 	height: 24px;
 	line-height: 24px;
 	color: #FFFFFF;
-	top: 240px;
+	top: 200px;
 	left: 3px;
 	*left: 9px;
 	background: #7F1010;

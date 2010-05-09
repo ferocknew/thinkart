@@ -25,9 +25,16 @@
 		<div id="memberMessage">
 			<h3>我要留言：</h3>
 			<p>
+			<form action="lib/dataoutput/webservice.asp?act=savemsg" method="post" name="savemsg">
 				<textarea name="message" rows="5" id="message"></textarea>
+				<input type="hidden" name="company" value="<%=Easp.GetCookie(CookieName&":index_username")%>"/>
+				<input type="hidden" name="email" value="-"/>
+				<input type="hidden" name="inputname" value="<%=Easp.GetCookie(CookieName&":index_username")%>"/>
+				<input type="hidden" name="telnum" value="-"/>
+				<input type="hidden" name="messagetype" value="1"/>				
+			</form>
 			</p>
-			<p><a href="#"><img src="files/images/button_message.gif" border="0" /></a></p>
+			<p><a href="javascript:$('form').submit();"><img src="files/images/button_message.gif" border="0" /></a></p>
 		</div>
 	</div>
 	<!--#include file="files/inc/inner-foot-a.asp" -->
