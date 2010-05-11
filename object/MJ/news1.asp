@@ -5,8 +5,14 @@
 <%
 Dim NewsId,SQL,NewsCon
 NewsId=Easp.RQ("id",0) '新闻ID
-SQL="Select id,title,content From [news] where (id="&NewsId&")"
+SQL="Select id,title,content,class2id From [news] where (id="&NewsId&")"
 Set NewsCon=Jexs.ADO2Obj(SQL,Conn,1)  '新闻数据库操作
+
+If NewsCon.[0].class2id=70 Then
+titleimgurl="title_news.gif"
+Else
+titleimgurl="title_news1.gif"
+End If
 %>
 <div id="logo"></div>
 <div id="container">
@@ -19,7 +25,7 @@ Set NewsCon=Jexs.ADO2Obj(SQL,Conn,1)  '新闻数据库操作
 		</div>
 	</div>
 	<!--#include file="files/inc/inner-menu.asp" -->
-	<div id="content"> <img src="files/images/title_news.gif" />
+	<div id="content"> <img src="files/images/<%=titleimgurl%>" />
 		<hr />
 		<h1><%=NewsCon.[0].title%></h1>
 		<%=NewsCon.[0].content%>

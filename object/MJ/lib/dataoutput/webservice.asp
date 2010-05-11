@@ -52,6 +52,10 @@ Select Case act
 	Dim userid
 	userid=Easp.RQ("userid",0) '用户ID
 	Call eidtuser(userid)
+
+	Case "reguser" ' 用户注册
+	Call reguser()
+
 	'------------------- End -------------------
 
 	Case "newslist" '新闻列表

@@ -73,20 +73,20 @@ if not isempty(DataTemp) then set rs=Jexs.VBRows2Obj(DataTemp,JsonDBField,5,1) '
 				<li> <a href="?classid=67" class="naviLeft">时尚职业</a> </li>
 			</ul>
 			<div id="naviSelect">
-				<select name="select" id="select" onchange="window.location.href='?profilte=Season&profilteid='+this.value">
+				<select name="select" id="select" onChange="window.location.href='?profilte=Season&profilteid='+this.value">
 					<option value="0">按季节分类</option>
 					<option value="1">春季</option>
 					<option value="2">夏季</option>
 					<option value="3">秋季</option>
 					<option value="4">冬季</option>
 				</select>
-				<select name="select" id="select" onchange="window.location.href='?profilte=prostyle&profilteid='+this.value">
+				<select name="select" id="select" onChange="window.location.href='?profilte=prostyle&profilteid='+this.value">
 					<option value="0">按功能分类</option>
 					<option value="1">外套</option>
 					<option value="2">上衣</option>
 					<option value="3">连衣裙</option>
 				</select>
-				<select name="select2" id="select2" onchange="window.location.href='?profilte=proyear&profilteid='+this.value">
+				<select name="select2" id="select2" onChange="window.location.href='?profilte=proyear&profilteid='+this.value">
 					<option value="0">按年份分类</option>
 					<option value="2010">2010年</option>
 					<option value="2009">2009年</option>
