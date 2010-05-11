@@ -19,8 +19,8 @@
 			2009年2月10日至14日，东尚股份09秋冬订货会在雅宝路公司本部举办。受全球经济危机的影响，09年的服装出口形势面临严峻考验，在征求客户关于订货会举办地点意见的基础上，本着合理、有效、理性、精致的原则，09秋冬产品趋势走秀<a href="news1.html" class="listMore">...&gt; 全部内容</a></div>
 		<div id="memberAccounts">
 			<h3>尊敬的会员您好：</h3>
-			您的帐号为：bobolos
-			<p><a href="#"><img src="files/images/button_password.jpg" border="0" /></a> &nbsp;<a href="mumber_edit.asp"><img src="files/images/button_member.gif" border="0" /></a></p>
+			您的帐号为：<%=Easp.GetCookie(CookieName&":index_username")%>
+			<p><a href="password_edit.asp"><img src="files/images/button_password.jpg" border="0" style="display:none;" /></a> &nbsp;<a href="mumber_edit.asp"><img src="files/images/button_member.gif" border="0" /></a></p>
 		</div>
 		<div id="memberMessage">
 			<h3>我要留言：</h3>

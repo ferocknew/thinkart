@@ -11,6 +11,7 @@
 		<p class="fontYellow">注意：菁夫人需要注册码才可以注册! </p>
 		<div class="regStep"><a href="#" class="regStep">1.下载填写代理申请表</a> > <a href="#" class="regStep">发送至菁夫人邮箱</a> > 等待审核通过 > 获得注册码</div>
 		<p class="fontYellow">我们将在10个工作日内给您回复，如果您已经有注册码,请进行下面步骤：</p>
+		<form method="post" action="lib/dataoutput/webservice.asp?act=reguser" name="reguser">
 		<div id="regMessage"> 注册码<br />
 			<input type="text" name="code" id="code" />
 			<img src="files/images/icon_pass.gif" /> <br />
@@ -21,10 +22,10 @@
 			<input type="text" name="name" id="name" />
 			!会员名被占用<br />
 			密码（6-12位） <br />
-			<input type="text" name="pass" id="pass" />
+			<input type="password" name="password" id="password" />
 			!请输入密码<br />
 			确认密码 <br />
-			<input type="text" name="repass" id="repass" />
+			<input type="password" name="repass" id="repass" />
 			!两次输入不一致 </div>
 		<div id="regMessage2">经营者<br />
 			<input type="text" name="repass2" id="repass2" />
@@ -37,16 +38,22 @@
 			营业面积<br />
 			<input type="text" name="repass6" id="repass6" />
 		</div>
+		</form>
 		</p>
 		<div style="width:100%; float:left;">
 			<p>如遇问题请致电<span class="font12"><strong> 021-87654321</strong></span> 与客服联络 </p>
 			<table width="100%" border="0" cellspacing="0" cellpadding="0">
 				<tr>
-					<td align="center"><a href="#"><img src="files/images/button_reg.gif" border="0" /></a></td>
+					<td align="center"><a href="#" onclick="formsubmit();"><img src="files/images/button_reg.gif" border="0" /></a></td>
 				</tr>
 			</table>
 		</div>
 	</div>
 	<!--#include file="files/inc/inner-foot-a.asp" -->
 </div>
+<script type="text/javascript">
+function formsubmit(){
+$("form").submit();
+}
+</script>
 <!--#include file="lib/foot.asp" -->

@@ -199,6 +199,51 @@ Sub userloginout_ws(userid) '用户退出
 		Easp.JS("alert('您已经退出登录');window.location.href='../../index.asp';")
 	End If
 End Sub
+
+Sub reguser() '用户注册
+	regcord=Trim(Easp.RF("code",0))
+	email=Trim(Easp.RF("email",0)) 'email
+	username=Trim(Easp.RF("name",0))
+	password=Trim(Easp.RF("password",0))
+	RegOperators=Trim(Easp.RF("repass2",0)) '经营者
+	telNum=Trim(Easp.RF("repass3",0)) '联系电话
+	regcity=Trim(Easp.RF("repass4",0)) '所在城市
+	address=Trim(Easp.RF("repass5",0)) '商铺地址
+	userArea=Trim(Easp.RF("repass6",0)) '营业面积
+
+	If Not conn.execute("select count(id) from [License] where (License='"&regcord&"') and (Status=0)")(0)=1 Then
+		Easp.js("alert('注册码出错！');history.go(-1);")
+		Response.End()
+	End If
+
+	If Not conn.execute("select count(id) from [user] where (username='"&username&"')")(0)=1 Then
+		Easp.js("alert('用户名已被占用！');history.go(-1);")
+		Response.End()
+	End If
+
+	'DBField="email,useranme,regcity,RegOperators,telNum,address,userArea,edittime"
+	SQL="SELECT * FROM [user]"
+	Set rs = Server.CreateObject("ADODB.RecordSet")
+	Call rs.open(SQL,conn,1,3)
+	rs.addnew
+	rs("username")=username
+	rs("password")=password
+	rs("addtime")=Now()
+	rs("edittime")=Now()
+	rs("email")=email
+	rs("address")=address
+	rs("regcord")=regcord
+	rs("telNum")=telNum
+	rs("regcity")=telNum
+	rs("userArea")=userArea
+	rs("RegOperators")=RegOperators
+	rs.update
+	userid=rs("id")
+	rs.close:Set rs=Nothing
+
+	conn.execute("UPDATE License SET Status = 1, userid = '"&userid&"' where (License='"&regcord&"')")
+	Easp.js("alert('注册成功！');window.location.href='../../index.asp';")
+End Sub
 '------------------- End -------------------
 
 Sub savemsg() '保存留言
@@ -228,7 +273,7 @@ Sub savemsg() '保存留言
 	datatemp.update
 	datatemp.close:Set datatemp=Nothing
 
-	If messagetype<>1 Then
+	If messagetype="" Then
 	Easp.JS("alert('您的留言已经成功提交！');window.location.href='../../contact.asp';")
 	Else
 	Easp.JS("alert('您的留言已经成功提交！');window.location.href='../../member.asp';")
