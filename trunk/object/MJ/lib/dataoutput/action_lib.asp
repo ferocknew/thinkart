@@ -187,7 +187,7 @@ Sub eidtuser(userid) '用户信息修改
 	datatemp.update
 	datatemp.close:Set datatemp=Nothing
 
-	Easp.JS("alert('您的资料更新成功！');window.location.href='../../mumber_edit.asp';")
+	Easp.JS("alert('您的资料更新成功！');window.location.href='../../member.asp';")
 End Sub
 
 Sub userloginout_ws(userid) '用户退出
