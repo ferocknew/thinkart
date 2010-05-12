@@ -131,7 +131,7 @@ if not isempty(DataTemp) then set rs=Jexs.VBRows2Obj(DataTemp,JsonDBField,5,1) '
 if not isempty(DataTemp) then
 for i=0 To rs.length-1
 %>
-				<div class="new"><div class="img"><p class="price"><span class="left"><%=rs.slice(i,i+1).[0].name%></span><span class="right">￥<%=rs.slice(i,i+1).[0].price%></span></p>	<img src="<%=rs.slice(i,i+1).[0].img%>"></div><!-- .img-->	</div><!-- .new-->
+				<div class="new"><div class="img"><p class="price"><span class="left"><%=rs.slice(i,i+1).[0].name%></span></p>	<img src="<%=rs.slice(i,i+1).[0].img%>"></div><!-- .img-->	</div><!-- .new-->
 <%
 Next
 Set rs=Nothing
