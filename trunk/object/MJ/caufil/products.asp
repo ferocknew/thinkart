@@ -47,8 +47,8 @@ end if
 
 Set ors=new Cls_ShowoPage '创建对象
 With ors
-	.PageNum=PageNum		'页码
-	.PageSize=pageSize		'每页记录条数
+	.PageNum=PageNum			'页码
+	.PageSize=pageSize			'每页记录条数
 	.Conn=conn					'得到数据库连接对象
 	.RecSql=conSQL				'统计用SQL语句
 	.exeuSql=SQL				'执行的SQL语句
@@ -109,7 +109,7 @@ if not isempty(DataTemp) then set rs=Jexs.VBRows2Obj(DataTemp,JsonDBField,5,1) '
 if not isempty(DataTemp) then
 for i=0 To rs.length-1
 %>
-			  <a href="../fancybox.asp?id=<%=rs.slice(i,i+1).[0].id%>" fancybox="1"><div class="productsItem" style=" background:url(<%=rs.slice(i,i+1).[0].img%>) center no-repeat;"><div class="productsInfo"><%=rs.slice(i,i+1).[0].name%><span style="float:right;"><strong>￥<%=rs.slice(i,i+1).[0].Price%>></strong></span></div><!--div class="productsNew">New</div--></div></a>
+			  <a href="../fancybox.asp?id=<%=rs.slice(i,i+1).[0].id%>" fancybox="1"><div class="productsItem" style=" background:url(<%=rs.slice(i,i+1).[0].img%>) center no-repeat;"><div class="productsInfo"><%=rs.slice(i,i+1).[0].name%><span style="float:right;"></span></div><!--div class="productsNew">New</div--></div></a>
 <%
 Next
 Set rs=Nothing
