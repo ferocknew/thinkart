@@ -137,7 +137,7 @@ Next
 Set rs=Nothing
 end if
 %>
-<div style="color:#000; text-align:left;"><a href="<%=pagedown%>"><img src="files/images/pageup_1_a.gif" border="0"></a> | <a href="<%=pageup%>"><img src="files/images/pagedown_1_a.gif" border="0"/></a></div>
+<div style="color:#000; text-align:center;"><a href="<%=pagedown%>"><img src="files/images/pageup_1_a.gif" border="0"></a> | <a href="<%=pageup%>"><img src="files/images/pagedown_1_a.gif" border="0"/></a></div>
 			</div><!-- .main--><!-- .main-->
 		</div><!-- .contant-->
 
