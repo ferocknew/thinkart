@@ -272,8 +272,8 @@ a.footer:hover,a.footer:active{
 
 .productsItem{
 	float:left;
-	height:240px;
-	width:170px;
+	height:270px;
+	width:165px;
 	border: solid 1px #eaeaea;
 	padding:10px;
 	position:relative;
@@ -284,13 +284,13 @@ a.footer:hover,a.footer:active{
 	position:absolute;
 	height:32px;
 	line-height:32px;
-	top:247px;
-	width:150px;
+	top:227px;
+	width:126px;
 	padding:0 12px;
 	color:#FFF;
 	background-color:#000;
 	filter: Alpha(Opacity=70);
-	left: 11px;
+	left: 17px;
 }
 
 .productsInfo2{
