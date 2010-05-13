@@ -10,7 +10,7 @@
 				<ul>
 					<li><a href="join.asp" class="naviLeft">公司简介</a></li>
 				</ul>
-				<li><a href="join2.asp" class="naviLeft">加盟代理</a></li>
+				<li><a href="join2.asp" class="naviLeft">代理加盟</a></li>
 				<li><a href="client.asp" class="naviLeft">我们的客户</a></li>
 			</ul>
 		</div>
