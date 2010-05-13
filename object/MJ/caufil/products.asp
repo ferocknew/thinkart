@@ -87,19 +87,19 @@ if not isempty(DataTemp) then set rs=Jexs.VBRows2Obj(DataTemp,JsonDBField,5,1) '
 	<div id="homeContent">
 		<div id="navigationProducts">
 			<ul>
-				<li class="naviList">季节分类</li>
-				<li><a href="?profilte=Season&profilteid=1" class="navigationProducts">春装</a></li>
-				<li><a href="?profilte=Season&profilteid=2" class="navigationProducts">夏装</a></li>
-				<li><a href="?profilte=Season&profilteid=3" class="navigationProducts">秋装</a></li>
-				<li><a href="?profilte=Season&profilteid=4" class="navigationProducts">冬装</a></li>
-				<li class="naviList2">功能分类</li>
-				<li><a href="?profilte=prostyle&profilteid=2" class="navigationProducts">上衣</a></li>
-				<li><a href="?profilte=prostyle&profilteid=4" class="navigationProducts">裤子</a></li>
-				<li><a href="?profilte=prostyle&profilteid=5" class="navigationProducts">裙子</a></li>
-				<li class="naviList">年份分类</li>
-				<li><a href="?profilte=proyear&profilteid=2008" class="navigationProducts">2008</a></li>
-				<li><a href="?profilte=proyear&profilteid=2009" class="navigationProducts">2009</a></li>
-				<li><a href="?profilte=proyear&profilteid=2010" class="navigationProducts">2010</a></li>
+				<li class="naviList2" id="season_class1">季节分类</li>
+				<li click_hidden="class1"><a href="?profilte=Season&profilteid=1" class="navigationProducts">春装</a></li>
+				<li click_hidden="class1"><a href="?profilte=Season&profilteid=2" class="navigationProducts">夏装</a></li>
+				<li click_hidden="class1"><a href="?profilte=Season&profilteid=3" class="navigationProducts">秋装</a></li>
+				<li click_hidden="class1"><a href="?profilte=Season&profilteid=4" class="navigationProducts">冬装</a></li>
+				<li class="naviList2" id="season_class2">功能分类</li>
+				<li click_hidden="class2"><a href="?profilte=prostyle&profilteid=2" class="navigationProducts">上衣</a></li>
+				<li click_hidden="class2"><a href="?profilte=prostyle&profilteid=4" class="navigationProducts">裤子</a></li>
+				<li click_hidden="class2"><a href="?profilte=prostyle&profilteid=5" class="navigationProducts">裙子</a></li>
+				<li class="naviList2"  id="season_class3">年份分类</li>
+				<li click_hidden="class3"><a href="?profilte=proyear&profilteid=2008" class="navigationProducts">2008</a></li>
+				<li click_hidden="class3"><a href="?profilte=proyear&profilteid=2009" class="navigationProducts">2009</a></li>
+				<li click_hidden="class3"><a href="?profilte=proyear&profilteid=2010" class="navigationProducts">2010</a></li>
 			</ul>
 		</div>
 		<div id="contentProducts">
@@ -131,6 +131,21 @@ $("a[fancybox='1']", _$products_fancybox).fancybox({
 'type': 'iframe',
 'width':600,
 'height':550
+});
+$("#season_class1").bind("click", function(e){
+	$(this).nextAll("li[click_hidden='class1']").slideToggle();
+	$(this).toggleClass("naviList").toggleClass("naviList2");
+	
+});
+$("#season_class2").bind("click", function(e){
+	$(this).nextAll("li[click_hidden='class2']").slideToggle();
+	$(this).toggleClass("naviList").toggleClass("naviList2");
+	
+});
+$("#season_class3").bind("click", function(e){
+	$(this).nextAll("li[click_hidden='class3']").slideToggle();
+	$(this).toggleClass("naviList").toggleClass("naviList2");
+	
 });
 </script>
 <!--#include file="../lib/foot.asp" -->
