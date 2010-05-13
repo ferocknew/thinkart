@@ -3,7 +3,8 @@
 	<head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>菁菲-首页</title>
-
+	<script type="text/javascript" src="../lib/js/jquery.min.js"></script>
+	<script type="text/javascript" src="../lib/js/jquery.transitions.js"></script>
 	<link href="files/css/style.css" rel="stylesheet" type="text/css" />
 	<link href="files/css/index.css" rel="stylesheet" type="text/css" />
 	</head>
@@ -35,7 +36,7 @@
 				<li><a href="#">4</a></li>
 				<li><a href="#">5</a></li>
 			</ul--><!-- .banner_nav-->
-			<img src="files/images/index_banner_1.jpg">
+			<div id="banner_img" style="height:421px; width:932px; border:#CCC solid 4px;"></div>
 		</div><!-- .banner-->
 
 		<div class="mid">
@@ -50,4 +51,12 @@
 
 	</div><!-- #container-->
 	</body>
-<html>
+	<script type="text/javascript">
+
+$("#banner_img").transition({
+duration : 3000,
+images : ['files/images/index_banner_1.jpg', 'files/images/index_banner_2.jpg', 'files/images/index_banner_3.jpg','files/images/index_banner_4.jpg','files/images/index_banner_5.jpg'],
+type : 'fade'
+});
+	</script>
+</html>

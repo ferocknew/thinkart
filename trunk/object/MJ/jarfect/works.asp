@@ -69,6 +69,7 @@ if not isempty(DataTemp) then set rs=Jexs.VBRows2Obj(DataTemp,JsonDBField,5,1) '
 	<script type="text/javascript" src="../lib/js/jquery.min.js"></script>
 	<script type="text/javascript" src="../lib/js/fancybox/jquery.fancybox.pack.js"></script>
 	<script type="text/javascript" src="../lib/js/fancybox/jquery.mousewheel.pack.js"></script>
+	<script type="text/javascript" src="../lib/js/jquery.transitions.js"></script>
 	<link href="../lib/js/fancybox/jquery.fancybox.css" rel="stylesheet" type="text/css" />
 	<link href="files/css/style.css" rel="stylesheet" type="text/css" />
 	<link href="files/css/works.css" rel="stylesheet" type="text/css" />
@@ -101,7 +102,7 @@ if not isempty(DataTemp) then set rs=Jexs.VBRows2Obj(DataTemp,JsonDBField,5,1) '
 				<li><a href="#">4</a></li>
 				<li><a href="#">5</a></li>
 			</ul><!-- .banner_nav--><!-- .price-->
-			<img src="files/images/about_banner_1.jpg">
+			<div id="banner_img" style="height:421px; width:932px; border:#CCC solid 4px;"></div>
 		</div><!--.banner-->
 
 		<div class="contant">
@@ -153,6 +154,13 @@ $("a[fancybox='1']", _$products_fancybox).fancybox({
 'type': 'iframe',
 'width':600,
 'height':550
+});
+
+
+$("#banner_img").transition({
+duration : 3000,
+images : ['files/images/index_banner_1.jpg', 'files/images/index_banner_2.jpg', 'files/images/index_banner_3.jpg','files/images/index_banner_4.jpg','files/images/index_banner_5.jpg'],
+type : 'fade'
 });
 </script>
 <!--#include file="../lib/foot.asp" -->
