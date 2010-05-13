@@ -94,18 +94,14 @@ if not isempty(DataTemp) then set rs=Jexs.VBRows2Obj(DataTemp,JsonDBField,5,1) '
 		</div><!-- .header-->
 
 		<div class="banner">
-			<ul class="banner_nav">
+			<ul class="banner_nav" style="display:none;">
 				<li><a class="now" href="#">1</a></li>
 				<li><a href="#">2</a></li>
 				<li><a href="#">3</a></li>
 				<li><a href="#">4</a></li>
 				<li><a href="#">5</a></li>
-			</ul><!-- .banner_nav-->
-			<div class="price">
-				<div class="name">纯棉长袖T恤</div>
-				<div class="number">￥699</div>
-			</div><!-- .price-->
-			<img src="files/images/works_banner_1.jpg">
+			</ul><!-- .banner_nav--><!-- .price-->
+			<img src="files/images/about_banner_1.jpg">
 		</div><!--.banner-->
 
 		<div class="contant">
@@ -113,13 +109,14 @@ if not isempty(DataTemp) then set rs=Jexs.VBRows2Obj(DataTemp,JsonDBField,5,1) '
 				<h2>新品发布</h2>
 				<ul>
 					<li class="bg1"><a href="#">按季节</a></li>
-					<li class="bg1"><a href="#">按功能</a></li>
+					<li class="bg1"><a href="#">按功能</a>
+					</li>
 					<li class="bg2"><a href="#">按年份</a>
 						<ul>
-							<li><a href="#">2010</a></li>
-							<li><a href="#">2009</a></li>
-							<li><a href="#">2008</a></li>
-							<li><a href="#">2007</a></li>
+							<li><a href="?profilte=proyear&profilteid=2010">2010</a></li>
+							<li><a href="?profilte=proyear&profilteid=2009">2009</a></li>
+							<li><a href="?profilte=proyear&profilteid=2008">2008</a></li>
+							<li><a href="?profilte=proyear&profilteid=2007">2007</a></li>
 						</ul>
 					</li>
 				</ul>
