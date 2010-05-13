@@ -10,7 +10,7 @@
 				<ul>
 					<li><a href="join.asp" class="naviLeft">公司简介</a></li>
 				</ul>
-				<li><a href="join2.asp" class="naviLeft">加盟代理</a></li>
+				<li><a href="join2.asp" class="naviLeft">代理加盟</a></li>
 				<li><a href="client.asp" class="naviLeft">我们的客户</a></li>
 			</ul>
 		</div>
@@ -33,15 +33,19 @@
 		<h1>销售终端模式</h1>
 		<p> 销售渠道以高菲丽专营店、商场专厅专柜、少量以系列产品组合精品店。<br />
 			覆盖全国地级市以上的城市。</p>
-		<p>上海明菁服饰有限公司<br />
-			公司地址：上海汶水东路918号<br />
-			公司电话：021-65926606   公司传真：020-65926605</p>
+      <h1> 申请人要求</h1>
+		<p>有二年以上品牌服装销售经验，一定的资金实力，能亲自参加店铺经营管理。<br />
+	  	  <strong>经营场地：</strong>当地繁华商业地段、大型购物中心或商场。<br />
+	  	  <strong>经营面积：</strong>专卖店、商场专柜实用面积35平方米以上。<br />
+	  	  <strong>店铺装修：</strong>按公司提供的形象店要求装修。 </p>
+		<p> 加盟方式及其他条件请来电咨询。</p>
 		<h3>加盟咨询服务：</h3>
-		<p>+86-<strong>13801821050</strong> 缪伟明</p>
+		<p>加盟热线：<strong>021-65926606 </strong>手机：<strong>13801821050</strong> 联系人：缪伟明<br>
+		</p>
 		<div class="contentEnd">
-			<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
 				<tr>
-					<td align="center"><a href="#"><img src="files/images/button_join.gif" border="0" /></a></td>
+					<td align="center"><a href="doc/代理申请表.doc"><img src="files/images/button_join.gif" border="0" /></a></td>
 				</tr>
 			</table>
 		</div>
