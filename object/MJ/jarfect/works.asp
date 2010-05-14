@@ -106,11 +106,23 @@ if not isempty(DataTemp) then set rs=Jexs.VBRows2Obj(DataTemp,JsonDBField,5,1) '
 		</div><!--.banner-->
 
 		<div class="contant">
-			<div class="sidebar">
+		  <div class="sidebar">
 				<h2>新品发布</h2>
 				<ul>
-					<li class="bg1"><a href="#">按季节</a></li>
-					<li class="bg1"><a href="#">按功能</a>
+				  <li class="bg2"><a href="#">按季节</a>
+                    	<ul>
+							<li><a href="?profilte=proyear&profilteid=2010">春季</a></li>
+							<li><a href="?profilte=proyear&profilteid=2009">夏季</a></li>
+							<li><a href="?profilte=proyear&profilteid=2008">秋季</a></li>
+							<li><a href="?profilte=proyear&profilteid=2007">冬季</a></li>
+						</ul>
+                  </li>
+					<li class="bg2"><a href="#">按功能</a>
+                    	<ul>
+							<li><a href="?profilte=proyear&profilteid=2010">上衣</a></li>
+							<li><a href="?profilte=proyear&profilteid=2009">裙子</a></li>
+							<li><a href="?profilte=proyear&profilteid=2008">裤子</a></li>
+						</ul>
 					</li>
 					<li class="bg2"><a href="#">按年份</a>
 						<ul>
