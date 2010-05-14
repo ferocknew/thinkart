@@ -37,7 +37,7 @@ End If
 		<hr />
 		<h1><%=NewsCon.[0].title%></h1>
 		<%=NewsCon.[0].content%>
-		<div class="contentEnd"><a href="news.asp"><img src="files/images/button_newsBackList.gif" border="0" align="right" /></a></div>
+		<div class="contentEnd"><a href="<%=NewsBack%>"><img src="files/images/button_newsBackList.gif" border="0" align="right" /></a></div>
 	</div>
 	<!--#include file="files/inc/inner-foot-a.asp" -->
 </div>
