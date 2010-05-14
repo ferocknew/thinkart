@@ -76,7 +76,9 @@
 	float: left;
 	width: 164px;
 	height: 401px;
-	background: url(../images/about_sidebar_bg.gif) no-repeat top center;
+	margin-bottom:10px;
+	padding-bottom:10px;
+	background: #ebebeb;
 	font-family: SimHei;
 }
 
