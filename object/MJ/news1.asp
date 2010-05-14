@@ -5,6 +5,14 @@
 <%
 Dim NewsId,SQL,NewsCon
 NewsId=Easp.RQ("id",0) '新闻ID
+Newstype=Easp.RQ("type",0) '新闻ID
+
+If Newstype="" Then
+	NewsBack="news.asp"
+Else
+	NewsBack="member.asp"
+End If
+
 SQL="Select id,title,content,class2id From [news] where (id="&NewsId&")"
 Set NewsCon=Jexs.ADO2Obj(SQL,Conn,1)  '新闻数据库操作
 

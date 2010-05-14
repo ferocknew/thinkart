@@ -2,21 +2,25 @@
 <!--#include file="conn.asp" -->
 <!--#include file="lib/header_commad.asp" -->
 <!--#include file="lib/header_html.asp" -->
+<%
+dim sql
+SQL="Select id,title,content,abstract,addtime From [news] where (class1id=61)"
+Set rs=Jexs.ADO2Obj(SQL,Conn,1)  '新闻数据库操作
+%>
 <div id="logo"></div>
 <div id="container">
 	<div id="navigation"></div>
 	<!--#include file="files/inc/inner-menu.asp" -->
 	<div id="content"> <img src="files/images/title_member.gif" />
 		<hr />
+		<%
+		for i=0 to rs.length-1
+		%>
 		<div class="newsList">
-			<div class="newsName">菁夫人2010夏季订货会在公司本部举办<span class="newsDate">2010.4.1</span></div>
-			2009年2月10日至14日，东尚股份09秋冬订货会在雅宝路公司本部举办。受全球经济危机的影响，09年的服装出口形势面临严峻考验，在征求客户关于订货会举办地点意见的基础上，本着合理、有效、理性、精致的原则，09秋冬产品趋势走秀<a href="news1.html" class="listMore">...&gt; 全部内容</a></div>
-		<div class="newsList">
-			<div class="newsName">菁夫人2010夏季订货会在公司本部举办<span class="newsDate">2010.4.1</span></div>
-			2009年2月10日至14日，东尚股份09秋冬订货会在雅宝路公司本部举办。受全球经济危机的影响，09年的服装出口形势面临严峻考验，在征求客户关于订货会举办地点意见的基础上，本着合理、有效、理性、精致的原则，09秋冬产品趋势走秀<a href="news1.html" class="listMore">...&gt; 全部内容</a></div>
-		<div class="newsList">
-			<div class="newsName">菁夫人2010夏季订货会在公司本部举办<span class="newsDate">2010.4.1</span></div>
-			2009年2月10日至14日，东尚股份09秋冬订货会在雅宝路公司本部举办。受全球经济危机的影响，09年的服装出口形势面临严峻考验，在征求客户关于订货会举办地点意见的基础上，本着合理、有效、理性、精致的原则，09秋冬产品趋势走秀<a href="news1.html" class="listMore">...&gt; 全部内容</a></div>
+			<div class="newsName"><%=rs.slice(i,i+1).[0].title%><span class="newsDate"><%=DateToStr(rs.slice(i,i+1).[0].addtime,"Y-m-d")%></span></div><%=rs.slice(i,i+1).[0].abstract%>趋势走秀<a href="news1.asp?id=<%=rs.slice(i,i+1).[0].id%>&type=member" class="listMore">...&gt; 全部内容</a></div>
+		<%
+		next
+		%>
 		<div id="memberAccounts">
 			<h3>尊敬的会员您好：</h3>
 			您的帐号为：<%=Easp.GetCookie(CookieName&":index_username")%>
