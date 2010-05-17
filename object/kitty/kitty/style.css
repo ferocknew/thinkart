@@ -14,7 +14,7 @@ body {
 }
 #input1 {
 	margin-top:340px;
-	margin-left:540px;
+	margin-left:40px;
 	width:353px;
 	height:109px;
 	background:url(images/input1.gif) no-repeat;
@@ -27,6 +27,11 @@ body {
 	width:810px;
 	height:350px;
 }
+
+.homeBg {
+	background:url(images/home.jpg) no-repeat;
+}
+
 .informationBg {
 	background:url(images/information.jpg) no-repeat;
 }

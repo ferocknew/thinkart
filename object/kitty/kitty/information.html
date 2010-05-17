@@ -11,6 +11,15 @@
 
 <body>
 <script language="javascript">
+function checkInput(){
+	var nameObj = document.getElementById('username').value;
+	if(nameObj.length == 0){
+      hiOverAlert('Please input your name!');
+	}else{
+	  submitData();	
+	}
+}
+
 function submitData(){
   $.ajax({                                                 
     type: "POST",                                          
@@ -37,13 +46,18 @@ function showno(){
 	noObj.setAttribute('background','');
 	noObj.setAttribute('background','images/sel_no.gif');
 }
+
+function swClick(img){
+	var clickObj = document.getElementById('clickb');
+	clickObj.setAttribute('src',img)
+}
 </script>
 <form action="" name="form1" method="post">
 <div id="content" class="informationBg">
   <div id="input1">
     <table width="100%" height="104" border="0" cellpadding="0" cellspacing="0">
       <tr>
-      <td style="padding-left:130px;"><input type="text" name="username" id="username" style="background-color:transparent; border:0px; padding:0px;" /></td>
+      <td style="padding-left:100px;"><input type="text" name="username" id="username" style="background-color:transparent; border:0px; padding:0px;" /></td>
       </tr>
       <tr>
         <td height="30"><table width="100%" border="0" cellspacing="0" cellpadding="0">
@@ -57,7 +71,7 @@ function showno(){
         </table></td>
         </tr>
       <tr>
-        <td height="55" align="center"><img src="images/inputIcon_10.gif" width="66" height="30" border="0" onclick="submitData();" /></td>
+        <td height="55" align="center"><img style="cursor:pointer;" id="clickb" src="images/inputIcon_10.gif" onmouseover="swClick('images/inputIcon_11.gif');"  onmouseout="swClick('images/inputIcon_10.gif');" width="66" height="30" border="0" onclick="checkInput();" /></td>
       </tr>
     </table>
   </div>
