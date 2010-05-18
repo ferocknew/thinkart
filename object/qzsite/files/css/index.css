@@ -32,7 +32,7 @@
 
 .banner-bio {
 	position: absolute;
-	top: 329px;
+	top: 328px;
 	left: 0;
 	filter: Alpha(Opacity=80);
 }
@@ -41,7 +41,8 @@
 	position: absolute;
 	top: 360px;
 	left: 483px;
-	padding: 10px 10px;
+	padding-top: 10px;
+	padding-left: 21px;
 	display: block;
 	height: 48px;
 	width: 167px;
