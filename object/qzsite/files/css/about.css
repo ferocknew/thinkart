@@ -1,0 +1,38 @@
+.contant {
+	float: left;
+	width: 610px;
+	margin: 151px 0 0;
+	background: #F9F9F9;
+	padding: 40px 0 50px 40px;
+}
+
+.contant-text {
+	float: left;
+	width: 350px;
+	padding: 10px 10px 10px 0;
+}
+
+.contant h1 {
+	text-indent: -9999px;
+	background: url(../images/about-h1-bg.gif) no-repeat left top;
+	margin: 0 0 10px;
+	height: 35px;
+}
+
+.contant p {
+	margin: 0 0 10px;
+}
+
+.contant p em {
+	color: #60B8DD;
+}
+
+.contant-img {
+	float: left;
+	width: 230px;
+}
+
+.contant-img img {
+	float: left;
+	border: 2px #D4D4D4 solid;
+}
