@@ -168,11 +168,14 @@ $("a[fancybox='1']", _$products_fancybox).fancybox({
 'height':550
 });
 
-
 $("#banner_img").transition({
 duration : 3000,
 images : ['files/images/index_banner_1.jpg', 'files/images/index_banner_2.jpg', 'files/images/index_banner_3.jpg','files/images/index_banner_4.jpg','files/images/index_banner_5.jpg'],
 type : 'fade'
 });
+
+$(".bg2 a").click(function(){
+	$(this).next().toggle("slow");
+})
 </script>
 <!--#include file="../lib/foot.asp" -->
