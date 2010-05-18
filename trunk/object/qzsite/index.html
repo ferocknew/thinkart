@@ -7,6 +7,8 @@
 <link href="files/css/index.css" type="text/css" rel="stylesheet" />
 <script src="files/js/jquery.min.js"></script>
 <script src="files/js/jquery.transitions.js"></script>
+<script src="files/js/jquery.d.imagechange.min.js"></script>
+
 </head>
 <body>
 <div id="outBg">
@@ -105,9 +107,6 @@
 </body>
 </html>
 <script>
-$("#banner_div").transition({
-duration : 3000,
-images : ['files/images/banner.jpg', 'files/images/banner2.jpg', 'files/images/banner3.jpg'],
-type : 'fade'
-});
+var _data= [ {src:'files/images/banner.jpg'},{src:'files/images/banner2.jpg'},{src:'files/images/banner3.jpg'}];
+$('#banner_div').d_imagechange({ data:_data, playTime:4000, animateTime:1000, width:650, height:405, bgHeight:50, btnWidth:34, btnHeight:10, descTop:4, bgOpacity:0, btnOpacity:0.2, btnColor:'#0197d6', btnFontColor:'#FFF', animateStyle:'x', title:false, desc:false, btnText:false });
 </script>
