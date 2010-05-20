@@ -101,15 +101,16 @@ if not isempty(DataTemp) then set rs=Jexs.VBRows2Obj(DataTemp,JsonDBField,5,1) '
 				<li click_hidden="class3"><a href="?profilte=proyear&profilteid=2009" class="navigationProducts">2009</a></li>
 				<li click_hidden="class3"><a href="?profilte=proyear&profilteid=2010" class="navigationProducts">2010</a></li>
 			</ul>
-		</div>
+			<div class="naviLogo1"> <a href="../index.asp"><img src="files/images/navi_logo1.gif" height="61" border="0" /></a> <a href="../jarfect/index.html"><img src="files/images/navi_logo2.gif" height="61" border="0" /></a> </div>
+        </div>
 		<div id="contentProducts">
-			<div class="productsTitle">季节分类  &gt; 春装</div>
+	    <div class="productsTitle">季节分类  &gt; 春装</div>
 			<div id="products_fancybox">
 <%
 if not isempty(DataTemp) then
 for i=0 To rs.length-1
 %>
-			  <a href="../fancybox.asp?id=<%=rs.slice(i,i+1).[0].id%>" fancybox="1"><div class="productsItem" style=" background:url(<%=rs.slice(i,i+1).[0].img%>) center no-repeat;"><div class="productsInfo"><%=rs.slice(i,i+1).[0].name%><span style="float:right;"></span></div><!--div class="productsNew">New</div--></div></a>
+			  <a href="../fancybox.asp?id=<%=rs.slice(i,i+1).[0].id%>" fancybox="1"><div class="productsItem" style=" background:url(<%=rs.slice(i,i+1).[0].img%>) center no-repeat;"><div class="productsInfo"></div><!--div class="productsNew">New</div--></div></a>
 <%
 Next
 Set rs=Nothing

@@ -356,12 +356,10 @@ a.footer:hover,a.footer:active{
 
 .prductMouseOn{
 	line-height:20px;
-	height:40px;
-	margin-top:150px;
-	padding:5px 10px;
-	background: #000 url(../images/bg_buy.gif) no-repeat 105px 30px;
-	filter: Alpha(Opacity=80);
-	opacity:0.8; /* 在firefox上可以直接解析 */
+	height:100%;
+	background: #FFF;
+	filter: Alpha(Opacity=20);
+	opacity:0.2; /* 在firefox上可以直接解析 */
 }
 
 /************************

@@ -103,6 +103,7 @@ hr{
 ************************/
 
 #navigation{
+	position:relative;
 	width:180px;
 	float:left;
 	padding-top:65px;
@@ -119,6 +120,16 @@ hr{
 	padding-left:20px;
 	font-size:14px;
 	color:#727171;
+}
+
+.naviLogo{
+	position:absolute;
+	top: 299px;
+}
+
+.naviLogo1{
+	position:absolute;
+	top: 499px;
 }
 
 .naviList{
@@ -282,14 +293,15 @@ a.footer:hover,a.footer:active{
 
 .productsInfo{
 	position:absolute;
-	height:32px;
+	height:200px;
 	line-height:32px;
-	top:227px;
+	top:45px;
 	width:126px;
 	padding:0 12px;
 	color:#FFF;
-	background-color:#000;
-	filter: Alpha(Opacity=70);
+	background-color:#FFF;
+	filter: Alpha(Opacity=20);
+	opacity:0.2; /* 在firefox上可以直接解析 */
 	left: 17px;
 }
 
@@ -323,6 +335,7 @@ a.footer:hover,a.footer:active{
 }
 
 #navigationProducts{
+	position:relative;
 	width:180px;
 	float:left;
 	padding:65px 0 20px;
