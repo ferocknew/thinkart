@@ -21,7 +21,7 @@
 			<table width="100%" border="0" cellspacing="0" cellpadding="0">
 				<tr>
 					<td width="18%" rowspan="7" align="left" valign="top"><img src="files/images/img_team2.jpg" /></td>
-					<td width="82%" class="teamStyle1">정세희(1969.11.13) 鄭世喜　CHUNG SE HEE　　　　  　　　　  　　设计总监</td>
+					<td width="82%" class="teamStyle1">设计总监</td>
 				</tr>
 				<tr>
 					<td>1995年 "MADMIX"公司担任 设计师</td>
@@ -47,7 +47,7 @@
 			<table width="100%" border="0" cellspacing="0" cellpadding="0">
 				<tr>
 					<td width="18%" rowspan="5" align="left" valign="top"><img src="files/images/img_team1.jpg" /></td>
-					<td width="82%" class="teamStyle1">이미정(1977.11.22) 李美贞 LEE MI JUNG  　　  　  　  　  　　　　 　　设计师</td>
+					<td width="82%" class="teamStyle1">设计师</td>
 				</tr>
 				<tr>
 					<td>2000年 韩国 &quot;AENOC&quot; 设计师</td>
@@ -67,7 +67,7 @@
 			<table width="100%" border="0" cellspacing="0" cellpadding="0">
 				<tr>
 					<td width="18%" rowspan="5" align="left" valign="top"><img src="files/images/img_team3.jpg" /></td>
-					<td width="82%" class="teamStyle1">서정선(1971.07.30) 徐庭仙 　　　　  　  　  　  　  　  　  　  　　设计部 M/D</td>
+					<td width="82%" class="teamStyle1">设计部 M/D</td>
 				</tr>
 				<tr>
 					<td>1997年 "KIRRA" 公司担任设计师</td>

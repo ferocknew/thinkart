@@ -66,8 +66,10 @@
 .contant .text {
 	float: left;
 	width: 505px;
-	padding: 0 0 70px 0;
-	background: url(../images/about_contant_text_bg.gif) no-repeat bottom left;
+}
+
+.contant .text img{
+	border:none;
 }
 
 .contant .text h1 {
