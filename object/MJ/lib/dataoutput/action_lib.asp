@@ -105,10 +105,10 @@ Sub add_class(class_tab) '添加class的过程
 	End Select
 End Sub
 
-Sub newslist() '新闻列表
+Sub newslist(newskind) '新闻列表
 	DBField="id,title,abstract,addtime,edittime"
 	TabName="news"
-	DataTemp=table_readdate(conn,"",TabName,DBField,"(class2id=70)","order by edittime")
+	DataTemp=table_readdate(conn,"",TabName,DBField,"(class2id="&CInt(newskind)&")","order by edittime")
 	DataTempNum=ArrayisEmpty(DataTemp)
 
 	JsonDBField=Split(DBField,",")

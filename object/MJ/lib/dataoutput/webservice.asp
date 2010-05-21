@@ -59,7 +59,9 @@ Select Case act
 	'------------------- End -------------------
 
 	Case "newslist" '新闻列表
-	Call newslist()
+	Dim newskind
+	newskind=Easp.RQ("newskind",0)
+	Call newslist(newskind)
 
 	Case "prolist" '产品列表
 	proFilter=Easp.RQ("profilter",0)
