@@ -69,22 +69,31 @@ $(function(){
             }
             break;
         case "news.asp": //新闻列表
-        	function get_newslist(newskind){
-				$.getJSON(webserviceurl, {
-					act: "newslist",
-					newskind: newskind
-				}, function(json){
-					var _temp_html = "";
-					$(json.datalist).each(function(i){
-						_temp_html += '<div class="newsList"><div class="newsName">' + this.title + '<span class="newsDate">' + new Date(this.addtime).format("yyyy.M.dd") + '</span></div>' + this.abstract + '<a href="news1.asp?id=' + this.id + '" class="listMore">...> 全部内容</a></div>';
-					});
-					$("#NewsListContent").html(_temp_html);
-				});
-			}
-			function alertfn(e){get_newslist(e.data);}
-			get_newslist(71);
-			$("#com_list").bind("click",70,alertfn);
-			$("#hangye_list").bind("click",71,alertfn);
+            function get_newslist(newskind){
+                $.getJSON(webserviceurl, {
+                    act: "newslist",
+                    newskind: newskind
+                }, function(json){
+                    var _temp_html = "";
+                    $(json.datalist).each(function(i){
+                        _temp_html += '<div class="newsList"><div class="newsName">' + this.title + '<span class="newsDate">' + new Date(this.addtime).format("yyyy.M.dd") + '</span></div>' + this.abstract + '<a href="news1.asp?id=' + this.id + '" class="listMore">...> 全部内容</a></div>';
+                    });
+                    $("#NewsListContent").html(_temp_html);
+                });
+            }
+            function alertfn(e){
+                get_newslist(e.data);
+                if (e.data == 71) {
+                    newsgif = "title_news.gif"
+                }
+                else {
+                    newsgif = "title_cnews.gif"
+                }
+                $("#content>img").eq(0).attr("src", "files/images/" + newsgif);
+            }
+            get_newslist(71);
+            $("#com_list").bind("click", 70, alertfn);
+            $("#hangye_list").bind("click", 71, alertfn);
             break;
         case "products.asp": //产品列表
             var _$products_fancybox = $("#products_fancybox");
