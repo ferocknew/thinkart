@@ -110,7 +110,7 @@ if not isempty(DataTemp) then set rs=Jexs.VBRows2Obj(DataTemp,JsonDBField,5,1) '
 if not isempty(DataTemp) then
 for i=0 To rs.length-1
 %>
-			  <a href="../fancybox.asp?id=<%=rs.slice(i,i+1).[0].id%>" fancybox="1"><div class="productsItem" style=" background:url(<%=rs.slice(i,i+1).[0].img%>) center no-repeat;"><div class="productsInfo"></div><!--div class="productsNew">New</div--></div></a>
+			  <a href="../fancybox.asp?id=<%=rs.slice(i,i+1).[0].id%>" fancybox="1"><div class="productsItem" style=" background:url(<%=rs.slice(i,i+1).[0].img%>) center no-repeat;"><div class="productsInfo" style="display:none;"></div><!--div class="productsNew">New</div--></div></a>
 <%
 Next
 Set rs=Nothing
@@ -133,6 +133,13 @@ $("a[fancybox='1']", _$products_fancybox).fancybox({
 'width':600,
 'height':550
 });
+
+$(".productsItem",_$products_fancybox).hover(function(e){
+	$(this).find(".productsInfo").show();
+	},function(){
+	$(this).find(".productsInfo").hide();
+	})
+
 $("#season_class1").bind("click", function(e){
 	$(this).nextAll("li[click_hidden='class1']").slideToggle();
 	$(this).toggleClass("naviList").toggleClass("naviList2");
