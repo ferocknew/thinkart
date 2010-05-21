@@ -216,7 +216,7 @@ Sub reguser() '用户注册
 		Response.End()
 	End If
 
-	If Not conn.execute("select count(id) from [user] where (username='"&username&"')")(0)=1 Then
+	If conn.execute("select count(id) from [user] where (username='"&username&"')")(0)=1 Then
 		Easp.js("alert('用户名已被占用！');history.go(-1);")
 		Response.End()
 	End If
