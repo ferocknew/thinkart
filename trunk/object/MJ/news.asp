@@ -8,8 +8,8 @@
 	<div id="navigation">
 		<div id="naviLeft">
 			<ul>
-				<li><a href="#" class="naviLeft">公司新闻</a></li>
-				<li><a href="#" class="naviLeft">行业新闻</a></li>
+				<li><a href="#" class="naviLeft" id="com_list">公司新闻</a></li>
+				<li><a href="#" class="naviLeft" id="hangye_list">行业新闻</a></li>
 			</ul>
 		</div>
 	</div>
