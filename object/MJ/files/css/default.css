@@ -113,7 +113,14 @@ hr{
 	color:#78786d;
 	font-size:14px;
 	font-family:"微软雅黑";
+	height:20px;
 }
+
+.homeRightTitle img{
+	margin-top:0 !important;
+	margin-top:-20px;
+}
+
 
 .homeReg{
 	position:absolute;
@@ -574,3 +581,7 @@ a.regStep:active,a.regStep:hover{
 	padding:0 10px;
 }
 
+#clientImg{
+	width:230px;
+	height:140px;
+}

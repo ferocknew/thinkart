@@ -21,7 +21,7 @@
 		<div class="clientContent">
 			<table width="100%" border="0" align="right" cellpadding="0" cellspacing="0">
 				<tr>
-					<td width="230" rowspan="4"><img src="files/images/img_client01.jpg"></td>
+					<td width="230" rowspan="4"><div id="clientImg"></div></td>
 					<td class="clientStyle1">上海长寿路店</td>
 				</tr>
 				<tr>
@@ -127,3 +127,8 @@
 </body>
 </html>
 <!--#include file="lib/foot.asp" -->
+
+<script>
+var _data= [ {src:'files/images/shop1_1.jpg'},{src:'files/images/shop1_2.jpg'},{src:'files/images/shop1_3.jpg'}];
+$('#clientImg').d_imagechange({ data:_data, playTime:100000, width:230, height:140, bgHeight:20, btnWidth:10, btnHeight:10, bgOpacity:0, bg:false, title:false, desc:false, btnText:false });
+</script>
