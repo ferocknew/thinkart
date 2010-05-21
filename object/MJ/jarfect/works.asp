@@ -135,13 +135,13 @@ if not isempty(DataTemp) then set rs=Jexs.VBRows2Obj(DataTemp,JsonDBField,5,1) '
 				</ul>
 			</div><!-- .sidebar-->
 
-			<div class="main">
+			<div class="main" id="products_fancybox">
 				<h1>新品上市</h1>
 <%
 if not isempty(DataTemp) then
 for i=0 To rs.length-1
 %>
-				<div class="new"><div class="img"><p class="price"><span class="left"><%=rs.slice(i,i+1).[0].name%></span></p>	<img src="<%=rs.slice(i,i+1).[0].img%>"></div><!-- .img-->	</div><!-- .new-->
+				<div class="new"><a href="../fancybox.asp?id=<%=rs.slice(i,i+1).[0].id%>" fancybox="1"><div class="img"><p class="price" style="color:#000; display: none;"><span class="left"><%=rs.slice(i,i+1).[0].name%></span></p>	<img src="<%=rs.slice(i,i+1).[0].img%>"></div></a><!-- .img-->	</div><!-- .new-->
 <%
 Next
 Set rs=Nothing
@@ -167,6 +167,12 @@ $("a[fancybox='1']", _$products_fancybox).fancybox({
 'width':600,
 'height':550
 });
+
+$(".new",_$products_fancybox).hover(function(){
+	$(this).find("p").show();
+},function(){
+	$(this).find("p").hide();
+})
 
 $("#banner_img").transition({
 duration : 3000,
