@@ -50,7 +50,7 @@ hr{
 	height:328px;
 	background: url(../images/bg_leftTop.jpg) left top no-repeat;
 }
-	
+
 
 #container {
 	margin:auto;
@@ -340,7 +340,8 @@ a.footer:hover,a.footer:active{
 ************************/
 
 .products{
-	width:150px;
+	width:150px!important;
+    width:149px;
 	height:200px;
 	float:left;
 	margin:1px;
@@ -537,7 +538,7 @@ a.regStep:active,a.regStep:hover{
 	font-weight:bold;
 	background-color:#6a6439;
 	line-height:26px;
-	
+
 }
 
 .teamStyle2{
@@ -567,7 +568,7 @@ a.regStep:active,a.regStep:hover{
 	background-color:#6a6439;
 	line-height:26px;
 	padding:0 10px;
-	
+
 }
 
 .clientStyle2{
