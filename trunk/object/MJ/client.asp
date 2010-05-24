@@ -127,8 +127,8 @@
 </body>
 </html>
 <!--#include file="lib/foot.asp" -->
-
+<script type="text/javascript" src="files/js/jquery.d.imagechange.min.js"></script>
 <script>
 var _data= [ {src:'files/images/shop1_1.jpg'},{src:'files/images/shop1_2.jpg'},{src:'files/images/shop1_3.jpg'}];
-$('#clientImg').d_imagechange({ data:_data, playTime:100000, width:230, height:140, bgHeight:20, btnWidth:10, btnHeight:10, bgOpacity:0, bg:false, title:false, desc:false, btnText:false });
+$('#clientImg').d_imagechange({ data:_data, playTime:3000, width:230, height:140, bgHeight:20, btnWidth:10, btnHeight:10, bgOpacity:0, bg:false, title:false, desc:false, btnText:false });
 </script>
