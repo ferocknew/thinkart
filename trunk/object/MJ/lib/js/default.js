@@ -91,7 +91,15 @@ $(function(){
                 }
                 $("#content>img").eq(0).attr("src", "files/images/" + newsgif);
             }
-            get_newslist(71);
+
+			if (getvalue("type") !== "com") {
+				get_newslist(71);
+				$("#content>img").eq(0).attr("src", "files/images/" + "title_news.gif");
+			}
+			else {
+				get_newslist(71);
+				$("#content>img").eq(0).attr("src", "files/images/" + "title_cnews.gif");
+			}
             $("#com_list").bind("click", 70, alertfn);
             $("#hangye_list").bind("click", 71, alertfn);
             break;

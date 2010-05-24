@@ -17,9 +17,9 @@ SQL="Select id,title,content,class2id From [news] where (id="&NewsId&")"
 Set NewsCon=Jexs.ADO2Obj(SQL,Conn,1)  '新闻数据库操作
 
 If NewsCon.[0].class2id=70 Then
-titleimgurl="title_news.gif"
+titleimgurl="title_cnews.gif"
 Else
-titleimgurl="title_news1.gif"
+titleimgurl="title_news.gif"
 End If
 %>
 <div id="logo"></div>
@@ -27,8 +27,8 @@ End If
 	<div id="navigation">
 		<div id="naviLeft">
 			<ul>
-				<li><a href="#" class="naviLeft">公司新闻</a></li>
-				<li><a href="#" class="naviLeft">行业新闻</a></li>
+				<li><a href="news.asp?type=com" class="naviLeft">公司新闻</a></li>
+				<li><a href="news.asp?type=industry" class="naviLeft">行业新闻</a></li>
 			</ul>
 		</div>
 	</div>
