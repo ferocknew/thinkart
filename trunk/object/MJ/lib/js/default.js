@@ -92,13 +92,13 @@ $(function(){
                 $("#content>img").eq(0).attr("src", "files/images/" + newsgif);
             }
 
-			if (getvalue("type") !== "com") {
-				get_newslist(71);
-				$("#content>img").eq(0).attr("src", "files/images/" + "title_news.gif");
+			if (getvalue("type") !== "industry") {
+				get_newslist(70);
+				$("#content>img").eq(0).attr("src", "files/images/" + "title_cnews.gif");
 			}
 			else {
 				get_newslist(71);
-				$("#content>img").eq(0).attr("src", "files/images/" + "title_cnews.gif");
+				$("#content>img").eq(0).attr("src", "files/images/" + "title_news.gif");
 			}
             $("#com_list").bind("click", 70, alertfn);
             $("#hangye_list").bind("click", 71, alertfn);
