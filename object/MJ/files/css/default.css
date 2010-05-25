@@ -582,7 +582,7 @@ a.regStep:active,a.regStep:hover{
 	padding:0 10px;
 }
 
-#clientImg{
+.clientImg{
 	width:230px;
 	height:140px;
 }
