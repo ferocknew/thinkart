@@ -5,7 +5,7 @@ $(function(){
     $.getJSON(get_info_url, {
         "code": "json"
     }, loaddoc);
-    
+
     var url_fileName = get_url_show("end_file"); //当前访问文件
     //menu设置
     switch (url_fileName) {
@@ -35,10 +35,10 @@ $(function(){
             $("#header").find("a[href='contact.asp']").children("img").attr("src", "files/images/menu_contact2.gif");
             break;
     }
-    
+
     //锚点设置
     $("a[href='#']").attr("href", "javascript:void(0);");
-    if (url_fileName == "") 
+    if (url_fileName == "")
         url_fileName = "index.asp";
     switch (url_fileName) {
         default:
@@ -60,9 +60,9 @@ $(function(){
                         dataType: "json",
                         success: function(json){
                             alert(json.msg);
-                            if (json.err == 0) 
+                            if (json.err == 0){
                                 $("#indexLoginDiv").hide();
-                            window.location.href = "member.asp";
+                            window.location.href = "member.asp";}
                         }
                     });
                 });
@@ -121,7 +121,7 @@ $(function(){
             });
             break;
             var pageNum = 1;
-            
+
             function showProlist(pageNum_in, classid, profilter, profilterid){
                 $.getJSON(webserviceurl, {
                     act: "prolist",
@@ -129,7 +129,7 @@ $(function(){
                     page: pageNum_in,
                     profilter: "",
                     profilterid: ""
-                
+
                 }, function(json){
                     var _temp_html = "";
                     $(json.datalist).each(function(i){
@@ -150,7 +150,7 @@ $(function(){
                     if (pageNum > parseInt(json.pageMAX) - 1) {
                         pageNum = parseInt(json.pageMAX);
                     }
-                    if (pageNum < 2) 
+                    if (pageNum < 2)
                         pageNum = 1;
                 });
             }
@@ -167,9 +167,9 @@ $(function(){
             })
             break;
     }
-    
+
     //userlogin
     function userlogin(){
-    
+
     }
 });

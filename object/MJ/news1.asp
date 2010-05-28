@@ -42,3 +42,12 @@ End If
 	<!--#include file="files/inc/inner-foot-a.asp" -->
 </div>
 <!--#include file="lib/foot.asp" -->
+<script>
+$(function(){
+	var gettype=getvalue("type");
+	if(gettype=="member"){
+		$("#naviLeft").hide();
+		$("#content>img").eq(0).hide();
+	}
+})
+</script>
