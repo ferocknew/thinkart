@@ -1,0 +1,86 @@
+﻿@charset "utf-8";
+/* CSS Document */
+/* Class Style */
+.fixed {
+	position: fixed;
+	right:0;
+	bottom:0;
+	_position:absolute;
+	height:30px;
+	line-height:30px;
+	background-color:#CCC;
+	color:#666;
+	font-style:italic;
+	text-align:right;
+	padding-right:10px;
+	width:100%;
+	font-size:12px;
+}
+.body-bg { background-color:#f5f4f4 }
+.body-input {
+	background-image:url(../images/index-bg.jpg);
+	height:173px;
+	width:507px;
+	margin-top:170px;
+	margin-left:auto;
+	margin-right:auto;
+}
+.body-input input {
+	height:23px;
+	line-height:23px;
+	border:#cbcbcb solid 1px;
+	width:250px;
+	font:12px Verdana, Geneva, sans-serif;
+	padding-left:10px;
+	color:#666;
+	margin-bottom:1px;
+	_margin-bottom:0px;
+}
+.body-input img {
+	border:#cbcbcb solid 1px;
+	border-left:0px;
+	cursor:pointer;
+	margin-bottom:1px;
+}
+/* inner.html Class Style */
+.inner-title {
+	height:58px;
+	border-bottom:#ed0000 solid 1px;
+	margin-bottom:1px;
+}
+.inner-body {
+	width:100%;
+	background-image:url(../images/innerbg.gif);
+	background-repeat:repeat-x;
+	_height:400px;
+	min-height:400px;
+}
+.inner-body-div {
+	width:800px;
+	margin-left:auto;
+	margin-right:auto;
+}
+.inner-body-upload { text-align:center; margin-bottom:40px; }
+.inner-body-upload img {
+	vertical-align:middle;
+	_margin-bottom:10px;
+}
+.inner-body-upload input.upload {
+	margin:0px 10px;
+	height:20px;
+	line-height:20px;
+	border:#e2e3ea solid 1px;
+	border-top:#abadb3 solid 1px;
+	width:400px
+}
+.inner-body-img {
+	border:#676666 solid 1px;
+	width:600px;
+	height:300px;
+	margin-left:auto;
+	margin-right:auto;
+	text-align:center;
+	line-height:300px;
+	margin-bottom:20px;
+}
+.inner-body-config{ text-align:right; color:#CCC;}
