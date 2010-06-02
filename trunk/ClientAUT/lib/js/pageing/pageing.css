@@ -1,0 +1,29 @@
+/*分页*/
+.pagenav {
+    text-align: right;
+}
+
+.pagenav a {
+    border: 1px solid #CCCCCC;
+    padding: 4px 6px;
+    margin: 0 2px;
+    color: #36c;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.pagenav a:hover {
+    color: #FFF;
+    background: #36c;
+}
+
+.pagenav a.current {
+    color: #FFF;
+    background: #36c;
+}
+.pagenav .jump-lable{
+    font-size:12px;
+}
+.pagenav .jump-text{
+    width:30px;
+}
