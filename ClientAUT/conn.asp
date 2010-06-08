@@ -25,7 +25,7 @@ function CloseDB(){
 }
 </script>
 <%
-'Const AccessFile="DB/db.mdb"
+Const AccessFile="DB/db.mdb"
 'Call createConnection(0,AccessFile)
 Call createConnection(0,AccessFile)
 %>
