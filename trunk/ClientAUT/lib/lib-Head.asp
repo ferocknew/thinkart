@@ -9,5 +9,3 @@
 <!--#include file="lib-UpLoadClass.asp" -->
 <!--#include file="lib-xml.asp" -->
 <!--#include file="lib-sha1.asp" -->
-<!--#include file="system/system-command.asp" -->
-<!--#include file="system/system-checkUser.asp" -->
