@@ -152,7 +152,7 @@ end if
 		</div><!-- .contant-->
 
 		<div class="footer">
-			<p>©2010 菁菲</p>
+			<p>版权所有 &copy;Copyright 2010 菁妃</p>
 		</div><!-- .footer-->
 
 	</div><!-- #container-->
