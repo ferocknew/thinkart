@@ -31,9 +31,8 @@
 					邮编： 200120 </p>
 			</div>
 			<!-- #contact-text-->
-			<form method="post" action="lib/dataoutput/save_data.asp?act=addmsg">
 			<div id="contact-text2">
-				<h1>定制产品</h1>
+				<h1><img src="files/images/contact_title_patch.jpg" width="128" height="30" /></h1>
 				<b>姓名</b><br/>
 				<input type="text" name="user-name" class="inputbox">
 				<br/>
@@ -58,9 +57,9 @@
 				<b>您的要求</b><br>
 				<textarea class="biginputbox" name="content"></textarea>
 				<button>发送</button>
-			</div>
+		  </div>
 			</form>
-			<!-- #contact-text2-->
+		  <!-- #contact-text2-->
 		</div>
 		<!-- #about-main-->
 	</div>
