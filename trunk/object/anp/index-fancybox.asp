@@ -8,5 +8,6 @@
 <img src="files/images/index-3.jpg" /><br/>
 <img src="files/images/index-4.jpg" /><br/>
 <img src="files/images/index-5.jpg" /><br/>
+<img src="files/images/index-6.jpg" /><br/>
 </div>
 <!--#include file="lib/foot.asp" -->
