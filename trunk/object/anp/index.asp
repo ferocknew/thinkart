@@ -38,28 +38,28 @@
 				<ul>
 					<li>
 						<div class="news-image"><img src="files/images/news2-1.jpg" /></div>
-						<div class="news-title"><span>JJTOOLS</span> 中国区总代理</div>
-						<div class="news-body">赢得了众多国内外著名企业的信任,欢迎选购各种合金铣刀产品.</div>
+						<div class="news-title"><a href="http://www.anpaichina.com/products.asp?class2id=95"><span>JJTOOLS</span>中国区总代理 CNC数控刀具</a></div>
+						<div class="news-body"></div>
 					</li>
 					<li>
 						<div class="news-image"><img src="files/images/news2-2.jpg" /></div>
-						<div class="news-title"><span>Metric</span> 中国区总代理</div>
-						<div class="news-body">作为专业合金铣刀厂家,以良好的信誉和卓有成效的业绩</div>
+						<div class="news-title"><a href="http://www.anpaichina.com/products.asp?class2id=96"><span>Widin</span> 中国区总代理</a></div>
+						<div class="news-body"></div>
 					</li>
 					<li>
 						<div class="news-image"><img src="files/images/news2-3.jpg" /></div>
-						<div class="news-title"><span>Z-Star</span> 专业代理</div>
-						<div class="news-body">合金铣刀主要产品.我厂作为专业合金铣刀厂家,以良好的信誉和卓有成效的业绩</div>
+						<div class="news-title"><a href="http://www.anpaichina.com/products.asp?class2id=97"><span>Premio</span>德国专业加工工具 中国区指定销售</a></div>
+						<div class="news-body"></div>
 					</li>
 					<li>
-						<div class="news-image"><img src="files/images/news2-3.jpg" /></div>
-						<div class="news-title"><span>SMT</span> 全国总代理</div>
-						<div class="news-body">上海麦讯机床工具，长期从事精密机械制造。擅长高精度航天航空零部件。</div>
+						<div class="news-image"><img src="files/images/news2-4.jpg" /></div>
+						<div class="news-title"><a href="http://www.anpaichina.com/products.asp?class2id=98">装夹系统  磁力装夹系统、机械装夹系统、高精密装夹系统</a></div>
+						<div class="news-body"></div>
 					</li>
 				</ul>
 			</div>
 			<!-- #news2-->
-			<div id="news3"> <img src="files/images/news3.jpg">
+			<div id="news3" onClick="document.location='products.asp';" style="cursor:pointer;"> <img src="files/images/news3.jpg">
 				<ul>
 					<li><span>2TBE</span>-高速加工深槽时发挥极大能力力</li>
 					<li><span>4CRE</span>-实现卓越的切削能力</li>
