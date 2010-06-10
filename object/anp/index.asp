@@ -48,7 +48,7 @@
 					</li>
 					<li>
 						<div class="news-image"><img src="files/images/news2-3.jpg" /></div>
-						<div class="news-title"><a href="http://www.anpaichina.com/products.asp?class2id=97"><span>Premio</span>德国专业加工工具 中国区指定销售</a></div>
+						<div class="news-title"><a href="index-fancybox.asp"><span>Premio</span>德国专业加工工具 中国区指定销售</a></div>
 						<div class="news-body"></div>
 					</li>
 					<li>
@@ -59,7 +59,7 @@
 				</ul>
 			</div>
 			<!-- #news2-->
-			<div id="news3" onClick="document.location='products.asp';" style="cursor:pointer;"> <img src="files/images/news3.jpg">
+			<div id="news3" style="cursor:pointer;"> <img src="files/images/news3.jpg">
 				<ul>
 					<li><span>2TBE</span>-高速加工深槽时发挥极大能力力</li>
 					<li><span>4CRE</span>-实现卓越的切削能力</li>
@@ -89,4 +89,6 @@
             images : ['files/images/1.jpg', 'files/images/2.jpg', 'files/images/3.jpg'],
             type : 'fade'
          });
+	var _$news2=$("#news2");
+	$(".news-title",_$news2).eq(2).find("a").fancybox();
 </script>
