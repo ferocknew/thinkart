@@ -49,7 +49,7 @@ $(function(){
 	<div id="header">
 		<div id="logo"> </div>
 		<!-- #logo-->
-		<!--#include file="files/inc/top_menu.asp" -->
+		<!--#include file="http://www.anpaichina.com/products.asp?class2id=95" -->
 	</div>
 	<!-- #header-->
 	<div id="main">
