@@ -59,7 +59,7 @@
 				</ul>
 			</div>
 			<!-- #news2-->
-			<div id="news3" style="cursor:pointer;"> <img src="files/images/news3.jpg">
+			<div id="news3" style="cursor:pointer;"> <a href="products.asp?class2id=95"><img src="files/images/news3.jpg" border="0"></a>
 				<ul>
 					<li><span>2TBE</span>-高速加工深槽时发挥极大能力力</li>
 					<li><span>4CRE</span>-实现卓越的切削能力</li>
