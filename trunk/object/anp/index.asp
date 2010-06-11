@@ -20,12 +20,12 @@
 			<div id="news1">
 				<ul>
 					<li>
-						<div class="news-title">汉江工具研制出超大规格指形铣刀</div>
+						<div class="news-title">研制出超大规格指形铣刀</div>
 						<div class="news-body">指形齿轮铣刀广泛应用于大模数的直齿、斜齿轮和人字齿轮的齿形加工。</div>
 					</li>
 					<li>
-						<div class="news-title">日立工具推出多功能立铣刀</div>
-						<div class="news-body">日立工具推出一种带端面刃（End Tooth）的多功能立铣刀“α快削纵横AHJ形”</div>
+						<div class="news-title">Premio推出多功能立铣刀</div>
+						<div class="news-body">Premio推出一种带端面刃（End Tooth）的多功能立铣刀“α快削纵横AHJ形”</div>
 					</li>
 					<li>
 						<div class="news-title">新型TiAlN涂层铣刀的高速切削性能</div>
