@@ -6,6 +6,7 @@
 <meta name="robots" content="all" />
 <meta name="generator" content="mrThink" />
 <script type="text/javascript" src="lib/js/jquery.min.js"></script>
+<script type="text/javascript" src="lib/js/jquery.marquee.js"></script>
 <script type="text/javascript" src="lib/js/js_jonah.js"></script>
 <script type="text/javascript" src="lib/js/default_lib.js"></script>
 <script type="text/javascript" src="lib/js/fancybox/jquery.fancybox.pack.js"></script>
