@@ -1,0 +1,89 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{
+	margin:0px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	background-image:url(../images/bg.gif);}
+	
+#mainFrame{
+	height:1150px;
+	width:960px;
+	margin:auto;
+	background-color:#fff;}
+	
+#topBar{
+	height:25px;
+	width:910px;
+	border-bottom:1px solid #cccccc;
+	line-height:25px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:11px;
+	margin:auto;
+	color:#999;
+	text-align:right;}
+	
+#logoArea{
+	height:65px;
+	line-height:65px;	
+	width:910px;
+	margin:auto;
+	background-image:url(../images/logo.jpg);
+	background-repeat:no-repeat;
+	background-position:center;
+	background-position:left;}
+	
+#searchArea{
+	float:right;
+	height:40px;
+	line-height:40px;
+	width:250px;
+	padding-top:25px;}
+	
+.searchInput{
+	border:0px;
+	color:#666666;
+	text-indent:5px;
+	background-image:url(../images/searchInput.jpg);
+	width:200px;
+	height:25px;
+	background-repeat:no-repeat;
+	line-height:25px;
+	font-family:Arial, Helvetica, sans-serif;
+
+	}
+	
+#searchButton{
+	height:25px; width:25px;}
+	
+
+#navBar{
+	height:54px;
+	width:914px;
+	background-repeat:no-repeat;
+	background-image:url(../images/nav_unsel.jpg);
+	margin:auto;
+	margin-top:5px;
+	margin-bottom:5px;}
+	
+.navBar_home{background-image:url(../images/nav_onsel.jpg);background-position:0px 54px;}
+.navBar_about{background-image:url(../images/nav_onsel.jpg);background-position:-127px 54px;}
+.navBar_about{background-image:url(../images/nav_onsel.jpg);background-position:-262px 54px;}
+	
+#banner{
+	height:285px;
+	width:914px;
+	margin:auto;}
+	
+#bannerLeft{
+	float:left;
+	width:311px;
+	height:285px;}
+	
+#bannerRight{
+	float:right;
+	width:603px;
+	height:285px;}
+	
+
