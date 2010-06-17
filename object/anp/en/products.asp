@@ -19,7 +19,7 @@ tablename="class3"
 data_temp_class3=table_readdate(conn,"",tablename,DBField,"(upclassid="&class2id&")","order by orderid")
 data_temp_class3_num=ArrayisEmpty(data_temp_class3)
 
-data_pro_upshow=table_readdate(conn,"","products","ID,name,img","","order by addtime")
+data_pro_upshow=table_readdate(conn,"","products","ID,name,img","(upshow=1)","order by addtime")
 data_pro_upshow_num=ArrayisEmpty(data_pro_upshow)
 
 %>
@@ -27,6 +27,7 @@ data_pro_upshow_num=ArrayisEmpty(data_pro_upshow)
 <style type="text/css">
 <!--
 .STYLE1 {color: #6490b4}
+.level li { float:left;}
 -->
 </style>
 <div id="content">
@@ -61,7 +62,7 @@ data_pro_upshow_num=ArrayisEmpty(data_pro_upshow)
 			<div id="services-text">
 				<h1>产品介绍</h1>
 				<div class="toppic">
-				<%
+<!--<%
 				If Not data_pro_upshow_num=-1 Then
 				For i=0 To data_pro_upshow_num
 				%>
@@ -70,8 +71,37 @@ data_pro_upshow_num=ArrayisEmpty(data_pro_upshow)
 				If i=3 Then Exit For
 				Next
 				End If
+				%>-->
+				</div><p>&nbsp;</p><div class="marquee level" direction="right" speed="30" step="1" pause="1000" style="width:700px; overflow:hidden; margin-left:25px;"><ul>
+				<%
+				select case class2id
+				case 96
 				%>
-				</div>
+				<li>
+				<img src="files/images/2 (2).jpg" height="80" width="813"/></li><li>
+				<img src="files/images/2 (2).jpg" height="80" width="813"/></li>
+				<%
+				case 95
+				%>
+				<li>
+				<img src="files/images/1 (2).jpg" height="80" width="1000"/></li><li>
+				<img src="files/images/1 (2).jpg" height="80" width="1000"/></li>
+				<%
+				case 98
+				%>
+				<li>
+				<img src="files/images/4.jpg" height="80" width="777"/></li><li>
+				<img src="files/images/4.jpg" height="80" width="777"/></li>
+				<%
+				case 97
+				%>
+				<li>
+				<img src="files/images/3 (2).jpg" height="80" width="853"/></li><li>
+				<img src="files/images/3 (2).jpg" height="80" width="853"/></li>
+				<%
+				end select
+				%>
+				</ul></div>
 				<p>&nbsp;</p>
 				<table class="tab" width="677" border="0" align="right" cellpadding="0" cellspacing="2" id="products-table">
 <%
