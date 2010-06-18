@@ -5,7 +5,7 @@
 <%
 Dim class_id,DBField
 class2id=Easp.RQ("class2id",1)
-If class2id="" Then class2id=91
+If class2id="" Then class2id=95
 class_id=61 '产品列表ID
 
 

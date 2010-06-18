@@ -64,7 +64,7 @@
 				</ul>
 			</div>
 			<!-- #news2-->
-			<div id="news3" onClick="document.location='products.asp';" style="cursor:pointer;"> <img src="files/images/news3.jpg">
+			<div id="news3" style="cursor:pointer;"> <img src="files/images/news3.jpg">
 				<ul>
 					<li>2TBE-speed machining  groove to play great ability to force</li>
 					<li>4CRE-cutting ability to  achieve excellence</li>
