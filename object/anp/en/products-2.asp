@@ -57,7 +57,7 @@ $(function(){
 		<!-- #exhibition-->
 		<div id="services-main">
 			<div id="services-left-nav">
-				<h2>产品介绍</h2>
+				<h2>Products Intro</h2>
 				<ul>
 				<%
 				If Not data_temp_class2_num=-1 Then
@@ -69,13 +69,13 @@ $(function(){
 				End If
 				%>
 				</ul><form method="post" action="products-2.asp?act=sch" name="Search-pro">
-				<input type="text" name="lastname" value="产品规格搜索" style="color:#CCCCCC;" onBlur="this.style.color='#CCCCCC'" onFocus="this.style.color='#000000'">
-				<button height="20">搜索</button></form>
-				<div class="dzcp">------- 定制产品 -------</div>
+				<input type="text" name="lastname" value="SEARCH" style="color:#CCCCCC;" onBlur="this.style.color='#CCCCCC'" onFocus="this.style.color='#000000'">
+				<button height="20">GO!</button></form>
+				<div class="dzcp">------- <span id="result_box"><span title="定制产品" closure_uid_bwqh39="87">Custom   Products</span></span> -------</div>
 			</div>
 			<!-- #left-nav-->
 			<div id="services-text">
-				<h1>产品介绍</h1>
+				<h1>Products Intro</h1>
 				<p>&nbsp;</p>
 				<table class="tab" width="677" border="0" align="right" cellpadding="0" cellspacing="2">
 				<%

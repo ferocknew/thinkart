@@ -33,8 +33,8 @@
 			<!-- #contact-text-->
 			<form method="post" action="lib/dataoutput/save_data.asp?act=addmsg">
 			<div id="contact-text2">
-				<h1><span id="result_box4"><span title="定制产品" closure_uid_bwqh39="69">Custom Products</span></span></h1>
-			  <b>Name:</b><br/>
+				<h1><img src="files/images/contact_title_patch.jpg" width="232" height="25" /></h1>
+		    <b>Name:</b><br/>
 				<input type="text" name="user-name" class="inputbox">
 				<br/>
 			  <b>Tel:</b><br />
