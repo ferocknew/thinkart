@@ -126,7 +126,7 @@ if not isempty(DataTemp) then set rs=Jexs.VBRows2Obj(DataTemp,JsonDBField,5,1) '
 		<div class="products" style="background:url(files/images/img_05.jpg);" href="fancybox.asp"> </div>-->
 		</div>
 		<p>&nbsp; </p>
-		<div class="contentEnd"><br/><br/> <a href="<%=pageup%>"><img src="files/images/button_next.gif" border="0" align="right" /></a><a href="<%=pagedown%>"><img src="files/images/button_last.gif" border="0" align="right" /></a> </div>
+		<div class="contentEnd"> <a href="<%=pageup%>"><img src="files/images/button_next.gif" border="0" align="right" /></a><a href="<%=pagedown%>"><img src="files/images/button_last.gif" border="0" align="right" /></a> </div>
 	</div>
 	<!--#include file="files/inc/inner-foot-a.asp" -->
 </div>
