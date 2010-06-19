@@ -8,7 +8,7 @@
   <tr>
     <td width="220" valign="top" class="opArea"><table width="100%" border="0" cellspacing="0" cellpadding="0">
       <tr>
-        <td height="50" class="helpTitle bottomDotted1px">文章管理</td>
+        <td height="50" class="helpTitle bottomDotted1px">内容管理</td>
       </tr>
     </table></td>
     <td width="20" class="rightBorder1px">&nbsp;</td>
@@ -18,16 +18,15 @@
         <tr>
           <td height="25" class="bottomBorder1px"><table width="120" border="0" cellspacing="0" cellpadding="0">
             <tr>
-              <td width="120" height="35" class="tabCard">+ 新闻列表</td>
+              <td width="120" height="35" class="tabCard">+ 内容列表</td>
               </tr>
           </table>
           </td>
         </tr>
       </table>
-      <br />
       <table width="100%" border="0" cellspacing="0" cellpadding="0">
         <tr class="tableHead">
-          <td width="100" height="30" align="center" class="inputTable">标题</td>
+          <td width="240" height="30" align="center" class="inputTable">标题</td>
           <td width="100" align="center" class="inputTable">一级分类</td>
           <td width="100" align="center" class="inputTable">二级分类</td>
           <td width="100" align="center" class="inputTable">三级分类</td>
@@ -35,10 +34,10 @@
         </tr>
         <tr class="news_contect">
           <td height="30" align="left" class="inputTable">111</td>
-          <td align="left" class="inputTable">11</td>
-          <td align="left" class="inputTable">11</td>
-          <td align="left" class="inputTable">11</td>
-          <td align="left" class="inputTable">11</td>
+          <td align="center" class="inputTable">11</td>
+          <td align="center" class="inputTable">11</td>
+          <td align="center" class="inputTable">11</td>
+          <td align="center" class="inputTable">11</td>
         </tr>
     </table>
       <table width="100%" border="0" cellspacing="0" cellpadding="0">

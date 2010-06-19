@@ -26,7 +26,7 @@
 				<tr>
 					<td height="25" class="bottomBorder1px"><table width="120" border="0" cellspacing="0" cellpadding="0">
 							<tr>
-								<td width="120" height="35" class="tabCard">+ 内容添加</td>
+								<td width="120" height="35" class="tabCard">+ 产品</td>
 							</tr>
 						</table></td>
 				</tr>
