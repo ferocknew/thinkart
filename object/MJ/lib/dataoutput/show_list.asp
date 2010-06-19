@@ -115,8 +115,34 @@ Case "pro_list"
     If data_temp_num=-1 Then
         json.addData "err",data_temp_num 'err数据
     Else
-        json.addData "err",data_temp_num 'err数据
-        json.addData "pros_list",show_json(DBField,data_temp)
+        Call json.addData("num",data_temp_num) 'err数据
+        'json.addData "pros_list",show_json(DBField,data_temp)
+		Set jsonCode=new Aien_Json
+		jsonCode.JsonType="array"
+
+		For i=0 To data_temp_num
+
+			Set jsonTemp=new Aien_Json
+			jsonTemp.JsonType="object"
+			Call jsonTemp.addData("id",data_temp(0,i))
+			Call jsonTemp.addData("name",data_temp(1,i))
+			Call jsonTemp.addData("abstract",data_temp(2,i))
+			Call jsonTemp.addData("addtime",data_temp(3,i))
+			Call jsonTemp.addData("edittime",data_temp(4,i))
+			Call jsonTemp.addData("tag",data_temp(8,i))
+			Call jsonTemp.addData("class1id",""&conn.execute("select [class_name] from [class1] where id="&data_temp(5,i)&"")(0))
+			Call jsonTemp.addData("class2id",""&conn.execute("select [class_name] from [class2] where id="&data_temp(6,i)&"")(0))
+			If Not conn.execute("select count(id) from [class3] where id="&data_temp(7,i)&"")(0)=0 Then
+				Call jsonTemp.addData("class3id",""&conn.execute("select [class_name] from [class3] where id="&data_temp(7,i)&"")(0))
+			Else
+				Call jsonTemp.addData("class3id","-")
+			End If
+
+			Call jsonCode.addData(i,jsonTemp)
+			Set jsonTemp=Nothing
+		Next
+
+		Call json.addData("pros_list",jsonCode)
     End If
 
     Call jsonheadResponse()

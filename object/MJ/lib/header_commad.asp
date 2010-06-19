@@ -1,5 +1,7 @@
 <script Language="JScript" runat="server" src="Jexs-lib.js"></script>
 <script Language="JScript" runat="server" src="Jexs-json.js"></script>
+<script Language="JScript" runat="server" src="Jasp/Jasp.js"></script>
+<script Language="JScript" runat="server" src="Jasp/Jasp.date.js"></script>
 <%
 '读取网站设置信息
 getInfo(1)
