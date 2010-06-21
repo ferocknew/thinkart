@@ -1,7 +1,5 @@
-<%
-'读取网站设置信息
-getInfo(1)
-%>
+<script Language="JScript" runat="server" src="Jasp/Jasp.js"></script>
+<script Language="JScript" runat="server" src="Jasp/Jasp.date.js"></script>
 <!--#include file="function_jonah.asp" -->
 <!--#include file="easp.asp" -->
 <!--#include file="xml_jonah.asp" -->
@@ -10,3 +8,7 @@ getInfo(1)
 <!--#include file="library_mrThink.asp" -->
 <!--#include file="Template.asp" -->
 <!--#include file="cache_mrThink.asp" -->
+<%
+'读取网站设置信息
+getInfo(1)
+%>
