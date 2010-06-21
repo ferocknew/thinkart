@@ -1,185 +1,69 @@
 <!--#include file="lib/const.asp" -->
 <!--#include file="conn.asp" -->
 <!--#include file="lib/header_commad.asp" -->
-<!--#include file="lib/header_html.asp" -->
+<!--#include file="lib/header_html.asp" --> 
 <!-- Html Body -->
-<div id="innerFrame">
-   	<div id="topBar">ABOUT &nbsp;|&nbsp; ENGLISH&nbsp; &nbsp;</div>
-    <!-- #topBar-->
-        <div id="logoArea">
-        	<div id="searchArea">
-        	  <table width="250" border="0" cellspacing="0" cellpadding="0">
-        	    <tr>
-        	      <td width="210"><input name="textarea" type="text" class="searchInput" id="textarea" value="" size="20" /></td>
-        	      <td><img src="files/images/button_search.jpg" width="25" height="25" /></td>
-      	      </tr>
-      	    </table>
-       	  </div>
-        </div>
-        <!-- #logoArea-->
-      <div id="navBar">
-        <table width="914" border="0" cellspacing="0" cellpadding="0">
-          <tr>
-            <td width="127" class="" onmouseover="this.className = 'navBar_home';" onmouseout="this.className = '';">&nbsp;</td>
-            <td width="135" class="" onmouseover="this.className = 'navBar_about';" onmouseout="this.className = '';">&nbsp;</td>
-            <td width="135" class="" onmouseover="this.className = 'navBar_news';" onmouseout="this.className = '';">&nbsp;</td>
-            <td width="135" class="" onmouseover="this.className = 'navBar_product';" onmouseout="this.className = '';">&nbsp;</td>
-            <td width="135" class="" onmouseover="this.className = 'navBar_knowLeg';" onmouseout="this.className = '';">&nbsp;</td>
-            <td width="135" class="" onmouseover="this.className = 'navBar_service';" onmouseout="this.className = '';">&nbsp;</td>
-            <td width="112" height="54" class="" onmouseover="this.className = 'navBar_contact';" onmouseout="this.className = '';">&nbsp;</td>
-          </tr>
-        </table>
-      </div>
-  <div id="innerBanner"></div>
-  <!-- #innerBanner-->
-  <div id="innerContent">
-	<div id="leftSide">
-	  <table width="100%" border="0" cellspacing="0" cellpadding="0">
-	    <tr>
-	      <td><img src="files/images/productTitle.jpg" width="220" height="50" /></td>
-        </tr>
-      </table>
-	  <table width="100%" border="0" cellspacing="0" cellpadding="0">
-	    <tr>
-	      <td height="35" class="unselProduct">S165 A/W/S215 A/W</td>
-        </tr>
-	    <tr>
-	      <td height="35" class="onselProduct">S165 A/W/S215 A/W</td>
-        </tr>
-	    <tr>
-	      <td height="35" class="unselProduct">S165 A/W/S215 A/W</td>
-        </tr>
-	    <tr>
-	      <td height="35" class="unselProduct">S165 A/W/S215 A/W</td>
-        </tr>
-	    <tr>
-	      <td height="35" class="unselProduct">S165 A/W/S215 A/W</td>
-        </tr>
-      </table>
-    </div>
-	<div id="rightSide">
-<div id="rightTitle">&nbsp;&nbsp; 产品中心</div>
-      <div id="productObj">
-        <table width="95%" border="0" align="center" cellpadding="0" cellspacing="0">
-          <tr>
-            <td height="30" align="center">S165 A/W/S215 A/W</td>
-          </tr>
-          <tr>
-            <td align="center"><img src="files/images/product.jpg" width="140" height="140" /></td>
-          </tr>
-          <tr>
-            <td height="40" align="center"><img src="files/images/button_viewDetail.jpg" width="79" height="24" /></td>
-          </tr>
-        </table>
-        </div>
-		<div id="productObj">
-        <table width="95%" border="0" align="center" cellpadding="0" cellspacing="0">
-          <tr>
-            <td height="30" align="center">S165 A/W/S215 A/W</td>
-          </tr>
-          <tr>
-            <td align="center"><img src="files/images/product.jpg" width="140" height="140" /></td>
-          </tr>
-          <tr>
-            <td height="40" align="center"><img src="files/images/button_viewDetail.jpg" width="79" height="24" /></td>
-          </tr>
-        </table>
-        </div>
-	  <div id="productObj">
-        <table width="95%" border="0" align="center" cellpadding="0" cellspacing="0">
-          <tr>
-            <td height="30" align="center">S165 A/W/S215 A/W</td>
-          </tr>
-          <tr>
-            <td align="center"><img src="files/images/product.jpg" width="140" height="140" /></td>
-          </tr>
-          <tr>
-            <td height="40" align="center"><img src="files/images/button_viewDetail.jpg" width="79" height="24" /></td>
-          </tr>
-        </table>
-      </div>
-		<div id="productObj">
-        <table width="95%" border="0" align="center" cellpadding="0" cellspacing="0">
-          <tr>
-            <td height="30" align="center">S165 A/W/S215 A/W</td>
-          </tr>
-          <tr>
-            <td align="center"><img src="files/images/product.jpg" width="140" height="140" /></td>
-          </tr>
-          <tr>
-            <td height="40" align="center"><img src="files/images/button_viewDetail.jpg" width="79" height="24" /></td>
-          </tr>
-        </table>
-        </div>
-		<div id="productObj">
-        <table width="95%" border="0" align="center" cellpadding="0" cellspacing="0">
-          <tr>
-            <td height="30" align="center">S165 A/W/S215 A/W</td>
-          </tr>
-          <tr>
-            <td align="center"><img src="files/images/product.jpg" width="140" height="140" /></td>
-          </tr>
-          <tr>
-            <td height="40" align="center"><img src="files/images/button_viewDetail.jpg" width="79" height="24" /></td>
-          </tr>
-        </table>
-        </div>
-		<div id="productObj">
-        <table width="95%" border="0" align="center" cellpadding="0" cellspacing="0">
-          <tr>
-            <td height="30" align="center">S165 A/W/S215 A/W</td>
-          </tr>
-          <tr>
-            <td align="center"><img src="files/images/product.jpg" width="140" height="140" /></td>
-          </tr>
-          <tr>
-            <td height="40" align="center"><img src="files/images/button_viewDetail.jpg" width="79" height="24" /></td>
-          </tr>
-        </table>
-        </div>
-		<div id="productObj">
-        <table width="95%" border="0" align="center" cellpadding="0" cellspacing="0">
-          <tr>
-            <td height="30" align="center">S165 A/W/S215 A/W</td>
-          </tr>
-          <tr>
-            <td align="center"><img src="files/images/product.jpg" width="140" height="140" /></td>
-          </tr>
-          <tr>
-            <td height="40" align="center"><img src="files/images/button_viewDetail.jpg" width="79" height="24" /></td>
-          </tr>
-        </table>
-        </div>
-		<div id="productObj">
-        <table width="95%" border="0" align="center" cellpadding="0" cellspacing="0">
-          <tr>
-            <td height="30" align="center">S165 A/W/S215 A/W</td>
-          </tr>
-          <tr>
-            <td align="center"><img src="files/images/product.jpg" width="140" height="140" /></td>
-          </tr>
-          <tr>
-            <td height="40" align="center"><img src="files/images/button_viewDetail.jpg" width="79" height="24" /></td>
-          </tr>
-        </table>
-        </div>
-		<div id="productObj">
-        <table width="95%" border="0" align="center" cellpadding="0" cellspacing="0">
-          <tr>
-            <td height="30" align="center">S165 A/W/S215 A/W</td>
-          </tr>
-          <tr>
-            <td align="center"><img src="files/images/product.jpg" width="140" height="140" /></td>
-          </tr>
-          <tr>
-            <td height="40" align="center"><img src="files/images/button_viewDetail.jpg" width="79" height="24" /></td>
-          </tr>
-        </table>
-        </div>
-    </div>
+<%
+Dim proClassID:proClassID=60
+Set proClassRs=Jasp.ado(conn).exec("select [id],[class_name] from [class2] where ([upclassid]="&proClassID&")").get()
 
-  </div>  <!-- #innerContent-->
-
+Set proRs=Jasp.ado(conn).exec("select [id],[name],[img] from [products]").get()
+%>
+<div id="innerFrame"> 
+	<!--#include file="inc/inc-html-top.asp" -->
+	<div id="innerBanner"></div>
+	<!-- #innerBanner-->
+	<div id="innerContent">
+		<div id="leftSide">
+			<table width="100%" border="0" cellspacing="0" cellpadding="0">
+				<tr>
+					<td><img src="files/images/productTitle.jpg" width="220" height="50" /></td>
+				</tr>
+			</table>
+			<table width="100%" border="0" cellspacing="0" cellpadding="0">
+				<!--tr>
+					<td height="35" class="unselProduct">S165 A/W/S215 A/W</td>
+				</tr-->
+				<%
+				if not proClassRs.length=0 then
+				for i=0 to proClassRs.length-1
+				%>
+				<tr>
+					<td height="35" class="onselProduct"><%=proClassRs.slice(i,i+1).[0].class_name%></td>
+				</tr>
+				<%
+				next
+				end if 
+				%>
+			</table>
+		</div>
+		<div id="rightSide">
+			<div id="rightTitle">&nbsp;&nbsp; 产品中心</div>
+			<%
+			if not proRs.length=0 then
+			for i=0 to proRs.length-1
+			%>
+			<div id="productObj">
+				<table width="95%" border="0" align="center" cellpadding="0" cellspacing="0">
+					<tr>
+						<td height="30" align="center"><%=proRs.slice(i,i+1).[0].name%></td>
+					</tr>
+					<tr>
+						<td align="center"><img src="<%=proRs.slice(i,i+1).[0].img%>" width="140" height="140" /></td>
+					</tr>
+					<tr>
+						<td height="40" align="center"><img src="files/images/button_viewDetail.jpg" width="79" height="24" /></td>
+					</tr>
+				</table>
+			</div>
+			<%
+			next
+			end if
+			%>
+		</div>
+	</div>
+	<!-- #innerContent--> 
+	
 </div>
 <div id="copyRight">COPYRIGHT @ 2010 - DESIGN BY THINKART 2010 ALL RIGHT RESERVED</div>
 <!--#include file="lib/foot.asp" -->
