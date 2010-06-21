@@ -344,7 +344,7 @@ a.footer:hover,a.footer:active{
     width:149px;
 	height:200px;
 	float:left;
-	margin:1px;
+	margin:8px 1px;
 	cursor:pointer;
 }
 
