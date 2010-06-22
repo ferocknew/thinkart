@@ -1,5 +1,4 @@
 <script Language="JScript" runat="server" src="Jasp/Jasp.js"></script>
-<script Language="JScript" runat="server" src="Jasp/Jasp.date.js"></script>
 <!--#include file="function_jonah.asp" -->
 <!--#include file="easp.asp" -->
 <!--#include file="xml_jonah.asp" -->
