@@ -2,6 +2,17 @@
 <!--#include file="conn_admin.asp"-->
 <!--#include file="../lib/header_commad.asp"-->
 <!--#include file="lib/header_html.asp"-->
+<%
+Dim act:act=Easp.RQ("act",0)
+
+if not act="" then
+	Dim id:id=Easp.RQ("id",1)
+	if act="del" then conn.execute("DELETE FROM [message] WHERE (id="&id&")")
+	
+	Easp.JS("alert('删除成功！');window.location.href='message.asp';")
+	Response.End()
+end if 
+%>
 <!--#include file="lib/top_admin.asp" -->
 <%
 Dim DBField,data_temp,data_temp_num
@@ -55,13 +66,13 @@ For i=0 To data_temp_num
           <td align="center" class="inputTable"><%=data_temp(1,i)%></td>
           <td align="center" class="inputTable"><%=data_temp(2,i)%></td>
           <td align="center" class="inputTable"><%=data_temp(4,i)%></td>
-          <td align="center" class="inputTable"><input name="button2" type="submit" class="setOptButtomLong" id="button2" value="回复留言" /></td>
+          <td align="center" class="inputTable"><a href="?act=del&id=<%=data_temp(0,i)%>">删除留言</a></td>
         </tr>
 		<%
 		Next
 		%>
       </table>
-      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" style="display:none">
         <tr>
           <td height="50"><table width="100%" border="0" cellspacing="0" cellpadding="0">
             <tr>
@@ -74,7 +85,7 @@ For i=0 To data_temp_num
           </table></td>
         </tr>
     </table>
-      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" style="display:none;">
         <tr>
           <td width="100" height="30" align="right" valign="top" class="inputTable">回复内容：</td>
           <td class="inputTable"><textarea name="textarea" cols="45" rows="5" class="setTextArea" id="textarea"></textarea></td>
