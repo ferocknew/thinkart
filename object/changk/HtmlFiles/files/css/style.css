@@ -8,6 +8,11 @@ body{
 	background-image:url(../images/bg.gif);
 	color:#666666;
 	line-height:22px;}
+
+ul,li{
+	margin:0;
+	padding:0;
+}
 	
 #mainFrame{
 	width:960px;
@@ -196,16 +201,33 @@ body{
 	background-repeat:no-repeat;}
 	
 .unselProduct{
-	background-image:url(../images/un_productItem.jpg);
-	background-repeat:no-repeat;
-	text-indent:45px;}
+	background:url(../images/un_productItem.jpg) no-repeat;
+	list-style:none;
+	height:35px;
+	line-height:35px;
+	padding-left:43px;
+}
 	
 .onselProduct{
-	background-image:url(../images/productItem.jpg);
-	background-repeat:no-repeat;
-	text-indent:45px;
+	background:url(../images/productItem.jpg) no-repeat;
+	list-style:none;
+	height:35px;
+	line-height:35px;
+	padding-left:43px;
 	color:#09F;
 	font-weight:bold;}
+	
+.onselProductSub{
+	height:30px;
+	line-height:30px;
+	margin-left:40px;
+	margin-right:15px;
+	padding-left:5px;
+	color:#333;
+	border-bottom:#CCC 1px dotted;
+	list-style-position: inside;
+	list-style-type: square;
+}
 	
 #productObj{
 	margin-left:5px;
@@ -217,4 +239,30 @@ body{
 .newsLine{
 	border-bottom:1px dotted #cccccc;}
 	
-	
+#innerContent2{
+	margin:20px 30px;
+	font-size:12px;
+	line-height:22px;
+	color:#666;
+	font-weight:normal;
+}
+
+.contant-text {
+	float: left;
+	width: 230px;
+	padding: 0 20px;
+}
+
+.contant-text a {
+	color: #60b8dd;
+}
+
+.contant-text p{
+	margin: 0 0 20px;
+	line-height: 23px;
+}
+
+.contant-img {
+	float: left;
+	width: 340px;
+}
