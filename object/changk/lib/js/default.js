@@ -4,7 +4,7 @@ $(function(){
     $.getJSON(get_info_url, {
         "code": "json"
     }, loaddoc);
-    
+
     //顶部菜单
     var _$navBar_td = $("#navBar").find("td")
     _$navBar_td.eq(0).click(function(){
@@ -35,12 +35,12 @@ $(function(){
         window.location.href = 'contact.asp';
         //联系我们
     });
-    
+
     //右侧导航
     var _$productList = $("#productList");
     if (_$productList.length == 1) {
         var _jsonURL = "lib/dataoutput/action_xmlout.asp";
-        var _upclassid = 68;
+        var _upclassid = 69;
         $.getJSON(_jsonURL, {
             act: "show_class",
             classname: "class3",
@@ -50,8 +50,12 @@ $(function(){
             $(json.class_list).each(function(i){
                 _html_temp += '<li class="onselProductSub" style="display:none">' + this.classname + '</li>';
             });
-            
-            $("li[classid='" + _upclassid + "']", _$productList).after(_html_temp);
+
+            $("li[classid='" + _upclassid + "']", _$productList).after(_html_temp).removeClass().addClass("onselProduct").css("cursor","pointer").toggle(function(){
+				$(".onselProductSub", _$productList).slideUp()
+			},function(){
+				$(".onselProductSub", _$productList).slideDown()
+			});
             $(".onselProductSub", _$productList).slideDown();
         });
     }
