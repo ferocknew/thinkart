@@ -1,15 +1,17 @@
 <!--#include file="lib/const.asp" -->
 <!--#include file="conn.asp" -->
 <!--#include file="lib/header_commad.asp" -->
-<!--#include file="lib/header_html.asp" --> 
+<!--#include file="lib/header_html.asp" -->
 <!-- Html Body -->
 <%
 Dim proClassID:proClassID=60
+Dim proClass_3ID:proClass_3ID=68
+
 Set proClassRs=Jasp.ado(conn).exec("select [id],[class_name] from [class2] where ([upclassid]="&proClassID&")").get()
 
 Set proRs=Jasp.ado(conn).exec("select [id],[name],[img] from [products]").get()
 %>
-<div id="innerFrame"> 
+<div id="innerFrame">
 	<!--#include file="inc/inc-html-top.asp" -->
 	<div id="innerBanner"></div>
 	<!-- #innerBanner-->
@@ -20,22 +22,21 @@ Set proRs=Jasp.ado(conn).exec("select [id],[name],[img] from [products]").get()
 					<td><img src="files/images/productTitle.jpg" width="220" height="50" /></td>
 				</tr>
 			</table>
-			<table width="100%" border="0" cellspacing="0" cellpadding="0">
-				<!--tr>
-					<td height="35" class="unselProduct">S165 A/W/S215 A/W</td>
-				</tr-->
-				<%
+			<div id="productList">
+				<ul>
+					<!--li class="onselProduct">S165 A/W/S215 A/W</li>
+	      <li class="onselProductSub">S165 A/W/S215 A/W</li-->
+					<%
 				if not proClassRs.length=0 then
 				for i=0 to proClassRs.length-1
 				%>
-				<tr>
-					<td height="35" class="onselProduct"><%=proClassRs.slice(i,i+1).[0].class_name%></td>
-				</tr>
-				<%
+					<li class="unselProduct" classid="<%=proClassRs.slice(i,i+1).[0].id%>"><%=proClassRs.slice(i,i+1).[0].class_name%></li>
+					<%
 				next
-				end if 
+				end if
 				%>
-			</table>
+				</ul>
+			</div>
 		</div>
 		<div id="rightSide">
 			<div id="rightTitle">&nbsp;&nbsp; 产品中心</div>
@@ -62,8 +63,8 @@ Set proRs=Jasp.ado(conn).exec("select [id],[name],[img] from [products]").get()
 			%>
 		</div>
 	</div>
-	<!-- #innerContent--> 
-	
+	<!-- #innerContent-->
+
 </div>
 <div id="copyRight">COPYRIGHT @ 2010 - DESIGN BY THINKART 2010 ALL RIGHT RESERVED</div>
 <!--#include file="lib/foot.asp" -->
