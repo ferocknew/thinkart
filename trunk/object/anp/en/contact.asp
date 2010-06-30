@@ -26,7 +26,7 @@
 				Tel： +86-21-58762069 </p>
 			  <p> +86-13611977713&nbsp;&nbsp; MR.SONG<br />
 			    Fax： +86-21-58762069 <br />
-			    Email：mr_tony@yahoo.cn<br />
+			    Email：tiger@anpaichina.com<br />
 			    <span id="result_box3"><span title="邮编" closure_uid_bwqh39="67">Zip Code</span></span>： 200120 </p>
 			</div>
 			<!-- #contact-text-->

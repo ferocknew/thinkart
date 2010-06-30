@@ -27,7 +27,7 @@
 					电话： +86-21-58762069 +86-13611977713 <br />
                     联系人:MR.SONG <br />
 					传真： +86-21-58762069 <br />
-					Email：mr_tony@yahoo.cn<br />
+					Email：tiger@anpaichina.com<br />
 					邮编： 200120 </p>
 			</div>
 			<!-- #contact-text-->
