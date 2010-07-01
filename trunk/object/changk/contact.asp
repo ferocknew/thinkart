@@ -16,13 +16,19 @@
       </table>
 	  <div id="productList">
 	    <ul>
-	      <li class="unselProduct">S165 A/W/S215 A/W</li>
-	      <li class="onselProduct">S165 A/W/S215 A/W</li>
-	      <li class="onselProductSub">S165 A/W/S215 A/W</li>
-	      <li class="unselProduct">S165 A/W/S215 A/W</li>
-	      <li class="unselProduct">S165 A/W/S215 A/W</li>
+	      <!--li class="onselProduct">S165 A/W/S215 A/W</li>
+	      <li class="onselProductSub">S165 A/W/S215 A/W</li-->
+	      <%
+				if not proClassRs.length=0 then
+				for i=0 to proClassRs.length-1
+				%>
+	      <li class="unselProduct" classid="<%=proClassRs.slice(i,i+1).[0].id%>"><%=proClassRs.slice(i,i+1).[0].class_name%></li>
+	      <%
+				next
+				end if
+				%>
         </ul>
-      </div>
+	  </div>
 	</div>
 	<div id="rightSide">
     <div id="rightTitle">&nbsp;&nbsp;
