@@ -4,9 +4,30 @@
 <!--#include file="lib/header_html.asp" --> 
 <!-- Html Body -->
 <%
-NewsClassID=59
+Dim NewsType:NewsType=Easp.RQ("type",0)
+Dim NewsTitle:NewsTitle=""
+Dim NewsID:NewsID=Easp.RQ("id",1)
+
+Select Case NewsType
+case "zlzs"
+NewsTitle="制冷知识"
+case "pzfw"
+NewsTitle="品质服务"
+NewsID=13
+case else
+NewsTitle="新闻中心"
+end select
+
+
+Dim NewsClassID:NewsClassID=59
 Set NewsRs=Jasp.ado(conn).exec("select [ID],[title] from [news]").Get()
 Set NewsClassRs=Jasp.ado(conn).exec("select [ID],[class_name] from [class2] where (upclassid="&NewsClassID&") order by orderid desc").Get()
+
+
+Dim NewsContent:NewsContent=""
+if not NewsID="" then
+	NewsContent=conn.execute("Select [content] from [news] where (id="&NewsID&")")(0)
+end if
 %>
 <div id="innerFrame"> 
 	<!--#include file="inc/inc-html-top.asp" -->
@@ -19,22 +40,17 @@ Set NewsClassRs=Jasp.ado(conn).exec("select [ID],[class_name] from [class2] wher
 					<td><img src="files/images/productTitle.jpg" width="220" height="50" /></td>
 				</tr>
 			</table>
-			<div id="productList">
-            <ul>
-				<%
-			if not NewsClassRs.length=0 then
-			for i=0 to NewsClassRs.length-1
-			%>
-					<li class="onselProduct"><%=NewsClassRs.slice(i,i+1).[0].class_name%></li>
-				<%
-			next
-			end if
-			%>
-            </ul>
-            </div>
+		<!--#include file="inc/inc-procls-list.asp" --> 
 		</div>
 		<div id="rightSide">
-			<div id="rightTitle">&nbsp;&nbsp; 新闻中心</div>
+			<div id="rightTitle">&nbsp;&nbsp; <%=NewsTitle%></div>
+			<div style="padding:10px;">
+			<%
+			if not NewsContent="" then
+			Response.Write("<br/><br/>")
+			Response.Write(NewsContent)
+			else
+			%>
 			<table width="100%" border="0" cellspacing="0" cellpadding="0">
 				<%
 			if not NewsRs.length=0 then
@@ -42,7 +58,7 @@ Set NewsClassRs=Jasp.ado(conn).exec("select [ID],[class_name] from [class2] wher
 			%>
 				<tr>
 					<td width="50" height="30">&nbsp;</td>
-					<td class="newsLine"><%=(i+1)&""%>. <%=NewsRs.slice(i,i+1).[0].title%></td>
+					<td class="newsLine"><%=(i+1)&""%>. <span style="cursor:pointer;" url="?id=<%=NewsRs.slice(i,i+1).[0].id%>"><%=NewsRs.slice(i,i+1).[0].title%></span></td>
 				</tr>
 				<%
 			next
@@ -61,6 +77,8 @@ Set NewsClassRs=Jasp.ado(conn).exec("select [ID],[class_name] from [class2] wher
 					<td class="newsLine">&nbsp;</td>
 				</tr>
 			</table>
+			<%end if%>
+			</div>
 		</div>
 	</div>
 	<!-- #innerContent--> 
@@ -76,4 +94,7 @@ Set NewsClassRs=Jasp.ado(conn).exec("select [ID],[class_name] from [class2] wher
 			type : 'fade'
 		});
 	});
+	$(".newsLine span").click(function(){
+		window.location.href=$(this).attr("url");	
+	})
 </script>
