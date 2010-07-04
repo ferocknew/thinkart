@@ -4,12 +4,23 @@
 <!--#include file="lib/header_html.asp" -->
 <!-- Html Body -->
 <%
-Dim proClassID:proClassID=60
-Dim proClass_3ID:proClass_3ID=68
+Dim classtype,classid
+classtype=Easp.RQ("classtype",0)
+classid=Easp.RQ("classid",1)
+SQL=""
 
-Set proClassRs=Jasp.ado(conn).exec("select [id],[class_name] from [class2] where ([upclassid]="&proClassID&")").get()
+if not classtype="" then
+	Select case classtype
+	case "class2"
+		SQL="select [id],[name],[img] from [products] where (class2id="&classid&")"
+	case "class3"
+		SQL="select [id],[name],[img] from [products] where (class3id="&classid&")"
+	end select
+else
+	SQL="select [id],[name],[img] from [products] where (class3id=21)"
+end if
 
-Set proRs=Jasp.ado(conn).exec("select [id],[name],[img] from [products]").get()
+Set proRs=Jasp.ado(conn).exec(SQL).get()
 %>
 <div id="innerFrame">
 	<!--#include file="inc/inc-html-top.asp" -->
@@ -22,21 +33,7 @@ Set proRs=Jasp.ado(conn).exec("select [id],[name],[img] from [products]").get()
 					<td><img src="files/images/productTitle.jpg" width="220" height="50" /></td>
 				</tr>
 			</table>
-			<div id="productList">
-				<ul>
-					<!--li class="onselProduct">S165 A/W/S215 A/W</li>
-	      <li class="onselProductSub">S165 A/W/S215 A/W</li-->
-					<%
-				if not proClassRs.length=0 then
-				for i=0 to proClassRs.length-1
-				%>
-					<li class="unselProduct" classid="<%=proClassRs.slice(i,i+1).[0].id%>"><%=proClassRs.slice(i,i+1).[0].class_name%></li>
-					<%
-				next
-				end if
-				%>
-				</ul>
-			</div>
+		<!--#include file="inc/inc-procls-list.asp" --> 
 		</div>
 		<div id="rightSide">
 			<div id="rightTitle">&nbsp;&nbsp; 产品中心</div>
@@ -53,7 +50,7 @@ Set proRs=Jasp.ado(conn).exec("select [id],[name],[img] from [products]").get()
 						<td align="center"><img src="<%=proRs.slice(i,i+1).[0].img%>" width="140" height="140" /></td>
 					</tr>
 					<tr>
-						<td height="40" align="center"><img src="files/images/button_viewDetail.jpg" width="79" height="24" /></td>
+						<td height="40" align="center"><a href="#"><img src="files/images/button_viewDetail.jpg" width="79" height="24" border="0" /></a></td>
 					</tr>
 				</table>
 			</div>
@@ -70,6 +67,7 @@ Set proRs=Jasp.ado(conn).exec("select [id],[name],[img] from [products]").get()
 <!--#include file="lib/foot.asp" -->
 <script>
 	$(function(){
+		$("a[href='#']").attr("href","javascript:void(0);");
 		$("#bannerRight").transition({
 			duration : 3000,
 			images : ['files/images/index-banner_1.jpg', 'files/images/index-banner_2.jpg','files/images/index-banner_3.jpg'],
