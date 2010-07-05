@@ -17,17 +17,17 @@ Set Prors=Jasp.ado(conn).exec("select top "&ShowPro&" [id],[name],[img] from [pr
 	<div id="newsArea">
 		<div id="newsBlock" class="cutLine"><img src="files/images/sub_title_desc.jpg" width="335" height="25" /><br />
 			<br />
-			畅可与深浅设计合作，对公司网站形象进行包装 畅可生产部门新上线一条流水线，应对夏日来临。畅可2010年度第一季度总结大会召开畅可研发部门赴德工程师学成归来寒冬使得制冷行业受到冲击<br />
-			畅可逆流而上畅可与深浅设计合作，对公司网站形象进行包装 畅可生产部门新上线一条流水线，应对夏日来临。<br />
-			畅可2010年度第一季度总结大会召开畅可研发部门赴德工程师学成归来寒冬使得制冷行业受到冲击，畅可逆流而上    畅可与深浅设计合作，对公司网站形象进行包装 畅可生产部门新上线一条流水线，应对夏日来临。畅可2010年度第一季度总结大会召开畅可研发部门赴德...<br />
+	    <p>上海畅可制冷设备有限公司是一家专业从事商业制冰设备生产的制造型企业，公司拥有先进的生产工艺，一流的研发团队，完善的管理体系，紧密的检测系统。其旗下的三泰重工（SUN TIRE）系列产品涵盖：块冰机（方块冰、半块冰、圆柱冰、月形冰、子弹冰）、鳞片冰、雪花冰机、管冰机、板冰机等，机器重要部件均选用进口品牌，或原装进口，力求为您提供最优的产品和最好的用冰方案。产品远销全球众多国家和地区，得到客户的普遍认可。</p>
+	    <p>	      公司坐落于上海，在全国各大城市均有服务网点，力争给您提供方便快捷，及时周到的服务。
+<br />
 			<br />
-			<a href="about.asp"><img src="files/images/readMore.jpg" width="95" height="15" border="0" /></a> </div>
+		  <a href="about.asp"><img src="files/images/readMore.jpg" border="0" /></a> </p>
+		</div>
 		<div id="newsBlock"><img src="files/images/sub_title_news.jpg" width="335" height="25" /><br />
 			<br />
 			<img src="files/images/newsAd.jpg" width="430" height="90" /> <br />
-			<br />
 			<table width="400" border="0" cellspacing="0" cellpadding="0">
-				<tr>
+			  <tr>
 					<td width="20" height="22" align="center">·</td>
 					<td>我公司成功参加首届全国制冰机行业发展论坛 </td>
 				</tr>
@@ -45,7 +45,7 @@ Set Prors=Jasp.ado(conn).exec("select top "&ShowPro&" [id],[name],[img] from [pr
 				</tr>
 			</table>
 			<br />
-			<a href="newslist.asp"><img src="files/images/readMore.jpg" width="95" height="15" border="0" /></a> <br />
+			<a href="newslist.asp"><img src="files/images/readMore.jpg" border="0" /></a> <br />
 		</div>
 	</div>
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 

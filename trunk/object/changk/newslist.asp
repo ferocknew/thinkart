@@ -44,7 +44,7 @@ end if
 		</div>
 		<div id="rightSide">
 			<div id="rightTitle">&nbsp;&nbsp; <%=NewsTitle%></div>
-			<div style="padding:10px;">
+			<div style="padding:30px; margin-top:30px;">
 			<%
 			if not NewsContent="" then
 			Response.Write("<br/><br/>")
@@ -57,25 +57,21 @@ end if
 			for i=0 to NewsRs.length-1
 			%>
 				<tr>
-					<td width="50" height="30">&nbsp;</td>
-					<td class="newsLine"><%=(i+1)&""%>. <span style="cursor:pointer;" url="?id=<%=NewsRs.slice(i,i+1).[0].id%>"><%=NewsRs.slice(i,i+1).[0].title%></span></td>
-				</tr>
+				  <td class="newsLine"><%=(i+1)&""%>. <span style="cursor:pointer;" url="?id=<%=NewsRs.slice(i,i+1).[0].id%>"><%=NewsRs.slice(i,i+1).[0].title%></span></td>
+			  </tr>
 				<%
 			next
 			end if
 			%>
 				<tr>
-					<td width="50" height="30">&nbsp;</td>
-					<td class="newsLine">&nbsp;</td>
-				</tr>
+				  <td class="newsLine">&nbsp;</td>
+			  </tr>
 				<tr>
-					<td width="50" height="30">&nbsp;</td>
-					<td class="newsLine">&nbsp;</td>
-				</tr>
+				  <td class="newsLine">&nbsp;</td>
+			  </tr>
 				<tr>
-					<td width="50" height="30">&nbsp;</td>
-					<td class="newsLine">&nbsp;</td>
-				</tr>
+				  <td class="newsLine">&nbsp;</td>
+			  </tr>
 			</table>
 			<%end if%>
 			</div>
