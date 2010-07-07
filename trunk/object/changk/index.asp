@@ -3,7 +3,7 @@
 <!--#include file="lib/header_commad.asp" -->
 <%
 Dim ShowPro:ShowPro=4
-Set Prors=Jasp.ado(conn).exec("select top "&ShowPro&" [id],[name],[img] from [products]").get()
+Set Prors=Jasp.ado(conn).exec("select top "&ShowPro&" [id],[name],[img] from [products] order by id desc").get()
 %>
 <!--#include file="lib/header_html.asp" --> 
 <!-- Html Body -->

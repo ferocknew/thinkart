@@ -4,23 +4,11 @@
 <!--#include file="lib/header_html.asp" -->
 <!-- Html Body -->
 <%
-Dim classtype,classid
-classtype=Easp.RQ("classtype",0)
-classid=Easp.RQ("classid",1)
-SQL=""
+Dim proID:proID=Easp.RQ("id",1)
 
-if not classtype="" then
-	Select case classtype
-	case "class2"
-		SQL="select [id],[name],[img] from [products] where (class2id="&classid&")"
-	case "class3"
-		SQL="select [id],[name],[img] from [products] where (class3id="&classid&")"
-	end select
-else
-	SQL="select [id],[name],[img] from [products] where (class3id=21)"
-end if
+Set proRS=Jasp.ado(conn).exec("select [id],[name],[content],[img] from [products] where (id="&proID&")").get()
 
-Set proRs=Jasp.ado(conn).exec(SQL).get()
+if proRS.length=0 then Response.End()
 %>
 <div id="innerFrame">
 	<!--#include file="inc/inc-html-top.asp" -->
@@ -35,10 +23,9 @@ Set proRs=Jasp.ado(conn).exec(SQL).get()
 			</table>
 		<!--#include file="inc/inc-procls-list.asp" --> 
 		</div>
-		<div id="rightTitle">&nbsp;&nbsp; 产品名称
+		<div id="rightTitle">&nbsp;&nbsp; <%=proRS.[0].name%>
 		  <div id="innerContent2">
-		    <div class="productImg">产品图片插这里</div>
-	      产品介绍产品介绍产品介绍产品介绍产品介绍产品介绍产品介绍产品介绍产品介绍产品介绍产品介绍产品介绍产品介绍产品介绍产品介绍产品介绍产品介绍产品介绍产品介绍产品介绍产品介绍产品介绍产品介绍产品介绍产品介绍产品介绍产品介绍产品介绍产品介绍产品介绍产品介绍产品介绍产品介绍产品介绍。</div>
+		    <div class="productImg"><img src="<%=proRS.[0].img%>" /></div><%=proRS.[0].content%></div>
 		  <p>&nbsp;</p>
 	  </div>
 	</div>

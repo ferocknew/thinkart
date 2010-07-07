@@ -35,6 +35,7 @@ end if
 	<!-- #innerBanner-->
 	<div id="innerContent">
 		<div id="leftSide">
+       		<p><img src="files/images/img_hotline.jpg" /></p>
 			<table width="100%" border="0" cellspacing="0" cellpadding="0">
 				<tr>
 					<td><img src="files/images/productTitle.jpg" width="220" height="50" /></td>
