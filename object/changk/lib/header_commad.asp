@@ -7,6 +7,8 @@
 <!--#include file="library_mrThink.asp" -->
 <!--#include file="Template.asp" -->
 <!--#include file="cache_mrThink.asp" -->
+<!--#include file="lib-ShowoPage.asp" -->
+
 <%
 '读取网站设置信息
 getInfo(1)
