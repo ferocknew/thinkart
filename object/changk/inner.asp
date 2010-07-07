@@ -102,8 +102,8 @@ if not isempty(DataTemp) then set proRs=Jasp.VBRows2Obj(DataTemp,JsonDBField,3,1
 			next
 			end if
 			%>
-		</div>
-        <div class="contentEnd"> <a href="<%=pageup%>">上一页</a> &nbsp; &nbsp; <a href="<%=pagedown%>">下一页</a> 共<%=DataTempNum%>个产品</div>
+			<div class="contentEnd"> <a href="<%=pageup%>">&lt;上一页</a> &nbsp; <a href="<%=pagedown%>">下一页&gt;</a> 共<%=DataTempNum%>个产品</div>
+        </div>
 	</div>
 	<!-- #innerContent-->
 
