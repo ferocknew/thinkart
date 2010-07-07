@@ -1373,4 +1373,11 @@ End Function
 		return false
 	}
 
+//删除页面请求参数
+function delQUERY(itemid) {
+	var httpRequest=String(Request.ServerVariables("QUERY_STRING")).split("&");
+	httpRequest.splice(itemid,1);
+	return httpRequest.join("&")
+
+}
 </script>
