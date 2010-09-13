@@ -1,5 +1,5 @@
 $(function(){
-	//html方式获得系统信息
+	//html鏂瑰紡鑾峰緱绯荤粺淇℃伅
 	var get_info_url="lib/dataoutput/inf_xmlout.asp";
 	$.getJSON(get_info_url,{"code":"json"},loaddoc);
 
