@@ -1,4 +1,4 @@
-<script Language="JScript" runat="server">
+<script Language="javascript" runat="server">
 function createConnection(IsSqlDataBase,strPath,SqlUsername,SqlPassword,SqlDatabaseName,SqlLocalName){
 		try{
 			Conn = Server.CreateObject("ADODB.Connection");
