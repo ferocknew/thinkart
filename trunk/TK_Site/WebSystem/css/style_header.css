@@ -1,0 +1,131 @@
+@charset "utf-8";
+
+/************************************
+       网站管理系统 - 顶部样式
+************************************/
+
+body {
+	margin:0;
+	background: url(../images/bg_header.gif) repeat-x;
+	font-family: "微软雅黑", Arial, "宋体";
+	font-size: 12px;
+	color: #666;
+}
+
+ul,li{
+	margin:0;
+	padding:0;
+}
+
+img{
+	border:none;
+}
+
+a {
+	color: #3366CC;
+	text-decoration: none;
+}
+
+#header_logo{
+	position:absolute;
+	background:url(../images/bg_logo.gif) no-repeat;
+	height:50px;
+	width:107px;
+	left:8px;
+}
+
+#header_title{
+	margin-left:130px;
+	padding-top:11px;
+	float:left;
+	display:inline;
+}
+
+#header_navi{
+	padding-top:13px;
+	width:230px;
+	float:right;
+	display:inline;
+}
+
+#header_navi ul li{
+	float:left;
+	list-style:none;
+	margin-right:15px;
+	height:16px;
+	line-height:16px;
+}
+
+#menu_top{
+	position:absolute;
+	width:100%;
+	top:45px;
+	height:38px;
+}
+
+#menu_top ul{
+}
+
+#menu_top ul li{
+	float:left;
+	list-style:none;
+	padding-right:15px;
+	font-weight:bold;
+	color:#FFF;
+	height:38px
+}
+
+#menu_left{
+	float:left;
+	width:185px;
+	height:28px;
+	padding-top:10px;
+	margin-left:15px;
+	display:inline;
+}
+
+.menu_close{
+	float:right;
+	margin-right:35px;
+	padding-top:9px;
+}
+
+.buttonClose_mouseOn{
+	background:url(../images/btm_closeMenu.gif) no-repeat;
+	cursor:pointer;
+	border:none;
+	width:84px;
+	height:20px;
+}
+
+.buttonClose_mouseOut{
+	background:url(../images/btm_closeMenu.gif) no-repeat;
+	cursor:pointer;
+	border:none;
+	width:84px;
+	height:20px;
+	filter:alpha(opacity=80); /* IE */
+	-moz-opacity:0.8; /* Moz + FF */
+	opacity: 0.8; /* 支持CSS3的浏览器（FF 1.5也支持）*/ 
+}
+
+.bg_topMenu{
+	background:url(../images/topMenu_right.gif) right bottom no-repeat #d5d5d5;
+}
+
+.bg_topMenu a{
+	float:left;
+	height:28px;
+	padding-top:10px;
+	padding-left:15px;
+	background:url(../images/topMenu_left.gif) left bottom no-repeat;
+}
+
+.bg_topMenu2{
+	height:28px;
+	padding:0 15px;
+}
+
+.bg_topMenu2 a{
+	float:left;
+	padding-top:10px;}
