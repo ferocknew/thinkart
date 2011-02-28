@@ -1,7 +1,0 @@
-<table align="center" border="0" cellpadding="0" cellspacing="0" width="937">
-  <tr>
-    <td width="6" height="38"><img src="images/fang_index_bg_left.jpg" width="6" height="38" /></td>
-    <td height="38" align="center" background="images/fang_index_bg.jpg" class="navFont"><a href="index.asp">首页</a>&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<a href="#"> 德威会员</a>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; <a href="inner.asp?newsid=15&upclassid=57&classtype=class1">公司介绍</a>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="inner.asp?newsid=19&upclassid=58&classtype=class1">特约代理</a>&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="inner.asp?newsid=23&upclassid=59&classtype=class1"> 代理楼盘</a>&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="inner.asp?newsid=43&upclassid=60&classtype=class1"> 房屋租售</a>&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;<a href="inner.asp?newsid=44&upclassid=61&classtype=class1"> 投诉建议</a>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="inner.asp?newsid=45&upclassid=62&classtype=class1"> 联系我们</a></td>
-    <td width="6" height="38"><img src="images/fang_index_bg_right.jpg" width="6" height="38" /></td>
-  </tr>
-</table>
