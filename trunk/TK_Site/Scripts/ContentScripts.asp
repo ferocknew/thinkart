@@ -77,7 +77,7 @@ If upload.forms("action") = "add" Then
 		setErrors = setErrors + 1
 	else
 		savepath = "../userfiles"
-		set file = upload.files("fileImg")
+		set file = upload.files("IMG")
 		if not(file is nothing) then
 			if file.saveToFile(savepath,0,true) then
 				Img = savepath & "/" & file.filename
@@ -100,20 +100,44 @@ If upload.forms("action") = "add" Then
 		ContentMod.ClassID=upload.forms("ClassID")
 		ContentMod.CType=upload.forms("CType")
 		Response.Write "<script>alert('"& ContentManager.InsertContent(ContentMod) &"');window.location='content_mng.asp'</script>"
+		response.End()
 	End If
 	set upload = nothing
 ElseIf upload.forms("action") = "update" Then
-	Set ContentMod=new Content
-	ContentMod.ID=cid
-	ContentMod.Title=upload.forms("Title")
-	ContentMod.Keywords=upload.forms("Keywords")
-	ContentMod.Abstract=upload.forms("Abstract")
-	ContentMod.Content=upload.forms("Content")
-	ContentMod.Lasttime=Date()&" "&Time()
-	ContentMod.SyncBlog=upload.forms("SyncBlog")
-	ContentMod.ClassID=upload.forms("ClassID")
-	ContentMod.CType=upload.forms("CType")
-	Response.Write "<script>alert('"& ContentManager.UpdateContent(ContentMod) &"');window.location='content_mng.asp'</script>"
+	setErrors = 0
+	Img = ""
+	if upload.ErrorID>0 then 
+		response.Write "<script>alert('"& upload.Description &"')</script>"
+		setErrors = setErrors + 1
+	else
+		savepath = "../userfiles"
+		set file = upload.files("IMG")
+		if not(file is nothing) then
+			if file.saveToFile(savepath,0,true) then
+				Img = savepath & "/" & file.filename
+			else
+				setErrors = setErrors + 1
+				response.Write "<script>alert('"& file.Exception &"')</script>"
+			end if
+		end if
+	end if
+	
+	If setErrors = 0 Then
+		Set ContentMod=new Content
+		ContentMod.ID=cid
+		ContentMod.Title=upload.forms("Title")
+		ContentMod.Keywords=upload.forms("Keywords")
+		ContentMod.Abstract=upload.forms("Abstract")
+		ContentMod.Img=Img
+		ContentMod.Content=upload.forms("Content")
+		ContentMod.Lasttime=Date()&" "&Time()
+		ContentMod.SyncBlog=upload.forms("SyncBlog")
+		ContentMod.ClassID=upload.forms("ClassID")
+		ContentMod.CType=upload.forms("CType")
+		Response.Write "<script>alert('"& ContentManager.UpdateContent(ContentMod) &"');window.location='content_mng.asp'</script>"
+		response.End()
+	End If
+	set upload = nothing
 ElseIf upload.forms("action") = "delete" Then
 	id=upload.forms("delid")
 	Response.Write "<script>alert('"& ContentManager.DeleteContent(id) &"')</script>"
