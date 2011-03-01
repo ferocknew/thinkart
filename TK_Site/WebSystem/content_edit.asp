@@ -38,9 +38,9 @@ showClass = showContent.ClassID
   </div>
   <div class="content_titleInput">
   	<ul>
-      <li><input type="radio" name="CType" value="0" id="CType_0"  checked="checked" />
+      <li><input type="radio" name="CType" value="0" id="CType_0" <%If showContent.CType="" or showContent.CType="0" Then%>checked="checked"<%End If%> />
         <span class="text_deepGray12_b">直接编辑</span></li>
-      <li><input type="radio" name="CType" value="1" id="CType_1" />
+      <li><input type="radio" name="CType" value="1" id="CType_1" <%If showContent.CType="1" Then%>checked="checked"<%End If%> />
         <span class="text_deepGray12_b">上传网页</span></li>
 	</ul>
   </div>
@@ -50,15 +50,15 @@ showClass = showContent.ClassID
   <table width="550" border="0" cellspacing="0" cellpadding="0">
   <tr>
     <td width="50">标  题</td>
-    <td width="500"><input class="addText" type="text" name="Title" id="Title" /></td>
+    <td width="500"><input class="addText" type="text" name="Title" id="Title" value="<%=showContent.Title%>" /></td>
   </tr>
   <tr>
     <td>关键字</td>
-    <td><input class="addText"  type="text" name="Keywords" id="Keywords" /></td>
+    <td><input class="addText"  type="text" name="Keywords" id="Keywords" value="<%=showContent.Keywords%>" /></td>
   </tr>
   <tr>
     <td>简  述</td>
-    <td><input class="addText"  type="text" name="Abstract" id="Abstract" /></td>
+    <td><input class="addText"  type="text" name="Abstract" id="Abstract" value="<%=showContent.Abstract%>" /></td>
   </tr>
   <tr>
     <td>&nbsp;</td>
@@ -70,7 +70,7 @@ showClass = showContent.ClassID
   </tr>
   <tr>
     <td valign="top">内  容</td>
-    <td><textarea name="xhContent" rows="10" class="addText" style="height:350px;" id="xhContent"></textarea><input type="hidden" name="Content" id="Content" value="" /></td>
+    <td><textarea name="xhContent" rows="10" class="addText" style="height:350px;" id="xhContent"><%=showContent.Content%></textarea><input type="hidden" name="Content" id="Content" value="" /></td>
   </tr>
 </table>
 <br />

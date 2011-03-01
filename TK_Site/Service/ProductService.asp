@@ -22,7 +22,7 @@ Class ProductService
 	End Sub
 	
 	Public Function GetAllProduct()
-		strSelectSql="select * from Product"
+		strSelectSql="select *,(select ClassName from ContentClass where ContentClass.ID=Product.ClassID) as ClassName from Product"
 		Set rs=DB.ExecuteQuery(strSelectSql)
 		Set dic=Server.CreateObject("Scripting.Dictionary")
 		While not rs.eof
@@ -36,7 +36,7 @@ Class ProductService
 	End Function
 	
 	Public Function GetProductById(id)
-		strSelectSql="select * from Product where Id="&InputReplace(id)
+		strSelectSql="select *,(select ClassName from ContentClass where ContentClass.ID=Product.ClassID) as ClassName from Product where Id="&InputReplace(id)
 		Set rs=DB.ExecuteQuery(strSelectSql)
 		Set ModProduct=CreateProduct(rs)
 		rs.Close

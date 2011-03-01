@@ -6,7 +6,7 @@
 function product_add_check(){
 	if(document.form1.Title.value == '')
 	{
-		alert('请填写内容标题');
+		alert('请填写产品标题');
 		document.form1.Title.focus();
 		return;
 	}
@@ -21,7 +21,7 @@ function product_add_check(){
 function product_upd_check(){
 	if(document.form1.Title.value == '')
 	{
-		alert('请填写内容标题');
+		alert('请填写产品标题');
 		document.form1.Title.focus();
 		return;
 	}
@@ -60,7 +60,7 @@ pageindex=Request("page")
 If pid = "" Then
 	pid = "0"
 End If
-ctype="2"    '产品树
+ctype="1"    '产品树
 
 dim upload
 set upload = new AnUpLoad
