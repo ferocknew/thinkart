@@ -65,22 +65,52 @@ ctype="1"    '产品树
 dim upload
 set upload = new AnUpLoad
 upload.Exe = "jpg|bmp|jpeg|gif|png"
-upload.MaxSize = 300 * 1024 '300K
+upload.MaxSize = 1200 * 1024 '300K
 Upload.Charset="utf-8"
 upload.GetData()
 dim file,savpath
 If upload.forms("action") = "add" Then
 	setErrors = 0
-	Img = ""
+	Img1 = ""
+	Img2 = ""
+	Img3 = ""
+	Img4 = ""
 	if upload.ErrorID>0 then 
 		response.Write "<script>alert('"& upload.Description &"')</script>"
 		setErrors = setErrors + 1
 	else
 		savepath = "../userfiles"
-		set file = upload.files("fileImg")
+		set file = upload.files("Img1")
 		if not(file is nothing) then
 			if file.saveToFile(savepath,0,true) then
-				Img = savepath & "/" & file.filename
+				Img1 = savepath & "/" & file.filename
+			else
+				setErrors = setErrors + 1
+				response.Write "<script>alert('"& file.Exception &"')</script>"
+			end if
+		end if
+		set file = upload.files("Img2")
+		if not(file is nothing) then
+			if file.saveToFile(savepath,0,true) then
+				Img2 = savepath & "/" & file.filename
+			else
+				setErrors = setErrors + 1
+				response.Write "<script>alert('"& file.Exception &"')</script>"
+			end if
+		end if
+		set file = upload.files("Img3")
+		if not(file is nothing) then
+			if file.saveToFile(savepath,0,true) then
+				Img3 = savepath & "/" & file.filename
+			else
+				setErrors = setErrors + 1
+				response.Write "<script>alert('"& file.Exception &"')</script>"
+			end if
+		end if
+		set file = upload.files("Img4")
+		if not(file is nothing) then
+			if file.saveToFile(savepath,0,true) then
+				Img4 = savepath & "/" & file.filename
 			else
 				setErrors = setErrors + 1
 				response.Write "<script>alert('"& file.Exception &"')</script>"
@@ -103,20 +133,73 @@ If upload.forms("action") = "add" Then
 			ModProduct.ProductCount=upload.forms("ProductCount")
 			ModProduct.ClassID=upload.forms("ClassID")
 		Response.Write "<script>alert('"& ProductManager.InsertProduct(ProductMod) &"');window.location='product_mng.asp'</script>"
+		response.End()
 	End If
 	set upload = nothing
 ElseIf upload.forms("action") = "update" Then
-	Set ProductMod=new Product
-	ProductMod.ID=pid
-			ModProduct.Title=upload.forms("Title")
-			ModProduct.Keywords=upload.forms("Keywords")
-			ModProduct.Abstract=upload.forms("Abstract")
-			ModProduct.Content=upload.forms("Content")
-			ModProduct.Price=upload.forms("Price")
-			ModProduct.VIPPrice=upload.forms("VIPPrice")
-			ModProduct.ProductCount=upload.forms("ProductCount")
-			ModProduct.ClassID=upload.forms("ClassID")
-	Response.Write "<script>alert('"& ProductManager.UpdateProduct(ProductMod) &"');window.location='product_mng.asp'</script>"
+	setErrors = 0
+	Img1 = ""
+	Img2 = ""
+	Img3 = ""
+	Img4 = ""
+	if upload.ErrorID>0 then 
+		response.Write "<script>alert('"& upload.Description &"')</script>"
+		setErrors = setErrors + 1
+	else
+		savepath = "../userfiles"
+		set file = upload.files("Img1")
+		if not(file is nothing) then
+			if file.saveToFile(savepath,0,true) then
+				Img1 = savepath & "/" & file.filename
+			else
+				setErrors = setErrors + 1
+				response.Write "<script>alert('"& file.Exception &"')</script>"
+			end if
+		end if
+		set file = upload.files("Img2")
+		if not(file is nothing) then
+			if file.saveToFile(savepath,0,true) then
+				Img2 = savepath & "/" & file.filename
+			else
+				setErrors = setErrors + 1
+				response.Write "<script>alert('"& file.Exception &"')</script>"
+			end if
+		end if
+		set file = upload.files("Img3")
+		if not(file is nothing) then
+			if file.saveToFile(savepath,0,true) then
+				Img3 = savepath & "/" & file.filename
+			else
+				setErrors = setErrors + 1
+				response.Write "<script>alert('"& file.Exception &"')</script>"
+			end if
+		end if
+		set file = upload.files("Img4")
+		if not(file is nothing) then
+			if file.saveToFile(savepath,0,true) then
+				Img4 = savepath & "/" & file.filename
+			else
+				setErrors = setErrors + 1
+				response.Write "<script>alert('"& file.Exception &"')</script>"
+			end if
+		end if
+	end if
+	
+	If setErrors = 0 Then
+		Set ProductMod=new Product
+		ProductMod.ID=pid
+				ModProduct.Title=upload.forms("Title")
+				ModProduct.Keywords=upload.forms("Keywords")
+				ModProduct.Abstract=upload.forms("Abstract")
+				ModProduct.Content=upload.forms("Content")
+				ModProduct.Price=upload.forms("Price")
+				ModProduct.VIPPrice=upload.forms("VIPPrice")
+				ModProduct.ProductCount=upload.forms("ProductCount")
+				ModProduct.ClassID=upload.forms("ClassID")
+		Response.Write "<script>alert('"& ProductManager.UpdateProduct(ProductMod) &"');window.location='product_mng.asp'</script>"
+		response.End()
+	End If
+	set upload = nothing
 ElseIf upload.forms("action") = "delete" Then
 	id=upload.forms("delid")
 	Response.Write "<script>alert('"& ProductManager.DeleteProduct(id) &"')</script>"

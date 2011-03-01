@@ -136,7 +136,8 @@ For i = 0 to ubound(arraystrlv1id)
 	Next
 Next
 %>
-<div class="add_right link_deepGray12_b"><table width="230" border="0" cellspacing="0" cellpadding="0">
+<div class="add_right link_deepGray12_b">
+<table width="230" border="0" cellspacing="0" cellpadding="0">
   <tr>
     <td>所属分类 
       <input name="ClassName" type="text" class="add_grayInput" id="ClassName" value="请选择分类" readonly="readonly" />

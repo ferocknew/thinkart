@@ -64,8 +64,7 @@ showClass = showContent.ClassID
     <td>&nbsp;</td>
     <td class="link_deepGray12_b"><span style="float:left;"><img src="images/ico_img.gif" align="middle" /> <a href="#">上传插图</a></span>
     <div class="addImage">
-    <div class="addImage_info">上传图片大小需为小于 <span class="text_orange">300K</span> 的 <span class="text_orange">JPG</span> or <span class="text_orange">GIF</span> 格式</div>
-    <input name="textfield" type="text" id="textfield" readonly="readonly" />
+    <div class="addImage_info"><input name="Img" id="Img" type="file" />上传图片大小需为小于 <span class="text_orange">300K</span> 的 <span class="text_orange">JPG</span> or <span class="text_orange">GIF</span> 格式</div>
     </div></td>
   </tr>
   <tr>

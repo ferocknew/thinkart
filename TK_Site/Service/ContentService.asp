@@ -16,7 +16,9 @@ Class ContentService
 	Public Sub UpdateContent(objContent)
 		strUpdateSql="update Content set Title='"& InputReplace(objContent.Title)  &"',Keywords='"& InputReplace(objContent.Keywords) &_
 			"',Abstract='"& InputReplace(objContent.Abstract) &"',Img='"& InputReplace(objContent.Img) &"',Content='"& InputReplace(objContent.Content) &_
-			"',Lasttime='"& InputReplace(objContent.Lasttime) &"',SyncBlog='"& InputReplace(objContent.SyncBlog) &"',ClassID="& InputReplace(objContent.ClassID) &",CType="& InputReplace(objContent.CType) &" where Id="& InputReplace(objContent.Id)
+			"',Lasttime='"& InputReplace(objContent.Lasttime) &"',SyncBlog='"& InputReplace(objContent.SyncBlog) &"',ClassID="& InputReplace(objContent.ClassID) &",CType="& InputReplace(objContent.CType)
+		If objContent.Img<>"" Then strUpdateSql=strUpdateSql &",Img='"& InputReplace(objContent.Img) &"'" End If
+		strUpdateSql=strUpdateSql &" where Id="& InputReplace(objContent.Id)
 		DB.ExecuteNonQuery(strUpdateSql)
 	End Sub
 	
