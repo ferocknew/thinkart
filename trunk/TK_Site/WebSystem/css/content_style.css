@@ -193,6 +193,13 @@ input{
 	position:relative;
 }
 
+.programsList_text{
+	float:left;
+	height:32px;
+	line-height:32px;
+}
+
+
 .programsEdit{
 	position:absolute;
 	height:32px;
