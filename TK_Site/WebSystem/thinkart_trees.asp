@@ -150,8 +150,9 @@ Next
     <td style="height:385px; border:1px dashed #999; margin-bottom:10px;">
         <div class="programs text_deepGray12_b">
             <%For i = 0 to contentclassDic.count - 1%>
-            <div id="div_trees_<%=contentclassDic.Items()(i).ID%>" name="div_<%=contentclassDic.Items()(i).LV%>" class="programsList tree<%=contentclassDic.Items()(i).LV%>_<%=contentclassDic.Items()(i).Style%>" style="cursor:pointer" onclick="tree_click(this);setval('<%=contentclassDic.Items()(i).ClassName%>','<%=contentclassDic.Items()(i).ID%>')"><%=contentclassDic.Items()(i).ClassName%></div>
-            <%Next%>
+          <div id="div_trees_<%=contentclassDic.Items()(i).ID%>" name="div_<%=contentclassDic.Items()(i).LV%>" class="programsList tree<%=contentclassDic.Items()(i).LV%>_<%=contentclassDic.Items()(i).Style%>" style="float:left; cursor:pointer" onclick="tree_click(this);setval('<%=contentclassDic.Items()(i).ClassName%>','<%=contentclassDic.Items()(i).ID%>')"><%=contentclassDic.Items()(i).ClassName%></div>
+            <div class="programsList_text">标签的内容</div>
+<%Next%>
         </div>
 	</td>
   </tr>
