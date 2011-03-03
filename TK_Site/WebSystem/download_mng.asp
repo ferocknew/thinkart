@@ -10,7 +10,7 @@
 <link href="css/content_style.css" rel="stylesheet" type="text/css" />
 <link href="css/font_link.css" rel="stylesheet" type="text/css" />
 <script language="javascript" src="../include/jquery-1.4.4.min.js"></script>
-<!--#include file="../Scripts/ProductScripts.asp" -->
+<!--#include file="../Scripts/DownloadScripts.asp" -->
 <script language="javascript">
 function swCheck(ckBoxId,inputId){
 	var img_default = "images/checkbox_default.gif";
@@ -50,7 +50,7 @@ function allCheck(){
 </script>
 </head>
 <body>
-<form id="form1" name="form1" method="post" action="product_mng.asp" enctype="multipart/form-data">
+<form id="form1" name="form1" method="post" action="download_mng.asp" enctype="multipart/form-data">
 <input type="hidden" name="action" id="action" value="" />
 <input type="hidden" name="delid" id="delid" value="" />
 <div class="breadcrumbs text_gray12_b link_gray12_b">
@@ -70,20 +70,16 @@ function allCheck(){
 <table class="list_styleBlack link_white12_b" width="100%" border="0" cellpadding="0" cellspacing="0">
   <tr>
     <td width="30">
-      <!--<label class="checkboxBlack_product" for="checkboxBlack_product">
-      <a href="#checkboxBlack_selected" id="checkboxBlack_default" onclick="checkboxBlack_product.checked=true"></a>
-      <a href="#checkboxBlack_default" id="checkboxBlack_selected" onclick="checkboxBlack_product.checked=false"></a>
-      </label>-->
       <img id="ck_list_all" name="ck_list_all" src="images/checkbox_default.gif" align="middle" onclick="allCheck()" />
     </td>
-    <td width="70"><a href="#" onclick="product_alldel_check()"><img src="images/btm_delete.gif" /></a></td>
+    <td width="70"><a href="#" onclick="download_alldel_check()"><img src="images/btm_delete.gif" /></a></td>
     <td><a href="#"><img src="images/btm_modify.gif" /></a></td>
   </tr>
 </table>
 <table id="tableStyle" class="table_style text_deepGray12_b" width="100%" border="0" cellpadding="0" cellspacing="0">
 <%
 'PageDic 分页数据源
-set PageDic = ProductManager.GetAllProduct()
+set PageDic = DownloadFileManager.GetAllDownloadFile()
 %>
 <!--#include file="../Scripts/Page.asp" -->
 <%
@@ -97,12 +93,12 @@ For i=startindex to endindex
     <td><span id="tableStyle"><%=PageDic.Items()(i).Title%></span></td>
     <td><span id="tableStyle"><%=PageDic.Items()(i).LastTime%></span></td>
     <td><span id="tableStyle"><%=PageDic.Items()(i).CLassName%></span></td>
-    <td><span id="tableStyle"><a href="#" onclick="product_del_check('<%=PageDic.Items()(i).Id%>')"><img src="images/ico_delete.gif" width="15" height="16" align="middle" /></a> <a href="product_edit.asp?pid=<%=PageDic.Items()(i).Id%>"><img src="images/ico_modify.gif" width="15" height="16" align="middle" /></a></span></td>
+    <td><span id="tableStyle"><a href="#" onclick="download_del_check('<%=PageDic.Items()(i).Id%>')"><img src="images/ico_delete.gif" width="15" height="16" align="middle" /></a> <a href="download_edit.asp?pid=<%=PageDic.Items()(i).Id%>"><img src="images/ico_modify.gif" width="15" height="16" align="middle" /></a></span></td>
   </tr>
 <% Next %>
 </table>
 <div class="page_style text_deepGray12_b"><!--分页程序-->
-<%pagename="product_mng.asp"'设置页面URL地址%>
+<%pagename="download_mng.asp"'设置页面URL地址%>
 <!--#include file="../Scripts/PageTemplete.asp" -->
 </div>
 </form>

@@ -9,12 +9,12 @@ Class DownloadFile
 		Id = cid
 	End Property
 	
-	Private cDownloadName
-	Public Property Let DownloadName(value)
-	    cDownloadName = value
+	Private cShowName
+	Public Property Let ShowName(value)
+	    cShowName = value
 	End Property
-    Public Property Get DownloadName()
-		DownloadName = cDownloadName
+    Public Property Get ShowName()
+		ShowName = cShowName
     End Property
 	
 	Private cFileName

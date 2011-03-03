@@ -16,8 +16,20 @@ Class ProductService
 	
 	Public Sub UpdateProduct(objProduct)
 		strUpdateSql="update Product set Title='"& InputReplace(objProduct.Title)  &"',Keywords='"& InputReplace(objProduct.Keywords) &_
-			"',Abstract='"& InputReplace(objProduct.Abstract) &"',Content='"& InputReplace(objProduct.Content) &"',Img1='"& InputReplace(objProduct.Img1) &_
-			"',Img2='"& InputReplace(objProduct.Img2) &"',Img3='"& InputReplace(objProduct.Img3) &"',Img4='"& InputReplace(objProduct.Img4) &"',Price="& InputReplace(objProduct.Price) &",VIPPrice="& InputReplace(objProduct.VIPPrice) &",ProductCount="& InputReplace(objProduct.ProductCount) &",ClassID="& InputReplace(objProduct.ClassID) &" where Id="& InputReplace(objProduct.Id)
+			"',Abstract='"& InputReplace(objProduct.Abstract) &"',Content='"& InputReplace(objProduct.Content) &"',Price="& InputReplace(objProduct.Price) &",VIPPrice="& InputReplace(objProduct.VIPPrice) &",ProductCount="& InputReplace(objProduct.ProductCount) &",ClassID="& InputReplace(objProduct.ClassID)
+		If objProduct.Img1 <> "" Then
+			strUpdateSql = strUpdateSql & ",Img1='"& InputReplace(objProduct.Img1) & "'"
+		End If
+		If objProduct.Img2 <> "" Then
+			strUpdateSql = strUpdateSql & ",Img2='"& InputReplace(objProduct.Img2) & "'"
+		End If
+		If objProduct.Img3 <> "" Then
+			strUpdateSql = strUpdateSql & ",Img3='"& InputReplace(objProduct.Img3) & "'"
+		End If
+		If objProduct.Img4 <> "" Then
+			strUpdateSql = strUpdateSql & ",Img4='"& InputReplace(objProduct.Img4) & "'"
+		End If
+		strUpdateSql = strUpdateSql & " where Id="& InputReplace(objProduct.Id)
 		DB.ExecuteNonQuery(strUpdateSql)
 	End Sub
 	

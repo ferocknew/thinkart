@@ -60,7 +60,7 @@ pageindex=Request("page")
 If pid = "" Then
 	pid = "0"
 End If
-ctype="1"    '产品树
+ctype="2"    '产品树
 
 dim upload
 set upload = new AnUpLoad
