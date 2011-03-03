@@ -3,7 +3,7 @@
 Class DownloadFileService
 
 	Public Sub InsertDownloadFile(objDownloadFile)
-		strInsertSql="insert into DownloadFile ([DownloadName],[FileName],[KeyWords],[Abstract],[ClassID]) values ('" &InputReplace(objDownloadFile.DownloadName) &_
+		strInsertSql="insert into DownloadFile ([ShowName],[FileName],[KeyWords],[Abstract],[ClassID]) values ('" &InputReplace(objDownloadFile.ShowName) &_
 			"','"& InputReplace(objDownloadFile.FileName) &"','"& InputReplace(objDownloadFile.KeyWords) &"','"& InputReplace(objDownloadFile.Abstract) &"',"& InputReplace(objDownloadFile.ClassID) &")"
 		DB.ExecuteNonQuery(strInsertSql)
 	End Sub
@@ -14,8 +14,11 @@ Class DownloadFileService
 	End Sub
 	
 	Public Sub UpdateDownloadFile(objDownloadFile)
-		strUpdateSql="update DownloadFile set DownloadName='"& InputReplace(objDownloadFile.DownloadName)  &"',FileName='"& InputReplace(objDownloadFile.FileName) &_
-			"',[KeyWords]='"& InputReplace(objDownloadFile.KeyWords) &"',Abstract='"& InputReplace(objDownloadFile.Abstract) &"',ClassID="& InputReplace(objDownloadFile.ClassID) &" where Id="& InputReplace(objDownloadFile.Id)
+		strUpdateSql="update DownloadFile set ShowName='"& InputReplace(objDownloadFile.ShowName)  &"',[KeyWords]='"& InputReplace(objDownloadFile.KeyWords) &"',Abstract='"& InputReplace(objDownloadFile.Abstract) &"',ClassID="& InputReplace(objDownloadFile.ClassID)
+		If objDownloadFile.FileName <> "" Then
+			strUpdateSql = strUpdateSql & ",FileName='"& InputReplace(objDownloadFile.FileName) & "'"
+		End If
+		strUpdateSql = strUpdateSql &" where Id="& InputReplace(objDownloadFile.Id)
 		DB.ExecuteNonQuery(strUpdateSql)
 	End Sub
 	
@@ -64,7 +67,7 @@ Class DownloadFileService
 		Set ModDownloadFile=new DownloadFileInfo
 		If Not rs.Eof Then
 			ModDownloadFile.Id=OutputReplace(rs("Id"))
-			ModDownloadFile.DownloadName=OutputReplace(rs("DownloadName"))
+			ModDownloadFile.ShowName=OutputReplace(rs("ShowName"))
 			ModDownloadFile.FileName=OutputReplace(rs("FileName"))
 			ModDownloadFile.KeyWords=OutputReplace(rs("KeyWords"))
 			ModDownloadFile.Abstract=OutputReplace(rs("Abstract"))

@@ -75,7 +75,7 @@ function allCheck(){
       <a href="#checkboxBlack_default" id="checkboxBlack_selected" onclick="checkboxBlack_content.checked=false"></a>
       </label>-->
       <img id="ck_list_all" name="ck_list_all" src="images/checkbox_default.gif" align="middle" onclick="allCheck()" />
-    </td><input type="hidden" id="aaa" name="aaa" value="111" />
+    </td>
     <td width="70"><a href="#" onclick="content_alldel_check()"><img src="images/btm_delete.gif" /></a></td>
     <td><a href="#"><img src="images/btm_modify.gif" /></a></td>
   </tr>
