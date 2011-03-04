@@ -36,6 +36,7 @@ li{
 .menu_07{background:url(../images/bg_leftMenu_07.gif) no-repeat;}
 .menu_08{background:url(../images/bg_leftMenu_08.gif) no-repeat;}
 .menu_09{background:url(../images/bg_leftMenu_09.gif) no-repeat;}
+.menu_10{background:url(../images/bg_leftMenu_10.gif) no-repeat;}
 
 .menuSelected_01{background:url(../images/btm_leftMenu_01.gif) no-repeat;}
 .menuSelected_02{background:url(../images/btm_leftMenu_02.gif) no-repeat;}
@@ -46,6 +47,7 @@ li{
 .menuSelected_07{background:url(../images/btm_leftMenu_07.gif) no-repeat;}
 .menuSelected_08{background:url(../images/btm_leftMenu_08.gif) no-repeat;}
 .menuSelected_09{background:url(../images/btm_leftMenu_09.gif) no-repeat;}
+.menuSelected_10{background:url(../images/btm_leftMenu_10.gif) no-repeat;}
 
 a {
 	color: #3366CC;
