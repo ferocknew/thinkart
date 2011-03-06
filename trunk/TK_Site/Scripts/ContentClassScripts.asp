@@ -1,6 +1,5 @@
 ﻿<!--#include file="../Service/DBHelper.asp"-->
 <!--#include file="../Adapter/ContentClassAdapter.asp" -->
-<!--#include file="../Scripts/loadClass.asp"-->
 <!--#include file="../Adapter/UpLoad_Class.vbs.asp"-->
 <script type="text/javascript">
 function content_add_check(){
@@ -56,9 +55,12 @@ function content_alldel_check(){
 </script>
 <%
 ccid=Request("ccid")
-pageindex=Request("page")
+ctype=Request("ctype")
 If ccid = "" Then
 	ccid = "1"
+End If
+If ctype = "" Then
+	ctype = "1"
 End If
 
 dim upload
@@ -99,4 +101,6 @@ ElseIf upload.forms("action") = "alldelete" Then
 	id=upload.forms("ck_input_name")
 	Response.Write "<script>alert('"& ContentManager.DeleteContent(id) &"')</script>"
 End If
+
+<!--#include file="../Scripts/loadClass.asp"-->
 %>
