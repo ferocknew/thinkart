@@ -5,18 +5,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<script language="javascript">
-function selectMenu(menuId,p){
-	var menuObjs = new Array("mObj1","mObj2","mObj3","mObj4","mObj5","mObj6","mObj7","mObj8","mObj9","mObj10");
-	for(var i = 0;i<= menuObjs.length - 1;i++){
-	j = i + 1
-	document.getElementById(menuObjs[i]).setAttribute('class','menu_0'+j);
-	}
-	document.getElementById(menuId).setAttribute('class','menuSelected_0'+p);	
-}
-
-</script>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script language="javascript" src="js/menuControl.js"></script>
 <title></title>
 <link href="css/menu_style.css" rel="stylesheet" type="text/css" />
 </head>

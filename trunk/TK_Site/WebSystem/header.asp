@@ -9,8 +9,8 @@
 <title></title>
 <link href="css/style_header.css" rel="stylesheet" type="text/css" />
 <link href="css/font_link.css" rel="stylesheet" type="text/css" />
+<script language="javascript" src="js/menuControl.js"></script>
 </head>
-
 <body>
 <div id="header_logo"></div>
 <div id="menu_top">
@@ -19,57 +19,57 @@
 	<%
 	subMenuId = request("subMenuId")
 	if subMenuId = "1" then%>
-    <li class="bg_topMenu link_black12_b"><a href="#">BANNER</a></li>
-    <li class="bg_topMenu link_black12_b"><a href="#">新闻设置</a></li>
-    <li class="bg_topMenu link_black12_b"><a href="#">产品设置</a></li>
-    <li class="bg_topMenu link_black12_b"><a href="#">服务设置</a></li>
+    <li id="sMenu1" class="bg_topMenu2 link_white12_b" onclick="selSMenu_4('sMenu1');"><a href="#">BANNER</a></li>
+    <li id="sMenu2" class="bg_topMenu2 link_white12_b" onclick="selSMenu_4('sMenu2');"><a href="#">新闻设置</a></li>
+    <li id="sMenu3" class="bg_topMenu2 link_white12_b" onclick="selSMenu_4('sMenu3');"><a href="#">产品设置</a></li>
+    <li id="sMenu4" class="bg_topMenu2 link_white12_b" onclick="selSMenu_4('sMenu4');"><a href="#">服务设置</a></li>
     <%end if%>
 	<%if subMenuId = "2" then%>
-    <li class="bg_topMenu link_black12_b"><a href="#">内容结构管理</a></li>
-    <li class="bg_topMenu link_black12_b"><a href="#">产品结构管理</a></li>
-    <li class="bg_topMenu link_black12_b"><a href="#">下载结构管理</a></li>
+    <li id="sMenu1" class="bg_topMenu2 link_white12_b" onclick="selSMenu_3('sMenu1');"><a href="#">内容结构管理</a></li>
+    <li id="sMenu2" class="bg_topMenu2 link_white12_b" onclick="selSMenu_3('sMenu2');"><a href="#">产品结构管理</a></li>
+    <li id="sMenu3" class="bg_topMenu2 link_white12_b" onclick="selSMenu_3('sMenu3');"><a href="#">下载结构管理</a></li>
     <%end if%>
 	<%if subMenuId = "3" then%>
-    <li class="bg_topMenu link_black12_b"><a href="#">内容添加</a></li>
-    <li class="bg_topMenu link_black12_b"><a href="#">内容编辑</a></li>
+    <li id="sMenu1" class="bg_topMenu2 link_white12_b" onclick="selSMenu_2('sMenu1');"><a href="#">内容添加</a></li>
+    <li id="sMenu2" class="bg_topMenu2 link_white12_b" onclick="selSMenu_2('sMenu2');"><a href="#">内容编辑</a></li>
     <%end if%>
 	<%if subMenuId = "4" then%>
-    <li class="bg_topMenu link_black12_b"><a href="#">产品添加</a></li>
-    <li class="bg_topMenu link_black12_b"><a href="#">产品编辑</a></li>
+    <li id="sMenu1" class="bg_topMenu2 link_white12_b" onclick="selSMenu_2('sMenu1');"><a href="#">产品添加</a></li>
+    <li id="sMenu2" class="bg_topMenu2 link_white12_b" onclick="selSMenu_2('sMenu2');"><a href="#">产品编辑</a></li>
     <%end if%>
 	<%if subMenuId = "5" then%>
-    <li class="bg_topMenu link_black12_b"><a href="#">下载添加</a></li>
-    <li class="bg_topMenu link_black12_b"><a href="#">下载编辑</a></li>
+    <li id="sMenu1" class="bg_topMenu2 link_white12_b" onclick="selSMenu_2('sMenu1');"><a href="#">下载添加</a></li>
+    <li id="sMenu2" class="bg_topMenu2 link_white12_b" onclick="selSMenu_2('sMenu2');"><a href="#">下载编辑</a></li>
     <%end if%>
 	<%if subMenuId = "6" then%>
-    <li class="bg_topMenu link_black12_b"><a href="#">留言字段管理</a></li>
-    <li class="bg_topMenu link_black12_b"><a href="#">留言内容管理</a></li>
+    <li id="sMenu1" class="bg_topMenu2 link_white12_b" onclick="selSMenu_2('sMenu1');"><a href="#">留言字段管理</a></li>
+    <li id="sMenu2" class="bg_topMenu2 link_white12_b" onclick="selSMenu_2('sMenu2');"><a href="#">留言内容管理</a></li>
     <%end if%>
 	<%if subMenuId = "7" then%>
-    <li class="bg_topMenu link_black12_b"><a href="#">会员添加</a></li>
-    <li class="bg_topMenu link_black12_b"><a href="#">会员编辑</a></li>
+    <li id="sMenu1" class="bg_topMenu2 link_white12_b" onclick="selSMenu_2('sMenu1');"><a href="#">会员添加</a></li>
+    <li id="sMenu2" class="bg_topMenu2 link_white12_b" onclick="selSMenu_2('sMenu2');"><a href="#">会员编辑</a></li>
     <%end if%>
 	<%if subMenuId = "8" then%>
-    <li class="bg_topMenu link_black12_b"><a href="#">访问管理预留1</a></li>
-    <li class="bg_topMenu link_black12_b"><a href="#">访问管理预留2</a></li>
+    <li id="sMenu1" class="bg_topMenu2 link_white12_b" onclick="selSMenu_2('sMenu1');"><a href="#">访问管理预留1</a></li>
+    <li id="sMenu2" class="bg_topMenu2 link_white12_b" onclick="selSMenu_2('sMenu2');"><a href="#">访问管理预留2</a></li>
     <%end if%>    
 	<%if subMenuId = "9" then%>
-    <li class="bg_topMenu link_black12_b"><a href="#">配送设置</a></li>
-    <li class="bg_topMenu link_black12_b"><a href="#">订单维护</a></li>
+    <li id="sMenu1" class="bg_topMenu2 link_white12_b" onclick="selSMenu_2('sMenu1');"><a href="#">配送设置</a></li>
+    <li id="sMenu2" class="bg_topMenu2 link_white12_b" onclick="selSMenu_2('sMenu2');"><a href="#">订单维护</a></li>
     <%end if%>
 	<%if subMenuId = "10" then%>
-    <li class="bg_topMenu link_black12_b"><a href="#">定制管理预留1</a></li>
-    <li class="bg_topMenu link_black12_b"><a href="#">定制管理预留2</a></li>
+    <li id="sMenu1" class="bg_topMenu2 link_white12_b" onclick="selSMenu_2('sMenu1');"><a href="#">定制管理预留1</a></li>
+    <li id="sMenu2" class="bg_topMenu2 link_white12_b" onclick="selSMenu_2('sMenu2');"><a href="#">定制管理预留2</a></li>
     <%end if%>
 	<%if subMenuId = "11" then%>
-    <li class="bg_topMenu link_black12_b"><a href="#">管理员</a></li>
-    <li class="bg_topMenu link_black12_b"><a href="#">定制功能</a></li>
-    <li class="bg_topMenu link_black12_b"><a href="#">系统设置</a></li>
-    <li class="bg_topMenu link_black12_b"><a href="#">编辑器</a></li>
-    <li class="bg_topMenu link_black12_b"><a href="#">弹出风格设定</a></li>
-    <li class="bg_topMenu link_black12_b"><a href="#">支付接口</a></li>
-    <li class="bg_topMenu link_black12_b"><a href="#">微博账户</a></li>
-    <li class="bg_topMenu link_black12_b"><a href="#">系统日志</a></li>
+    <li id="sMenu1" class="bg_topMenu2 link_white12_b" onclick="selSMenu_8('sMenu1');"><a href="#">管理员</a></li>
+    <li id="sMenu2" class="bg_topMenu2 link_white12_b" onclick="selSMenu_8('sMenu2');"><a href="#">定制功能</a></li>
+    <li id="sMenu3" class="bg_topMenu2 link_white12_b" onclick="selSMenu_8('sMenu3');"><a href="#">系统设置</a></li>
+    <li id="sMenu4" class="bg_topMenu2 link_white12_b" onclick="selSMenu_8('sMenu4');"><a href="#">编辑器</a></li>
+    <li id="sMenu5" class="bg_topMenu2 link_white12_b" onclick="selSMenu_8('sMenu5');"><a href="#">弹出风格设定</a></li>
+    <li id="sMenu6" class="bg_topMenu2 link_white12_b" onclick="selSMenu_8('sMenu6');"><a href="#">支付接口</a></li>
+    <li id="sMenu7" class="bg_topMenu2 link_white12_b" onclick="selSMenu_8('sMenu7');"><a href="#">微博账户</a></li>
+    <li id="sMenu8" class="bg_topMenu2 link_white12_b" onclick="selSMenu_8('sMenu8');"><a href="#">系统日志</a></li>
     <%end if%>    
     </ul>
   <div class="menu_close" onmouseover="highlightButton('buttonClose_mouseOut')" onmouseout="highlightButton('buttonClose_mouseOn')">
