@@ -1,13 +1,3 @@
-$(document).ready(function(){
-	 $("input[type=file]").filestyle({ 
-		 image: "images/choose-file.gif",
-		 imageheight : 22,
-		 imagewidth : 82,
-		 width : 418
-	 });
- });
-/*______________________file控件初始化____________________________*/
-
 function switchMenu(){
 	var menuObj = parent.document.getElementById("contentFrame");
 	var arrowObj = document.getElementById("btm_arrow");
@@ -32,3 +22,17 @@ function clsTip(){
 	$("#img_tip").hide();	
 }
 /*______________________清空file控件框提示____________________________*/
+
+function selContentType(words,types){
+	var fieldTitleObj = document.getElementById('field_title');
+	fieldTitleObj.innerHTML = words;
+	var dataContentObj = document.getElementById('data_content');
+	var htmlContentObj = document.getElementById('html_content');
+	if(types == "datas"){
+	dataContentObj.style.display = 'block';
+	htmlContentObj.style.display = 'none';
+	}else{
+	dataContentObj.style.display = 'none';
+	htmlContentObj.style.display = 'block';
+	}
+}
