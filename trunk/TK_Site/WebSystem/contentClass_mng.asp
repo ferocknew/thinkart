@@ -44,41 +44,34 @@
 </div>
 <div class="programs text_deepGray12_b">
 <%For i = 0 to contentclassDic.count - 1%>
-           <div id="div_trees_<%=contentclassDic.Items()(i).ID%>" name="div_trees_lv<%=contentclassDic.Items()(i).LV%>">
-          <div class="programsList tree<%=contentclassDic.Items()(i).LV%>_<%=contentclassDic.Items()(i).Style%>" style="float:left; cursor:pointer" onclick="tree_click(this);"></div>
-            <div class="programsList_text" style="cursor:pointer" onclick="setval('<%=contentclassDic.Items()(i).ClassName%>','<%=contentclassDic.Items()(i).ID%>');"><%=contentclassDic.Items()(i).ClassName%></div></div>
-<%Next%>
-    <div class="programsList tree1_close">关于我们</div>
-    <div class="programsList tree1_none">关于我们</div>
-    <div class="programsList tree1_open">
-      <div class="programsEdit text_white12_b">
-        <div class="programsEdit_tree tree2_close2"></div>
-        <input name="textfield" type="text" class="programsEdit_input" id="textfield" value="关于我们" size="16" />
-      <input class="programsEdit_btm" type="submit" name="button" id="button" value=" " />
-      </div>
-      <div class="editBar text_white12_b">
+	<%If contentclassDic.Items()(i).ID <> ccid Then%>
+        <div class="programsItem" id="div_trees_<%=contentclassDic.Items()(i).ID%>" name="div_trees_lv<%=contentclassDic.Items()(i).LV%>">
+            <div class="programsList tree<%=contentclassDic.Items()(i).LV%>_<%=contentclassDic.Items()(i).Style%>" onclick="tree_click(this);"></div>
+            <div class="programsList_text" onclick="setval('<%=contentclassDic.Items()(i).ClassName%>','<%=contentclassDic.Items()(i).ID%>');"><%=contentclassDic.Items()(i).ClassName%></div>
+        </div>
+    <%Else%>
+        <div class="programsItem" id="div_trees_<%=contentclassDic.Items()(i).ID%>" name="div_trees_lv<%=contentclassDic.Items()(i).LV%>">
+            <div class="programsEdit text_white12_b">
+                <div class="programsEdit_tree tree2_close2"></div>
+                <input name="textfield" type="text" class="programsEdit_input" id="textfield" value="<%=contentclassDic.Items()(i).ClassName%>" size="16" />
+                <input class="programsEdit_btm" type="submit" name="button" id="button" value=" " />
+            </div>
+            <div class="editBar text_white12_b">
                 <table border="0" cellpadding="0" cellspacing="0">
-                  <tr>
-                    <td width="53"><img src="images/btm_editBar_close.gif" align="top" /></td>
-                    <td width="180">添加子分类 <input name="textfield2" type="text" class="input_createTree" id="textfield2" size="8" />
-                    </td>
-                    <td class="editBar_td" width="161">升降序 <img src="images/btm_putDown.gif" align="middle" /><img src="images/btm_putUp.gif" align="middle" />
-                    <input class="input_sort" name="textfield3" type="text" id="textfield3" value="0" size="3" maxlength="3" />
-                    <input class="programsEdit_btm" type="submit" name="button2" id="button2" value=" " /></td>
-                    <td class="editBar_td" width="117">删除此分类 <img src="images/ico_trash.gif" align="middle" /></td>
-                  </tr>
+                    <tr>
+                        <td width="53"><img src="images/btm_editBar_close.gif" align="top" /></td>
+                        <td width="180">添加子分类 <input name="textfield2" type="text" class="input_createTree" id="textfield2" size="8" />
+                        </td>
+                        <td class="editBar_td" width="161">升降序 <img src="images/btm_putDown.gif" align="middle" /><img src="images/btm_putUp.gif" align="middle" />
+                        <input class="input_sort" name="textfield3" type="text" id="textfield3" value="0" size="3" maxlength="3" />
+                        <input class="programsEdit_btm" type="submit" name="button2" id="button2" value=" " /></td>
+                        <td class="editBar_td" width="117">删除此分类 <img src="images/ico_trash.gif" align="middle" /></td>
+                    </tr>
                 </table>
-              </div>
-      关于我们
-    </div>
-    <div class="programsList tree2_close1">关于我们</div>
-    <div class="programsList tree2_open1">关于我们</div>
-    <div class="programsList tree3_3">关于我们</div>
-    <div class="programsList tree3_4">关于我们</div>
-    <div class="programsList tree2_none2">关于我们</div>
-    <div class="programsList tree1_open">关于我们</div>
-    <div class="programsList tree2_none1">关于我们</div>
-    <div class="programsList tree2_close2">关于我们</div>
+            </div>
+        </div>
+    <%End If%>
+<%Next%>
 </div>
 <div class="page_style text_deepGray12_b"></div>
 </form>
