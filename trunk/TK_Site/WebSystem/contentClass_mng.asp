@@ -47,14 +47,14 @@
 	<%If contentclassDic.Items()(i).ID <> ccid Then%>
         <div class="programsItem" id="div_trees_<%=contentclassDic.Items()(i).ID%>" name="div_trees_lv<%=contentclassDic.Items()(i).LV%>">
             <div class="programsList tree<%=contentclassDic.Items()(i).LV%>_<%=contentclassDic.Items()(i).Style%>" onclick="tree_click(this);"></div>
-            <div class="programsList_text" onclick="setval('<%=contentclassDic.Items()(i).ClassName%>','<%=contentclassDic.Items()(i).ID%>');"><%=contentclassDic.Items()(i).ClassName%></div>
+            <div class="programsList_text"><%=contentclassDic.Items()(i).ClassName%></div>
         </div>
     <%Else%>
         <div class="programsItem" id="div_trees_<%=contentclassDic.Items()(i).ID%>" name="div_trees_lv<%=contentclassDic.Items()(i).LV%>">
             <div class="programsEdit text_white12_b">
-                <div class="programsEdit_tree tree2_close2"></div>
+                <div class="programsList tree<%=contentclassDic.Items()(i).LV%>_<%=contentclassDic.Items()(i).Style%>" onclick="tree_click(this);"></div>
                 <input name="textfield" type="text" class="programsEdit_input" id="textfield" value="<%=contentclassDic.Items()(i).ClassName%>" size="16" />
-                <input class="programsEdit_btm" type="submit" name="button" id="button" value=" " />
+                <input class="programsEdit_btm" type="button" name="button" id="button" value=" " />
             </div>
             <div class="editBar text_white12_b">
                 <table border="0" cellpadding="0" cellspacing="0">
@@ -64,7 +64,7 @@
                         </td>
                         <td class="editBar_td" width="161">升降序 <img src="images/btm_putDown.gif" align="middle" /><img src="images/btm_putUp.gif" align="middle" />
                         <input class="input_sort" name="textfield3" type="text" id="textfield3" value="0" size="3" maxlength="3" />
-                        <input class="programsEdit_btm" type="submit" name="button2" id="button2" value=" " /></td>
+                        <input class="programsEdit_btm" type="button" name="button2" id="button2" value=" " /></td>
                         <td class="editBar_td" width="117">删除此分类 <img src="images/ico_trash.gif" align="middle" /></td>
                     </tr>
                 </table>
