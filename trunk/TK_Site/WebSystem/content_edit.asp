@@ -11,25 +11,9 @@
 <link href="css/font_link.css" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" href="../include/xheditor-1.1.4/common.css" type="text/css" media="screen" />
 <script language="javascript" src="../include/jquery-1.4.4.min.js"></script>
-<script language="javascript" src="../include/xheditor-1.1.4/xheditor-zh-cn.min.js?v=1.1.4"></script>
 <script language="javascript" src="../include/jquery.filestyle.js"></script>
-
-<script language="javascript"> 
-$(document).ready(function(){
-	 $("input[type=file]").filestyle({ 
-		 image: "images/choose-file.gif",
-		 imageheight : 22,
-		 imagewidth : 82,
-		 width : 418
-	 });
- });
- 
-function clsTip(){
-	$("#img_tip").hide();	
-}
-</script>
-
-
+<script language="javascript" src="js/common.js"></script>
+<script language="javascript" src="../include/xheditor-1.1.4/xheditor-zh-cn.min.js?v=1.1.4"></script>
 <script type="text/javascript">
 $(function(){$('#xhContent').xheditor({upLinkUrl:"../Adapter/upload.asp",upLinkExt:"zip,rar,txt",upImgUrl:"../Adapter/upload.asp",upImgExt:"jpg,jpeg,gif,png",upFlashUrl:"../Adapter/upload.asp",upFlashExt:"swf",upMediaUrl:"../Adapter/upload.asp",upMediaExt:"wmv,avi,wma,mp3,mid"});});
 </script>
