@@ -13,6 +13,7 @@
 <script language="javascript" src="../include/jquery-1.4.4.min.js"></script>
 <script language="javascript" src="../include/jquery.filestyle.js"></script>
 <script language="javascript" src="js/common.js"></script>
+<script language="javascript" src="js/fileInputInit.js"></script>
 <script language="javascript" src="../include/xheditor-1.1.4/xheditor-zh-cn.min.js?v=1.1.4"></script>
 <script type="text/javascript">
 $(function(){$('#xhContent').xheditor({upLinkUrl:"../Adapter/upload.asp",upLinkExt:"zip,rar,txt",upImgUrl:"../Adapter/upload.asp",upImgExt:"jpg,jpeg,gif,png",upFlashUrl:"../Adapter/upload.asp",upFlashExt:"swf",upMediaUrl:"../Adapter/upload.asp",upMediaExt:"wmv,avi,wma,mp3,mid"});});
@@ -40,9 +41,9 @@ showClass = showContent.ClassID
   </div>
   <div class="content_titleInput">
   	<ul>
-      <li><input type="radio" name="CType" value="0" id="CType_0" <%If showContent.CType="" or showContent.CType="0" Then%>checked="checked"<%End If%> />
+      <li><input onclick="selContentType('内 容','datas');" type="radio" name="CType" value="0" id="CType_0" <%If showContent.CType="" or showContent.CType="0" Then%>checked="checked"<%End If%> />
         <span class="text_deepGray12_b">直接编辑</span></li>
-      <li><input type="radio" name="CType" value="1" id="CType_1" <%If showContent.CType="1" Then%>checked="checked"<%End If%> />
+      <li><input onclick="selContentType('文 件','htmls');" type="radio" name="CType" value="1" id="CType_1" <%If showContent.CType="1" Then%>checked="checked"<%End If%> />
         <span class="text_deepGray12_b">上传网页</span></li>
 	</ul>
   </div>
@@ -71,8 +72,15 @@ showClass = showContent.ClassID
     </div></td>
   </tr>
   <tr>
-    <td valign="top">内  容</td>
-    <td><textarea name="xhContent" rows="10" class="addText" style="height:350px;" id="xhContent"><%=showContent.Content%></textarea><input type="hidden" name="Content" id="Content" value="" /></td>
+    <td valign="top"><span id="field_title">内  容</span></td>
+    <td valign="top">
+    <div id="data_content">
+    <textarea name="xhContent" rows="10" class="addText" style="height:350px;" id="xhContent"><%=showContent.Content%></textarea><input type="hidden" name="Content" id="Content" value="" />
+    </div>
+    <div id="html_content" style="display:none;">
+    <input class="addText"  type="text" name="htmlFile" id="htmlFile" value="" />
+    </div>
+    </td>
   </tr>
 </table>
 <br />
