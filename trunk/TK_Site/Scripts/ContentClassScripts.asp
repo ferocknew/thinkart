@@ -101,6 +101,5 @@ ElseIf upload.forms("action") = "alldelete" Then
 	id=upload.forms("ck_input_name")
 	Response.Write "<script>alert('"& ContentManager.DeleteContent(id) &"')</script>"
 End If
-
-<!--#include file="../Scripts/loadClass.asp"-->
 %>
+<!--#include file="../Scripts/loadClass.asp"-->
