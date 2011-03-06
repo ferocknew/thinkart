@@ -12,6 +12,7 @@
 <script language="javascript" src="../include/jquery-1.4.4.min.js"></script>
 <script language="javascript" src="../include/jquery.filestyle.js"></script>
 <script language="javascript" src="js/common.js"></script>
+<script language="javascript" src="js/fileInputInit.js"></script>
 <!--#include file="../Scripts/ProductScripts.asp" -->
 </head>
 
