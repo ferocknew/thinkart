@@ -13,9 +13,12 @@
 <script type="text/javascript">
 	
 </script>
-<!--#include file="loadClass.asp"-->
+<!--#include file="../Scripts/ContentClassScripts.asp"-->
 </head>
 <body>
+<form id="form1" name="form1" method="post" action="product_edit.asp" enctype="multipart/form-data">
+<input type="hidden" name="action" id="action" value="" />
+<input type="hidden" name="updid" id="updid" value="<%=pid%>" />
 <div class="breadcrumbs text_gray12_b link_gray12_b">
 <img src="images/ico_breadcrumbs.gif" align="absmiddle" />
 当前位置: <a href="#"> 内容管理</a> / 
@@ -29,7 +32,7 @@
 </div>
 <div class="content_ctrlbar text_deepGray12_b">
   <div style="margin-top:9px; float:left;">新增主栏目 
-    <input type="text" name="new_program" id="new_program" />
+    <input type="text" name="ClassName" id="ClassName" />
     <input class="btm_submit" type="submit" name="button" id="button" value=" " />
   </div>
   <table border="0" align="right" cellpadding="0" cellspacing="0" class="link_deepGray12_b">
@@ -41,7 +44,7 @@
 </div>
 <div class="programs text_deepGray12_b">
 <%For i = 0 to contentclassDic.count - 1%>
-            <div id="div_trees_<%=contentclassDic.Items()(i).ID%>" name="div_trees_lv<%=contentclassDic.Items()(i).LV%>">
+           <div id="div_trees_<%=contentclassDic.Items()(i).ID%>" name="div_trees_lv<%=contentclassDic.Items()(i).LV%>">
           <div class="programsList tree<%=contentclassDic.Items()(i).LV%>_<%=contentclassDic.Items()(i).Style%>" style="float:left; cursor:pointer" onclick="tree_click(this);"></div>
             <div class="programsList_text" style="cursor:pointer" onclick="setval('<%=contentclassDic.Items()(i).ClassName%>','<%=contentclassDic.Items()(i).ID%>');"><%=contentclassDic.Items()(i).ClassName%></div></div>
 <%Next%>
@@ -78,5 +81,6 @@
     <div class="programsList tree2_close2">关于我们</div>
 </div>
 <div class="page_style text_deepGray12_b"></div>
+</form>
 </body>
 </html>
