@@ -1,3 +1,12 @@
+$(document).ready(function(){
+	 $("input[type=file]").filestyle({ 
+		 image: "images/choose-file.gif",
+		 imageheight : 22,
+		 imagewidth : 82,
+		 width : 418
+	 });
+ });
+/*______________________file控件初始化____________________________*/
 
 function switchMenu(){
 	var menuObj = parent.document.getElementById("contentFrame");
@@ -18,3 +27,8 @@ function highlightButton(s) {
 	
 	
 /*______________________按钮状态变化____________________________*/
+
+function clsTip(){
+	$("#img_tip").hide();	
+}
+/*______________________清空file控件框提示____________________________*/
