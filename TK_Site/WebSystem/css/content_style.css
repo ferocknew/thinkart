@@ -363,12 +363,11 @@ input{
 
 .addImage{
 	position:relative;
-	width:420px;
+	width:504px;
 	float:right;
 }
 
 .addImage input{
-	width:416px;
 	background:#f6f6f6;
 	border:none;
 	height:16px;

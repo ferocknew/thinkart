@@ -12,7 +12,7 @@
   </tr>
   <tr>
     <td valign="top" class="programs">
-        <div class="programsDiv text_deepGray12_b">
+        <div id="tree_area" class="programsDiv text_deepGray12_b">
             <%For i = 0 to contentclassDic.count - 1%>
             <div class="programsItem" id="div_trees_<%=contentclassDic.Items()(i).ID%>" name="div_trees_lv<%=contentclassDic.Items()(i).LV%>">
           <div class="programsList tree<%=contentclassDic.Items()(i).LV%>_<%=contentclassDic.Items()(i).Style%>" onclick="tree_click(this);"></div>

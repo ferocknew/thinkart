@@ -12,6 +12,20 @@
 <link rel="stylesheet" href="../include/xheditor-1.1.4/common.css" type="text/css" media="screen" />
 <script language="javascript" src="../include/jquery-1.4.4.min.js"></script>
 <script language="javascript" src="../include/xheditor-1.1.4/xheditor-zh-cn.min.js?v=1.1.4"></script>
+<script language="javascript" src="../include/jquery.filestyle.js"></script>
+
+<script language="javascript"> 
+$(document).ready(function(){
+	 $("input[type=file]").filestyle({ 
+		 image: "images/choose-file.gif",
+		 imageheight : 22,
+		 imagewidth : 82,
+		 width : 418
+	 });
+ });
+</script>
+
+
 <script type="text/javascript">
 $(function(){$('#xhContent').xheditor({upLinkUrl:"../Adapter/upload.asp",upLinkExt:"zip,rar,txt",upImgUrl:"../Adapter/upload.asp",upImgExt:"jpg,jpeg,gif,png",upFlashUrl:"../Adapter/upload.asp",upFlashExt:"swf",upMediaUrl:"../Adapter/upload.asp",upMediaExt:"wmv,avi,wma,mp3,mid"});});
 </script>
@@ -62,9 +76,10 @@ showClass = showContent.ClassID
   </tr>
   <tr>
     <td>&nbsp;</td>
-    <td class="link_deepGray12_b"><span style="float:left;"><img src="images/ico_img.gif" align="middle" /> <a href="#">上传插图</a></span>
+    <td class="link_deepGray12_b">
     <div class="addImage">
-    <div class="addImage_info"><input name="Img" id="Img" type="file" />上传图片大小需为小于 <span class="text_orange">300K</span> 的 <span class="text_orange">JPG</span> or <span class="text_orange">GIF</span> 格式</div>
+    <input type="file" name="fileField" id="fileField" />
+    <div class="addImage_info" >上传图片大小需为小于 <span class="text_orange">300K</span> 的 <span class="text_orange">JPG</span> or <span class="text_orange">GIF</span> 格式</div>
     </div></td>
   </tr>
   <tr>
