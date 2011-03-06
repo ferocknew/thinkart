@@ -1,4 +1,14 @@
 ﻿<!--#include file="../Scripts/loadClass.asp"-->
+<script language="javascript" src="../include/jScrollPane/jScrollPane.js"></script>
+<script language="javascript" src="../include/jScrollPane/mousewheel.js"></script>
+<link href="../include/jScrollPane/jScrollPane.css" rel="stylesheet" type="text/css" />
+<script language="javascript">
+			$(function()
+			{
+				// this initialises the demo scollpanes on the page.
+				$('#tree_area').jScrollPane();
+			});
+</script>
 <div class="add_right link_deepGray12_b">
 <table width="230" border="0" cellspacing="0" cellpadding="0">
   <tr>
