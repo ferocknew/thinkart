@@ -23,6 +23,10 @@ $(document).ready(function(){
 		 width : 418
 	 });
  });
+ 
+function clsTip(){
+	$("#img_tip").hide();	
+}
 </script>
 
 
@@ -78,8 +82,8 @@ showClass = showContent.ClassID
     <td>&nbsp;</td>
     <td class="link_deepGray12_b">
     <div class="addImage">
-    <input type="file" name="fileField" id="fileField" />
-    <div class="addImage_info" >上传图片大小需为小于 <span class="text_orange">300K</span> 的 <span class="text_orange">JPG</span> or <span class="text_orange">GIF</span> 格式</div>
+    <input type="file" name="Img" id="Img" onchange="clsTip();" />
+    <div id="img_tip" class="addImage_info" >上传图片大小需为小于 <span class="text_orange">300K</span> 的 <span class="text_orange">JPG</span> or <span class="text_orange">GIF</span> 格式</div>
     </div></td>
   </tr>
   <tr>
