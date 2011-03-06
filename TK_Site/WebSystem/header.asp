@@ -25,9 +25,9 @@
     <li id="sMenu4" class="bg_topMenu2 link_white12_b" onclick="selSMenu_4('sMenu4');"><a href="#" target="mainFrame">服务设置</a></li>
     <%end if%>
 	<%if subMenuId = "2" then%>
-    <li id="sMenu1" class="bg_topMenu2 link_white12_b" onclick="selSMenu_3('sMenu1');"><a href="#" target="mainFrame">内容结构管理</a></li>
-    <li id="sMenu2" class="bg_topMenu2 link_white12_b" onclick="selSMenu_3('sMenu2');"><a href="#" target="mainFrame">产品结构管理</a></li>
-    <li id="sMenu3" class="bg_topMenu2 link_white12_b" onclick="selSMenu_3('sMenu3');"><a href="#" target="mainFrame">下载结构管理</a></li>
+    <li id="sMenu1" class="bg_topMenu2 link_white12_b" onclick="selSMenu_3('sMenu1');"><a href="contentClass_mng.asp?ctype=1" target="mainFrame">内容结构管理</a></li>
+    <li id="sMenu2" class="bg_topMenu2 link_white12_b" onclick="selSMenu_3('sMenu2');"><a href="contentClass_mng.asp?ctype=2" target="mainFrame">产品结构管理</a></li>
+    <li id="sMenu3" class="bg_topMenu2 link_white12_b" onclick="selSMenu_3('sMenu3');"><a href="contentClass_mng.asp?ctype=3" target="mainFrame">下载结构管理</a></li>
     <%end if%>
 	<%if subMenuId = "3" then%>
     <li id="sMenu1" class="bg_topMenu2 link_white12_b" onclick="selSMenu_2('sMenu1');"><a href="content_edit.asp" target="mainFrame">内容添加</a></li>
