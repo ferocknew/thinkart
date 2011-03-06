@@ -184,14 +184,13 @@ input{
 }
 
 .programs{
-	height:385px;
-	background:#f1f1f1;
-	border:1px dashed #999;
 	margin-bottom:10px;
 }
 
 .programsDiv{
 	height:385px;
+	border:1px dashed #999;
+	background:#f1f1f1;
 }
 
 .programsItem{
@@ -204,7 +203,6 @@ input{
 	cursor:pointer;
 	height:32px;
 	line-height:32px;
-	position:relative;
 }
 
 .programsList_text{
@@ -216,11 +214,9 @@ input{
 
 
 .programsEdit{
-	position:absolute;
 	height:32px;
 	width:100%;
-	left:0px;
-	top:0px;
+	float:left;
 	text-indent:10px;
 	line-height:32px;
 	background-image: url(../images/bg_editbar.gif);
@@ -248,9 +244,7 @@ input{
 }
 
 .editBar{
-	position:absolute;
-	top:0px;
-	right:0px;
+	float:right;
 	width:550px
 	height:32px;
 
