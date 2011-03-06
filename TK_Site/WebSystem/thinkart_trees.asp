@@ -1,4 +1,4 @@
-﻿<!--#include file="loadClass.asp"-->
+﻿<!--#include file="../Scripts/loadClass.asp"-->
 <div class="add_right link_deepGray12_b">
 <table width="230" border="0" cellspacing="0" cellpadding="0">
   <tr>

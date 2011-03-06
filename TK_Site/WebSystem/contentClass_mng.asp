@@ -9,22 +9,11 @@
 <title></title>
 <link href="css/content_style.css" rel="stylesheet" type="text/css" />
 <link href="css/font_link.css" rel="stylesheet" type="text/css" />
-
-<link rel="stylesheet" href="../include/jquerytrees/jquery.treeview.css" />
-<script src="../include/jquerytrees/jquery.js" type="text/javascript"></script>
-<script src="../include/jquerytrees/jquery.cookie.js" type="text/javascript"></script>
-<script src="../include/jquerytrees/jquery.treeview.js" type="text/javascript"></script>
+<script language="javascript" src="../include/jquery-1.4.4.min.js"></script>
 <script type="text/javascript">
-	$(function() {
-		$("#tree").treeview({
-			collapsed: true,
-			animated: "fast",
-			control:"#sidetreecontrol",
-			prerendered: true,
-			persist: "location"
-		});
-	})
+	
 </script>
+<!--#include file="loadClass.asp"-->
 </head>
 <body>
 <div class="breadcrumbs text_gray12_b link_gray12_b">
@@ -51,6 +40,11 @@
 </table>
 </div>
 <div class="programs text_deepGray12_b">
+<%For i = 0 to contentclassDic.count - 1%>
+            <div id="div_trees_<%=contentclassDic.Items()(i).ID%>" name="div_trees_lv<%=contentclassDic.Items()(i).LV%>">
+          <div class="programsList tree<%=contentclassDic.Items()(i).LV%>_<%=contentclassDic.Items()(i).Style%>" style="float:left; cursor:pointer" onclick="tree_click(this);"></div>
+            <div class="programsList_text" style="cursor:pointer" onclick="setval('<%=contentclassDic.Items()(i).ClassName%>','<%=contentclassDic.Items()(i).ID%>');"><%=contentclassDic.Items()(i).ClassName%></div></div>
+<%Next%>
     <div class="programsList tree1_close">关于我们</div>
     <div class="programsList tree1_none">关于我们</div>
     <div class="programsList tree1_open">
