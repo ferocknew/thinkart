@@ -10,6 +10,9 @@
 <link href="css/content_style.css" rel="stylesheet" type="text/css" />
 <link href="css/font_link.css" rel="stylesheet" type="text/css" />
 <script language="javascript" src="../include/jquery-1.4.4.min.js"></script>
+<script language="javascript" src="../include/jquery.filestyle.js"></script>
+<script language="javascript" src="js/common.js"></script>
+
 <!--#include file="../Scripts/ProductScripts.asp" -->
 </head>
 
@@ -47,23 +50,23 @@
                 <tr>
                     <td width="46">&nbsp;</td>
                     <td class="link_deepGray12_b">
-                        <div class="img_update"><span style="float:left;"><img src="images/ico_img.gif" align="middle" /> <a href="#">上传插图</a></span>
+                        <div class="img_update">
                           <div class="addImage">
-                            <div class="addImage_info">上传图片大小需为小于 <span class="text_orange">300K</span> 的 <span class="text_orange">JPG</span> or <span class="text_orange">GIF</span> 格式</div>
-                            <input name="Img1" type="file" id="Img1" />
+                            <div id="img_tip" class="addImage_info">上传图片大小需为小于 <span class="text_orange">300K</span> 的 <span class="text_orange">JPG</span> or <span class="text_orange">GIF</span> 格式</div>
+                            <input name="Img1" type="file" id="Img1" onChange="clsTip();" />
                           </div>
                         </div>
-                        <div class="img_update"><span style="float:left;"><img src="images/ico_img.gif" align="middle" /> <a href="#">上传插图</a></span>
+                        <div class="img_update">
                           <div class="addImage">
                             <input name="Img2" type="file" id="Img2" />
                           </div>
                         </div>
-                        <div class="img_update"><span style="float:left;"><img src="images/ico_img.gif" align="middle" /> <a href="#">上传插图</a></span>
+                        <div class="img_update">
                           <div class="addImage">
                            <input name="Img3" type="file" id="Img3" />
                           </div>
                         </div>
-                        <div class="img_update"><span style="float:left;"><img src="images/ico_img.gif" align="middle" /> <a href="#">上传插图</a></span>
+                        <div class="img_update">
                           <div class="addImage">
                             <input name="Img4" type="file" id="Img4" />
                           </div>
