@@ -184,10 +184,24 @@ input{
 }
 
 .programs{
+	height:385px;
 	background:#f1f1f1;
+	border:1px dashed #999;
+	margin-bottom:10px;
+}
+
+.programsDiv{
+	height:385px;
+}
+
+.programsItem{
+	width:230px;
+	float:left;
 }
 
 .programsList{
+	float:left;
+	cursor:pointer;
 	height:32px;
 	line-height:32px;
 	position:relative;
@@ -195,6 +209,7 @@ input{
 
 .programsList_text{
 	float:left;
+	cursor:pointer;
 	height:32px;
 	line-height:32px;
 }
