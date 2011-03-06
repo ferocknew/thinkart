@@ -1,5 +1,6 @@
 ﻿<!--#include file="../Service/DBHelper.asp"-->
 <!--#include file="../Adapter/ContentClassAdapter.asp" -->
+<!--#include file="../Scripts/loadClass.asp"-->
 <!--#include file="../Adapter/UpLoad_Class.vbs.asp"-->
 <script type="text/javascript">
 function content_add_check(){
@@ -54,12 +55,11 @@ function content_alldel_check(){
 }
 </script>
 <%
-cid=Request("cid")
+ccid=Request("ccid")
 pageindex=Request("page")
-If cid = "" Then
-	cid = "0"
+If ccid = "" Then
+	ccid = "1"
 End If
-ctype="1"    '内容树
 
 dim upload
 set upload = new AnUpLoad

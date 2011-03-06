@@ -20,7 +20,12 @@ Class ContentClassService
 	End Sub
 	
 	Public Function GetAllContentClass(classtype)
-		strSelectSql="select *,switch(upclassid=0,1,upclassid in (Select id from contentclass where upclassid=0),2,upclassid not in (Select id from contentclass where upclassid=0) and upclassid <> 0,3) as LV,iif(id in (select upclassid from ContentClass group by upclassid),'open','none') as Style from ContentClass where Show2hide = true and classtype = "&InputReplace(classtype)&" Order by UpClassId,[Order]"
+		strSelectSql = ""
+		If classtype <> "" then
+			strSelectSql="select *,switch(upclassid=0,1,upclassid in (Select id from contentclass where upclassid=0),2,upclassid not in (Select id from contentclass where upclassid=0) and upclassid <> 0,3) as LV,iif(id in (select upclassid from ContentClass group by upclassid),'open','none') as Style from ContentClass where Show2hide = true and classtype = "&InputReplace(classtype)&" Order by UpClassId,[Order]"
+		Else
+			strSelectSql="select *,switch(upclassid=0,1,upclassid in (Select id from contentclass where upclassid=0),2,upclassid not in (Select id from contentclass where upclassid=0) and upclassid <> 0,3) as LV,iif(id in (select upclassid from ContentClass group by upclassid),'open','none') as Style from ContentClass where Show2hide = true Order by UpClassId,[Order]"
+		End If
 		Set rs=DB.ExecuteQuery(strSelectSql)
 		Set dic=Server.CreateObject("Scripting.Dictionary")
 		While not rs.eof
