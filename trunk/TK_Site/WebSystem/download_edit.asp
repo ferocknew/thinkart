@@ -10,6 +10,8 @@
 <link href="css/content_style.css" rel="stylesheet" type="text/css" />
 <link href="css/font_link.css" rel="stylesheet" type="text/css" />
 <script language="javascript" src="../include/jquery-1.4.4.min.js"></script>
+<script language="javascript" src="../include/jquery.filestyle.js"></script>
+<script language="javascript" src="js/common.js"></script>
 <!--#include file="../Scripts/ProductScripts.asp" -->
 </head>
 
@@ -35,10 +37,10 @@
    <tr>
     <td width="46">&nbsp;</td>
     <td class="link_deepGray12_b">
-      <div class="img_update"><span style="float:left;"><a href="#"><img src="images/ico_update.gif" align="middle" /> 上传文件</a></span>
+      <div class="img_update">
         <div class="addImage">
-          <div class="addImage_info">上传文件大小需大于 <span class="text_orange">30K</span></div>
-          <input name="FileName" type="file" id="FileName" />
+          <div id="img_tip" class="addImage_info">上传文件大小需大于 <span class="text_orange">30K</span></div>
+          <input name="FileName" type="file" id="FileName" onchange="clsTip();" />
           </div>
         </div></td>
   </tr>
