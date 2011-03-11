@@ -50,8 +50,14 @@
     <li id="sMenu2" class="bg_topMenu2 link_white12_b" onclick="selSMenu_2('sMenu2');"><a href="#" target="mainFrame">会员编辑</a></li>
     <%end if%>
 	<%if subMenuId = "8" then%>
-    <li id="sMenu1" class="bg_topMenu2 link_white12_b" onclick="selSMenu_2('sMenu1');"><a href="#" target="mainFrame">访问管理预留1</a></li>
-    <li id="sMenu2" class="bg_topMenu2 link_white12_b" onclick="selSMenu_2('sMenu2');"><a href="#" target="mainFrame">访问管理预留2</a></li>
+    <li id="sMenu1" class="bg_topMenu2 link_white12_b" onclick="selSMenu_8('sMenu1');"><a href="../extraModel/analysis/index.asp" target="mainFrame">综合统计</a></li>
+    <li id="sMenu2" class="bg_topMenu2 link_white12_b" onclick="selSMenu_8('sMenu2');"><a href="../extraModel/analysis/fenxi_lfjl.asp" target="mainFrame">来源记录</a></li>
+    <li id="sMenu3" class="bg_topMenu2 link_white12_b" onclick="selSMenu_8('sMenu3');"><a href="../extraModel/analysis/search_html_ly.asp" target="mainFrame">来源页面排名</a></li>
+    <li id="sMenu4" class="bg_topMenu2 link_white12_b" onclick="selSMenu_8('sMenu4');"><a href="../extraModel/analysis/search_html.asp" target="mainFrame">受访页面排名</a></li>
+    <li id="sMenu5" class="bg_topMenu2 link_white12_b" onclick="selSMenu_8('sMenu5');"><a href="../extraModel/analysis/search_ip.asp" target="mainFrame">独立IP排名</a></li>
+    <li id="sMenu6" class="bg_topMenu2 link_white12_b" onclick="selSMenu_8('sMenu6');"><a href="../extraModel/analysis/search_keyword.asp" target="mainFrame">单日关键字</a></li>
+    <li id="sMenu7" class="bg_topMenu2 link_white12_b" onclick="selSMenu_8('sMenu7');"><a href="../extraModel/analysis/search_keyword_total.asp" target="mainFrame">总关键字</a></li>
+    <li id="sMenu8" class="bg_topMenu2 link_white12_b" onclick="selSMenu_8('sMenu8');"><a href="#" target="mainFrame">数据操作</a></li>
     <%end if%>    
 	<%if subMenuId = "9" then%>
     <li id="sMenu1" class="bg_topMenu2 link_white12_b" onclick="selSMenu_2('sMenu1');"><a href="#" target="mainFrame">配送设置</a></li>
