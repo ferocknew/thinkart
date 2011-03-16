@@ -451,13 +451,21 @@ input{
 }
 
 
-.settingInput{
-	width:460px;
-	float:right;
+.settingInput input{
 	border:#ccc 1px solid;
 }
 
 .settingInput2{
 	width:100px;
+	border:#ccc 1px solid;
+}
+
+.settingInput4{
+	width:100px;
+	border:#ccc 1px solid;
+}
+
+.settingInput3{
+	width:30px;
 	border:#ccc 1px solid;
 }
