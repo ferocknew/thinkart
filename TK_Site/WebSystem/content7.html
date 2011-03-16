@@ -21,7 +21,7 @@
 </div>
 <div class="addContent text_deepGray12_b">
 <div class="add_left">
-  <table width="550" border="0" cellspacing="0" cellpadding="0">
+  <table width="550" border="0" cellspacing="0" cellpadding="0" class="setting">
   <tr>
     <td width="84">网站名称</td>
     <td width="466"><input class="settingInput" type="text" name="textfield2" id="textfield2" /></td>
@@ -36,33 +36,47 @@
   </tr>
   <tr>
     <td width="84">版权信息</td>
-    <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <td><table width="466" border="0" cellspacing="0" cellpadding="0">
       <tr>
-        <td><input class="settingInput2"  type="text" name="textfield15" id="textfield14" /></td>
-        <td>备案号
-          <input class="settingInput2"  type="text" name="textfield14" id="textfield15" /></td>
+        <td width="320"><input style="width:300px;" type="text" name="textfield15" id="textfield14" /></td>
+        <td width="146">备案号
+          <input style="width:100px;" type="text" name="textfield14" id="textfield15" /></td>
       </tr>
     </table></td>
   </tr>
   <tr>
-    <td>置顶天数设置</td>
+    <td>置顶设置</td>
     <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
       <tr>
-        <td> 最新(New)
+        <td width="31%"> 最新(New)
           <input class="settingInput3"  type="text" name="textfield6" id="textfield13" />
           天</td>
-        <td>备案号
-          <input class="settingInput2"  type="text" name="textfield13" id="textfield6" /></td>
+        <td width="64%">最热(Hot)
+          <input class="settingInput3"  type="text" name="textfield13" id="textfield6" />
+          次</td>
+        <td width="5%">&nbsp;</td>
         </tr>
       </table></td>
   </tr>
   <tr>
-    <td width="84">热门点击设置</td>
-    <td><input class="settingInput"  type="text" name="textfield3" id="textfield3" /></td>
-  </tr>
-  <tr>
     <td>编辑器宽度</td>
-    <td><input class="settingInput"  type="text" name="textfield" id="textfield" /></td>
+    <td><form id="form1" name="form1" method="post" action="">
+      <p>
+        <label class="settingRadio">
+          <input style="border:none;" type="radio" name="RadioGroup1" value="单选" id="RadioGroup1_0" />
+          400<span class="text_gray12_b"> Px</span></label>
+        <label class="settingRadio">
+          <input style="border:none;" type="radio" name="RadioGroup1" value="单选" id="RadioGroup1_0" />
+          550<span class="text_gray12_b"> Px</span></label>
+        <label class="settingRadio">
+          <input style="border:none;" type="radio" name="RadioGroup1" value="单选" id="RadioGroup1_1" />
+          700<span class="text_gray12_b"> Px</span></label>
+        <label class="settingRadio">
+          <input style="border:none;" type="radio" name="RadioGroup1" value="单选" id="RadioGroup1_1" />
+           <input class="settingInput3"  type="text" name="textfield" id="textfield" /><span class="text_gray12_b"> Px</span>
+        </label>
+      </p>
+    </form></td>
   </tr>
   <tr>
     <td>邮件参数设置</td>
@@ -89,15 +103,20 @@
     <td><input class="settingInput"  type="text" name="textfield11" id="textfield11" /></td>
   </tr>
   <tr>
+    <td>网站开关</td>
+    <td><table width="466" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="99"><img src="images/btm_off.gif" align="middle" /></td>
+        <td width="367">自定义关闭提示页
+          <input style="width:250px;" type="text" name="textfield16" id="textfield16" /></td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
     <td>日志开关</td>
     <td><img src="images/btm_on.gif" align="middle" /></td>
   </tr>
-  <tr>
-    <td>网站开关</td>
-    <td><img src="images/btm_off.gif" align="middle" /> 自定义提示页      
-      <input class="settingInput2"  type="text" name="textfield12" id="textfield12" /> 
-      404错误</td>
-  </tr>
+
   </table>
 <br />
 </div>

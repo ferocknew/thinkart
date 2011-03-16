@@ -58,6 +58,12 @@ function allCheck(){
 当前位置: <a href="#"> 内容管理</a> / 
 <span class="link_deepGray12_b"><a href="#">公司新闻</a></span>
 </div>
+<div class="content_title"><img style="float:left;" src="images/ico_contentTitle.gif" />
+  <div class="content_titleText">
+    <li class="text_deepGray14_b">内容结构管理</li>
+    <li class="text_deepGray10_b">Programs List</li>
+  </div>
+</div>
 <table class="list_style text_deepGray12_b" width="100%" border="0" cellpadding="0" cellspacing="0">
   <tr>
     <td width="30"><img src="images/ico_select.gif" align="middle" /></td>
