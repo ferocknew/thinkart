@@ -64,5 +64,13 @@ Class ContentClassInfo
 	Public Property Get Style()
 		Style = cStyle
 	End Property
+	
+	Private cHisId
+	Public Property Let HisId(value)
+		cHisId = value
+	End Property
+	Public Property Get HisId()
+		HisId = cHisId
+	End Property
 End Class
 %>

@@ -1,5 +1,5 @@
 <script type="text/javascript">
-function tree_click(obj){
+function tree_click(obj,objid){
 	var lv1open="programsList tree1_open";
 	var lv1close="programsList tree1_close";
 	var lv1none="programsList tree1_none";
@@ -14,33 +14,35 @@ function tree_click(obj){
 	switch(obj.className){
 		case lv1open:
 			obj.className=lv1close;
-			
+			$("div[name='div_trees_lv2']").each(function(){if(this.id.indexOf(objid+"_")!=-1){$(this).fadeOut();}});
+			$("div[name='div_trees_lv3']").each(function(){if(this.id.indexOf(objid+"_")!=-1){$(this).fadeOut();}});
 			break;
 		case lv1close:
 			obj.className=lv1open;
-		
+			$("div[name='div_trees_lv2']").each(function(){if(this.id.indexOf(objid+"_")!=-1){$(this).fadeIn();}});
+			$("div[name='div_trees_lv3']").each(function(){if(this.id.indexOf(objid+"_")!=-1){$(this).fadeIn();}});
 			break;
 		case lv1none:
 		
 			break;
 		case lv2open:
 			obj.className=lv2close;
-		
+			$("div[name='div_trees_lv3']").each(function(){if(this.id.indexOf(objid+"_")!=-1){$(this).fadeOut();}});
 			break;
 		case lv2close:
 			obj.className=lv2open;
-		
+			$("div[name='div_trees_lv3']").each(function(){if(this.id.indexOf(objid+"_")!=-1){$(this).fadeIn();}});
 			break;
 		case lv2none:
 		
 			break;
 		case lv2lastopen:
 			obj.className=lv2lastclose;
-		
+			$("div[name='div_trees_lv3']").each(function(){if(this.id.indexOf(objid+"_")!=-1){$(this).fadeOut();}});
 			break;
 		case lv2lastclose:
 			obj.className=lv2lastopen;
-		
+			$("div[name='div_trees_lv3']").each(function(){if(this.id.indexOf(objid+"_")!=-1){$(this).fadeIn();}});
 			break;
 		case lv2lastnone:
 		
@@ -53,15 +55,20 @@ function tree_click(obj){
 			break;
 	}
 }
-function setval(name,id){
+function setval(name,id,divid){
 	$('#ClassName').val(name);
 	$('#ClassID').val(id);
+	try{$('#'+$('#DivID').val()).css({"background":"None"});}catch(e){}
+	$('#DivID').val(divid);
+	$('#'+$('#DivID').val()).css({"background":"#aaa"});
 }
 function hide_alltrees(){
+	$("div[name='div_trees_lv1_class']").each(function(){if(this.className=="programsList tree1_open"){this.className="programsList tree1_close";}});
 	$("div[name='div_trees_lv2']").fadeOut();
 	$("div[name='div_trees_lv3']").fadeOut();
 }
 function show_alltrees(){
+	$("div[name='div_trees_lv1_class']").each(function(){if(this.className=="programsList tree1_close"){this.className="programsList tree1_open";}});
 	$("div[name='div_trees_lv2']").fadeIn();
 	$("div[name='div_trees_lv3']").fadeIn();
 }
@@ -123,6 +130,7 @@ For i = 0 to ubound(arraystrlv1id)
 				nonSortDic.Items()(arraystrlv2index(j)).Style = nonSortDic.Items()(arraystrlv2index(j)).Style & "2"
 				van = true
 			End If
+			nonSortDic.Items()(arraystrlv2index(j)).HisId = arraystrlv1id(i) &"_"
 			contentclassDic.Add nonSortDic.Keys()(arraystrlv2index(j)),nonSortDic.Items()(arraystrlv2index(j))
 			For k = 0 to ubound(arraystrlv3id)
 				If arraystrlv3upid(k) = arraystrlv2id(j) Then
@@ -137,6 +145,7 @@ For i = 0 to ubound(arraystrlv1id)
 						If van Then styletype = "2" Else styletype = "4" End If
 					End If
 					nonSortDic.Items()(arraystrlv3index(k)).Style = nonSortDic.Items()(arraystrlv3index(k)).Style & styletype
+					nonSortDic.Items()(arraystrlv3index(k)).HisId = arraystrlv1id(i) &"_"& arraystrlv2id(j) &"_"
 					contentclassDic.Add nonSortDic.Keys()(arraystrlv3index(k)),nonSortDic.Items()(arraystrlv3index(k))
 				End If
 			Next

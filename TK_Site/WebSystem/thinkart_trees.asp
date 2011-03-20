@@ -15,6 +15,7 @@
     <td>所属分类 
       <input name="ClassName" type="text" class="add_grayInput" id="ClassName" value="请选择分类" readonly="readonly" />
       <input name="ClassID" type="hidden" id="ClassID" value="" />
+      <input name="DivID" type="hidden" id="DivID" value="" />
     </td>
   </tr>
   <tr>
@@ -24,9 +25,9 @@
     <td valign="top" class="programs">
         <div id="tree_area" class="programsDiv text_deepGray12_b">
             <%For i = 0 to contentclassDic.count - 1%>
-            <div class="programsItem" id="div_trees_<%=contentclassDic.Items()(i).ID%>" name="div_trees_lv<%=contentclassDic.Items()(i).LV%>">
-          <div class="programsList tree<%=contentclassDic.Items()(i).LV%>_<%=contentclassDic.Items()(i).Style%>" onclick="tree_click(this);"></div>
-            <div class="programsList_text" onclick="setval('<%=contentclassDic.Items()(i).ClassName%>','<%=contentclassDic.Items()(i).ID%>');"><%=contentclassDic.Items()(i).ClassName%></div></div>
+            <div class="programsItem" id="div_trees_<%=contentclassDic.Items()(i).HisId%><%=contentclassDic.Items()(i).ID%>" name="div_trees_lv<%=contentclassDic.Items()(i).LV%>">
+          <div class="programsList tree<%=contentclassDic.Items()(i).LV%>_<%=contentclassDic.Items()(i).Style%>" name="div_trees_lv<%=contentclassDic.Items()(i).LV%>_class" onclick="tree_click(this,'div_trees_<%=contentclassDic.Items()(i).HisId%><%=contentclassDic.Items()(i).ID%>');"></div>
+            <div class="programsList_text" onclick="setval('<%=contentclassDic.Items()(i).ClassName%>','<%=contentclassDic.Items()(i).ID%>','div_trees_<%=contentclassDic.Items()(i).HisId%><%=contentclassDic.Items()(i).ID%>');"><%=contentclassDic.Items()(i).ClassName%></div></div>
 <%Next%>
         </div>
 	</td>
