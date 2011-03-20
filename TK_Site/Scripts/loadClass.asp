@@ -60,7 +60,7 @@ function setval(name,id,divid){
 	$('#ClassID').val(id);
 	try{$('#'+$('#DivID').val()).css({"background":"None"});}catch(e){}
 	$('#DivID').val(divid);
-	$('#'+$('#DivID').val()).css({"background":"#aaa"});
+	$('#'+$('#DivID').val()).css({"background":"#cccccc"});
 }
 function hide_alltrees(){
 	$("div[name='div_trees_lv1_class']").each(function(){if(this.className=="programsList tree1_open"){this.className="programsList tree1_close";}});
