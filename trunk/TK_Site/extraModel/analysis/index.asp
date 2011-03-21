@@ -18,8 +18,8 @@ end if
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-<link href="../WebSystem/css/content_style.css" rel="stylesheet" type="text/css" />
-<link href="../WebSystem/css/font_link.css" rel="stylesheet" type="text/css" />
+<link href="../../WebSystem/css/content_style.css" rel="stylesheet" type="text/css" />
+<link href="../../WebSystem/css/font_link.css" rel="stylesheet" type="text/css" />
 <title><%=keystr%></title>
 <SCRIPT src="images/date.js" type=text/javascript></SCRIPT>
 </head>

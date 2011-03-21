@@ -18,6 +18,8 @@ end if
 <meta name="description" content="ASP来路分析系统 | www.sjmp5.com" />
 <meta name="keywords" content="ASP来路分析系统,sjmp5@126.com" />
 <meta name="Copyright" content="copyright (c) 2008 www.sjmp5.com  sjmp5 " />
+<link href="../../WebSystem/css/content_style.css" rel="stylesheet" type="text/css" />
+<link href="../../WebSystem/css/font_link.css" rel="stylesheet" type="text/css" />
 <link href="images/css.css" rel="stylesheet" type="text/css">
 <title><%=keystr%></title>
 </head>
@@ -36,12 +38,10 @@ document.form1.elements[i].checked=t;
 	}
 }
 </script>
-
+<!--#include file="sjmp5_top.asp"-->
 <center>
+
 <table width="950" border="0" align="center" cellpadding="0" cellspacing="5">
-   <tr>
-     <td><!--#include file="sjmp5_top.asp"--></td>
-   </tr>
    <tr>
      <td>
 

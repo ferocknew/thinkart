@@ -21,15 +21,15 @@ end if
 <meta name="description" content="ASP来路分析系统 | www.sjmp5.com" />
 <meta name="keywords" content="ASP来路分析系统,sjmp5@126.com" />
 <meta name="Copyright" content="copyright (c) 2008 www.sjmp5.com  sjmp5 " />
+<link href="../../WebSystem/css/content_style.css" rel="stylesheet" type="text/css" />
+<link href="../../WebSystem/css/font_link.css" rel="stylesheet" type="text/css" />
 <link href="images/css.css" rel="stylesheet" type="text/css">
 <title><%=keystr%>  >> 外部链接来源排名</title>
 <SCRIPT src="images/date.js" type=text/javascript></SCRIPT>
 </head>
 <body>
+<!--#include file="sjmp5_top.asp"-->
 <table width="950" border="0" align="center" cellpadding="0" cellspacing="5">
-  <tr>
-    <td align="center"><!--#include file="sjmp5_top.asp"--></td>
-  </tr>
   <tr>
     <td height="30" align="center"><table width="100%" border="0" cellpadding="1" cellspacing="1" bgcolor="#dddddd">
         <tr>
