@@ -1,4 +1,5 @@
-
+<link href="../../WebSystem/css/content_style.css" rel="stylesheet" type="text/css" />
+<link href="../../WebSystem/css/font_link.css" rel="stylesheet" type="text/css" />
 
 <!--#include file="config.asp"-->
 <html>

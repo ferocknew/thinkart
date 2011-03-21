@@ -1,4 +1,5 @@
-
+<link href="../../WebSystem/css/content_style.css" rel="stylesheet" type="text/css" />
+<link href="../../WebSystem/css/font_link.css" rel="stylesheet" type="text/css" />
 
 <!--#include file="config.asp"--> 
 <%
@@ -34,11 +35,8 @@ function SelectAll()
 		}
 	}
 </script>
-<center>
+<!--#include file="sjmp5_top.asp"-->
 <table width="950" border="0" align="center" cellpadding="0" cellspacing="5">
-   <tr>
-     <td><!--#include file="sjmp5_top.asp"--></td>
-   </tr>
    <tr>
      <td>
 
@@ -189,5 +187,5 @@ end if%>
      <td><!-- #include file="sjmp5_FOOT.asp" --></td>
    </tr>
 </table>
-</center>
+
 </body></html>
