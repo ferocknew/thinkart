@@ -1,10 +1,13 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<%@LANGUAGE="VBSCRIPT" CODEPAGE="65001"%> 
 <%
 search_key=request("search_key")
 search=replace(replace(replace(replace(replace(replace(request("search"),"'",""),"#",""),Chr(34),""),"?","")," ",""),"=","")
 if search<>"" then
 	if isdate(request("search")) then 
 	else 
-		response.write "ÈÕÆÚ¸ñÊ½²»ÕıÈ·" 
+		response.write "æ—¥æœŸæ ¼å¼ä¸æ­£ç¡®" 
 		response.end()
 	end if
 else
@@ -12,31 +15,26 @@ search=date()
 end if
 %>
 <!--#include file="config.asp"-->
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-<meta name="description" content="ASPÀ´Â··ÖÎöÏµÍ³ | www.sjmp5.com" />
-<meta name="keywords" content="ASPÀ´Â··ÖÎöÏµÍ³,sjmp5@126.com" />
-<meta name="Copyright" content="copyright (c) 2008 www.sjmp5.com  sjmp5 " />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link href="../../WebSystem/css/content_style.css" rel="stylesheet" type="text/css" />
 <link href="../../WebSystem/css/font_link.css" rel="stylesheet" type="text/css" />
-<link href="images/css.css" rel="stylesheet" type="text/css">
-<title>¹Ø¼ü×ÖÅÅÃû >><%=keystr%></title>
-
+<title>å…³é”®å­—æ’å >><%=keystr%></title>
 <SCRIPT src="images/date.js" type=text/javascript></SCRIPT>
 </head>
 <body>
 <!-- #include file="sjmp5_top.asp" -->
-<table width="950" border="0" align="center" cellpadding="1" cellspacing="5">
-  <tr>
-    <td height="30" colspan="2" align="center"><table width="100%" border="0" cellpadding="1" cellspacing="1" bgcolor="#dddddd">
-        <tr>
-          <td height="80" align="center" bgcolor="#f8f8f9"><FORM name=searchForm action=? >
-              °´ÈÕÆÚ²é¿´: <INPUT 
+<div class="content_ctrlbar text_deepGray12_b">
+  <table style="float:left;" border="0" cellpadding="0" cellspacing="0" class="link_deepGray12_b">
+    <tr>
+      <td><FORM style="background:none;" name=searchForm action=? >
+              æŒ‰æ—¥æœŸæŸ¥çœ‹: <INPUT 
 name=search id=time_end value="<%=search%>" size=11 readonly> 
-              <IMG src="images/date.gif" width="36" height="19" class=dtm onclick="date_init(this,'time_end')" onmouseover="this.src='images/btn_on_cal.gif'" onmouseout="this.src='images/btn_off_cal.gif'"> &nbsp;
-  <INPUT class=button type=submit value=" ²é¿´ "> <input type="hidden" name="search_key" value="<%=search_key%>" /></FORM>
+              <IMG src="images/date.gif" width="36" height="19" align="absmiddle" class=dtm onClick="date_init(this,'time_end')" onMouseOver="this.src='images/btn_on_cal.gif'" onMouseOut="this.src='images/btn_off_cal.gif'"> &nbsp;
+  <INPUT class=button type=submit value=" æŸ¥çœ‹ "> <input type="hidden" name="search_key" value="<%=search_key%>" /></FORM></td>
+    </tr>
+  </table>
   <script language="javascript">
     function searchOrder()
     {
@@ -96,21 +94,17 @@ name=search id=time_end value="<%=search%>" size=11 readonly>
 	
 	LaunchCalendar(oInput, D);
 }
-	</script> <BR>
-	</td>
-        </tr>
-    </table>
-	
-	
-	</td>
-  </tr>
+	</script>
+</div>
+
+<table width="100%" border="0" cellpadding="0" cellspacing="5">
+
   <tr align="left">
-    <td width="474" align="left" valign="top">	
+    <td width="50%" align="left" valign="top">	
 	<%if request("search_key")<>"" then%>
-	
-<table width="100%" border="0" align="left" cellpadding="1" cellspacing="1" bgcolor="#dddddd">
+<table class="flowTable" width="100%" border="0" cellpadding="0" cellspacing="1">
   <tr>
-    <td height="30" colspan="2" align="left" bgcolor="#eeeeee">&nbsp;&nbsp;&nbsp;&nbsp;¹Ø¼ü×Ö:<font color="#FF0000"><b><%=search_key%></b></font></td>
+    <th class="text_white12_b" height="30" colspan="2" align="center">å…³é”®å­—:<font color="#339933"><b><%=search_key%></b></font></th>
   </tr>
 <%
 exec="select * from sjmp5_keyword where sjmp5_keyword_name='"&search_key&"' and sjmp5_keyword_date=#"&search&"# "
@@ -119,50 +113,50 @@ set rs=server.createobject("adodb.recordset")
 'response.End()
 rs.open exec,conn2,1,1
 if rs.bof and rs.eof then
-response.write "<tr><td height=25 colspan=2 align=center bgcolor=#FFFFFF>&nbsp;Ã»ÓĞÊı¾İ¼ÇÂ¼!</td></tr>"
+response.write "<tr><td height=25 colspan=2 align=center bgcolor=#FFFFFF>&nbsp;æ²¡æœ‰æ•°æ®è®°å½•!</td></tr>"
 else
 key_id=200
 %>
 <%if rs("sjmp5_keyword_baidu")>0 then%>
   <tr>
-    <td width="60" height="25" align="center" bgcolor="#FFFFFF">°Ù¶È:</td>
-    <td width="376" height="25" align="left" bgcolor="#FFFFFF"><img src="images/smallbg.jpg" width=<%=fix(rs("sjmp5_keyword_baidu")/rs("sjmp5_keyword_hits")*key_id)%> height=10>&nbsp;<%=fix(rs("sjmp5_keyword_baidu")/rs("sjmp5_keyword_hits")*100)%>%&nbsp;(<%=rs("sjmp5_keyword_baidu")%>´Î)
+    <td width="60" height="25" align="center">ç™¾åº¦:</td>
+    <td width="376" height="25" align="left"><img src="images/smallbg.jpg" width=<%=fix(rs("sjmp5_keyword_baidu")/rs("sjmp5_keyword_hits")*key_id)%> height=10>&nbsp;<%=fix(rs("sjmp5_keyword_baidu")/rs("sjmp5_keyword_hits")*100)%>%&nbsp;(<%=rs("sjmp5_keyword_baidu")%>æ¬¡)
 	</td>
   </tr><%end if 
   if rs("sjmp5_keyword_google")>0 then%>
   <tr>
-    <td width="60" height="25" align="center" bgcolor="#FFFFFF">¹È¸è:</td>
-    <td width="376" height="25" align="left" bgcolor="#FFFFFF"><img src="images/smallbg.jpg" width=<%=fix(rs("sjmp5_keyword_google")/rs("sjmp5_keyword_hits")*key_id)%> height=10>&nbsp;<%=fix(rs("sjmp5_keyword_google")/rs("sjmp5_keyword_hits")*100)%>%&nbsp;(<%=rs("sjmp5_keyword_google")%>´Î)</td>
+    <td width="60" height="25" align="center">è°·æ­Œ:</td>
+    <td width="376" height="25" align="left"><img src="images/smallbg.jpg" width=<%=fix(rs("sjmp5_keyword_google")/rs("sjmp5_keyword_hits")*key_id)%> height=10>&nbsp;<%=fix(rs("sjmp5_keyword_google")/rs("sjmp5_keyword_hits")*100)%>%&nbsp;(<%=rs("sjmp5_keyword_google")%>æ¬¡)</td>
     </tr><%end if 
 	if rs("sjmp5_keyword_soso")>0 then%>
   <tr>
-    <td width="60" height="25" align="center" bgcolor="#FFFFFF">ËÑËÑ:</td>
-    <td width="376" height="25" align="left" bgcolor="#FFFFFF"><img src="images/smallbg.jpg" width=<%=fix(rs("sjmp5_keyword_soso")/rs("sjmp5_keyword_hits")*key_id)%> height=10>&nbsp;<%=fix(rs("sjmp5_keyword_soso")/rs("sjmp5_keyword_hits")*100)%>%&nbsp;(<%=rs("sjmp5_keyword_soso")%>´Î)</td>
+    <td width="60" height="25" align="center">æœæœ:</td>
+    <td width="376" height="25" align="left"><img src="images/smallbg.jpg" width=<%=fix(rs("sjmp5_keyword_soso")/rs("sjmp5_keyword_hits")*key_id)%> height=10>&nbsp;<%=fix(rs("sjmp5_keyword_soso")/rs("sjmp5_keyword_hits")*100)%>%&nbsp;(<%=rs("sjmp5_keyword_soso")%>æ¬¡)</td>
   </tr><%end if 
   if rs("sjmp5_keyword_sogou")>0 then%>
   <tr>
-    <td width="60" height="25" align="center" bgcolor="#FFFFFF">ËÑ¹·:</td>
-    <td width="376" height="25" align="left" bgcolor="#FFFFFF"><img src='images/smallbg.jpg' width='<%=fix(rs("sjmp5_keyword_sogou")/rs("sjmp5_keyword_hits")*key_id)%>'  height='10'>&nbsp;<%=fix(rs("sjmp5_keyword_sogou")/rs("sjmp5_keyword_hits")*100)%>%&nbsp;(<%=rs("sjmp5_keyword_sogou")%>´Î)</td>
+    <td width="60" height="25" align="center">æœç‹—:</td>
+    <td width="376" height="25" align="left"><img src='images/smallbg.jpg' width='<%=fix(rs("sjmp5_keyword_sogou")/rs("sjmp5_keyword_hits")*key_id)%>'  height='10'>&nbsp;<%=fix(rs("sjmp5_keyword_sogou")/rs("sjmp5_keyword_hits")*100)%>%&nbsp;(<%=rs("sjmp5_keyword_sogou")%>æ¬¡)</td>
   </tr><%end if 
   if rs("sjmp5_keyword_yahoo")>0 then%>
   <tr>
-    <td width="60" height="25" align="center" bgcolor="#FFFFFF">ÑÅ»¢:</td>
-    <td width="376" height="25" align="left" bgcolor="#FFFFFF"><img src="images/smallbg.jpg" width=<%=fix(rs("sjmp5_keyword_yahoo")/rs("sjmp5_keyword_hits")*key_id)%> height=10>&nbsp;<%=fix(rs("sjmp5_keyword_yahoo")/rs("sjmp5_keyword_hits")*100)%>%&nbsp;(<%=rs("sjmp5_keyword_yahoo")%>´Î)</td>
+    <td width="60" height="25" align="center">é›…è™:</td>
+    <td width="376" height="25" align="left"><img src="images/smallbg.jpg" width=<%=fix(rs("sjmp5_keyword_yahoo")/rs("sjmp5_keyword_hits")*key_id)%> height=10>&nbsp;<%=fix(rs("sjmp5_keyword_yahoo")/rs("sjmp5_keyword_hits")*100)%>%&nbsp;(<%=rs("sjmp5_keyword_yahoo")%>æ¬¡)</td>
   </tr><%end if 
   if rs("sjmp5_keyword_youdao")>0 then%>
   <tr>
-    <td width="60" height="25" align="center" bgcolor="#FFFFFF">ÓĞµÀ:</td>
-    <td width="376" height="25" align="left" bgcolor="#FFFFFF"><img src="images/smallbg.jpg" width=<%=fix(rs("sjmp5_keyword_youdao")/rs("sjmp5_keyword_hits")*key_id)%> height=10>&nbsp;<%=fix(rs("sjmp5_keyword_youdao")/rs("sjmp5_keyword_hits")*100)%>%&nbsp;(<%=rs("sjmp5_keyword_youdao")%>´Î)</td>
+    <td width="60" height="25" align="center">æœ‰é“:</td>
+    <td width="376" height="25" align="left"><img src="images/smallbg.jpg" width=<%=fix(rs("sjmp5_keyword_youdao")/rs("sjmp5_keyword_hits")*key_id)%> height=10>&nbsp;<%=fix(rs("sjmp5_keyword_youdao")/rs("sjmp5_keyword_hits")*100)%>%&nbsp;(<%=rs("sjmp5_keyword_youdao")%>æ¬¡)</td>
   </tr><%end if 
   if rs("sjmp5_keyword_msn")>0 then%>
   <tr>
-    <td width="60" height="25" align="center" bgcolor="#FFFFFF">MSN:</td>
-    <td width="376" height="25" align="left" bgcolor="#FFFFFF"><img src="images/smallbg.jpg" width=<%=fix(rs("sjmp5_keyword_msn")/rs("sjmp5_keyword_hits")*key_id)%> height=10>&nbsp;<%=fix(rs("sjmp5_keyword_msn")/rs("sjmp5_keyword_hits")*100)%>%&nbsp;(<%=rs("sjmp5_keyword_msn")%>´Î)</td>
+    <td width="60" height="25" align="center">MSN:</td>
+    <td width="376" height="25" align="left"><img src="images/smallbg.jpg" width=<%=fix(rs("sjmp5_keyword_msn")/rs("sjmp5_keyword_hits")*key_id)%> height=10>&nbsp;<%=fix(rs("sjmp5_keyword_msn")/rs("sjmp5_keyword_hits")*100)%>%&nbsp;(<%=rs("sjmp5_keyword_msn")%>æ¬¡)</td>
   </tr><%end if 
   if rs("sjmp5_keyword_qt")>0 then%>
   <tr>
-    <td width="60" height="25" align="center" bgcolor="#FFFFFF">ÆäËü:</td>
-    <td width="376" height="25" align="left" bgcolor="#FFFFFF"><img src="images/smallbg.jpg" width=<%=fix(rs("sjmp5_keyword_qt")/rs("sjmp5_keyword_hits")*key_id)%> height=10>&nbsp;<%=fix(rs("sjmp5_keyword_qt")/rs("sjmp5_keyword_hits")*100)%>%&nbsp;(<%=rs("sjmp5_keyword_qt")%>´Î)</td>
+    <td width="60" height="25" align="center">å…¶å®ƒ:</td>
+    <td width="376" height="25" align="left"><img src="images/smallbg.jpg" width=<%=fix(rs("sjmp5_keyword_qt")/rs("sjmp5_keyword_hits")*key_id)%> height=10>&nbsp;<%=fix(rs("sjmp5_keyword_qt")/rs("sjmp5_keyword_hits")*100)%>%&nbsp;(<%=rs("sjmp5_keyword_qt")%>æ¬¡)</td>
   </tr>  
 <%end if
 end if
@@ -170,10 +164,10 @@ end if
 </table>
 <%end if%>
 	</td>
-    <td width="469" align="right" valign="top">	
-<table width="100%" border="0" align="left" cellpadding="1" cellspacing="1" bgcolor="#dddddd">
+    <td width="50%" align="right" valign="top">	
+<table width="100%" border="0" align="left" cellpadding="0" cellspacing="1" class="flowTable">
   <tr>
-    <td height="30" colspan="3" align="center" bgcolor="#eeeeee">[ <%=search%> ] ¹Ø¼ü×Ö ÅÅÃû</td>
+    <th class="text_white12_b" colspan="3" align="center">[ <%=search%> ] å…³é”®å­— æ’å</th>
   </tr>	
  <%
 rs.close
@@ -188,31 +182,31 @@ set rs=server.createobject("adodb.recordset")
 rs.open exec,conn2,1,1
 
   if rs.bof and rs.eof then
-response.write "<tr><td height=25 colspan=3 align=center bgcolor=#FFFFFF> &nbsp;Ã»ÓĞÊı¾İ¼ÇÂ¼!</td></tr>"
+response.write "<tr><td height=25 colspan=3 align=center bgcolor=#FFFFFF> &nbsp;æ²¡æœ‰æ•°æ®è®°å½•!</td></tr>"
 else
 do while not rs.eof
 dim iikey
 iikey=iikey+1
   %>
   <tr>
-    <td width="40" height="25" align="left" bgcolor="#FFFFFF">&nbsp;<%=iikey%> &nbsp;</td>
-    <td width="228" height="25" align="left" bgcolor="#FFFFFF">&nbsp;<a href='search_keyword.asp?search_key=<%=rs("sjmp5_keyword_name")%>&search=<%=search%>' title='ÊÜ·Ã´ÎÊı:<%=rs("sjmp5_keyword_hits")%>' >
+    <td width="40" height="25" align="left">&nbsp;<%=iikey%> &nbsp;</td>
+    <td width="228" height="25" align="left">&nbsp;<a href='search_keyword.asp?search_key=<%=rs("sjmp5_keyword_name")%>&search=<%=search%>' title='å—è®¿æ¬¡æ•°:<%=rs("sjmp5_keyword_hits")%>' >
     <%=rs("sjmp5_keyword_name")%></a>   &nbsp;</td>
-    <td width="188" align="left" bgcolor="#FFFFFF"><img src="images/smallbg.jpg" width=<%=fix(rs("sjmp5_keyword_hits")/key_tj*150)%> height=10>&nbsp;<%=fix(rs("sjmp5_keyword_hits")/key_tj*100)%>%&nbsp;(<font color="#FF0000"><%=rs("sjmp5_keyword_hits")%></font>)</td>
+    <td width="188" align="left"><img src="images/smallbg.jpg" width=<%=fix(rs("sjmp5_keyword_hits")/key_tj*150)%> height=10>&nbsp;<%=fix(rs("sjmp5_keyword_hits")/key_tj*100)%>%&nbsp;(<font color="#339933"><%=rs("sjmp5_keyword_hits")%></font>)</td>
   </tr><%
 rs.movenext 
 loop
 rs.close
 %>
   <tr>
-    <td height="28" colspan="3" align="center" bgcolor="#F8F8F9"><p><%=search%>  ÓĞ <font color="#FF0000">
+    <td height="28" colspan="3" align="center"><p><%=search%>  æœ‰ <font color="#339933">
 <%
 rs.open "select sum(sjmp5_keyword_tj) from sjmp5_keyword where sjmp5_keyword_date=#"&search&"# "
 response.write rs(0)
 rs.close
 %>
-</font> ¸ö¹Ø¼ü×Ö</td>
-  </tr><%end if%>
+</font> ä¸ªå…³é”®å­—</td><%end if%>
+  </tr>
 </table>
 </td>
   </tr>

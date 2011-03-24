@@ -30,10 +30,10 @@ sjmp5_jl_windows=replace(sjmp5_jl_windows,"uc web","uc")
 sjmp5_jl_windows=replace(sjmp5_jl_windows,"wap 1.0","wap") 
 sjmp5_jl_windows=replace(sjmp5_jl_windows,"wap 2.0","wap") 
 sjmp5_jl_window =split(sjmp5_jl_windows,";") 
-sjmp5_jl_ie="0"'sjmp5_jl_window(1)  '"ÊÖ»úä¯ÀÀÆ÷" 
-sjmp5_jl_xt="0"'sjmp5_jl_window(2)  '"Î´ÖªÏµÍ³"
+sjmp5_jl_ie="0"'sjmp5_jl_window(1)  '"æ‰‹æœºæµè§ˆå™¨" 
+sjmp5_jl_xt="0"'sjmp5_jl_window(2)  '"æœªçŸ¥ç³»ç»Ÿ"
 if sjmp5_getlyurls = "" then
-   sjmp5_getlyurls = "http://Ö±½Ó·ÃÎÊ/?url=http://www.sjmp5.com/"
+   sjmp5_getlyurls = "http://ç›´æ¥è®¿é—®/?url=http://www.sjmp5.com/"
 end if
    sjmp5_getlyurls = replace(sjmp5_getlyurls,"http://","")
    sjmp5_getlyurl2 = split(sjmp5_getlyurls,"/")%><!--#include file="mdb.asp"-->
@@ -56,8 +56,8 @@ if sjmp5_getlyurl<>"" then
    rs("sjmp5_jl_lyurlname")=sjmp5_getlyurl2(0)
    rs("sjmp5_jl_lyurl")=sjmp5_getlyurl
 else
-   rs("sjmp5_jl_lyurlname")="Ö±½Ó·ÃÎÊ"
-   rs("sjmp5_jl_lyurl")="Ö±½Ó·ÃÎÊ"
+   rs("sjmp5_jl_lyurlname")="ç›´æ¥è®¿é—®"
+   rs("sjmp5_jl_lyurl")="ç›´æ¥è®¿é—®"
 end if
    rs.update 
    rs.close

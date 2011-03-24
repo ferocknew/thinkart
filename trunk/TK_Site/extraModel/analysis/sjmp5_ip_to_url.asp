@@ -1,3 +1,5 @@
+<%@LANGUAGE="VBSCRIPT" CODEPAGE="65001"%> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 <!--#include file="config.asp"--> 
 <%
@@ -6,7 +8,7 @@ search=replace(replace(replace(replace(replace(replace(request("did"),"'",""),"#
 if search<>"" then
 	if isdate(request("did")) then 
 	else 
-		response.write "ÈÕÆÚ¸ñÊ½²»ÕıÈ·" 
+		response.write "æ—¥æœŸæ ¼å¼ä¸æ­£ç¡®" 
 		response.end()
 	end if
 else
@@ -15,13 +17,14 @@ end if
 %>
 <html>
 <head>
-<meta name="description" content="ASPÀ´Â··ÖÎöÏµÍ³ | www.sjmp5.com" />
-<meta name="keywords" content="ASPÀ´Â··ÖÎöÏµÍ³,sjmp5@126.com" />
+<meta name="description" content="ASPæ¥è·¯åˆ†æç³»ç»Ÿ | www.sjmp5.com" />
+<meta name="keywords" content="ASPæ¥è·¯åˆ†æç³»ç»Ÿ,sjmp5@126.com" />
 <meta name="Copyright" content="copyright (c) 2008 www.sjmp5.com  sjmp5 " />
 <link href="../../WebSystem/css/content_style.css" rel="stylesheet" type="text/css" />
 <link href="../../WebSystem/css/font_link.css" rel="stylesheet" type="text/css" />
 <link href="images/css.css" rel="stylesheet" type="text/css">
 <title><%=keystr%></title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 </head>
 <body>
 <script language=javascript>
@@ -47,13 +50,13 @@ document.form1.elements[i].checked=t;
 
 <table width="100%" border="0" cellpadding="1" cellspacing="1" bgcolor="#dddddd">
         <tr>
-          <td height="80" align="center" bgcolor="#f8f8f9"><%=search_ip%>µÄ·ÃÎÊ¼ÇÂ¼</td>
+          <td height="80" align="center" bgcolor="#f8f8f9"><%=search_ip%>çš„è®¿é—®è®°å½•</td>
         </tr>
     </table>
 <BR>
 <table width="100%" height="34" border="0" align="center" cellpadding="1" cellspacing="1" bgcolor="#dddddd">
   <tr>
-    <td align="center" background="images/tab_bg.gif" bgcolor="#F8f8f8"><%=search%>À´Â··ÖÎö</td>
+    <td align="center" background="images/tab_bg.gif" bgcolor="#F8f8f8"><%=search%>æ¥è·¯åˆ†æ</td>
 </tr></table>
 <table width="750" height="3" border="0" align="center" cellpadding="1" cellspacing="1">
   <tr>
@@ -63,11 +66,11 @@ document.form1.elements[i].checked=t;
 <table width="950" border="0" align="center" cellpadding="1" cellspacing="1" bgcolor="#dddddd">
 
 <tr>
-  <td width="315" height="30" align="center" bgcolor="#EEEEEE">Á´½ÓÀ´Ô´</td>
-  <td width="293" height="30" align="center" bgcolor="#EEEEEE">µ½·ÃÒ³Ãæ</td>
-  <td width="140" height="30" align="center" bgcolor="#EEEEEE">ÇëÇóIP</td>
-  <td width="155" height="30" align="center" bgcolor="#EEEEEE">ÇëÇóÊ±¼ä</td>
-  <td width="31" align="center" bgcolor="#EEEEEE">²Ù×÷</td>
+  <td width="315" height="30" align="center" bgcolor="#EEEEEE">é“¾æ¥æ¥æº</td>
+  <td width="293" height="30" align="center" bgcolor="#EEEEEE">åˆ°è®¿é¡µé¢</td>
+  <td width="140" height="30" align="center" bgcolor="#EEEEEE">è¯·æ±‚IP</td>
+  <td width="155" height="30" align="center" bgcolor="#EEEEEE">è¯·æ±‚æ—¶é—´</td>
+  <td width="31" align="center" bgcolor="#EEEEEE">æ“ä½œ</td>
 </tr>
 <form method="post" action="sjmp5_del_ser.asp" name="form1">
 <%
@@ -86,7 +89,7 @@ document.form1.elements[i].checked=t;
   everypage=pagekeyfenxi          
   rs.pagesize=everypage
   if rs.bof and rs.eof then
-  response.Write("<font color=red>Ã»ÓĞÊı¾İ¼ÇÂ¼!</a>")
+  response.Write("<font color=red>æ²¡æœ‰æ•°æ®è®°å½•!</a>")
   else
   page_count=rs.pagecount
   rs.AbsolutePage=page
@@ -98,15 +101,15 @@ document.form1.elements[i].checked=t;
 <td align="left" bgcolor="#FFFFFF"><div style="width: 310px; overflow: hidden;">
 <%
 if rs("sjmp5_jl_lyurl")="sjmp5" then 
-response.write "&nbsp;Ö±½Ó·ÃÎÊ"
+response.write "&nbsp;ç›´æ¥è®¿é—®"
 else
 %>
-<a href='<%=rs("sjmp5_jl_lyurl")%>' target=_blank title='Á´½ÓÀ´Ô´:<%=rs("sjmp5_jl_lyurl")%>'>&nbsp;<%=rs("sjmp5_jl_lyurl")%></a><%end if%></div></td>
+<a href='<%=rs("sjmp5_jl_lyurl")%>' target=_blank title='é“¾æ¥æ¥æº:<%=rs("sjmp5_jl_lyurl")%>'>&nbsp;<%=rs("sjmp5_jl_lyurl")%></a><%end if%></div></td>
 <td align="left" bgcolor="#FFFFFF"><div style="width: 290px; overflow: hidden;">&nbsp;<%=rs("sjmp5_jl_fwurl")%></div></td>
 <td align="left" bgcolor="#FFFFFF">&nbsp;
 <%= rs("sjmp5_jl_ip")%></td>
 <td align="left" bgcolor="#FFFFFF">&nbsp;<%=rs("sjmp5_jl_date")%></td>
-<td align="right" bgcolor="#FFFFFF"><input type="checkbox" name="sjmp5_jl_id" value="<%=rs("sjmp5_jl_id")%>" title="Ñ¡Ôñ">&nbsp;</td>
+<td align="right" bgcolor="#FFFFFF"><input type="checkbox" name="sjmp5_jl_id" value="<%=rs("sjmp5_jl_id")%>" title="é€‰æ‹©">&nbsp;</td>
 </tr>
 
 <%
@@ -117,7 +120,7 @@ else
 %>
 
 <tr onMouseOver="this.bgColor='#F8F8F9';" onMouseOut="this.bgColor='#FFFFFF';" >
-  <td colspan="5" align="right" bgcolor="#FFFFFF"><input type="checkbox" name="cek" value="11" onClick="SelectAll()" title="È«Ñ¡">&nbsp;<br>      <input type="submit" value="É¾³ı" name="B1"  style="border-style: solid; border-width: 0px"></td>
+  <td colspan="5" align="right" bgcolor="#FFFFFF"><input type="checkbox" name="cek" value="11" onClick="SelectAll()" title="å…¨é€‰">&nbsp;<br>      <input type="submit" value="åˆ é™¤" name="B1"  style="border-style: solid; border-width: 0px"></td>
   </tr>
 </form>
 </table>
@@ -132,9 +135,9 @@ else
      <td height="28" align="center" valign="middle" background="images/tab_bgh.gif" bgcolor="#F8F8F9" class="del2">
 <%
 if page=1 then
- Response.Write"ÉÏÒ»Ò³"
+ Response.Write"ä¸Šä¸€é¡µ"
    else
- Response.Write"<a href=?page="&page-1&"&did="&search&"&ip="&search_ip&">ÉÏÒ»Ò³</a>"
+ Response.Write"<a href=?page="&page-1&"&did="&search&"&ip="&search_ip&">ä¸Šä¸€é¡µ</a>"
  end if
  %>
  
@@ -156,9 +159,9 @@ if page=1 then
   <%end if%>
   <%next%>
 <%if page<page_count then%>
-<a href='?page=<%=page+1%>&did=<%=search%>&ip=<%=search_ip%>'>ÏÂÒ»Ò³</a>
+<a href='?page=<%=page+1%>&did=<%=search%>&ip=<%=search_ip%>'>ä¸‹ä¸€é¡µ</a>
 <%else%>
-ÏÂÒ»Ò³
+ä¸‹ä¸€é¡µ
 <%end if%>
 </td>
    </tr>

@@ -17,5 +17,5 @@ rs.close
 set rs=nothing
 conn2.close
 set conn2=nothing
-Response.Write "<script>window.alert('É¾³ı³É¹¦£¡');window.location.href='"&Cstr(Request.ServerVariables("HTTP_REFERER"))&"';</script>" 
+Response.Write "<script>window.alert('åˆ é™¤æˆåŠŸï¼');window.location.href='"&Cstr(Request.ServerVariables("HTTP_REFERER"))&"';</script>" 
 %>

@@ -6,13 +6,13 @@ exec="select * from sjmp5_ip where sjmp5_ip_date=date()"
 set rs=server.createobject("adodb.recordset")
 rs.open exec,conn2,1,1
   if rs.bof and rs.eof then
-  response.Write("<font color=red>Ã»ÓĞÊı¾İ¼ÇÂ¼!</a>")
+  response.Write("<font color=red>æ²¡æœ‰æ•°æ®è®°å½•!</a>")
   else
 
 %>
 <table width="100%" border="0" align="left" cellpadding="1" cellspacing="1" bgcolor="#dddddd">
   <tr>
-    <td height="30" colspan="3" align="center" bgcolor="#eeeeee">¶ÀÁ¢IPÇëÇó¼ÇÂ¼</td>
+    <td height="30" colspan="3" align="center" bgcolor="#eeeeee">ç‹¬ç«‹IPè¯·æ±‚è®°å½•</td>
   </tr>
   <%
 do while not rs.eof
@@ -23,16 +23,16 @@ fxip=fxip+1
     <td width="41" height="25" align="left" bgcolor="#FFFFFF">&nbsp;<%=fxip%></td>
     <td width="200" align="left" bgcolor="#FFFFFF">&nbsp;&nbsp;
     <%=rs("sjmp5_ip_ip")%></td>
-    <td width="54" height="25" align="right" bgcolor="#FFFFFF"><font color="#FF0000"><%=rs("sjmp5_ip_hits")%></font>´Î&nbsp;</td>
+    <td width="54" height="25" align="right" bgcolor="#FFFFFF"><font color="#339933"><%=rs("sjmp5_ip_hits")%></font>æ¬¡&nbsp;</td>
   </tr><%
 rs.movenext 
 loop
 rs.close
 %>
   <tr>
-    <td height="28" colspan="3" align="center" bgcolor="#F8F8F9"><p>½ñÌìÀ´·Ã¶ÀÁ¢IP£º<font color="#FF0000">
+    <td height="28" colspan="3" align="center" bgcolor="#F8F8F9"><p>ä»Šå¤©æ¥è®¿ç‹¬ç«‹IPï¼š<font color="#339933">
 <%=fxip%>
-</font>¸ö</td>
+</font>ä¸ª</td>
   </tr>
 </table>
 <%end if%>

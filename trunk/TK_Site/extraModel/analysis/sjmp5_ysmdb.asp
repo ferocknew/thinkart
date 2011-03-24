@@ -36,9 +36,9 @@ Function CompactDB(dbPath, boolIs97)
   fso.DeleteFile(strDBPath & "temp1.mdb")
   Set fso = Nothing
   Set Engine = Nothing
-  Response.Write "Ñ¹Ëõ³É¹¦!"
+  Response.Write "å‹ç¼©æˆåŠŸ!"
  Else
-  Response.Write "<a href=sjmp5_ysmdb.asp>Ñ¹ËõÊ§°Ü!ÔÙÀ´Ò»´Î!</a>"
+  Response.Write "<a href=sjmp5_ysmdb.asp>å‹ç¼©å¤±è´¥!å†æ¥ä¸€æ¬¡!</a>"
  End If
 End Function
 %>

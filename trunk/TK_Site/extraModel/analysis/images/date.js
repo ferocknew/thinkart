@@ -2,18 +2,18 @@ var _oCalPopUp;
 var _oCalInput;
 var _sCalMonths		=	new	Array
 						(
-							"1 ÔÂ",
-							"2 ÔÂ",
-							"3 ÔÂ",
-							"4 ÔÂ",
-							"5 ÔÂ",
-							"6 ÔÂ",
-							"7 ÔÂ",
-							"8 ÔÂ",
-							"9 ÔÂ",
-							"10 ÔÂ",
-							"11 ÔÂ",
-							"12 ÔÂ"
+							"1 æœˆ",
+							"2 æœˆ",
+							"3 æœˆ",
+							"4 æœˆ",
+							"5 æœˆ",
+							"6 æœˆ",
+							"7 æœˆ",
+							"8 æœˆ",
+							"9 æœˆ",
+							"10 æœˆ",
+							"11 æœˆ",
+							"12 æœˆ"
 						);
 						
 var _sCalLongMonths	=	new	Array
@@ -34,13 +34,13 @@ var _sCalLongMonths	=	new	Array
 							
 var _sCalDays		=	new Array
 						(
-							"ÈÕ", 
-							"Ò»", 
-							"¶þ", 
-							"Èý", 
-							"ËÄ", 
-							"Îå", 
-							"Áù"
+							"æ—¥", 
+							"ä¸€", 
+							"äºŒ", 
+							"ä¸‰", 
+							"å››", 
+							"äº”", 
+							"å…­"
 						);
 						
 var _sCalLongDays	= new Array
@@ -253,7 +253,7 @@ function DrawMonth(D, sOnClick, hiliteCode, hiliteDay )
 	{
 		s += "<td onclick='" + sOnClick + "' align='center' width='22' d='" + iValue + "' nav='1' onmouseover='this.runtimeStyle.color = \"#e89f2e\";' onmouseout='this.runtimeStyle.color = \"\";'>&lt;</td>";
 	}
-	s += "<td onclick='" + sOnClick + "' align='center' width='104' d='" + iValue + "' nav='2' onmouseover='this.runtimeStyle.color = \"#e89f2e\";' onmouseout='this.runtimeStyle.color = \"\";'>" + _sCalMonths[iInitMonth] + " " + dInitDate.getFullYear() + " Äê </td>";
+	s += "<td onclick='" + sOnClick + "' align='center' width='104' d='" + iValue + "' nav='2' onmouseover='this.runtimeStyle.color = \"#e89f2e\";' onmouseout='this.runtimeStyle.color = \"\";'>" + _sCalMonths[iInitMonth] + " " + dInitDate.getFullYear() + " å¹´ </td>";
 	var dLastDay = new Date(tmpDate.valueOf());
 	dLastDay.setDate(dLastDay.getDate() + 42);
 	if (dLastDay > _dCalMaxDate)
@@ -351,7 +351,7 @@ function getTodayBarHtml(iColSpan, sOnClick)
 	
 	s += iColSpan; 
 	s += "' onclick='" + sOnClick + "' d='" + dToday.valueOf() + "' onmouseover='runtimeStyle.color = \"#e89f2e\";' onmouseout='runtimeStyle.color = \"\";'><div style='height:16px;filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0,StartColorStr=#ffffff,EndColorStr=#cecfde);'>";
-	s += "½ñÌì: " + FormatDate(dToday);
+	s += "ä»Šå¤©: " + FormatDate(dToday);
 	return s + "</div></td></tr>";
 }
 function getWeekNumber( oDate )
@@ -382,7 +382,7 @@ function DrawYear(D, sOnClick)
 		s += "<td align='center' width='22' style='cursor:default;' nav='0'>&nbsp;</td>";
 	else
 		s += "<td onclick='" + sOnClick + "' align='center' width='22' d='" + iValue + "' nav='2' onmouseover='this.runtimeStyle.color = \"#e89f2e\";' onmouseout='this.runtimeStyle.color = \"\";'>&lt;</td>";
-	s += "<td align='center' style='cursor:default;' nav='0'>" + iYear + " Äê</td>";
+	s += "<td align='center' style='cursor:default;' nav='0'>" + iYear + " å¹´</td>";
 	if (iYear >= _dCalMaxDate.getFullYear())
 		s += "<td align='center' width='22' style='cursor:default;' nav='0'>&nbsp;</td>";
 	else

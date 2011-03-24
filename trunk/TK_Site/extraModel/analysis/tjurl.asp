@@ -1,14 +1,18 @@
 
 <!--#include file="config.asp"-->
-<%
+
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td style="padding-right:20px;">
+	<%
 exec="select * from sjmp5_config"
 set rs=server.createobject("adodb.recordset")
 rs.open exec,conn2,1,1
 if rs.bof and rs.eof then
-response.write "<a href=sjmp5_setup.asp target=_blank><font color=000000><u><b>ÏµÍ³³õÊ¼»¯ÉèÖÃ</b></u></font></a><BR>"
+response.write "<a href=sjmp5_setup.asp target=_blank><font color=000000><u><b>ç³»ç»Ÿåˆå§‹åŒ–è®¾ç½®</b></u></font></a><BR>"
 else
 dayer=date()-cdate(rs("sjmp5_config_date")) 
-response.write "ÍøÕ¾ÓÚ<b>"&rs("sjmp5_config_date")&"</b>¿ªÊ¼Í³¼Æ<BR>¹²Í³¼ÆÁË<b>"&dayer&"</b>Ìì<BR>"
+response.write "ç½‘ç«™äº <b>"&rs("sjmp5_config_date")&"</b> å¼€å§‹ç»Ÿè®¡<br>å…±ç»Ÿè®¡äº† <b>"&dayer&"</b> å¤©"
 end if
 rs.close
 
@@ -17,17 +21,24 @@ exec="select * from sjmp5_url"
 set rs=server.createobject("adodb.recordset")
 rs.open exec,conn2,1,1
 if rs.bof and rs.eof then
-  response.Write("<font color=red>»¹Ã»ÓĞ·ÃÎÊ¼ÇÂ¼!</font>")
+  response.Write("<font color=red>è¿˜æ²¡æœ‰è®¿é—®è®°å½•!</font>")
 else
 do while not rs.eof
 rs.movenext 
 loop
 rs.close
 %>
-×Ü¼ÇÂ¼·ÃÎÊ:<font color="#FF0000">
+</td>
+    <td>
+    æ€»è®°å½•è®¿é—®ï¼š<span class="text_green12">
 <%
 rs.open "select sum(sjmp5_url_hits) from sjmp5_url"
 response.write rs(0)
 %>
-</font>´Î
+</span>æ¬¡
 <%end if%>
+<br />
+<!--#include file="tjip.asp"-->
+    </td>
+  </tr>
+</table>

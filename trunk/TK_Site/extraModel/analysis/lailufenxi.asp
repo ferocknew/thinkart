@@ -30,7 +30,7 @@ sjmp5_jl_window =split(sjmp5_jl_windows,";")
 sjmp5_jl_ie=sjmp5_jl_window(1) 
 sjmp5_jl_xt=sjmp5_jl_window(2)
 if sjmp5_getlyurls = "" then
-   sjmp5_getlyurls = "http://直接访问/?url=http://www.sjmp5.com/"
+   sjmp5_getlyurls = "http://鐩存帴璁块棶/?url=http://www.sjmp5.com/"
 end if
    sjmp5_getlyurls = replace(sjmp5_getlyurls,"http://","")
    sjmp5_getlyurl2 = split(sjmp5_getlyurls,"/")%><!--#include file="mdb.asp"-->
@@ -53,8 +53,8 @@ if sjmp5_getlyurl<>"" then
    rs("sjmp5_jl_lyurlname")=sjmp5_getlyurl2(0)
    rs("sjmp5_jl_lyurl")=sjmp5_getlyurl
 else
-   rs("sjmp5_jl_lyurlname")="直接访问"
-   rs("sjmp5_jl_lyurl")="直接访问"
+   rs("sjmp5_jl_lyurlname")="鐩存帴璁块棶"
+   rs("sjmp5_jl_lyurl")="鐩存帴璁块棶"
 end if
    rs.update 
    rs.close

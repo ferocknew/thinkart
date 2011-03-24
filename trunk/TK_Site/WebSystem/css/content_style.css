@@ -87,6 +87,7 @@ input{
 	height:23px;
 	background:#d7d7d7;
 	text-align:center;
+	width:100%;
 	padding-top:5px;
 }
 
@@ -296,7 +297,6 @@ input{
 	background:url(../images/ico_tree3_4.png) left center no-repeat; padding-left:113px;}
 
 
-.
 
 /*内容编辑页样式*/
 
@@ -472,4 +472,34 @@ input{
 	border:none;
 	display:inline;
 	padding-right:20px;
+}
+
+/*流量监控页样式*/
+
+.flowContent{
+	float:left;
+	width:100%;
+}
+
+.flowContent a{
+	color:#333;
+	font-weight:normal;
+}
+
+.flowTable{
+	float:left;
+	font-size:12px;
+	margin-left:2px;
+}
+
+.flowTable th{
+	height:32px;
+	line-height:32px;
+	background:url(../images/bg_editbar.gif) repeat-x;
+}
+
+.flowTable td{
+	padding:0 5px;
+	background:#f1f1f1;
+	border-bottom:#e6e6e6 1px solid;
 }

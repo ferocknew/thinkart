@@ -1,24 +1,26 @@
+<%@LANGUAGE="VBSCRIPT" CODEPAGE="65001"%> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <%
-'¨q¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨TËµÃ÷¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨r
-'¨U¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨TASP À´Â··ÖÎöÏµÍ³V3.0¼ò½à°æ  ¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨U
-'¨U¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T·¢²¼ÈÕÆÚ£º2008-09-29        ¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨U
-'¨U¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨U
-'¨U¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨U
-'¨U¨T¨T¨T¨T ×öÈËÒªºñµÀ,×ªÔØ»òÊ¹ÓÃ±¾³ÌĞòÍêÈ«Ãâ·Ñ!Çë±£Áô×÷ÕßĞÅÏ¢!  ¨T¨T¨T¨T¨T¨T¨U
-'¨U¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨U
-'¨U¨T¨T¨T  ×÷Õß:sjmp5  ¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨U
-'¨U¨T¨T¨T       sadxy  ¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨U
-'¨U¨T¨T¨T  mail:sjmp5@126.com  ¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨U
-'¨U¨T¨T¨T    QQ:176341052  ¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨U
-'¨U¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨U
-'¨U¨T¨T¹Ù·½ÍøÕ¾:http://www.sjmp5.com   ¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨U
-'¨U¨T¨T³ÌĞòÑİÊ¾:http://www.sjmp5.com/LLFenxi/  ¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨U
-'¨U¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨U
-'¨U¨T¨T¨T¨TÄã¿É×ÔÓÉÊ¹ÓÃ¼°ĞŞ¸Ä,µ«ĞŞ¸ÄºóÇë·¢ËÍÒ»·İµ½£ºsjmp5@126.com  ¨T¨T¨T¨T¨T¨U
-'¨U¨T¨T¨T¨T°æÈ¨¹éSJMP5ËùÓĞ,Çë¼ÓÎÒQQ:176341052  ¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨U
-'¨U¨T¨T¨T¨TÈçÓĞ×ªÔØÇëÎğÉ¾³ıÒÔÉÏĞÅÏ¢,Ğ»Ğ»ºÏ×÷!  ¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨U
-'¨U·Ç³£¸ĞĞ»sadxyµÄÖ§³Ö£¬Äã½Ì»áÁËÎÒºÜ¶à£¬Ã»ÓĞÄãÎÒ¿ÉÄÜĞ´²»ÏÂÈ¥ÁË!ÔÙÒ»´Î¸ĞĞ»£¡  ¨U
-'¨t¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨s
+'â•­â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•è¯´æ˜â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•®
+'â•‘â•â•â•â•â•â•â•â•â•â•â•ASP æ¥è·¯åˆ†æç³»ç»ŸV3.0ç®€æ´ç‰ˆ  â•â•â•â•â•â•â•â•â•â•â•â•â•‘
+'â•‘â•â•â•â•â•â•â•â•â•â•â•å‘å¸ƒæ—¥æœŸï¼š2008-09-29        â•â•â•â•â•â•â•â•â•â•â•â•â•‘
+'â•‘â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•‘
+'â•‘â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•‘
+'â•‘â•â•â•â• åšäººè¦åšé“,è½¬è½½æˆ–ä½¿ç”¨æœ¬ç¨‹åºå®Œå…¨å…è´¹!è¯·ä¿ç•™ä½œè€…ä¿¡æ¯!  â•â•â•â•â•â•â•‘
+'â•‘â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•‘
+'â•‘â•â•â•  ä½œè€…:sjmp5  â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•‘
+'â•‘â•â•â•       sadxy  â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•‘
+'â•‘â•â•â•  mail:sjmp5@126.com  â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•‘
+'â•‘â•â•â•    QQ:176341052  â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•‘
+'â•‘â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•‘
+'â•‘â•â•å®˜æ–¹ç½‘ç«™:http://www.sjmp5.com   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•‘
+'â•‘â•â•ç¨‹åºæ¼”ç¤º:http://www.sjmp5.com/LLFenxi/  â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•‘
+'â•‘â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•‘
+'â•‘â•â•â•â•ä½ å¯è‡ªç”±ä½¿ç”¨åŠä¿®æ”¹,ä½†ä¿®æ”¹åè¯·å‘é€ä¸€ä»½åˆ°ï¼šsjmp5@126.com  â•â•â•â•â•â•‘
+'â•‘â•â•â•â•ç‰ˆæƒå½’SJMP5æ‰€æœ‰,è¯·åŠ æˆ‘QQ:176341052  â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•‘
+'â•‘â•â•â•â•å¦‚æœ‰è½¬è½½è¯·å‹¿åˆ é™¤ä»¥ä¸Šä¿¡æ¯,è°¢è°¢åˆä½œ!  â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•‘
+'â•‘éå¸¸æ„Ÿè°¢sadxyçš„æ”¯æŒï¼Œä½ æ•™ä¼šäº†æˆ‘å¾ˆå¤šï¼Œæ²¡æœ‰ä½ æˆ‘å¯èƒ½å†™ä¸ä¸‹å»äº†!å†ä¸€æ¬¡æ„Ÿè°¢ï¼  â•‘
+'â•°â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•¯
 %>
 
 <!--#include file="config.asp"-->
@@ -30,8 +32,8 @@ end if
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-<title><%=keystr%>  >>»ñÈ¡´úÂë</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title><%=keystr%>  >>è·å–ä»£ç </title>
 <style type="text/css">
 <!--
 body,td,th {
@@ -125,10 +127,10 @@ rs.open exec,conn2,1,1
    rs("sjmp5_config_off")="yes"
    rs.update 
    rs.close
-   Response.Write "<script>window.alert('´úÂëÉú³É³É¹¦£¡');javascript:location.href='sjmp5_setup.asp';</script>" 
+   Response.Write "<script>window.alert('ä»£ç ç”ŸæˆæˆåŠŸï¼');javascript:location.href='sjmp5_setup.asp';</script>" 
 else
-   Response.Write "<script>window.alert('ÄÚÈİ²»ÄÜÎª¿Õ£¡');javascript:location.href='sjmp5_setup.asp';</script>"
-   response.write "²»ÄÜÎª¿Õ"
+   Response.Write "<script>window.alert('å†…å®¹ä¸èƒ½ä¸ºç©ºï¼');javascript:location.href='sjmp5_setup.asp';</script>"
+   response.write "ä¸èƒ½ä¸ºç©º"
    response.end()
 end if
 end if
@@ -152,10 +154,10 @@ rs.open exec,conn2,1,1
    rs("sjmp5_config_off")="yes"
    rs.update 
    rs.close
-   Response.Write "<script>window.alert('ĞŞ¸Ä³É¹¦£¡');javascript:location.href='sjmp5_setup.asp';</script>" 
+   Response.Write "<script>window.alert('ä¿®æ”¹æˆåŠŸï¼');javascript:location.href='sjmp5_setup.asp';</script>" 
 else
-Response.Write "<script>window.alert('ĞŞ¸ÄÄÚÈİ²»ÄÜÎª¿Õ£¡');javascript:location.href='sjmp5_setup.asp';</script>"
-   response.write "²»ÄÜÎª¿Õ"
+Response.Write "<script>window.alert('ä¿®æ”¹å†…å®¹ä¸èƒ½ä¸ºç©ºï¼');javascript:location.href='sjmp5_setup.asp';</script>"
+   response.write "ä¸èƒ½ä¸ºç©º"
    response.end()
 end if
 end if
@@ -176,7 +178,7 @@ if rs.bof and rs.eof then
   <tr>
     <td height="30" align="center"><table width="100%" border="0" cellpadding="1" cellspacing="1" bgcolor="#dddddd">
         <tr>
-          <td height="80" align="center" bgcolor="#f8f8f9"><h2>ÏµÍ³³õÊ¼»¯ÉèÖÃ</h2></td>
+          <td height="80" align="center" bgcolor="#f8f8f9"><h2>ç³»ç»Ÿåˆå§‹åŒ–è®¾ç½®</h2></td>
         </tr>
     </table>	</td>
   </tr>
@@ -184,32 +186,32 @@ if rs.bof and rs.eof then
 
     <td align="left" valign="top"><table width="100%" border="0" align="left" cellpadding="1" cellspacing="1" bgcolor="#dddddd">
   <tr>
-    <td height="30" colspan="2" align="center" bgcolor="#eeeeee">ÏµÍ³³õÊ¼»¯ÉèÖÃ</td>
+    <td height="30" colspan="2" align="center" bgcolor="#eeeeee">ç³»ç»Ÿåˆå§‹åŒ–è®¾ç½®</td>
   </tr>
   <tr>
     <td height="25" colspan="2" align="left" bgcolor="#FFFFFF">&nbsp;</td>
     </tr>
 
   <tr>
-    <td height="25" align="right" bgcolor="#FFFFFF">ÍøÕ¾Ãû³Æ&nbsp;&nbsp;</td>
+    <td height="25" align="right" bgcolor="#FFFFFF">ç½‘ç«™åç§°&nbsp;&nbsp;</td>
     <td height="25" align="left" bgcolor="#FFFFFF">&nbsp;&nbsp;
       <input name="title" type="text" id="title" size="40" />
-      <span class="STYLE6">*</span> ÌîĞ´ÍêÕû Èç£ºTHINKART</td>
+      <span class="STYLE6">*</span> å¡«å†™å®Œæ•´ å¦‚ï¼šTHINKART</td>
   </tr>
   <tr>
-    <td width="110" height="25" align="right" bgcolor="#FFFFFF">ÍøÕ¾ÓòÃû&nbsp;&nbsp;</td>
+    <td width="110" height="25" align="right" bgcolor="#FFFFFF">ç½‘ç«™åŸŸå&nbsp;&nbsp;</td>
     <td width="631" height="25" align="left" bgcolor="#FFFFFF">&nbsp;&nbsp;
       <input name="url" type="text" id="url" size="40" /> 
-      <span class="STYLE6">*</span> ÌîĞ´ÍêÕû Èç£ºhttp://www.thinkart.cn</td>
+      <span class="STYLE6">*</span> å¡«å†™å®Œæ•´ å¦‚ï¼šhttp://www.thinkart.cn</td>
     </tr>
 	  <tr>
-    <td width="110" height="25" align="right" bgcolor="#FFFFFF">·ÖÎöÏµÍ³Ä¿Â¼&nbsp;&nbsp;</td>
+    <td width="110" height="25" align="right" bgcolor="#FFFFFF">åˆ†æç³»ç»Ÿç›®å½•&nbsp;&nbsp;</td>
     <td height="25" align="left" bgcolor="#FFFFFF">&nbsp;&nbsp;
       <input name="tj_url" type="text" id="tj_url" size="40" /> 
-      <span class="STYLE6">*</span> ÌîĞ´ÍêÕû Èç£ºthinkart/</td>
+      <span class="STYLE6">*</span> å¡«å†™å®Œæ•´ å¦‚ï¼šthinkart/</td>
     </tr>
   <tr>
-    <td height="45" colspan="2" align="center" bgcolor="#F8F8F9"><input type="submit" name="Submit" value=" µãÕâÀï»ñÈ¡´úÂë " /></td>
+    <td height="45" colspan="2" align="center" bgcolor="#F8F8F9"><input type="submit" name="Submit" value=" ç‚¹è¿™é‡Œè·å–ä»£ç  " /></td>
   </tr>
 </table></td>
   </tr>
@@ -217,7 +219,7 @@ if rs.bof and rs.eof then
     <td valign="top"></td>
   </tr>
   <tr align="left">
-    <td height="45" align="center" valign="middle">ÏµÍ³°æ±¾ºÅ:<a href="http://www.sjmp5.com/LLFenxi/" target="_blank"> <%=keystr%></a></td>
+    <td height="45" align="center" valign="middle">ç³»ç»Ÿç‰ˆæœ¬å·:<a href="http://www.sjmp5.com/LLFenxi/" target="_blank"> <%=keystr%></a></td>
   </tr>
 </table></form>
 <br />
@@ -232,48 +234,48 @@ if rs.bof and rs.eof then
 <table width="760" border="0" align="center" cellpadding="1" cellspacing="1" bgcolor="#dddddd">
   
   <tr>
-    <td height="60" colspan="3" align="center" bgcolor="#F8F8F8"><h2>Í³¼Æ´úÂë</h2></td>
+    <td height="60" colspan="3" align="center" bgcolor="#F8F8F8"><h2>ç»Ÿè®¡ä»£ç </h2></td>
   </tr>
   <tr>
-    <td width="145" align="right" bgcolor="#F8F8F8">JSÍ³¼Æ´úÂë&nbsp;</td>
+    <td width="145" align="right" bgcolor="#F8F8F8">JSç»Ÿè®¡ä»£ç &nbsp;</td>
     <td width="373" bgcolor="#FFFFFF"><textarea name="textfield4" cols="55" rows="6"><script src='<%=rs("sjmp5_config_name")%>/<%=rs("sjmp5_config_url")%>get.asp' language='JavaScript' charset='gb2312'></script></textarea></td>
-    <td width="232" bgcolor="#FFFFFF"><p>Ö§³ÖÍ³¼ÆHTMLµÈ¾²Ì¬Ò³Ãæ¡£</p>
-    <p><strong>½¨ÒéÊ¹ÓÃJSÍ³¼Æ£¡</strong>ÒòÎª¹»·½±ã£¡</p></td>
+    <td width="232" bgcolor="#FFFFFF"><p>æ”¯æŒç»Ÿè®¡HTMLç­‰é™æ€é¡µé¢ã€‚</p>
+    <p><strong>å»ºè®®ä½¿ç”¨JSç»Ÿè®¡ï¼</strong>å› ä¸ºå¤Ÿæ–¹ä¾¿ï¼</p></td>
   </tr>
   <tr>
     <td height="25" colspan="3" bgcolor="#F8F8F8">&nbsp;</td>
   </tr>
   <tr>
-    <td align="right" bgcolor="#F8F8F8">ASP°üº¬Ê½Í³¼Æ´úÂë&nbsp;</td>
+    <td align="right" bgcolor="#F8F8F8">ASPåŒ…å«å¼ç»Ÿè®¡ä»£ç &nbsp;</td>
     <td bgcolor="#FFFFFF"><textarea name="textfield5" cols="55" rows="6">
-¸ùÄ¿Â¼ÓÃ£º&lt;!-- #include file=&quot;<%=rs("sjmp5_config_url")%>jl_inc.asp&quot; --&gt;
+æ ¹ç›®å½•ç”¨ï¼š&lt;!-- #include file=&quot;<%=rs("sjmp5_config_url")%>jl_inc.asp&quot; --&gt;
 	
-WAPÍ³¼ÆÓÃ£º&lt;!-- #include file=&quot;<%=rs("sjmp5_config_url")%>jl_wap.asp&quot; --&gt;
+WAPç»Ÿè®¡ç”¨ï¼š&lt;!-- #include file=&quot;<%=rs("sjmp5_config_url")%>jl_wap.asp&quot; --&gt;
     </textarea></td>
-    <td bgcolor="#FFFFFF">Ö»ÄÜÊÇASP°üº¬ÎÄ¼ş£¬<br />
-      ASPÕûÕ¾µÄ¿ÉÓÃ¡£<br />
-      ASP³ÌĞòµÄWAPÍøÕ¾¿ÉÒÔÊ¹ÓÃ¡£<br />
-    <span class="STYLE8">²»Ö§³ÖÍ³¼ÆHTMLµÈ¾²Ì¬Ò³Ãæ£¡</span></td>
+    <td bgcolor="#FFFFFF">åªèƒ½æ˜¯ASPåŒ…å«æ–‡ä»¶ï¼Œ<br />
+      ASPæ•´ç«™çš„å¯ç”¨ã€‚<br />
+      ASPç¨‹åºçš„WAPç½‘ç«™å¯ä»¥ä½¿ç”¨ã€‚<br />
+    <span class="STYLE8">ä¸æ”¯æŒç»Ÿè®¡HTMLç­‰é™æ€é¡µé¢ï¼</span></td>
   </tr>
   <tr>
     <td height="50" colspan="3" align="left" bgcolor="#F8F8F8"><br />
-      ×÷Õß×¢£º<br />
+      ä½œè€…æ³¨ï¼š<br />
       <br />
-      <strong>Ò»¡¢JSÍ³¼Æ´úÂë</strong><br />
+      <strong>ä¸€ã€JSç»Ÿè®¡ä»£ç </strong><br />
     <br />
-    1¡¢ÓÅµã£º¿ÉÒÔÍ³¼Æ¾²Ì¬Ò³Ãæ<br />
-    2¡¢È±µã£ºµ±ÓÃ»§ä¯ÀÀÆ÷½ûÓÃJAVA³ÌĞòÊ±½«ÎŞ·¨Í³¼Æ¸ÃÓÃ»§¡£ÕâÊÇ¾ø´ó¶àÊıÍ³¼ÆÏµÍ³¶¼´æÔÚµÄÒ»¸öÈ±Ïİ¡£<br />
+    1ã€ä¼˜ç‚¹ï¼šå¯ä»¥ç»Ÿè®¡é™æ€é¡µé¢<br />
+    2ã€ç¼ºç‚¹ï¼šå½“ç”¨æˆ·æµè§ˆå™¨ç¦ç”¨JAVAç¨‹åºæ—¶å°†æ— æ³•ç»Ÿè®¡è¯¥ç”¨æˆ·ã€‚è¿™æ˜¯ç»å¤§å¤šæ•°ç»Ÿè®¡ç³»ç»Ÿéƒ½å­˜åœ¨çš„ä¸€ä¸ªç¼ºé™·ã€‚<br />
     <hr align="left"   height="1">
     <br />
-    <strong>¶ş¡¢ASP°üº¬Ê½Í³¼Æ´úÂë</strong><br />
+    <strong>äºŒã€ASPåŒ…å«å¼ç»Ÿè®¡ä»£ç </strong><br />
     <br />
-    1¡¢ÓÅµã£ºÈÃËùÓĞ·ÃÎÊÍøÕ¾µÄÓÃ»§ÎŞ´¦¿ÉÌÓ...¸Â¸Â~~~»¹¿ÉÒÔ¼ÇÂ¼&quot;Ö©Öë&quot;ÅÀĞĞËù×¥È¡Ò³Ãæ,ÈÃÄãÒ»Ä¿ÁËÈ».<br />
-2¡¢È±µã£ºÎŞ·¨Í³¼Æ£È£Ô£Í£ÌµÈ¾²Ì¬Ò³Ãæ£¬¶ÔASP²»ÁË½âµÄÓÃ»§½÷É÷Ê¹ÓÃ!<br />
+    1ã€ä¼˜ç‚¹ï¼šè®©æ‰€æœ‰è®¿é—®ç½‘ç«™çš„ç”¨æˆ·æ— å¤„å¯é€ƒ...å˜å˜~~~è¿˜å¯ä»¥è®°å½•&quot;èœ˜è››&quot;çˆ¬è¡Œæ‰€æŠ“å–é¡µé¢,è®©ä½ ä¸€ç›®äº†ç„¶.<br />
+2ã€ç¼ºç‚¹ï¼šæ— æ³•ç»Ÿè®¡ï¼¨ï¼´ï¼­ï¼¬ç­‰é™æ€é¡µé¢ï¼Œå¯¹ASPä¸äº†è§£çš„ç”¨æˆ·è°¨æ…ä½¿ç”¨!<br />
 <br /></td>
   </tr>
   
   <tr>
-    <td height="45" colspan="3" align="center" bgcolor="#F8F8F8"><a href="?action=edit">ÖØĞÂÉú³É´úÂë</a></td>
+    <td height="45" colspan="3" align="center" bgcolor="#F8F8F8"><a href="?action=edit">é‡æ–°ç”Ÿæˆä»£ç </a></td>
   </tr><%if trim(request("action"))="edit" then%>
   <tr>
     <td height="45" colspan="3" align="center" bgcolor="#F8F8F8"><form id="form2" name="form2" method="post" action="?action=edit_setup">
@@ -283,32 +285,32 @@ WAPÍ³¼ÆÓÃ£º&lt;!-- #include file=&quot;<%=rs("sjmp5_config_url")%>jl_wap.asp&quo
 
     <td align="left" valign="top"><table width="100%" border="0" align="left" cellpadding="1" cellspacing="1" bgcolor="#dddddd">
   <tr>
-    <td height="30" colspan="2" align="center" bgcolor="#eeeeee">ÖØĞÂÉú³ÉÍ³¼Æ´úÂë</td>
+    <td height="30" colspan="2" align="center" bgcolor="#eeeeee">é‡æ–°ç”Ÿæˆç»Ÿè®¡ä»£ç </td>
   </tr>
   <tr>
     <td height="25" colspan="2" align="left" bgcolor="#FFFFFF">&nbsp;</td>
     </tr>
 
   <tr>
-    <td height="25" align="right" bgcolor="#FFFFFF">ÍøÕ¾Ãû³Æ&nbsp;&nbsp;</td>
+    <td height="25" align="right" bgcolor="#FFFFFF">ç½‘ç«™åç§°&nbsp;&nbsp;</td>
     <td height="25" align="left" bgcolor="#FFFFFF">&nbsp;&nbsp;
       <input name="title" type="text" id="title" value="<%=rs("sjmp5_config_title")%>" size="40" />
-      <span class="STYLE6">*</span> ÌîĞ´ÍêÕû Èç£ºTHINKART</td>
+      <span class="STYLE6">*</span> å¡«å†™å®Œæ•´ å¦‚ï¼šTHINKART</td>
   </tr>
   <tr>
-    <td width="110" height="25" align="right" bgcolor="#FFFFFF">ÍøÕ¾ÓòÃû&nbsp;&nbsp;</td>
+    <td width="110" height="25" align="right" bgcolor="#FFFFFF">ç½‘ç«™åŸŸå&nbsp;&nbsp;</td>
     <td width="631" height="25" align="left" bgcolor="#FFFFFF">&nbsp;&nbsp;
       <input name="url" type="text" id="url" value="<%=rs("sjmp5_config_name")%>" size="40" /> 
-      <span class="STYLE6">*</span> ÌîĞ´ÍêÕû Èç£ºhttp://www.thinkart.cn</td>
+      <span class="STYLE6">*</span> å¡«å†™å®Œæ•´ å¦‚ï¼šhttp://www.thinkart.cn</td>
     </tr>
 	  <tr>
-    <td width="110" height="25" align="right" bgcolor="#FFFFFF">·ÖÎöÏµÍ³Ä¿Â¼&nbsp;&nbsp;</td>
+    <td width="110" height="25" align="right" bgcolor="#FFFFFF">åˆ†æç³»ç»Ÿç›®å½•&nbsp;&nbsp;</td>
     <td height="25" align="left" bgcolor="#FFFFFF">&nbsp;&nbsp;
       <input name="tj_url" type="text" id="tj_url" value="<%=rs("sjmp5_config_url")%>" size="40" /> 
-      <span class="STYLE6">*</span> ÌîĞ´ÍêÕû Èç£ºthinkart/</td>
+      <span class="STYLE6">*</span> å¡«å†™å®Œæ•´ å¦‚ï¼šthinkart/</td>
     </tr>
   <tr>
-    <td height="45" colspan="2" align="center" bgcolor="#F8F8F9"><input type="submit" name="Submit" value=" µãÕâÀï &gt;&gt; ÖØĞÂÉú³É´úÂë " /></td>
+    <td height="45" colspan="2" align="center" bgcolor="#F8F8F9"><input type="submit" name="Submit" value=" ç‚¹è¿™é‡Œ &gt;&gt; é‡æ–°ç”Ÿæˆä»£ç  " /></td>
   </tr>
 </table></td>
   </tr>
@@ -323,7 +325,7 @@ WAPÍ³¼ÆÓÃ£º&lt;!-- #include file=&quot;<%=rs("sjmp5_config_url")%>jl_wap.asp&quo
   </tr><%
 end if%>
   <tr>
-    <td height="45" colspan="3" align="center" bgcolor="#F8F8F8">ÏµÍ³°æ±¾ºÅ:<a href="http://www.sjmp5.com/LLFenxi/" target="_blank"> <%=keystr%> </a></td>
+    <td height="45" colspan="3" align="center" bgcolor="#F8F8F8">ç³»ç»Ÿç‰ˆæœ¬å·:<a href="http://www.sjmp5.com/LLFenxi/" target="_blank"> <%=keystr%> </a></td>
   </tr>
 </table>
 <%

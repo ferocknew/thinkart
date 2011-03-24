@@ -15,7 +15,7 @@ Dim ParaValue
 ParaValue=Request(ParaName) 
 If ParaType=1 then 
 If not isNumeric(ParaValue) then 
-Response.write "×¢ÈëÊ§°Ü£¡" 
+Response.write "æ³¨å…¥å¤±è´¥ï¼" 
 Response.end 
 End if 
 Else 
@@ -45,7 +45,7 @@ End function
 		call Error()
 	end if
 	sub Error()
-Response.Write "<script>window.alert('ÕÊºÅÃÜÂë´íÎó£¡£¡£¡');window.location='login.asp';</script>"     
+Response.Write "<script>window.alert('å¸å·å¯†ç é”™è¯¯ï¼ï¼ï¼');window.location='login.asp';</script>"     
 	end sub
 	rs.close
 	conn2.close

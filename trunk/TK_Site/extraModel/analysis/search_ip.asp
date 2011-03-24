@@ -1,12 +1,13 @@
-
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<%@LANGUAGE="VBSCRIPT" CODEPAGE="65001"%> 
 <!--#include file="config.asp"--> 
 <%
 search=replace(replace(replace(replace(replace(replace(request("search"),"'",""),"#",""),Chr(34),""),"?","")," ",""),"=","")
 if search<>"" then
 	if isdate(request("search")) then 
 	else 
-		response.write "ÈÕÆÚ¸ñÊ½²»ÕıÈ·" 
+		response.write "æ—¥æœŸæ ¼å¼ä¸æ­£ç¡®" 
 		response.end()
 	end if
 else
@@ -15,28 +16,26 @@ end if
 %>
 <html>
 <head>
-<meta name="description" content="ASPÀ´Â··ÖÎöÏµÍ³ | www.sjmp5.com" />
-<meta name="keywords" content="ASPÀ´Â··ÖÎöÏµÍ³,sjmp5@126.com" />
-<meta name="Copyright" content="copyright (c) 2008 www.sjmp5.com  sjmp5 " />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link href="../../WebSystem/css/content_style.css" rel="stylesheet" type="text/css" />
 <link href="../../WebSystem/css/font_link.css" rel="stylesheet" type="text/css" />
-<link href="images/css.css" rel="stylesheet" type="text/css">
-<title>À´·ÃIPÅÅĞĞ°ñ >><%=keystr%></title>
+<title>æ¥è®¿IPæ’è¡Œæ¦œ >><%=keystr%></title>
 <SCRIPT src="images/date.js" type=text/javascript></SCRIPT>
 </head>
 <body>
 <!--#include file="sjmp5_top.asp"-->
-<table width="950" border="0" align="center" cellpadding="0" cellspacing="5">
-     <td>
-<table width="100%" border="0" cellpadding="1" cellspacing="1" bgcolor="#dddddd">
-        <tr>
-          <td height="80" align="center" bgcolor="#f8f8f9"><FORM name=searchForm action=? >
-              °´ÈÕÆÚ²é¿´: <INPUT 
+<div class="content_ctrlbar text_deepGray12_b">
+  <table style="float:left;" border="0" cellpadding="0" cellspacing="0" class="link_deepGray12_b">
+    <tr>
+      <td><FORM style="background:none;" name=searchForm action=? >
+              æŒ‰æ—¥æœŸæŸ¥çœ‹: <INPUT 
 name=search id=time_end value="<%=search%>" size=11 readonly> 
-              <IMG src="images/date.gif" width="36" height="19" onClick="date_init(this,'time_end')" > &nbsp;
-  <INPUT class=button type=submit value=" ²é¿´ ">
-          </FORM><%=search%>À´·ÃIP
-          <script language="javascript">
+              <IMG src="images/date.gif" width="36" height="19" align="absmiddle" onClick="date_init(this,'time_end')" > &nbsp;
+  <INPUT class=button type=submit value=" æŸ¥çœ‹ ">
+          </FORM></td>
+    </tr>
+  </table>
+  <script language="javascript">
 	function date_init(obj,name)
 {
 	var D;
@@ -54,27 +53,20 @@ name=search id=time_end value="<%=search%>" size=11 readonly>
 	
 	LaunchCalendar(oInput, D);
 }
-	</script> 
-          </td>
-        </tr>
-    </table>
-<BR>
-<table width="100%" height="34" border="0" align="center" cellpadding="1" cellspacing="1" bgcolor="#dddddd">
+	</script>
+  <table class="link_deepGray12_b" style="float:right;" border="0" cellspacing="0" cellpadding="0">
   <tr>
-    <td align="center" background="images/tab_bg.gif" bgcolor="#F8f8f8"><b>À´·ÃIPÅÅĞĞ°ñ</b></td>
-</tr></table>
-<table width="750" height="3" border="0" align="center" cellpadding="1" cellspacing="1">
-  <tr>
-    <td align="center" bgcolor="#F8f8f8"></td>
+    <td><%=search%>æ¥è®¿IP</td>
   </tr>
 </table>
-<table width="950" border="0" align="center" cellpadding="1" cellspacing="1" bgcolor="#dddddd">
+</div>
 
-<tr>
-  <td width="72" height="30" align="center" bgcolor="#EEEEEE">ID±àºÅ</td>
-  <td width="177" height="30" align="center" bgcolor="#EEEEEE">IP</td>
-  <td width="439" height="30" align="center" bgcolor="#EEEEEE">ÎïÀíµØÖ·</td>
-  <td width="249" height="30" align="center" bgcolor="#EEEEEE">ÇëÇó´ÎÊı²Ù×÷</td>
+<table class="flowTable" width="100%" border="0" cellpadding="0" cellspacing="1">
+<tr class="text_white12_b">
+  <th width="51" align="center" nowrap="nowrap">IDç¼–å·</th>
+  <th width="101" align="center" nowrap="nowrap">IP</th>
+  <th width="130" align="center" nowrap="nowrap">ç‰©ç†åœ°å€</th>
+  <th width="200" align="center" nowrap="nowrap">è¯·æ±‚æ¬¡æ•°æ“ä½œ</th>
   </tr>
 <%
 rs.close
@@ -95,7 +87,7 @@ rs.close
   everypage=pagekeyfenxi          
   rs.pagesize=everypage
   if rs.bof and rs.eof then
-  response.write "<tr><td colspan=5 align=left bgcolor=#FFFFFF>Ã»ÓĞÊı¾İ¼ÇÂ¼!</td></tr>"
+  response.write "<tr><td colspan=5 align=left bgcolor=#FFFFFF>æ²¡æœ‰æ•°æ®è®°å½•!</td></tr>"
   else
   page_count=rs.pagecount
   rs.AbsolutePage=page
@@ -104,10 +96,10 @@ rs.close
   ip_id=ip_id+1
 %>
 <tr>
-  <td align="left" bgcolor="#FFFFFF">&nbsp;&nbsp;<%=ip_id%></td>
-  <td align="left" bgcolor="#FFFFFF">&nbsp;&nbsp;<a href='sjmp5_ip_to_url.asp?ip=<%=rs("sjmp5_ip_ip")%>&amp;did=<%=search%>' target='_blank' title='²é¿´ÏêÇé'><%=rs("sjmp5_ip_ip")%></a></td>
-  <td align="left" bgcolor="#FFFFFF">&nbsp;&nbsp;<%=rs("sjmp5_ip_lyurl")%></td>
-<td align="left" bgcolor="#FFFFFF"><img src="images/smallbg.jpg" width=<%=fix(rs("sjmp5_ip_hits")/key_tj*150)%> height=10>&nbsp;<%=fix(rs("sjmp5_ip_hits")/key_tj*100)%>%&nbsp;&nbsp;(<%=rs("sjmp5_ip_hits")%>´Î)</td>
+  <td align="left">&nbsp;&nbsp;<%=ip_id%></td>
+  <td align="left">&nbsp;&nbsp;<a href='sjmp5_ip_to_url.asp?ip=<%=rs("sjmp5_ip_ip")%>&amp;did=<%=search%>' target='_blank' title='æŸ¥çœ‹è¯¦æƒ…'><%=rs("sjmp5_ip_ip")%></a></td>
+  <td align="left">&nbsp;&nbsp;<%=rs("sjmp5_ip_lyurl")%></td>
+<td align="left"><img src="images/smallbg.jpg" width=<%=fix(rs("sjmp5_ip_hits")/key_tj*150)%> height=10>&nbsp;<%=fix(rs("sjmp5_ip_hits")/key_tj*100)%>%&nbsp;&nbsp;(<%=rs("sjmp5_ip_hits")%>æ¬¡)</td>
 </tr>
 
 <%
@@ -117,21 +109,15 @@ rs.close
   end if
 %>
 </table>
-
-<table width="750" height="3" border="0" align="center" cellpadding="1" cellspacing="1">
-  <tr>
-    <td align="center" bgcolor="#F8f8f8"></td>
-  </tr>
-</table>
- <table width="100%" border="0" align="center" cellpadding="1" cellspacing="1" bgcolor="#dddddd">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#dddddd">
    <tr>
      <td height="28" align="center" valign="middle" background="images/tab_bgh.gif" bgcolor="#F8F8F9" class="del2">
 <%
 if page=1 then
-' Response.Write"ÉÏÒ»Ò³"
+' Response.Write"ä¸Šä¸€é¡µ"
    else
- Response.Write"<a href=?search="&search&"&page=1>Ê×Ò³</a>&nbsp;"
- Response.Write"<a href=?search="&search&"&page="&page-1&">ÉÏÒ»Ò³</a>"
+ Response.Write"<a href=?search="&search&"&page=1>é¦–é¡µ</a>&nbsp;"
+ Response.Write"<a href=?search="&search&"&page="&page-1&">ä¸Šä¸€é¡µ</a>"
  end if
  %>
  
@@ -153,24 +139,15 @@ if page=1 then
   <%end if%>
   <%next%>
 <%if page<page_count then%>
-<a href='?search=<%=search%>&page=<%=page+1%>'>ÏÂÒ»Ò³</a>
+<a href='?search=<%=search%>&page=<%=page+1%>'>ä¸‹ä¸€é¡µ</a>
 &nbsp;
-<a href='?search=<%=search%>&page=<%=page_count%>'>Î²Ò³</a>
+<a href='?search=<%=search%>&page=<%=page_count%>'>å°¾é¡µ</a>
 <%else
 end if%>
 </td>
-   </tr>
+  </tr>
 </table>
-
-
-
-</td>
-   </tr>
-   <tr>
-     <td><!-- #include file="sjmp5_FOOT.asp" --></td>
-   </tr>
-</table>
-
+<!-- #include file="sjmp5_FOOT.asp" -->
 </body>
 </html>
  <%

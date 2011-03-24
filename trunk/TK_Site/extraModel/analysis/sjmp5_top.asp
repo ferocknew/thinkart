@@ -1,13 +1,15 @@
+<link href="../../WebSystem/css/content_style.css" rel="stylesheet" type="text/css">
+<link href="../../WebSystem/css/font_link.css" rel="stylesheet" type="text/css">
 <body>
 <div class="breadcrumbs text_gray12_b link_gray12_b">
 <img src="../../WebSystem/images/ico_breadcrumbs.gif" align="absmiddle" />
-当前位置: <a href="#"> 内容管理</a> / 
-<span class="link_deepGray12_b"><a href="#">公司新闻</a></span>
+褰撳墠浣嶇疆: <a href="#"> 璁块棶绠＄悊</a> / 
+<span class="link_deepGray12_b"><a href="#">缁煎悎缁熻</a></span>
 </div>
 <div class="content_title"><img style="float:left;" src="../../WebSystem/images/ico_flowTitle.gif" />
   <div class="content_titleText">
-    <li class="add_content text_deepGray14_b">添加 / 编辑内容</li>
-    <li class="text_deepGray10_b">Add or Edit Content</li>
+    <li class="add_content text_deepGray14_b">缁煎悎缁熻</li>
+    <li class="text_deepGray10_b">General Statistics</li>
   </div>
   <div class="content_titleInput">
     <ul>
@@ -15,13 +17,9 @@
         <!--#include file="tjurl.asp"-->
       </li>
       <li>
-        <!--#include file="tjip.asp"-->
-      </li>
-      <li>
         <!--#include file="fenxi_tjurl.asp"-->
-      </li>
-      <li>
-        <!--#include file="fenxi_tjip.asp"-->
+<br>
+<!--#include file="fenxi_tjip.asp"-->
       </li>
     </ul>
   </div>

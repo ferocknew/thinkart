@@ -1,10 +1,10 @@
 <%
-pagekeyindex="20"                                        'È«²¿·ÖÎöÃ¿Ò³¼ÇÂ¼ÌõÊý·ÖÒ³
-pagekeyfenxi="20"                                        'µ±Ìì·ÖÎöÃ¿Ò³¼ÇÂ¼ÌõÊý·ÖÒ³
-keystr="ÍøÕ¾Á÷Á¿·ÖÎöÏµÍ³"                      '·ÖÎöÏµÍ³µ±Ç°°æ±¾
-zz="thinkart"                                               '×÷Õß
-emails="service@thinkart.cn"                                   '×÷ÕßE_mail
-zzqq="445012229"                                         '×÷ÕßQQ  
+pagekeyindex="20"                                        'å…¨éƒ¨åˆ†æžæ¯é¡µè®°å½•æ¡æ•°åˆ†é¡µ
+pagekeyfenxi="20"                                        'å½“å¤©åˆ†æžæ¯é¡µè®°å½•æ¡æ•°åˆ†é¡µ
+keystr="ç½‘ç«™æµé‡åˆ†æžç³»ç»Ÿ"                      'åˆ†æžç³»ç»Ÿå½“å‰ç‰ˆæœ¬
+zz="thinkart"                                               'ä½œè€…
+emails="service@thinkart.cn"                                   'ä½œè€…E_mail
+zzqq="445012229"                                         'ä½œè€…QQ  
 %>
 <!--#include file="mdb.asp"-->
 <%
@@ -17,7 +17,7 @@ Dim ParaValue
 ParaValue=Request(ParaName) 
 If ParaType=1 then 
 If not isNumeric(ParaValue) then 
-Response.write "×¢ÈëÊ§°Ü£¡" 
+Response.write "æ³¨å…¥å¤±è´¥!" 
 Response.end 
 End if 
 Else 

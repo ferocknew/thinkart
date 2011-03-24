@@ -1,3 +1,3 @@
 <%
-sjmp5_mdb="data/sjmp5_mdb_#$@#$%^##.php.jpg.asp"    'Á´½Ó·ÖÎöÏµÍ³Êý¾Ý¿â
+sjmp5_mdb="data/sjmp5_mdb_#$@#$%^##.php.jpg.asp"    'é“¾æŽ¥åˆ†æžç³»ç»Ÿæ•°æ®åº“
 %>

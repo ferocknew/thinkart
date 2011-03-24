@@ -6,16 +6,16 @@ exec="select * from sjmp5_ip where sjmp5_ip_date=date()"
 set rs=server.createobject("adodb.recordset")
 rs.open exec,conn2,1,1
   if rs.bof and rs.eof then
-  response.Write("½ñÌì»¹Ã»ÓÐIP¼ÇÂ¼!")
+  response.Write("ä»Šå¤©è¿˜æ²¡æœ‰IPè®°å½•!")
   else
 do while not rs.eof
 rs.movenext 
 loop
 rs.close
 %>
-½ñÌìÀ´·Ã¶ÀÁ¢IP£º<span class="text_green12"> 
+ä»Šå¤©æ¥è®¿ç‹¬ç«‹IPï¼š<span class="text_green12"> 
 <%
 rs.open "select sum(sjmp5_ip_fxip) from sjmp5_ip where sjmp5_ip_date=date() "
 response.write rs(0)
-%></span> ¸ö
+%></span> ä¸ª
 <%end if%>
