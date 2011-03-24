@@ -4,7 +4,7 @@
 <!-- #include file="md5.asp" -->
 <%
 if request.form("sjmp5_admin_password")<>request.form("sjmp5_admin_password2") then
-Response.Write "<script>window.alert('Á½´ÎÊäÈëµÄÃÜÂë²»ÏàÍ¬£¡');window.location.href='jl_pass_edit.asp';</script>" 
+Response.Write "<script>window.alert('ä¸¤æ¬¡è¾“å…¥çš„å¯†ç ä¸ç›¸åŒï¼');window.location.href='jl_pass_edit.asp';</script>" 
 Response.end()
 end if
 %>
@@ -15,12 +15,12 @@ end if
    set rs=server.createobject("adodb.recordset")
    rs.open str,conn2,1,2,1
    if not rs.bof and not rs.eof then
-   'ĞŞ¸ÄÊı¾İ
+   'ä¿®æ”¹æ•°æ®
    rs("sjmp5_admin_username")=trim(request.form("sjmp5_admin_username"))
    rs("sjmp5_admin_password")=md5(trim(request.form("sjmp5_admin_password")),32)  
    end if
    rs.update
    rs.close
    conn2.close
-Response.Write "<script>window.alert('ĞŞ¸ÄÕÊ»§£º"&request.form("sjmp5_admin_username")&"³É¹¦£¡\n \n °´È·¶¨ºóÖØĞÂµÇÂ½!');window.location.href='logout.asp';</script>" 
+Response.Write "<script>window.alert('ä¿®æ”¹å¸æˆ·ï¼š"&request.form("sjmp5_admin_username")&"æˆåŠŸï¼\n \n æŒ‰ç¡®å®šåé‡æ–°ç™»é™†!');window.location.href='logout.asp';</script>" 
 %>

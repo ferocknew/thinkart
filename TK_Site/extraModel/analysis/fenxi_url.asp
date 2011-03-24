@@ -5,13 +5,13 @@ exec="select * from sjmp5_url where sjmp5_url_date=date()"
 set rs=server.createobject("adodb.recordset")
 rs.open exec,conn2,1,1
   if rs.bof and rs.eof then
-  response.Write("<font color=red>Ã»ÓĞÊı¾İ¼ÇÂ¼!</a>")
+  response.Write("<font color=red>æ²¡æœ‰æ•°æ®è®°å½•!</a>")
   else
 %>
 <title><%=keystr%></title>
 <table width="100%" border="0" align="left" cellpadding="1" cellspacing="1" bgcolor="#dddddd">
   <tr>
-    <td height="30" colspan="3" align="center" bgcolor="#eeeeee">Á´½ÓÀ´Ô´Í³¼Æ</td>
+    <td height="30" colspan="3" align="center" bgcolor="#eeeeee">é“¾æ¥æ¥æºç»Ÿè®¡</td>
   </tr>
   <%
 do while not rs.eof
@@ -21,20 +21,20 @@ ii=ii+1
   <tr>
     <td width="41" height="25" align="left" bgcolor="#FFFFFF">&nbsp;<%=ii%></td>
     <td width="200" align="left" bgcolor="#FFFFFF">&nbsp;&nbsp;
-    <%if rs("sjmp5_url_name")="sjmp5" then%>Ö±½Ó·ÃÎÊ<%else%><%=rs("sjmp5_url_name")%><%end if%></td>
-    <td width="54" height="25" align="right" bgcolor="#FFFFFF"><font color="#FF0000"><%=rs("sjmp5_url_hits")%></font>´Î&nbsp;</td>
+    <%if rs("sjmp5_url_name")="sjmp5" then%>ç›´æ¥è®¿é—®<%else%><%=rs("sjmp5_url_name")%><%end if%></td>
+    <td width="54" height="25" align="right" bgcolor="#FFFFFF"><font color="#339933"><%=rs("sjmp5_url_hits")%></font>æ¬¡&nbsp;</td>
   </tr><%
 rs.movenext 
 loop
 rs.close
 %>
   <tr>
-    <td height="28" colspan="3" align="center" bgcolor="#F8F8F9"><p>½ñÌì¼ÇÂ¼·ÃÎÊ£º<font color="#FF0000">
+    <td height="28" colspan="3" align="center" bgcolor="#F8F8F9"><p>ä»Šå¤©è®°å½•è®¿é—®ï¼š<font color="#339933">
 <%
 rs.open "select sum(sjmp5_url_hits) from sjmp5_url where sjmp5_url_date=date() "
 response.write rs(0)
 %>
-</font>´Î</td>
+</font>æ¬¡</td>
   </tr>
 </table>
 <%end if%>

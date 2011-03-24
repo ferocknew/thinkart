@@ -8,7 +8,7 @@ end if
 %>
 <%
 if request("sjmp5_jl_id")="" then
-response.write "<script>window.alert('É¾³ı¼ÇÂ¼²»ÄÜÎª¿Õ£¡');window.location.href='"&Cstr(Request.ServerVariables("HTTP_REFERER"))&"';</script>"
+response.write "<script>window.alert('åˆ é™¤è®°å½•ä¸èƒ½ä¸ºç©ºï¼');window.location.href='"&Cstr(Request.ServerVariables("HTTP_REFERER"))&"';</script>"
 response.end()
 end if
 %> 
@@ -16,5 +16,5 @@ end if
 exec="delete * from sjmp5_jl where sjmp5_jl_id in("&request("sjmp5_jl_id")&")"
 conn2.execute(exec)
 conn2.close
-Response.Write "<script>window.alert('É¾³ı³É¹¦£¡');window.location.href='"&Cstr(Request.ServerVariables("HTTP_REFERER"))&"';</script>"
+Response.Write "<script>window.alert('åˆ é™¤æˆåŠŸï¼');window.location.href='"&Cstr(Request.ServerVariables("HTTP_REFERER"))&"';</script>"
 %>

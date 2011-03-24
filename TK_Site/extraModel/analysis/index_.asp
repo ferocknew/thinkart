@@ -1,3 +1,5 @@
+<%@LANGUAGE="VBSCRIPT" CODEPAGE="65001"%> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link href="../../WebSystem/css/content_style.css" rel="stylesheet" type="text/css" />
 <link href="../../WebSystem/css/font_link.css" rel="stylesheet" type="text/css" />
 
@@ -31,7 +33,7 @@ document.form1.elements[i].checked=t;
    <tr>
      <td><table width="100%" height="34" border="0" align="center" cellpadding="1" cellspacing="1" bgcolor="#dddddd">
   <tr>
-    <td align="center" background="images/tab_bg.gif" bgcolor="#F8f8f8">À´Â··ÖÎö</td>
+    <td align="center" background="images/tab_bg.gif" bgcolor="#F8f8f8">æ¥è·¯åˆ†æ</td>
 </tr></table>
 <table width="750" height="3" border="0" align="center" cellpadding="1" cellspacing="1">
   <tr>
@@ -41,11 +43,11 @@ document.form1.elements[i].checked=t;
 <table width="950" border="0" align="center" cellpadding="1" cellspacing="1" bgcolor="#dddddd">
 <form method="post" action="sjmp5_del_ser.asp" name="form1">
 <tr>
-  <td width="280" height="30" align="center" bgcolor="#EEEEEE">Á´½ÓÀ´Ô´</td>
-  <td width="279" height="30" align="center" bgcolor="#EEEEEE">µ½·ÃÒ³Ãæ</td>
-  <td width="272" height="30" align="center" bgcolor="#EEEEEE">ÇëÇóIP</td>
-  <td width="73" align="center" bgcolor="#EEEEEE">ÇëÇóÊ±¼ä</td>
-  <td width="30" align="center" bgcolor="#EEEEEE">²Ù×÷</td>
+  <td width="280" height="30" align="center" bgcolor="#EEEEEE">é“¾æ¥æ¥æº</td>
+  <td width="279" height="30" align="center" bgcolor="#EEEEEE">åˆ°è®¿é¡µé¢</td>
+  <td width="272" height="30" align="center" bgcolor="#EEEEEE">è¯·æ±‚IP</td>
+  <td width="73" align="center" bgcolor="#EEEEEE">è¯·æ±‚æ—¶é—´</td>
+  <td width="30" align="center" bgcolor="#EEEEEE">æ“ä½œ</td>
 </tr>
 <%
   set rs=server.CreateObject("adodb.recordset")
@@ -61,25 +63,25 @@ document.form1.elements[i].checked=t;
   everypage=pagekeyindex         
   rs.pagesize=everypage
   if rs.bof and rs.eof then
-  response.write "<tr><td colspan=6 align=left bgcolor=#FFFFFF>Ã»ÓĞÊı¾İ¼ÇÂ¼!</td></tr>"
+  response.write "<tr><td colspan=6 align=left bgcolor=#FFFFFF>æ²¡æœ‰æ•°æ®è®°å½•!</td></tr>"
   else
   page_count=rs.pagecount
   rs.AbsolutePage=page
   do while not rs.eof and j<rs.pagesize
 %>
 <tr onMouseOver="this.bgColor='#F8F8F9';" onMouseOut="this.bgColor='#FFFFFF';" >
-<td width="280" align="left" bgcolor="#FFFFFF"><div style="width: 275px; overflow: hidden;">&nbsp;&nbsp;<%if rs("sjmp5_jl_lyurl")="Ö±½Ó·ÃÎÊ" then
-response.write "Ö±½Ó·ÃÎÊ"
+<td width="280" align="left" bgcolor="#FFFFFF"><div style="width: 275px; overflow: hidden;">&nbsp;&nbsp;<%if rs("sjmp5_jl_lyurl")="ç›´æ¥è®¿é—®" then
+response.write "ç›´æ¥è®¿é—®"
 else
 %>
-<a href=<%=rs("sjmp5_jl_lyurl")%> target=_blank title=Á´½ÓÀ´Ô´:<%=rs("sjmp5_jl_lyurl")%>><%=rs("sjmp5_jl_lyurl")%></a>
+<a href=<%=rs("sjmp5_jl_lyurl")%> target=_blank title=é“¾æ¥æ¥æº:<%=rs("sjmp5_jl_lyurl")%>><%=rs("sjmp5_jl_lyurl")%></a>
 <%end if%></div></td>
 <td align="left" bgcolor="#FFFFFF"><div style="width: 275px; overflow: hidden;">&nbsp;&nbsp;<%=rs("sjmp5_jl_fwurl")%></div></td>
 <td align="left" bgcolor="#FFFFFF">&nbsp;&nbsp;
-<a href='#' title='À´×Ô£º<%=rs("sjmp5_jl_ip")%>'><%=rs("sjmp5_jl_iply")%></a>&nbsp;</td>
+<a href='#' title='æ¥è‡ªï¼š<%=rs("sjmp5_jl_ip")%>'><%=rs("sjmp5_jl_iply")%></a>&nbsp;</td>
 <td align="center" bgcolor="#FFFFFF"><%=rs("sjmp5_jl_date")%></td>
 <td align="right" bgcolor="#FFFFFF">
-<input type="checkbox" name="sjmp5_jl_id" value="<%=rs("sjmp5_jl_id")%>" title="Ñ¡Ôñ">&nbsp;</td>
+<input type="checkbox" name="sjmp5_jl_id" value="<%=rs("sjmp5_jl_id")%>" title="é€‰æ‹©">&nbsp;</td>
 </tr>
 <%
    j=j+1
@@ -88,8 +90,8 @@ else
   end if
 %>
 <tr onMouseOver="this.bgColor='#F8F8F9';" onMouseOut="this.bgColor='#FFFFFF';" >
-  <td colspan="5" align="right" bgcolor="#FFFFFF"><input type="checkbox" name="cek" value="11" onClick="SelectAll()" title="È«Ñ¡">&nbsp;<br> 
-      <input type="submit" value="É¾³ı" name="B1"  style="border-style: solid; border-width: 0px"></td>
+  <td colspan="5" align="right" bgcolor="#FFFFFF"><input type="checkbox" name="cek" value="11" onClick="SelectAll()" title="å…¨é€‰">&nbsp;<br> 
+      <input type="submit" value="åˆ é™¤" name="B1"  style="border-style: solid; border-width: 0px"></td>
   </tr></form>
 </table>
 <table width="750" height="3" border="0" align="center" cellpadding="1" cellspacing="1">
@@ -103,8 +105,8 @@ else
 <%
 if page=1 then
    else
- Response.Write"<a href=?page=1>Ê×Ò³</a>&nbsp;"
- Response.Write"<a href=?page="&page-1&">ÉÏÒ»Ò³</a>"
+ Response.Write"<a href=?page=1>é¦–é¡µ</a>&nbsp;"
+ Response.Write"<a href=?page="&page-1&">ä¸Šä¸€é¡µ</a>"
  end if
  %>
  
@@ -126,8 +128,8 @@ if page=1 then
   <%end if%>
   <%next%>
 <%if page<page_count then%>
-<a href="?page=<%=page+1%>">ÏÂÒ»Ò³</a>&nbsp;
-<a href='?page=<%=page_count%>'>Î²Ò³</a>
+<a href="?page=<%=page+1%>">ä¸‹ä¸€é¡µ</a>&nbsp;
+<a href='?page=<%=page_count%>'>å°¾é¡µ</a>
 <%else
 end if%></td>
    </tr>

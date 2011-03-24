@@ -7,13 +7,13 @@ Response.redirect "login.asp"
 end if   
 %>
 <%if trim(request("action"))="edit" then
-response.write "<a href=?action=del>É¾³ıÀ´Ô´¼ÇÂ¼</a>  | <a href=?action=del_lyhtml>Çå¿ÕÀ´Ô´Ò³ÃæÅÅÃû</a>| <a href=?action=del_ip>Çå¿ÕIPÊı¾İ¿â</a>| <a href=?action=del_mdb>³õÊ¼»¯Êı¾İ¿â</a> | <a href=index.asp>·µ»ØÊ×Ò³</a>"
+response.write "<a href=?action=del>åˆ é™¤æ¥æºè®°å½•</a>  | <a href=?action=del_lyhtml>æ¸…ç©ºæ¥æºé¡µé¢æ’å</a>| <a href=?action=del_ip>æ¸…ç©ºIPæ•°æ®åº“</a>| <a href=?action=del_mdb>åˆå§‹åŒ–æ•°æ®åº“</a> | <a href=index.asp>è¿”å›é¦–é¡µ</a>"
 end if
 
 
 if trim(request("action"))="del_ip" then
-response.write "È·¶¨Çå¿ÕIP¼ÇÂ¼Âğ£¿"
-response.write "<a href=?action=del_ip_ser>È·¶¨</a> |   <a href=index.asp>·µ»ØÊ×Ò³</a>"
+response.write "ç¡®å®šæ¸…ç©ºIPè®°å½•å—ï¼Ÿ"
+response.write "<a href=?action=del_ip_ser>ç¡®å®š</a> |   <a href=index.asp>è¿”å›é¦–é¡µ</a>"
 end if
 
 
@@ -22,18 +22,18 @@ end if
 
 
 if trim(request("action"))="del" then
-response.write "È·¶¨É¾³ı¼ÇÂ¼Âğ£¿½«»áÇå¿Õ[À´Ô´¼ÇÂ¼]!!!"
-response.write "<a href=?action=del_jl>È·¶¨</a> |   <a href=index.asp>·µ»ØÊ×Ò³</a>"
+response.write "ç¡®å®šåˆ é™¤è®°å½•å—ï¼Ÿå°†ä¼šæ¸…ç©º[æ¥æºè®°å½•]!!!"
+response.write "<a href=?action=del_jl>ç¡®å®š</a> |   <a href=index.asp>è¿”å›é¦–é¡µ</a>"
 end if
 
 if trim(request("action"))="del_lyhtml" then
-response.write "È·¶¨Çå¿Õ À´Ô´Ò³ÃæÅÅÃû Âğ£¿"
-response.write "<a href=?action=del_lyhtml_ser>È·¶¨</a> |   <a href=index.asp>·µ»ØÊ×Ò³</a>"
+response.write "ç¡®å®šæ¸…ç©º æ¥æºé¡µé¢æ’å å—ï¼Ÿ"
+response.write "<a href=?action=del_lyhtml_ser>ç¡®å®š</a> |   <a href=index.asp>è¿”å›é¦–é¡µ</a>"
 end if
 
 if trim(request("action"))="del_mdb" then
-response.write "È·¶¨³õÊ¼»¯Êı¾İ¿âÂğ£¿½«»áÇå¿ÕËùÓĞÊı¾İ!!!"
-response.write "<a href=?action=del_setup>È·¶¨</a> |   <a href=index.asp>·µ»ØÊ×Ò³</a>"
+response.write "ç¡®å®šåˆå§‹åŒ–æ•°æ®åº“å—ï¼Ÿå°†ä¼šæ¸…ç©ºæ‰€æœ‰æ•°æ®!!!"
+response.write "<a href=?action=del_setup>ç¡®å®š</a> |   <a href=index.asp>è¿”å›é¦–é¡µ</a>"
 end if
 
 if trim(request("action"))="del_lyhtml_ser" then
@@ -44,8 +44,8 @@ conn2.execute(exec)
 exec="delete * from sjmp5_url"
 conn2.execute(exec)
 conn2.close
-response.write "É¾³ı³É¹¦£¡"
-response.write "³õÊ¼»¯³É¹¦£¡"
+response.write "åˆ é™¤æˆåŠŸï¼"
+response.write "åˆå§‹åŒ–æˆåŠŸï¼"
 Response.Expires = -1  
 Response.ExpiresAbsolute = Now() - 1  
 Response.cachecontrol = "no-cache" 
@@ -54,7 +54,7 @@ Call Compact
 Sub Compact
   Response.Write CompactDB(Server.Mappath(sjmp5_mdb),false)
 End Sub
-'=====================Ñ¹ËõÊı¾İ¿â====×÷Õß:fokid=====================
+'=====================å‹ç¼©æ•°æ®åº“====ä½œè€…:fokid=====================
 Function CompactDB(dbPath, boolIs97)
  On Error Resume Next
 ' Dim fso, Engine, strDBPath,JET_3X
@@ -82,12 +82,12 @@ Function CompactDB(dbPath, boolIs97)
   fso.DeleteFile(strDBPath & "temp1.mdb")
   Set fso = Nothing
   Set Engine = Nothing
-  Response.Write "Ñ¹Ëõ³É¹¦!"
+  Response.Write "å‹ç¼©æˆåŠŸ!"
  Else
-  Response.Write "<a href=sjmp5_ysmdb.asp>Ñ¹ËõÊ§°Ü!ÔÙÀ´Ò»´Î!</a>"
+  Response.Write "<a href=sjmp5_ysmdb.asp>å‹ç¼©å¤±è´¥!å†æ¥ä¸€æ¬¡!</a>"
  End If
 End Function
-response.write "<a href=index.asp>·µ»ØÊ×Ò³</a>"
+response.write "<a href=index.asp>è¿”å›é¦–é¡µ</a>"
 end if
 
 
@@ -97,8 +97,8 @@ conn2.execute(exec)
 exec="delete * from sjmp5_ip_total"
 conn2.execute(exec)
 conn2.close
-response.write "É¾³ı³É¹¦£¡"
-response.write "³õÊ¼»¯³É¹¦£¡"
+response.write "åˆ é™¤æˆåŠŸï¼"
+response.write "åˆå§‹åŒ–æˆåŠŸï¼"
 Response.Expires = -1  
 Response.ExpiresAbsolute = Now() - 1  
 Response.cachecontrol = "no-cache" 
@@ -107,7 +107,7 @@ Call Compact
 Sub Compact
   Response.Write CompactDB(Server.Mappath(sjmp5_mdb),false)
 End Sub
-'=====================Ñ¹ËõÊı¾İ¿â====×÷Õß:fokid=====================
+'=====================å‹ç¼©æ•°æ®åº“====ä½œè€…:fokid=====================
 Function CompactDB(dbPath, boolIs97)
  On Error Resume Next
 ' Dim fso, Engine, strDBPath,JET_3X
@@ -135,12 +135,12 @@ Function CompactDB(dbPath, boolIs97)
   fso.DeleteFile(strDBPath & "temp1.mdb")
   Set fso = Nothing
   Set Engine = Nothing
-  Response.Write "Ñ¹Ëõ³É¹¦!"
+  Response.Write "å‹ç¼©æˆåŠŸ!"
  Else
-  Response.Write "<a href=sjmp5_ysmdb.asp>Ñ¹ËõÊ§°Ü!ÔÙÀ´Ò»´Î!</a>"
+  Response.Write "<a href=sjmp5_ysmdb.asp>å‹ç¼©å¤±è´¥!å†æ¥ä¸€æ¬¡!</a>"
  End If
 End Function
-response.write "<a href=index.asp>·µ»ØÊ×Ò³</a>"
+response.write "<a href=index.asp>è¿”å›é¦–é¡µ</a>"
 end if
 
 
@@ -150,8 +150,8 @@ if trim(request("action"))="del_jl" then
 exec="delete * from sjmp5_jl"
 conn2.execute(exec)
 conn2.close
-response.write "É¾³ı³É¹¦£¡"
-response.write "³õÊ¼»¯³É¹¦£¡"
+response.write "åˆ é™¤æˆåŠŸï¼"
+response.write "åˆå§‹åŒ–æˆåŠŸï¼"
 Response.Expires = -1  
 Response.ExpiresAbsolute = Now() - 1  
 Response.cachecontrol = "no-cache" 
@@ -160,7 +160,7 @@ Call Compact
 Sub Compact
   Response.Write CompactDB(Server.Mappath(sjmp5_mdb),false)
 End Sub
-'=====================Ñ¹ËõÊı¾İ¿â====×÷Õß:fokid=====================
+'=====================å‹ç¼©æ•°æ®åº“====ä½œè€…:fokid=====================
 Function CompactDB(dbPath, boolIs97)
  On Error Resume Next
 ' Dim fso, Engine, strDBPath,JET_3X
@@ -188,12 +188,12 @@ Function CompactDB(dbPath, boolIs97)
   fso.DeleteFile(strDBPath & "temp1.mdb")
   Set fso = Nothing
   Set Engine = Nothing
-  Response.Write "Ñ¹Ëõ³É¹¦!"
+  Response.Write "å‹ç¼©æˆåŠŸ!"
  Else
-  Response.Write "<a href=sjmp5_ysmdb.asp>Ñ¹ËõÊ§°Ü!ÔÙÀ´Ò»´Î!</a>"
+  Response.Write "<a href=sjmp5_ysmdb.asp>å‹ç¼©å¤±è´¥!å†æ¥ä¸€æ¬¡!</a>"
  End If
 End Function
-response.write "<a href=index.asp>·µ»ØÊ×Ò³</a>"
+response.write "<a href=index.asp>è¿”å›é¦–é¡µ</a>"
 end if
 if trim(request("action"))="del_setup" then
 exec="delete * from sjmp5_JL"
@@ -217,7 +217,7 @@ conn2.execute(exec)
 exec="delete * from sjmp5_config"
 conn2.execute(exec)
 conn2.close
-response.write "³õÊ¼»¯³É¹¦£¡"
+response.write "åˆå§‹åŒ–æˆåŠŸï¼"
 Response.Expires = -1  
 Response.ExpiresAbsolute = Now() - 1  
 Response.cachecontrol = "no-cache" 
@@ -226,7 +226,7 @@ Call Compact
 Sub Compact
   Response.Write CompactDB(Server.Mappath(sjmp5_mdb),false)
 End Sub
-'=====================Ñ¹ËõÊı¾İ¿â====×÷Õß:fokid=====================
+'=====================å‹ç¼©æ•°æ®åº“====ä½œè€…:fokid=====================
 Function CompactDB(dbPath, boolIs97)
  On Error Resume Next
 ' Dim fso, Engine, strDBPath,JET_3X
@@ -254,11 +254,11 @@ Function CompactDB(dbPath, boolIs97)
   fso.DeleteFile(strDBPath & "temp1.mdb")
   Set fso = Nothing
   Set Engine = Nothing
-  Response.Write "Ñ¹Ëõ³É¹¦!"
+  Response.Write "å‹ç¼©æˆåŠŸ!"
  Else
-  Response.Write "<a href=sjmp5_ysmdb.asp>Ñ¹ËõÊ§°Ü!ÔÙÀ´Ò»´Î!</a>"
+  Response.Write "<a href=sjmp5_ysmdb.asp>å‹ç¼©å¤±è´¥!å†æ¥ä¸€æ¬¡!</a>"
  End If
 End Function
-response.write "ÇëÖØĞÂ»ñÈ¡Í³¼Æ´úÂë! <a href=index.asp>·µ»ØÊ×Ò³</a>"
+response.write "è¯·é‡æ–°è·å–ç»Ÿè®¡ä»£ç ! <a href=index.asp>è¿”å›é¦–é¡µ</a>"
 end if
 %>

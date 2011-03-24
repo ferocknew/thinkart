@@ -1,4 +1,6 @@
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<%@LANGUAGE="VBSCRIPT" CODEPAGE="65001"%> 
 
 <!--#include file="config.asp"-->
 <%
@@ -6,7 +8,7 @@ search=replace(replace(replace(replace(replace(replace(request("search"),"'","")
 if search<>"" then
 	if isdate(request("search")) then 
 	else 
-		response.write "ÈÕÆÚ¸ñÊ½²»ÕıÈ·" 
+		response.write "æ—¥æœŸæ ¼å¼ä¸æ­£ç¡®" 
 		response.end()
 	end if
 else
@@ -14,16 +16,11 @@ search=date()
 end if
 %>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-<meta name="description" content="ASPÀ´Â··ÖÎöÏµÍ³ | www.sjmp5.com" />
-<meta name="keywords" content="ASPÀ´Â··ÖÎöÏµÍ³,sjmp5@126.com" />
-<meta name="Copyright" content="copyright (c) 2008 www.sjmp5.com  sjmp5 " />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link href="../../WebSystem/css/content_style.css" rel="stylesheet" type="text/css" />
 <link href="../../WebSystem/css/font_link.css" rel="stylesheet" type="text/css" />
-<link href="images/css.css" rel="stylesheet" type="text/css">
 <title><%=keystr%></title>
 <SCRIPT src="images/date.js" type=text/javascript></SCRIPT>
 </head>
@@ -35,14 +32,14 @@ end if
     <td height="30" colspan="2" align="center"><table width="100%" border="0" cellpadding="1" cellspacing="1" bgcolor="#dddddd">
         <tr>
           <td height="80" align="center" bgcolor="#f8f8f9"><FORM name=searchForm action=? >
-              °´ÈÕÆÚ²é¿´: <INPUT 
+              æŒ‰æ—¥æœŸæŸ¥çœ‹: <INPUT 
 name=search id=time_end value="<%=search%>" size=11 readonly> 
               <IMG 
 src="images/date.gif" width="36" height="19" class=dtm 
 onclick="date_init(this,'time_end')" 
 onmouseover="this.src='images/btn_on_cal.gif'" 
 onmouseout="this.src='images/btn_off_cal.gif'"> &nbsp;
-  <INPUT class=button type=submit value=" ²é¿´ "> </FORM>
+  <INPUT class=button type=submit value=" æŸ¥çœ‹ "> </FORM>
   <script language="javascript">
     function searchOrder()
     {
@@ -114,7 +111,7 @@ onmouseout="this.src='images/btn_off_cal.gif'"> &nbsp;
   <tr align="left">
     <td width="468" align="left" valign="top"><table width="460" border="0" align="left" cellpadding="1" cellspacing="1" bgcolor="#dddddd">
       <tr>
-        <td height="30" colspan="3" align="center" bgcolor="#eeeeee">Á´½ÓÀ´Ô´Í³¼Æ TOP 10 </td>
+        <td height="30" colspan="3" align="center" bgcolor="#eeeeee">é“¾æ¥æ¥æºç»Ÿè®¡ TOP 10 </td>
       </tr>
       <%
 exec="select top 10 * from sjmp5_url where sjmp5_url_date=#"&search&"# order by sjmp5_url_hits desc,sjmp5_url_id asc"
@@ -123,7 +120,7 @@ rs.open exec,conn2,1,1
   if rs.bof and rs.eof then
 %>
       <tr>
-        <td height="25" colspan="3" align="left" bgcolor="#FFFFFF">&nbsp; Ã»ÓĞÊı¾İ¼ÇÂ¼!</td>
+        <td height="25" colspan="3" align="left" bgcolor="#FFFFFF">&nbsp; æ²¡æœ‰æ•°æ®è®°å½•!</td>
       </tr>
       <%
 else
@@ -136,7 +133,7 @@ ii=ii+1
         <td width="333" align="left" bgcolor="#FFFFFF">&nbsp;&nbsp;
           <a href="search_lyhtml.asp?search_url=<%=rs("sjmp5_url_name")%>&search=<%=search%>"><%=rs("sjmp5_url_name")%></a>
 </td>
-        <td width="60" height="25" align="right" bgcolor="#FFFFFF"><font color="#FF0000"><%=rs("sjmp5_url_hits")%></font>´Î&nbsp;</td>
+        <td width="60" height="25" align="right" bgcolor="#FFFFFF"><font color="#339933"><%=rs("sjmp5_url_hits")%></font>æ¬¡&nbsp;</td>
       </tr>
       <%
 rs.movenext 
@@ -144,18 +141,18 @@ loop
 rs.close
 %>
       <tr>
-        <td height="28" colspan="3" align="center" bgcolor="#F8F8F9"><p><a href="search_html_ly.asp?search=<%=search%>"><%=search%>¼ÇÂ¼·ÃÎÊ£º<font color="#FF0000">
+        <td height="28" colspan="3" align="center" bgcolor="#F8F8F9"><p><a href="search_html_ly.asp?search=<%=search%>"><%=search%>è®°å½•è®¿é—®ï¼š<font color="#339933">
             <%
 rs.open "select sum(sjmp5_url_hits) from sjmp5_url where sjmp5_url_date=#"&search&"# "
 response.write rs(0)
 %>
-              </font>´Î</a></p></td>
+              </font>æ¬¡</a></p></td>
       </tr>
       <%end if%>
     </table></td>
     <td width="477" align="right" valign="top"><table width="460" border="0" align="right" cellpadding="1" cellspacing="1" bgcolor="#dddddd">
       <tr>
-        <td height="30" colspan="4" align="center" bgcolor="#eeeeee">¶ÀÁ¢IPÇëÇó¼ÇÂ¼ TOP 10 </td>
+        <td height="30" colspan="4" align="center" bgcolor="#eeeeee">ç‹¬ç«‹IPè¯·æ±‚è®°å½• TOP 10 </td>
       </tr>
       <%
 exec="select top 10 * from sjmp5_ip where sjmp5_ip_date=#"&search&"# order by sjmp5_ip_hits desc,sjmp5_ip_id asc "
@@ -164,7 +161,7 @@ rs.open exec,conn2,1,1
   if rs.bof and rs.eof then
 %>
       <tr>
-        <td height="25" colspan="4" align="left" bgcolor="#FFFFFF">&nbsp; Ã»ÓĞÊı¾İ¼ÇÂ¼! </td>
+        <td height="25" colspan="4" align="left" bgcolor="#FFFFFF">&nbsp; æ²¡æœ‰æ•°æ®è®°å½•! </td>
       </tr>
       <%
 else
@@ -174,9 +171,9 @@ i=i+1
   %>
       <tr>
         <td width="49" height="25" align="left" bgcolor="#FFFFFF">&nbsp;<%=i%></td>
-        <td width="110" align="left" bgcolor="#FFFFFF">&nbsp;&nbsp;<a href='sjmp5_ip_to_url.asp?ip=<%=rs("sjmp5_ip_ip")%>&amp;did=<%=date()%>' target='_blank' title='²é¿´ÏêÇé'> <%=rs("sjmp5_ip_ip")%></a></td>
+        <td width="110" align="left" bgcolor="#FFFFFF">&nbsp;&nbsp;<a href='sjmp5_ip_to_url.asp?ip=<%=rs("sjmp5_ip_ip")%>&amp;did=<%=date()%>' target='_blank' title='æŸ¥çœ‹è¯¦æƒ…'> <%=rs("sjmp5_ip_ip")%></a></td>
         <td width="203" align="left" bgcolor="#FFFFFF">&nbsp;&nbsp;<%=rs("sjmp5_ip_lyurl")%></td>
-        <td width="61" height="25" align="right" bgcolor="#FFFFFF"><font color="#FF0000"><%=rs("sjmp5_ip_hits")%></font>´Î&nbsp;</td>
+        <td width="61" height="25" align="right" bgcolor="#FFFFFF"><font color="#339933"><%=rs("sjmp5_ip_hits")%></font>æ¬¡&nbsp;</td>
       </tr>
       <%
 rs.movenext 
@@ -184,10 +181,10 @@ loop
 rs.close
 %>
       <tr>
-        <td height="28" colspan="4" align="center" bgcolor="#F8F8F9"><p><a href="search_ip.asp?search=<%=search%>"><%=search%>À´·Ã¶ÀÁ¢IP £º<font color="#FF0000"> <%
+        <td height="28" colspan="4" align="center" bgcolor="#F8F8F9"><p><a href="search_ip.asp?search=<%=search%>"><%=search%>æ¥è®¿ç‹¬ç«‹IP ï¼š<font color="#339933"> <%
 rs.open "select sum(sjmp5_ip_fxip) from sjmp5_ip where sjmp5_ip_date=#"&search&"# "
 response.write rs(0)
-%></font>¸ö</a></p></td>
+%></font>ä¸ª</a></p></td>
       </tr>
       <%end if%>
     </table></td>
@@ -196,7 +193,7 @@ response.write rs(0)
   <tr align="left">
     <td align="left" valign="top"><table width="460" border="0" align="left" cellpadding="1" cellspacing="1" bgcolor="#dddddd">
       <tr>
-        <td height="30" colspan="3" align="center" bgcolor="#eeeeee">ÊÜ·ÃÒ³ÃæÅÅÃû TOP 10 </td>
+        <td height="30" colspan="3" align="center" bgcolor="#eeeeee">å—è®¿é¡µé¢æ’å TOP 10 </td>
       </tr>
       <%
 exec="select top 10 * from sjmp5_html where sjmp5_html_date=#"&search&"# order by sjmp5_html_hits desc ,sjmp5_html_id asc"
@@ -205,7 +202,7 @@ rs.open exec,conn2,1,1
   if rs.bof and rs.eof then 
 %>
       <tr>
-        <td height="25" colspan="3" align="left" bgcolor="#FFFFFF">&nbsp;Ã»ÓĞÊı¾İ¼ÇÂ¼!</td>
+        <td height="25" colspan="3" align="left" bgcolor="#FFFFFF">&nbsp;æ²¡æœ‰æ•°æ®è®°å½•!</td>
       </tr>
       <%else
 do while not rs.eof
@@ -215,7 +212,7 @@ iimember=iimember+1
       <tr>
         <td width="49" height="25" align="left" bgcolor="#FFFFFF">&nbsp;<%=iimember%></td>
         <td width="334" height="25" align="left" bgcolor="#FFFFFF">&nbsp;&nbsp;<a href="<%=rs("sjmp5_html_url")%>" title="<%=rs("sjmp5_html_url")%>"  target="_blank"> <%=rs("sjmp5_html_url")%></a></td>
-        <td width="60" align="right" bgcolor="#FFFFFF"><font color="#FF0000"><%=rs("sjmp5_html_hits")%></font>´Î&nbsp;</td>
+        <td width="60" align="right" bgcolor="#FFFFFF"><font color="#339933"><%=rs("sjmp5_html_hits")%></font>æ¬¡&nbsp;</td>
       </tr>
       <%
 rs.movenext 
@@ -223,18 +220,18 @@ loop
 rs.close
 %>
       <tr>
-        <td height="28" colspan="3" align="center" bgcolor="#F8F8F9"><p><a href="search_html.asp?search=<%=search%>"><%=search%> ÓĞ <font color="#FF0000">
+        <td height="28" colspan="3" align="center" bgcolor="#F8F8F9"><p><a href="search_html.asp?search=<%=search%>"><%=search%> æœ‰ <font color="#339933">
             <%
 rs.open "select sum(sjmp5_html_tj) from sjmp5_html where sjmp5_html_date=#"&search&"# "
 response.write rs(0)
 %>
-              </font> Ò³ÊÜ·ÃÎÊ</a></p></td>
+              </font> é¡µå—è®¿é—®</a></p></td>
       </tr>
       <%end if%>
     </table></td>
     <td align="right" valign="top"><table width="460" border="0" align="right" cellpadding="1" cellspacing="1" bgcolor="#dddddd">
       <tr>
-        <td height="30" colspan="3" align="center" bgcolor="#eeeeee"> ¹Ø¼ü×Ö ÅÅÃû TOP 10 </td>
+        <td height="30" colspan="3" align="center" bgcolor="#eeeeee"> å…³é”®å­— æ’å TOP 10 </td>
       </tr>
       <%
 exec="select top 10 * from sjmp5_keyword where sjmp5_keyword_date=#"&search&"# order by sjmp5_keyword_hits desc,sjmp5_keyword_id asc "
@@ -243,7 +240,7 @@ rs.open exec,conn2,1,1
   if rs.bof and rs.eof then
 %>
       <tr>
-        <td height="25" colspan="3" align="left" bgcolor="#FFFFFF">&nbsp;Ã»ÓĞÊı¾İ¼ÇÂ¼! &nbsp; </td>
+        <td height="25" colspan="3" align="left" bgcolor="#FFFFFF">&nbsp;æ²¡æœ‰æ•°æ®è®°å½•! &nbsp; </td>
       </tr>
       <%
 else
@@ -253,8 +250,8 @@ iikey=iikey+1
   %>
       <tr>
         <td width="41" height="25" align="left" bgcolor="#FFFFFF">&nbsp;<%=iikey%> &nbsp;</td>
-        <td width="325" height="25" align="left" bgcolor="#FFFFFF">&nbsp;&nbsp;<a href='search_keyword.asp?search_key=<%=rs("sjmp5_keyword_name")%>&amp;search=<%=search%>' title='¹Ø¼ü×Ö:[<%=rs("sjmp5_keyword_name")%>]'  target='_blank'> <%=rs("sjmp5_keyword_name")%></a> &nbsp;</td>
-        <td width="60" align="right" bgcolor="#FFFFFF"><font color="#FF0000"><%=rs("sjmp5_keyword_hits")%></font>´Î&nbsp;</td>
+        <td width="325" height="25" align="left" bgcolor="#FFFFFF">&nbsp;&nbsp;<a href='search_keyword.asp?search_key=<%=rs("sjmp5_keyword_name")%>&amp;search=<%=search%>' title='å…³é”®å­—:[<%=rs("sjmp5_keyword_name")%>]'  target='_blank'> <%=rs("sjmp5_keyword_name")%></a> &nbsp;</td>
+        <td width="60" align="right" bgcolor="#FFFFFF"><font color="#339933"><%=rs("sjmp5_keyword_hits")%></font>æ¬¡&nbsp;</td>
       </tr>
       <%
 rs.movenext 
@@ -262,12 +259,12 @@ loop
 rs.close
 %>
       <tr>
-        <td height="28" colspan="3" align="center" bgcolor="#F8F8F9"><p><a href="search_keyword.asp?search=<%=search%>"><%=search%> ÓĞ <font color="#FF0000">
+        <td height="28" colspan="3" align="center" bgcolor="#F8F8F9"><p><a href="search_keyword.asp?search=<%=search%>"><%=search%> æœ‰ <font color="#339933">
             <%
 rs.open "select sum(sjmp5_keyword_tj) from sjmp5_keyword where sjmp5_keyword_date=#"&search&"# "
 response.write rs(0)
 %>
-        </font> ¸ö¹Ø¼ü×Ö</a></p></td>
+        </font> ä¸ªå…³é”®å­—</a></p></td>
       </tr>
       <%end if%>
     </table></td>
@@ -280,8 +277,9 @@ response.write rs(0)
     <td colspan="2" valign="top"></td>
   </tr>
   <tr align="left">
-    <td colspan="2" valign="top"><!-- #include file="sjmp5_foot.asp" --></td>
+    <td height="17" colspan="2" valign="top"><!-- #include file="sjmp5_foot.asp" --></td>
   </tr>
 </table>
+<br />
 </body>
 </html>

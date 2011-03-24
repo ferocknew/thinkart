@@ -1,4 +1,5 @@
-
+<%@LANGUAGE="VBSCRIPT" CODEPAGE="65001"%> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <!--#include file="config.asp"-->
 <%
 search_url=request("search_url")
@@ -6,7 +7,7 @@ search=replace(replace(replace(replace(replace(replace(request("search"),"'","")
 if search<>"" then
 	if isdate(request("search")) then 
 	else 
-		response.write "ÈÕÆÚ¸ñÊ½²»ÕıÈ·" 
+		response.write "æ—¥æœŸæ ¼å¼ä¸æ­£ç¡®" 
 		response.end()
 	end if
 else
@@ -17,14 +18,14 @@ end if
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-<meta name="description" content="ASPÀ´Â··ÖÎöÏµÍ³ | www.sjmp5.com" />
-<meta name="keywords" content="ASPÀ´Â··ÖÎöÏµÍ³,sjmp5@126.com" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="description" content="ASPæ¥è·¯åˆ†æç³»ç»Ÿ | www.sjmp5.com" />
+<meta name="keywords" content="ASPæ¥è·¯åˆ†æç³»ç»Ÿ,sjmp5@126.com" />
 <meta name="Copyright" content="copyright (c) 2008 www.sjmp5.com  sjmp5 " />
 <link href="../../WebSystem/css/content_style.css" rel="stylesheet" type="text/css" />
 <link href="../../WebSystem/css/font_link.css" rel="stylesheet" type="text/css" />
 <link href="images/css.css" rel="stylesheet" type="text/css">
-<title><%=keystr%>  >> Íâ²¿Á´½ÓÀ´Ô´ÅÅÃû</title>
+<title><%=keystr%>  >> å¤–éƒ¨é“¾æ¥æ¥æºæ’å</title>
 <SCRIPT src="images/date.js" type=text/javascript></SCRIPT>
 </head>
 <body>
@@ -35,14 +36,14 @@ end if
     <td height="30" align="center"><table width="100%" border="0" cellpadding="1" cellspacing="1" bgcolor="#dddddd">
         <tr>
           <td height="80" align="center" bgcolor="#f8f8f9"><FORM name=searchForm action=? >
-              °´ÈÕÆÚ²é¿´: <INPUT 
+              æŒ‰æ—¥æœŸæŸ¥çœ‹: <INPUT 
 name=search id=time_end value="<%=search%>" size=11 readonly> 
               <IMG 
 src="images/date.gif" width="36" height="19" class=dtm 
 onclick="date_init(this,'time_end')" 
 onmouseover="this.src='images/btn_on_cal.gif'" 
 onmouseout="this.src='images/btn_off_cal.gif'"> &nbsp;
-  <INPUT class=button type=submit value=" ²é¿´ "> </FORM>
+  <INPUT class=button type=submit value=" æŸ¥çœ‹ "> </FORM>
   <script language="javascript">
     function searchOrder()
     {
@@ -114,7 +115,7 @@ onmouseout="this.src='images/btn_off_cal.gif'"> &nbsp;
   <tr align="left">
     <td align="left" valign="top"><table width="100%" border="0" align="left" cellpadding="1" cellspacing="1" bgcolor="#dddddd">
   <tr>
-    <td height="30" colspan="3" align="center" background="images/tab_bg.gif" bgcolor="#eeeeee"><b>Íâ²¿Á´½ÓÀ´Ô´ÅÅĞĞ°ñ</b>( <%=search%>ÓĞ<font color="#FF0000">
+    <td height="30" colspan="3" align="center" background="images/tab_bg.gif" bgcolor="#eeeeee"><b>å¤–éƒ¨é“¾æ¥æ¥æºæ’è¡Œæ¦œ</b>( <%=search%>æœ‰<font color="#339933">
 <%
 rs.close
 rs.open "select count(sjmp5_lyhtml_tj) from sjmp5_lyhtml where sjmp5_lyhtml_name='"&search_url&"' and sjmp5_lyhtml_date=#"&search&"#"
@@ -125,7 +126,7 @@ key_tj=rs(0)
 rs.close
 %>
 
-</font> Ò³À´·Ã ) </td>
+</font> é¡µæ¥è®¿ ) </td>
   </tr><%
 exec="select top 10 * from sjmp5_lyhtml where sjmp5_lyhtml_date=#"&search&"# and sjmp5_lyhtml_name='"&search_url&"' order by sjmp5_lyhtml_hits desc"
 set rs=server.createobject("adodb.recordset")
@@ -140,7 +141,7 @@ rs.open exec,conn2,1,1
   everypage=pagekeyfenxi          
   rs.pagesize=everypage
   if rs.bof and rs.eof then
-  response.write "<tr><td colspan=3 align=left bgcolor=#FFFFFF>Ã»ÓĞÊı¾İ¼ÇÂ¼!</td></tr>"
+  response.write "<tr><td colspan=3 align=left bgcolor=#FFFFFF>æ²¡æœ‰æ•°æ®è®°å½•!</td></tr>"
   else
   page_count=rs.pagecount
   rs.AbsolutePage=page
@@ -152,7 +153,7 @@ iimember=iimember+1
     <td width="50" height="25" align="left" bgcolor="#FFFFFF">&nbsp;<%=iimember%></td>
     <td width="640" height="25" align="left" bgcolor="#FFFFFF">&nbsp;&nbsp;<a href="<%=rs("sjmp5_lyhtml_url")%>" title='<%=rs("sjmp5_lyhtml_url")%>'  target="_blank">
     <%=rs("sjmp5_lyhtml_url")%></a></td>
-    <td width="250" align="left" bgcolor="#FFFFFF"><img src="images/smallbg.jpg" width=<%=fix(rs("sjmp5_lyhtml_hits")/key_tj*150)%> height=10>&nbsp;<%=fix(rs("sjmp5_lyhtml_hits")/key_tj*100)%>%&nbsp;&nbsp;(<font color="#FF0000"><%=rs("sjmp5_lyhtml_hits")%></font>´Î)&nbsp;</td>
+    <td width="250" align="left" bgcolor="#FFFFFF"><img src="images/smallbg.jpg" width=<%=fix(rs("sjmp5_lyhtml_hits")/key_tj*150)%> height=10>&nbsp;<%=fix(rs("sjmp5_lyhtml_hits")/key_tj*100)%>%&nbsp;&nbsp;(<font color="#339933"><%=rs("sjmp5_lyhtml_hits")%></font>æ¬¡)&nbsp;</td>
   </tr><%
    j=j+1
   rs.movenext
@@ -168,8 +169,8 @@ iimember=iimember+1
 <%
 if page=1 then
    else
- Response.Write"<a href=?search="&search&"&page=1>Ê×Ò³</a>&nbsp;"
- Response.Write"<a href=?search="&search&"&page="&page-1&">ÉÏÒ»Ò³</a>"
+ Response.Write"<a href=?search="&search&"&page=1>é¦–é¡µ</a>&nbsp;"
+ Response.Write"<a href=?search="&search&"&page="&page-1&">ä¸Šä¸€é¡µ</a>"
  end if
  %>
  
@@ -191,8 +192,8 @@ if page=1 then
   <%end if%>
   <%next%>
 <%if page<page_count then%>
-<a href='?search=<%=search%>&page=<%=page+1%>'>ÏÂÒ»Ò³</a>
-&nbsp;<a href='?search=<%=search%>&page=<%=page_count%>'>Î²Ò³</a>
+<a href='?search=<%=search%>&page=<%=page+1%>'>ä¸‹ä¸€é¡µ</a>
+&nbsp;<a href='?search=<%=search%>&page=<%=page_count%>'>å°¾é¡µ</a>
 <%else
 end if%>
 </td>
