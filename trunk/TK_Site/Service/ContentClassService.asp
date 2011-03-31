@@ -3,8 +3,8 @@
 Class ContentClassService
 
 	Public Sub InsertContentClass(objContentClass,classLevelId)
-		strInsertSql="insert into ContentClass (ClassName,UpClassId,[Order],Show2hide,ClassType) values ('" &InputReplace(objContentClass.ClassName) &_
-			"',"& InputReplace(objContentClass.UpClassId) &",'"& InputReplace(objContentClass.Order) &"',"& InputReplace(objContentClass.Show2hide) &","& InputReplace(objContentClass.ClassType) &")"
+		strInsertSql="insert into ContentClass select top 1 '" &InputReplace(objContentClass.ClassName) &_
+			"' as ClassName, "& InputReplace(objContentClass.UpClassId) &" as UpClassId, (select max([Order]) from ContentClass where upclassid="& InputReplace(objContentClass.UpClassId) &")+1 as [Order], "& InputReplace(objContentClass.Show2hide) &" as Show2hide, "& InputReplace(objContentClass.ClassType) &" as ClassType from SiteInfo"
 		DB.ExecuteNonQuery(strInsertSql)
 	End Sub
 	
@@ -14,8 +14,28 @@ Class ContentClassService
 	End Sub
 	
 	Public Sub UpdateContentClass(objContentClass)
-		strUpdateSql="update ContentClass set ClassName='"& InputReplace(objContentClass.ClassName)  &"',UpClassId="& InputReplace(objContentClass.UpClassId) &_
-			",[Order]='"& InputReplace(objContentClass.Order) &"',Show2hide="& InputReplace(objContentClass.Show2hide) &",ClassType="& InputReplace(objContentClass.ClassType) &" where Id="& InputReplace(objContentClass.Id)
+		strUpdateSql="update ContentClass set ClassName='"& InputReplace(objContentClass.ClassName)  &"' where Id="& InputReplace(objContentClass.Id)
+		DB.ExecuteNonQuery(strUpdateSql)
+	End Sub
+	
+	Public Sub UpdateContentClassOrder(objContentClass)
+		oldOrder=""
+		symbol=""
+		yu1=""
+		yu2=""
+		strUpdateSql="select [Order] from ContentClass where Id="& InputReplace(objContentClass.Id)
+		Set rs=DB.ExecuteQuery(strSelectSql)
+		If CInt(oldOrder) > CInt(objContentClass.Order) Then
+			symbol="+"
+			yu1=">="
+			yu2="<"
+		Else
+			symbol="-"
+			yu1="<="
+			yu2=">"
+		End If
+		If Not rs.Eof Then oldOrder = rs("Order") End If
+		strUpdateSql="Update ContentClass Set [Order]=[Order]"& symbol &"1 Where UpClassId in (Select UpClassId From ContentClass Where Id="& InputReplace(objContentClass.Id) &") and [Order] "& yu1 &" "& objContentClass.Order &" and [Order] "& yu2 &" "& oldOrder &";update ContentClass set [Order]='"& InputReplace(objContentClass.Order) &"' where Id="& InputReplace(objContentClass.Id) &";"
 		DB.ExecuteNonQuery(strUpdateSql)
 	End Sub
 	

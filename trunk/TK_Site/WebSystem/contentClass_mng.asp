@@ -16,7 +16,7 @@
 <!--#include file="../Scripts/ContentClassScripts.asp"-->
 </head>
 <body>
-<form id="form1" name="form1" method="post" action="product_edit.asp" enctype="multipart/form-data">
+<form id="form1" name="form1" method="post" action="contentClass_mng.asp?ccid=<%=ccid%>&ctype=<%=ctype%>" enctype="multipart/form-data">
 <input type="hidden" name="action" id="action" value="" />
 <input type="hidden" name="updid" id="updid" value="<%=pid%>" />
 <div class="breadcrumbs text_gray12_b link_gray12_b">

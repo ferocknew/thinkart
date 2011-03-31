@@ -2,37 +2,27 @@
 <!--#include file="../Adapter/ContentClassAdapter.asp" -->
 <!--#include file="../Adapter/UpLoad_Class.vbs.asp"-->
 <script type="text/javascript">
-function content_add_check(){
-	if(document.form1.Title.value == '')
+function contentClass_add_check(){
+	if(document.form1.ClassName.value == '')
 	{
-		alert('请填写内容标题');
-		document.form1.Title.focus();
-		return;
-	}
-	if(document.form1.ClassID.value == '')
-	{
-		alert('请选择所属分类');
+		alert('请输入结构名称');
+		document.form1.ClassName.focus();
 		return;
 	}
 	document.form1.action.value = 'add';
 	document.form1.submit( );
 }
-function content_upd_check(){
-	if(document.form1.Title.value == '')
+function contentClass_upd_check(){
+	if(document.form1.ClassName.value == '')
 	{
-		alert('请填写内容标题');
-		document.form1.Title.focus();
-		return;
-	}
-	if(document.form1.ClassID.value == '')
-	{
-		alert('请选择所属分类');
+		alert('请输入结构名称');
+		document.form1.ClassName.focus();
 		return;
 	}
 	document.form1.action.value = 'update';
 	document.form1.submit( );
 }
-function content_del_check(id){
+function contentClass_del_check(id){
 	document.form1.delid.value = id;
 	if(document.form1.delid.value == '')
 	{
@@ -45,12 +35,15 @@ function content_del_check(id){
 		document.form1.submit( );
 	}
 }
-function content_alldel_check(){
-	if(confirm('确认删除？'))
+function contentClass_upd_order_check(){
+	if(document.form1.Order.value == '')
 	{
-		document.form1.action.value = 'alldelete';
-		document.form1.submit( );
+		alert('请输入排序数量');
+		document.form1.Order.focus();
+		return;
 	}
+	document.form1.action.value = 'update_order';
+	document.form1.submit( );
 }
 </script>
 <%
@@ -68,38 +61,30 @@ set upload = new AnUpLoad
 Upload.Charset="utf-8"
 upload.GetData()
 If upload.forms("action") = "add" Then
-	Set ContentMod=new Content
-	ContentMod.Title=upload.forms("Title")
-	ContentMod.Keywords=upload.forms("Keywords")
-	ContentMod.Abstract=upload.forms("Abstract")
-	ContentMod.Img=Img
-	ContentMod.Content=upload.forms("Content")
-	ContentMod.Lasttime=Date()&" "&Time()
-	ContentMod.SyncBlog=upload.forms("SyncBlog")
-	ContentMod.ClassID=upload.forms("ClassID")
-	ContentMod.CType=upload.forms("CType")
-	Response.Write "<script>alert('"& ContentManager.InsertContent(ContentMod) &"');window.location='content_mng.asp'</script>"
+	Set ContentClassMod=new ContentClass
+	ContentClassMod.ClassName=upload.forms("ClassName")
+	ContentClassMod.UpClassId=upload.forms("UpClassId")
+	ContentClassMod.Order=upload.forms("Order")
+	ContentClassMod.Show2hide="1"
+	ContentClassMod.ClassType=ctype
+	Response.Write "<script>alert('"& ContentClassManager.InsertContentClass(ContentClassMod) &"');window.location='contentClass_mng.asp'</script>"
 	response.End()
 ElseIf upload.forms("action") = "update" Then
-	Set ContentMod=new Content
-	ContentMod.ID=cid
-	ContentMod.Title=upload.forms("Title")
-	ContentMod.Keywords=upload.forms("Keywords")
-	ContentMod.Abstract=upload.forms("Abstract")
-	ContentMod.Img=Img
-	ContentMod.Content=upload.forms("Content")
-	ContentMod.Lasttime=Date()&" "&Time()
-	ContentMod.SyncBlog=upload.forms("SyncBlog")
-	ContentMod.ClassID=upload.forms("ClassID")
-	ContentMod.CType=upload.forms("CType")
-	Response.Write "<script>alert('"& ContentManager.UpdateContent(ContentMod) &"');window.location='content_mng.asp'</script>"
+	Set ContentClassMod=new ContentClass
+	ContentClassMod.ID=cid
+	ContentClassMod.Title=upload.forms("Title")
+	ContentClassMod.Keywords=upload.forms("Keywords")
+	ContentClassMod.SyncBlog=upload.forms("SyncBlog")
+	ContentClassMod.ClassID=upload.forms("ClassID")
+	ContentClassMod.CType=upload.forms("CType")
+	Response.Write "<script>alert('"& ContentClassManager.UpdateContentClass(ContentClassMod) &"');window.location='contentClass_mng.asp'</script>"
 	response.End()
 ElseIf upload.forms("action") = "delete" Then
 	id=upload.forms("delid")
-	Response.Write "<script>alert('"& ContentManager.DeleteContent(id) &"')</script>"
+	Response.Write "<script>alert('"& ContentClassManager.DeleteContentClass(id) &"')</script>"
 ElseIf upload.forms("action") = "alldelete" Then
 	id=upload.forms("ck_input_name")
-	Response.Write "<script>alert('"& ContentManager.DeleteContent(id) &"')</script>"
+	Response.Write "<script>alert('"& ContentClassManager.DeleteContentClass(id) &"')</script>"
 End If
 %>
 <!--#include file="../Scripts/loadClass.asp"-->
