@@ -18,7 +18,9 @@
 <body>
 <form id="form1" name="form1" method="post" action="contentClass_mng.asp?ccid=<%=ccid%>&ctype=<%=ctype%>" enctype="multipart/form-data">
 <input type="hidden" name="action" id="action" value="" />
-<input type="hidden" name="updid" id="updid" value="<%=pid%>" />
+<input type="hidden" name="updid" id="updid" value="<%=ccid%>" />
+<input type="hidden" name="delid" id="delid" value="<%=ccid%>" />
+<input type="hidden" name="UpClassId" id="delid" value="0" />
 <div class="breadcrumbs text_gray12_b link_gray12_b">
 <img src="images/ico_breadcrumbs.gif" align="absmiddle" />
 当前位置: <a href="#"> 内容管理</a> / 
@@ -33,7 +35,7 @@
 <div class="content_ctrlbar text_deepGray12_b">
   <div style="margin-top:9px; float:left;">新增主栏目 
     <input type="text" name="ClassName" id="ClassName" />
-    <input class="btm_submit" type="submit" name="button" id="button" value=" " />
+    <input class="btm_submit" type="submit" name="button" id="button" value=" " onclick="contentClass_add_check()" />
   </div>
   <table border="0" align="right" cellpadding="0" cellspacing="0" class="link_deepGray12_b">
     <tr>
@@ -56,18 +58,18 @@
                     <table border="0" cellpadding="0" cellspacing="0">
                         <tr>
                             <td width="53"><img src="images/btm_editBar_close.gif" align="top" /></td>
-                            <td width="200">添加子分类 <input name="textfield2" type="text" class="input_createTree" id="textfield2" size="8" />
-                            <input class="programsEdit_btm" type="button" name="button2" id="button2" value=" " />
+                            <td width="200">添加子分类 <input name="ClassNameSon" type="text" class="input_createTree" id="ClassNameSon" size="8" />
+                            <input class="programsEdit_btm" type="button" name="button2" id="button2" onclick="contentClass_upd_check()" value=" " />
                             </td>
                             <td class="editBar_td" width="161">升降序 <img src="images/btm_putDown.gif" align="middle" /><img src="images/btm_putUp.gif" align="middle" />
-                            <input class="input_sort" name="textfield3" type="text" id="textfield3" value="0" size="3" maxlength="3" />
-                            <input class="programsEdit_btm" type="button" name="button2" id="button2" value=" " /></td>
-                            <td class="editBar_td" width="117">删除此分类 <img src="images/ico_trash.gif" align="middle" /></td>
+                            <input class="input_sort" name="Order" type="text" id="Order" value="0" size="3" maxlength="3" />
+                            <input class="programsEdit_btm" type="button" name="button2" id="button2" value=" " onclick="contentClass_upd_order_check()" /></td>
+                            <td class="editBar_td" width="117"><a href="#" onclick="contentClass_del_check()">删除此分类 <img src="images/ico_trash.gif" align="middle" /></a></td>
                         </tr>
                     </table>
                 </div>
-                <input name="textfield" type="text" class="programsEdit_input" id="textfield" value="<%=contentclassDic.Items()(i).ClassName%>" size="16" />
-                <input class="programsEdit_btm" type="button" name="button" id="button" value=" " />
+                <input name="ContentClassUpd" type="text" class="programsEdit_input" id="ContentClassUpd" value="<%=contentclassDic.Items()(i).ClassName%>" size="16" />
+                <input class="programsEdit_btm" type="button" name="button" id="button" value=" " onclick="contentClass_upd_check()" />
             </div>    
             </div>
         </div>
