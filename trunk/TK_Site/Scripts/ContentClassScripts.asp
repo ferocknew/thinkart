@@ -9,21 +9,32 @@ function contentClass_add_check(){
 		document.form1.ClassName.focus();
 		return;
 	}
+	document.form1.UpClassId.value = "0";
 	document.form1.action.value = 'add';
 	document.form1.submit( );
 }
-function contentClass_upd_check(){
-	if(document.form1.ClassName.value == '')
+function contentClass_add_son_check(id){
+	if(document.form1.ClassNameSon.value == '')
 	{
 		alert('请输入结构名称');
-		document.form1.ClassName.focus();
+		document.form1.ClassNameSon.focus();
+		return;
+	}
+	document.form1.UpClassId.value = id;
+	document.form1.action.value = 'add_son';
+	document.form1.submit( );
+}
+function contentClass_upd_check(){
+	if(document.form1.ContentClassUpd.value == '')
+	{
+		alert('请输入结构名称');
+		document.form1.ContentClassUpd.focus();
 		return;
 	}
 	document.form1.action.value = 'update';
 	document.form1.submit( );
 }
-function contentClass_del_check(id){
-	document.form1.delid.value = id;
+function contentClass_del_check(){
 	if(document.form1.delid.value == '')
 	{
 		alert('请选择要删除的项');
@@ -65,25 +76,33 @@ If upload.forms("action") = "add" Then
 	ContentClassMod.ClassName=upload.forms("ClassName")
 	ContentClassMod.UpClassId=upload.forms("UpClassId")
 	ContentClassMod.Order=upload.forms("Order")
-	ContentClassMod.Show2hide="1"
+	ContentClassMod.Show2hide="true"
+	ContentClassMod.ClassType=ctype
+	Response.Write "<script>alert('"& ContentClassManager.InsertContentClass(ContentClassMod) &"');window.location='contentClass_mng.asp'</script>"
+	response.End()
+ElseIf upload.forms("action") = "add_son" Then
+	Set ContentClassMod=new ContentClass
+	ContentClassMod.ClassName=upload.forms("ClassNameSon")
+	ContentClassMod.UpClassId=upload.forms("UpClassId")
+	ContentClassMod.Order=upload.forms("Order")
+	ContentClassMod.Show2hide="true"
 	ContentClassMod.ClassType=ctype
 	Response.Write "<script>alert('"& ContentClassManager.InsertContentClass(ContentClassMod) &"');window.location='contentClass_mng.asp'</script>"
 	response.End()
 ElseIf upload.forms("action") = "update" Then
 	Set ContentClassMod=new ContentClass
 	ContentClassMod.ID=cid
-	ContentClassMod.Title=upload.forms("Title")
-	ContentClassMod.Keywords=upload.forms("Keywords")
-	ContentClassMod.SyncBlog=upload.forms("SyncBlog")
-	ContentClassMod.ClassID=upload.forms("ClassID")
-	ContentClassMod.CType=upload.forms("CType")
+	ContentClassMod.ClassName=upload.forms("ContentClassUpd")
+	Response.Write "<script>alert('"& ContentClassManager.UpdateContentClass(ContentClassMod) &"');window.location='contentClass_mng.asp'</script>"
+	response.End()
+ElseIf upload.forms("action") = "update_order" Then
+	Set ContentClassMod=new ContentClass
+	ContentClassMod.ID=cid
+	ContentClassMod.Order=upload.forms("Order")
 	Response.Write "<script>alert('"& ContentClassManager.UpdateContentClass(ContentClassMod) &"');window.location='contentClass_mng.asp'</script>"
 	response.End()
 ElseIf upload.forms("action") = "delete" Then
 	id=upload.forms("delid")
-	Response.Write "<script>alert('"& ContentClassManager.DeleteContentClass(id) &"')</script>"
-ElseIf upload.forms("action") = "alldelete" Then
-	id=upload.forms("ck_input_name")
 	Response.Write "<script>alert('"& ContentClassManager.DeleteContentClass(id) &"')</script>"
 End If
 %>
