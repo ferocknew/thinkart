@@ -27,6 +27,13 @@ Class ContentClassAdapter
 		UpdateContentClass="修改成功！"
 	End Function
 	
+	Public Function UpdateContentClassOrder(objContentClass)
+		UpdateContentClassOrder="修改失败！"
+		
+		ContentClassDao.UpdateContentClassOrder(objContentClass)
+		UpdateContentClassOrder="修改成功！"
+	End Function
+	
 	Public Function GetAllContentClass(classtype)
 		Set GetAllContentClass=ContentClassDao.GetAllContentClass(classtype)
 	End Function

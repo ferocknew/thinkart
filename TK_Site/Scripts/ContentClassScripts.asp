@@ -2,6 +2,24 @@
 <!--#include file="../Adapter/ContentClassAdapter.asp" -->
 <!--#include file="../Adapter/UpLoad_Class.vbs.asp"-->
 <script type="text/javascript">
+function orderup(){
+	try{
+		$('#Order').val(parseInt($('#Order').val())+1);
+		if($('#Order').val()=='NaN')
+			$('#Order').val('0');
+	}catch(e){
+		$('#Order').val('0');
+	}
+}
+function orderdown(){
+	try{
+		$('#Order').val(parseInt($('#Order').val())-1);
+		if($('#Order').val()=='NaN')
+			$('#Order').val('0');
+	}catch(e){
+		$('#Order').val('0');
+	}
+}
 function contentClass_add_check(){
 	if(document.form1.ClassName.value == '')
 	{
@@ -13,14 +31,13 @@ function contentClass_add_check(){
 	document.form1.action.value = 'add';
 	document.form1.submit( );
 }
-function contentClass_add_son_check(id){
+function contentClass_add_son_check(){
 	if(document.form1.ClassNameSon.value == '')
 	{
 		alert('请输入结构名称');
 		document.form1.ClassNameSon.focus();
 		return;
 	}
-	document.form1.UpClassId.value = id;
 	document.form1.action.value = 'add_son';
 	document.form1.submit( );
 }
@@ -47,9 +64,9 @@ function contentClass_del_check(){
 	}
 }
 function contentClass_upd_order_check(){
-	if(document.form1.Order.value == '')
+	if(document.form1.Order.value == '' || parseInt($('#Order').val())+''=='NaN')
 	{
-		alert('请输入排序数量');
+		alert('请输入正确的排序数量');
 		document.form1.Order.focus();
 		return;
 	}
@@ -72,7 +89,7 @@ set upload = new AnUpLoad
 Upload.Charset="utf-8"
 upload.GetData()
 If upload.forms("action") = "add" Then
-	Set ContentClassMod=new ContentClass
+	Set ContentClassMod=new ContentClassInfo
 	ContentClassMod.ClassName=upload.forms("ClassName")
 	ContentClassMod.UpClassId=upload.forms("UpClassId")
 	ContentClassMod.Order=upload.forms("Order")
@@ -81,29 +98,29 @@ If upload.forms("action") = "add" Then
 	Response.Write "<script>alert('"& ContentClassManager.InsertContentClass(ContentClassMod) &"');window.location='contentClass_mng.asp'</script>"
 	response.End()
 ElseIf upload.forms("action") = "add_son" Then
-	Set ContentClassMod=new ContentClass
+	Set ContentClassMod=new ContentClassInfo
 	ContentClassMod.ClassName=upload.forms("ClassNameSon")
-	ContentClassMod.UpClassId=upload.forms("UpClassId")
+	ContentClassMod.UpClassId=ccid
 	ContentClassMod.Order=upload.forms("Order")
 	ContentClassMod.Show2hide="true"
 	ContentClassMod.ClassType=ctype
 	Response.Write "<script>alert('"& ContentClassManager.InsertContentClass(ContentClassMod) &"');window.location='contentClass_mng.asp'</script>"
 	response.End()
 ElseIf upload.forms("action") = "update" Then
-	Set ContentClassMod=new ContentClass
-	ContentClassMod.ID=cid
+	Set ContentClassMod=new ContentClassInfo
+	ContentClassMod.ID=ccid
 	ContentClassMod.ClassName=upload.forms("ContentClassUpd")
-	Response.Write "<script>alert('"& ContentClassManager.UpdateContentClass(ContentClassMod) &"');window.location='contentClass_mng.asp'</script>"
+	Response.Write "<script>alert('"& ContentClassManager.UpdateContentClass(ContentClassMod) &"');window.location='contentClass_mng.asp?ccid="& ccid &"'</script>"
 	response.End()
 ElseIf upload.forms("action") = "update_order" Then
-	Set ContentClassMod=new ContentClass
-	ContentClassMod.ID=cid
+	Set ContentClassMod=new ContentClassInfo
+	ContentClassMod.ID=ccid
 	ContentClassMod.Order=upload.forms("Order")
-	Response.Write "<script>alert('"& ContentClassManager.UpdateContentClass(ContentClassMod) &"');window.location='contentClass_mng.asp'</script>"
+	Response.Write "<script>alert('"& ContentClassManager.UpdateContentClassOrder(ContentClassMod) &"');window.location='contentClass_mng.asp?ccid="& ccid &"'</script>"
 	response.End()
 ElseIf upload.forms("action") = "delete" Then
 	id=upload.forms("delid")
-	Response.Write "<script>alert('"& ContentClassManager.DeleteContentClass(id) &"')</script>"
+	Response.Write "<script>alert('"& ContentClassManager.DeleteContentClass(id) &"');window.location='contentClass_mng.asp'</script>"
 End If
 %>
 <!--#include file="../Scripts/loadClass.asp"-->
