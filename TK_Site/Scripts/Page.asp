@@ -1,8 +1,6 @@
 ﻿<%
-setpagesize=12
-If pageindex="" Then
-	pageindex="1"
-End If
+If setpagesize="" Then setpagesize=12 End If
+If pageindex="" Then pageindex="1" End If
 pageindex=CInt(pageindex)
 setpagecount=Int((PageDic.Count-1)/setpagesize) + 1
 lastpage=pageindex-1

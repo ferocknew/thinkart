@@ -34,7 +34,7 @@ Class ProductService
 	End Sub
 	
 	Public Function GetAllProduct()
-		strSelectSql="select *,(select ClassName from ContentClass where ContentClass.ID=Product.ClassID) as ClassName from Product"
+		strSelectSql="select *,(select ClassName from ContentClass where ContentClass.ID=Product.ClassID) as ClassName from Product Order by Id Desc"
 		Set rs=DB.ExecuteQuery(strSelectSql)
 		Set dic=Server.CreateObject("Scripting.Dictionary")
 		While not rs.eof
@@ -45,6 +45,30 @@ Class ProductService
 		rs.Close
 		Set rs=nothing
 		Set GetAllProduct=dic
+	End Function
+	
+	Public Function GetProductByObjProduct(objProduct)
+		strSelectSql="select *,(select ClassName from ContentClass where ContentClass.ID=Product.ClassID) as ClassName from Product where 1=1"
+		If Not objProduct.Id is null and objProduct.Id = "" Then strSelectSql = strSelectSql& " and [Id]="& objProduct.Id End If
+		If Not objProduct.Title is null and objProduct.Title = "" Then strSelectSql = strSelectSql& " and [Title]="& objProduct.Title End If
+		If Not objProduct.Keywords is null and objProduct.Keywords = "" Then strSelectSql = strSelectSql& " and [Keywords]="& objProduct.Keywords End If
+		If Not objProduct.Abstract is null and objProduct.Abstract = "" Then strSelectSql = strSelectSql& " and [Abstract]="& objProduct.Abstract End If
+		If Not objProduct.Content is null and objProduct.Content = "" Then strSelectSql = strSelectSql& " and [Content]="& objProduct.Content End If
+		If Not objProduct.Price is null and objProduct.Price = "" Then strSelectSql = strSelectSql& " and [Price]="& objProduct.Price End If
+		If Not objProduct.VIPPrice is null and objProduct.VIPPrice = "" Then strSelectSql = strSelectSql& " and [VIPPrice]="& objProduct.VIPPrice End If
+		If Not objProduct.ProductCount is null and objProduct.ProductCount = "" Then strSelectSql = strSelectSql& " and [ProductCount]="& objProduct.ProductCount End If
+		If Not objProduct.ClassID is null and objProduct.ClassID = "" Then strSelectSql = strSelectSql& " and [ClassID]="& objProduct.ClassID End If
+		strSelectSql = strSelectSql& " Order by Id Desc"
+		Set rs=DB.ExecuteQuery(strSelectSql)
+		Set dic=Server.CreateObject("Scripting.Dictionary")
+		While not rs.eof
+			Set ModProduct=CreateProduct(rs) 
+			dic.Add ModProduct.Id,ModProduct
+			rs.MoveNext
+		wend
+		rs.Close
+		Set rs=nothing
+		Set GetProductByObjProduct=dic
 	End Function
 	
 	Public Function GetProductById(id)
@@ -72,6 +96,7 @@ Class ProductService
 			ModProduct.VIPPrice=OutputReplace(rs("VIPPrice"))
 			ModProduct.ProductCount=OutputReplace(rs("ProductCount"))
 			ModProduct.ClassID=OutputReplace(rs("ClassID"))
+			ModProduct.ClassName=OutputReplace(rs("ClassName"))
 		End If
 		Set CreateProduct=ModProduct
 	End Function

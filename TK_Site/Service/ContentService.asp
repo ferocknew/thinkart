@@ -23,7 +23,7 @@ Class ContentService
 	End Sub
 	
 	Public Function GetAllContent()
-		strSelectSql="select *,(select ClassName from ContentClass where ContentClass.ID=Content.ClassID) as ClassName from Content"
+		strSelectSql="select *,(select ClassName from ContentClass where ContentClass.ID=Content.ClassID) as ClassName from Content Order by Id Desc"
 		Set rs=DB.ExecuteQuery(strSelectSql)
 		Set dic=Server.CreateObject("Scripting.Dictionary")
 		While not rs.eof
@@ -34,6 +34,30 @@ Class ContentService
 		rs.Close
 		Set rs=nothing
 		Set GetAllContent=dic
+	End Function
+	
+	Public Function GetContentByObjContent(objContent)
+		strSelectSql="select *,(select ClassName from ContentClass where ContentClass.ID=Content.ClassID) as ClassName from Content where 1=1"
+		If Not objContent.Id is null and objContent.Id = "" Then strSelectSql = strSelectSql& " and [Id]="& objContent.Id End If
+		If Not objContent.Title is null and objContent.Title = "" Then strSelectSql = strSelectSql& " and [Title]="& objContent.Title End If
+		If Not objContent.Keywords is null and objContent.Keywords = "" Then strSelectSql = strSelectSql& " and [Keywords]="& objContent.Keywords End If
+		If Not objContent.Abstract is null and objContent.Abstract = "" Then strSelectSql = strSelectSql& " and [Abstract]="& objContent.Abstract End If
+		If Not objContent.Content is null and objContent.Content = "" Then strSelectSql = strSelectSql& " and [Content]="& objContent.Content End If
+		If Not objContent.SyncBlog is null and objContent.SyncBlog = "" Then strSelectSql = strSelectSql& " and [SyncBlog]="& objContent.SyncBlog End If
+		If Not objContent.CType is null and objContent.CType = "" Then strSelectSql = strSelectSql& " and [CType]="& objContent.CType End If
+		If Not objContent.Lasttime is null and objContent.Lasttime = "" Then strSelectSql = strSelectSql& " and [Lasttime]="& objContent.Lasttime End If
+		If Not objContent.ClassID is null and objContent.ClassID = "" Then strSelectSql = strSelectSql& " and [ClassID]="& objContent.ClassID End If
+		strSelectSql = strSelectSql& " Order by Id Desc"
+		Set rs=DB.ExecuteQuery(strSelectSql)
+		Set dic=Server.CreateObject("Scripting.Dictionary")
+		While not rs.eof
+			Set ModContent=CreateContent(rs) 
+			dic.Add ModContent.Id,ModContent
+			rs.MoveNext
+		wend
+		rs.Close
+		Set rs=nothing
+		Set GetContentByObjContent=dic
 	End Function
 	
 	Public Function GetContentById(id)
