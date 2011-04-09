@@ -104,5 +104,13 @@ Class Content
 	Public Property Get ClassID()
 		ClassID = cClassID
 	End Property
+	
+	Private cClassName
+	Public Property Let ClassName(value)
+		cClassName = value
+	End Property
+	Public Property Get ClassName()
+		ClassName = cClassName
+	End Property
 End Class
 %>

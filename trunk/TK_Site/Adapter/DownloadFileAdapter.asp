@@ -31,6 +31,10 @@ Class DownloadFileAdapter
 		Set GetAllDownloadFile=DownloadFileDao.GetAllDownloadFile()
 	End Function
 	
+	Public Function GetDownloadFileByObjDownloadFile(objDownloadFile)
+		Set GetDownloadFileByObjDownloadFile=DownloadFileDao.GetDownloadFileByObjDownloadFile(objDownloadFile)
+	End Function
+	
 	Public Function GetDownloadFileById(id)
 		If id = "" Or Not IsNumeric(id) Then
 			id = "0"
