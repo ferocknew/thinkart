@@ -4,7 +4,7 @@ Class ContentClassService
 
 	Public Sub InsertContentClass(objContentClass)
 		strInsertSql="insert into ContentClass select top 1 '" &InputReplace(objContentClass.ClassName) &_
-			"' as ClassName, "& InputReplace(objContentClass.UpClassId) &" as UpClassId, (select max([Order]) from ContentClass where upclassid="& InputReplace(objContentClass.UpClassId) &")+1 as [Order], "& InputReplace(objContentClass.Show2hide) &" as Show2hide, "& InputReplace(objContentClass.ClassType) &" as ClassType from SiteInfo"
+			"' as ClassName, "& InputReplace(objContentClass.UpClassId) &" as UpClassId, iif((select max([Order]) from ContentClass where upclassid="& InputReplace(objContentClass.UpClassId) &")="",1,(select max([Order]) from ContentClass where upclassid="& InputReplace(objContentClass.UpClassId) &")+1) as [Order], "& InputReplace(objContentClass.Show2hide) &" as Show2hide, "& InputReplace(objContentClass.ClassType) &" as ClassType from SiteInfo"
 			'response.Write(strInsertSql)
 			'response.End()
 		DB.ExecuteNonQuery(strInsertSql)
