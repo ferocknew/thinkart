@@ -95,7 +95,7 @@ If upload.forms("action") = "add" Then
 	ContentClassMod.Order=upload.forms("Order")
 	ContentClassMod.Show2hide="true"
 	ContentClassMod.ClassType=cctype
-	Response.Write "<script>alert('"& ContentClassManager.InsertContentClass(ContentClassMod) &"');window.location='contentClass_mng.asp'</script>"
+	Response.Write "<script>alert('"& ContentClassManager.InsertContentClass(ContentClassMod) &"');window.location='contentClass_mng.asp?cctype="& cctype &"&ccid="& ccid &"'</script>"
 	response.End()
 ElseIf upload.forms("action") = "add_son" Then
 	Set ContentClassMod=new ContentClassInfo
@@ -104,23 +104,23 @@ ElseIf upload.forms("action") = "add_son" Then
 	ContentClassMod.Order=upload.forms("Order")
 	ContentClassMod.Show2hide="true"
 	ContentClassMod.ClassType=cctype
-	Response.Write "<script>alert('"& ContentClassManager.InsertContentClass(ContentClassMod) &"');window.location='contentClass_mng.asp'</script>"
+	Response.Write "<script>alert('"& ContentClassManager.InsertContentClass(ContentClassMod) &"');window.location='contentClass_mng.asp?cctype="& cctype &"&ccid="& ccid &"'</script>"
 	response.End()
 ElseIf upload.forms("action") = "update" Then
 	Set ContentClassMod=new ContentClassInfo
 	ContentClassMod.ID=ccid
 	ContentClassMod.ClassName=upload.forms("ContentClassUpd")
-	Response.Write "<script>alert('"& ContentClassManager.UpdateContentClass(ContentClassMod) &"');window.location='contentClass_mng.asp?ccid="& ccid &"'</script>"
+	Response.Write "<script>alert('"& ContentClassManager.UpdateContentClass(ContentClassMod) &"');window.location='contentClass_mng.asp?cctype="& cctype &"&ccid="& ccid &"'</script>"
 	response.End()
 ElseIf upload.forms("action") = "update_order" Then
 	Set ContentClassMod=new ContentClassInfo
 	ContentClassMod.ID=ccid
 	ContentClassMod.Order=upload.forms("Order")
-	Response.Write "<script>alert('"& ContentClassManager.UpdateContentClassOrder(ContentClassMod) &"');window.location='contentClass_mng.asp?ccid="& ccid &"'</script>"
+	Response.Write "<script>alert('"& ContentClassManager.UpdateContentClassOrder(ContentClassMod) &"');window.location='contentClass_mng.asp?cctype="& cctype &"&ccid="& ccid &"'</script>"
 	response.End()
 ElseIf upload.forms("action") = "delete" Then
 	id=upload.forms("delid")
-	Response.Write "<script>alert('"& ContentClassManager.DeleteContentClass(id) &"');window.location='contentClass_mng.asp'</script>"
+	Response.Write "<script>alert('"& ContentClassManager.DeleteContentClass(id) &"');window.location='contentClass_mng.asp?cctype="& cctype &"'</script>"
 End If
 %>
 <!--#include file="../Scripts/loadClass.asp"-->
