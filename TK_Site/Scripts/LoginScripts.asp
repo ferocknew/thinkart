@@ -1,6 +1,6 @@
-﻿<!--#include file="../Service/DBHelper.asp"-->
-<!--#include file="../Adapter/CaptchaAdapter.asp"-->
-<!--#include file="../Adapter/AdminInfoAdapter.asp"-->
+﻿<!--#include file="../Code/Service/DBHelper.asp"-->
+<!--#include file="../Code/Adapter/CaptchaAdapter.asp"-->
+<!--#include file="../Code/Adapter/AdminInfoAdapter.asp"-->
 <script type="text/javascript">
 function login_check(){
 	if(document.getElementById("UserName").value == ""){
