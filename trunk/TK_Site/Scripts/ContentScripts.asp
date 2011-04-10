@@ -1,7 +1,7 @@
-﻿<!--#include file="../Service/DBHelper.asp"-->
-<!--#include file="../Adapter/ContentAdapter.asp" -->
-<!--#include file="../Adapter/UpLoad_Class.vbs.asp"-->
-<!--#include file="../Adapter/ContentClassAdapter.asp" -->
+﻿<!--#include file="../Code/Service/DBHelper.asp"-->
+<!--#include file="../Code/Adapter/ContentAdapter.asp" -->
+<!--#include file="../Code/Adapter/UpLoad_Class.vbs.asp"-->
+<!--#include file="../Code/Adapter/ContentClassAdapter.asp" -->
 <script type="text/javascript">
 function content_add_check(){
 	if(document.form1.Title.value == '')
@@ -60,7 +60,10 @@ pageindex=Request("page")
 If cid = "" Then
 	cid = "0"
 End If
-ctype="1"    '内容树
+ctype=Request("ctype")
+If ctype = "" Then
+	ctype = "0"
+End If
 
 dim upload
 set upload = new AnUpLoad

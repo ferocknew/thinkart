@@ -1,7 +1,7 @@
-﻿<!--#include file="../Service/DBHelper.asp"-->
-<!--#include file="../Adapter/DownloadFileAdapter.asp" -->
-<!--#include file="../Adapter/UpLoad_Class.vbs.asp"-->
-<!--#include file="../Adapter/ContentClassAdapter.asp" -->
+﻿<!--#include file="../Code/Service/DBHelper.asp"-->
+<!--#include file="../Code/Adapter/DownloadFileAdapter.asp" -->
+<!--#include file="../Code/Adapter/UpLoad_Class.vbs.asp"-->
+<!--#include file="../Code/Adapter/ContentClassAdapter.asp" -->
 <script type="text/javascript">
 function download_add_check(){
 	if(document.form1.ShowName.value == '')
@@ -60,7 +60,10 @@ pageindex=Request("page")
 If cid = "" Then
 	cid = "0"
 End If
-ctype="3"    '下载树
+ctype=Request("ctype")
+If ctype = "" Then
+	ctype = "0"
+End If
 
 dim upload
 set upload = new AnUpLoad

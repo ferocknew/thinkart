@@ -1,7 +1,7 @@
-﻿<!--#include file="../Service/DBHelper.asp"-->
-<!--#include file="../Adapter/ProductAdapter.asp" -->
-<!--#include file="../Adapter/UpLoad_Class.vbs.asp"-->
-<!--#include file="../Adapter/ContentClassAdapter.asp" -->
+﻿<!--#include file="../Code/Service/DBHelper.asp"-->
+<!--#include file="../Code/Adapter/ProductAdapter.asp" -->
+<!--#include file="../Code/Adapter/UpLoad_Class.vbs.asp"-->
+<!--#include file="../Code/Adapter/ContentClassAdapter.asp" -->
 <script type="text/javascript">
 function product_add_check(){
 	if(document.form1.Title.value == '')
@@ -60,7 +60,10 @@ pageindex=Request("page")
 If pid = "" Then
 	pid = "0"
 End If
-ctype="2"    '产品树
+ctype=Request("ctype")
+If ctype = "" Then
+	ctype = "0"
+End If
 
 dim upload
 set upload = new AnUpLoad

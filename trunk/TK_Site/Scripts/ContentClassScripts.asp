@@ -1,6 +1,6 @@
-﻿<!--#include file="../Service/DBHelper.asp"-->
-<!--#include file="../Adapter/ContentClassAdapter.asp" -->
-<!--#include file="../Adapter/UpLoad_Class.vbs.asp"-->
+﻿<!--#include file="../Code/Service/DBHelper.asp"-->
+<!--#include file="../Code/Adapter/ContentClassAdapter.asp" -->
+<!--#include file="../Code/Adapter/UpLoad_Class.vbs.asp"-->
 <script type="text/javascript">
 function orderup(){
 	try{

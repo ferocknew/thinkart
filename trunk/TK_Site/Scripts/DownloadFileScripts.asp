@@ -1,6 +1,6 @@
-﻿<!--#include file="../Service/DBHelper.asp"-->
-<!--#include file="../Adapter/DownloadFileAdapter.asp" -->
-<!--#include file="../Adapter/UpLoad_Class.vbs.asp"-->
+﻿<!--#include file="../Code/Service/DBHelper.asp"-->
+<!--#include file="../Code/Adapter/DownloadFileAdapter.asp" -->
+<!--#include file="../Code/Adapter/UpLoad_Class.vbs.asp"-->
 <script type="text/javascript">
 function content_add_check(){
 	if(document.form1.Title.value == '')
