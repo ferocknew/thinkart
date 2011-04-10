@@ -13,7 +13,7 @@
 <!--#include file="../Scripts/ContentClassScripts.asp"-->
 </head>
 <body>
-<form id="form1" name="form1" method="post" action="contentClass_mng.asp?ccid=<%=ccid%>&ctype=<%=ctype%>" enctype="multipart/form-data">
+<form id="form1" name="form1" method="post" action="contentClass_mng.asp?ccid=<%=ccid%>&cctype=<%=cctype%>" enctype="multipart/form-data">
 <input type="hidden" name="action" id="action" value="" />
 <input type="hidden" name="updid" id="updid" value="<%=ccid%>" />
 <input type="hidden" name="delid" id="delid" value="<%=ccid%>" />
