@@ -67,7 +67,7 @@ End If
 
 dim upload
 set upload = new AnUpLoad
-upload.Exe = "jpg|bmp|jpeg|gif|png"
+upload.Exe = "jpg|bmp|jpeg|gif|png|htm|html"
 upload.MaxSize = 300 * 1024 '300K
 Upload.Charset="utf-8"
 upload.GetData()
