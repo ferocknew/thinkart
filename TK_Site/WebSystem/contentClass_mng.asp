@@ -46,7 +46,7 @@
 	<%If contentclassDic.Items()(i).ID <> ccid Then%>
        <div class="programsItem" id="div_trees_<%=contentclassDic.Items()(i).HisId%><%=contentclassDic.Items()(i).ID%>" name="div_trees_lv<%=contentclassDic.Items()(i).LV%>">
           <div class="programsList tree<%=contentclassDic.Items()(i).LV%>_<%=contentclassDic.Items()(i).Style%>" name="div_trees_lv<%=contentclassDic.Items()(i).LV%>_class" onclick="tree_click(this,'div_trees_<%=contentclassDic.Items()(i).HisId%><%=contentclassDic.Items()(i).ID%>');"></div>
-            <div class="programsList_text" onclick="window.location='contentClass_mng.asp?ccid=<%=contentclassDic.Items()(i).ID%>?cctype=<%=contentclassDic.Items()(i).ClassType%>'"><%=contentclassDic.Items()(i).ClassName%></div></div>
+            <div class="programsList_text" onclick="window.location='contentClass_mng.asp?ccid=<%=contentclassDic.Items()(i).ID%>&cctype=<%=contentclassDic.Items()(i).ClassType%>'"><%=contentclassDic.Items()(i).ClassName%></div></div>
     <%Else%>
         <div class="programsItem" id="div_trees_<%=contentclassDic.Items()(i).HisId%><%=contentclassDic.Items()(i).ID%>" name="div_trees_lv<%=contentclassDic.Items()(i).LV%>">
             <div class="programsEdit text_white12_b">
