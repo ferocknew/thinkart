@@ -60,9 +60,9 @@ pageindex=Request("page")
 If pid = "" Then
 	pid = "0"
 End If
-ctype=Request("ctype")
-If ctype = "" Then
-	ctype = "0"
+cctype=Request("cctype")
+If cctype = "" Then
+	cctype = "0"
 End If
 
 dim upload
