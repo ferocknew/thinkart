@@ -76,12 +76,12 @@ function contentClass_upd_order_check(){
 </script>
 <%
 ccid=Request("ccid")
-ctype=Request("ctype")
+cctype=Request("cctype")
 If ccid = "" Then
 	ccid = "1"
 End If
-If ctype = "" Then
-	ctype = "1"
+If cctype = "" Then
+	cctype = "1"
 End If
 
 dim upload
@@ -94,7 +94,7 @@ If upload.forms("action") = "add" Then
 	ContentClassMod.UpClassId=upload.forms("UpClassId")
 	ContentClassMod.Order=upload.forms("Order")
 	ContentClassMod.Show2hide="true"
-	ContentClassMod.ClassType=ctype
+	ContentClassMod.ClassType=cctype
 	Response.Write "<script>alert('"& ContentClassManager.InsertContentClass(ContentClassMod) &"');window.location='contentClass_mng.asp'</script>"
 	response.End()
 ElseIf upload.forms("action") = "add_son" Then
@@ -103,7 +103,7 @@ ElseIf upload.forms("action") = "add_son" Then
 	ContentClassMod.UpClassId=ccid
 	ContentClassMod.Order=upload.forms("Order")
 	ContentClassMod.Show2hide="true"
-	ContentClassMod.ClassType=ctype
+	ContentClassMod.ClassType=cctype
 	Response.Write "<script>alert('"& ContentClassManager.InsertContentClass(ContentClassMod) &"');window.location='contentClass_mng.asp'</script>"
 	response.End()
 ElseIf upload.forms("action") = "update" Then

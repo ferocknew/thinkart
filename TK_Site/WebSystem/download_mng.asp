@@ -93,7 +93,7 @@ For i=startindex to endindex
     <td><span id="tableStyle"><%=PageDic.Items()(i).Title%></span></td>
     <td><span id="tableStyle"><%=PageDic.Items()(i).LastTime%></span></td>
     <td><span id="tableStyle"><%=PageDic.Items()(i).CLassName%></span></td>
-    <td><span id="tableStyle"><a href="#" onclick="download_del_check('<%=PageDic.Items()(i).Id%>')"><img src="images/ico_delete.gif" width="15" height="16" align="middle" /></a> <a href="download_edit.asp?pid=<%=PageDic.Items()(i).Id%>"><img src="images/ico_modify.gif" width="15" height="16" align="middle" /></a></span></td>
+    <td><span id="tableStyle"><a href="#" onclick="download_del_check('<%=PageDic.Items()(i).Id%>')"><img src="images/ico_delete.gif" width="15" height="16" align="middle" /></a> <a href="download_edit.asp?did=<%=PageDic.Items()(i).Id%>&cctype=<%=PageDic.Items()(i).ClassType%>"><img src="images/ico_modify.gif" width="15" height="16" align="middle" /></a></span></td>
   </tr>
 <% Next %>
 </table>

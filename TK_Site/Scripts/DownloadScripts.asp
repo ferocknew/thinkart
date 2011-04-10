@@ -55,14 +55,14 @@ function download_alldel_check(){
 }
 </script>
 <%
-cid=Request("cid")
+did=Request("did")
 pageindex=Request("page")
-If cid = "" Then
-	cid = "0"
+If did = "" Then
+	did = "0"
 End If
-ctype=Request("ctype")
-If ctype = "" Then
-	ctype = "0"
+cctype=Request("cctype")
+If cctype = "" Then
+	cctype = "0"
 End If
 
 dim upload
@@ -127,7 +127,7 @@ ElseIf upload.forms("action") = "update" Then
 	
 	If setErrors = 0 Then
 		Set DownloadFileMod=new DownloadFile
-		DownloadFileMod.ID=cid
+		DownloadFileMod.ID=did
 		DownloadFileMod.Title=upload.forms("Title")
 		DownloadFileMod.Keywords=upload.forms("Keywords")
 		DownloadFileMod.Abstract=upload.forms("Abstract")
