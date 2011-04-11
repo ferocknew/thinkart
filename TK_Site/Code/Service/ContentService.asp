@@ -38,15 +38,15 @@ Class ContentService
 	
 	Public Function GetContentByObjContent(objContent)
 		strSelectSql="select *,(select ClassName from ContentClass where ContentClass.ID=Content.ClassID) as ClassName,(select ClassType from ContentClass where ContentClass.ID=Content.ClassID) as ClassType from Content where 1=1"
-		If Not objContent.Id is null and objContent.Id = "" Then strSelectSql = strSelectSql& " and [Id]="& objContent.Id End If
-		If Not objContent.Title is null and objContent.Title = "" Then strSelectSql = strSelectSql& " and [Title]="& objContent.Title End If
-		If Not objContent.Keywords is null and objContent.Keywords = "" Then strSelectSql = strSelectSql& " and [Keywords]="& objContent.Keywords End If
-		If Not objContent.Abstract is null and objContent.Abstract = "" Then strSelectSql = strSelectSql& " and [Abstract]="& objContent.Abstract End If
-		If Not objContent.Content is null and objContent.Content = "" Then strSelectSql = strSelectSql& " and [Content]="& objContent.Content End If
-		If Not objContent.SyncBlog is null and objContent.SyncBlog = "" Then strSelectSql = strSelectSql& " and [SyncBlog]="& objContent.SyncBlog End If
-		If Not objContent.CType is null and objContent.CType = "" Then strSelectSql = strSelectSql& " and [CType]="& objContent.CType End If
-		If Not objContent.Lasttime is null and objContent.Lasttime = "" Then strSelectSql = strSelectSql& " and [Lasttime]="& objContent.Lasttime End If
-		If Not objContent.ClassID is null and objContent.ClassID = "" Then strSelectSql = strSelectSql& " and [ClassID]="& objContent.ClassID End If
+		If objContent.Id <> "" Then strSelectSql = strSelectSql& " and [Id]="& objContent.Id End If
+		If objContent.Title <> "" Then strSelectSql = strSelectSql& " and [Title]="& objContent.Title End If
+		If objContent.Keywords <> "" Then strSelectSql = strSelectSql& " and [Keywords]="& objContent.Keywords End If
+		If objContent.Abstract <> "" Then strSelectSql = strSelectSql& " and [Abstract]="& objContent.Abstract End If
+		If objContent.Content <> "" Then strSelectSql = strSelectSql& " and [Content]="& objContent.Content End If
+		If objContent.SyncBlog <> "" Then strSelectSql = strSelectSql& " and [SyncBlog]="& objContent.SyncBlog End If
+		If objContent.CType <> "" Then strSelectSql = strSelectSql& " and [CType]="& objContent.CType End If
+		If objContent.Lasttime <> "" Then strSelectSql = strSelectSql& " and [Lasttime]="& objContent.Lasttime End If
+		If objContent.ClassID <> "" Then strSelectSql = strSelectSql& " and [ClassID]="& objContent.ClassID End If
 		strSelectSql = strSelectSql& " Order by Id Desc"
 		Set rs=DB.ExecuteQuery(strSelectSql)
 		Set dic=Server.CreateObject("Scripting.Dictionary")
