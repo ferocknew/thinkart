@@ -23,7 +23,7 @@ rowindex = 1
 '分页生成 startindex endindex
 For i=startindex to endindex
 %>
-<li style="cursor:pointer" onclick="<%If jumpstyle="load" Then%>loadHTML('<%=showpage%>?cid=<%=PageDic.Items()(i).ID%>')<%Else%>window.location='<%=showpage%>?cid=<%=PageDic.Items()(i).ID%>'<%End If%>"><%=rowindex%>. <%=PageDic.Items()(i).Title%></li>
+<li style="cursor:pointer" onclick="<%If jumpstyle="load" Then%>loadHTML('<%If PageDic.Items()(i).CType="0" Then%><%=showpage%>?cid=<%=PageDic.Items()(i).ID%><%Else%><%=PageDic.Items()(i).Img%><%End If%>')<%Else%>window.location='<%=showpage%>?cid=<%=PageDic.Items()(i).ID%>'<%End If%>"><%=rowindex%>. <%=PageDic.Items()(i).Title%></li>
 <%rowindex = rowindex + 1%>
 <%Next%>
 <!--#include file="../Scripts/PageTemplete.asp" -->

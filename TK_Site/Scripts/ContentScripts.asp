@@ -80,6 +80,7 @@ If upload.forms("action") = "add" Then
 		setErrors = setErrors + 1
 	else
 		savepath = "../userfiles"
+		If upload.forms("CType") = "1" Then savepath = "../WebForm/innerPages" End If
 		set file = upload.files("IMG")
 		if not(file is nothing) then
 			if file.saveToFile(savepath,0,true) then
