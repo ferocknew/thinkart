@@ -5,6 +5,7 @@
 If Not IsNumeric(pid) Then pid = 0 End If
 set showContent = ContentManager.GetContentById(cid)
 %>
+<%=showContent.Title%>
 <script type="text/javascript">
 try{$('#Content_title').val('<%=showContent.Title%>');}catch(e){}
 try{$('#Content_Keywords').val('<%=showContent.Keywords%>');}catch(e){}

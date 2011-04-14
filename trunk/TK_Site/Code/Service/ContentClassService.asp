@@ -69,13 +69,28 @@ Class ContentClassService
 		Set GetAllContentClass=dic
 	End Function
 	
-	Public Function GetContentClassById(id)
-		strSelectSql="select * from ContentClass where Id="&InputReplace(id)
+	Public Function GetContentClassByObjContentClass(objContentClass)
+		strSelectSql="select *,switch(upclassid=0,1,upclassid in (Select id from contentclass where upclassid=0),2,upclassid not in (Select id from contentclass where upclassid=0) and upclassid <> 0,3) as LV,iif(id in (select upclassid from ContentClass group by upclassid),'open','none') as Style from ContentClass where Show2hide = true"
+		If objContentClass.ID<>"" Then strSelectSql=strSelectSql &" and [Id] = "& InputReplace(objContentClass.ID) End If
+		If objContentClass.ClassName<>"" Then strSelectSql=strSelectSql &" and [ClassName] = "& InputReplace(objContentClass.ClassName) End If
+		If objContentClass.UpClassId<>"" Then strSelectSql=strSelectSql &" and [UpClassId] = "& InputReplace(objContentClass.UpClassId) End If
+		If objContentClass.Order<>"" Then strSelectSql=strSelectSql &" and [Order] = "& InputReplace(objContentClass.Order) End If
+		If objContentClass.Show2hide<>"" Then strSelectSql=strSelectSql &" and [Show2hide] = "& InputReplace(objContentClass.Show2hide) End If
+		If objContentClass.ClassType<>"" Then strSelectSql=strSelectSql &" and [ClassType] = "& InputReplace(objContentClass.ClassType) End If
+		If objContentClass.LV<>"" Then strSelectSql=strSelectSql &" and [Id] = "& InputReplace(objContentClass.LV) End If
+		If objContentClass.Style<>"" Then strSelectSql=strSelectSql &" and [Id] = "& InputReplace(objContentClass.Style) End If
+		strSelectSql=strSelectSql &" Order by UpClassId,[Order]"
+		
 		Set rs=DB.ExecuteQuery(strSelectSql)
-		Set ContentClass=CreateContentClass(rs)
+		Set dic=Server.CreateObject("Scripting.Dictionary")
+		While not rs.eof
+			Set ContentClass=CreateContentClass(rs)
+			dic.Add ContentClass.Id,ContentClass
+			rs.MoveNext
+		wend
 		rs.Close
 		Set rs=nothing
-		Set GetContentClassById=ContentClass
+		Set GetContentClassByObjContentClass=dic
 	End Function
 	
 	Private Function CreateContentClass(rs)
