@@ -1,7 +1,8 @@
 <!--分类列表-->
-<!--接收参数：jumpurl paraname CType showcontent不可为空-->
+<!--接收参数：jumpurl paraname CType sc不可为空-->
 <%
-If showcontent = "" Then showcontent="true" End If
+sc=Request("sc")
+If sc = "" Then sc="true" End If
 If jumpurl = "" Or paraname = "" Then
 	jumpurl="../PlugIn/ContentList.asp"
 	paraname = "ClassID"
@@ -106,27 +107,27 @@ function showtree_click(obj){
 	switch(obj.className){
 		case lv1on:
 			obj.className=lv1off;
-			$("li[name='div_trees_lv2']").each(function(){if(this.id.indexOf(obj.id+"_")!=-1){$(this).slideUp("fast");}});
-			$("li[name='div_trees_lv3']").each(function(){if(this.id.indexOf(obj.id+"_")!=-1){$(this).slideUp("fast");}});
+			$("li[name='div_trees_lv2']").each(function(){if(this.id.indexOf(obj.id+"_")!=-1){$(this).slideUp("fast");this.className=lv2off;}});
+			$("li[name='div_trees_lv3']").each(function(){if(this.id.indexOf(obj.id+"_")!=-1){$(this).slideUp("fast");this.className=lv3off;}});
 			$("li[name='div_trees_content']").each(function(){if(this.id.indexOf(obj.id+"_")!=-1){$(this).slideUp("fast");}});
 			break;
 		case lv1off:
 			$("li[name='div_trees_lv1']").each(function(){if(this.id!=obj.id){this.className=lv1off;}});
 			obj.className=lv1on;
-			$("li[name='div_trees_lv2']").each(function(){if(this.id.indexOf(obj.id+"_")!=-1){$(this).slideDown("fast");}else{$(this).slideUp("fast");}});
-			$("li[name='div_trees_lv3']").each(function(){if(this.id.indexOf(obj.id+"_")!=-1){$(this).slideDown("fast");}else{$(this).slideUp("fast");}});
+			$("li[name='div_trees_lv2']").each(function(){if(this.id.indexOf(obj.id+"_")!=-1){$(this).slideDown("fast");this.className=lv2off;}else{$(this).slideUp("fast");this.className=lv2off;}});
+			$("li[name='div_trees_lv3']").each(function(){if(this.id.indexOf(obj.id+"_")!=-1){$(this).slideDown("fast");this.className=lv3off;}else{$(this).slideUp("fast");this.className=lv3off;}});
 			$("li[name='div_trees_content']").each(function(){if(this.id.indexOf(obj.id+"_")!=-1){$(this).slideDown("fast");}else{$(this).slideUp("fast");}});
 			break;
 		case lv2on:
 			obj.className=lv2off;
-			$("li[name='div_trees_lv3']").each(function(){if(this.id.indexOf(obj.id+"_")!=-1){$(this).slideUp("fast");}});
+			$("li[name='div_trees_lv3']").each(function(){if(this.id.indexOf(obj.id+"_")!=-1){$(this).slideUp("fast");this.className=lv3off;}});
 			$("li[name='div_trees_content']").each(function(){if(this.id.indexOf(obj.id+"_")!=-1){$(this).slideUp("fast");}});
 			break;
 		case lv2off:
 			$("li[name='div_trees_lv2']").each(function(){if(this.id!=obj.id){this.className=lv2off;}});
 			obj.className=lv2on;
-			$("li[name='div_trees_lv3']").each(function(){if(this.id.indexOf(obj.id+"_")!=-1){$(this).slideDown("fast");}else{$(this).slideUp("fast");}});
-			$("li[name='div_trees_content']").each(function(){if(this.id.indexOf(obj.id+"_")!=-1){$(this).slideDown("fast");}else{$(this).slideUp("fast");}});
+			$("li[name='div_trees_lv3']").each(function(){if(this.id.indexOf(obj.id+"_")!=-1){$(this).slideDown("fast");this.className=lv3off;}else{$(this).slideUp("fast");this.className=lv3off;}});
+			//$("li[name='div_trees_content']").each(function(){if(this.id.indexOf(obj.id+"_")!=-1){$(this).slideDown("fast");}else{$(this).slideUp("fast");}});
 			break;
 		case lv3on:
 			obj.className=lv3off;
@@ -149,19 +150,29 @@ function checkcontent(obj){
 				$('#tree_area').jScrollPane();
 				//$("li[name='div_trees_lv2']").slideUp("fast");
 				//$("li[name='div_trees_lv3']").slideUp("fast");
-				//<%If showcontent="true" Then%>$("li[name='div_trees_content']").slideUp("fast");<%End If%>
+				//<%If sc="true" Then%>$("li[name='div_trees_content']").slideUp("fast");<%End If%>
 			});
 </script>
 <%For i = 0 to contentclassDic.count - 1%>
     <li id="div_trees_<%=contentclassDic.Items()(i).HisId%><%=contentclassDic.Items()(i).ID%>" name="div_trees_lv<%=contentclassDic.Items()(i).LV%>" style="cursor:pointer" class="leftMenu_<%=contentclassDic.Items()(i).LV%>" onclick="showtree_click(this)"><%=contentclassDic.Items()(i).ClassName%></li>
-<%If showcontent="true" Then
+<%If sc="true" Then
     If contentclassDic.Items()(i).Style<>"open" and contentclassDic.Items()(i).Style<>"open2" Then
     	set seaContent = new Content
 		seaContent.ClassID = contentclassDic.Items()(i).ID
 		set showContentDic = ContentManager.GetContentByObjContent(seaContent)
         For j = 0 to showContentDic.Count-1%>
-			<li id="div_trees_<%=contentclassDic.Items()(i).HisId%><%=contentclassDic.Items()(i).ID%>_content_<%=showContentDic.Items()(j).ID%>" name="div_trees_content" class="leftMenu_content" style="cursor:pointer" onclick="checkcontent(this);loadHTML('<%If showContentDic.Items()(j).CType="0" Then%><%=showpage%>?cid=<%=showContentDic.Items()(j).ID%><%Else%><%=showContentDic.Items()(j).Img%><%End If%>')">> <%=showContentDic.Items()(j).Title%></li>
+			<li id="div_trees_<%=contentclassDic.Items()(i).HisId%><%=contentclassDic.Items()(i).ID%>_content_<%=showContentDic.Items()(j).ID%>" name="div_trees_content" class="leftMenu_content" style="cursor:pointer" onclick="checkcontent(this);loadHTML('<%If showContentDic.Items()(j).CType="0" Then%><%=showpage%>?cid=<%=showContentDic.Items()(j).ID%><%Else%><%=showContentDic.Items()(j).Img%><%End If%>')"><%=showContentDic.Items()(j).Title%></li>
 		<%Next
     End If
 End If%>
 <%Next%>
+<%If contentclassDic.count = 0 and sc = "true" Then%>
+<%
+set seaContent = new Content
+		seaContent.ClassID = ClassID
+		set showContentDic = ContentManager.GetContentByObjContent(seaContent)
+        For j = 0 to showContentDic.Count-1%>
+			<li id="div_trees_content_<%=showContentDic.Items()(j).ID%>" name="div_trees_content" class="leftMenu_content" style="cursor:pointer" onclick="checkcontent(this);loadHTML('<%If showContentDic.Items()(j).CType="0" Then%><%=showpage%>?cid=<%=showContentDic.Items()(j).ID%><%Else%><%=showContentDic.Items()(j).Img%><%End If%>')"><%=showContentDic.Items()(j).Title%></li>
+		<%Next
+%>
+<%End If%>
