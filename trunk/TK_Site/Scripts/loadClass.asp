@@ -74,7 +74,7 @@ function show_alltrees(){
 }
 </script>
 <%
-Set nonSortDic = ContentClassManager.GetAllContentClass(ctype)
+Set nonSortDic = ContentClassManager.GetAllContentClass(cctype)
 Set contentclassDic = Server.CreateObject("Scripting.Dictionary")
 strlv1id=""
 strlv2id=""

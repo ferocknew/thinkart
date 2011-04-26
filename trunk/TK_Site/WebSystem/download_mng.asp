@@ -61,8 +61,7 @@ function allCheck(){
 <table class="list_style text_deepGray12_b" width="100%" border="0" cellpadding="0" cellspacing="0">
   <tr>
     <td width="30"><img src="images/ico_select.gif" align="middle" /></td>
-    <td>内容名称</td>
-    <td>修改日期</td>
+    <td>文件名称</td>
     <td>所属分类</td>
     <td>操作</td>
   </tr>
@@ -90,9 +89,8 @@ For i=startindex to endindex
     <td>
     <img id="ck_list_<%=PageDic.Items()(i).ID%>" name="ck_list_name" src="images/checkbox_default.gif" align="middle" onclick="swCheck('ck_list_<%=PageDic.Items()(i).ID%>','ck_input_<%=PageDic.Items()(i).ID%>');" /><input name="ck_input_name" type="checkbox" id="ck_input_<%=PageDic.Items()(i).ID%>" value="<%=PageDic.Items()(i).ID%>" style="display:none" />
     </td>
-    <td><span id="tableStyle"><%=PageDic.Items()(i).Title%></span></td>
-    <td><span id="tableStyle"><%=PageDic.Items()(i).LastTime%></span></td>
-    <td><span id="tableStyle"><%=PageDic.Items()(i).CLassName%></span></td>
+    <td><span id="tableStyle"><%=PageDic.Items()(i).ShowName%></span></td>
+    <td><span id="tableStyle"><%=PageDic.Items()(i).ClassName%></span></td>
     <td><span id="tableStyle"><a href="#" onclick="download_del_check('<%=PageDic.Items()(i).Id%>')"><img src="images/ico_delete.gif" width="15" height="16" align="middle" /></a> <a href="download_edit.asp?did=<%=PageDic.Items()(i).Id%>&cctype=<%=PageDic.Items()(i).ClassType%>"><img src="images/ico_modify.gif" width="15" height="16" align="middle" /></a></span></td>
   </tr>
 <% Next %>

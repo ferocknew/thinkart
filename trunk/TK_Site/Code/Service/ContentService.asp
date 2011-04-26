@@ -3,8 +3,8 @@
 Class ContentService
 
 	Public Sub InsertContent(objContent)
-		strInsertSql="insert into Content (Title,Keywords,Abstract,Img,Content,Lasttime,SyncBlog,ClassID,CType) values ('"& InputReplace(objContent.Title) &"','"& InputReplace(objContent.Keywords) &"','"& InputReplace(objContent.Abstract) &"','"& InputReplace(objContent.Img) &"','"& InputReplace(objContent.Content) &"','"&_
-			InputReplace(objContent.Lasttime) &"','"& InputReplace(objContent.SyncBlog) &"',"& InputReplace(objContent.ClassID) &","& InputReplace(objContent.CType) &")"
+		strInsertSql="insert into Content (Title,Keywords,Abstract,Img,Content,Lasttime,SyncBlog,ClassID,CType,HtmlFile) values ('"& InputReplace(objContent.Title) &"','"& InputReplace(objContent.Keywords) &"','"& InputReplace(objContent.Abstract) &"','"& InputReplace(objContent.Img) &"','"& InputReplace(objContent.Content) &"','"&_
+			InputReplace(objContent.Lasttime) &"','"& InputReplace(objContent.SyncBlog) &"',"& InputReplace(objContent.ClassID) &","& InputReplace(objContent.CType) &",'"& InputReplace(objContent.HtmlFile) &"')"
 		DB.ExecuteNonQuery(strInsertSql)
 	End Sub
 	
@@ -16,7 +16,7 @@ Class ContentService
 	Public Sub UpdateContent(objContent)
 		strUpdateSql="update Content set Title='"& InputReplace(objContent.Title)  &"',Keywords='"& InputReplace(objContent.Keywords) &_
 			"',Abstract='"& InputReplace(objContent.Abstract) &"',Img='"& InputReplace(objContent.Img) &"',Content='"& InputReplace(objContent.Content) &_
-			"',Lasttime='"& InputReplace(objContent.Lasttime) &"',SyncBlog='"& InputReplace(objContent.SyncBlog) &"',ClassID="& InputReplace(objContent.ClassID) &",CType="& InputReplace(objContent.CType)
+			"',Lasttime='"& InputReplace(objContent.Lasttime) &"',SyncBlog='"& InputReplace(objContent.SyncBlog) &"',HtmlFile='"& InputReplace(objContent.HtmlFile) &"',ClassID="& InputReplace(objContent.ClassID) &",CType="& InputReplace(objContent.CType)
 		If objContent.Img<>"" Then strUpdateSql=strUpdateSql &",Img='"& InputReplace(objContent.Img) &"'" End If
 		strUpdateSql=strUpdateSql &" where Id="& InputReplace(objContent.Id)
 		DB.ExecuteNonQuery(strUpdateSql)
@@ -84,6 +84,7 @@ Class ContentService
 			ModContent.CType=OutputReplace(rs("CType"))
 			ModContent.ClassName=OutputReplace(rs("ClassName"))
 			ModContent.ClassType=OutputReplace(rs("ClassType"))
+			ModContent.HtmlFile=OutputReplace(rs("HtmlFile"))
 		End If
 		Set CreateContent=ModContent
 	End Function

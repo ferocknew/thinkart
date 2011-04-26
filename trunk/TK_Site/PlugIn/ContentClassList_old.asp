@@ -1,25 +1,14 @@
 <!--分类列表-->
-<!--接收参数：jumpurl paraname CType sc不可为空-->
+<!--接收参数：jumpurl paraname CType showcontent不可为空-->
 <%
-sc=Request("sc")'showcontent 即左侧菜单是否显示内容 不显示即为列表
-If sc = "" Then sc="true" End If
+If showcontent = "" Then showcontent="true" End If
+If jumpurl = "" Or paraname = "" Then
+	jumpurl="../PlugIn/ContentList.asp"
+	paraname = "ClassID"
+End If
 CType=Request("CType")
 If CType = "" Then CType="1" End If
-If jumpurl = "" Or paraname = "" Or showpage = "" Then
-	If CType = "1" Then
-		jumpurl="../PlugIn/ContentList.asp"
-		showpage="../PlugIn/ContentDetail.asp"
-	ElseIf CType = "2" Then
-		jumpurl="../PlugIn/ProductList.asp"
-		showpage="../PlugIn/ProductDetail.asp"
-	ElseIf CType = "3" Then
-		jumpurl="../PlugIn/DownloadList.asp"
-		showpage="../PlugIn/DownloadDetail.asp"
-	End If
-		paraname = "ClassID"
-End If
 ClassID=Request("ClassID")
-If ClassID = "" Then ClassID = "0" End If
 %>
 <%
 Set nonSortDic = ContentClassManager.GetAllContentClass(CType)
@@ -151,15 +140,7 @@ function showtree_click(obj){
 	}
 }
 function checkcontent(obj){
-	var lv1on="leftMenu_1_on";
-	var lv1off="leftMenu_1";
-	var lv2on="leftMenu_2_on";
-	var lv2off="leftMenu_2";
-	var lv3on="leftMenu_3_on";
-	var lv3off="leftMenu_3";
 	$("li[name='div_trees_content']").each(function(){if(this.id!=obj.id){this.className='leftMenu_content';}});
-	$("li[name='div_trees_lv3']").each(function(){if(obj.id.indexOf(this.id)!=-1 && this.className!=lv3on){this.click();}});
-	$("li[name='div_trees_lv2']").each(function(){if(obj.id.indexOf(this.id)!=-1 && this.className!=lv2on){this.click();}});
 	obj.className='leftMenu_content_on';
 }
 			$(function()
@@ -168,43 +149,19 @@ function checkcontent(obj){
 				$('#tree_area').jScrollPane();
 				//$("li[name='div_trees_lv2']").slideUp("fast");
 				//$("li[name='div_trees_lv3']").slideUp("fast");
-				//<%If sc="true" Then%>$("li[name='div_trees_content']").slideUp("fast");<%End If%>
+				//<%If showcontent="true" Then%>$("li[name='div_trees_content']").slideUp("fast");<%End If%>
 			});
 </script>
 <%For i = 0 to contentclassDic.count - 1%>
-    <li id="div_trees_<%=contentclassDic.Items()(i).HisId%><%=contentclassDic.Items()(i).ID%>" name="div_trees_lv<%=contentclassDic.Items()(i).LV%>" style="cursor:pointer" class="leftMenu_<%=contentclassDic.Items()(i).LV%>" onclick="showtree_click(this);<%If sc<>"true" Then%>loadHTML('<%=jumpurl%>?ClassID=<%=contentclassDic.Items()(i).ID%>')<%End If%>"><%=contentclassDic.Items()(i).ClassName%></li>
-<%If sc="true" Then
+    <li id="div_trees_<%=contentclassDic.Items()(i).HisId%><%=contentclassDic.Items()(i).ID%>" name="div_trees_lv<%=contentclassDic.Items()(i).LV%>" style="cursor:pointer" class="leftMenu_<%=contentclassDic.Items()(i).LV%>" onclick="showtree_click(this)"><%=contentclassDic.Items()(i).ClassName%></li>
+<%If showcontent="true" Then
     If contentclassDic.Items()(i).Style<>"open" and contentclassDic.Items()(i).Style<>"open2" Then
     	set seaContent = new Content
 		seaContent.ClassID = contentclassDic.Items()(i).ID
 		set showContentDic = ContentManager.GetContentByObjContent(seaContent)
         For j = 0 to showContentDic.Count-1%>
-			<li id="div_trees_<%=contentclassDic.Items()(i).HisId%><%=contentclassDic.Items()(i).ID%>_content_<%=showContentDic.Items()(j).ID%>" name="div_trees_content" class="leftMenu_content" style="cursor:pointer" onclick="checkcontent(this);loadHTML('<%If showContentDic.Items()(j).CType="0" Then%><%=showpage%>?cid=<%=showContentDic.Items()(j).ID%><%Else%>../WebForm/innerPages/<%=showContentDic.Items()(j).HtmlFile%><%End If%>')"><%=showContentDic.Items()(j).Title%></li>
+			<li id="div_trees_<%=contentclassDic.Items()(i).HisId%><%=contentclassDic.Items()(i).ID%>_content_<%=showContentDic.Items()(j).ID%>" name="div_trees_content" class="leftMenu_content" style="cursor:pointer" onclick="checkcontent(this);loadHTML('<%If showContentDic.Items()(j).CType="0" Then%><%=showpage%>?cid=<%=showContentDic.Items()(j).ID%><%Else%><%=showContentDic.Items()(j).HtmlFile%><%End If%>')">> <%=showContentDic.Items()(j).Title%></li>
 		<%Next
     End If
 End If%>
 <%Next%>
-<%If contentclassDic.count = 0 Then%>
-	<%If sc = "true" Then%>
-		<%
-		showContentDic=""
-		If CType="1" Then
-			set seaContent = new Content
-			seaContent.ClassID = ClassID
-			set showContentDic = ContentManager.GetContentByObjContent(seaContent)
-		ElseIf CType="2" Then
-			set seaContent = new Product
-			seaContent.ClassID = ClassID
-			set showContentDic = ProductManager.GetProductByObjProduct(seaContent)
-		ElseIf CType="3" Then
-			set seaContent = new DownloadFile
-			seaContent.ClassID = ClassID
-			set showContentDic = DownloadFileManager.GetDownloadFileByObjDownloadFile(seaContent)
-		End If
-		For j = 0 to showContentDic.Count-1%>
-			<li id="div_trees_content_<%=showContentDic.Items()(j).ID%>" name="div_trees_content" class="leftMenu_content" style="cursor:pointer" onclick="checkcontent(this);loadHTML('<%If CType="1" Then%><%If showContentDic.Items()(j).CType="0" Then%><%=showpage%>?cid=<%=showContentDic.Items()(j).ID%><%Else%>../WebForm/innerPages/<%=showContentDic.Items()(j).HtmlFile%><%End If%><%Else%><%=showpage%>?cid=<%=showContentDic.Items()(j).ID%><%End If%>')"><%If CType<>"3" Then%><%=showContentDic.Items()(j).Title%><%Else%><%=showContentDic.Items()(j).ShowName%><%End If%></li>
-		<%Next%>
-    <%Else%>
-    	<script type="text/javascript">$(function(){loadHTML('<%=jumpurl%>?ClassID=<%=ClassID%>')});</script>
-	<%End If%>
-<%End If%>

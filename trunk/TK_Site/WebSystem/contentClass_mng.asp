@@ -32,7 +32,7 @@
 <div class="content_ctrlbar text_deepGray12_b">
   <div style="margin-top:9px; float:left;">新增主栏目 
     <input type="text" name="ClassName" id="ClassName" />
-    <input class="btm_submit" type="submit" name="button" id="button" value=" " onclick="contentClass_add_check()" />
+    <input class="btm_submit" type="button" name="button" id="button" value=" " onclick="contentClass_add_check()" />
   </div>
   <table border="0" align="right" cellpadding="0" cellspacing="0" class="link_deepGray12_b">
     <tr>

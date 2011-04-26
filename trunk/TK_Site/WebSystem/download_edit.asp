@@ -13,13 +13,13 @@
 <script language="javascript" src="../include/jquery.filestyle.js"></script>
 <script language="javascript" src="js/common.js"></script>
 <script language="javascript" src="js/fileInputInit.js"></script>
-<!--#include file="../Scripts/ProductScripts.asp" -->
+<!--#include file="../Scripts/DownloadScripts.asp" -->
 </head>
 
 <body>
-<form id="form1" name="form1" method="post" action="product_edit.asp" enctype="multipart/form-data">
+<form id="form1" name="form1" method="post" action="download_edit.asp" enctype="multipart/form-data">
 <input type="hidden" name="action" id="action" value="" />
-<input type="hidden" name="updid" id="updid" value="<%=pid%>" />
+<input type="hidden" name="updid" id="updid" value="<%=did%>" />
 <div class="wrapper">
 <div class="breadcrumbs text_gray12_b link_gray12_b">
 <img src="images/ico_breadcrumbs.gif" align="absmiddle" />
@@ -68,7 +68,7 @@
 </div>
 <div class="add_botton link_white12_b">
   <ul>
-    <li><a href="#"><img src="images/ico_addSave.gif" align="middle" onclick="<%If did="" or did="0" then%>download_add_check()<%Else%>download_upd_check()<%End If%>" /> 保存</a></li>
+    <li><a href="#" onclick="<%If did="" or did="0" then%>download_add_check()<%Else%>download_upd_check()<%End If%>"><img src="images/ico_addSave.gif" align="middle" /> 保存</a></li>
     <li><a href="#"><img src="images/ico_addDel.gif" align="middle" /> 取消</a></li>
     <li><a href="#"><img src="images/ico_addMore.gif" align="middle" /> 保存后继续添加</a></li>
   </ul>

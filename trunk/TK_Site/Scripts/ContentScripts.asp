@@ -62,12 +62,12 @@ If cid = "" Then
 End If
 cctype=Request("cctype")
 If cctype = "" Then
-	cctype = "0"
+	cctype = "1"
 End If
 
 dim upload
 set upload = new AnUpLoad
-upload.Exe = "jpg|bmp|jpeg|gif|png|htm|html"
+upload.Exe = "jpg|bmp|jpeg|gif|png"
 upload.MaxSize = 300 * 1024 '300K
 Upload.Charset="utf-8"
 upload.GetData()
@@ -134,6 +134,7 @@ ElseIf upload.forms("action") = "update" Then
 		ContentMod.Abstract=upload.forms("Abstract")
 		ContentMod.Img=Img
 		ContentMod.Content=upload.forms("Content")
+		ContentMod.HtmlFile=upload.forms("HtmlFile")
 		ContentMod.Lasttime=Date()&" "&Time()
 		ContentMod.SyncBlog=upload.forms("SyncBlog")
 		ContentMod.ClassID=upload.forms("ClassID")

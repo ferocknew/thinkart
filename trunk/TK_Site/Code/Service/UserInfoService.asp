@@ -3,8 +3,8 @@
 Class UserInfoService
 
 	Public Sub InsertUserInfo(objUserInfo)
-		strInsertSql="insert into [UserInfo] ([UserName],[Password],[Power]) values ('" &InputReplace(objUserInfo.UserName) &_
-			"','"& InputReplace(objUserInfo.Password) &"','"& InputReplace(objUserInfo.Power) &"')"
+		strInsertSql="insert into [UserInfo] ([UserName],[Password],[Power],[UserState],[UserType]) values ('" &InputReplace(objUserInfo.UserName) &_
+			"','"& InputReplace(objUserInfo.Password) &"','"& InputReplace(objUserInfo.Power) &"','"& InputReplace(objUserInfo.UserState) &"','"& InputReplace(objUserInfo.UserType) &"')"
 		DB.ExecuteNonQuery(strInsertSql)
 	End Sub
 	
@@ -15,7 +15,8 @@ Class UserInfoService
 	
 	Public Sub UpdateUserInfo(objUserInfo)
 		strUpdateSql="update [UserInfo] set [UserName]='"& InputReplace(objUserInfo.UserName)  &"',[Password]='"& InputReplace(objUserInfo.Password) &_
-			"',[Power]='"& InputReplace(objUserInfo.Power) &"' where [Id]="& InputReplace(objUserInfo.Id)
+			"',[Power]='"& InputReplace(objUserInfo.Power) &"',[UserState]='"& InputReplace(objUserInfo.UserState) &_
+			"',[UserType]='"& InputReplace(objUserInfo.UserType) &"' where [Id]="& InputReplace(objUserInfo.Id)
 		DB.ExecuteNonQuery(strUpdateSql)
 	End Sub
 	
@@ -58,6 +59,8 @@ Class UserInfoService
 			ModUserInfo.UserName=OutputReplace(rs("UserName"))
 			ModUserInfo.Password=OutputReplace(rs("Password"))
 			ModUserInfo.Power=OutputReplace(rs("Power"))
+			ModUserInfo.UserState=OutputReplace(rs("UserState"))
+			ModUserInfo.UserType=OutputReplace(rs("UserType"))
 		End If
 		Set CreateUserInfo=ModUserInfo
 	End Function

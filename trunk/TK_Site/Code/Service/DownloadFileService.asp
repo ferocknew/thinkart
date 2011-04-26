@@ -23,7 +23,7 @@ Class DownloadFileService
 	End Sub
 	
 	Public Function GetAllDownloadFile()
-		strSelectSql="select *,(select ClassName from ContentClass where ContentClass.ID=DownloadFile.ClassID) as ClassName,(select ClassType from ContentClass where ContentClass.ID=Content.ClassID) as ClassType from DownloadFile Order by Id Desc"
+		strSelectSql="select *,(select ClassName from ContentClass where ContentClass.ID=DownloadFile.ClassID) as ClassName,(select ClassType from ContentClass where ContentClass.ID=DownloadFile.ClassID) as ClassType from DownloadFile Order by Id Desc"
 		Set rs=DB.ExecuteQuery(strSelectSql)
 		Set dic=Server.CreateObject("Scripting.Dictionary")
 		While not rs.eof
@@ -37,13 +37,13 @@ Class DownloadFileService
 	End Function
 	
 	Public Function GetDownloadFileByObjDownloadFile(objDownloadFile)
-		strSelectSql="select *,(select ClassName from ContentClass where ContentClass.ID=DownloadFile.ClassID) as ClassName,(select ClassType from ContentClass where ContentClass.ID=Content.ClassID) as ClassType from DownloadFile where 1=1"
-		If Not objDownloadFile.Id is null and objDownloadFile.Id = "" Then strSelectSql = strSelectSql& " and [Id]="& objDownloadFile.Id End If
-		If Not objDownloadFile.ShowName is null and objDownloadFile.ShowName = "" Then strSelectSql = strSelectSql& " and [ShowName]="& objDownloadFile.ShowName End If
-		If Not objDownloadFile.Keywords is null and objDownloadFile.Keywords = "" Then strSelectSql = strSelectSql& " and [Keywords]="& objDownloadFile.Keywords End If
-		If Not objDownloadFile.Abstract is null and objDownloadFile.Abstract = "" Then strSelectSql = strSelectSql& " and [Abstract]="& objDownloadFile.Abstract End If
-		If Not objDownloadFile.FileName is null and objDownloadFile.FileName = "" Then strSelectSql = strSelectSql& " and [FileName]="& objDownloadFile.FileName End If
-		If Not objDownloadFile.ClassID is null and objDownloadFile.ClassID = "" Then strSelectSql = strSelectSql& " and [ClassID]="& objDownloadFile.ClassID End If
+		strSelectSql="select *,(select ClassName from ContentClass where ContentClass.ID=DownloadFile.ClassID) as ClassName,(select ClassType from ContentClass where ContentClass.ID=DownloadFile.ClassID) as ClassType from DownloadFile where 1=1"
+		If objDownloadFile.Id <> "" Then strSelectSql = strSelectSql& " and [Id]="& objDownloadFile.Id End If
+		If objDownloadFile.ShowName <> "" Then strSelectSql = strSelectSql& " and [ShowName]='"& objDownloadFile.ShowName &"'" End If
+		If objDownloadFile.Keywords <> "" Then strSelectSql = strSelectSql& " and [Keywords] like '%"& objDownloadFile.Keywords &"%'" End If
+		If objDownloadFile.Abstract <> "" Then strSelectSql = strSelectSql& " and [Abstract]='"& objDownloadFile.Abstract &"'" End If
+		If objDownloadFile.FileName <> "" Then strSelectSql = strSelectSql& " and [FileName]='"& objDownloadFile.FileName &"'" End If
+		If objDownloadFile.ClassID <> "" Then strSelectSql = strSelectSql& " and [ClassID]="& objDownloadFile.ClassID End If
 		strSelectSql = strSelectSql& " Order by Id Desc"
 		Set rs=DB.ExecuteQuery(strSelectSql)
 		Set dic=Server.CreateObject("Scripting.Dictionary")
@@ -54,11 +54,11 @@ Class DownloadFileService
 		wend
 		rs.Close
 		Set rs=nothing
-		Set GetContentByObjContent=dic
+		Set GetDownloadFileByObjDownloadFile=dic
 	End Function
 	
 	Public Function GetDownloadFileById(id)
-		strSelectSql="select *,(select ClassName from ContentClass where ContentClass.ID=DownloadFile.ClassID) as ClassName,(select ClassType from ContentClass where ContentClass.ID=Content.ClassID) as ClassType from DownloadFile where Id="&id
+		strSelectSql="select *,(select ClassName from ContentClass where ContentClass.ID=DownloadFile.ClassID) as ClassName,(select ClassType from ContentClass where ContentClass.ID=DownloadFile.ClassID) as ClassType from DownloadFile where Id="&id
 		Set rs=DB.ExecuteQuery(strSelectSql)
 		Set ModDownloadFile=CreateDownloadFile(rs)
 		rs.Close
@@ -85,7 +85,7 @@ Class DownloadFileService
 	End Function
 	
 	Private Function CreateDownloadFile(rs)
-		Set ModDownloadFile=new DownloadFileInfo
+		Set ModDownloadFile=new DownloadFile
 		If Not rs.Eof Then
 			ModDownloadFile.Id=OutputReplace(rs("Id"))
 			ModDownloadFile.ShowName=OutputReplace(rs("ShowName"))
@@ -94,6 +94,7 @@ Class DownloadFileService
 			ModDownloadFile.Abstract=OutputReplace(rs("Abstract"))
 			ModDownloadFile.ClassID=OutputReplace(rs("ClassID"))
 			ModDownloadFile.ClassType=OutputReplace(rs("ClassType"))
+			ModDownloadFile.ClassName=OutputReplace(rs("ClassName"))
 		End If
 		Set CreateDownloadFile=ModDownloadFile
 	End Function
