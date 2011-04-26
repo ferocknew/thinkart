@@ -1,6 +1,6 @@
 ﻿<%
 '
-Class Content
+Class Product
 	Private cid
 	Public Property Let Id(value)
 		cid = value

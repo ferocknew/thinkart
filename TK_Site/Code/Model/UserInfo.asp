@@ -31,5 +31,21 @@ Class UserInfo
 	Public Property Get Power()
 		Power = upower
 	End Property
+	
+	Private uUserState
+	Public Property Let UserState(value)
+		uUserState = value
+	End Property
+	Public Property Get UserState()
+		UserState = uUserState
+	End Property
+	
+	Private uUserType
+	Public Property Let UserType(value)
+		uUserType = value
+	End Property
+	Public Property Get UserType()
+		UserType = uUserType
+	End Property
 End Class
 %>

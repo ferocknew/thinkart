@@ -62,7 +62,7 @@ If pid = "" Then
 End If
 cctype=Request("cctype")
 If cctype = "" Then
-	cctype = "0"
+	cctype = "2"
 End If
 
 dim upload

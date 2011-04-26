@@ -62,7 +62,7 @@ If did = "" Then
 End If
 cctype=Request("cctype")
 If cctype = "" Then
-	cctype = "0"
+	cctype = "3"
 End If
 
 dim upload
@@ -93,31 +93,27 @@ If upload.forms("action") = "add" Then
 	
 	If setErrors = 0 Then
 		Set DownloadFileMod=new DownloadFile
-		DownloadFileMod.Title=upload.forms("Title")
-		DownloadFileMod.Keywords=upload.forms("Keywords")
+		DownloadFileMod.FileName=FileName
+		DownloadFileMod.ShowName=upload.forms("ShowName")
+		DownloadFileMod.KeyWords=upload.forms("KeyWords")
 		DownloadFileMod.Abstract=upload.forms("Abstract")
-		DownloadFileMod.Img=Img
-		DownloadFileMod.DownloadFile=upload.forms("DownloadFile")
-		DownloadFileMod.Lasttime=Date()&" "&Time()
-		DownloadFileMod.SyncBlog=upload.forms("SyncBlog")
 		DownloadFileMod.ClassID=upload.forms("ClassID")
-		DownloadFileMod.CType=upload.forms("CType")
 		Response.Write "<script>alert('"& DownloadFileManager.InsertDownloadFile(DownloadFileMod) &"');window.location='download_mng.asp'</script>"
 		response.End()
 	End If
 	set upload = nothing
 ElseIf upload.forms("action") = "update" Then
 	setErrors = 0
-	Img = ""
+	FileName = ""
 	if upload.ErrorID>0 then 
 		response.Write "<script>alert('"& upload.Description &"')</script>"
 		setErrors = setErrors + 1
 	else
 		savepath = "../userfiles"
-		set file = upload.files("IMG")
+		set file = upload.files("FileName")
 		if not(file is nothing) then
 			if file.saveToFile(savepath,0,true) then
-				Img = savepath & "/" & file.filename
+				FileName = savepath & "/" & file.filename
 			else
 				setErrors = setErrors + 1
 				response.Write "<script>alert('"& file.Exception &"')</script>"
@@ -127,16 +123,11 @@ ElseIf upload.forms("action") = "update" Then
 	
 	If setErrors = 0 Then
 		Set DownloadFileMod=new DownloadFile
-		DownloadFileMod.ID=did
-		DownloadFileMod.Title=upload.forms("Title")
-		DownloadFileMod.Keywords=upload.forms("Keywords")
+		DownloadFileMod.FileName=FileName
+		DownloadFileMod.ShowName=upload.forms("ShowName")
+		DownloadFileMod.KeyWords=upload.forms("KeyWords")
 		DownloadFileMod.Abstract=upload.forms("Abstract")
-		DownloadFileMod.Img=Img
-		DownloadFileMod.DownloadFile=upload.forms("DownloadFile")
-		DownloadFileMod.Lasttime=Date()&" "&Time()
-		DownloadFileMod.SyncBlog=upload.forms("SyncBlog")
 		DownloadFileMod.ClassID=upload.forms("ClassID")
-		DownloadFileMod.CType=upload.forms("CType")
 		Response.Write "<script>alert('"& DownloadFileManager.UpdateDownloadFile(DownloadFileMod) &"');window.location='download_mng.asp'</script>"
 		response.End()
 	End If

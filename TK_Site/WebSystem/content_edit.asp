@@ -41,13 +41,13 @@ showClass = showContent.ClassID
   </div>
   <div class="content_titleInput">
   	<ul>
-      <li><input onclick="selContentType('内 容','datas');" type="radio" name="CType" value="0" id="CType_0" <%If showContent.CType="" or showContent.CType="0" Then%>checked="checked"<%End If%> />
+      <li><input onclick="selContentType('内 容','datas');" type="radio" name="CType" value="0" id="CType_0" checked="checked" />
         <span class="text_deepGray12_b">直接编辑</span></li>
-      <li><input onclick="selContentType('文 件','htmls');" type="radio" name="CType" value="1" id="CType_1" <%If showContent.CType="1" Then%>checked="checked"<%End If%> />
+      <li><input onclick="selContentType('文 件','htmls');" type="radio" name="CType" value="1" id="CType_1"  />
         <span class="text_deepGray12_b">上传网页</span></li>
 	</ul>
   </div>
-</div>
+</div><%If showContent.CType="1" Then%><script>$(function(){$('#CType_1').click();});</script><%End If%>
 <div class="addContent text_deepGray12_b">
 <div class="add_left">
   <table width="550" border="0" cellspacing="0" cellpadding="0">
@@ -78,7 +78,7 @@ showClass = showContent.ClassID
     <textarea name="xhContent" rows="10" class="addText" style="height:350px;" id="xhContent"><%=showContent.Content%></textarea><input type="hidden" name="Content" id="Content" value="" />
     </div>
     <div id="html_content" style="display:none;">
-    <input class="addText"  type="text" name="htmlFile" id="htmlFile" value="" />
+    <input class="addText"  type="text" name="htmlFile" id="htmlFile" value="<%=showContent.HtmlFile%>" />
     </div>
     </td>
   </tr>
