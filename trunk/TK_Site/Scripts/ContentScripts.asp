@@ -128,7 +128,7 @@ ElseIf upload.forms("action") = "update" Then
 	
 	If setErrors = 0 Then
 		Set ContentMod=new Content
-		ContentMod.ID=cid
+		ContentMod.ID=upload.forms("updid")
 		ContentMod.Title=upload.forms("Title")
 		ContentMod.Keywords=upload.forms("Keywords")
 		ContentMod.Abstract=upload.forms("Abstract")

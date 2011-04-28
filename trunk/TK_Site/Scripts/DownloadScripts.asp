@@ -123,6 +123,7 @@ ElseIf upload.forms("action") = "update" Then
 	
 	If setErrors = 0 Then
 		Set DownloadFileMod=new DownloadFile
+		DownloadFileMod.Id=upload.forms("updid")
 		DownloadFileMod.FileName=FileName
 		DownloadFileMod.ShowName=upload.forms("ShowName")
 		DownloadFileMod.KeyWords=upload.forms("KeyWords")
