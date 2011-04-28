@@ -96,5 +96,13 @@ Class Content
 	Public Property Get ClassType()
 		ClassType = cClassType
 	End Property
+	
+	Private cHtmlFile
+	Public Property Let HtmlFile(value)
+		cHtmlFile = value
+	End Property
+	Public Property Get HtmlFile()
+		HtmlFile = cHtmlFile
+	End Property
 End Class
 %>

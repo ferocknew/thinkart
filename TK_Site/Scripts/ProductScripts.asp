@@ -190,15 +190,15 @@ ElseIf upload.forms("action") = "update" Then
 	
 	If setErrors = 0 Then
 		Set ProductMod=new Product
-		ProductMod.ID=pid
-				ModProduct.Title=upload.forms("Title")
-				ModProduct.Keywords=upload.forms("Keywords")
-				ModProduct.Abstract=upload.forms("Abstract")
-				ModProduct.Content=upload.forms("Content")
-				ModProduct.Price=upload.forms("Price")
-				ModProduct.VIPPrice=upload.forms("VIPPrice")
-				ModProduct.ProductCount=upload.forms("ProductCount")
-				ModProduct.ClassID=upload.forms("ClassID")
+		ProductMod.ID=upload.forms("updid")
+		ModProduct.Title=upload.forms("Title")
+		ModProduct.Keywords=upload.forms("Keywords")
+		ModProduct.Abstract=upload.forms("Abstract")
+		ModProduct.Content=upload.forms("Content")
+		ModProduct.Price=upload.forms("Price")
+		ModProduct.VIPPrice=upload.forms("VIPPrice")
+		ModProduct.ProductCount=upload.forms("ProductCount")
+		ModProduct.ClassID=upload.forms("ClassID")
 		Response.Write "<script>alert('"& ProductManager.UpdateProduct(ProductMod) &"');window.location='product_mng.asp'</script>"
 		response.End()
 	End If
