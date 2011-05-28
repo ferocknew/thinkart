@@ -1,0 +1,103 @@
+@charset "utf-8";
+/************************************
+       网站管理系统 - 登陆页样式
+************************************/
+
+
+body {
+	margin:0;
+	background: url(../images/bg_login.jpg) no-repeat top center;
+	font-family: "微软雅黑", Arial, "宋体";
+	font-size: 12px;
+	color: #666;
+}
+
+ul,li{
+	margin:0;
+	padding:0;
+}
+
+img{
+	border:none;
+}
+
+a {
+	color: #3366CC;
+	text-decoration: none;
+}
+
+#header{
+	background:url(../images/bg_header.gif) repeat-x;
+	height:42px;
+	position:relative;
+}
+
+#header_logo{
+	position:absolute;
+	background:url(../images/bg_logo.gif) no-repeat;
+	height:50px;
+	width:107px;
+	left:8px;
+}
+
+#header_title{
+	margin-left:130px;
+	padding-top:11px;
+	float:left;
+	display:inline;
+}
+
+#header_navi{
+	padding-top:13px;
+	width:80px;
+	float:right;
+	display:inline;
+}
+
+#header_navi ul li{
+	float:left;
+	list-style:none;
+	margin-right:15px;
+	height:16px;
+	line-height:16px;
+}
+
+#login_bar{
+	margin:197px auto 0;
+	height:204px;
+	width:560px;
+	position:relative;
+}
+
+#login_button{
+	position:absolute;
+	right:0;
+	bottom:0;
+}
+
+#login_bar ul{
+		float:right; 
+		margin-right:70px;
+		margin-top:50px;
+		width:270px;
+} 
+
+#login_bar ul li{
+	height:27px;
+	list-style:none;
+	float:left;
+	width:270px;
+	margin-bottom:8px;
+}
+
+#login_bar input{
+	height:18px;
+	padding-top:4px;
+	background:none;
+	border:none;
+	letter-spacing:1px;
+	color:#666;
+	font-weight:bold;
+}
+
+.c_code{ width:70px;}

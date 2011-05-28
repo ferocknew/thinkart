@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<link href="css/menu_style.css" rel="stylesheet" type="text/css" />
+</head>
+<script language="javascript">
+function selectMenu(menuId,p){
+	var menuObjs = new Array("mObj1","mObj2","mObj3","mObj4","mObj5","mObj6","mObj7","mObj8","mObj9","mObj10");
+	for(var i = 0;i<= menuObjs.length - 1;i++){
+	j = i + 1
+	document.getElementById(menuObjs[i]).setAttribute('class','menu_0'+j);
+	}
+	document.getElementById(menuId).setAttribute('class','menuSelected_0'+p);	
+}
+</script>
+<body>
+<div>
+<ul>
+  <li id="mObj1" class="menuSelected_01" onclick="selectMenu('mObj1','1');"></li>
+  <li id="mObj2" class="menu_02" onclick="selectMenu('mObj2','2');"> </li>
+  <li id="mObj3" class="menu_03" onclick="selectMenu('mObj3','3');"> </li>
+  <li id="mObj4" class="menu_04" onclick="selectMenu('mObj4','4');"> </li>
+  <li id="mObj5" class="menu_05" onclick="selectMenu('mObj5','5');"> </li>
+  <li id="mObj6" class="menu_06" onclick="selectMenu('mObj6','6');"> </li>
+  <li id="mObj7" class="menu_07" onclick="selectMenu('mObj7','7');"> </li>
+  <li id="mObj8" class="menu_08" onclick="selectMenu('mObj8','8');"> </li>
+  <li id="mObj9" class="menu_09" onclick="selectMenu('mObj9','9');"> </li>
+  <li id="mObj10" class="menu_010" onclick="selectMenu('mObj10','10');"> </li>  
+</ul>
+</div>
+</body>
+</html>
