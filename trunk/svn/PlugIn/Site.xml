@@ -1,0 +1,13 @@
+<Site>
+	<SiteName>SiteName</SiteName>
+	<IcpNum>IcpNum</IcpNum>
+	<SeoKeywords>SeoKeywords</SeoKeywords>
+	<SeoDesc>SeoDesc</SeoDesc>
+	<SiteCopyright>SiteCopyright</SiteCopyright>
+	<AdminPath>AdminPath</AdminPath>
+	<SiteOn>SiteOn</SiteOn>
+	<NewDays>NewDays</NewDays>
+	<HotCount>HotCount</HotCount>
+	<EditWidth>EditWidth</EditWidth>
+	<State>State</State>
+</Site>
