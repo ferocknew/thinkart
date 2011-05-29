@@ -76,12 +76,12 @@
 $("a[href='#']").attr("href","javascript:void(0);");
 //===============================================================
 //设置滚动条
-var _DocST=GetCookie("ThinkArt-showClassST");
-if(_DocST!=null){
-	document.documentElement.scrollTop=_DocST;
+var _DocST = GetCookie("ThinkArt-showClassST");
+if (_DocST != null) {
+    document.documentElement.scrollTop = _DocST;
 }
 $(document).scroll(function(){
-	SetCookie("ThinkArt-showClassST",document.documentElement.scrollTop);
+    SetCookie("ThinkArt-showClassST", document.documentElement.scrollTop);
 })
 
 //===============================================================
@@ -94,7 +94,7 @@ function SetCookie(name, value){
 }
 function getCookieVal(offset){
     var endstr = document.cookie.indexOf(";", offset);
-    if (endstr == -1) 
+    if (endstr == -1)
         endstr = document.cookie.length;
     return unescape(document.cookie.substring(offset, endstr));
 }
@@ -114,10 +114,10 @@ function GetCookie(name){
     var i = 0;
     while (i < clen) {
         var j = i + alen;
-        if (document.cookie.substring(i, j) == arg) 
+        if (document.cookie.substring(i, j) == arg)
             return getCookieVal(j);
         i = document.cookie.indexOf(" ", i) + 1;
-        if (i == 0) 
+        if (i == 0)
             break;
     }
     return null;
