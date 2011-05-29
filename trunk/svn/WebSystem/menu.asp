@@ -1,5 +1,4 @@
-﻿<%@LANGUAGE="VBSCRIPT" CODEPAGE="65001"%>
-<%Session.CodePage=65001%>
+﻿<!--#include file="../lib/lib-const.asp"-->
 <!--#include file="checkLogin.asp"-->
 <!--#include file="../Scripts/PowerControl.asp"-->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -22,7 +21,7 @@
   <a href="header.asp?subMenuId=7" target="topFrame"><li id="mObj7" class="menu_07" onclick="selectMenu('mObj7','7');"> </li></a>
   <a href="header.asp?subMenuId=8" target="topFrame"><li id="mObj8" class="menu_08" onclick="selectMenu('mObj8','8');"> </li></a>
   <a href="header.asp?subMenuId=9" target="topFrame"><li id="mObj9" class="menu_09" onclick="selectMenu('mObj9','9');"> </li></a>
-  <a href="header.asp?subMenuId=10" target="topFrame"><li id="mObj10" class="menu_010" onclick="selectMenu('mObj10','10');"> </li></a> 
+  <a href="header.asp?subMenuId=10" target="topFrame"><li id="mObj10" class="menu_010" onclick="selectMenu('mObj10','10');"> </li></a>
 </ul>
 </div>
 </body>

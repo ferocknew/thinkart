@@ -1,5 +1,4 @@
-﻿<%@LANGUAGE="VBSCRIPT" CODEPAGE="65001"%>
-<%Session.CodePage=65001%>
+﻿<!--#include file="../lib/lib-const.asp"-->
 <!--#include file="checkLogin.asp"-->
 <!--#include file="../Scripts/PowerControl.asp"-->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -9,7 +8,7 @@
 <title></title>
 <link href="css/style_header.css" rel="stylesheet" type="text/css" />
 <link href="css/font_link.css" rel="stylesheet" type="text/css" />
-<script language="javascript" src="js/menuControl.js"></script>
+<script type="text/javascript" src="js/menuControl.js"></script>
 </head>
 <body>
 <div id="header_logo"></div>
@@ -58,7 +57,7 @@
     <li id="sMenu6" class="bg_topMenu2 link_white12_b" onclick="selSMenu_8('sMenu6');"><a href="../extraModel/analysis/search_keyword.asp" target="mainFrame">单日关键字</a></li>
     <li id="sMenu7" class="bg_topMenu2 link_white12_b" onclick="selSMenu_8('sMenu7');"><a href="../extraModel/analysis/search_keyword_total.asp" target="mainFrame">总关键字</a></li>
     <li id="sMenu8" class="bg_topMenu2 link_white12_b" onclick="selSMenu_8('sMenu8');"><a href="#" target="mainFrame">数据操作</a></li>
-    <%end if%>    
+    <%end if%>
 	<%if subMenuId = "9" then%>
     <li id="sMenu1" class="bg_topMenu2 link_white12_b" onclick="selSMenu_2('sMenu1');"><a href="#" target="mainFrame">配送设置</a></li>
     <li id="sMenu2" class="bg_topMenu2 link_white12_b" onclick="selSMenu_2('sMenu2');"><a href="#" target="mainFrame">订单维护</a></li>
@@ -76,7 +75,7 @@
     <li id="sMenu6" class="bg_topMenu2 link_white12_b" onclick="selSMenu_8('sMenu6');"><a href="#" target="mainFrame">支付接口</a></li>
     <li id="sMenu7" class="bg_topMenu2 link_white12_b" onclick="selSMenu_8('sMenu7');"><a href="#" target="mainFrame">微博账户</a></li>
     <li id="sMenu8" class="bg_topMenu2 link_white12_b" onclick="selSMenu_8('sMenu8');"><a href="#" target="mainFrame">系统日志</a></li>
-    <%end if%>    
+    <%end if%>
     </ul>
   <div class="menu_close" onmouseover="highlightButton('buttonClose_mouseOut')" onmouseout="highlightButton('buttonClose_mouseOn')">
 	<input name="B2" type="button" class="buttonClose_mouseOn" value=" ">
@@ -94,3 +93,7 @@
 
 </body>
 </html>
+<script type="text/javascript" src="../lib/js/jquery.min.js"></script>
+<script type="text/javascript">
+$("a[href='#']").attr("href","javascript:void(0);");
+</script>

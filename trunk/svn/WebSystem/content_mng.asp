@@ -1,5 +1,4 @@
-﻿<%@LANGUAGE="VBSCRIPT" CODEPAGE="65001"%>
-<%Session.CodePage=65001%>
+﻿<!--#include file="../lib/lib-const.asp"-->
 <!--#include file="checkLogin.asp"-->
 <!--#include file="../Scripts/PowerControl.asp"-->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -9,7 +8,7 @@
 <title></title>
 <link href="css/content_style.css" rel="stylesheet" type="text/css" />
 <link href="css/font_link.css" rel="stylesheet" type="text/css" />
-<script language="javascript" src="../include/jquery-1.4.4.min.js"></script>
+<!--<script language="javascript" src="../include/jquery-1.4.4.min.js"></script>-->
 <!--#include file="../Scripts/ContentScripts.asp" -->
 <script language="javascript">
 function swCheck(ckBoxId,inputId){
@@ -55,7 +54,7 @@ function allCheck(){
 <input type="hidden" name="delid" id="delid" value="" />
 <div class="breadcrumbs text_gray12_b link_gray12_b">
 <img src="images/ico_breadcrumbs.gif" align="absmiddle" />
-当前位置: <a href="#"> 内容管理</a> / 
+当前位置: <a href="#"> 内容管理</a> /
 <span class="link_deepGray12_b"><a href="#">公司新闻</a></span>
 </div>
 <table class="list_style text_deepGray12_b" width="100%" border="0" cellpadding="0" cellspacing="0">
@@ -112,3 +111,4 @@ For i=startindex to endindex
 </form>
 </body>
 </html>
+<script type="text/javascript" src="../lib/js/jquery.min.js"></script>
