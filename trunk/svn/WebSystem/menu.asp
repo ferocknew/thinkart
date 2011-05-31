@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<script language="javascript" src="js/menuControl.js"></script>
+<script type="text/javascript" src="js/menuControl.js"></script>
 <title></title>
 <link href="css/menu_style.css" rel="stylesheet" type="text/css" />
 </head>
