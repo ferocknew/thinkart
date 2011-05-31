@@ -1,10 +1,11 @@
-function selectMenu(menuId,p){
-	var menuObjs = new Array("mObj1","mObj2","mObj3","mObj4","mObj5","mObj6","mObj7","mObj8","mObj9","mObj10");
-	for(var i = 0;i<= menuObjs.length - 1;i++){
-	j = i + 1
-	document.getElementById(menuObjs[i]).setAttribute('class','menu_0'+j);
-	}
-	document.getElementById(menuId).setAttribute('class','menuSelected_0'+p);	
+function selectMenu(menuId, p){
+    //var menuObjs = new Array("mObj1", "mObj2", "mObj3", "mObj4", "mObj5", "mObj6", "mObj7", "mObj8", "mObj9", "mObj10");
+	var menuObjs = ["mObj1", "mObj2", "mObj3", "mObj4", "mObj5", "mObj6", "mObj7", "mObj8", "mObj9", "mObj10"];
+    for (var i = 0; i <= menuObjs.length - 1; i++) {
+        j = i + 1
+        document.getElementById(menuObjs[i]).setAttribute('class', 'menu_0' + j);
+    }
+    document.getElementById(menuId).setAttribute('class', 'menuSelected_0' + p);
 }
 
 
