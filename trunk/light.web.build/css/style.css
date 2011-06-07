@@ -1,0 +1,52 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{
+	margin:0px;
+	font-family:"微软雅黑","宋体",Tahoma, Geneva, sans-serif;
+	color:#000000;
+	font-size:12px;}
+	
+.text_boldTitle{
+	font-size:18px;
+	color:#000000;
+	font-weight:bold;}
+	
+.text_eng_normal{
+	font-size:12px;
+	color:#000000;
+	font-family:Tahoma, Geneva, sans-serif;}
+	
+.text_chn_normal{
+	font-size:12px;
+	color:#000000;
+	font-family:"微软雅黑","宋体",Tahoma, Geneva, sans-serif;}	
+	
+.input_normal{
+	height:20px;
+	padding:0px;
+	border:1px solid #cccccc;
+	background-color:#eeeeee;
+	line-height:20px;}
+	
+.input_width{
+	width:190px;
+	margin-left:10px;}
+	
+.bottom_line{
+	border-bottom:1px dotted #cccccc;}
+	
+.right_line{
+	border-right:1px dotted #cccccc;}
+	
+.four_border_line{
+	border:1px solid #cccccc;}	
+	
+.buttom_login{
+	height:60px;
+	width:60px;
+	padding:0px;
+	border:1px solid #cccccc;
+	background-color:#cccccc;
+	line-height:30px;
+	font-family:Tahoma, Geneva, sans-serif;	}
