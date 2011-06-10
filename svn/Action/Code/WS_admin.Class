@@ -28,8 +28,10 @@ Class WS_admin
 			 WebSiteInfo("AdminName")="admin"
 		End If
 
+		Dim v_str
+		v_str = "{""err"":0,""AdminName"":""" & WebSiteInfo("AdminName") & """,""AdminCDate"":" & UDate(WebSiteInfo("AdminCDate"),8) & ",""AdminType"":" & WebSiteInfo("AdminType") & "}"
 		Call jsonheadResponse()
-		Call Jasp.output(Jasp.parse("{""err"":0,""AdminName"":""" + WebSiteInfo("AdminName") + """}").Get(),"json")
+		Call Jasp.output(Jasp.parse(v_str).Get(),"json")
 	End Sub
 End Class
 %>
