@@ -1,4 +1,4 @@
-<%@language="vbscript" codepage="65001"%>
+﻿<%@language="vbscript" codepage="65001"%>
 <%
 Response.Buffer = True
 '***************mrThink 基本设置*******************
