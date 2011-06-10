@@ -1588,8 +1588,8 @@ Function getForm(element,ftype)
 End Function
 
 '//--------------- mvc调用Class ---------------
-Function newClass(ClassName)
-	Set v_S=New Stream
+Function newClass(ClassName,DirPath)
+	Set v_S=New JaspStream
 	With(v_S)
 		Dim v_Con : v_Con=.LoadFile(DirPath + Trim(ClassName) + ".Class")
 		If(v_Con="error") Then
