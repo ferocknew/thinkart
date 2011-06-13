@@ -1,0 +1,99 @@
+@charset "utf-8";
+
+/************************************
+       网站管理系统 - 字体样式
+************************************/
+
+
+.text_gray12_b{
+	color:#999;
+	font-weight:bold;
+	text-shadow:1px 1px 1px #FFF;
+}
+
+.text_deepGray10_b{
+	color:#333;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size:10px;
+	text-shadow:1px 1px 1px #FFF;
+}
+
+.text_deepGray12_b{
+	color:#333;
+	font-size:12px;
+	font-weight:bold;
+	text-shadow:1px 1px 1px #FFF;
+}
+
+.text_deepGray14_b{
+	color:#333;
+	font-size:14px;
+	font-weight:bold;
+	text-shadow:1px 1px 1px #FFF;
+}
+
+
+.text_deepGray16_b{
+	color:#333;
+	font-size:16px;
+	font-weight:bold;
+	text-shadow:1px 1px 1px #FFF;
+}
+
+.text_white12_b{
+	color:#fff;
+	font-weight:bold;
+	text-shadow:-1px -1px 1px #000;
+}
+
+.text_green12{
+	color:#393;
+	font-weight:bold;
+	text-shadow:1px 1px 1px #FFF;
+}
+
+.text_orange{
+	color:#d6bf0a;
+}
+
+
+
+/************************************
+       网站管理系统 - 链接样式
+************************************/
+
+a{ text-decoration:none;}
+
+
+/*灰色链接*/
+.link_gray12_b a:link,.link_gray12_b a:visited{
+	color:#666;
+	font-weight:bold;
+	text-shadow:1px 1px 1px #FFF;
+}
+.link_gray12_b a:hover{color:#393;}
+
+/*深灰色链接*/
+.link_deepGray12_b a:link,.link_deepGray12_b a:visited{
+	color:#333;
+	font-weight:bold;
+	text-shadow:1px 1px 1px #FFF;
+}
+.link_deepGray12_b a:hover{color:#393;}
+
+/*黑色链接*/
+.link_black12_b a:link,.link_black12_b a:visited{
+	color:#000;
+	font-weight:bold;
+	display:block;
+	text-shadow:1px 1px 1px #FFF;
+}
+.link_black12_b a:hover{color:#666;}
+
+/*白色链接*/
+.link_white12_b a:link,.link_white12_b a:visited{
+	color:#FFF;
+	font-weight:bold;
+	text-shadow:-1px -1px 1px #000;
+}
+.link_white12_b a:hover{color:#3C3;}

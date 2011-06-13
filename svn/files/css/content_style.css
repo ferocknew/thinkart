@@ -1,0 +1,505 @@
+@charset "utf-8";
+
+/************************************
+       网站管理系统 - 内容样式
+************************************/
+
+html,body {
+	margin:0;
+	background:#e6e6e6;
+	font-family: "微软雅黑", Arial, "宋体";
+	font-size: 12px;
+	color: #666;
+	height:100%;
+}
+
+ul,li{
+	margin:0;
+	padding:0;
+	list-style:none;
+}
+
+img{
+	border:none;
+}
+
+form {
+	background-color: #E6E6E6;
+}
+
+input{
+	color:#666;
+	padding-left:2px;
+}
+
+
+.wrapper {
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	margin: 0 auto -24px; /* margin-bottom 为减去底部浮动层的高度 */
+}
+
+.push {
+	height: 24px; /* .push 必须和底部浮动层一样高 */
+}
+
+.breadcrumbs{
+	background:url(../images/bg_breadcrumbs.gif) repeat-x;
+	height:28px;
+}
+
+/*白色表格行*/
+.list_style{
+	background:url(../images/bg_contentNavi.gif) repeat-x;
+}
+
+.list_style td{
+	background:url(../images/hr_contentNavi.gif) left no-repeat;
+	padding-left:10px;
+	height:35px;
+
+}
+
+/*黑色表格行*/
+.list_styleBlack{
+	background:url(../images/bg_contentBlackNavi.gif) repeat-x;
+	height:33px;
+}
+
+.list_styleBlack td{
+	background:url(../images/hr_contentBlackNavi.gif) left top no-repeat;
+	padding-left:10px;
+}
+
+.table_style td{
+	padding-left:10px;
+	height:38px;
+	line-height:38px;
+}
+
+.tr_odd{ background:#f1f1f1;}
+
+.tr_even{ background:#e6e6e6;}
+
+
+.page_style{
+	height:23px;
+	background:#d7d7d7;
+	text-align:center;
+	width:100%;
+	padding-top:5px;
+}
+
+.input_page{
+	background:url(../images/bg_selectPage.gif) no-repeat;
+	width:20px;
+	height:15px;
+	border:none;
+	text-align:center;
+	color:#666;
+	font-size:11px;
+}
+
+
+/*多选框样式*/
+.checkbox_content a,.checkbox_content {
+ display:block;
+ width:16px;
+ height:14px;
+ overflow:hidden
+ }
+.checkbox_content a{
+ background:url(../images/checkbox_default.gif) no-repeat
+ }
+
+.checkbox_content a#checkbox_selected {
+ background:url(../images/checkbox_selected.gif) no-repeat
+ }
+ 
+ 
+.checkboxBlack_content a,.checkboxBlack_content {
+ display:block;
+ width:16px;
+ height:14px;
+ overflow:hidden
+ }
+.checkboxBlack_content a{
+ background:url(../images/checkbox_allDefault.gif) no-repeat
+ }
+
+.checkboxBlack_content a#checkboxBlack_selected {
+ background:url(../images/checkbox_allSelected.gif) no-repeat
+ }
+ 
+/*栏目标题*/
+
+.content_title{
+	position:relative;
+	height:60px;
+	background:url(../images/bg_contentTitle.gif) repeat-x;
+}
+
+.content_titleText{
+	float:left;
+	padding-top:15px;
+}
+
+.content_titleInput{
+	position:absolute;
+	top:0;
+	left:200px;
+	width:600px;
+	height:45px;
+	padding-top:15px;
+	padding-left:20px;
+	background:url(../images/hr_contentTitle.gif) left no-repeat;
+}
+
+.content_titleInput ul li{
+	float:left;
+	margin-right:20px;
+	display:block;
+}
+
+.content_ctrlbar{
+	height:35px;
+	padding:0 10px;
+	background:url(../images/bg_contentNavi.gif) repeat-x;
+}
+
+.content_ctrlbar table{
+	height:35px;
+}
+
+.content_ctrlbar table td{
+	padding:0 10px;
+	background:url(../images/hr_contentNavi.gif) left no-repeat;
+}
+
+.btm_submit{
+	height:18px;
+	width:19px;
+	background:url(../images/btm_submit.gif);
+	border:none;
+}
+
+.programs{
+	margin-bottom:10px;
+}
+
+.programsDiv{
+	height:385px;
+	border:1px dashed #999;
+	background:#f1f1f1;
+}
+
+.programsItem{
+	width:100%;
+	float:left;
+}
+
+.programsList{
+	float:left;
+	cursor:pointer;
+	height:32px;
+	line-height:32px;
+}
+
+.programsList_text{
+	float:left;
+	cursor:pointer;
+	height:32px;
+	line-height:32px;
+}
+
+
+.programsEdit{
+	height:32px;
+	width:100%;
+	float:left;
+	text-indent:10px;
+	line-height:32px;
+	background-image: url(../images/bg_editbar.gif);
+	background-repeat: repeat-x;
+}
+
+.programsEdit_tree{
+	float:left; 
+	height:32px;
+}
+
+
+.programsEdit_input{
+	height:16px;
+	border:#666 1px solid;
+	margin-left:5px;
+	background-color: #e6e6e6;
+}
+
+.programsEdit_btm{
+	height:18px;
+	width:19px;
+	background:url(../images/btm_submit2.gif);
+	border:none;
+}
+
+.editBar{
+	float:right;
+	width:550px;
+	height:32px;
+
+}
+
+.input_createTree{
+	width:100px;
+}
+
+.input_sort{
+	width:20px;
+	text-align:center;
+}
+
+.editBar_td{
+	padding-left:15px;
+	background:url(../images/hr_editbar.gif) left no-repeat;
+}
+
+/*树状图样式*/
+
+.tree1_close{
+	background:url(../images/ico_tree1_1.png) left center no-repeat; padding-left:77px;}
+.tree1_open{
+	background:url(../images/ico_tree1_2.png) left center no-repeat; padding-left:77px;}
+.tree1_none{
+	background:url(../images/ico_tree1_3.png) left center no-repeat; padding-left:77px;}
+
+.tree2_close{
+	background:url(../images/ico_tree2_1.png) left center no-repeat; padding-left:93px;}
+.tree2_close2{
+	background:url(../images/ico_tree2_2.png) left center no-repeat; padding-left:93px;}
+.tree2_open{
+	background:url(../images/ico_tree2_3.png) left center no-repeat; padding-left:93px;}
+.tree2_open2{
+	background:url(../images/ico_tree2_4.png) left center no-repeat; padding-left:93px;}
+.tree2_none{
+	background:url(../images/ico_tree2_5.png) left center no-repeat; padding-left:93px;}
+.tree2_none2{
+	background:url(../images/ico_tree2_6.png) left center no-repeat; padding-left:93px;}
+
+.tree3_none1{
+	background:url(../images/ico_tree3_1.png) left center no-repeat; padding-left:113px;}
+.tree3_none2{
+	background:url(../images/ico_tree3_2.png) left center no-repeat; padding-left:113px;}
+.tree3_none3{
+	background:url(../images/ico_tree3_3.png) left center no-repeat; padding-left:113px;}
+.tree3_none4{
+	background:url(../images/ico_tree3_4.png) left center no-repeat; padding-left:113px;}
+
+
+
+/*内容编辑页样式*/
+
+.addContent{
+	float:left;
+	width:830px;
+}
+
+.addContent table td{
+	height:32px;
+}
+
+.add_left{
+	float:left;
+	display:inline;
+	margin:20px 20px 10px;
+}
+
+.add_right{
+	float:left;
+	margin-top:20px;
+	width:230px;
+}
+
+.add_grayInput{
+	background:#f6f6f6;
+	border:none;
+	height:16px;
+	line-height:16px;
+	color:#999;
+	text-align:center;
+	margin-left:10px;
+	display:inline;
+	float:right;
+	width:160px;
+
+}
+
+
+
+.addText{
+	width:500px;
+	float:right;
+	border:#ccc 1px solid;
+}
+
+.addText_r{
+	width:160px;
+	float:right;
+	border:#ccc 1px solid;
+}
+
+.img_update{
+	width:500px;
+	margin-bottom:5px;
+	float:right;
+}
+
+.addImage{
+	position:relative;
+	width:504px;
+	float:right;
+}
+
+.addImage input{
+	background:#f6f6f6;
+	border:none;
+	height:16px;
+}
+
+.addImage_info{
+	position:absolute;
+	top:0;
+	left:4px;
+	width:416px;
+	color:#999;
+	font-weight:normal;
+	
+}
+
+
+.add_botton{
+	float:left;
+	width:100%;
+	background:url(../images/bg_editbar.gif) repeat-x;
+	height:32px;
+	text-align:center;
+}
+
+.add_botton ul{
+	margin-left:35%;
+}
+
+.add_botton ul li{
+	height:24px;
+	padding-left:10px;
+	padding-right:10px;
+	padding-top:8px;
+	float:left;
+	background:url(../images/hr_editbar.gif) left no-repeat;
+}
+
+/*关联内容样式*/
+
+.content_link{
+	float:left;
+	width:100%;
+}
+
+.content_linkLeft{
+	float:left;
+	padding:10px;
+	height:200px;
+	width:230px;
+}
+
+.content_linkCenter{
+	display:inline;
+	float:left;
+	padding:10px;
+	margin-right:10px;
+	height:200px;
+	width:250px;
+}
+
+.content_linkRight{
+	float:left;
+	padding:10px 10px 10px 20px;
+	height:200px;
+	width:250px;
+	background:url(../images/bg_contentLink.gif) left repeat-y;
+}
+
+.content_linkSearch{
+	margin-top:10px;
+}
+
+.content_linkSearch ul li{
+	height:20px;
+	padding:4px 5px 0;
+	border-bottom: dashed 1px #bbb;
+}
+
+.mouseOn_link{
+	background:url(../images/ico_link.gif) 220px center no-repeat #dedede;
+	color:#090;
+}
+
+.mouseOn_linked{
+	background:url(../images/ico_clear.gif) 230px center no-repeat #dedede;
+	color:#999;
+}
+
+
+.setting input{
+	border:#ccc 1px solid;
+}
+
+
+.settingInput{
+	width:466px;
+}
+
+.settingInput2{
+	width:100px;
+}
+
+.settingInput3{
+	width:30px;
+}
+
+.settingRadio{
+	border:none;
+	display:inline;
+	padding-right:20px;
+}
+
+/*流量监控页样式*/
+
+.flowContent{
+	float:left;
+	width:100%;
+}
+
+.flowContent a{
+	color:#333;
+	font-weight:normal;
+}
+
+.flowTable{
+	float:left;
+	font-size:12px;
+	margin-left:2px;
+}
+
+.flowTable th{
+	height:32px;
+	line-height:32px;
+	background:url(../images/bg_editbar.gif) repeat-x;
+}
+
+.flowTable td{
+	padding:0 5px;
+	background:#f1f1f1;
+	border-bottom:#e6e6e6 1px solid;
+}
