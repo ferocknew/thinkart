@@ -50,7 +50,6 @@
 					<td>&nbsp;</td>
 				</tr>
 			</table>
-			<br />
 		</div>
 	</div>
 	<div class="push"></div>
