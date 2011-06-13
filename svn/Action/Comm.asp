@@ -1,9 +1,6 @@
 <%
 '全站全局参数
-Dim WebSiteInfo,Conn,Cache
-Set Conn=Jasp.adodb.connection(Jasp.parse("{""provider"":""access"",""dataSource"":""../Data/DB.mdb""}").Get())
-Set Cache=New JaspCache:Cache.setRoot="../":Cache.setReloadTime=2400
-
+Dim WebSiteInfo
 '//---------------------------- 设置全局缓存 -----------------------------
 If Not Cache("WebSiteName").ready Then
 	Call GetWebSiteInfo()

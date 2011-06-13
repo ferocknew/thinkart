@@ -1,5 +1,9 @@
 ﻿<!--#include file="../lib/lib-const.asp"-->
 <!--#include file="../lib/lib-Head.asp"-->
+<%
+Dim conn : Set Conn=Jasp.adodb.connection(Jasp.parse("{""provider"":""access"",""dataSource"":""../Data/DB.mdb""}").Get())
+Dim Cache:Set Cache=New JaspCache:Cache.setRoot="../":Cache.setReloadTime=2400
+%>
 <!--#include file="./Comm.asp"-->
 <!--#include file="./Code/WS_admin.Class"-->
 <%
