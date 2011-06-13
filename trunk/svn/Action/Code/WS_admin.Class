@@ -24,12 +24,12 @@ Class WS_admin
 	'//---------------------------------------------------------
 	'获取管理员信息
 	Private Sub WS_admin_getAdminInfo()
-		If WebSiteInfo("AdminName")=Empty Then
-			 WebSiteInfo("AdminName")="admin"
+		If IsEmpty(Cache("AdminName")) Then
+			Call GetWebSiteInfo()
 		End If
 
 		Dim v_str
-		v_str = "{""err"":0,""AdminName"":""" & WebSiteInfo("AdminName") & """,""AdminCDate"":" & UDate(WebSiteInfo("AdminCDate"),8) & ",""AdminType"":" & WebSiteInfo("AdminType") & "}"
+		v_str = "{""err"":0,""AdminName"":""" & Cache("AdminName") & """,""AdminCDate"":" & UDate(Cache("AdminCDate"),8) & ",""AdminType"":" & Cache("AdminType") & "}"
 		Call jsonheadResponse()
 		Call Jasp.output(Jasp.parse(v_str).Get(),"json")
 	End Sub

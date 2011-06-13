@@ -1,13 +1,21 @@
 <%
 '全站全局参数
-Dim WebSiteInfo,Conn
+Dim WebSiteInfo,Conn,Cache
 Set Conn=Jasp.adodb.connection(Jasp.parse("{""provider"":""access"",""dataSource"":""../Data/DB.mdb""}").Get())
-Set WebSiteInfo=GetWebSiteInfo
+Set Cache=New JaspCache:Cache.setRoot="../":Cache.setReloadTime=2400
+
+'//---------------------------- 设置全局缓存 -----------------------------
+If Not Cache("WebSiteName").ready Then
+	Call GetWebSiteInfo()
+	For Each item In WebSiteInfo
+		If Not Cache(item).ready Then Cache(item)=WebSiteInfo(item)
+	Next
+End If
 
 '//---------------------------------------------------------
 '全局变量方法
 '//---------------------------------------------------------
-Function GetWebSiteInfo
+Sub GetWebSiteInfo
 	Dim v_D,v_rs
 	Set v_D = Server.CreateObject("Scripting.Dictionary")
 	Set v_rs=Jasp.ado(Conn).exec("Select [Key],[InfoValue] From [WebSiteInfo]").Get()
@@ -18,6 +26,6 @@ Function GetWebSiteInfo
 			Call v_D.add(v_Temp,v_rs.slice(i,i+1).[0].InfoValue)
 		Next
 	End If
-	Set GetWebSiteInfo = v_D
-End Function
+	Set WebSiteInfo = v_D
+End Sub
 %>
