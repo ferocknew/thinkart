@@ -15,6 +15,7 @@ Class JaspCache
 		Set Jasp_Fso = new JaspFso
 		FilePath="Cache"
 		FileType=".cache"
+		ReloadTime=1200
 		Set DicItems = Server.CreateObject("Scripting.Dictionary")
 		'PREFIX = "Cached:"
 		'PREFIX_LENGTH = 7
@@ -32,11 +33,16 @@ Class JaspCache
 	Public Property Let setRoot(ByVal strVar)
 	  strSITEROOT = strVar
 	End Property
+	'//-------------------------- 定义全局时间 ------------------------------
+	Public Property Let setReloadTime(ByVal strVar)
+	  ReloadTime = strVar
+	End Property
 
 	Public Default Property Get Item(ByVal Key) '获取Cache内容
 		If Not IsObject(DicItems(Key)) Then
 			Set DicItems(Key)=new Cache_info
 			DicItems(Key).setRoot=strSITEROOT
+			DicItems(Key).setReloadTime=ReloadTime
 			DicItems(Key).KeyName = Key
 		End If
 		Set Item = DicItems(Key)
@@ -52,6 +58,7 @@ Class JaspCache
 
 		Set DicItems(Key)=new Cache_info
 		DicItems(Key).setRoot=strSITEROOT
+		DicItems(Key).setReloadTime=ReloadTime
 		DicItems(Key).KeyName=Key
 		DicItems(Key).Value=v
 	End Property
@@ -163,6 +170,11 @@ Class Cache_Info
 	Public Property Let setRoot(ByVal strVar)
 	  strSITEROOT = strVar
 	End Property
+
+	'//-------------------------- 定义全局时间 ------------------------------
+	Public Property Let setReloadTime(ByVal strVar)
+	  ReloadTime = strVar
+	End Property
 	'*************************************************
 	'获取内容
 	'*************************************************
@@ -254,6 +266,8 @@ Class Cache_Info
 			End With
 		End If
 	End Sub
+
+
 
 	'*************************************************
 	'移除缓存
