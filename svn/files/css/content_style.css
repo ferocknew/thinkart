@@ -37,7 +37,7 @@ input{
 	min-height: 100%;
 	height: auto !important;
 	height: 100%;
-	margin: 0 auto -24px; /* margin-bottom 为减去底部浮动层的高度 */
+	margin: 0 auto -520px; /* margin-bottom 为减去底部浮动层的高度 */
 }
 
 .push {
@@ -116,8 +116,8 @@ input{
 .checkbox_content a#checkbox_selected {
  background:url(../images/checkbox_selected.gif) no-repeat
  }
- 
- 
+
+
 .checkboxBlack_content a,.checkboxBlack_content {
  display:block;
  width:16px;
@@ -131,7 +131,7 @@ input{
 .checkboxBlack_content a#checkboxBlack_selected {
  background:url(../images/checkbox_allSelected.gif) no-repeat
  }
- 
+
 /*栏目标题*/
 
 .content_title{
@@ -225,7 +225,7 @@ input{
 }
 
 .programsEdit_tree{
-	float:left; 
+	float:left;
 	height:32px;
 }
 
@@ -374,7 +374,7 @@ input{
 	width:416px;
 	color:#999;
 	font-weight:normal;
-	
+
 }
 
 

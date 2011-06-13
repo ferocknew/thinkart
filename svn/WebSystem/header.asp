@@ -81,7 +81,7 @@
 		<%
 		Case "11"
 		%>
-		<li id="sMenu1" class="bg_topMenu2 link_white12_b" onclick="selSMenu_8('sMenu1');"><a href="admin_edit.asp" target="mainFrame">管理员</a></li>
+		<li id="sMenu1" class="bg_topMenu2 link_white12_b" onclick="selSMenu_8('sMenu1');"><a href="iframe/ShowConn.asp?at=adminedit" target="mainFrame">管理员</a></li>
 		<li id="sMenu2" class="bg_topMenu2 link_white12_b" onclick="selSMenu_8('sMenu2');"><a href="#" target="mainFrame">定制功能</a></li>
 		<li id="sMenu3" class="bg_topMenu2 link_white12_b" onclick="selSMenu_8('sMenu3');"><a href="Setting_Site.html" target="mainFrame">系统设置</a></li>
 		<li id="sMenu4" class="bg_topMenu2 link_white12_b" onclick="selSMenu_8('sMenu4');"><a href="#" target="mainFrame">编辑器</a></li>
