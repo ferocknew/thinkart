@@ -46,12 +46,13 @@ Class Tpl_Admin
 		For Each i In v_D
 			v_SQL="UPDATE [WebSiteInfo] SET InfoValue = '" & v_D(i) & "' WHERE Key = '"&i&"'"
 			Conn.Execute(v_SQL)
-			Cache(i).clear
+			'Cache(i).clear
+			Cache(i)=v_D(i)
 		Next
 
 		Set v_D=Nothing
 
-		Call RefushCache(false) '只刷新删除以后的缓存
+		'Call RefushCache(false) '只刷新删除以后的缓存
 		Dim v_Temp : v_Temp=Split(Request.ServerVariables("HTTP_REFERER"),"/")
 		Dim v_Back : v_Back=v_Temp(UBound(v_Temp))
 		Response.Write("<meta http-equiv='Content-Type' content='text/html;' charset='utf-8' />")
