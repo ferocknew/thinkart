@@ -4,4 +4,5 @@
 <!--#include file="./lib-Stream.asp"-->
 <!--#include file="./lib-Fso.asp"-->
 <!--#include file="./lib-tpl.asp"-->
+<!--#include file="./lib-sha1.asp"-->
 <!--#include file="./lib-function.asp"-->
