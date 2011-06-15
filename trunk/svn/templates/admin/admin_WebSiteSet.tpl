@@ -64,7 +64,7 @@
 								<input style="border:none;" type="radio" name="WebSiteEditorWidth" value="400"/>
 								400<span class="text_gray12_b"> Px</span></label>
 							<label class="settingRadio">
-								<input style="border:none;" type="radio" name="WebSiteEditorWidth" value="500"/>
+								<input style="border:none;" type="radio" name="WebSiteEditorWidth" value="550"/>
 								550<span class="text_gray12_b"> Px</span></label>
 							<label class="settingRadio">
 								<input style="border:none;" type="radio" name="WebSiteEditorWidth" value="700" id="RadioGroup1_1" />
