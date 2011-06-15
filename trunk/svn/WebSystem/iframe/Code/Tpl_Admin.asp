@@ -1,12 +1,14 @@
 <%
 Class Tpl_Admin
-	Private Tpl
+	Private Tpl,v_D
 	'//--------------------------初始函数-------------------------------
 	Private Sub Class_Initialize()
+		Set v_D = Server.CreateObject("Scripting.Dictionary")
 		Set Tpl=New JaspTpl
 	End Sub
 	'//--------------------------析构函数-------------------------------
 	Private Sub Class_Terminate()
+		Set v_D=Nothing
 		Set Tpl=Nothing
 	End Sub
 	'//-------------------------- 主方法 -------------------------------
@@ -16,7 +18,7 @@ Class Tpl_Admin
 			Case "save"
 				Call Tpl_Admin_Save()
 			Case Else
-				Tpl_Admin_Edit("admin_edit.tpl")
+				Call Tpl_Admin_Edit("admin_edit.tpl")
 		End Select
 	End Sub
 
@@ -26,9 +28,65 @@ Class Tpl_Admin
 			Case "save"
 				Call Tpl_WebSiteSet_Save()
 			Case Else
-				Tpl_WebSiteSet_Edit("admin_WebSiteSet.tpl")
+				Call Tpl_WebSiteSet_Edit("admin_WebSiteSet.tpl")
 		End Select
 	End Sub
+
+	'//-- 内容分类操作
+	Public Sub classMConn(ByVal v_as)
+		Select Case v_as
+			Case "save"
+				Response.Write("1")
+			Case Else
+				Call Tpl_ClassMConn("admin_ClassSet.tpl")
+		End Select
+	End Sub
+
+	Public Sub contentAction(ByVal v_as)
+		Select Case v_as
+			Case "add"
+				Call Tpl_contentAdd("admin_ConnAdd.tpl")
+			Case "save"
+				Response.Write("1")
+			Case Else
+				Call Tpl_contentAction("admin_ConnList.tpl")
+		End Select
+	End Sub
+	'//-------------------------- 新闻操作sub集 -------------------------------
+	'//-- 新闻列表页面
+	Private Sub Tpl_contentAction(ByVal FilePath)
+		'设置模板调用路径（模板存储位置，相对调用文件的所在目录）
+		Tpl.setTemplatePath="../../templates/Admin/"
+		'设置模板调用文件
+		Tpl.setTemplateFile=FilePath
+
+
+		Tpl.display()
+	End Sub
+
+	'//-- 新闻添加页面
+	Private Sub Tpl_contentAdd(ByVal FilePath)
+		'设置模板调用路径（模板存储位置，相对调用文件的所在目录）
+		Tpl.setTemplatePath="../../templates/Admin/"
+		'设置模板调用文件
+		Tpl.setTemplateFile=FilePath
+
+
+		Tpl.display()
+	End Sub
+	'//-------------------------- 新闻操作sub集 End -------------------------------
+
+	'//-------------------------- 内容分类操作sub集 -------------------------------
+	Private Sub Tpl_ClassMConn(ByVal FilePath)
+		'设置模板调用路径（模板存储位置，相对调用文件的所在目录）
+		Tpl.setTemplatePath="../../templates/Admin/"
+		'设置模板调用文件
+		Tpl.setTemplateFile=FilePath
+
+
+		Tpl.display()
+	End Sub
+	'//-------------------------- 内容分类操作sub集 End -------------------------------
 
 	'//-------------------------- 管理员操作sub集 -------------------------------
 	'//-- 管理员信息呈现
@@ -47,7 +105,6 @@ Class Tpl_Admin
 	'//-- 管理员信息编辑
 	Private Sub Tpl_Admin_Save()
 		Dim v_AdminName,v_AdminPassWord,v_AdminType,v_SQL
-		Dim v_D : Set v_D = Server.CreateObject("Scripting.Dictionary")
 
 		v_AdminName=Trim(Easp.RF("AdminName",0)):Call v_D.add("AdminName",v_AdminName)
 		v_AdminType=Easp.RF("AdminType",1):Call v_D.add("AdminType",v_AdminType)
@@ -62,7 +119,6 @@ Class Tpl_Admin
 			Cache(i)=v_D(i)
 		Next
 
-		Set v_D=Nothing
 		'Call RefushCache(false) '只刷新删除以后的缓存
 		Call AlertBack("保存成功！")
 	End Sub
@@ -90,11 +146,10 @@ Class Tpl_Admin
 		Tpl.display()
 	End Sub
 
-	'//-- 管理员信息保存
+	'//-- 网站信息保存
 	Private Sub Tpl_WebSiteSet_Save()
 		Dim v_WebSiteName,v_WebSiteKeywords,v_WebSiteDescription,v_WebSiteCopyright,v_WebSiteICP,v_WebSiteEditorWidth,v_WebSiteNotice,v_WebSiteSwitch,v_WebSiteLog,v_WebSiteOffPage
-		Dim v_SQL,v_D
-		Set v_D = Server.CreateObject("Scripting.Dictionary")
+		Dim v_SQL
 
 		v_WebSiteName=Trim(Easp.RF("WebSiteName",0)):Call v_D.add("WebSiteName",v_WebSiteName)
 		v_WebSiteKeywords=Trim(Easp.RF("WebSiteKeywords",0)):Call v_D.add("WebSiteKeywords",v_WebSiteKeywords)
@@ -114,10 +169,11 @@ Class Tpl_Admin
 			Cache(i)=v_D(i)
 		Next
 
-		Set v_D=Nothing
 		Call AlertBack("保存成功！")
 	End Sub
 	'//-------------------------- 网站设置sub集 End -------------------------------
+
+
 
 	'//-------------------------- 通用方法 -------------------------------
 	Private Sub AlertBack(ByVal AlertWords)

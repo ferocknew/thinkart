@@ -20,7 +20,11 @@ Select Case v_at
 		Call v_webObj.AdminAction(v_as)
 	Case "websiteset"
 		Call v_webObj.WebSiteSetAction(v_as)
+	Case "classMconn"
+		Call v_webObj.classMConn(v_as)
+	Case "content"
+		Call v_webObj.contentAction(v_as)
 End Select
-Set v_AdminObj=Nothing
+Set v_webObj=Nothing
 %>
 <!--#include file="../../Action/clear.asp"-->
