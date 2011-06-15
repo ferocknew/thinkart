@@ -25,4 +25,20 @@ Sub GetWebSiteInfo
 	End If
 	Set WebSiteInfo = v_D
 End Sub
+
+Sub RefushCache(RefushType) '刷新缓存
+	If Not RefushType Then
+		Call GetWebSiteInfo()
+		For Each item In WebSiteInfo
+			If Not Cache(item).ready Then Cache(item)=WebSiteInfo(item)
+		Next
+	Else
+		Cache.ClearAll()
+		Cache.ClearFiles()
+		Call GetWebSiteInfo()
+		For Each item In WebSiteInfo
+			If Not Cache(item).ready Then Cache(item)=WebSiteInfo(item)
+		Next
+	End If
+End Sub
 %>
