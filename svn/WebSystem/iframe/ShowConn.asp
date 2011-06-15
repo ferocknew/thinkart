@@ -17,7 +17,7 @@ If v_at="" Then Response.End()
 Select Case v_at
 	Case "adminedit"							'管理员操作类
 		Set v_AdminObj=new Tpl_Admin
-		Call v_AdminObj.action("adminedit"):Set v_AdminObj=Nothing
+		Call v_AdminObj.action(v_as):Set v_AdminObj=Nothing
 End Select
 %>
 <!--#include file="../../Action/clear.asp"-->

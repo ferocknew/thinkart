@@ -18,14 +18,15 @@
 	</div>
 	<div class="addContent text_deepGray12_b">
 		<div class="add_left">
+			<form id="AdminEditAction" action="?at=adminedit&as=save" method="post">
 			<table width="550" border="0" cellspacing="0" cellpadding="0">
 				<tr>
 					<td width="84">用户名</td>
-					<td width="466"><input class="settingInput" type="text" name="textfield2" id="textfield2" value="{$AdminName}" /></td>
+					<td width="466"><input class="settingInput" type="text" name="AdminName" id="AdminName" value="{$AdminName}" /></td>
 				</tr>
 				<tr>
 					<td width="84">密 码</td>
-					<td><input class="settingInput"  type="text" name="textfield3" id="textfield3" /></td>
+					<td><input name="AdminPassWord"  type="text" class="settingInput" id="AdminPassWord" /></td>
 				</tr>
 				<tr style="display:none">
 					<td width="84">真 名</td>
@@ -33,30 +34,31 @@
 				</tr>
 				<tr>
 					<td width="84">添加日期</td>
-					<td><input class="settingInput"  type="text" name="textfield3" id="textfield3" value="{$AdminCDate}" /></td>
+					<td><input class="settingInput"  type="text" name="AdminCDate" id="AdminCDate" value="{$AdminCDate}" disabled="disabled" /></td>
 				</tr>
 				<tr>
 					<td>状 态</td>
-					<td><input name="adminType" value="{$AdminType}" type="hidden" id="adminType" />
-						<input type="radio" name="RadioGroup1" value="1"/>
+					<td><input name="adminType_Hide" value="{$AdminType}" type="hidden" id="adminType" />
+						<input type="radio" name="AdminType" value="1"/>
 						启用
 						</label>
 						<label>
-							<input type="radio" name="RadioGroup1" value="0"/>
-							关闭</label></td>
+							<input type="radio" name="AdminType" value="0"/>
+						关闭</label></td>
 				</tr>
 				<tr>
 					<td>&nbsp;</td>
 					<td>&nbsp;</td>
 				</tr>
 			</table>
+			</form>
 		</div>
 	</div>
 	<div class="push"></div>
 </div>
 <div class="add_botton link_white12_b">
 	<ul>
-		<li><a href="#"><img src="../../files/images/ico_addSave.gif" align="middle" /> 保存</a></li>
+		<li><a href="#" id="AdminEditActionSave"><img src="../../files/images/ico_addSave.gif" align="middle" /> 保存</a></li>
 		<li><a href="#"><img src="../../files/images/ico_addDel.gif" align="middle" /> 重置</a></li>
 	</ul>
 </div>
@@ -64,5 +66,15 @@
 </html>
 {include("../incDefaultScript.tpl")}
 <script type="text/javascript">
-$("#adminType").val()?$(":radio[value='1']").attr("checked",true):$(":radio[value='2']").attr("checked",true);	
+//--三元判断单选设置
+$("#adminType").val()*1?$(":radio[value='1']").attr("checked",true):$(":radio[value='0']").attr("checked",true);
+
+//--图片点击递交
+$("#AdminEditActionSave").click(function(){
+	$("#AdminEditAction").submit()
+})
+//--密码框动作
+$("#AdminPassWord").focus(function(){
+	$(this).val("");
+})
 </script>
