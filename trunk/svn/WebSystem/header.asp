@@ -83,7 +83,7 @@
 		%>
 		<li id="sMenu1" class="bg_topMenu2 link_white12_b" onclick="selSMenu_8('sMenu1');"><a href="iframe/ShowConn.asp?at=adminedit" target="mainFrame">管理员</a></li>
 		<li id="sMenu2" class="bg_topMenu2 link_white12_b" onclick="selSMenu_8('sMenu2');"><a href="#" target="mainFrame">定制功能</a></li>
-		<li id="sMenu3" class="bg_topMenu2 link_white12_b" onclick="selSMenu_8('sMenu3');"><a href="Setting_Site.html" target="mainFrame">系统设置</a></li>
+		<li id="sMenu3" class="bg_topMenu2 link_white12_b" onclick="selSMenu_8('sMenu3');"><a href="iframe/ShowConn.asp?at=websiteset" target="mainFrame">系统设置</a></li>
 		<li id="sMenu4" class="bg_topMenu2 link_white12_b" onclick="selSMenu_8('sMenu4');"><a href="#" target="mainFrame">编辑器</a></li>
 		<li id="sMenu5" class="bg_topMenu2 link_white12_b" onclick="selSMenu_8('sMenu5');"><a href="#" target="mainFrame">弹出风格设定</a></li>
 		<li id="sMenu6" class="bg_topMenu2 link_white12_b" onclick="selSMenu_8('sMenu6');"><a href="#" target="mainFrame">支付接口</a></li>

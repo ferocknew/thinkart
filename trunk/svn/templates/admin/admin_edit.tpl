@@ -18,7 +18,7 @@
 	</div>
 	<div class="addContent text_deepGray12_b">
 		<div class="add_left">
-			<form id="AdminEditAction" action="?at=adminedit&as=save" method="post">
+			<form id="AdminEditAction" action="?at=websiteset&as=save" method="post">
 			<table width="550" border="0" cellspacing="0" cellpadding="0">
 				<tr>
 					<td width="84">用户名</td>

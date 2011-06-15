@@ -14,10 +14,13 @@ v_at=Easp.RQ("at",0)							'获取主API接口
 v_as=Easp.RQ("as",0)							'获取次级API接口
 If v_at="" Then Response.End()
 
+Dim v_webObj : Set v_webObj=new Tpl_Admin
 Select Case v_at
 	Case "adminedit"							'管理员操作类
-		Set v_AdminObj=new Tpl_Admin
-		Call v_AdminObj.action(v_as):Set v_AdminObj=Nothing
+		Call v_webObj.AdminAction(v_as)
+	Case "websiteset"
+		Call v_webObj.WebSiteSetAction(v_as)
 End Select
+Set v_AdminObj=Nothing
 %>
 <!--#include file="../../Action/clear.asp"-->
