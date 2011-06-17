@@ -1330,31 +1330,31 @@ End Function
 '*************************************
 '数据库添加修改操作
 '*************************************
-function DBQuest(table,DBArray,Action)
- dim AddCount,TempDB,i,v
- if Action<>"insert" or Action<>"update" then Action="insert"
- if Action="insert" then v=2 else v=3
- if not IsArray(DBArray) then
-   DBQuest=-1
-   exit function
- else
-   Set TempDB=Server.CreateObject("ADODB.RecordSet")
-   On Error Resume Next
-   TempDB.Open table,Conn,1,v
-   if err then
-    DBQuest=-2
-    exit function
-   end if
-   if Action="insert" then TempDB.addNew
-   AddCount=UBound(DBArray,1)
-   for i=0 to AddCount
-    TempDB(DBArray(i)(0))=DBArray(i)(1)
-   next
-   TempDB.update
-   TempDB.close
-   set TempDB=nothing
-   DBQuest=0
- end if
+Function DBQuest(table,DBArray,Action)
+	dim AddCount,TempDB,i,v
+	if Action<>"insert" or Action<>"update" then Action="insert"
+	if Action="insert" then v=2 else v=3
+	if not IsArray(DBArray) then
+	DBQuest=-1
+	exit function
+	else
+	Set TempDB=Server.CreateObject("ADODB.RecordSet")
+	On Error Resume Next
+	TempDB.Open table,Conn,1,v
+	if err then
+	DBQuest=-2
+	exit function
+	end if
+	if Action="insert" then TempDB.addNew
+	AddCount=UBound(DBArray,1)
+	for i=0 to AddCount
+	TempDB(DBArray(i)(0))=DBArray(i)(1)
+	next
+	TempDB.update
+	TempDB.close
+	set TempDB=nothing
+	DBQuest=0
+	end if
 end Function
 
 '*************************************
@@ -1596,7 +1596,25 @@ Function newClass(ClassName,DirPath)
 			Response.Write("Get class file err!")
 			Response.End()
 		End If
+		On Error Resume Next
 		Execute(v_Con)
+		If Err Then
+			Response.Write("<meta http-equiv='Content-Type' content='text/html;' charset='utf-8' />")
+			Response.Write("Next is codeEditer Err Info:")
+			Response.Write("<br />")
+			Response.Write("Err Files From: '"+DirPath + Trim(ClassName) + ".Class'")
+			Response.Write("<br />")
+			Response.Write("Err.Number: "&Err)
+			Response.Write("<br />")
+			Response.Write("Err.Info: "+Err.Description)
+			Response.Write("<br />")
+			Response.Write("Err.File: "+Err.Source)
+			Response.Write("<br />")
+			Response.Write("Err.Line: "+Err.Line)
+			Response.End()
+		End If
+		Err.clear
+		On Error goto 0
 	End With
 	Set v_S=Nothing
 	Execute("Set newClass = New " + ClassName)
