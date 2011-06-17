@@ -82,6 +82,11 @@ Class Tpl_Admin
 		Tpl.setTemplatePath="../../templates/Admin/"
 		'设置模板调用文件
 		Tpl.setTemplateFile=FilePath
+		Dim ClassObj : Set ClassObj=newClass("ClassCon","../../App_Code/")
+
+		Dim list_DataType : list_DataType="ClassName,MDate,MDateInt"
+		Dim Arr_GetList : Arr_GetList=ClassObj.getMasterList(list_DataType)
+		Tpl.d("data[name=list]")=Array(Arr_GetList,list_DataType)
 
 
 		Tpl.display()

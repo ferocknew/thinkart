@@ -21,6 +21,28 @@ Class WS_admin
 		End Select
 	End Sub
 
+	Public Sub ClassCon(ByVal v_as)
+		Select Case v_as
+			Case "get"
+				Call WS_admin_ClassConList()
+			Case "addmaster"
+				Call WS_admin_ClassConAddMaster()
+			Case Else
+				Response.Write("WS.admin")
+		End Select
+	End Sub
+	'//---------------------------------------------------------
+	'新闻分类列表
+	Private Sub WS_admin_ClassConList()
+	End Sub
+
+	'//---------------------------------------------------------
+	'新闻分类添加
+	Private Sub WS_admin_ClassConAddMaster()
+		Dim ClassObj : Set ClassObj=newClass("ClassCon","../App_Code/")
+		Call ClassObj.AddMaster()
+	End Sub
+
 	'//---------------------------------------------------------
 	'获取管理员信息
 	Private Sub WS_admin_getAdminInfo()
