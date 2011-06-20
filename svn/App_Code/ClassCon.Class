@@ -1,5 +1,5 @@
 Class ClassCon
-	Private v_SQL,v_rs,v_msg,v_err
+	Private v_SQL,v_rs,v_err,v_msg
 	'//--------------------------初始函数-------------------------------
 	Private Sub Class_Initialize()
 		v_err=0
@@ -8,10 +8,14 @@ Class ClassCon
 	Private Sub Class_Terminate()
 	End Sub
 
+	'//----定义类的属性，该属性是返回一个信息
+	Public Property Get getMsg
+		getMsg = v_msg
+	End Property
 	'//---------------------------------------------------------
 	'添加主分类
-	Public Sub AddMaster()
-		Dim v_newClassMaster : v_newClassMaster=CheckStr(Easp.RF("newClassMaster",0)) '主分类名
+	Public Function AddMaster(ByVal v_ClassName)
+		Dim v_newClassMaster : v_newClassMaster=CheckStr(v_ClassName) 'v_newClassMaster=CheckStr(Easp.RF("newClassMaster",0)) '主分类名
 		Dim v_CDate : v_CDate=FormatDT(Now(),"{Y}-{M}-{D} {H}:{N}:{S}")
 		Dim v_CDateInt : v_CDateInt=UDate(v_CDate,8)
 		Dim v_CUser : v_CUser=Cache("AdminName")
@@ -19,27 +23,52 @@ Class ClassCon
 		v_SQL="SELECT * FROM [ContentClass]"
 		Set v_rs = Server.CreateObject("ADODB.RecordSet")
 		Call v_rs.Open(v_SQL,Conn,1,3)
-		v_rs.addnew
-		v_rs("ClassName")=v_newClassMaster
-		v_rs("CDate")=v_CDate
-		v_rs("CDateInt")=v_CDateInt
-		v_rs("CUser")=v_CUser
-		v_rs("MDate")=v_CDate
-		v_rs("MDateInt")=v_CDateInt
-		v_rs("MUser")=v_CUser
-		v_rs.update
+			v_rs.addnew
+			v_rs("ClassName")=v_newClassMaster
+			v_rs("CDate")=v_CDate
+			v_rs("CDateInt")=v_CDateInt
+			v_rs("CUser")=v_CUser
+			v_rs("MDate")=v_CDate
+			v_rs("MDateInt")=v_CDateInt
+			v_rs("MUser")=v_CUser
+			v_rs.update
 		v_rs.close:Set v_rs=Nothing
+		v_SQL=""
 		v_msg="添加成功！"
 
-		Call jsonheadResponse()
-		Call Jasp.output(Jasp.parse("{""err"":"&v_err&",""msg"":"""&v_msg&"""}").Get(),"json")
-	End Sub
+		AddMaster=True
+	End Function
+
+	Public Function EditMasterName(ByVal v_ClassName,ByVal v_ContentClassID)
+		If Not Conn.Execute("SELECT COUNT(*) FROM [ContentClass] WHERE [ContentClassID]="&v_ContentClassID)(0)=0 Then
+			Dim v_ClassMasterName : v_ClassMasterName=CheckStr(v_ClassName)
+			Dim v_MDate : v_MDate=FormatDT(Now(),"{Y}-{M}-{D} {H}:{N}:{S}")
+			Dim v_MDateeInt : v_MDateeInt=UDate(v_MDate,8)
+			Dim v_MUser : v_MUser=Cache("AdminName")
+
+			v_SQL="SELECT * FROM [ContentClass] WHERE [ContentClassID]="&v_ContentClassID
+			Set v_rs = Server.CreateObject("ADODB.RecordSet")
+			Call v_rs.Open(v_SQL,Conn,1,3)
+				v_rs("ClassName")=v_ClassMasterName
+				v_rs("MDate")=v_MDate
+				v_rs("MDateInt")=v_MDateeInt
+				v_rs("MUser")=v_MUser
+				v_rs.update
+			v_rs.close:Set v_rs=Nothing
+			v_SQL=""
+			v_msg="修改成功！"
+
+			EditMasterName=True '修改成功
+		Else
+			EditMasterName=False
+		End If
+	End Function
 
 	'//---------------------------------------------------------
 	'Show List
 	Public Function getMasterList(ByVal v_item)
 		If Not Conn.Execute("SELECT COUNT(*) From [ContentClass] WHERE UpClassId=0 AND IsHide=0")(0)=0 Then
-			Set v_rs=Conn.Execute("SELECT "&v_item&" From [ContentClass] WHERE UpClassId=0 AND IsHide=0 ORDER BY SortIndex,MDateInt ASC")
+			Set v_rs=Conn.Execute("SELECT "&v_item&" From [ContentClass] WHERE UpClassId=0 AND IsHide=0 ORDER BY SortIndex,CDateInt ASC")
 			getMasterList=v_rs.getRows()
 		Else
 			getMasterList=Empty
