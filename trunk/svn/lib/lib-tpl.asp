@@ -1325,9 +1325,8 @@ Private strAppCacheName,strFileCachePath
 			Set TmpObj = Server.CreateObject(v_Temp(i))
 			'Temp = Err
 			Set TmpObj=Nothing
-			If Not Err = -2147221005 Then
+			If Err = 0 Then
 				getXMLDOM=v_Temp(i)
-				Err.clear
 			Else
 				Exit For
 			End If
