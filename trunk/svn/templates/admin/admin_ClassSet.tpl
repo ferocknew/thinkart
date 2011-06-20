@@ -62,33 +62,74 @@
 		<div class="programsList tree2_close2">关于我们</div>
 	</div>
 </div>
-{$data name="list"}
-<div id="div_trees_58" class="programsItem" name="div_trees_lv1">
-	<div class="programsList tree1_open" onclick="tree_click(this,'div_trees_58');" name="div_trees_lv1_class"></div>
-	<div class="programsList_text" onclick="window.location='contentClass_mng.asp?ccid=58&cctype=1'">{data.ClassName}  [{data.MDate dateformat="yyyy年mm月dd日"}]</div>
-</div>
-{/$data}
+<div id="ClassTree"> {$data name="list"}
+	<div id="Master{data.ContentClassID}" class="programsItem">
+		<div class="programsList tree1_open" onclick="tree_click(this,'div_trees_58');"></div>
+		<div class="programsList_text"><span style="font-weight:bolder; color:#000;" classID="{data.ContentClassID}">{data.ClassName}</span> [{data.MDate dateformat="yyyy年mm月dd日"}]</div>
+	</div>
+	{/$data} </div>
 <div name="div_trees_lv2" id="div_trees_58_48" class="programsItem">
-			<div onclick="tree_click(this,'div_trees_58_48');" name="div_trees_lv2_class" class="programsList tree2_none"></div>
-			<div onclick="window.location='contentClass_mng.asp?ccid=48&amp;cctype=1'" class="programsList_text">进出口企业</div>
+	<div onclick="tree_click(this,'div_trees_58_48');" name="div_trees_lv2_class" class="programsList tree2_none"></div>
+	<div onclick="window.location='contentClass_mng.asp?ccid=48&amp;cctype=1'" class="programsList_text">进出口企业</div>
+</div>
+<div class="programsEdit text_white12_b">
+	<div onclick="tree_click(this,'div_trees_58_48');" name="div_trees_lv2_class" class="programsList tree2_none"></div>
+	<div class="editBar text_white12_b">
+		<table cellspacing="0" cellpadding="0" border="0">
+			<tbody>
+				<tr>
+					<td width="53"><img align="top" src="../../files/images/btm_editBar_close.gif"></td>
+					<td width="200">添加子分类
+						<input type="text" size="8" id="ClassNameSon" class="programsEdit_input" name="ClassNameSon">
+						<input type="button" value=" " onclick="contentClass_add_son_check()" id="button2" name="button2" class="programsEdit_btm"></td>
+					<td width="161" class="editBar_td">升降序 <img align="middle" onclick="orderdown()" style="cursor:pointer" src="../../files/images/btm_putDown.gif"><img align="middle" onclick="orderup()" style="cursor:pointer" src="../../files/images/btm_putUp.gif">
+						<input type="text" maxlength="3" size="3" value="0" id="Order" name="Order" class="input_sort">
+						<input type="button" onclick="contentClass_upd_order_check()" value=" " id="button2" name="button2" class="programsEdit_btm"></td>
+					<td width="117" class="link_white12_b editBar_td"><a onclick="contentClass_del_check()" href="javascript:void(0);">删除此分类 <img align="absmiddle" src="../../files/images/ico_trash.gif"></a></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<input type="text" size="16" value="进出口企业" id="ContentClassUpd" class="programsEdit_input" name="ContentClassUpd">
+	<input type="button" onclick="contentClass_upd_check()" value=" " id="button" name="button" class="programsEdit_btm">
+</div>
+<div id="HideDom" style="display:none;">
+	<div name="div_trees_lv1" id="MasterClassDom" class="programsItem">
+		<div class="programsEdit text_white12_b">
+			<div onclick="tree_click(this,'div_trees_58');" name="div_trees_lv1_class" class="programsList tree1_open"></div>
+			<div class="editBar text_white12_b">
+				<table cellspacing="0" cellpadding="0" border="0">
+					<tbody>
+						<tr>
+							<td width="53"><img align="top" src="../../files/images/btm_editBar_close.gif"></td>
+							<td width="200">添加子分类
+								<input type="text" size="8" id="ClassNameSon" class="programsEdit_input" name="ClassNameSon">
+								<input type="button" value=" " onclick="contentClass_add_son_check()" id="button2" name="button2" class="programsEdit_btm"></td>
+							<td width="161" class="editBar_td">升降序 <img align="middle" onclick="orderdown()" style="cursor:pointer" src="../../files/images/btm_putDown.gif"><img align="middle" onclick="orderup()" style="cursor:pointer" src="../../files/images/btm_putUp.gif">
+								<input type="text" maxlength="3" size="3" value="0" id="Order" name="Order" class="input_sort">
+								<input type="button" onclick="contentClass_upd_order_check()" value=" " id="button2" name="button2" class="programsEdit_btm"></td>
+							<td width="117" class="link_white12_b editBar_td"><a onclick="contentClass_del_check()" href="javascript:void(0);">删除此分类 <img align="absmiddle" src="../../files/images/ico_trash.gif"></a></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<input type="text" size="16" value="行业方案" id="MasterClassName" class="programsEdit_input" name="MasterClassName">
+			<input type="button" value=" " id="MasterClassNameReName" name="MasterClassNameReName" class="programsEdit_btm">
 		</div>
-<div class="page_style text_deepGray12_b">
-	<ul>
-		<li>123</li>
-	</ul>
+	</div>
 </div>
 </body>
 </html>
 {include("../incDefaultScript.tpl")}
 <script type="text/javascript">
 	$("#newClassMasterSave").click(function(){
-        var _ajaData = {
+        var _ajaxData = {
             newClassMaster: $.trim($("#newClassMaster").val())
         };
         $.ajax({
             type: "POST",
             url: "../../"+_AjaxUrl+"?at=classcon&as=addmaster",
-            data: _ajaData,
+            data: _ajaxData,
 			dataType :"json",
             success: function(json){
                 if(!json.err){
@@ -97,5 +138,35 @@
 				}
             }
         });
+	})
+	
+	$(".programsList_text span").click(function(){
+		var _$MasterDom=$("#MasterClassDom");
+		var _$ClassTree=$("#ClassTree");
+		if(_$MasterDom.length){
+			$("#MasterClassDom",_$ClassTree).remove();
+			$(".programsItem").show();
+			$("#Master"+$(this).attr("classID")).hide();
+			$("#Master"+$(this).attr("classID")).after(_$MasterDom.clone().show());
+			$("#MasterClassDom",_$ClassTree).find("#MasterClassName").val($(this).text()).attr("classID",$(this).attr("classID"));
+			$("#MasterClassNameReName").click(function(){
+				var _classID=$("#MasterClassName",_$ClassTree).attr("classID");
+				var _className=$.trim($("#MasterClassName",_$ClassTree).val());
+				var _ajaxData={ContentClassID:_classID,ClassName:_className};
+				
+                $.ajax({
+                    type: "POST",
+                    url: "../../" + _AjaxUrl + "?at=classcon&as=editmaster",
+                    data: _ajaxData,
+                    dataType: "json",
+                    success: function(json){
+                        if (!json.err) {
+                            alert(json.msg);
+                            window.location.reload();
+                        }
+                    }
+                });
+			})	
+		}
 	})
 </script>

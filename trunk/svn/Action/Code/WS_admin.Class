@@ -27,20 +27,42 @@ Class WS_admin
 				Call WS_admin_ClassConList()
 			Case "addmaster"
 				Call WS_admin_ClassConAddMaster()
+			Case "editmaster"
+				Call WS_admin_ClassConEditMaster()
 			Case Else
 				Response.Write("WS.admin")
 		End Select
 	End Sub
 	'//---------------------------------------------------------
-	'新闻分类列表
+	'内容分类列表
 	Private Sub WS_admin_ClassConList()
 	End Sub
 
 	'//---------------------------------------------------------
-	'新闻分类添加
+	'内容分类添加
 	Private Sub WS_admin_ClassConAddMaster()
 		Dim ClassObj : Set ClassObj=newClass("ClassCon","../App_Code/")
-		Call ClassObj.AddMaster()
+		If ClassObj.AddMaster(Trim(Easp.RF("newClassMaster",0))) Then '如果添加成功
+			Dim v_msg : v_msg=ClassObj.getMsg
+			Call jsonheadResponse()
+			Call Jasp.output(Jasp.parse("{""err"":0,""msg"":"""&v_msg&"""}").Get(),"json")
+		End If
+		Set ClassObj=Nothing
+	End Sub
+
+	'//---------------------------------------------------------
+	'内容分类名称编辑
+	Private Sub WS_admin_ClassConEditMaster()
+		Dim ClassObj : Set ClassObj=newClass("ClassCon","../App_Code/")
+
+		Call jsonheadResponse()
+		If ClassObj.EditMasterName(Trim(Easp.RF("ClassName",0)),Easp.RF("ContentClassID",1)) Then '如果修改成功 传参数，名字，分类ID
+			Dim v_msg : v_msg=ClassObj.getMsg
+			Call Jasp.output(Jasp.parse("{""err"":0,""msg"":"""&v_msg&"""}").Get(),"json")
+		Else
+			Call Jasp.output(Jasp.parse("{""err"":-1,""msg"":""错误！""}").Get(),"json")
+		End If
+		Set ClassObj=Nothing
 	End Sub
 
 	'//---------------------------------------------------------
