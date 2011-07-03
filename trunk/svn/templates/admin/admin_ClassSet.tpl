@@ -114,7 +114,7 @@
 				</table>
 			</div>
 			<input type="text" size="16" value="行业方案" id="MasterClassName" class="programsEdit_input" name="MasterClassName">
-			<input type="button" value=" " id="MasterClassNameReName" name="MasterClassNameReName" class="programsEdit_btm">
+			<input type="button" value=" " title="点击修改分类名称" id="MasterClassNameReName" name="MasterClassNameReName" class="programsEdit_btm">
 		</div>
 	</div>
 </div>
