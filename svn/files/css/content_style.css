@@ -242,6 +242,7 @@ input{
 	width:19px;
 	background:url(../images/btm_submit2.gif);
 	border:none;
+	cursor:pointer;
 }
 
 .editBar{
