@@ -21,14 +21,19 @@ Class WS_admin
 		End Select
 	End Sub
 
+	'//-------------------------- 内容分类操作 -------------------------------
 	Public Sub ClassCon(ByVal v_as)
 		Select Case v_as
 			Case "get"
-				Call WS_admin_ClassConList()
+				Call WS_admin_ClassConList()								'内容分类列表
+			Case "getsonlist"
+				Call WS_admin_ClassSonList()								'获取内容分类的子分类列表
 			Case "addmaster"
-				Call WS_admin_ClassConAddMaster()
+				Call WS_admin_ClassConAddMaster()							'内容分类添加
 			Case "editmaster"
-				Call WS_admin_ClassConEditMaster()
+				Call WS_admin_ClassConEditMaster()							'内容分类名称编辑
+			Case "addsonclass"
+				Call WS_admin_ClassConAddSon()								'子分类添加
 			Case Else
 				Response.Write("WS.admin")
 		End Select
@@ -36,6 +41,37 @@ Class WS_admin
 	'//---------------------------------------------------------
 	'内容分类列表
 	Private Sub WS_admin_ClassConList()
+	End Sub
+
+	'//---------------------------------------------------------
+	'获取内容分类的子分类列表
+	Private Sub WS_admin_ClassSonList()
+		Dim ClassObj : Set ClassObj=newClass("ClassCon","../App_Code/")
+		Dim v_item : v_item="ContentClassID,ClassName,UpClassId,LevelID"
+		Dim v_DBarray : v_DBarray=ClassObj.getSonList(Easp.RQ("classid",1),v_item) '获取子分类数据，返回Empty或者数组
+
+		Call jsonheadResponse()
+		If Not IsEmpty (v_DBarray) Then
+			Response.Write("{""err"":0,""data"":")
+			Call Jasp.vb(v_DBarray).getRows(Split(v_item,","),UBound(Split(v_item,","))+1,1).output("json")
+			Response.Write("}")
+		Else
+			Call Jasp.output(Jasp.parse("{""err"":-1,""msg"":""无子分类""}").Get(),"json")
+		End If
+
+	End Sub
+
+	'//---------------------------------------------------------
+	'子分类添加
+	Private Sub WS_admin_ClassConAddSon()
+		Dim ClassObj : Set ClassObj=newClass("ClassCon","../App_Code/")
+		'如果添加成功 子分类名称，上级父分类ID，升级父分类层级ID
+		If ClassObj.AddSon(Trim(Easp.RF("sonClassName",0)),Easp.RF("UpClassId",1),Easp.RF("upClassLevelID",1)) Then
+			Dim v_msg : v_msg=ClassObj.getMsg
+			Call jsonheadResponse()
+			Call Jasp.output(Jasp.parse("{""err"":0,""msg"":"""&v_msg&"""}").Get(),"json")
+		End If
+		Set ClassObj=Nothing
 	End Sub
 
 	'//---------------------------------------------------------
