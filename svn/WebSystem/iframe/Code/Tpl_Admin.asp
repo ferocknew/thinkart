@@ -84,7 +84,7 @@ Class Tpl_Admin
 		Tpl.setTemplateFile=FilePath
 		Dim ClassObj : Set ClassObj=newClass("ClassCon","../../App_Code/")
 
-		Dim list_DataType : list_DataType="ContentClassID,ClassName,MDate,MDateInt"
+		Dim list_DataType : list_DataType="ContentClassID,ClassName,LevelID,MDate,MDateInt"
 		Dim Arr_GetList : Arr_GetList=ClassObj.getMasterList(list_DataType)
 		Tpl.d("data[name=list]")=Array(Arr_GetList,list_DataType)
 

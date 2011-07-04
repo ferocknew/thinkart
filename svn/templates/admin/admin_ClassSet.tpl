@@ -64,36 +64,39 @@
 </div>
 <div id="ClassTree"> {$data name="list"}
 	<div id="Master{data.ContentClassID}" class="programsItem">
-		<div class="programsList tree1_open" onclick="tree_click(this,'div_trees_58');"></div>
-		<div class="programsList_text"><span style="font-weight:bolder; color:#000;" classID="{data.ContentClassID}">{data.ClassName}</span> [{data.MDate dateformat="yyyy年mm月dd日"}]</div>
+		<div class="programsList tree1_close" masterclass="1" classid="{data.ContentClassID}"></div>
+		<div class="programsList_text"><span style="font-weight:bolder; color:#000;" classid="{data.ContentClassID}" levelid="{data.LevelID}">{data.ClassName}</span> [{data.MDate dateformat="yyyy年mm月dd日"}]</div>
 	</div>
 	{/$data} </div>
-<div name="div_trees_lv2" id="div_trees_58_48" class="programsItem">
-	<div onclick="tree_click(this,'div_trees_58_48');" name="div_trees_lv2_class" class="programsList tree2_none"></div>
-	<div onclick="window.location='contentClass_mng.asp?ccid=48&amp;cctype=1'" class="programsList_text">进出口企业</div>
-</div>
-<div class="programsEdit text_white12_b">
-	<div onclick="tree_click(this,'div_trees_58_48');" name="div_trees_lv2_class" class="programsList tree2_none"></div>
-	<div class="editBar text_white12_b">
-		<table cellspacing="0" cellpadding="0" border="0">
-			<tbody>
-				<tr>
-					<td width="53"><img align="top" src="../../files/images/btm_editBar_close.gif"></td>
-					<td width="200">添加子分类
-						<input type="text" size="8" id="ClassNameSon" class="programsEdit_input" name="ClassNameSon">
-						<input type="button" value=" " onclick="contentClass_add_son_check()" id="button2" name="button2" class="programsEdit_btm"></td>
-					<td width="161" class="editBar_td">升降序 <img align="middle" onclick="orderdown()" style="cursor:pointer" src="../../files/images/btm_putDown.gif"><img align="middle" onclick="orderup()" style="cursor:pointer" src="../../files/images/btm_putUp.gif">
-						<input type="text" maxlength="3" size="3" value="0" id="Order" name="Order" class="input_sort">
-						<input type="button" onclick="contentClass_upd_order_check()" value=" " id="button2" name="button2" class="programsEdit_btm"></td>
-					<td width="117" class="link_white12_b editBar_td"><a onclick="contentClass_del_check()" href="javascript:void(0);">删除此分类 <img align="absmiddle" src="../../files/images/ico_trash.gif"></a></td>
-				</tr>
-			</tbody>
-		</table>
-	</div>
-	<input type="text" size="16" value="进出口企业" id="ContentClassUpd" class="programsEdit_input" name="ContentClassUpd">
-	<input type="button" onclick="contentClass_upd_check()" value=" " id="button" name="button" class="programsEdit_btm">
-</div>
 <div id="HideDom" style="display:none;">
+	<!--二级分类修改模板-->
+	<div class="programsEdit text_white12_b">
+		<div onclick="tree_click(this,'div_trees_58_48');" name="div_trees_lv2_class" class="programsList tree2_none"></div>
+		<div class="editBar text_white12_b">
+			<table cellspacing="0" cellpadding="0" border="0">
+				<tbody>
+					<tr>
+						<td width="53"><img align="top" src="../../files/images/btm_editBar_close.gif"></td>
+						<td width="200">添加子分类
+							<input type="text" size="8" class="programsEdit_input">
+							<input type="button" class="programsEdit_btm" value=" "></td>
+						<td width="161" class="editBar_td">升降序 <img align="middle" onclick="orderdown()" style="cursor:pointer" src="../../files/images/btm_putDown.gif"><img align="middle" onclick="orderup()" style="cursor:pointer" src="../../files/images/btm_putUp.gif">
+							<input type="text" maxlength="3" size="3" value="0" id="Order" name="Order" class="input_sort">
+							<input type="button" onclick="contentClass_upd_order_check()" value=" " id="button2" name="button2" class="programsEdit_btm"></td>
+						<td width="117" class="link_white12_b editBar_td"><a onclick="contentClass_del_check()" href="javascript:void(0);">删除此分类 <img align="absmiddle" src="../../files/images/ico_trash.gif"></a></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<input type="text" size="16" value="进出口企业" id="ContentClassUpd" class="programsEdit_input" name="ContentClassUpd">
+		<input type="button" onclick="contentClass_upd_check()" value=" " id="button" name="button" class="programsEdit_btm">
+	</div>
+	<!--二级分类-->
+	<div id="SonClassDomLevel2" class="programsItem">
+		<div name="div_trees_lv2_class" class="programsList tree2_none"></div>
+		<div class="programsList_text">进出口企业</div>
+	</div>
+	<!--分类修改模板-->
 	<div name="div_trees_lv1" id="MasterClassDom" class="programsItem">
 		<div class="programsEdit text_white12_b">
 			<div onclick="tree_click(this,'div_trees_58');" name="div_trees_lv1_class" class="programsList tree1_open"></div>
@@ -103,8 +106,8 @@
 						<tr>
 							<td width="53"><img align="top" src="../../files/images/btm_editBar_close.gif"></td>
 							<td width="200">添加子分类
-								<input type="text" size="8" id="ClassNameSon" class="programsEdit_input" name="ClassNameSon">
-								<input type="button" value=" " onclick="contentClass_add_son_check()" id="button2" name="button2" class="programsEdit_btm"></td>
+								<input name="ClassNameSon" type="text" class="programsEdit_input" id="ClassNameSon" size="8" maxlength="10">
+								<input type="button" value=" " title="点击添加子分类" id="ClassNameSonAction" name="ClassNameSonAction" class="programsEdit_btm"></td>
 							<td width="161" class="editBar_td">升降序 <img align="middle" onclick="orderdown()" style="cursor:pointer" src="../../files/images/btm_putDown.gif"><img align="middle" onclick="orderup()" style="cursor:pointer" src="../../files/images/btm_putUp.gif">
 								<input type="text" maxlength="3" size="3" value="0" id="Order" name="Order" class="input_sort">
 								<input type="button" onclick="contentClass_upd_order_check()" value=" " id="button2" name="button2" class="programsEdit_btm"></td>
@@ -139,22 +142,55 @@
             }
         });
 	})
-	
+
+    //展开分类
+    $(".programsList[masterclass='1']").toggle(function(e){
+        $.getJSON("../../" + _AjaxUrl, {
+            at: "classcon",
+            as: "getsonlist",
+            classid: $(this).attr("classid")
+        }, function(json){
+            $(e.currentTarget).toggleClass("tree1_close tree1_open");
+            if (!json.err) {
+                var _Data = json.data;
+                var _innerHTML = $('<div style="display:none"></div>');
+                var _$sonClassDomLevel2 = $("#SonClassDomLevel2");
+                $(_Data).each(function(){
+                    var _temp = _$sonClassDomLevel2.clone(true);
+                    _temp.find("div").eq(1).text(this.ClassName);
+                    _temp.appendTo(_innerHTML);
+                });
+                $(e.currentTarget).parent().after(_innerHTML);
+                $(e.currentTarget).parent().next().fadeIn("normal");
+
+            }
+            else {
+                $(e.currentTarget).parent().after($("<div> </div>"));
+            }
+        })
+    }, function(e){
+        $(this).toggleClass("tree1_close tree1_open").parent().next().fadeOut("normal", function(){
+            $(this).remove();
+        });
+    })
+
+	//编辑主分类
 	$(".programsList_text span").click(function(){
 		var _$MasterDom=$("#MasterClassDom");
 		var _$ClassTree=$("#ClassTree");
 		if(_$MasterDom.length){
 			$("#MasterClassDom",_$ClassTree).remove();
 			$(".programsItem").show();
-			$("#Master"+$(this).attr("classID")).hide();
-			$("#Master"+$(this).attr("classID")).after(_$MasterDom.clone().show());
-			$("#MasterClassDom",_$ClassTree).find("#MasterClassName").val($(this).text()).attr("classID",$(this).attr("classID"));
+			$("#Master"+$(this).attr("classid")).hide();
+			$("#Master"+$(this).attr("classid")).after(_$MasterDom.clone().show());
+			$("#MasterClassDom",_$ClassTree).find("#MasterClassName").val($(this).text()).attr("classid",$(this).attr("classid")).attr("levelid",$(this).attr("levelid"));
+
+			//点击保存分类名称
 			$("#MasterClassNameReName").click(function(){
 				var _classID=$("#MasterClassName",_$ClassTree).attr("classID");
 				var _className=$.trim($("#MasterClassName",_$ClassTree).val());
 				var _ajaxData={ContentClassID:_classID,ClassName:_className};
-				
-                $.ajax({
+				_className.length == 0 ? alert("分类名称不能为空！") : $.ajax({
                     type: "POST",
                     url: "../../" + _AjaxUrl + "?at=classcon&as=editmaster",
                     data: _ajaxData,
@@ -166,7 +202,29 @@
                         }
                     }
                 });
-			})	
+			})
+
+			//点击添加子分类
+			$("#ClassNameSonAction").click(function(){
+				var _classID=$("#MasterClassName",_$ClassTree).attr("classID");
+				var _sonClassName=$.trim($("#ClassNameSon").val());
+				var _levelid=$("#MasterClassName",_$ClassTree).attr("levelid");
+				var _ajaxData={UpClassId:_classID,sonClassName:_sonClassName,upClassLevelID:_levelid};
+
+                _sonClassName.length == 0 ? alert("分类名称不能为空！") : $.ajax({
+                    type: "POST",
+                    url: "../../" + _AjaxUrl + "?at=classcon&as=addsonclass",
+                    data: _ajaxData,
+                    dataType: "json",
+                    success: function(json){
+						if (!json.err) {
+                            alert(json.msg);
+                            window.location.reload();
+                        }
+                    }
+                })
+
+			})
 		}
 	})
 </script>
